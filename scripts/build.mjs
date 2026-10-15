@@ -68,7 +68,12 @@ function logoSVG(cls = "logo-mark") {
     }
   return `<svg class="${cls}" viewBox="0 0 58 58" aria-hidden="true">${rects}</svg>`;
 }
-const wordmark = `<span class="wordmark">delegated<span class="tld">.ai</span></span>`;
+// The wordmark is the site name, with the domain suffix (".ai") set apart.
+const dot = site.name.lastIndexOf(".");
+const wordmark =
+  dot > 0
+    ? `<span class="wordmark">${esc(site.name.slice(0, dot))}<span class="tld">${esc(site.name.slice(dot))}</span></span>`
+    : `<span class="wordmark">${esc(site.name)}</span>`;
 const themeButton = `<button type="button" class="theme-btn" data-theme aria-label="Switch theme" title="Switch theme">
   <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 9.6A5.75 5.75 0 0 1 6.4 2.5a5.75 5.75 0 1 0 7.1 7.1Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
   <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>

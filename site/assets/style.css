@@ -1,4 +1,4 @@
-/* Delegated — layout and tokens modelled on a minimal, dense directory style:
+/* delegatedto.ai — layout and tokens modelled on a minimal, dense directory style:
    dashed hairlines, mono labels, one blue "signal" accent. Dark is the default. */
 :root {
   --bg: #000;

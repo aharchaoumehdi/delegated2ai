@@ -1,6 +1,6 @@
 # Editorial guidelines
 
-These rules decide what gets published on Delegated. The automated
+These rules decide what gets published on delegatedto.ai. The automated
 curator (`scripts/curate.mjs`) reads this file verbatim as its instructions, so
 editing it changes how the daily pipeline judges and writes entries.
 

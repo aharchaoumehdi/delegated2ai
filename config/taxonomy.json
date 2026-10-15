@@ -1,0 +1,339 @@
+{
+  "domains": [
+    {
+      "name": "Software",
+      "emoji": "💻",
+      "description": "Building, testing, debugging and maintaining software.",
+      "blurb": "Shipping code, reviewing PRs, migrations and fixing things at 3am."
+    },
+    {
+      "name": "Business",
+      "emoji": "💼",
+      "description": "Operations, support, sales ops and internal workflows.",
+      "blurb": "Support queues, operations and the internal busywork that keeps a company running."
+    },
+    {
+      "name": "Science",
+      "emoji": "🔬",
+      "description": "Research, discovery, lab and literature work.",
+      "blurb": "Literature reviews, experiments and discovery, run by agents that read and reason."
+    },
+    {
+      "name": "Daily life",
+      "emoji": "🏡",
+      "description": "Personal errands, planning, shopping and family logistics.",
+      "blurb": "Meals, errands, bookings and the life admin nobody wants to do."
+    },
+    {
+      "name": "Finance",
+      "emoji": "📈",
+      "description": "Accounting, investing, bookkeeping and financial analysis.",
+      "blurb": "Taxes, trading, bookkeeping and money decisions with an agent in the loop."
+    },
+    {
+      "name": "Education",
+      "emoji": "🎓",
+      "description": "Teaching, tutoring and learning.",
+      "blurb": "Teaching, tutoring, course upkeep and learning faster."
+    },
+    {
+      "name": "Creative",
+      "emoji": "🎨",
+      "description": "Writing, design, video, music and media production.",
+      "blurb": "Video, writing, design and media made with agents."
+    },
+    {
+      "name": "Health",
+      "emoji": "🩺",
+      "description": "Clinical, fitness, nutrition and wellbeing.",
+      "blurb": "Records, imaging, fitness data and navigating care."
+    },
+    {
+      "name": "Marketing",
+      "emoji": "📣",
+      "description": "Growth, content, SEO, outreach and sales.",
+      "blurb": "Ads, content, outreach and growth experiments."
+    },
+    {
+      "name": "Data",
+      "emoji": "📊",
+      "description": "Analysis, reporting, scraping and data engineering.",
+      "blurb": "Dashboards, analysis and turning messy data into answers."
+    },
+    {
+      "name": "Legal",
+      "emoji": "⚖️",
+      "description": "Contracts, compliance and legal research.",
+      "blurb": "Contracts, research and getting legal questions answered with sources."
+    },
+    {
+      "name": "Home",
+      "emoji": "🔌",
+      "description": "Home automation, devices and self-hosting.",
+      "blurb": "Smart homes, devices and self-hosted automations."
+    }
+  ],
+  "evidence": [
+    {
+      "name": "Author's account",
+      "description": "The creator describes what they did; not independently checked."
+    },
+    {
+      "name": "Demo",
+      "description": "A video, screenshots or live demo shows the agent working."
+    },
+    {
+      "name": "Code available",
+      "description": "Code, prompts or a workflow file are published so others can reproduce it."
+    },
+    {
+      "name": "Paper",
+      "description": "Described in a research paper or technical report."
+    },
+    {
+      "name": "Independent report",
+      "description": "Reported or reproduced by someone other than the creator."
+    }
+  ],
+  "difficulty": [
+    "Beginner",
+    "Intermediate",
+    "Advanced"
+  ],
+  "platforms": [
+    {
+      "name": "Claude Code",
+      "aliases": [
+        "claude code",
+        "claude-code",
+        "claudecode"
+      ],
+      "abbr": "CC",
+      "color": "#a78bfa",
+      "description": "Anthropic's coding agent, including the non-coding jobs people give it."
+    },
+    {
+      "name": "Claude",
+      "aliases": [
+        "claude.ai",
+        "claude cowork",
+        "cowork",
+        "claude desktop",
+        "claude for chrome"
+      ],
+      "abbr": "CL",
+      "color": "#c4b5fd",
+      "description": "Anthropic's assistant, used with tools, connectors and computer use."
+    },
+    {
+      "name": "Claude Agent SDK",
+      "aliases": [
+        "claude agent sdk",
+        "agent sdk"
+      ],
+      "abbr": "AS",
+      "color": "#ddd6fe",
+      "description": "Anthropic's toolkit for building custom agents on the Claude Code harness."
+    },
+    {
+      "name": "OpenAI Codex",
+      "aliases": [
+        "codex",
+        "openai codex",
+        "codex cli"
+      ],
+      "abbr": "CX",
+      "color": "#e5e5e5",
+      "description": "OpenAI's coding agent, in the cloud, the CLI and the IDE."
+    },
+    {
+      "name": "ChatGPT Agent",
+      "aliases": [
+        "chatgpt agent",
+        "operator",
+        "openai operator",
+        "chatgpt agent mode",
+        "atlas"
+      ],
+      "abbr": "GA",
+      "color": "#4ade80",
+      "description": "OpenAI's agent mode inside ChatGPT, which browses and acts for you."
+    },
+    {
+      "name": "OpenAI Agents SDK",
+      "aliases": [
+        "openai agents sdk",
+        "agents sdk"
+      ],
+      "abbr": "OA",
+      "color": "#86efac",
+      "description": "OpenAI's framework for building multi-agent workflows."
+    },
+    {
+      "name": "Devin",
+      "aliases": [
+        "devin",
+        "cognition devin"
+      ],
+      "abbr": "DE",
+      "color": "#5eead4",
+      "description": "Cognition's autonomous software engineer."
+    },
+    {
+      "name": "Cursor",
+      "aliases": [
+        "cursor",
+        "cursor agent",
+        "cursor background agent"
+      ],
+      "abbr": "CU",
+      "color": "#d4d4d4",
+      "description": "The AI code editor and its background agents."
+    },
+    {
+      "name": "GitHub Copilot",
+      "aliases": [
+        "copilot",
+        "github copilot",
+        "copilot agent",
+        "copilot coding agent"
+      ],
+      "abbr": "GH",
+      "color": "#a3a3a3",
+      "description": "GitHub's coding agent that works on issues and opens PRs."
+    },
+    {
+      "name": "Google Jules",
+      "aliases": [
+        "jules"
+      ],
+      "abbr": "JU",
+      "color": "#93c5fd",
+      "description": "Google's asynchronous coding agent."
+    },
+    {
+      "name": "Gemini",
+      "aliases": [
+        "gemini",
+        "gemini cli",
+        "google gemini",
+        "alphaevolve",
+        "ai co-scientist"
+      ],
+      "abbr": "GE",
+      "color": "#60a5fa",
+      "description": "Google's models and agents, including research systems built on them."
+    },
+    {
+      "name": "Manus",
+      "aliases": [
+        "manus"
+      ],
+      "abbr": "MA",
+      "color": "#fcd34d",
+      "description": "A general-purpose agent that researches, builds and ships on its own."
+    },
+    {
+      "name": "Replit Agent",
+      "aliases": [
+        "replit",
+        "replit agent"
+      ],
+      "abbr": "RE",
+      "color": "#fb923c",
+      "description": "Replit's app-building agent."
+    },
+    {
+      "name": "Lovable",
+      "aliases": [
+        "lovable"
+      ],
+      "abbr": "LO",
+      "color": "#f472b6",
+      "description": "An agent that builds full-stack web apps from a prompt."
+    },
+    {
+      "name": "n8n",
+      "aliases": [
+        "n8n"
+      ],
+      "abbr": "N8",
+      "color": "#fb7185",
+      "description": "The workflow automation tool people build agents on."
+    },
+    {
+      "name": "Zapier",
+      "aliases": [
+        "zapier",
+        "zapier agents"
+      ],
+      "abbr": "ZA",
+      "color": "#fdba74",
+      "description": "Zapier's agents that act across thousands of apps."
+    },
+    {
+      "name": "LangGraph",
+      "aliases": [
+        "langgraph",
+        "langchain"
+      ],
+      "abbr": "LG",
+      "color": "#34d399",
+      "description": "LangChain's framework for stateful, multi-step agents."
+    },
+    {
+      "name": "CrewAI",
+      "aliases": [
+        "crewai",
+        "crew ai"
+      ],
+      "abbr": "CR",
+      "color": "#f87171",
+      "description": "A framework for teams of role-playing agents."
+    },
+    {
+      "name": "AutoGen",
+      "aliases": [
+        "autogen",
+        "ag2"
+      ],
+      "abbr": "AG",
+      "color": "#7dd3fc",
+      "description": "Microsoft's framework for multi-agent conversations."
+    },
+    {
+      "name": "OpenClaw",
+      "aliases": [
+        "openclaw",
+        "clawdbot",
+        "moltbot"
+      ],
+      "abbr": "OC",
+      "color": "#f87171",
+      "description": "The open-source, self-hosted personal agent."
+    },
+    {
+      "name": "Custom agent",
+      "aliases": [
+        "custom",
+        "custom agent",
+        "in-house",
+        "homegrown"
+      ],
+      "abbr": "··",
+      "color": "transparent",
+      "description": "Custom-built, lesser-known or unnamed agents."
+    },
+    {
+      "name": "Not specified",
+      "aliases": [
+        "unknown",
+        "not specified",
+        "n/a"
+      ],
+      "abbr": "··",
+      "color": "transparent",
+      "description": "Agents whose platform the source doesn't name."
+    }
+  ]
+}

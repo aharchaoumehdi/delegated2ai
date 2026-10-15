@@ -1,0 +1,35 @@
+name: Submit a use case
+description: Share a real application of an AI agent (yours or someone else's).
+title: "[submission] "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! Submissions go through the same daily review as everything else
+        (see docs/editorial-guidelines.md). We always credit and link the original creator.
+  - type: input
+    id: url
+    attributes:
+      label: Link to the original post, repo, video or paper
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What did the agent do, and what was the result?
+      description: One or two sentences is plenty.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Platform / tools used (if known)
+      placeholder: Claude Code, Codex, n8n, custom agent…
+  - type: checkboxes
+    id: own
+    attributes:
+      label: Relationship
+      options:
+        - label: I am the creator of this work

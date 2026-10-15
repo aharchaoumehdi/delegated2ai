@@ -1,0 +1,36 @@
+{
+  "id": "kosmos-ai-scientist-reads-1-500-papers-per-run-and-reports",
+  "title": "Kosmos AI Scientist reads ~1,500 papers per run and reports seven discoveries",
+  "summary": "Edison Scientific's Kosmos runs for up to 12 hours, coordinating data-analysis and literature-search agents through a shared world model to generate hypotheses and write cited scientific reports.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Kosmos"
+  ],
+  "agent_role": "Agents analyzed datasets, searched literature and drafted reports autonomously over a run; human scientists supplied the data and objective and evaluated the statements afterward.",
+  "outcome": "About 200 agent rollouts, ~42,000 lines of code and ~1,500 papers read per run; independent scientists judged 79.4% of report statements accurate; seven showcased discoveries",
+  "evidence": "Paper",
+  "difficulty": "Advanced",
+  "tags": [
+    "ai-scientist",
+    "literature-review",
+    "data-analysis",
+    "discovery"
+  ],
+  "source": {
+    "url": "https://arxiv.org/abs/2511.02824",
+    "name": "arXiv",
+    "author": "Edison Scientific team",
+    "published": "2025-11"
+  },
+  "added": "2026-10-15",
+  "status": "published",
+  "score": 8,
+  "featured": false,
+  "curation": {
+    "method": "manual",
+    "model": null,
+    "rationale": "Launch seed collection, researched from search results."
+  }
+}

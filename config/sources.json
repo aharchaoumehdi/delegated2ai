@@ -1,0 +1,50 @@
+{
+  "_comment": "Collector configuration. Each source is optional; a failing source is logged and skipped. See docs/pipeline.md.",
+  "lookbackHours": 36,
+  "maxCandidates": 40,
+  "keywords": [
+    "agent", "agents", "agentic", "claude code", "codex", "devin", "cursor", "copilot agent",
+    "manus", "operator", "chatgpt agent", "n8n", "langgraph", "crewai", "openclaw", "mcp",
+    "automated", "automates", "autonomous", "built", "workflow"
+  ],
+  "hackernews": {
+    "enabled": true,
+    "minPoints": 15,
+    "queries": ["Claude Code", "Codex", "AI agent", "agentic", "Devin", "Cursor agent", "MCP", "Show HN agent", "autonomous agent", "OpenClaw"]
+  },
+  "reddit": {
+    "enabled": true,
+    "minScore": 40,
+    "subreddits": ["ClaudeAI", "ClaudeCode", "ChatGPTCoding", "AI_Agents", "OpenAI", "codex", "cursor", "n8n", "LocalLLaMA", "automation", "SideProject", "singularity"]
+  },
+  "devto": {
+    "enabled": true,
+    "minReactions": 10,
+    "tags": ["ai", "agents", "aiagents", "claudecode", "mcp"]
+  },
+  "github": {
+    "enabled": true,
+    "minStars": 40,
+    "queries": ["topic:claude-code", "topic:ai-agents", "topic:agentic-workflow", "topic:mcp-server agent"]
+  },
+  "submissions": {
+    "enabled": true,
+    "label": "submission"
+  },
+  "x": {
+    "enabled": true,
+    "minLikes": 100,
+    "query": "(\"claude code\" OR codex OR \"ai agent\" OR \"my agent\" OR devin OR \"agentic\") (built OR automated OR shipped OR \"saved me\" OR workflow) -is:retweet -is:reply lang:en"
+  },
+  "feeds": {
+    "enabled": true,
+    "urls": [
+      "https://simonwillison.net/atom/everything/",
+      "https://huggingface.co/blog/feed.xml",
+      "https://lobste.rs/t/ai.rss",
+      "https://blog.langchain.com/rss/",
+      "https://openai.com/news/rss.xml",
+      "https://www.latent.space/feed"
+    ]
+  }
+}

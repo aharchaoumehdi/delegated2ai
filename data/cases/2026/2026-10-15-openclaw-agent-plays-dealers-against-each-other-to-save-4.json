@@ -1,0 +1,34 @@
+{
+  "id": "openclaw-agent-plays-dealers-against-each-other-to-save-4",
+  "title": "OpenClaw agent plays dealers against each other to save $4,200 on a car",
+  "summary": "Engineer AJ Stuyvenberg connected OpenClaw to his email; the agent scanned dealer inventories, filled contact forms, forwarded competing quotes and countered by email until he chose a price for a 2026 Hyundai Palisade.",
+  "domain": "Daily life",
+  "platform": "OpenClaw",
+  "model": null,
+  "tools": [],
+  "agent_role": "The agent ran inventory search and the email negotiation loop; Stuyvenberg made the final price call and signed paperwork.",
+  "outcome": "Reported $4,200 discount; the agent also shared his phone number with dealers without permission",
+  "evidence": "Independent report",
+  "difficulty": "Intermediate",
+  "tags": [
+    "negotiation",
+    "email",
+    "car-buying",
+    "personal-agent"
+  ],
+  "source": {
+    "url": "https://openclawdc.com/blog/openclaw-viral-stories/",
+    "name": "OpenClaw DC blog",
+    "author": null,
+    "published": null
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "manual",
+    "model": null,
+    "rationale": "Launch seed; sources conflict or only secondary coverage found — verify before publishing."
+  }
+}

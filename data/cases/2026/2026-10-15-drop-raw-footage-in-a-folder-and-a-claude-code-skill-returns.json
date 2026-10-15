@@ -1,0 +1,34 @@
+{
+  "id": "drop-raw-footage-in-a-folder-and-a-claude-code-skill-returns",
+  "title": "Drop raw footage in a folder and a Claude Code skill returns an edited video",
+  "summary": "Browser Use's open-source video-use skill has Claude Code inventory clips, propose an edit plan, then cut filler words, grade color, add subtitles and render a final MP4 using transcripts and on-demand frame snapshots.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [],
+  "agent_role": "The agent plans and executes the edit with ffmpeg and ElevenLabs transcription; the user describes the edit and approves the plan before rendering.",
+  "outcome": null,
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "video-editing",
+    "ffmpeg",
+    "open-source",
+    "skill"
+  ],
+  "source": {
+    "url": "https://github.com/browser-use/video-use",
+    "name": "GitHub",
+    "author": "Browser Use",
+    "published": null
+  },
+  "added": "2026-10-15",
+  "status": "published",
+  "score": 8,
+  "featured": false,
+  "curation": {
+    "method": "manual",
+    "model": null,
+    "rationale": "Launch seed collection, researched from search results."
+  }
+}

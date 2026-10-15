@@ -1,0 +1,36 @@
+{
+  "id": "biomni-agent-automates-biomedical-analyses-across-25-domains",
+  "title": "Biomni agent automates biomedical analyses across 25 domains with 150 tools",
+  "summary": "Stanford's Biomni mined tools, databases and protocols from tens of thousands of papers, then combined LLM planning with code execution to run tasks like gene prioritization, rare-disease diagnosis and cloning design.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Biomni"
+  ],
+  "agent_role": "The agent plans, retrieves resources and writes and runs analysis code; researchers pose questions and interpret results, and it still struggles where clinical judgment is needed.",
+  "outcome": "Authors report strong generalization across biomedical tasks without task-specific prompt tuning, approaching human-level on some tasks such as database querying and molecular cloning",
+  "evidence": "Paper",
+  "difficulty": "Advanced",
+  "tags": [
+    "biomedical",
+    "bioinformatics",
+    "open-source",
+    "tool-use"
+  ],
+  "source": {
+    "url": "https://biorxiv.org/content/10.1101/2025.05.30.656746v1",
+    "name": "bioRxiv",
+    "author": "Kexin Huang et al. (Stanford)",
+    "published": "2025-05-30"
+  },
+  "added": "2026-10-15",
+  "status": "published",
+  "score": 8,
+  "featured": false,
+  "curation": {
+    "method": "manual",
+    "model": null,
+    "rationale": "Launch seed collection, researched from search results."
+  }
+}

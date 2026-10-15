@@ -94,7 +94,7 @@ export async function fetchWithTimeout(url, options = {}, timeoutMs = 15000) {
       ...options,
       signal: controller.signal,
       headers: {
-        "User-Agent": "DelegatedBot/0.1 (+https://github.com/aharchaoumehdi/delegated2ai)",
+        "User-Agent": "delegatedto.ai-bot/0.1 (+https://github.com/aharchaoumehdi/delegated2ai)",
         ...(options.headers || {}),
       },
     });

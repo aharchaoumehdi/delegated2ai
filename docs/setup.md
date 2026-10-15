@@ -6,12 +6,20 @@ The site and the daily pipeline run entirely on GitHub Actions + GitHub Pages.
 
 Scheduled workflows only run on the default branch.
 
-## 2. Turn on GitHub Pages
+## 2. Turn on GitHub Pages (at launch)
 
-Settings → Pages → **Build and deployment → Source: GitHub Actions**.
-The site will be served at `https://aharchaoumehdi.github.io/delegated2ai/`
-(this is the `url` in `config/site.json`). GitHub Pages on a private repository
-needs a paid GitHub plan; on a free plan, make the repository public.
+A GitHub Pages site is public, even when the repository is private. Until you are ready to
+launch, leave Pages off: the daily workflow still collects and curates, and its deploy job is
+held (the run summary says "Deploy held"). To launch:
+
+1. Settings → Pages → **Build and deployment → Source: GitHub Actions**.
+2. Settings → Secrets and variables → Actions → Variables → **New repository variable**
+   `SITE_LIVE` = `true`. Set it back to anything else to stop publishing.
+3. Actions → **Daily update & deploy** → **Run workflow** (tick "Only rebuild and deploy").
+
+The site is served at `https://aharchaoumehdi.github.io/delegated2ai/` until the custom
+domain below is set up. GitHub Pages on a private repository needs a paid GitHub plan; on a
+free plan, make the repository public.
 
 ## 3. Add secrets
 
@@ -23,7 +31,7 @@ Settings → Secrets and variables → Actions → **New repository secret**:
 | `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET` | Recommended | Reddit blocks anonymous requests from cloud IPs. Create a "script" app at reddit.com/prefs/apps |
 | `X_BEARER_TOKEN` | Optional | X search (paid API plan) |
 
-Optional **variables** (same page, Variables tab): `CURATOR_MODEL` (default `claude-opus-5-5`),
+Optional **variables** (same page, Variables tab): `SITE_LIVE` (see step 2), `CURATOR_MODEL` (default `claude-opus-5-5`),
 `PUBLISH_THRESHOLD` (default 7), `DAILY_MAX` (default 7), `SITE_URL` (overrides the URL).
 
 ## 4. Allow the workflow to push

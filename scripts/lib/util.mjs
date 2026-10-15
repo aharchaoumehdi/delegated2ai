@@ -105,9 +105,16 @@ export async function fetchWithTimeout(url, options = {}, timeoutMs = 15000) {
 
 export async function fetchJSON(url, options, timeoutMs) {
   const res = await fetchWithTimeout(url, options, timeoutMs);
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  if (!res.ok) {
+    const err = new Error(`HTTP ${res.status} for ${url}`);
+    err.status = res.status;
+    err.retryAfter = Number(res.headers.get("retry-after")) || null; // seconds, when the server says
+    throw err;
+  }
   return res.json();
 }
+
+export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /** Run async fn over items with bounded concurrency. */
 export async function mapLimit(items, limit, fn) {

@@ -19,7 +19,8 @@ collect (scripts/collect.mjs)  →  curate with Claude (scripts/curate.mjs)  →
 3. **Build** — renders a static site into `dist/`: home, New, per-agent and per-category pages,
    one page per use case, RSS, sitemap and a public `cases.json`.
 4. **Deploy** — `.github/workflows/daily.yml` runs all of the above every day at 06:17 UTC,
-   commits new entries, and publishes to GitHub Pages.
+   commits new entries, and publishes to GitHub Pages once the `SITE_LIVE` repository
+   variable is `true` (see [docs/setup.md](docs/setup.md)).
 
 ## Repository layout
 

@@ -75,8 +75,12 @@ jobs:
 
   deploy:
     needs: curate
-    # Run after curation, or on its own when curation was skipped (push / skip_curation).
-    if: always() && (needs.curate.result == 'success' || needs.curate.result == 'skipped')
+    # Launch switch: nothing is published until the repository variable SITE_LIVE is "true"
+    # (Settings → Secrets and variables → Actions → Variables). A Pages site is public.
+    # Runs after curation, or on its own when curation was skipped (push / skip_curation).
+    if: >-
+      always() && vars.SITE_LIVE == 'true' &&
+      (needs.curate.result == 'success' || needs.curate.result == 'skipped')
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -100,3 +104,13 @@ jobs:
           path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  deploy-held:
+    needs: curate
+    if: always() && vars.SITE_LIVE != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "### Deploy held" >> "$GITHUB_STEP_SUMMARY"
+          echo "The site was not published because the repository variable \`SITE_LIVE\` is not \`true\`." >> "$GITHUB_STEP_SUMMARY"
+          echo "Curation result: ${{ needs.curate.result }}. New entries, if any, are committed to the repository." >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,26 @@
+name: Sponsor or advertise
+description: Ask about sponsoring the site or the daily digest.
+title: "[sponsor] "
+labels: ["sponsor"]
+body:
+  - type: input
+    id: product
+    attributes:
+      label: Product or company
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Website
+      placeholder: https://
+  - type: textarea
+    id: details
+    attributes:
+      label: What are you looking for?
+      description: Sidebar slot, digest sponsorship, category sponsorship, dates, budget…
+  - type: input
+    id: contact
+    attributes:
+      label: How should we reach you?
+      description: This issue is public. Leave a handle or a contact page rather than a private email if you prefer.

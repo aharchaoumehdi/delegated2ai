@@ -1,6 +1,11 @@
 // Shared rendering helpers, used by the browser (app.js) and by the static
 // build (scripts/build.mjs) so pre-rendered and live HTML are identical.
 
+let CONF = { base: "/", today: "", platforms: {}, repo: "" };
+export function configure(conf) {
+  CONF = { ...CONF, ...conf };
+}
+
 export function esc(value = "") {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -18,7 +23,13 @@ export function formatDate(iso) {
   return d ? `${MONTHS[m - 1]} ${d}, ${y}` : `${MONTHS[m - 1]} ${y}`;
 }
 
-export function dayLabel(iso, todayIso) {
+export function monthYear(iso) {
+  if (!iso) return "";
+  const [y, m] = iso.split("-").map(Number);
+  return `${MONTHS[m - 1]} ${y}`;
+}
+
+export function dayLabel(iso, todayIso = CONF.today) {
   if (iso === todayIso) return "Today";
   const t = new Date(todayIso + "T00:00:00Z");
   t.setUTCDate(t.getUTCDate() - 1);
@@ -34,79 +45,120 @@ export function hostOf(url) {
   }
 }
 
-const EVIDENCE_CLASS = {
-  "Author's account": "ev-claim",
-  Demo: "ev-demo",
-  "Code available": "ev-code",
-  Paper: "ev-paper",
-  "Independent report": "ev-indep",
-};
-
-export const ICONS = {
-  bookmark:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg>',
-  external:
-    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
-  link: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/></svg>',
-  outcome: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>',
-};
-
-export function cardHTML(c, { base = "/", saved = false } = {}) {
-  const author = c.source.author ? ` · ${esc(c.source.author)}` : "";
-  return `<article class="card${c.featured ? " is-featured" : ""}" data-id="${esc(c.id)}">
-  <div class="card-meta">
-    <span class="pill pill-platform">${esc(c.platform)}</span>
-    <span class="pill pill-domain">${esc(c.domain)}</span>
-    <span class="ev ${EVIDENCE_CLASS[c.evidence] || ""}" title="Evidence: ${esc(c.evidence)}">${esc(c.evidence)}</span>
-    ${c.featured ? '<span class="pill pill-featured">Editor’s pick</span>' : ""}
-  </div>
-  <h3 class="card-title"><a href="${base}case/${esc(c.id)}/" data-open="${esc(c.id)}">${esc(c.title)}</a></h3>
-  <p class="card-summary">${esc(c.summary)}</p>
-  ${c.outcome ? `<p class="card-outcome">${ICONS.outcome}<span>${esc(c.outcome)}</span></p>` : ""}
-  <div class="card-foot">
-    <span class="card-source">via <strong>${esc(c.source.name)}</strong>${author}</span>
-    <span class="card-actions">
-      <button class="icon-btn${saved ? " is-on" : ""}" data-save="${esc(c.id)}" aria-pressed="${saved}" aria-label="Save" title="Save">${ICONS.bookmark}</button>
-      <button class="icon-btn" data-copy="${esc(c.id)}" aria-label="Copy link" title="Copy link">${ICONS.link}</button>
-      <a class="btn-original" href="${esc(c.source.url)}" target="_blank" rel="noopener">Read original ${ICONS.external}</a>
-    </span>
-  </div>
-</article>`;
+export function slug(text) {
+  return String(text)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
-export function detailHTML(c, { base = "/" } = {}) {
-  const row = (label, value) => (value ? `<div class="d-row"><dt>${label}</dt><dd>${value}</dd></div>` : "");
-  return `<div class="detail">
-  <div class="card-meta">
-    <span class="pill pill-platform">${esc(c.platform)}</span>
-    <span class="pill pill-domain">${esc(c.domain)}</span>
-    <span class="ev ${EVIDENCE_CLASS[c.evidence] || ""}">${esc(c.evidence)}</span>
+export function platformMeta(name) {
+  const known = CONF.platforms[name];
+  if (known) return known;
+  const abbr = String(name).replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase() || "··";
+  return { abbr, color: "transparent" };
+}
+
+export const caseHref = (c) => `${CONF.base}use-case/${c.id}/`;
+export const agentHref = (name) => `${CONF.base}agents/${slug(name)}/`;
+export const categoryHref = (name) => `${CONF.base}category/${slug(name)}/`;
+
+/** Two-letter agent mark, as in the sidebar and list items. */
+export function badge(name, size = "md") {
+  const m = platformMeta(name);
+  const hollow = m.color === "transparent";
+  return `<span class="mark mark-${size}${hollow ? " mark-hollow" : ""}" aria-hidden="true"${hollow ? "" : ` style="background-color:${m.color}"`}>${esc(m.abbr)}</span>`;
+}
+
+function dot(name) {
+  const m = platformMeta(name);
+  return `<span class="dot${m.color === "transparent" ? " dot-hollow" : ""}" aria-hidden="true"${m.color === "transparent" ? "" : ` style="background-color:${m.color}"`}></span>`;
+}
+
+const ICON = {
+  save: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.25 2.75h7.5a.5.5 0 0 1 .5.5v10.2L8 11.1 3.75 13.45V3.25a.5.5 0 0 1 .5-.5Z" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg>',
+  ext: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+};
+export { ICON };
+
+function metaLine(c) {
+  const isNew = c.added === CONF.today;
+  const bits = [esc(c.source.name), c.source.published ? monthYear(c.source.published) : ""].filter(Boolean).join(" · ");
+  return `<div class="meta">
+    <a class="meta-agent" href="${agentHref(c.platform)}" title="More ${esc(c.platform)} use cases">${dot(c.platform)}${esc(c.platform)}</a>
+    <span class="meta-rest">${isNew ? '<span class="signal">New · </span>' : ""}${bits}</span>
+  </div>`;
+}
+
+function actions(c, saved) {
+  return `<div class="actions">
+    <button type="button" class="btn-sm" data-open="${esc(c.id)}">Details</button>
+    <span class="share-wrap"><button type="button" class="btn-sm" data-share="${esc(c.id)}" aria-haspopup="menu" aria-expanded="false">Share</button></span>
+    <a class="btn-sm" href="${esc(c.source.url)}" target="_blank" rel="noopener">Original ${ICON.ext}</a>
+  </div>`;
+}
+
+function saveButton(c, saved) {
+  return `<div class="side-actions">
+    <button type="button" class="save${saved ? " is-on" : ""}" data-save="${esc(c.id)}" aria-pressed="${saved}" aria-label="Save: ${esc(c.title)}">${ICON.save}<span>${saved ? "Saved" : "Save"}</span></button>
+  </div>`;
+}
+
+/** A use case in a list (latest finds, topic sections, category pages). */
+export function itemHTML(c, { saved = false, showOutcome = false } = {}) {
+  return `<li class="item" data-id="${esc(c.id)}">
+  ${badge(c.platform)}
+  <div class="item-body">
+    <h3 class="item-title"><a href="${caseHref(c)}" data-open="${esc(c.id)}">${esc(c.title)}</a></h3>
+    <p class="item-summary${showOutcome ? " no-clamp" : ""}">${esc(c.summary)}</p>
+    ${showOutcome && c.outcome ? `<p class="how"><span class="label">How it went</span> ${esc(c.outcome)}</p>` : ""}
+    ${metaLine(c)}
+    ${actions(c, saved)}
   </div>
-  <h1 class="detail-title">${esc(c.title)}</h1>
-  <p class="detail-summary">${esc(c.summary)}</p>
+  ${saveButton(c, saved)}
+</li>`;
+}
+
+/** A compact card for the "Top picks" grid. */
+export function tileHTML(c) {
+  return `<li class="tile" data-id="${esc(c.id)}">
+  <div class="tile-top">${badge(c.platform, "sm")}<span>${esc(c.platform)}</span></div>
+  <h3 class="tile-title"><a href="${caseHref(c)}" data-open="${esc(c.id)}">${esc(c.title)}</a></h3>
+  <div class="tile-actions"><span class="share-wrap"><button type="button" class="btn-sm" data-share="${esc(c.id)}" aria-haspopup="menu" aria-expanded="false">Share</button></span></div>
+</li>`;
+}
+
+export function detailHTML(c, { heading = "h2" } = {}) {
+  const row = (label, value) => (value ? `<div class="d-row"><dt>${label}</dt><dd>${value}</dd></div>` : "");
+  const H = heading;
+  return `<article class="detail">
+  <p class="eyebrow"><a href="${agentHref(c.platform)}">${esc(c.platform)}</a> · <a href="${categoryHref(c.domain)}">${esc(c.domain)}</a></p>
+  <${H} class="detail-title">${esc(c.title)}</${H}>
+  <p class="detail-lead">${esc(c.summary)}</p>
+  ${c.outcome ? `<p class="how how-lg"><span class="label">How it went</span> ${esc(c.outcome)}</p>` : ""}
   <dl class="d-grid">
     ${row("What the agent did", esc(c.agent_role))}
-    ${row("Reported outcome", c.outcome ? esc(c.outcome) : '<span class="muted">Not stated in the source</span>')}
-    ${row("Platform", esc(c.platform))}
+    ${row("Agent", `<a class="meta-agent" href="${agentHref(c.platform)}">${dot(c.platform)}${esc(c.platform)}</a>`)}
     ${row("Model", esc(c.model || "Not specified"))}
     ${row("Tools", c.tools.length ? c.tools.map((t) => `<span class="chip">${esc(t)}</span>`).join(" ") : "")}
-    ${row("Difficulty to reproduce", esc(c.difficulty))}
     ${row("Evidence", esc(c.evidence))}
+    ${row("Difficulty", esc(c.difficulty))}
     ${row("Tags", c.tags.map((t) => `<span class="chip">${esc(t)}</span>`).join(" "))}
     ${row(
       "Source",
       `<a href="${esc(c.source.url)}" target="_blank" rel="noopener">${esc(c.source.name)} · ${esc(hostOf(c.source.url))}</a>${
-        c.source.author ? ` by ${esc(c.source.author)}` : ""
-      }${c.source.published ? `, ${formatDate(c.source.published)}` : ""}`,
+        c.source.author ? ` · ${esc(c.source.author)}` : ""
+      }${c.source.published ? ` · ${formatDate(c.source.published)}` : ""}`,
     )}
     ${row("Added", formatDate(c.added))}
   </dl>
   <div class="detail-actions">
-    <a class="btn-primary" href="${esc(c.source.url)}" target="_blank" rel="noopener">Read the original ${ICONS.external}</a>
-    <a class="btn-ghost" href="${base}case/${esc(c.id)}/">Permalink</a>
+    <a class="btn-primary" href="${esc(c.source.url)}" target="_blank" rel="noopener">Read the original ${ICON.ext}</a>
+    <a class="btn-outline" href="${caseHref(c)}">Permalink</a>
+    <span class="share-wrap"><button type="button" class="btn-outline" data-share="${esc(c.id)}" aria-haspopup="menu" aria-expanded="false">Share</button></span>
   </div>
-  <p class="fineprint">Summaries are written with AI assistance from the original post and checked against our
-  <a href="https://github.com/aharchaoumehdi/agents-in-practice/blob/main/docs/editorial-guidelines.md">editorial guidelines</a>.
+  <p class="fineprint">Summary written with AI assistance from the original post and checked against our
+  <a href="https://github.com/${esc(CONF.repo)}/blob/main/docs/editorial-guidelines.md">editorial guidelines</a>.
   Outcomes are as reported by the source, not independently verified.</p>
-</div>`;
+</article>`;
 }

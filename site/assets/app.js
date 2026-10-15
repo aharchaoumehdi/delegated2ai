@@ -1,215 +1,241 @@
-import { cardHTML, detailHTML, dayLabel, esc } from "./render.js";
+import { configure, itemHTML, detailHTML, dayLabel, esc, caseHref } from "./render.js";
 
-const dataEl = document.getElementById("cases-data");
-const DATA = dataEl ? JSON.parse(dataEl.textContent) : { cases: [], base: "/", today: "" };
-const { cases, base, today } = DATA;
-const byId = new Map(cases.map((c) => [c.id, c]));
+const dataEl = document.getElementById("page-data");
+const DATA = dataEl ? JSON.parse(dataEl.textContent) : { cases: [], base: "/", today: "", platforms: {}, repo: "" };
+configure(DATA);
+const byId = new Map(DATA.cases.map((c) => [c.id, c]));
+const $ = (s) => document.querySelector(s);
 
 const store = {
-  get(key, fallback) {
+  get(k, d) {
     try {
-      return JSON.parse(localStorage.getItem(key)) ?? fallback;
+      return JSON.parse(localStorage.getItem(k)) ?? d;
     } catch {
-      return fallback;
+      return d;
     }
   },
-  set(key, value) {
+  set(k, v) {
     try {
-      localStorage.setItem(key, JSON.stringify(value));
+      localStorage.setItem(k, JSON.stringify(v));
     } catch {}
   },
 };
+const saved = new Set(store.get("dlg.saved", []));
 
-const state = {
-  q: "",
-  domain: null,
-  platform: null,
-  evidence: null,
-  view: "latest", // latest | top | saved
-  saved: new Set(store.get("aip.saved", [])),
-};
+// ---------- home: search / sort / chips ----------
+// With no query and the default view, the curated sections show. Anything
+// else swaps them for a flat result list.
+const state = { q: "", sort: "top", chip: "all" };
+const sections = $("#sections");
+const results = $("#results");
+const weekAgo = (() => {
+  if (!DATA.today) return "";
+  const d = new Date(DATA.today + "T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() - 6);
+  return d.toISOString().slice(0, 10);
+})();
 
-// ---------- URL <-> state ----------
 function readURL() {
   const p = new URLSearchParams(location.search);
   state.q = p.get("q") || "";
-  state.domain = p.get("domain");
-  state.platform = p.get("platform");
-  state.evidence = p.get("evidence");
-  state.view = ["top", "saved"].includes(p.get("view")) ? p.get("view") : "latest";
+  state.sort = p.get("sort") === "new" ? "new" : "top";
+  state.chip = ["week", "saved"].includes(p.get("show")) ? p.get("show") : "all";
 }
 function writeURL() {
   const p = new URLSearchParams();
   if (state.q) p.set("q", state.q);
-  if (state.domain) p.set("domain", state.domain);
-  if (state.platform) p.set("platform", state.platform);
-  if (state.evidence) p.set("evidence", state.evidence);
-  if (state.view !== "latest") p.set("view", state.view);
+  if (state.sort !== "top") p.set("sort", state.sort);
+  if (state.chip !== "all") p.set("show", state.chip);
   const qs = p.toString();
   history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
 }
 
-// ---------- filtering ----------
-function matches(c) {
-  if (state.domain && c.domain !== state.domain) return false;
-  if (state.platform && c.platform !== state.platform) return false;
-  if (state.evidence && c.evidence !== state.evidence) return false;
-  if (state.view === "saved" && !state.saved.has(c.id)) return false;
+function filtered() {
+  let list = DATA.cases;
+  if (state.chip === "week") list = list.filter((c) => c.added >= weekAgo);
+  if (state.chip === "saved") list = list.filter((c) => saved.has(c.id));
   if (state.q) {
-    const hay = [c.title, c.summary, c.platform, c.domain, c.agent_role, c.outcome, c.source.name, c.source.author, ...c.tags, ...c.tools]
-      .join(" ")
-      .toLowerCase();
-    return state.q
-      .toLowerCase()
-      .split(/\s+/)
-      .every((w) => hay.includes(w));
+    const words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+    list = list.filter((c) => {
+      const hay = [c.title, c.summary, c.platform, c.domain, c.agent_role, c.outcome, c.source.name, c.source.author, ...c.tags, ...c.tools]
+        .join(" ")
+        .toLowerCase();
+      return words.every((w) => hay.includes(w));
+    });
   }
-  return true;
+  return [...list].sort((a, b) =>
+    state.sort === "new" ? b.added.localeCompare(a.added) || b.score - a.score : b.score - a.score || b.added.localeCompare(a.added),
+  );
 }
 
-// ---------- rendering ----------
-const $ = (sel) => document.querySelector(sel);
-const feed = $("#feed");
+function renderHome() {
+  if (!sections || !results) return;
+  document.querySelectorAll("[data-sort]").forEach((b) => b.classList.toggle("is-on", b.dataset.sort === state.sort));
+  document.querySelectorAll("[data-chip]").forEach((b) => b.classList.toggle("is-on", b.dataset.chip === state.chip));
+  const savedChip = $('[data-chip="saved"]');
+  if (savedChip) savedChip.textContent = `Saved ${saved.size}`;
+  const search = $("#search");
+  if (search && document.activeElement !== search) search.value = state.q;
+  writeURL();
 
-function render() {
-  if (!feed) return syncNav();
-  const list = cases.filter(matches);
-  if (state.view === "top") list.sort((a, b) => b.score - a.score || b.added.localeCompare(a.added));
+  const browsing = !state.q && state.sort === "top" && state.chip === "all";
+  sections.hidden = !browsing;
+  results.hidden = browsing;
+  if (browsing) return;
 
-  if (list.length === 0) {
-    feed.innerHTML = `<div class="empty"><p><strong>No use cases match.</strong></p><p>${
-      state.view === "saved" ? "Save entries with the bookmark icon to find them here." : "Try a broader search or clear filters."
-    }</p><button class="btn-ghost" data-clear>Clear filters</button></div>`;
-  } else if (state.view === "latest") {
-    let html = "";
+  const list = filtered();
+  let html = `<div class="section"><div class="section-head"><h2>${list.length} use case${list.length === 1 ? "" : "s"}</h2>${
+    state.q ? `<span class="blurb">matching “${esc(state.q)}”</span>` : ""
+  }</div>`;
+  if (!list.length) {
+    html += `<p class="empty">${
+      state.chip === "saved" ? "Nothing saved yet. Use the bookmark on any use case." : "No matches."
+    } <button data-reset>Show everything</button></p>`;
+  } else if (state.sort === "new") {
     let day = null;
+    html += '<ul class="items">';
     for (const c of list) {
       if (c.added !== day) {
         day = c.added;
-        html += `<h2 class="day">${esc(dayLabel(day, today))}</h2>`;
+        html += `</ul><p class="mono-label day-head">${esc(dayLabel(day))}</p><ul class="items">`;
       }
-      html += cardHTML(c, { base, saved: state.saved.has(c.id) });
+      html += itemHTML(c, { saved: saved.has(c.id) });
     }
-    feed.innerHTML = html;
+    html += "</ul>";
   } else {
-    feed.innerHTML = list.map((c) => cardHTML(c, { base, saved: state.saved.has(c.id) })).join("");
+    html += `<ul class="items">${list.map((c) => itemHTML(c, { saved: saved.has(c.id) })).join("")}</ul>`;
   }
-
-  $("#result-count").textContent = `${list.length} use case${list.length === 1 ? "" : "s"}`;
-  renderChips();
-  syncNav();
-  writeURL();
+  results.innerHTML = html + "</div>";
 }
 
-function renderChips() {
-  const chips = [];
-  if (state.q) chips.push(["q", `“${state.q}”`]);
-  if (state.domain) chips.push(["domain", state.domain]);
-  if (state.platform) chips.push(["platform", state.platform]);
-  if (state.evidence) chips.push(["evidence", state.evidence]);
-  $("#active-filters").innerHTML = chips
-    .map(([k, v]) => `<button class="filter-chip" data-unset="${k}">${esc(v)} <span aria-hidden="true">×</span></button>`)
-    .join("");
+let searchTimer;
+$("#search")?.addEventListener("input", (e) => {
+  state.q = e.target.value.trim();
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(renderHome, 120);
+});
+
+// ---------- saved state on server-rendered items ----------
+function syncSaved(root = document) {
+  root.querySelectorAll("[data-save]").forEach((b) => {
+    const on = saved.has(b.dataset.save);
+    b.classList.toggle("is-on", on);
+    b.setAttribute("aria-pressed", on);
+    const label = b.querySelector("span");
+    if (label) label.textContent = on ? "Saved" : "Save";
+  });
 }
 
-function syncNav() {
-  document.querySelectorAll("[data-view]").forEach((el) => el.classList.toggle("is-active", el.dataset.view === state.view));
-  document.querySelectorAll("[data-domain]").forEach((el) => el.classList.toggle("is-active", el.dataset.domain === state.domain));
-  document.querySelectorAll("[data-platform]").forEach((el) => el.classList.toggle("is-active", el.dataset.platform === state.platform));
-  document.querySelectorAll("[data-evidence]").forEach((el) => el.classList.toggle("is-active", el.dataset.evidence === state.evidence));
-  $("#saved-count").textContent = state.saved.size || "";
-  const search = $("#search");
-  if (search && document.activeElement !== search) search.value = state.q;
+// ---------- share menu ----------
+let openMenu = null;
+function closeMenu() {
+  if (!openMenu) return;
+  openMenu.previousElementSibling?.setAttribute("aria-expanded", "false");
+  openMenu.remove();
+  openMenu = null;
+}
+function toggleShare(btn) {
+  const wasOpen = openMenu && openMenu.previousElementSibling === btn;
+  closeMenu();
+  if (wasOpen) return;
+  const c = byId.get(btn.dataset.share);
+  const url = new URL(c ? caseHref(c) : location.pathname, location.origin).href;
+  const text = c ? c.title : document.title;
+  const menu = document.createElement("div");
+  menu.className = "menu";
+  menu.setAttribute("role", "menu");
+  menu.innerHTML = `<button role="menuitem" data-copy-url="${esc(url)}">Copy link</button>
+    <a role="menuitem" target="_blank" rel="noopener" href="https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}">Share to X</a>
+    <a role="menuitem" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}">Share to LinkedIn</a>`;
+  btn.after(menu);
+  btn.setAttribute("aria-expanded", "true");
+  openMenu = menu;
 }
 
 // ---------- detail dialog ----------
 const dialog = $("#detail");
 function openDetail(id) {
   const c = byId.get(id);
-  if (!c) return;
-  $("#detail-body").innerHTML = detailHTML(c, { base });
+  if (!c || !dialog) return false;
+  $("#detail-body").innerHTML = detailHTML(c);
   dialog.showModal();
+  return true;
 }
-
-// ---------- events ----------
-document.addEventListener("click", (e) => {
-  const t = e.target.closest("button, a");
-  if (!t) return;
-  const d = t.dataset;
-
-  if (d.open && byId.has(d.open) && !(e.metaKey || e.ctrlKey || e.shiftKey)) {
-    e.preventDefault();
-    openDetail(d.open);
-  } else if (d.save) {
-    state.saved.has(d.save) ? state.saved.delete(d.save) : state.saved.add(d.save);
-    store.set("aip.saved", [...state.saved]);
-    t.classList.toggle("is-on", state.saved.has(d.save));
-    t.setAttribute("aria-pressed", state.saved.has(d.save));
-    $("#saved-count").textContent = state.saved.size || "";
-    if (state.view === "saved") render();
-  } else if (d.copy) {
-    const url = new URL(`${base}case/${d.copy}/`, location.origin).href;
-    navigator.clipboard?.writeText(url).then(() => toast("Link copied"), () => toast(url));
-  } else if (d.view) {
-    e.preventDefault();
-    state.view = d.view;
-    closeDrawer();
-    render();
-    window.scrollTo({ top: 0 });
-  } else if ("domain" in d || "platform" in d || "evidence" in d) {
-    e.preventDefault();
-    const key = "domain" in d ? "domain" : "platform" in d ? "platform" : "evidence";
-    state[key] = state[key] === d[key] ? null : d[key];
-    closeDrawer();
-    render();
-  } else if (d.unset) {
-    state[d.unset] = d.unset === "q" ? "" : null;
-    render();
-  } else if ("clear" in d) {
-    Object.assign(state, { q: "", domain: null, platform: null, evidence: null, view: "latest" });
-    render();
-  } else if ("close" in d) {
-    dialog.close();
-  } else if ("menu" in d) {
-    document.body.classList.toggle("drawer-open");
-  } else if ("theme" in d) {
-    const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = next;
-    store.set("aip.theme", next);
-  }
-});
-
-dialog.addEventListener("click", (e) => {
+dialog?.addEventListener("click", (e) => {
   if (e.target === dialog) dialog.close();
 });
 
-let searchTimer;
-$("#search")?.addEventListener("input", (e) => {
-  state.q = e.target.value.trim();
-  clearTimeout(searchTimer);
-  searchTimer = setTimeout(render, 120);
+// ---------- global click handling ----------
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("button, a");
+  if (!t) return closeMenu();
+  const d = t.dataset;
+  if (!d.share && !t.closest(".menu")) closeMenu();
+
+  if (d.open) {
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+    if (openDetail(d.open)) e.preventDefault();
+  } else if (d.share) {
+    toggleShare(t);
+  } else if (d.copyUrl) {
+    navigator.clipboard?.writeText(d.copyUrl).then(() => toast("Link copied"), () => toast(d.copyUrl));
+    closeMenu();
+  } else if (d.save) {
+    saved.has(d.save) ? saved.delete(d.save) : saved.add(d.save);
+    store.set("dlg.saved", [...saved]);
+    syncSaved();
+    if (state.chip === "saved") renderHome();
+    else if (sections) {
+      const chip = $('[data-chip="saved"]');
+      if (chip) chip.textContent = `Saved ${saved.size}`;
+    }
+  } else if (d.sort) {
+    state.sort = d.sort;
+    renderHome();
+  } else if (d.chip) {
+    state.chip = d.chip;
+    renderHome();
+  } else if ("reset" in d) {
+    Object.assign(state, { q: "", sort: "top", chip: "all" });
+    renderHome();
+  } else if ("close" in d) {
+    dialog?.close();
+  } else if ("filters" in d) {
+    const open = document.body.classList.toggle("filters-open");
+    t.setAttribute("aria-expanded", open);
+  } else if ("theme" in d) {
+    const next = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    document.documentElement.dataset.theme = next;
+    store.set("dlg.theme", next);
+  }
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "/" && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
-    e.preventDefault();
-    $("#search").focus();
+  const typing = ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName);
+  if (((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") || (e.key === "/" && !typing)) {
+    const s = $("#search");
+    if (s) {
+      e.preventDefault();
+      s.focus();
+    }
   }
-  if (e.key === "Escape") closeDrawer();
+  if (e.key === "Escape") closeMenu();
 });
-
-function closeDrawer() {
-  document.body.classList.remove("drawer-open");
-}
 
 let toastTimer;
 function toast(msg) {
   const el = $("#toast");
+  if (!el) return;
   el.textContent = msg;
   el.classList.add("is-on");
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => el.classList.remove("is-on"), 1800);
 }
 
+if (/Mac|iPhone|iPad/.test(navigator.platform) === false) {
+  const k = $(".kbd");
+  if (k) k.textContent = "Ctrl K";
+}
 readURL();
-render();
+syncSaved();
+renderHome();

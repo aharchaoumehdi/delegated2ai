@@ -6,7 +6,7 @@
 //   otherwise                       → not saved, only remembered in data/state/seen.json
 //
 // The source URL always comes from the collector, never from the model.
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, appendFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
@@ -39,6 +39,14 @@ if (candidates.length === 0) {
 }
 if (!process.env.ANTHROPIC_API_KEY) {
   console.log("ANTHROPIC_API_KEY is not set — skipping curation.");
+  if (process.env.GITHUB_ACTIONS) {
+    // Don't fail the job (that would also block deploys), but make the skip impossible to miss.
+    const help = "Add the ANTHROPIC_API_KEY repository secret: Settings → Secrets and variables → Actions → Secrets.";
+    console.log(`::error title=Curation skipped::ANTHROPIC_API_KEY is not set. ${help}`);
+    if (process.env.GITHUB_STEP_SUMMARY) {
+      await appendFile(process.env.GITHUB_STEP_SUMMARY, `### Curation skipped\n\nANTHROPIC_API_KEY is not set. ${help}\n`);
+    }
+  }
   await finish({ status: "skipped", reason: "ANTHROPIC_API_KEY not set" });
   process.exit(0);
 }

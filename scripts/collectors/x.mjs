@@ -10,6 +10,9 @@ export async function collect(cfg, { since }) {
   const params = new URLSearchParams({
     query: cfg.query,
     max_results: String(Math.min(100, Math.max(10, cfg.maxResults ?? 100))),
+    // "recency" (the newest posts) returns mostly minutes-old posts with no likes yet,
+    // which minLikes then discards after we have paid for them.
+    sort_order: cfg.sortOrder ?? "relevancy",
     start_time: since.toISOString(),
     "tweet.fields": "created_at,public_metrics,entities,note_tweet",
     expansions: "author_id",
@@ -37,5 +40,6 @@ export async function collect(cfg, { since }) {
       engagement: { score: t.public_metrics.like_count, comments: t.public_metrics.reply_count },
     });
   }
+  out.fetched = data.data?.length ?? 0; // posts X billed for, before the minLikes filter
   return out;
 }

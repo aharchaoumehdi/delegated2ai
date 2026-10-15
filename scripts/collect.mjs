@@ -35,6 +35,7 @@ await Promise.all(
       report[key] = { status: "ok", items: result.length, ms: Date.now() - started };
       // A collector can keep partial results and list what failed (e.g. one rate-limited tag).
       if (result.errors?.length) report[key].errors = result.errors.map((e) => String(e).slice(0, 200));
+      if (result.fetched !== undefined) report[key].fetched = result.fetched;
     } catch (err) {
       report[key] = { status: "error", error: String(err.message).slice(0, 300) };
     }
@@ -112,6 +113,6 @@ await writeJSON(path("data", "runs", `${runDate}.json`), {
 
 console.log(`Collected ${raw.length} items → ${byUrl.size} new unique → ${candidates.length} candidates`);
 for (const [k, v] of Object.entries(report)) {
-  console.log(`  ${k.padEnd(12)} ${v.status}${v.items !== undefined ? ` (${v.items})` : ""}${v.error ? ` — ${v.error}` : ""}${v.reason ? ` — ${v.reason}` : ""}`);
+  console.log(`  ${k.padEnd(12)} ${v.status}${v.items !== undefined ? ` (${v.items}${v.fetched !== undefined ? ` of ${v.fetched} fetched` : ""})` : ""}${v.error ? ` — ${v.error}` : ""}${v.reason ? ` — ${v.reason}` : ""}`);
   for (const e of v.errors || []) console.log(`  ${"".padEnd(12)} partial: ${e}`);
 }

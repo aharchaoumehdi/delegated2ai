@@ -35,12 +35,22 @@ Settings → Actions → General → **Workflow permissions: Read and write perm
 Actions → **Daily update & deploy** → **Run workflow**. Each run's summary lists what was
 published; `data/runs/<date>.json` records what every source returned.
 
-## 6. Custom domain (when delegated.ai is registered)
+## 6. Custom domain: delegatedto.ai
 
-1. Set `"url": "https://delegated.ai/"` in `config/site.json` (the build then writes `CNAME`).
-2. At the registrar, point the domain at GitHub Pages (A records `185.199.108.153`,
-   `185.199.109.153`, `185.199.110.153`, `185.199.111.153`).
-3. Settings → Pages → Custom domain → `delegated.ai`, then tick **Enforce HTTPS**.
+The site runs on the github.io address until these steps are done. Do them in this order,
+because the build writes a `CNAME` file as soon as `url` is no longer a github.io address.
+
+1. Register `delegatedto.ai` at any registrar that sells .ai (two-year minimum term).
+2. Verify the domain for your account first, so nobody else can claim it on Pages:
+   GitHub → your profile Settings → Pages → **Add a domain**, then add the TXT record it shows.
+3. At the registrar, add DNS records for the apex domain:
+   - A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - AAAA records `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+   - CNAME `www` → `aharchaoumehdi.github.io`
+4. Set `"url": "https://delegatedto.ai/"` in `config/site.json`, merge to `main`, and let
+   the deploy run.
+5. Repo Settings → Pages → Custom domain → `delegatedto.ai`, wait for the DNS check, then
+   tick **Enforce HTTPS** once it becomes available.
 
 ## Cost
 

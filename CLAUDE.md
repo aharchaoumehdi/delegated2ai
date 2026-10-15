@@ -1,4 +1,4 @@
-# Working on delegated.ai
+# Working on delegatedto.ai
 
 - Content lives in `data/cases/YYYY/<added>-<id>.json`, one file per use case, validated by
   `scripts/lib/schema.mjs`. Run `npm run check` after any change to data, config or scripts.

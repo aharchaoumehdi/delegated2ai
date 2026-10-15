@@ -1,4 +1,4 @@
-# delegated.ai
+# delegatedto.ai
 
 A daily, searchable directory of real things people are handing to AI agents — found across
 the web (Hacker News, Reddit, X, GitHub, blogs), explained in two sentences, tagged by agent

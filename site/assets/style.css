@@ -77,6 +77,7 @@ svg { flex: none; }
 .brand-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .wordmark { font: 500 19px/1.2 var(--font-display); letter-spacing: -0.02em; }
 .wordmark .tld { color: var(--faint); }
+.wordmark .accent { color: var(--signal); }
 .brand-row h1 a { display: flex; align-items: center; gap: 10px; }
 .logo-inline { display: none; width: 24px; height: 24px; }
 .theme-btn {

@@ -1,0 +1,40 @@
+{
+  "id": "claude-code-skill-researches-20-40-web-pages-and-turns-any",
+  "title": "Claude Code skill researches 20-40 web pages and turns any topic into a cited audio course",
+  "summary": "Courses on sites like Udemy are fixed and long. This skill has Claude research a topic across 20-40 web pages, compare where sources agree and disagree, and produce about 12 two-minute two-voice audio lessons, each with a summary card and citations.",
+  "domain": "Education",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "web search",
+    "ElevenLabs",
+    "ffmpeg",
+    "beautifulsoup4",
+    "macOS say"
+  ],
+  "agent_role": "The agent maps sub-topics, researches and reads sources with reader agents, merges themes, plans and writes lessons, and generates audio. The human reviews one sample lesson before the rest are made.",
+  "outcome": "The author says a 12-lesson course takes one long Claude Code session and yields about 25 minutes of audio.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "course generation",
+    "self-learning",
+    "audio lessons",
+    "research"
+  ],
+  "source": {
+    "url": "https://github.com/assafkip/claudemy",
+    "name": "GitHub",
+    "author": "Assaf Kipnis",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "The multi-step research-to-audio workflow is clear and reproducible, with source checks and agent roles spelled out. However, the README shows no specific course built or result achieved, so it is borderline; the score includes a small education boost."
+  }
+}

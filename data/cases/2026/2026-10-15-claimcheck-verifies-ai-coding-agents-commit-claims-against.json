@@ -1,0 +1,39 @@
+{
+  "id": "claimcheck-verifies-ai-coding-agents-commit-claims-against",
+  "title": "claimcheck verifies AI coding agents' commit claims against diffs before merging",
+  "summary": "In multi-agent coding, no one checks whether an agent's description of its change is true. claimcheck runs rule checks plus an evidence-quoting LLM check on each agent's declared change, and only merges verified work.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "qwen3-coder-plus",
+  "tools": [
+    "Cloudflare Workers",
+    "Cloudflare Artifacts",
+    "Git",
+    "LLM verifier"
+  ],
+  "agent_role": "A real Qwen-based agent, run headless through Claude Code, fixed typos and submitted a claim file. claimcheck then automatically verified the claim against the diff. The human built the verifier and scripted the five test agents.",
+  "outcome": "Author reports that across 5 demo runs of 28 concurrent agents, claimcheck rejected all 11 misreporting agents and wrongly rejected no honest ones, with a median verdict time of 6–7.5 seconds.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "code review",
+    "multi-agent",
+    "verification",
+    "git"
+  ],
+  "source": {
+    "url": "https://dev.to/dannwaneri/i-built-a-lie-detector-for-ai-coding-agents-then-i-read-the-rules-1hhb",
+    "name": "DEV Community",
+    "author": "Daniel Nwaneri",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An original verification layer for multi-agent commits, with code and repeatable demo numbers. However, the headline demo uses scripted agents, and only one real coding agent was tested, on a small typo task."
+  }
+}

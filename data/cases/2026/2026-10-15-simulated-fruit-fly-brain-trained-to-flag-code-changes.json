@@ -1,0 +1,38 @@
+{
+  "id": "simulated-fruit-fly-brain-trained-to-flag-code-changes",
+  "title": "Simulated fruit-fly brain trained to flag code changes, agreeing with tests 290/301 times",
+  "summary": "The author asked an agent whether Google's 176,422-neuron fruit fly brain simulation could run on a laptop and do code review. A model answered 30 yes/no questions per change and the fly was trained on mutation-testing signals. It matched tests on 290 of 301 unseen changes.",
+  "domain": "Software",
+  "platform": "Not specified",
+  "model": null,
+  "tools": [
+    "fruit fly connectome simulation",
+    "mutation testing",
+    "logistic regression baseline"
+  ],
+  "agent_role": "An agent helped the author explore running the connectome simulation, and a model called Jev answered thirty yes/no questions about each code change to feed the fly. The author designed the experiment and drew the conclusions.",
+  "outcome": "Author reports the fly agreed with tests on 290 of 301 unseen changes, versus 298 for a logistic regression on the same answers.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "code review",
+    "connectome",
+    "mutation testing",
+    "experiment"
+  ],
+  "source": {
+    "url": "https://dev.to/dailycontext/are-you-smarter-than-a-fruit-fly-2c04",
+    "name": "DEV Community",
+    "author": "Nick Nisi",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An unusual experiment with concrete numbers: 290 of 301 agreements, against 298 for a logistic regression baseline. However, the agent's role in building it is unclear and most of the post is opinion about code review."
+  }
+}

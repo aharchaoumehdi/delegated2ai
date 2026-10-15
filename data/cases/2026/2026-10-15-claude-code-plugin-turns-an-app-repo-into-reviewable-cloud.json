@@ -1,0 +1,41 @@
+{
+  "id": "claude-code-plugin-turns-an-app-repo-into-reviewable-cloud",
+  "title": "Claude Code plugin turns an app repo into reviewable cloud infrastructure with a cost estimate",
+  "summary": "Neckbeard has a coding agent read a repo, ask the questions code can't answer and map the app onto a tested catalog of OpenTofu modules for AWS, GCP or Azure. Users get pipelines, validation results and an Infracost bill before deploying, instead of invented infrastructure.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "OpenTofu",
+    "Infracost",
+    "Checkov",
+    "GitHub Actions",
+    "GitLab CI",
+    "Trivy"
+  ],
+  "agent_role": "The agent analyzes the repo into an evidence-backed app profile, asks the user open questions and maps the answers to catalog inputs. Deterministic Go code renders the infrastructure, and humans review the PR and run credentialed plans and deployments.",
+  "outcome": "Author reports reference-app monthly estimates from $77 on Cloud Run to about $801 on AKS. The first real deployment produced ten findings, five of which became module fixes the same afternoon.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "infrastructure as code",
+    "devops",
+    "cloud cost",
+    "deployment"
+  ],
+  "source": {
+    "url": "https://github.com/bealesh/neckbeard",
+    "name": "Hacker News",
+    "author": "bealesh",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "The open-source plugin documents a specific agent workflow (repo analysis, catalog-bound infrastructure, cost estimates, validation levels) with a reference-app cost table and a first-deployment findings count. It remains mostly a tool description rather than a user's story."
+  }
+}

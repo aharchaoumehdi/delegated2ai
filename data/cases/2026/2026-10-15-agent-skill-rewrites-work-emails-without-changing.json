@@ -1,0 +1,40 @@
+{
+  "id": "agent-skill-rewrites-work-emails-without-changing",
+  "title": "Agent skill rewrites work emails without changing commitments, per blind multi-model test",
+  "summary": "A Claude Code/Codex skill removes AI tone from sales, support and HR writing while keeping facts and commitments intact, asking the writer questions when details are missing. Blind tests compared it with other humanizers.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": "Claude Sonnet",
+  "tools": [
+    "Claude Code",
+    "OpenAI Codex",
+    "Cursor",
+    "Pangram",
+    "Python check script"
+  ],
+  "agent_role": "The agent lists each fact with its certainty, rewrites the text, runs a mechanical style check and audits facts sentence by sentence, optionally interviewing the writer first; the human supplies notes and answers.",
+  "outcome": "Author reports blind AI judges preferred its rewrites 48% of the time versus 20% for blader/humanizer, with 18 meaning changes across 12 texts versus 33, and no invented facts across 56 texts.",
+  "evidence": "Code available",
+  "difficulty": "Beginner",
+  "tags": [
+    "business writing",
+    "editing",
+    "agent skill",
+    "evaluation"
+  ],
+  "source": {
+    "url": "https://github.com/phuryn/work-humanizer",
+    "name": "GitHub",
+    "author": "phuryn",
+    "published": "2026-10-09"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An agent skill for rewriting work writing that inventories facts, rewrites, audits and can interview the writer, backed by an unusually detailed blind evaluation. It is a tool release rather than a real-world deployment, and the tests rely on AI judges and small samples."
+  }
+}

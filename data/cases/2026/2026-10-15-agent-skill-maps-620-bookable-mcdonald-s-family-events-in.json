@@ -1,0 +1,38 @@
+{
+  "id": "agent-skill-maps-620-bookable-mcdonald-s-family-events-in",
+  "title": "Agent skill maps 620 bookable McDonald's family events in Beijing from official store data",
+  "summary": "Families looking for McDonald's birthday parties or reading sessions nearby face scattered listings. This skill has an agent query the official MCP, verify which sessions are bookable and check prices against the store catalog, then draw a cartoon map with calendar export.",
+  "domain": "Daily life",
+  "platform": "Not specified",
+  "model": null,
+  "tools": [
+    "McDonald's China MCP",
+    "WorkBuddy",
+    "Node.js scripts"
+  ],
+  "agent_role": "The agent confirms the city, runs the official query chain from product to session, and generates the map through deterministic scripts. Any booking requires the user to confirm each detail and pay through the official flow.",
+  "outcome": "The author reports that a 2026-10-09 test found 620 bookable sessions across 10 stores in Beijing. The author also found that the documented tool names differ from the live ones and that session prices are in fen.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "family events",
+    "maps",
+    "mcp",
+    "booking"
+  ],
+  "source": {
+    "url": "https://github.com/Zafer-Liu/mcd-event-radar",
+    "name": "GitHub",
+    "author": "Zafer-Liu",
+    "published": "2026-10-09"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "This contest entry includes a real-token test run with specific findings (wrong documented tool names, prices in fen, a constant seat count) and a demo video. The use case is narrow and partly a contest showcase, so it is borderline; the score includes a small daily-life boost."
+  }
+}

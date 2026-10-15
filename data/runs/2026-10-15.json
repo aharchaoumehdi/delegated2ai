@@ -3,13 +3,14 @@
   "collect": {
     "sources": {
       "x": {
-        "status": "skipped",
-        "reason": "X_BEARER_TOKEN not set"
+        "status": "ok",
+        "items": 1,
+        "ms": 438
       },
       "submissions": {
         "status": "ok",
         "items": 0,
-        "ms": 299
+        "ms": 455
       },
       "reddit": {
         "status": "error",
@@ -18,40 +19,40 @@
       "feeds": {
         "status": "ok",
         "items": 16,
-        "ms": 1104
+        "ms": 1827
       },
       "github": {
         "status": "ok",
         "items": 50,
-        "ms": 1943
+        "ms": 2130
       },
       "hackernews": {
         "status": "ok",
         "items": 44,
-        "ms": 2049
+        "ms": 2713
       },
       "devto": {
         "status": "ok",
-        "items": 22,
-        "ms": 6897
+        "items": 21,
+        "ms": 6640
       }
     },
     "raw": 132,
-    "unique_new": 108,
-    "candidates": 40
+    "unique_new": 68,
+    "candidates": 34
   },
   "curate": {
     "status": "ok",
     "model": "claude-opus-5-5",
-    "evaluated": 40,
+    "evaluated": 34,
     "published": 3,
     "queued_for_review": 7,
-    "rejected": 30,
+    "rejected": 24,
     "failures": [],
     "published_ids": [
-      "coding-agents-decompile-owned-retro-games-into-c-that",
-      "agent-skill-turns-a-one-line-request-into-a-4k-product-promo",
-      "ramp-s-bookkeeping-agent-evals-halving-skills-gained-2-8"
+      "claude-code-skill-turns-bath-to-bristol-into-a-pixel-art",
+      "claude-code-skill-turns-biology-questions-into-interactive",
+      "stripping-168-000-comment-lines-made-no-difference-to-claude"
     ]
   }
 }

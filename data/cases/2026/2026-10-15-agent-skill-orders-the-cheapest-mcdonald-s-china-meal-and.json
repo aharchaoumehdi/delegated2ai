@@ -1,0 +1,39 @@
+{
+  "id": "agent-skill-orders-the-cheapest-mcdonald-s-china-meal-and",
+  "title": "Agent skill orders the cheapest McDonald's China meal and splits group bills per person",
+  "summary": "Coupons, spend thresholds and shared delivery fees make McDonald's China orders hard to optimise. This skill has an agent compare coupon combinations with real price calls, collect a group's orders and produce a per-person bill, asking for approval before any order is placed.",
+  "domain": "Daily life",
+  "platform": "Not specified",
+  "model": null,
+  "tools": [
+    "McDonald's China MCP",
+    "WorkBuddy",
+    "Claude Code",
+    "Cursor"
+  ],
+  "agent_role": "The agent finds stores, gathers coupons, lists candidate combinations, calls calculate-price for each and builds group bills, and it can push daily campaign alerts. The user must explicitly confirm every order, coupon claim or other write action.",
+  "outcome": "The author's example shows a ¥41 order reduced to ¥33 by the cheapest coupon option. The author also reports that a 2026-10-13 test missed a collab campaign until '联动' was added as a synonym.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "food ordering",
+    "coupons",
+    "bill splitting",
+    "mcp"
+  ],
+  "source": {
+    "url": "https://github.com/junxchan54-maker/mcd-cn-assistant",
+    "name": "GitHub",
+    "author": "junxchan54-maker",
+    "published": "2026-10-09"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A contest entry that chains McDonald's China MCP tools into ordering, coupon-optimisation and group bill-splitting flows with confirmation gates. The README is mostly a feature description with illustrative examples, and it overlaps heavily with an already-published McDonald's coupon-ordering…"
+  }
+}

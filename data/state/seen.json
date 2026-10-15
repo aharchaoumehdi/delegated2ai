@@ -1,8 +1,68 @@
 {
+  "https://aviaduct.com/?l=og+en&u=https%3A%2F%2Fwww.aftonbladet.se%2Fnojesbladet%2Fa%2F31oE8A%2Fthe-challenge-sverige-raderad-av-ai-bara-veckor-innan-premiaren": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://clova.email": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://dev.to/dailycontext/an-agents-plan-isnt-permission-5cf8": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://dev.to/dailycontext/are-you-smarter-than-a-fruit-fly-2c04": {
+    "date": "2026-10-15",
+    "score": 5,
+    "verdict": "kept"
+  },
   "https://dev.to/dailycontext/building-better-agents-through-end-to-end-evals-pgh": {
     "date": "2026-10-15",
     "score": 7,
     "verdict": "kept"
+  },
+  "https://dev.to/dailycontext/memory-isnt-learning-why-ai-agents-keep-making-the-same-mistakes-cpc": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://dev.to/dailycontext/your-financial-agent-passed-every-eval-can-you-defend-its-decision-1npg": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://dev.to/dannwaneri/i-built-a-lie-detector-for-ai-coding-agents-then-i-read-the-rules-1hhb": {
+    "date": "2026-10-15",
+    "score": 6,
+    "verdict": "kept"
+  },
+  "https://dev.to/david_elomgnaglo_27fb318/running-adk-agents-with-mcp-tools-from-a-rest-api-nc7": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://dev.to/diagrid/the-three-failures-every-fault-tolerant-ai-agent-must-handle-1e1g": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://dev.to/gde/requests-promises-assertions-and-declarations-rewriting-our-ai-agent-workflow-as-a-1986-4k4c": {
+    "date": "2026-10-15",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://dev.to/hiper2d/ai-torture-chamber-deep-dive-into-whether-model-can-feel-pain-25kb": {
+    "date": "2026-10-15",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://dev.to/surrealdb/introducing-surrealdb-agent-memory-e8p": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
   },
   "https://github.com/1105216375-alt/resimind": {
     "date": "2026-10-15",
@@ -19,10 +79,25 @@
     "score": 6.5,
     "verdict": "kept"
   },
+  "https://github.com/assafkip/claudemy": {
+    "date": "2026-10-15",
+    "score": 6,
+    "verdict": "kept"
+  },
   "https://github.com/Atoll92/agent-standup": {
     "date": "2026-10-15",
     "score": 3,
     "verdict": "rejected"
+  },
+  "https://github.com/awslabs/aidlc-workflows": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/bealesh/neckbeard": {
+    "date": "2026-10-15",
+    "score": 6,
+    "verdict": "kept"
   },
   "https://github.com/deeplethe/solid-glass": {
     "date": "2026-10-15",
@@ -54,6 +129,16 @@
     "score": 3,
     "verdict": "rejected"
   },
+  "https://github.com/Garinmckayl/anima": {
+    "date": "2026-10-15",
+    "score": 7,
+    "verdict": "kept"
+  },
+  "https://github.com/graphicle-ai/graphicle": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://github.com/Graphicle-AI/graphicle": {
     "date": "2026-10-15",
     "score": 3,
@@ -79,6 +164,11 @@
     "score": 3,
     "verdict": "rejected"
   },
+  "https://github.com/jonwheatley/pixel-path": {
+    "date": "2026-10-15",
+    "score": 7,
+    "verdict": "kept"
+  },
   "https://github.com/josefchen/muster": {
     "date": "2026-10-15",
     "score": 3,
@@ -89,10 +179,25 @@
     "score": 5,
     "verdict": "kept"
   },
+  "https://github.com/junxchan54-maker/mcd-cn-assistant": {
+    "date": "2026-10-15",
+    "score": 5,
+    "verdict": "kept"
+  },
+  "https://github.com/lawrencewzen/wx-bot": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://github.com/liyupi/ai-promo-video-maker": {
     "date": "2026-10-15",
     "score": 7,
     "verdict": "kept"
+  },
+  "https://github.com/LSPosed/dexsql-release": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
   },
   "https://github.com/marclou/mailcheap": {
     "date": "2026-10-15",
@@ -119,12 +224,27 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://github.com/phuryn/work-humanizer": {
+    "date": "2026-10-15",
+    "score": 6,
+    "verdict": "kept"
+  },
   "https://github.com/RayenMlayeh/jevcrawl": {
     "date": "2026-10-15",
     "score": 4,
     "verdict": "rejected"
   },
+  "https://github.com/SaarthurR/atticus-mac": {
+    "date": "2026-10-15",
+    "score": 4,
+    "verdict": "rejected"
+  },
   "https://github.com/sepehr071/awesome-iran-mcp": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/SouravBeraAkaSpeed/xiryn": {
     "date": "2026-10-15",
     "score": 3,
     "verdict": "rejected"
@@ -139,10 +259,20 @@
     "score": 3,
     "verdict": "rejected"
   },
+  "https://github.com/wousp112/justin-sun-alan-shao-ai-notes": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://github.com/YeonwooSung/my-claude-code-mods": {
     "date": "2026-10-15",
     "score": 3,
     "verdict": "rejected"
+  },
+  "https://github.com/Zafer-Liu/mcd-event-radar": {
+    "date": "2026-10-15",
+    "score": 6,
+    "verdict": "kept"
   },
   "https://github.com/Zfinix/eleven": {
     "date": "2026-10-15",
@@ -174,6 +304,21 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://museumofages.org/w/vinci": {
+    "date": "2026-10-15",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://news.ycombinator.com/item?id=50084969": {
+    "date": "2026-10-15",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://noma.security/noma-labs/sneakpeek-how-the-preview-pane-in-claude-code-desktop-can-exfiltrate-your-data": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
   "https://openai.com/index/amp-beyond-coding": {
     "date": "2026-10-15",
     "score": 2,
@@ -183,6 +328,11 @@
     "date": "2026-10-15",
     "score": 4,
     "verdict": "rejected"
+  },
+  "https://openstation.blog/2026/10/13/i-deleted-168000-lines-of-comments-my-ai-agent-didnt-notice": {
+    "date": "2026-10-15",
+    "score": 7,
+    "verdict": "kept"
   },
   "https://petal.live": {
     "date": "2026-10-15",
@@ -198,5 +348,25 @@
     "date": "2026-10-15",
     "score": 6,
     "verdict": "kept"
+  },
+  "https://smallcultfollowing.com/babysteps/blog/2026/10/14/agentic-dev-and-rust": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://swedenherald.com/article/tv4-postpones-the-challenge-until-2027-after-technical-failure-erases-edited-footage": {
+    "date": "2026-10-15",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://uji.sh/ito": {
+    "date": "2026-10-15",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://x.com/alexandr_wang/status/2110778736434184611": {
+    "date": "2026-10-15",
+    "score": 1,
+    "verdict": "rejected"
   }
 }

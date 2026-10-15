@@ -38,8 +38,13 @@ Score the candidate as a reader would value it:
 
 - **8–10**: exceptional — specific, novel, well-evidenced, broadly interesting.
 - **7**: solid — clearly worth publishing.
-- **5–6**: borderline — plausible but thin, derivative, or poorly evidenced. Goes to the review queue.
+- **5–6**: worth a look — a genuine agent application that is thin, derivative, or lightly
+  evidenced. Published.
 - **0–4**: reject.
+
+Your verdict is final and published without human review, so be inclusive: when a
+genuine agent application sits between 4 and 5, choose 5. Reject only what clearly fails
+the test above, not what is merely modest, early or unpolished.
 
 Popularity is a discovery signal, not a quality signal. A modest post showing a
 working scientific workflow can outrank a viral announcement. Never lower a score

@@ -5,7 +5,9 @@
 - Never invent or guess a source URL, author, date or outcome. Every fact must come from the
   original source; unknown fields are `null`. `docs/editorial-guidelines.md` is the standard
   (and the curator's prompt) — change behaviour there, not in code, when possible.
-- Entries with `status: "review"` are hidden until a human flips them to `"published"`.
+- The curator's verdict is final: score ≥ 5 publishes automatically, with no human review.
+  `status: "review"` only means "waiting for a publishing slot" (over the daily cap, published
+  first on the next run) or, for `curation.method: "manual"`, held until its facts are verified.
 - The site is static and dependency-free in the browser. `site/assets/render.js` is shared by
   the build and the browser: keep it free of Node APIs.
 - Design: dark by default (`--bg: #000`), tokens in `site/assets/style.css`; light theme via

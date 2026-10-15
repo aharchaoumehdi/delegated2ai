@@ -32,7 +32,7 @@ Settings → Secrets and variables → Actions → **New repository secret**:
 | `X_BEARER_TOKEN` | Optional | X recent search, billed per post read, see "X" below |
 
 Optional **variables** (same page, Variables tab): `SITE_LIVE` (see step 2), `REDDIT_USERNAME` (see Reddit), `CURATOR_MODEL` (default `claude-opus-5-5`),
-`PUBLISH_THRESHOLD` (default 7), `DAILY_MAX` (default 7), `SITE_URL` (overrides the URL).
+`PUBLISH_THRESHOLD` (default 5), `DAILY_MAX` (default 25), `SITE_URL` (overrides the URL).
 
 ### Reddit
 

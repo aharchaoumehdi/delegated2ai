@@ -1,4 +1,5 @@
-// X (Twitter) recent search. Requires a paid API plan: set X_BEARER_TOKEN.
+// X (Twitter) recent search. Needs X_BEARER_TOKEN from a pay-per-use X developer account.
+// X bills each post returned, so maxResults (10-100) in config/sources.json caps the daily cost.
 import { fetchJSON } from "../lib/util.mjs";
 
 export const name = "X";
@@ -8,7 +9,7 @@ export async function collect(cfg, { since }) {
   if (!bearer) return { skipped: "X_BEARER_TOKEN not set" };
   const params = new URLSearchParams({
     query: cfg.query,
-    max_results: "100",
+    max_results: String(Math.min(100, Math.max(10, cfg.maxResults ?? 100))),
     start_time: since.toISOString(),
     "tweet.fields": "created_at,public_metrics,entities,note_tweet",
     expansions: "author_id",

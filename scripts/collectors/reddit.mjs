@@ -5,6 +5,13 @@ import { fetchJSON, fetchWithTimeout } from "../lib/util.mjs";
 
 export const name = "Reddit";
 
+// Reddit's API rules ask for a descriptive User-Agent naming the app and a Reddit account;
+// generic ones are heavily rate-limited. REDDIT_USERNAME is the account that owns the app.
+function userAgent() {
+  const user = process.env.REDDIT_USERNAME;
+  return user ? `github-actions:delegatedto.ai:v0.1 (by /u/${user.replace(/^u\//, "")})` : undefined;
+}
+
 async function token() {
   const id = process.env.REDDIT_CLIENT_ID;
   const secret = process.env.REDDIT_CLIENT_SECRET;
@@ -14,6 +21,7 @@ async function token() {
     headers: {
       Authorization: "Basic " + Buffer.from(`${id}:${secret}`).toString("base64"),
       "Content-Type": "application/x-www-form-urlencoded",
+      ...(userAgent() ? { "User-Agent": userAgent() } : {}),
     },
     body: "grant_type=client_credentials",
   });
@@ -25,6 +33,7 @@ export async function collect(cfg, { since }) {
   const bearer = await token();
   const base = bearer ? "https://oauth.reddit.com" : "https://www.reddit.com";
   const headers = bearer ? { Authorization: `Bearer ${bearer}` } : {};
+  if (userAgent()) headers["User-Agent"] = userAgent();
   const out = [];
   const errors = [];
   for (const sub of cfg.subreddits) {
@@ -52,5 +61,6 @@ export async function collect(cfg, { since }) {
     }
   }
   if (out.length === 0 && errors.length) throw new Error(errors.join("; "));
+  out.errors = errors; // partial failures (e.g. one private subreddit) go to the run log
   return out;
 }

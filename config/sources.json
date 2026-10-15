@@ -34,6 +34,7 @@
   "x": {
     "enabled": true,
     "minLikes": 100,
+    "maxResults": 100,
     "query": "(\"claude code\" OR codex OR \"ai agent\" OR \"my agent\" OR devin OR \"agentic\") (built OR automated OR shipped OR \"saved me\" OR workflow) -is:retweet -is:reply lang:en"
   },
   "feeds": {

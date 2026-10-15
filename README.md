@@ -13,8 +13,9 @@ collect (scripts/collect.mjs)  →  curate with Claude (scripts/curate.mjs)  →
 1. **Collect** — pulls the last ~36 hours from every source in `config/sources.json`, dedupes
    by canonical URL, ranks by relevance and engagement, and fetches page text for the best 40.
 2. **Curate** — Claude judges each candidate against `docs/editorial-guidelines.md`, writes
-   the title/summary/fields, and scores it 0–10. ≥ 7 is published (max 7/day), 5–6 waits in a
-   review queue (`status: "review"`), the rest is remembered in `data/state/seen.json` so it is
+   the title/summary/fields, and scores it 0–10. 5 or more is published automatically (up to
+   25 a day; any overflow publishes first on the next run). There is no human review step.
+   Everything judged is remembered in `data/state/seen.json` so it is
    never paid for twice. Source URLs always come from the collector, never from the model.
 3. **Build** — renders a static site into `dist/`: home, New, per-agent and per-category pages,
    one page per use case, RSS, sitemap and a public `cases.json`.

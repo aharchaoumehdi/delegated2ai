@@ -1,9 +1,10 @@
 // Step 2 of the daily pipeline: ask Claude to judge each candidate against
 // docs/editorial-guidelines.md, write a succinct entry, and save the result.
 //
-//   score >= PUBLISH_THRESHOLD (7)  → status "published"  (max DAILY_MAX per day)
-//   score >= REVIEW_THRESHOLD (5)   → status "review"     (hidden; flip to publish by hand)
+//   score >= PUBLISH_THRESHOLD (5)  → status "published", up to DAILY_MAX (25) a day
+//   overflow beyond DAILY_MAX       → status "review", published first on the next run
 //   otherwise                       → not saved, only remembered in data/state/seen.json
+// There is no human review step: the curator's verdict is final.
 //
 // The source URL always comes from the collector, never from the model.
 import { readFile, writeFile, mkdir, appendFile } from "node:fs/promises";
@@ -18,9 +19,8 @@ import { path, readJSON, writeJSON, slugify, today, truncate } from "./lib/util.
 
 const MODEL = process.env.CURATOR_MODEL || "claude-opus-5-5";
 const EFFORT = process.env.CURATOR_EFFORT || "medium";
-const PUBLISH_THRESHOLD = Number(process.env.PUBLISH_THRESHOLD || 7);
-const REVIEW_THRESHOLD = Number(process.env.REVIEW_THRESHOLD || 5);
-const DAILY_MAX = Number(process.env.DAILY_MAX || 7);
+const PUBLISH_THRESHOLD = Number(process.env.PUBLISH_THRESHOLD || 5);
+const DAILY_MAX = Number(process.env.DAILY_MAX || 25);
 const BATCH_SIZE = 6;
 const SEEN_TTL_DAYS = 120;
 
@@ -164,7 +164,7 @@ const verdicts = {};
 for (const ev of evaluations) {
   const cand = byId.get(ev.candidate_id);
   if (!cand) continue;
-  const accepted = ev.is_agent_application && !ev.duplicate_of && ev.score >= REVIEW_THRESHOLD;
+  const accepted = ev.is_agent_application && !ev.duplicate_of && ev.score >= PUBLISH_THRESHOLD;
   verdicts[cand.key] = { date, score: ev.score, verdict: accepted ? "kept" : ev.duplicate_of ? "duplicate" : "rejected" };
   if (!accepted) continue;
 
@@ -202,19 +202,31 @@ for (const ev of evaluations) {
   drafts.push(parsed.data);
 }
 
-// Publish the best few; the rest of the keepers wait in the review queue.
+// Publish every keeper, up to DAILY_MAX a day. Earlier overflow (auto-curated entries
+// left in "review" because a day was full) goes first, oldest first, so nothing waits
+// forever; then today's keepers, best first. Manually held entries are never touched.
+const backlog = existing
+  .filter((c) => c.status === "review" && c.curation?.method === "auto" && c.score >= PUBLISH_THRESHOLD)
+  .sort((a, b) => a.added.localeCompare(b.added) || b.score - a.score);
 drafts.sort((a, b) => b.score - a.score);
 let published = 0;
+const promoted = [];
+for (const c of backlog) {
+  if (published >= DAILY_MAX) break;
+  const { _file, ...record } = c;
+  record.status = "published";
+  promoted.push(record);
+  published++;
+}
 for (const d of drafts) {
-  if (d.score >= PUBLISH_THRESHOLD && published < DAILY_MAX) {
-    d.status = "published";
-    published++;
-  }
+  if (published >= DAILY_MAX) break;
+  d.status = "published";
+  published++;
 }
 const top = drafts.find((d) => d.status === "published");
 if (top && top.score >= 8.5) top.featured = true;
 
-for (const d of drafts) {
+for (const d of [...promoted, ...drafts]) {
   const file = caseFilePath(d);
   await mkdir(dirname(file), { recursive: true });
   await writeFile(file, JSON.stringify(d, null, 2) + "\n");
@@ -236,10 +248,11 @@ const summary = {
   model: MODEL,
   evaluated: evaluations.length,
   published,
-  queued_for_review: drafts.length - published,
+  from_backlog: promoted.length,
+  queued_for_review: drafts.filter((d) => d.status === "review").length,
   rejected: evaluations.length - drafts.length,
   failures,
-  published_ids: drafts.filter((d) => d.status === "published").map((d) => d.id),
+  published_ids: [...promoted, ...drafts].filter((d) => d.status === "published").map((d) => d.id),
 };
 await finish(summary);
 console.log(`Evaluated ${summary.evaluated}: ${published} published, ${summary.queued_for_review} queued, ${summary.rejected} rejected, ${failures.length} failures`);
@@ -247,7 +260,7 @@ if (evaluations.length === 0 && failures.length) process.exit(1);
 
 // Export for the step summary in GitHub Actions.
 if (process.env.GITHUB_STEP_SUMMARY) {
-  const lines = [`### Daily curation — ${date}`, "", `Published **${published}**, queued ${summary.queued_for_review}, rejected ${summary.rejected}.`, ""];
+  const lines = [`### Daily curation — ${date}`, "", `Published **${published}** (${promoted.length} from earlier overflow), waiting for a slot ${summary.queued_for_review}, rejected ${summary.rejected}.`, ""];
   for (const d of drafts) lines.push(`- [${d.status}] **${d.title}** (${d.score}) — ${d.source.url}`);
   await writeFile(process.env.GITHUB_STEP_SUMMARY, lines.join("\n") + "\n", { flag: "a" });
 }

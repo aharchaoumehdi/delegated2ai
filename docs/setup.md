@@ -28,11 +28,47 @@ Settings → Secrets and variables → Actions → **New repository secret**:
 | Secret | Required | Used for |
 |---|---|---|
 | `ANTHROPIC_API_KEY` | Yes | Claude curation (console.anthropic.com) |
-| `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET` | Recommended | Reddit blocks anonymous requests from cloud IPs. Create a "script" app at reddit.com/prefs/apps |
-| `X_BEARER_TOKEN` | Optional | X search (paid API plan) |
+| `REDDIT_CLIENT_ID` / `REDDIT_CLIENT_SECRET` | Recommended | Reddit blocks anonymous requests from cloud IPs. Needs approved API access, see "Reddit" below |
+| `X_BEARER_TOKEN` | Optional | X recent search, billed per post read, see "X" below |
 
-Optional **variables** (same page, Variables tab): `SITE_LIVE` (see step 2), `CURATOR_MODEL` (default `claude-opus-5-5`),
+Optional **variables** (same page, Variables tab): `SITE_LIVE` (see step 2), `REDDIT_USERNAME` (see Reddit), `CURATOR_MODEL` (default `claude-opus-5-5`),
 `PUBLISH_THRESHOLD` (default 7), `DAILY_MAX` (default 7), `SITE_URL` (overrides the URL).
+
+### Reddit
+
+Since November 2025, Reddit approves every new Data API client by hand under its
+Responsible Builder Policy; creating an app at reddit.com/prefs/apps alone no longer works.
+
+1. Read the Responsible Builder Policy and the Data API Terms (linked from
+   reddit.com/wiki/api).
+2. Request access through Reddit's developer support form. Describe the use plainly:
+   a read-only script that, once a day, reads the top posts of about a dozen public AI
+   subreddits (listed in `config/sources.json`), has an LLM write a short summary of
+   qualifying posts, and links back to the original thread. No posting, voting, user
+   data, or model training. Low volume: about 15 requests a day.
+3. When approved, create the "script" app the approval allows and add its client ID and
+   secret as the two secrets above.
+4. Add the repository **variable** `REDDIT_USERNAME` (the account that owns the app,
+   without `u/`). Reddit asks API clients to identify themselves this way.
+
+Approval can take days to weeks and is not guaranteed. Until then Reddit is reported as
+an error in each run log and the other sources are unaffected.
+
+### X
+
+The X API is pay-per-use: you buy credits in the X Developer Console and each post a
+request returns costs $0.005 (no free tier, no subscription for new accounts).
+
+1. Sign in at console.x.com with the X account that should own the app, create a
+   project and an app, and copy the app's **Bearer Token**.
+2. Add a payment card and buy a small amount of credit. X has offered new accounts $20
+   of starter credit after saving a card.
+3. Add the token as the `X_BEARER_TOKEN` secret.
+
+The collector makes one search a day of up to `maxResults` posts (100 by default in
+`config/sources.json`): at most about $0.50 a day, roughly $15 a month. Lower
+`maxResults` to spend less. Set a spending limit or turn off auto-recharge in the
+console if you want a hard cap.
 
 ## 4. Allow the workflow to push
 

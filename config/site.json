@@ -1,0 +1,16 @@
+{
+  "name": "Delegated",
+  "tagline": "What people are delegating to AI agents — daily.",
+  "description": "Delegated is a daily, searchable feed of real-world AI agent applications across software, business, science and everyday life. Every entry is explained in plain language, tagged by platform, and links to the original source.",
+  "url": "https://aharchaoumehdi.github.io/agents-in-practice/",
+  "repo": "aharchaoumehdi/agents-in-practice",
+  "newsletter": {
+    "action": "",
+    "provider": ""
+  },
+  "analytics": {
+    "plausibleDomain": ""
+  },
+  "sponsor": null,
+  "domain": "delegated.ai"
+}

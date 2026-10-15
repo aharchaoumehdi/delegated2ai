@@ -1,0 +1,34 @@
+{
+  "id": "non-coding-growth-marketer-cuts-ad-creation-from-30-minutes",
+  "title": "Non-coding growth marketer cuts ad creation from 30 minutes to 30 seconds",
+  "summary": "Anthropic growth marketer Austin Lau, who had never written code, used Claude Code to build workflows that find underperforming ads in CSV exports and generate replacement copy within platform character limits.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [],
+  "agent_role": "Sub-agents analyze ad performance, write headlines and descriptions and export upload-ready CSVs; the marketer defines the brief and reviews before upload.",
+  "outcome": "Ad creation dropped from about 30 minutes to about 30 seconds per ad",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "google-ads",
+    "copywriting",
+    "non-developer",
+    "csv"
+  ],
+  "source": {
+    "url": "https://claude.com/blog/how-anthropic-uses-claude-marketing",
+    "name": "Company blog (Anthropic)",
+    "author": null,
+    "published": "2026-01-26"
+  },
+  "added": "2026-10-15",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "manual",
+    "model": null,
+    "rationale": "Launch seed collection, researched from search results."
+  }
+}

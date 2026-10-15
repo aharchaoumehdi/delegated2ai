@@ -1,0 +1,48 @@
+{
+  "domains": [
+    { "name": "Software", "emoji": "💻", "description": "Building, testing, debugging and maintaining software." },
+    { "name": "Business", "emoji": "💼", "description": "Operations, support, sales ops and internal workflows." },
+    { "name": "Science", "emoji": "🔬", "description": "Research, discovery, lab and literature work." },
+    { "name": "Daily life", "emoji": "🏡", "description": "Personal errands, planning, shopping and family logistics." },
+    { "name": "Finance", "emoji": "📈", "description": "Accounting, investing, bookkeeping and financial analysis." },
+    { "name": "Education", "emoji": "🎓", "description": "Teaching, tutoring and learning." },
+    { "name": "Creative", "emoji": "🎨", "description": "Writing, design, video, music and media production." },
+    { "name": "Health", "emoji": "🩺", "description": "Clinical, fitness, nutrition and wellbeing." },
+    { "name": "Marketing", "emoji": "📣", "description": "Growth, content, SEO, outreach and sales." },
+    { "name": "Data", "emoji": "📊", "description": "Analysis, reporting, scraping and data engineering." },
+    { "name": "Legal", "emoji": "⚖️", "description": "Contracts, compliance and legal research." },
+    { "name": "Home", "emoji": "🔌", "description": "Home automation, devices and self-hosting." }
+  ],
+  "evidence": [
+    { "name": "Author's account", "description": "The creator describes what they did; not independently checked." },
+    { "name": "Demo", "description": "A video, screenshots or live demo shows the agent working." },
+    { "name": "Code available", "description": "Code, prompts or a workflow file are published so others can reproduce it." },
+    { "name": "Paper", "description": "Described in a research paper or technical report." },
+    { "name": "Independent report", "description": "Reported or reproduced by someone other than the creator." }
+  ],
+  "difficulty": ["Beginner", "Intermediate", "Advanced"],
+  "platforms": [
+    { "name": "Claude Code", "aliases": ["claude code", "claude-code", "claudecode"] },
+    { "name": "Claude", "aliases": ["claude.ai", "claude cowork", "cowork", "claude desktop", "claude for chrome"] },
+    { "name": "Claude Agent SDK", "aliases": ["claude agent sdk", "agent sdk"] },
+    { "name": "OpenAI Codex", "aliases": ["codex", "openai codex", "codex cli"] },
+    { "name": "ChatGPT Agent", "aliases": ["chatgpt agent", "operator", "openai operator", "chatgpt agent mode", "atlas"] },
+    { "name": "OpenAI Agents SDK", "aliases": ["openai agents sdk", "agents sdk"] },
+    { "name": "Devin", "aliases": ["devin", "cognition devin"] },
+    { "name": "Cursor", "aliases": ["cursor", "cursor agent", "cursor background agent"] },
+    { "name": "GitHub Copilot", "aliases": ["copilot", "github copilot", "copilot agent", "copilot coding agent"] },
+    { "name": "Google Jules", "aliases": ["jules"] },
+    { "name": "Gemini", "aliases": ["gemini", "gemini cli", "google gemini", "alphaevolve", "ai co-scientist"] },
+    { "name": "Manus", "aliases": ["manus"] },
+    { "name": "Replit Agent", "aliases": ["replit", "replit agent"] },
+    { "name": "Lovable", "aliases": ["lovable"] },
+    { "name": "n8n", "aliases": ["n8n"] },
+    { "name": "Zapier", "aliases": ["zapier", "zapier agents"] },
+    { "name": "LangGraph", "aliases": ["langgraph", "langchain"] },
+    { "name": "CrewAI", "aliases": ["crewai", "crew ai"] },
+    { "name": "AutoGen", "aliases": ["autogen", "ag2"] },
+    { "name": "OpenClaw", "aliases": ["openclaw", "clawdbot", "moltbot"] },
+    { "name": "Custom agent", "aliases": ["custom", "custom agent", "in-house", "homegrown"] },
+    { "name": "Not specified", "aliases": ["unknown", "not specified", "n/a"] }
+  ]
+}

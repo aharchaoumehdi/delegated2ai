@@ -1,0 +1,34 @@
+{
+  "id": "developer-s-claude-code-mri-read-disputes-a-radiologist-s",
+  "title": "Developer's Claude Code MRI read disputes a radiologist's tendon-tear diagnosis",
+  "summary": "Antoine Finkelstein pointed Claude Code at the DICOM files from his shoulder MRI, had it run its own analysis and compare it with the radiologist's report; the agent argued for an intact tendon rather than a partial tear.",
+  "domain": "Health",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [],
+  "agent_role": "Claude Code processed 266MB of DICOM files, ran analysis scripts and arbitrated between readings; the patient chose what to ask and how far to trust it, with no clinical validation.",
+  "outcome": "Agent concluded with \"moderate-to-high confidence\" that the evidence favored no discrete tear, contradicting the Grade III partial-thickness tear reported; radiologists on Hacker News pushed back",
+  "evidence": "Independent report",
+  "difficulty": "Intermediate",
+  "tags": [
+    "medical-imaging",
+    "dicom",
+    "second-opinion",
+    "caution"
+  ],
+  "source": {
+    "url": "https://hothardware.com/news/claude-ai-reviewed-mri-challenged-doctor-diagnosis",
+    "name": "HotHardware",
+    "author": null,
+    "published": null
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "manual",
+    "model": null,
+    "rationale": "Launch seed; sources conflict or only secondary coverage found — verify before publishing."
+  }
+}

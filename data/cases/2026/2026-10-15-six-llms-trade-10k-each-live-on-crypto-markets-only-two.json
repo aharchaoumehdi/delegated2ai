@@ -1,0 +1,36 @@
+{
+  "id": "six-llms-trade-10k-each-live-on-crypto-markets-only-two",
+  "title": "Six LLMs trade $10k each live on crypto markets; only two finish in profit",
+  "summary": "Nof1's Alpha Arena gave six frontier models $10,000 each to trade crypto perpetuals on Hyperliquid with no human intervention, a public test of LLMs as autonomous trading agents.",
+  "domain": "Finance",
+  "platform": "Custom agent",
+  "model": "Qwen 3 Max, DeepSeek, Claude Sonnet 4.5, Gemini 2.5 Pro, Grok, GPT-5",
+  "tools": [
+    "Alpha Arena"
+  ],
+  "agent_role": "Each model decided and executed its own trades on live markets; organizers set the prompts and rules and did not intervene during the season.",
+  "outcome": "Qwen 3 Max finished first at $12,231 and DeepSeek second at $10,489; the other four models ended with large losses",
+  "evidence": "Independent report",
+  "difficulty": "Advanced",
+  "tags": [
+    "trading",
+    "crypto",
+    "benchmark",
+    "real-money"
+  ],
+  "source": {
+    "url": "https://www.gncrypto.news/news/qwen-wins-alpha-arena-season-1-with-22-percent-returns/",
+    "name": "GNcrypto News",
+    "author": null,
+    "published": null
+  },
+  "added": "2026-10-15",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "manual",
+    "model": null,
+    "rationale": "Launch seed collection, researched from search results."
+  }
+}

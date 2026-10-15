@@ -1,0 +1,34 @@
+{
+  "id": "sora-for-android-shipped-in-28-days-by-a-small-team-working",
+  "title": "Sora for Android shipped in 28 days by a small team working alongside Codex",
+  "summary": "OpenAI engineers built and launched the Sora Android app with a lean team running Codex sessions in parallel, using hand-written skeleton features and agent guidelines so Codex could produce most of the implementation.",
+  "domain": "Software",
+  "platform": "OpenAI Codex",
+  "model": null,
+  "tools": [],
+  "agent_role": "Codex wrote most feature code across parallel sessions; engineers set architecture, wrote example features for Codex to imitate, and reviewed output.",
+  "outcome": "Built from Oct 8 to Nov 5, 2025 using roughly 5 billion tokens; the app reached #1 in the Play Store on launch day",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "mobile",
+    "android",
+    "parallel-agents",
+    "shipping"
+  ],
+  "source": {
+    "url": "https://openai.com/index/shipping-sora-for-android-with-codex",
+    "name": "Company blog (OpenAI)",
+    "author": "Patrick Hum, RJ Marsan",
+    "published": "2025-12-12"
+  },
+  "added": "2026-10-15",
+  "status": "published",
+  "score": 8,
+  "featured": true,
+  "curation": {
+    "method": "manual",
+    "model": null,
+    "rationale": "Launch seed collection, researched from search results."
+  }
+}

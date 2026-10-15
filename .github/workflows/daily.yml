@@ -1,0 +1,102 @@
+name: Daily update & deploy
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # every day at 06:17 UTC
+  workflow_dispatch:
+    inputs:
+      skip_curation:
+        description: "Only rebuild and deploy the site"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  issues: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-site
+  cancel-in-progress: false
+
+jobs:
+  curate:
+    # Pushes to main only redeploy; the schedule and manual runs also collect + curate.
+    if: github.event_name != 'push' && !inputs.skip_curation
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Collect candidates
+        run: node scripts/collect.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+
+      - name: Curate with Claude
+        run: node scripts/curate.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CURATOR_MODEL: ${{ vars.CURATOR_MODEL }}
+          PUBLISH_THRESHOLD: ${{ vars.PUBLISH_THRESHOLD }}
+          DAILY_MAX: ${{ vars.DAILY_MAX }}
+
+      - run: node scripts/validate.mjs
+
+      - name: Keep the raw candidates for debugging
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidates-${{ github.run_id }}
+          path: .cache/candidates.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Commit new entries
+        run: |
+          git config user.name "delegated-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
+          git commit -m "Daily update $(date -u +%F)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+  deploy:
+    needs: curate
+    # Run after curation, or on its own when curation was skipped (push / skip_curation).
+    if: always() && (needs.curate.result == 'success' || needs.curate.result == 'skipped')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }} # picks up the commit the curate job just pushed
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - run: npm run build
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,36 @@
+{
+  "id": "l-mars-legal-agent-cuts-hallucinations-with-agentic-search",
+  "title": "L-MARS legal agent cuts hallucinations with agentic search and citation checks",
+  "summary": "L-MARS breaks legal questions into sub-queries, runs targeted searches across web, local and case-law sources, and has a judge agent check sufficiency and citations before answering.",
+  "domain": "Legal",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "L-MARS"
+  ],
+  "agent_role": "Agents decompose the query, search, verify and synthesize an answer; no human in the loop during answering, with humans judging outputs in evaluation.",
+  "outcome": "On LegalSearchQA (200 questions on 2025 law), authors report substantially better factual accuracy, less uncertainty and higher human and LLM judge preference",
+  "evidence": "Paper",
+  "difficulty": "Advanced",
+  "tags": [
+    "legal-research",
+    "rag",
+    "citations",
+    "multi-agent"
+  ],
+  "source": {
+    "url": "https://arxiv.org/html/2509.00761v2",
+    "name": "arXiv",
+    "author": "Ziqi Wang, Boqin Yuan",
+    "published": "2025-08-31"
+  },
+  "added": "2026-10-15",
+  "status": "published",
+  "score": 8,
+  "featured": false,
+  "curation": {
+    "method": "manual",
+    "model": null,
+    "rationale": "Launch seed collection, researched from search results."
+  }
+}

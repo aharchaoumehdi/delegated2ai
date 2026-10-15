@@ -1,0 +1,36 @@
+{
+  "id": "ai-co-scientist-independently-reproduces-an-unpublished",
+  "title": "AI co-scientist independently reproduces an unpublished superbug finding in ~48 hours",
+  "summary": "Google's multi-agent co-scientist, built on Gemini 2.0, generated and ranked research hypotheses; for Imperial College researchers it proposed the same mechanism for antimicrobial resistance spread that their unpublished work had found.",
+  "domain": "Science",
+  "platform": "Gemini",
+  "model": "Gemini 2.0",
+  "tools": [
+    "AI co-scientist"
+  ],
+  "agent_role": "Agents generated, debated and ranked hypotheses from a research goal; scientists set the goal and validated selected hypotheses in wet-lab experiments.",
+  "outcome": "Reached the Imperial team's unpublished hypothesis in about 48 hours and proposed further hypotheses, one new to the researchers; Google also reports end-to-end lab validation in drug repurposing and treatment-target work",
+  "evidence": "Independent report",
+  "difficulty": "Advanced",
+  "tags": [
+    "hypothesis-generation",
+    "biology",
+    "multi-agent",
+    "lab-validation"
+  ],
+  "source": {
+    "url": "https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/",
+    "name": "Google Research blog",
+    "author": null,
+    "published": "2025-02"
+  },
+  "added": "2026-10-15",
+  "status": "published",
+  "score": 8,
+  "featured": false,
+  "curation": {
+    "method": "manual",
+    "model": null,
+    "rationale": "Launch seed collection, researched from search results."
+  }
+}

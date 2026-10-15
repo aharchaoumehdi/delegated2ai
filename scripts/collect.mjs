@@ -3,6 +3,7 @@
 // Output: .cache/candidates.json (consumed by curate.mjs) and a run log entry.
 import { createHash } from "node:crypto";
 import { loadCases } from "./lib/cases.mjs";
+import { selectCandidates } from "./lib/rank.mjs";
 import { path, readJSON, writeJSON, canonicalUrl, today, fetchWithTimeout, htmlToText, mapLimit } from "./lib/util.mjs";
 import * as hackernews from "./collectors/hackernews.mjs";
 import * as reddit from "./collectors/reddit.mjs";
@@ -35,6 +36,7 @@ await Promise.all(
       report[key] = { status: "ok", items: result.length, ms: Date.now() - started };
       // A collector can keep partial results and list what failed (e.g. one rate-limited tag).
       if (result.errors?.length) report[key].errors = result.errors.map((e) => String(e).slice(0, 200));
+      if (result.fetched !== undefined) report[key].fetched = result.fetched;
     } catch (err) {
       report[key] = { status: "error", error: String(err.message).slice(0, 300) };
     }
@@ -63,23 +65,8 @@ for (const item of raw) {
   }
 }
 
-// 3. Rank: keyword relevance + engagement relative to each source's best item.
-const keywords = config.keywords.map((k) => k.toLowerCase());
-const maxBySource = {};
-for (const c of byUrl.values()) {
-  maxBySource[c.source] = Math.max(maxBySource[c.source] || 1, c.engagement.score);
-}
-const ranked = [...byUrl.values()]
-  .map((c) => {
-    const hay = `${c.title} ${c.text}`.toLowerCase();
-    const relevance = keywords.filter((k) => hay.includes(k)).length;
-    const engagement = Math.log10(c.engagement.score + 1) / Math.log10(maxBySource[c.source] + 1);
-    const rank = c.source === "submission" ? 2 : 0.6 * engagement + 0.4 * (Math.min(relevance, 4) / 4);
-    return { ...c, relevance, rank: Number(rank.toFixed(3)) };
-  })
-  .filter((c) => c.relevance > 0 || c.source === "submission")
-  .sort((a, b) => b.rank - a.rank)
-  .slice(0, config.maxCandidates);
+// 3. Rank and select what the curator will judge (see lib/rank.mjs).
+const ranked = selectCandidates([...byUrl.values()], config);
 
 // 4. Enrich: fetch readable text of the linked page when the post itself is thin.
 await mapLimit(ranked, 6, async (c) => {
@@ -112,6 +99,6 @@ await writeJSON(path("data", "runs", `${runDate}.json`), {
 
 console.log(`Collected ${raw.length} items → ${byUrl.size} new unique → ${candidates.length} candidates`);
 for (const [k, v] of Object.entries(report)) {
-  console.log(`  ${k.padEnd(12)} ${v.status}${v.items !== undefined ? ` (${v.items})` : ""}${v.error ? ` — ${v.error}` : ""}${v.reason ? ` — ${v.reason}` : ""}`);
+  console.log(`  ${k.padEnd(12)} ${v.status}${v.items !== undefined ? ` (${v.items}${v.fetched !== undefined ? ` of ${v.fetched} fetched` : ""})` : ""}${v.error ? ` — ${v.error}` : ""}${v.reason ? ` — ${v.reason}` : ""}`);
   for (const e of v.errors || []) console.log(`  ${"".padEnd(12)} partial: ${e}`);
 }

@@ -9,7 +9,7 @@
       "submissions": {
         "status": "ok",
         "items": 0,
-        "ms": 372
+        "ms": 299
       },
       "reddit": {
         "status": "error",
@@ -18,22 +18,22 @@
       "feeds": {
         "status": "ok",
         "items": 16,
-        "ms": 2200
+        "ms": 1104
       },
       "github": {
         "status": "ok",
         "items": 50,
-        "ms": 2241
+        "ms": 1943
       },
       "hackernews": {
         "status": "ok",
         "items": 44,
-        "ms": 2372
+        "ms": 2049
       },
       "devto": {
         "status": "ok",
         "items": 22,
-        "ms": 6162
+        "ms": 6897
       }
     },
     "raw": 132,
@@ -41,7 +41,17 @@
     "candidates": 40
   },
   "curate": {
-    "status": "skipped",
-    "reason": "ANTHROPIC_API_KEY not set"
+    "status": "ok",
+    "model": "claude-opus-5-5",
+    "evaluated": 40,
+    "published": 3,
+    "queued_for_review": 7,
+    "rejected": 30,
+    "failures": [],
+    "published_ids": [
+      "coding-agents-decompile-owned-retro-games-into-c-that",
+      "agent-skill-turns-a-one-line-request-into-a-4k-product-promo",
+      "ramp-s-bookkeeping-agent-evals-halving-skills-gained-2-8"
+    ]
   }
 }

@@ -1,0 +1,36 @@
+{
+  "id": "ex-coscreen-team-rebuilds-an-open-source-screen-sharing-tool",
+  "title": "Ex-CoScreen team rebuilds an open-source screen-sharing tool in under eight weeks with AI models",
+  "summary": "Former CoScreen founders built Petal, a free multi-user pair-programming screen-sharing app, saying frontier models did much of the work. The first version took under eight weeks, versus about six years for CoScreen.",
+  "domain": "Software",
+  "platform": "Not specified",
+  "model": "Fable and Astra",
+  "tools": [
+    "LiveKit"
+  ],
+  "agent_role": "Frontier models wrote much of the code for real-time video and window capture. A four-person team directed the work, but the post does not detail the split.",
+  "outcome": "Authors report the first version took under eight weeks, compared with almost six years for CoScreen.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "screen sharing",
+    "pair programming",
+    "ai-assisted development",
+    "open source"
+  ],
+  "source": {
+    "url": "https://petal.live/",
+    "name": "Hacker News",
+    "author": "Jason Thomas (thedracle)",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A notable claim that a real-time screen-sharing app was rebuilt in under eight weeks with frontier models doing much of the work. The post gives no detail on tooling, workflow or the agent's role, and the writeup is only promised."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "ramp-s-bookkeeping-agent-evals-halving-skills-gained-2-8",
+  "title": "Ramp's bookkeeping agent evals: halving skills gained 2.8 points and memory added 5.7",
+  "summary": "Ramp built synthetic businesses with messy books to test an agent that reconciles accounts and does data entry. Accountant-written rubrics showed which skills helped; trimming skills and adding cleaned memory raised scores and cut costs.",
+  "domain": "Finance",
+  "platform": "Not specified",
+  "model": null,
+  "tools": [
+    "synthetic ERP data",
+    "LLM judge",
+    "spreadsheet skill",
+    "agent memory"
+  ],
+  "agent_role": "The agent performs bookkeeping tasks such as AP reconciliation, reading bills, matching payments and investigating differences against simulated business data. Humans designed the worlds, wrote the rubrics and chose which harness changes to ship.",
+  "outcome": "Author reports that trimming eight skills to four gained 2.8 points of mean score, and compressing the spreadsheet skill by 61% saved about $30k a month with quality essentially unchanged. Memory distilled from prior…",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "bookkeeping",
+    "agent evals",
+    "reconciliation",
+    "agent memory"
+  ],
+  "source": {
+    "url": "https://dev.to/dailycontext/building-better-agents-through-end-to-end-evals-pgh",
+    "name": "DEV Community",
+    "author": "Ryan Stevens",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-15",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete account of building and tuning a bookkeeping agent, with specific numbers from skill ablation, skill compression and memory experiments; it is a non-coding finance domain, but the post is first-party, has no code and gives limited reproduction detail."
+  }
+}

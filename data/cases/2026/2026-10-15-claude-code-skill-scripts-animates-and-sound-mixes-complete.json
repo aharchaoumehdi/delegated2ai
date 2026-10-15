@@ -1,0 +1,41 @@
+{
+  "id": "claude-code-skill-scripts-animates-and-sound-mixes-complete",
+  "title": "Claude Code skill scripts, animates and sound-mixes complete videos without After Effects",
+  "summary": "A skill that has a coding agent run video production: brief, voiceover script, storyboard, code-drawn animation, footage edits, previews and a loudness-normalized final render. The user approves the script, plan and preview along the way.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "ffmpeg",
+    "Playwright",
+    "Three.js",
+    "ElevenLabs",
+    "faster-whisper",
+    "Firecrawl"
+  ],
+  "agent_role": "The agent writes scripts and storyboards, animates scenes in code, edits footage, renders previews and mixes sound. The human supplies references, generates the voiceover MP3 and approves each gate.",
+  "outcome": "Author reports the skill's own 56-second 1080p launch ad, with voiceover, 2D/3D animation and sound mix, was produced with it.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "video editing",
+    "motion graphics",
+    "sound design",
+    "content creation"
+  ],
+  "source": {
+    "url": "https://github.com/Miftahul-Islam-Efaz/Motion-graphics-skill",
+    "name": "GitHub",
+    "author": "Miftahul Islam Efaz",
+    "published": "2026-10-08"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "The skill shows a concrete agent video-production workflow with approval gates, and its author's demos include a 56-second launch ad. Evidence is self-produced examples with a promotional tone, and it overlaps with earlier Claude Code video skills."
+  }
+}

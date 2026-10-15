@@ -1,0 +1,37 @@
+{
+  "id": "claude-spends-3-hours-on-one-prompt-and-returns-a-playable",
+  "title": "Claude spends 3 hours on one prompt and returns a playable spot-the-difference tree game",
+  "summary": "Simon Willison gave Claude a single prompt in the iPhone app to build a three.js game about appreciating differences between generated trees. Claude worked for over three hours and returned a game with music, animation and achievements.",
+  "domain": "Creative",
+  "platform": "Claude",
+  "model": "Claude Opus 5.5 Max",
+  "tools": [
+    "three.js",
+    "Claude iPhone app"
+  ],
+  "agent_role": "Claude designed and built the whole game from one prompt over a 3-hour-7-minute run; the human only wrote the prompt and published the result.",
+  "outcome": "Author reports Claude returned a cosy spot-the-difference game with music, animation and achievements that is quite compelling to play.",
+  "evidence": "Demo",
+  "difficulty": "Beginner",
+  "tags": [
+    "game design",
+    "three.js",
+    "vibe coding",
+    "long-running task"
+  ],
+  "source": {
+    "url": "https://simonwillison.net/2026/Oct/14/tree-appreciator/",
+    "name": "Simon Willison's Weblog",
+    "author": "Simon Willison",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working, playable result with a shared transcript and a notable 3-hour autonomous run from a single prompt, but it is another agent-built game with little process detail."
+  }
+}

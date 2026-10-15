@@ -1,0 +1,41 @@
+{
+  "id": "agent-skill-turns-a-one-line-brief-into-a-designed-browser",
+  "title": "Agent skill turns a one-line brief into a designed, browser-tested website",
+  "summary": "An agent skill that takes a one-line request such as a portfolio for a named person and builds a full site. The agent picks a concept, writes a design system, builds it, and checks its own screenshots against a rubric before deploying.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Playwright",
+    "axe-core",
+    "GSAP",
+    "Next.js",
+    "Astro",
+    "Vercel"
+  ],
+  "agent_role": "The agent writes the brief, concept, design system and code, then runs builds, audits and screenshots while a critic subagent scores the result until it meets the rubric. The human gives the one-line brief and confirms deployment.",
+  "outcome": "Author claims the agent iterates until every rubric category scores 8/10. No specific site results are reported.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "web design",
+    "website generation",
+    "visual qa",
+    "agent skill"
+  ],
+  "source": {
+    "url": "https://github.com/juliobsz/skills",
+    "name": "GitHub",
+    "author": "juliobsz",
+    "published": "2026-10-12"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "The README lays out a detailed multi-step agent workflow with a browser-screenshot QA loop and a critic subagent, and there is a demo video. It reports no concrete built site or measured outcome, and agent-built websites are a common use case."
+  }
+}

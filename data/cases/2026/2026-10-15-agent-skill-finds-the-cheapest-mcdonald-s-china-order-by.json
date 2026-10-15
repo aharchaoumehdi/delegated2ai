@@ -1,0 +1,38 @@
+{
+  "id": "agent-skill-finds-the-cheapest-mcdonald-s-china-order-by",
+  "title": "Agent skill finds the cheapest McDonald's China order by combining coupons, cutting ¥47 to ¥21.9",
+  "summary": "Choosing among dozens of menu items and stacking coupons is hard to do by hand. This agent skill pulls the menu and all coupons via McDonald's China MCP, runs a deterministic optimizer for the cheapest valid combo, and places the order after the user confirms.",
+  "domain": "Daily life",
+  "platform": "WorkBuddy",
+  "model": null,
+  "tools": [
+    "McDonald's China MCP",
+    "Python optimizer",
+    "WorkBuddy skills"
+  ],
+  "agent_role": "The agent interprets the request, queries stores, menus, four coupon sources and nutrition data, normalizes it, calls the optimizer, explains the options and creates the order. The user confirms before ordering.",
+  "outcome": "Author reports a Big Mac meal priced ¥47 drops to ¥21.90 (53% off) in the sample data, and notes that real-account testing showed coupons must be pulled from four sources to find the best combo.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "coupon optimization",
+    "food ordering",
+    "money saving",
+    "mcp"
+  ],
+  "source": {
+    "url": "https://github.com/hujjun/mcd-saver-strategist",
+    "name": "GitHub",
+    "author": "hujjun",
+    "published": "2026-10-09"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A clear, reproducible daily-life agent workflow that fetches live menu and coupon data, runs a deterministic optimizer and places orders after confirmation, with code and self-tests; the headline 53% saving is computed on sample snapshot data and it is a contest entry."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "claude-code-skill-turns-a-one-line-machine-description-into",
+  "title": "Claude Code skill turns a one-line machine description into a physics-driven 3D simulation",
+  "summary": "Given a single line like \"a turbofan jet engine\", Claude researches the real machine, writes a small physics solver and builds an interactive three.js cutaway in one HTML file, plus a recorded film. Examples include engines and refinery pumps for training.",
+  "domain": "Education",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "three.js",
+    "WebGL",
+    "Node",
+    "ffmpeg"
+  ],
+  "agent_role": "Claude researches dimensions and physics, builds the model, solver and interactive modes; the human writes the one-line prompt and runs the recording script.",
+  "outcome": "Author reports example outputs such as a turbofan producing about 340 kN from a Brayton cycle solver with 3,597 parts, each generated from a single prompt line.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "engineering simulation",
+    "3d visualization",
+    "physics",
+    "training material"
+  ],
+  "source": {
+    "url": "https://github.com/AirsupHQ/machine-skill",
+    "name": "GitHub",
+    "author": "AirsupHQ",
+    "published": "2026-10-12"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An original skill with a gallery of one-line-prompt results (turbofan, rocket engine, process pump, compressor) and open code, though it reads partly as a launch post and the outputs are not independently checked."
+  }
+}

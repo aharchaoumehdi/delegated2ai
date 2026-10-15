@@ -1,0 +1,41 @@
+{
+  "id": "daily-radar-catches-new-ai-product-names-and-turns-them-into",
+  "title": "Daily radar catches new AI product names and turns them into sized SEO keyword picks",
+  "summary": "For SEO and newsletter writers, this tool scans X, Hugging Face, GitHub and sitemaps daily for new AI names. Models then derive the search phrases behind them, check volume and Google Trends, and label each keyword prioritize, watch or skip.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "X search",
+    "Hugging Face",
+    "GitHub API",
+    "Google Trends",
+    "Google Ads volumes",
+    "MCP server"
+  ],
+  "agent_role": "Models read evidence posts, propose and screen keyword phrases, and judge whether terms are names. Scripts gather signals and run checks, and the human acts on the decisions.",
+  "outcome": "Author shares a real 2026-10-12 run and reports about $15 a month in API costs with the example config.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "seo",
+    "keyword research",
+    "trend detection",
+    "ai news"
+  ],
+  "source": {
+    "url": "https://github.com/zhuyansen/new-term-radar",
+    "name": "GitHub",
+    "author": "zhuyansen",
+    "published": "2026-10-12"
+  },
+  "added": "2026-10-15",
+  "status": "review",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working daily pipeline scans X, Hugging Face, GitHub and sitemaps, then uses models to turn new AI names into sized keyword decisions, with a real run and monthly costs shown. It is more a scripted LLM pipeline than an autonomous agent, and its outcomes are self-reported."
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "https://dev.to/dailycontext/building-better-agents-through-end-to-end-evals-pgh": {
+    "date": "2026-10-15",
+    "score": 7,
+    "verdict": "kept"
+  },
+  "https://github.com/1105216375-alt/resimind": {
+    "date": "2026-10-15",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://github.com/aindeev/agent-chrome-relay": {
+    "date": "2026-10-15",
+    "score": 5,
+    "verdict": "rejected"
+  },
+  "https://github.com/AirsupHQ/machine-skill": {
+    "date": "2026-10-15",
+    "score": 6.5,
+    "verdict": "kept"
+  },
+  "https://github.com/Atoll92/agent-standup": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/deeplethe/solid-glass": {
+    "date": "2026-10-15",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://github.com/Entelligence-AI/agentplay": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/fayazara/robot-heads": {
+    "date": "2026-10-15",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://github.com/feder-cr/open_scion": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/franzenzenhofer/big-arrow-on-the-screen": {
+    "date": "2026-10-15",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://github.com/GabrieleLozupone/kokon": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/Graphicle-AI/graphicle": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/heqiangdiao-wq/AI-Cross-Border-Ecommerce-Agent-Toolkit": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/hujjun/mcd-saver-strategist": {
+    "date": "2026-10-15",
+    "score": 6.5,
+    "verdict": "kept"
+  },
+  "https://github.com/i12bp8/decomp.wtf": {
+    "date": "2026-10-15",
+    "score": 7.5,
+    "verdict": "kept"
+  },
+  "https://github.com/iamumeransari/claude-show-your-work": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/josefchen/muster": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/juliobsz/skills": {
+    "date": "2026-10-15",
+    "score": 5,
+    "verdict": "kept"
+  },
+  "https://github.com/liyupi/ai-promo-video-maker": {
+    "date": "2026-10-15",
+    "score": 7,
+    "verdict": "kept"
+  },
+  "https://github.com/marclou/mailcheap": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://github.com/Miftahul-Islam-Efaz/Motion-graphics-skill": {
+    "date": "2026-10-15",
+    "score": 6.5,
+    "verdict": "kept"
+  },
+  "https://github.com/morluto/awesome-reverse-engineering": {
+    "date": "2026-10-15",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://github.com/NB-Corp/gpt-with-taste": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/NousResearch/hermes-official-plugins": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://github.com/RayenMlayeh/jevcrawl": {
+    "date": "2026-10-15",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://github.com/sepehr071/awesome-iran-mcp": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/TedHaley/pensieve": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/thesysdev/open-intelligent-ui": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/YeonwooSung/my-claude-code-mods": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/Zfinix/eleven": {
+    "date": "2026-10-15",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://github.com/zhuyansen/new-term-radar": {
+    "date": "2026-10-15",
+    "score": 6,
+    "verdict": "kept"
+  },
+  "https://latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://latent.space/p/crossing-the-threshold": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://latent.space/p/lab-in-the-loop-at-compute-speed": {
+    "date": "2026-10-15",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://liquid.ai/blog/lfm2-5-24b-a2b": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://openai.com/index/amp-beyond-coding": {
+    "date": "2026-10-15",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://openai.com/index/third-moment-research": {
+    "date": "2026-10-15",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://petal.live": {
+    "date": "2026-10-15",
+    "score": 5,
+    "verdict": "kept"
+  },
+  "https://simonwillison.net/2026/Oct/14/ai-is-mass-decompiling-games": {
+    "date": "2026-10-15",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://simonwillison.net/2026/Oct/14/tree-appreciator": {
+    "date": "2026-10-15",
+    "score": 6,
+    "verdict": "kept"
+  }
+}

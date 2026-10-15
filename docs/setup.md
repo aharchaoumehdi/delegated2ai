@@ -65,9 +65,11 @@ request returns costs $0.005 (no free tier, no subscription for new accounts).
    of starter credit after saving a card.
 3. Add the token as the `X_BEARER_TOKEN` secret.
 
-The collector makes one search a day of up to `maxResults` posts (100 by default in
-`config/sources.json`): at most about $0.50 a day, roughly $15 a month. Lower
-`maxResults` to spend less. Set a spending limit or turn off auto-recharge in the
+The collector makes one search a day of up to `maxResults` posts (50 by default in
+`config/sources.json`), sorted by relevance: at most about $0.25 a day, roughly $7.50 a
+month. Every post X returns goes to the curator (X is listed in `alwaysCurate`), so we
+never pay for a post and then discard it unread. Change `maxResults` (10-100) to spend
+more or less. Set a spending limit or turn off auto-recharge in the
 console if you want a hard cap.
 
 ## 4. Allow the workflow to push
@@ -98,6 +100,14 @@ because the build writes a `CNAME` file as soon as `url` is no longer a github.i
 
 ## Cost
 
-Curation evaluates at most 40 candidates a day (`maxCandidates` in `config/sources.json`),
-in batches of 6. With the default model that is roughly a dollar a day or less; lower
-`maxCandidates` or set `CURATOR_MODEL` to reduce it.
+Filters are deliberately loose: low engagement never keeps a relevant post from the
+curator, because new ideas often start with few likes. What reaches Claude each day:
+
+- every post from a paid source or a reader submission (`alwaysCurate`), and
+- up to `maxCandidates` (60) of the free sources' keyword-matching posts.
+
+That is up to about 110 candidates on a busy day, judged in batches of 6; posts already
+judged are remembered and never paid for twice. Curation cost grows with that number, so
+`maxCandidates`, X's `maxResults` and `CURATOR_MODEL` are the levers to spend less. Each
+run log in `data/runs/` shows how many items every source returned and, for X, how many
+posts were billed (`fetched`).

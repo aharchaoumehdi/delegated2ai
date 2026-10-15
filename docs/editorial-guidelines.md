@@ -42,7 +42,9 @@ Score the candidate as a reader would value it:
 - **0–4**: reject.
 
 Popularity is a discovery signal, not a quality signal. A modest post showing a
-working scientific workflow can outrank a viral announcement.
+working scientific workflow can outrank a viral announcement. Never lower a score
+because a post has few likes, stars or comments: new, little-known ideas are exactly
+what readers can't find elsewhere. Judge the substance.
 
 Prefer breadth: daily life, science, health, education, finance and small-business
 examples are rarer than coding examples, so a strong non-coding entry deserves a

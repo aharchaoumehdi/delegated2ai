@@ -1,30 +1,32 @@
 {
   "_comment": "Collector configuration. Each source is optional; a failing source is logged and skipped. See docs/pipeline.md.",
   "lookbackHours": 36,
-  "maxCandidates": 40,
+  "maxCandidates": 60,
+  "alwaysCurate": ["submission", "x"],
   "keywords": [
     "agent", "agents", "agentic", "claude code", "codex", "devin", "cursor", "copilot agent",
     "manus", "operator", "chatgpt agent", "n8n", "langgraph", "crewai", "openclaw", "mcp",
-    "automated", "automates", "autonomous", "built", "workflow"
+    "automated", "automates", "autonomous", "built", "workflow",
+    "claude", "gpt", "gemini", "llm", "copilot", "vibe cod", "vibe-cod", "ai-powered", "ai assistant"
   ],
   "hackernews": {
     "enabled": true,
-    "minPoints": 15,
+    "minPoints": 5,
     "queries": ["Claude Code", "Codex", "AI agent", "agentic", "Devin", "Cursor agent", "MCP", "Show HN agent", "autonomous agent", "OpenClaw"]
   },
   "reddit": {
     "enabled": true,
-    "minScore": 40,
+    "minScore": 10,
     "subreddits": ["ClaudeAI", "ClaudeCode", "ChatGPTCoding", "AI_Agents", "OpenAI", "codex", "cursor", "n8n", "LocalLLaMA", "automation", "SideProject", "singularity"]
   },
   "devto": {
     "enabled": true,
-    "minReactions": 10,
+    "minReactions": 3,
     "tags": ["ai", "agents", "aiagents", "claudecode", "mcp"]
   },
   "github": {
     "enabled": true,
-    "minStars": 40,
+    "minStars": 15,
     "queries": ["topic:claude-code", "topic:ai-agents", "topic:agentic-workflow", "topic:mcp-server agent"]
   },
   "submissions": {
@@ -33,8 +35,8 @@
   },
   "x": {
     "enabled": true,
-    "minLikes": 100,
-    "maxResults": 100,
+    "minLikes": 0,
+    "maxResults": 50,
     "sortOrder": "relevancy",
     "query": "(\"claude code\" OR codex OR \"ai agent\" OR \"my agent\" OR devin OR \"agentic\") (built OR automated OR shipped OR \"saved me\" OR workflow) -is:retweet -is:reply lang:en"
   },

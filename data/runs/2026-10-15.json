@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-15",
+  "collect": {
+    "sources": {
+      "x": {
+        "status": "skipped",
+        "reason": "X_BEARER_TOKEN not set"
+      },
+      "submissions": {
+        "status": "ok",
+        "items": 0,
+        "ms": 372
+      },
+      "reddit": {
+        "status": "error",
+        "error": "r/ClaudeAI: HTTP 403 for https://www.reddit.com/r/ClaudeAI/top.json?t=day&limit=25&raw_json=1; r/ClaudeCode: HTTP 403 for https://www.reddit.com/r/ClaudeCode/top.json?t=day&limit=25&raw_json=1; r/ChatGPTCoding: HTTP 403 for https://www.reddit.com/r/ChatGPTCoding/top.json?t=day&limit=25&raw_json=1; r"
+      },
+      "feeds": {
+        "status": "ok",
+        "items": 16,
+        "ms": 2200
+      },
+      "github": {
+        "status": "ok",
+        "items": 50,
+        "ms": 2241
+      },
+      "hackernews": {
+        "status": "ok",
+        "items": 44,
+        "ms": 2372
+      },
+      "devto": {
+        "status": "ok",
+        "items": 22,
+        "ms": 6162
+      }
+    },
+    "raw": 132,
+    "unique_new": 108,
+    "candidates": 40
+  },
+  "curate": {
+    "status": "skipped",
+    "reason": "ANTHROPIC_API_KEY not set"
+  }
+}

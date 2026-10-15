@@ -47,7 +47,9 @@ function writeURL() {
   if (state.sort !== "top") p.set("sort", state.sort);
   if (state.chip !== "all") p.set("show", state.chip);
   const qs = p.toString();
-  history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+  try {
+    history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+  } catch {}
 }
 
 function filtered() {
@@ -139,7 +141,7 @@ function toggleShare(btn) {
   closeMenu();
   if (wasOpen) return;
   const c = byId.get(btn.dataset.share);
-  const url = new URL(c ? caseHref(c) : location.pathname, location.origin).href;
+  const url = new URL(c ? caseHref(c) : location.href, location.href).href;
   const text = c ? c.title : document.title;
   const menu = document.createElement("div");
   menu.className = "menu";

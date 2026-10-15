@@ -13,13 +13,15 @@ import { loadCases, sortCases } from "./lib/cases.mjs";
 import { taxonomy } from "./lib/taxonomy.mjs";
 import { path, readJSON, today } from "./lib/util.mjs";
 import {
-  configure, esc, formatDate, dayLabel, slug, badge, itemHTML, tileHTML, detailHTML,
+  configure, href, esc, formatDate, dayLabel, slug, badge, itemHTML, tileHTML, detailHTML,
   caseHref, agentHref, categoryHref, ICON,
 } from "../site/assets/render.js";
 
 const site = await readJSON(path("config", "site.json"));
 const siteUrl = (process.env.SITE_URL || site.url).replace(/\/?$/, "/");
-const base = new URL(siteUrl).pathname; // e.g. "/delegated2ai/"
+const PREVIEW = process.env.PREVIEW === "1"; // relative links, for hosting as plain files
+const ABS_BASE = new URL(siteUrl).pathname; // e.g. "/delegated2ai/"
+let base = ABS_BASE;
 const DIST = path("dist");
 
 const { cases: all, errors } = await loadCases();
@@ -34,7 +36,7 @@ const latestDay = cases[0]?.added || buildDay;
 const platforms = Object.fromEntries(taxonomy.platforms.map((p) => [p.name, { abbr: p.abbr, color: p.color }]));
 const platformInfo = new Map(taxonomy.platforms.map((p) => [p.name, p]));
 const domainInfo = new Map(taxonomy.domains.map((d) => [d.name, d]));
-configure({ base, today: latestDay, platforms, repo: site.repo });
+configure({ base, index: PREVIEW ? "index.html" : "", today: latestDay, platforms, repo: site.repo });
 
 const countBy = (key) => {
   const m = new Map();
@@ -129,21 +131,21 @@ function sidebar({ activeAgent, activeDomain } = {}) {
   const domainRow = ([name, n]) =>
     `<a href="${categoryHref(name)}"${activeDomain === name ? ' class="is-active"' : ""}><span>${esc(name)}</span><span class="n">${n}</span></a>`;
   return `<aside class="sidebar">
-  <a href="${base}" aria-label="${esc(site.name)} home">${logoSVG()}</a>
-  <div class="brand-row"><h1><a href="${base}">${logoSVG("logo-inline")}${wordmark}</a></h1>${themeButton}</div>
+  <a href="${href()}" aria-label="${esc(site.name)} home">${logoSVG()}</a>
+  <div class="brand-row"><h1><a href="${href()}">${logoSVG("logo-inline")}${wordmark}</a></h1>${themeButton}</div>
   <p class="tagline">${esc(site.tagline)}</p>
   <div class="side-ctas">
     <a class="btn-primary" href="${esc(digestHref)}">Get the daily digest</a>
     <a class="btn-outline" href="${issueUrl("submit-use-case.yml")}">Submit a use case</a>
   </div>
   <button type="button" class="filter-toggle" data-filters aria-expanded="false">Filter <span>Agents · Categories</span></button>
-  <a class="new-today" href="${base}new/"><span><span class="pulse"></span>New ${esc(dayLabel(latestDay, buildDay) === "Today" ? "today" : dayLabel(latestDay, buildDay).toLowerCase())}</span><span class="n">${newest.length}</span></a>
+  <a class="new-today" href="${href("new/")}"><span><span class="pulse"></span>New ${esc(dayLabel(latestDay, buildDay) === "Today" ? "today" : dayLabel(latestDay, buildDay).toLowerCase())}</span><span class="n">${newest.length}</span></a>
   ${promoCard()}
   <div class="side-lists">
     <section class="side-section">
-      <div class="side-head"><h2 class="mono-label">Agents</h2><a href="${base}agents/">All agents</a></div>
+      <div class="side-head"><h2 class="mono-label">Agents</h2><a href="${href("agents/")}">All agents</a></div>
       <nav class="side-list">${agentCounts.slice(0, 10).map(agentRow).join("")}${
-        agentCounts.length > 10 ? `<a class="show-all" href="${base}agents/">Show all ${agentCounts.length}</a>` : ""
+        agentCounts.length > 10 ? `<a class="show-all" href="${href("agents/")}">Show all ${agentCounts.length}</a>` : ""
       }</nav>
     </section>
     <section class="side-section">
@@ -155,7 +157,7 @@ function sidebar({ activeAgent, activeDomain } = {}) {
     <b>${plural(cases.length, "use case")}</b><br>
     Updated ${esc(formatDate(buildDay))}<br>
     Sources: the open web, X, Reddit, Hacker News, GitHub
-    <nav><a href="${base}agents/">Agents</a><a href="${base}new/">New</a><a href="https://github.com/${esc(site.repo)}/blob/main/docs/editorial-guidelines.md">How we curate</a><a href="${siteUrl}feed.xml">RSS feed</a><a href="${issueUrl("sponsor.yml", "[sponsor] ")}">Sponsor</a></nav>
+    <nav><a href="${href("agents/")}">Agents</a><a href="${href("new/")}">New</a><a href="https://github.com/${esc(site.repo)}/blob/main/docs/editorial-guidelines.md">How we curate</a><a href="${siteUrl}feed.xml">RSS feed</a><a href="${issueUrl("sponsor.yml", "[sponsor] ")}">Sponsor</a></nav>
   </div>
 </aside>`;
 }
@@ -219,7 +221,7 @@ ${sidebar()}
           <p class="mono-label">Latest finds</p>
         </div>
         <ul class="items">${latest.slice(0, 8).map((c) => itemHTML(c)).join("")}</ul>
-        <a class="see-all" href="${base}new/">See all, day by day ${ICON.ext}</a>
+        <a class="see-all" href="${href("new/")}">See all, day by day ${ICON.ext}</a>
       </div>
     </section>
     ${topicSections}
@@ -244,8 +246,8 @@ function narrowPage({ path: pagePath, title, description, body, list, jsonld }) 
 <body>
 <div class="frame frame-narrow">
   <header class="topnav">
-    <a class="brand" href="${base}">${logoSVG("")}${wordmark}</a>
-    <div class="topnav-right">${themeButton}<a class="count" href="${base}">All ${cases.length.toLocaleString("en-US")} use cases</a></div>
+    <a class="brand" href="${href()}">${logoSVG("")}${wordmark}</a>
+    <div class="topnav-right">${themeButton}<a class="count" href="${href()}">All ${cases.length.toLocaleString("en-US")} use cases</a></div>
   </header>
   <main class="page">${body}</main>
 </div>
@@ -297,7 +299,7 @@ function agentPage(name) {
     title: `${name} use cases: ${plural(list.length, "real example")} · ${site.name}`,
     description: `What people are actually doing with ${name}: ${plural(list.length, "real example")}, each explained briefly and linked to the original.`,
     list,
-    body: `<p class="eyebrow"><a href="${base}agents/">Agents</a></p>
+    body: `<p class="eyebrow"><a href="${href("agents/")}">Agents</a></p>
 <h1 class="page-title">${esc(name)} use cases: ${plural(list.length, "real example")}</h1>
 <p class="page-lead">${esc(info?.description || "")} Here is what people have got it to do.</p>
 <p class="page-stats">${plural(list.length, "use case")}${doms.length ? ` · Most often: ${esc(doms.slice(0, 3).join(" · "))}` : ""} · Updated ${esc(formatDate(buildDay))}</p>
@@ -413,14 +415,25 @@ ${items}
 }
 
 // ---------- write ----------
-const pages = {
-  "index.html": homePage(),
-  "new/index.html": newPage(),
-  "agents/index.html": agentsIndexPage(),
+const renderers = {
+  "index.html": homePage,
+  "new/index.html": newPage,
+  "agents/index.html": agentsIndexPage,
 };
-for (const [d] of domainCounts) pages[`category/${slug(d)}/index.html`] = categoryPage(d);
-for (const [p] of agentCounts) pages[`agents/${slug(p)}/index.html`] = agentPage(p);
-for (const c of cases) pages[`use-case/${c.id}/index.html`] = casePage(c);
+for (const [d] of domainCounts) renderers[`category/${slug(d)}/index.html`] = () => categoryPage(d);
+for (const [p] of agentCounts) renderers[`agents/${slug(p)}/index.html`] = () => agentPage(p);
+for (const c of cases) renderers[`use-case/${c.id}/index.html`] = () => casePage(c);
+renderers["404.html"] = () =>
+  narrowPage({ path: "404.html", title: `Not found · ${site.name}`, description: site.description, list: [], body: `<h1 class="page-title">Page not found</h1><p class="page-lead"><a href="${href()}">Back to all use cases</a></p>` });
+
+const pages = {};
+for (const [file, render] of Object.entries(renderers)) {
+  if (PREVIEW) {
+    base = "../".repeat(file.split("/").length - 1) || "./";
+    configure({ base });
+  }
+  pages[file] = render();
+}
 
 await rm(DIST, { recursive: true, force: true });
 await cp(path("site", "assets"), join(DIST, "assets"), { recursive: true });
@@ -428,7 +441,7 @@ for (const [file, html] of Object.entries(pages)) {
   await mkdir(join(DIST, file, ".."), { recursive: true });
   await writeFile(join(DIST, file), html);
 }
-const urls = Object.keys(pages).map((f) => siteUrl + f.replace(/index\.html$/, ""));
+const urls = Object.keys(pages).filter((f) => f !== "404.html").map((f) => siteUrl + f.replace(/index\.html$/, ""));
 await writeFile(
   join(DIST, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `<url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`,
@@ -439,9 +452,5 @@ await writeFile(join(DIST, "cases.json"), JSON.stringify({ generated: buildDay, 
 await writeFile(join(DIST, ".nojekyll"), "");
 const host = new URL(siteUrl).hostname;
 if (!host.endsWith("github.io") && host !== "localhost") await writeFile(join(DIST, "CNAME"), host + "\n");
-await writeFile(
-  join(DIST, "404.html"),
-  narrowPage({ path: "404.html", title: `Not found · ${site.name}`, description: site.description, list: [], body: `<h1 class="page-title">Page not found</h1><p class="page-lead"><a href="${base}">Back to all use cases</a></p>` }),
-);
 
-console.log(`Built ${cases.length} use cases into ${Object.keys(pages).length} pages → dist/ (base ${base})`);
+console.log(`Built ${cases.length} use cases into ${Object.keys(pages).length} pages → dist/ (${PREVIEW ? "preview, relative links" : `base ${ABS_BASE}`})`);

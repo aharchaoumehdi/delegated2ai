@@ -1,7 +1,7 @@
 // Shared rendering helpers, used by the browser (app.js) and by the static
 // build (scripts/build.mjs) so pre-rendered and live HTML are identical.
 
-let CONF = { base: "/", today: "", platforms: {}, repo: "" };
+let CONF = { base: "/", index: "", today: "", platforms: {}, repo: "" };
 export function configure(conf) {
   CONF = { ...CONF, ...conf };
 }
@@ -59,9 +59,11 @@ export function platformMeta(name) {
   return { abbr, color: "transparent" };
 }
 
-export const caseHref = (c) => `${CONF.base}use-case/${c.id}/`;
-export const agentHref = (name) => `${CONF.base}agents/${slug(name)}/`;
-export const categoryHref = (name) => `${CONF.base}category/${slug(name)}/`;
+// `index` is "index.html" in the self-contained preview build, where folders don't resolve.
+export const href = (p = "") => `${CONF.base}${p}${p === "" || p.endsWith("/") ? CONF.index : ""}`;
+export const caseHref = (c) => href(`use-case/${c.id}/`);
+export const agentHref = (name) => href(`agents/${slug(name)}/`);
+export const categoryHref = (name) => href(`category/${slug(name)}/`);
 
 /** Two-letter agent mark, as in the sidebar and list items. */
 export function badge(name, size = "md") {

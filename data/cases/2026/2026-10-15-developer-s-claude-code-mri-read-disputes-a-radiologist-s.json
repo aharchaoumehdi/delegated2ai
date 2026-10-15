@@ -23,12 +23,12 @@
     "published": null
   },
   "added": "2026-10-15",
-  "status": "review",
+  "status": "published",
   "score": 7,
   "featured": false,
   "curation": {
     "method": "manual",
     "model": null,
-    "rationale": "Launch seed; sources conflict or only secondary coverage found — verify before publishing."
+    "rationale": "Reviewed: details (266MB of DICOM files, the Grade III partial-tear report, the model's 'moderate-to-high confidence' arbitration, the Hacker News debate) are corroborated by several independent write-ups."
   }
 }

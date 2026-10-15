@@ -28,12 +28,12 @@
     "published": "2026-10-09"
   },
   "added": "2026-10-15",
-  "status": "review",
+  "status": "rejected",
   "score": 5,
   "featured": false,
   "curation": {
     "method": "auto",
     "model": "claude-opus-5-5",
-    "rationale": "A contest entry that chains McDonald's China MCP tools into ordering, coupon-optimisation and group bill-splitting flows with confirmation gates. The README is mostly a feature description with illustrative examples, and it overlaps heavily with an already-published McDonald's coupon-ordering…"
+    "rationale": "Reviewed: near-duplicate of the published McDonald's China coupon-optimizer skill from the same contest; the stronger entry was kept."
   }
 }

@@ -1,6 +1,6 @@
 # The website itself, served by Cloudflare (Workers static assets, no server code).
 # Deployed by the daily workflow's deploy job once SITE_LIVE is "true"; see docs/setup.md,
-# "Publish on Cloudflare". The custom domain (delegatedto.ai) is attached in the dashboard.
+# "Publish on Cloudflare". The custom domains are declared below.
 name = "delegatedto-site"
 compatibility_date = "2026-09-01"
 
@@ -8,3 +8,13 @@ compatibility_date = "2026-09-01"
 directory = "../dist"
 not_found_handling = "404-page"   # serves dist/404.html
 html_handling = "auto-trailing-slash"
+
+# The site's addresses. Cloudflare creates the DNS records and HTTPS certificates itself
+# (the domain must be on this Cloudflare account).
+[[routes]]
+pattern = "delegatedto.ai"
+custom_domain = true
+
+[[routes]]
+pattern = "www.delegatedto.ai"
+custom_domain = true

@@ -22,10 +22,11 @@ collects and curates, and its deploy job is held (the run summary says "Deploy h
 3. **First publish.** Actions → **Daily update & deploy** → Run workflow, tick "Only rebuild
    and deploy". The run summary shows the Cloudflare address
    (`https://delegatedto-site.<account>.workers.dev`).
-4. **Attach the domain.** Cloudflare dashboard → **Workers & Pages** → `delegatedto-site` →
-   **Settings → Domains & Routes → Add → Custom domain** → `delegatedto.ai`. Cloudflare
-   creates the DNS record and the HTTPS certificate itself. Repeat for `www.delegatedto.ai`
-   if you want that address to work too (pages declare `delegatedto.ai` as canonical).
+4. **The domain.** `deploy/wrangler.toml` declares `delegatedto.ai` and `www.delegatedto.ai`
+   as custom domains, so the first publish after the domain is active attaches them;
+   Cloudflare creates the DNS records and HTTPS certificates itself. (Pages declare
+   `delegatedto.ai` as canonical.) If the API token lacks permission for that, add them in
+   the dashboard instead: Workers & Pages → `delegatedto-site` → Settings → Domains & Routes.
 
 After that every scheduled run publishes the day's update, and every merge to `main`
 republishes the site. `config/site.json` → `url` is the address used in links, the sitemap

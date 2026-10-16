@@ -1,0 +1,42 @@
+{
+  "id": "robotics-firm-routes-support-tickets-through-an-openclaw",
+  "title": "Robotics firm routes support tickets through an OpenClaw agent into Discord threads",
+  "summary": "A small robotics company's support had been scattered across WhatsApp chats. It now runs an OpenClaw agent that turns Chatwoot tickets into Discord threads, suggests fixes from past cases, estimates billing and drafts replies for staff to review.",
+  "domain": "Business",
+  "platform": "OpenClaw",
+  "model": null,
+  "tools": [
+    "OpenClaw",
+    "Chatwoot",
+    "Discord"
+  ],
+  "agent_role": "The agent creates Discord threads from tickets, suggests fixes and videos from past cases, helps with billing and drafts customer replies. Humans review each draft and send it through Chatwoot.",
+  "outcome": "Author reports support is now tracked in one place and the agent helps non-fluent English speakers reply to customers.",
+  "what_they_did": "The poster's team self-hosted Chatwoot and connected it to their PongFox app. They also connected OpenClaw to Chatwoot and a Discord bot. Each customer ticket is forwarded to OpenClaw, which opens a Discord thread for the team. It then suggests fixes based on earlier robot cases, points to support videos, estimates time and parts for billing, and drafts the final reply.",
+  "how_it_went": "The author says they can now check any ticket's status in the helpdesk instead of asking the team. They say the agent is helping a lot. Replies to customers are still sent by a person.",
+  "worth_knowing": "Setting up the agent was the easy part. Tuning it took ongoing effort, so plan for who will maintain its skills and rules, or that person becomes a new bottleneck.",
+  "prompt": "Watch for new tickets in my helpdesk [Chatwoot or your helpdesk]. For each ticket, open a thread in [Discord channel] with the customer's name, product and warranty status. Search past resolved tickets and our support videos at [video library location] for similar issues, and suggest likely fixes with links. When the team agrees on a resolution, estimate billing from time spent and parts used. Then draft a clear, polite reply to the customer in plain English. Post the draft in the thread for review and never send anything to the customer yourself.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "customer support",
+    "helpdesk",
+    "small business",
+    "ticket triage"
+  ],
+  "source": {
+    "url": "https://x.com/mkirank/status/2110995005716508961",
+    "name": "X",
+    "author": "@mkirank",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real small-business support agent in production with a clear tool stack and human-in-the-loop flow, though it gives no numbers and few configuration details."
+  }
+}

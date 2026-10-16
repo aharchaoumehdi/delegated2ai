@@ -1,0 +1,41 @@
+{
+  "id": "claude-code-works-out-wordle-s-repeated-letter-rules-and",
+  "title": "Claude Code works out Wordle's repeated-letter rules and builds a working clone",
+  "summary": "A developer used REA with Claude Code to study how Wordle scores guesses, including repeated letters, and then build their own version based on that logic rather than copying the interface.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "REA"
+  ],
+  "agent_role": "The agent studied how Wordle behaves, including how it handles repeated letters, and implemented a matching version. The human picked the target and directed the work.",
+  "outcome": "Author shows a working Wordle clone in a video demo.",
+  "what_they_did": "The poster used a tool called REA together with Claude Code to reverse-engineer Wordle. They had the agent work out the game's logic, including how repeated letters are marked, and then build a version of their own.",
+  "how_it_went": "The author shares a video of the result and says the agent studied the logic behind the game instead of just copying the UI.",
+  "worth_knowing": null,
+  "prompt": "Investigate how [game name] works by studying its observable behavior. Write down its rules precisely, including edge cases such as [tricky case, e.g. repeated letters in a guess]. Show me the rule list and a set of test cases first and wait for my approval. Then build a web version in [framework] that passes those tests.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "reverse engineering",
+    "game clone",
+    "wordle",
+    "game logic"
+  ],
+  "source": {
+    "url": "https://x.com/codenameposhan/status/2110888192245428302",
+    "name": "X",
+    "author": "@codenameposhan",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine agent task, with a video demo: the agent worked out Wordle's rules, including repeated letters, and built a clone. The post is brief and gives few details about REA or the steps."
+  }
+}

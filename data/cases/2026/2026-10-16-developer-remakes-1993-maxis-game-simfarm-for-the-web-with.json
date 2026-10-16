@@ -1,0 +1,43 @@
+{
+  "id": "developer-remakes-1993-maxis-game-simfarm-for-the-web-with",
+  "title": "Developer remakes 1993 Maxis game SimFarm for the web with Codex and Claude Code",
+  "summary": "A developer rebuilt the 1993 Maxis game SimFarm in TypeScript and React with help from Codex and Claude Code. It now plays in browsers and on phones, with bug fixes and quality-of-life improvements.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "TypeScript",
+    "React"
+  ],
+  "agent_role": "Codex and Claude Code helped write the TypeScript/React remake. The author led the project, and the split of work is not detailed.",
+  "outcome": "Author reports the remake is playable in browsers and on smartphones, with source released under CC0.",
+  "what_they_did": "The poster recreated SimFarm, a childhood favorite, as a web game using TypeScript and React. They used Codex and Claude Code to help build it and added quality-of-life improvements and bug fixes.",
+  "how_it_went": "The author says the game is now playable in web browsers and on smartphones, and the source code is available under CC0.",
+  "worth_knowing": null,
+  "prompt": "Help me build a web remake of [classic game] in TypeScript and React that plays on desktop browsers and phones. First, write a design doc covering the core game mechanics, screens and data model, plus a list of improvements over the original, and wait for my approval. Then build it feature by feature, running it after each step to check that it works.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "game remake",
+    "retro games",
+    "web game",
+    "typescript"
+  ],
+  "source": {
+    "url": "https://x.com/petejkim/status/2110739611697758659",
+    "name": "X",
+    "author": "@petejkim",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, playable result with CC0 source code: a browser remake of a 1993 game. The post says little about what the agents did versus the author."
+  }
+}

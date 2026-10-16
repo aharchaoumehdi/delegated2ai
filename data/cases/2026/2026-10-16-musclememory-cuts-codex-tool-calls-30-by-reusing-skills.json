@@ -1,0 +1,44 @@
+{
+  "id": "musclememory-cuts-codex-tool-calls-30-by-reusing-skills",
+  "title": "MuscleMemory cuts Codex tool calls 30% by reusing skills learned from passing tests",
+  "summary": "Coding agents relearn the same steps every session. MuscleMemory watches agent sessions, saves how tasks were done once tests pass, and hands a short note next time, which its author reports cut tokens, tool calls and time in Codex benchmarks.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": "Sonnet 5.5",
+  "tools": [
+    "Codex",
+    "Claude Code",
+    "Cursor",
+    "MCP",
+    "SQLite"
+  ],
+  "agent_role": "The coding agent does the task; MuscleMemory captures successful sessions as skills and injects notes later. A human must approve each skill before agents see it.",
+  "outcome": "Author reports a benchmark with real Codex sessions cut input tokens 25.5%, tool calls 30.4% and time 28.2% with all tasks passing; an early Claude Code run cut input tokens 43.5%.",
+  "what_they_did": "The author built hooks for Claude Code, Codex and Cursor that record agent sessions. When tests pass after the last change, it learns a skill: files to change, the verifying test and pitfalls. Skills must pass two later checks and a human Keep before reuse, and they are shared across agents.",
+  "how_it_went": "The author reports 25.5% fewer input tokens, 30.4% fewer tool calls and 28.2% less time on Codex benchmarks, and on a small SWE-bench Django run Codex solved as many issues with about half the tokens.",
+  "worth_knowing": "Benchmarks cover repeat tasks on three controlled codebases and the Claude Code run is small; cross-repository recall is untested.",
+  "prompt": "Set up MuscleMemory for this project following its install docs, connect it to [your agent], then work on [task] as usual. After the tests pass, show me the skill it proposes to learn and wait for my approval in the dashboard before keeping it.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "agent memory",
+    "coding agents",
+    "token savings",
+    "benchmarks"
+  ],
+  "source": {
+    "url": "https://github.com/TheWariend/MuscleMemory",
+    "name": "Hacker News",
+    "author": "TheWariend",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A tool, but the README reports concrete benchmark runs with Codex and Claude Code sessions and a reproduce script. It is still early and the runs are small."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "postnl-wires-aws-devops-agent-into-slack-so-on-call",
+  "title": "PostNL wires AWS DevOps Agent into Slack so on-call engineers start incident probes there",
+  "summary": "PostNL's AI team built a Slack /watchdog command that triggers AWS DevOps Agent to investigate incidents across logs, metrics and topology, cutting manual evidence gathering while engineers keep the decisions.",
+  "domain": "Software",
+  "platform": "AWS DevOps Agent",
+  "model": null,
+  "tools": [
+    "Slack",
+    "AWS Lambda",
+    "API Gateway",
+    "AWS CDK",
+    "AWS DevOps Agent"
+  ],
+  "agent_role": "The agent does the first investigation pass using logs, metrics and topology and posts findings to a Slack thread; engineers interpret the findings and decide next steps.",
+  "outcome": "The author says the agent took on the first investigation pass while engineers kept ownership of interpretation and next steps; no figures are reported.",
+  "what_they_did": "PostNL's AI Center of Excellence team set up AWS DevOps Agent with a scoped IAM role via CDK. A Slack command like '/watchdog investigate the 429s we are seeing' calls a Lambda behind API Gateway, which starts an investigation. Findings come back in the Slack thread.",
+  "how_it_went": "The author says the setup let the agent handle the first investigation pass so on-call engineers spend less time collecting evidence before deciding.",
+  "worth_knowing": "Agent Space and account association could be defined in CDK, but skills still had to be configured by hand in the console at the time.",
+  "prompt": "Help me set up an incident-investigation workflow: when I post '/investigate [symptom]' in [Slack channel], gather evidence from [our logs and metrics source], recent deployments and service dependencies for [service], then post a hypothesis with supporting evidence to the thread. Use only read-only access scoped to [account or resources]. Show me the architecture and permissions plan first and wait for my approval before deploying anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "incident response",
+    "devops",
+    "slack bot",
+    "on-call"
+  ],
+  "source": {
+    "url": "https://dev.to/aws-builders/hands-on-with-aws-devops-agent-changing-devops-work-without-replacing-engineers-kfe",
+    "name": "DEV Community",
+    "author": "Matheus das Mercês",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real team deployment with architecture and CDK code showing how incident investigation was wired into Slack, but no measured results are given."
+  }
+}

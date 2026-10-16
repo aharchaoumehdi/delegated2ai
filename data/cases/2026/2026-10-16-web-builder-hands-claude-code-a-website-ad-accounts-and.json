@@ -1,0 +1,45 @@
+{
+  "id": "web-builder-hands-claude-code-a-website-ad-accounts-and",
+  "title": "Web builder hands Claude Code a website, ad accounts and budget to run every 4 hours",
+  "summary": "A website builder gave Claude Code a baseline site, ad accounts on Google, X, LinkedIn and Reddit, a budget and scraping tools, letting it make decisions every four hours. So far it mostly churns out SEO pages and share buttons.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Google Ads",
+    "X Ads",
+    "LinkedIn Ads",
+    "Reddit Ads",
+    "Apify",
+    "OpenRouter"
+  ],
+  "agent_role": "Claude Code edits the site and manages ad campaigns on a recurring four-hour schedule; the human set up access and budget and watches.",
+  "outcome": "Author reports the agent mostly does 'tomfoolery' such as creating many SEO pages and adding share buttons to try to go viral.",
+  "what_they_did": "A developer who builds websites gave Claude Code a baseline site, access to Google, X, LinkedIn and Reddit ad accounts with a budget, plus Apify and OpenRouter. The site personalizes content per visitor using device, location and behavior signals rendered via DeepSeek. Claude Code reviews and acts every four hours.",
+  "how_it_went": "The author says it is mostly doing tomfoolery so far: generating lots of SEO pages and adding share buttons, which he compares to what interns suggest. He still finds watching its decisions fun.",
+  "worth_knowing": "The site reads around fifty device signals and can search public profiles from autofilled names, so it gates everything behind a consent page with an erase option. Giving an agent live ad spend means real money is on the line.",
+  "prompt": "Every 4 hours, review [your website repo] and its analytics, then propose up to three changes to the site or to my ad campaigns on [ad platforms] within a total budget of [budget]. Explain the reasoning for each change. Show me the plan and any ad spend changes and wait for my approval before deploying site changes or changing campaigns.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "autonomous marketing",
+    "ad spend",
+    "website",
+    "experiment"
+  ],
+  "source": {
+    "url": "https://snitch.alphaventure.com/gate.php",
+    "name": "Hacker News",
+    "author": "HamadMalikKhan",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real autonomous experiment where Claude Code runs a website and ad accounts on a 4-hour loop, but results are thin and anecdotal. The heavy visitor-profiling design adds privacy concerns, though the site discloses it and asks consent."
+  }
+}

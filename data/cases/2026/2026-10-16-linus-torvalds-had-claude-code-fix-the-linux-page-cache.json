@@ -1,0 +1,40 @@
+{
+  "id": "linus-torvalds-had-claude-code-fix-the-linux-page-cache",
+  "title": "Linus Torvalds had Claude Code fix the Linux page cache; reviewers then found a race",
+  "summary": "Linus Torvalds let Claude Code write a fix to the Linux kernel's page cache, and kernel reviewers later found a race condition in it, a reminder that agent patches to concurrent code need careful review.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Linux kernel source"
+  ],
+  "agent_role": "Claude Code produced the page-cache fix; Torvalds let it through and human kernel reviewers found the race.",
+  "outcome": "The New Stack reports that reviewers found a race in the Claude Code fix.",
+  "what_they_did": "According to The New Stack, Linus Torvalds let Claude Code fix a problem in the Linux page cache. The change then went through kernel review.",
+  "how_it_went": "The New Stack reports that reviewers found a race condition in the fix. The captured page gives no further detail.",
+  "worth_knowing": "Even with an expert in the loop, an agent-written fix to concurrent kernel code slipped a race past initial acceptance; human review caught it.",
+  "prompt": "Look at [file or subsystem] in [repo] and propose a fix for [bug description]. Before writing code, explain the concurrency model and which locks protect the data you touch. After the fix, list every possible race or ordering problem you can think of, write tests or stress cases that would expose them, and run them. Show me the diff and your race analysis and wait for my review before committing.",
+  "evidence": "Independent report",
+  "difficulty": "Advanced",
+  "tags": [
+    "linux kernel",
+    "bug fix",
+    "code review",
+    "concurrency"
+  ],
+  "source": {
+    "url": "https://thenewstack.io/torvalds-claude-code-kernel/",
+    "name": "Hacker News",
+    "author": "shinjitsu",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A notable, concrete agent use on the Linux kernel with a useful cautionary outcome, but the captured source text contains only the headline, so detail is very thin."
+  }
+}

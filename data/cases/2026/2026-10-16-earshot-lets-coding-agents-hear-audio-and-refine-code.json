@@ -1,0 +1,44 @@
+{
+  "id": "earshot-lets-coding-agents-hear-audio-and-refine-code",
+  "title": "earshot lets coding agents hear audio and refine code-synthesized sounds by listening",
+  "summary": "Coding agents can render videos and games but can't hear them. earshot gives them local tools to describe, match, time and critique audio, and to make sound effects in code. All sounds in its 22-second launch film were made this way.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "earshot MCP server",
+    "CLAP",
+    "AudioSet tagger",
+    "ffmpeg",
+    "Python"
+  ],
+  "agent_role": "The agent writes synthesis recipes in code and reads earshot's critiques and spectrograms. It then rewrites the recipe and re-runs the search. A human judges the final sounds and ran the blind test.",
+  "outcome": "The author reports picking the code-made sound correctly only 8 of 15 times in a blind test against real recordings. All sound in the launch film was made by earshot forge.",
+  "what_they_did": "Leonxlnx built earshot, a CPU-only CLI, Python API and MCP server. It turns audio into text an agent can reason about: descriptions, match scores, a timeline synced to video cuts, annotated images and a launch-film scorecard. With 'forge', the agent writes a sound as physical-synthesis code. An evolutionary search scores candidates against reference recordings, and the agent reads the critic's words and rewrites the recipe.",
+  "how_it_went": "The author says every sound in the 22-second launch film was made in code by forge. In a one-listener blind test of five sound types, they picked the made sound 8 of 15 times, about a coin flip. Only the made impact was spotted, because its tail dies too fast.",
+  "worth_knowing": "The search can please earshot's own models without the sound actually improving, and the realness model is easy to fool. The author advises judging by the model-free 1/3-octave measurements, spectrograms and a human blind test.",
+  "prompt": "Using the earshot MCP server, listen to [video or audio file] and give me a timeline of sound events and how well they sync to the picture cuts. Then run a critique against the launch-film profile. List the top fixes with timestamps. For [sound type, e.g. keypress], use earshot forge with references in [folder of real recordings] to make candidate sounds in code. Read the critic's feedback, revise the recipe and iterate. Show me the best few WAVs with their scores and spectrograms before replacing anything in my project.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "sound design",
+    "audio analysis",
+    "mcp",
+    "video critique"
+  ],
+  "source": {
+    "url": "https://github.com/Leonxlnx/earshot",
+    "name": "GitHub",
+    "author": "Leonxlnx",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A new kind of capability: coding agents can now hear and critique audio, then synthesize sounds in code and refine them by listening. The open repo includes concrete outputs, a small blind test and frank limits."
+  }
+}

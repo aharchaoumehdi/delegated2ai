@@ -111,6 +111,104 @@
           "claude-code-builds-a-photography-portfolio-site-from-a-figma"
         ]
       }
+    },
+    {
+      "id": "gh-38894711002-1",
+      "started": "2026-10-16T11:35:12.115Z",
+      "trigger": "schedule",
+      "collect": {
+        "sources": {
+          "reddit": {
+            "status": "error",
+            "error": "r/ClaudeAI: HTTP 403 for https://www.reddit.com/r/ClaudeAI/top.json?t=day&limit=25&raw_json=1; r/ClaudeCode: HTTP 403 for https://www.reddit.com/r/ClaudeCode/top.json?t=day&limit=25&raw_json=1; r/ChatGPTCoding: HTTP 403 for https://www.reddit.com/r/ChatGPTCoding/top.json?t=day&limit=25&raw_json=1; r"
+          },
+          "submissions": {
+            "status": "ok",
+            "items": 0,
+            "ms": 326
+          },
+          "x": {
+            "status": "ok",
+            "items": 80,
+            "ms": 614,
+            "fetched": 80,
+            "searches": [
+              {
+                "label": "coding agents in use",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "personal and business agents",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "agents at work",
+                "fetched": 20,
+                "kept": 20
+              }
+            ]
+          },
+          "feeds": {
+            "status": "ok",
+            "items": 13,
+            "ms": 1415
+          },
+          "github": {
+            "status": "ok",
+            "items": 57,
+            "ms": 2094
+          },
+          "hackernews": {
+            "status": "ok",
+            "items": 57,
+            "ms": 5207
+          },
+          "devto": {
+            "status": "ok",
+            "items": 31,
+            "ms": 7734
+          }
+        },
+        "raw": 238,
+        "unique_new": 82,
+        "candidates": 43
+      },
+      "curate": {
+        "status": "ok",
+        "model": "claude-opus-5-5",
+        "evaluated": 43,
+        "published": 22,
+        "from_backlog": 13,
+        "queued_for_review": 0,
+        "rejected": 34,
+        "failures": [],
+        "published_ids": [
+          "agency-builds-commonforge-so-client-and-agency-coding-agents",
+          "agent-filled-insurance-quote-forms-across-agencies-small",
+          "agent-fills-out-a-founder-s-fbar-form-leaving-only-a-few",
+          "agent-plans-a-day-of-macro-matched-meals-from-bali-grab",
+          "ai-agent-sets-up-a-home-lte-network-with-open5gs-on-a-7-5",
+          "claude-code-and-codex-build-and-review-a-personal-booking",
+          "claude-code-renders-an-animated-sticker-peel-motion-graphic",
+          "claude-code-tests-loads-and-screenshots-a-chrome-extension",
+          "claude-rewinds-a-deterministic-test-run-to-debug-a-hashicorp",
+          "obsidian-vault-serves-as-shared-memory-for-8-ai-agents-with",
+          "resale-listing-tool-states-only-what-the-photo-proves-and",
+          "teen-hands-a-truck-tire-purchase-to-an-ai-agent-which-finds",
+          "website-sales-agent-sorts-b2b-visitors-by-buyer-type-and",
+          "earshot-lets-coding-agents-hear-audio-and-refine-code",
+          "robotics-firm-routes-support-tickets-through-an-openclaw",
+          "developer-remakes-1993-maxis-game-simfarm-for-the-web-with",
+          "musclememory-cuts-codex-tool-calls-30-by-reusing-skills",
+          "postnl-wires-aws-devops-agent-into-slack-so-on-call",
+          "claude-code-works-out-wordle-s-repeated-letter-rules-and",
+          "comedian-s-ai-agent-offers-to-work-for-60k-in-a-bot-to-bot",
+          "web-builder-hands-claude-code-a-website-ad-accounts-and",
+          "linus-torvalds-had-claude-code-fix-the-linux-page-cache"
+        ]
+      }
     }
   ]
 }

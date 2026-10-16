@@ -13,6 +13,10 @@ on:
         description: "Only fill in missing write-ups (no collection or curation)"
         type: boolean
         default: false
+      rewrite_plain:
+        description: "Rewrite every entry's title, summary and write-up in plain language (no collection or curation)"
+        type: boolean
+        default: false
   push:
     branches: [main]
 
@@ -41,7 +45,7 @@ jobs:
       - run: npm ci
 
       - name: Collect candidates
-        if: ${{ !inputs.writeups_only }}
+        if: ${{ !inputs.writeups_only && !inputs.rewrite_plain }}
         run: node scripts/collect.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -51,7 +55,7 @@ jobs:
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
 
       - name: Curate with Claude
-        if: ${{ !inputs.writeups_only }}
+        if: ${{ !inputs.writeups_only && !inputs.rewrite_plain }}
         run: node scripts/curate.mjs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -61,6 +65,13 @@ jobs:
 
       - name: Fill in missing write-ups
         run: node scripts/enrich.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CURATOR_MODEL: ${{ vars.CURATOR_MODEL }}
+
+      - name: Rewrite entries in plain language
+        if: ${{ inputs.rewrite_plain }}
+        run: node scripts/rewrite.mjs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CURATOR_MODEL: ${{ vars.CURATOR_MODEL }}

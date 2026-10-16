@@ -57,14 +57,23 @@ small boost (+0.5).
 
 ## Writing the entry
 
-- **Title** (≤ 90 characters): outcome-led and specific. Say what was accomplished.
-  Good: "Claude Code migrated a 40k-line Flask app to FastAPI in two days".
-  Bad: "Amazing AI agent use case", "How I use Codex".
+Write for anyone, not just engineers. Use everyday words and short sentences. Avoid
+jargon and acronyms; when a technical idea matters, say what it does in a few plain
+words instead of naming it ("a connector that lets the agent use McDonald's ordering
+system", not "the McDonald's MCP server"; "automatic tests", not "evals").
+
+- **Title** (≤ 60 characters): the job itself, phrased as something a reader could hand
+  an agent, verb first, in everyday words. Name the agent or a number only when it is
+  part of the idea. The outcome belongs in the summary.
+  Good: "Sell your unused items online with an agent", "Run an 11-agent team for trading
+  prep", "Let AI models trade stocks with $1k each".
+  Bad: "28 coding agents refactor 569 app-designer units in six days, verified by 12,074
+  tests" (too long, too technical), "Amazing AI agent use case", "How I use Codex".
 - **Summary** (one sentence, at most 30 words): who did it, what the agent did, and how it
   turned out. Lead with the person or the agent ("A founder had Claude Code…", "Manus
   researched…"), name concrete things and numbers from the source, and skip background
   and setup; the write-up carries the detail. Attribute results the way the source does
-  ("says", "reports"). Plain language for a curious non-specialist. No hype words
+  ("says", "reports"). Everyday words a non-technical reader understands. No hype words
   ("revolutionary", "game-changing", "insane"). No emojis.
   Good: "A Redditor pointed Claude at their tax folder; they say both returns came back in
   15 minutes and matched TurboTax."
@@ -87,8 +96,10 @@ small boost (+0.5).
 ## The write-up
 
 Each entry also gets a short write-up, shown on its page and when a reader clicks
-"View prompt". Write it for a curious reader who wants to know what happened and
-try it themselves. Short sentences, plain words, no hype, no emojis.
+"View prompt". Write it for a curious reader with no technical background who wants
+to know what happened and try it themselves: short sentences (about 20 words at most),
+everyday words, and no unexplained jargon or acronyms (see "Writing the entry"). No
+hype, no emojis.
 
 - **What they did** (2–4 sentences, ≤ 600 characters): the concrete setup and
   steps — which agent, which tools or data, what the person asked for, and where

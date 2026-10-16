@@ -25,7 +25,8 @@ test("truncate adds an ellipsis at a word boundary", () => {
 test("normalizePlatform maps aliases", () => {
   assert.equal(normalizePlatform("codex cli"), "OpenAI Codex");
   assert.equal(normalizePlatform("Claude-Code"), "Claude Code");
-  assert.equal(normalizePlatform(null), "Not specified");
+  assert.equal(normalizePlatform(null), "Other");
+  assert.equal(normalizePlatform("not specified"), "Other");
   assert.equal(normalizePlatform("SomeNewTool"), "SomeNewTool");
 });
 
@@ -50,4 +51,22 @@ test("CaseSchema rejects unknown domains and bad URLs", () => {
   assert.ok(CaseSchema.safeParse(ok).success);
   assert.ok(!CaseSchema.safeParse({ ...ok, domain: "Space" }).success);
   assert.ok(!CaseSchema.safeParse({ ...ok, source: { ...ok.source, url: "not a url" } }).success);
+});
+
+test("write-up fields are optional but validated", async () => {
+  const { CaseSchema } = await import("../lib/schema.mjs");
+  const { loadCases } = await import("../lib/cases.mjs");
+  const { cases } = await loadCases();
+  const { _file, ...base } = cases[0];
+  assert.ok(CaseSchema.safeParse({ ...base, what_they_did: undefined, prompt: undefined }).success);
+  assert.ok(CaseSchema.safeParse({ ...base, what_they_did: "x".repeat(60), how_it_went: null, worth_knowing: null, prompt: null }).success);
+  assert.ok(!CaseSchema.safeParse({ ...base, what_they_did: "too short" }).success);
+  assert.ok(!CaseSchema.safeParse({ ...base, prompt: "x".repeat(1600) }).success);
+});
+
+test("trending puts recent votes first, then all-time votes, then the editor's order", async () => {
+  const { trendingOrder } = await import("../../site/assets/render.js");
+  const list = ["a", "b", "c", "d"].map((id) => ({ id }));
+  assert.deepEqual(trendingOrder(list).map((c) => c.id), ["a", "b", "c", "d"]);
+  assert.deepEqual(trendingOrder(list, { c: [5, 0], d: [1, 1] }).map((c) => c.id), ["d", "c", "a", "b"]);
 });

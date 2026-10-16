@@ -9,6 +9,10 @@ on:
         description: "Only rebuild and deploy the site"
         type: boolean
         default: false
+      writeups_only:
+        description: "Only fill in missing write-ups (no collection or curation)"
+        type: boolean
+        default: false
   push:
     branches: [main]
 
@@ -37,6 +41,7 @@ jobs:
       - run: npm ci
 
       - name: Collect candidates
+        if: ${{ !inputs.writeups_only }}
         run: node scripts/collect.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -46,12 +51,19 @@ jobs:
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
 
       - name: Curate with Claude
+        if: ${{ !inputs.writeups_only }}
         run: node scripts/curate.mjs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CURATOR_MODEL: ${{ vars.CURATOR_MODEL }}
           PUBLISH_THRESHOLD: ${{ vars.PUBLISH_THRESHOLD }}
           DAILY_MAX: ${{ vars.DAILY_MAX }}
+
+      - name: Fill in missing write-ups
+        run: node scripts/enrich.mjs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CURATOR_MODEL: ${{ vars.CURATOR_MODEL }}
 
       - run: node scripts/validate.mjs
 
@@ -99,6 +111,7 @@ jobs:
       - run: npm run build
         env:
           SITE_URL: ${{ vars.SITE_URL }}
+          VOTES_API: ${{ vars.VOTES_API }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

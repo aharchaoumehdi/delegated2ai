@@ -15,6 +15,11 @@ export const CaseSchema = z
     tools: z.array(z.string()).max(8),
     agent_role: z.string().min(10).max(400),
     outcome: z.string().max(240).nullable(),
+    // The write-up shown on the use-case page and in "View prompt".
+    what_they_did: z.string().min(40).max(900).optional(),
+    how_it_went: z.string().max(800).nullable().optional(),
+    worth_knowing: z.string().max(600).nullable().optional(),
+    prompt: z.string().min(40).max(1500).nullable().optional(),
     evidence: z.enum(EVIDENCE),
     difficulty: z.enum(DIFFICULTY),
     tags: z.array(z.string().regex(/^[a-z0-9][a-z0-9 +.-]*$/)).min(1).max(6),

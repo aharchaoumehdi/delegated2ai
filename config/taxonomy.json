@@ -325,15 +325,17 @@
       "description": "Custom-built, lesser-known or unnamed agents."
     },
     {
-      "name": "Not specified",
+      "name": "Other",
       "aliases": [
-        "unknown",
+        "n/a",
         "not specified",
-        "n/a"
+        "other",
+        "unknown",
+        "unnamed"
       ],
       "abbr": "··",
       "color": "transparent",
-      "description": "Agents whose platform the source doesn't name."
+      "description": "Agents the source doesn't name."
     }
   ]
 }

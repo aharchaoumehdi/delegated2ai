@@ -3,7 +3,7 @@
   "title": "Simulated fruit-fly brain trained to flag code changes, agreeing with tests 290/301 times",
   "summary": "The author asked an agent whether Google's 176,422-neuron fruit fly brain simulation could run on a laptop and do code review. A model answered 30 yes/no questions per change and the fly was trained on mutation-testing signals. It matched tests on 290 of 301 unseen changes.",
   "domain": "Software",
-  "platform": "Not specified",
+  "platform": "Other",
   "model": null,
   "tools": [
     "fruit fly connectome simulation",

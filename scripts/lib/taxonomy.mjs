@@ -9,7 +9,7 @@ export const PLATFORMS = taxonomy.platforms.map((p) => p.name);
 
 /** Map free-text platform names ("codex cli", "Claude-Code") to canonical names. */
 export function normalizePlatform(raw) {
-  if (!raw) return "Not specified";
+  if (!raw) return "Other";
   const needle = String(raw).trim().toLowerCase();
   for (const p of taxonomy.platforms) {
     if (p.name.toLowerCase() === needle || p.aliases.includes(needle)) return p.name;

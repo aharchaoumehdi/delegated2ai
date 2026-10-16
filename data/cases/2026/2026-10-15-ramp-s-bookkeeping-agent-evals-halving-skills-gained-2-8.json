@@ -3,7 +3,7 @@
   "title": "Ramp's bookkeeping agent evals: halving skills gained 2.8 points and memory added 5.7",
   "summary": "Ramp built synthetic businesses with messy books to test an agent that reconciles accounts and does data entry. Accountant-written rubrics showed which skills helped; trimming skills and adding cleaned memory raised scores and cut costs.",
   "domain": "Finance",
-  "platform": "Not specified",
+  "platform": "Other",
   "model": null,
   "tools": [
     "synthetic ERP data",

@@ -3,7 +3,7 @@
   "title": "Agent skill orders the cheapest McDonald's China meal and splits group bills per person",
   "summary": "Coupons, spend thresholds and shared delivery fees make McDonald's China orders hard to optimise. This skill has an agent compare coupon combinations with real price calls, collect a group's orders and produce a per-person bill, asking for approval before any order is placed.",
   "domain": "Daily life",
-  "platform": "Not specified",
+  "platform": "Other",
   "model": null,
   "tools": [
     "McDonald's China MCP",

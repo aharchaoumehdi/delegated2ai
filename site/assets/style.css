@@ -9,8 +9,9 @@
   --faint: #858585;
   --icon: #858585;
   --accent: #fff;
-  --signal: #5aabff;
-  --signal-panel: #060d15;
+  --signal: #18b7ea;
+  --signal-ink: #18b7ea;
+  --signal-panel: #03121a;
   --hatch: #1c1c1c;
   --wash: #ffffff0d;
   --wash-strong: #ffffff1a;
@@ -29,8 +30,9 @@
   --faint: #6b6b6b;
   --icon: #3a3a3a;
   --accent: #000;
-  --signal: #0b63ce;
-  --signal-panel: #eef4fb;
+  --signal: #007da5;
+  --signal-ink: #006a8c;
+  --signal-panel: #ebf6fa;
   --hatch: #ececec;
   --wash: #0000000a;
   --wash-strong: #00000014;
@@ -64,27 +66,26 @@ svg { flex: none; }
   border-left: 1px dashed var(--line); border-right: 1px dashed var(--line);
   min-height: 100vh;
 }
-.frame-grid { display: grid; grid-template-columns: 18rem minmax(0, 1fr); }
+.frame-grid { display: grid; grid-template-columns: 20rem minmax(0, 1fr); }
 .frame-narrow { max-width: 48rem; }
 
 /* ---------- sidebar ---------- */
 .sidebar {
   position: sticky; top: 0; height: 100vh; overflow-y: auto;
-  padding: 40px 28px 32px; border-right: 1px dashed var(--line);
+  padding: 40px 24px 32px; border-right: 1px dashed var(--line);
   scrollbar-width: none;
 }
 .sidebar::-webkit-scrollbar { display: none; }
-.logo-mark { display: block; width: 56px; height: 56px; margin-bottom: 26px; }
-.brand-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.wordmark { font: 500 19px/1.2 var(--font-display); letter-spacing: -0.02em; }
-.wordmark .tld { color: var(--faint); }
-.wordmark .accent { color: var(--signal); }
-.brand-row h1 a { display: flex; align-items: center; gap: 10px; }
-.logo-inline { display: none; width: 24px; height: 24px; }
+/* Logo: brand/specifications.html. The files are trimmed to the artwork, so 264px here is the
+   kit's 280px minimum; keep one cell pitch (~8px at this size) clear around it. */
+.logo { display: block; width: 264px; max-width: 100%; height: auto; }
+:root[data-theme="light"] .logo-dark, :root:not([data-theme="light"]) .logo-light { display: none; }
+.brand a { display: block; width: fit-content; max-width: 100%; }
 .theme-btn {
   display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 6px;
   border: 1px solid var(--line); color: var(--text);
 }
+.toolbar .theme-btn { flex: none; width: 38px; height: 38px; }
 .theme-btn:hover { border-color: var(--faint); }
 .theme-btn svg { width: 16px; height: 16px; }
 :root:not([data-theme="light"]) .icon-sun, :root[data-theme="light"] .icon-moon { display: none; }
@@ -101,7 +102,7 @@ svg { flex: none; }
 .btn-primary svg, .btn-outline svg { width: 14px; height: 14px; }
 .new-today {
   margin-top: 12px; display: flex; align-items: center; justify-content: space-between;
-  background: var(--signal-panel); color: var(--signal); border-radius: 8px; padding: 8px 12px;
+  background: var(--signal-panel); color: var(--signal-ink); border-radius: 8px; padding: 8px 12px;
   font-size: 14px; font-weight: 500;
 }
 .new-today:hover { background: color-mix(in srgb, var(--signal) 15%, transparent); }
@@ -149,7 +150,7 @@ svg { flex: none; }
 }
 .toolbar-row { display: flex; gap: 12px; align-items: center; }
 .search {
-  flex: 1; display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px 0 12px;
+  flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; height: 38px; padding: 0 10px 0 12px;
   border: 1px solid var(--line); border-radius: 8px; background: var(--panel);
 }
 .search:focus-within { border-color: var(--faint); }
@@ -200,7 +201,7 @@ svg { flex: none; }
 .signal-head { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
 .signal-head h2 { font: 500 17px/1.375 var(--font-display); letter-spacing: -0.025em; }
 .signal-head p { color: var(--muted); font-size: 14px; }
-.signal-head p.mono-label { color: var(--signal); font-size: 11px; padding-top: 4px; flex: none; }
+.signal-head p.mono-label { color: var(--signal-ink); font-size: 11px; padding-top: 4px; flex: none; }
 
 /* list items */
 .items { display: flex; flex-direction: column; }
@@ -264,9 +265,8 @@ svg { flex: none; }
 
 /* ---------- narrow pages (agents, categories, use cases) ---------- */
 .topnav { display: flex; align-items: center; justify-content: space-between; padding: 24px 48px; border-bottom: 1px dashed var(--line); }
-.topnav .brand { display: flex; align-items: center; gap: 10px; }
-.topnav .brand svg { width: 24px; height: 24px; }
-.topnav .wordmark { font-size: 17px; }
+/* Leave room for the theme button on the narrowest phones. */
+.topnav .logo { width: min(264px, calc(100vw - 104px)); }
 .topnav-right { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--muted); }
 .topnav-right a:hover { color: var(--text); }
 .page { padding: 52px 48px 96px; }
@@ -387,7 +387,7 @@ body.sponsors-closed .sponsorbar { display: none; }
 .sb-item b { color: var(--text); font-weight: 600; }
 .sb-item:hover b { text-decoration: underline; text-underline-offset: 3px; }
 .sb-mark { display: inline-grid; place-items: center; width: 26px; height: 26px; border: 1px solid var(--line); border-radius: 6px; font: 600 10px var(--font-mono); color: var(--text); text-transform: uppercase; }
-.sb-logo { width: 22px; height: 22px; }
+.sb-logo { width: 22px; height: 22px; flex: none; }
 .sb-slot { font-size: 12px; color: var(--faint); }
 .dialog-body .detail-actions .share-wrap { display: none; }
 .sb-plus { display: inline-grid; place-items: center; width: 18px; height: 18px; border: 1px dashed var(--faint); border-radius: 4px; font-size: 12px; }
@@ -406,11 +406,9 @@ body.sponsors-closed .sponsorbar { display: none; }
   .frame { border: 0; }
   .frame-grid { display: block; }
   .sidebar { position: static; height: auto; overflow: visible; padding: 20px 24px 16px; border-right: 0; border-bottom: 1px dashed var(--line); }
-  .logo-mark { display: none; }
-  .logo-inline { display: block; }
   .tagline { margin-top: 8px; font-size: 14px; }
-  .side-ctas { flex-direction: row; }
-  .side-ctas > * { flex: 1; }
+  .side-ctas { flex-direction: row; flex-wrap: wrap; }
+  .side-ctas > * { flex: 1 1 auto; }
   .new-today, .promo { display: none; }
   .filter-toggle {
     display: flex; width: 100%; margin-top: 10px; justify-content: space-between; align-items: center;
@@ -440,5 +438,6 @@ body.sponsors-closed .sponsorbar { display: none; }
   .sb-label { display: none; }
   .sb-item { font-size: 13px; padding: 0 18px; }
   .topnav-right .count { display: none; }
+  .search .kbd { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

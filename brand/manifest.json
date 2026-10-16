@@ -1,0 +1,25 @@
+{
+  "font": "Space Grotesk",
+  "weight": 600,
+  "logo_viewbox": [
+    880,
+    188
+  ],
+  "symbol_grid": [
+    5,
+    6
+  ],
+  "cell": 20,
+  "gap": 4,
+  "radius": 2,
+  "files": [
+    "logo-for-dark",
+    "logo-white-mono",
+    "symbol-for-dark",
+    "symbol-white-mono",
+    "logo-for-light",
+    "logo-black-mono",
+    "symbol-for-light",
+    "symbol-black-mono"
+  ]
+}

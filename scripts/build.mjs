@@ -61,32 +61,13 @@ const digestHref = site.newsletter?.action || `${siteUrl}feed.xml`;
 const DIGEST_CTA = "Get 5 use cases every morning";
 
 // ---------- shared fragments ----------
-// Logo: a 6×6 pixel grid with an arrow picked out — work handed off.
-function logoSVG(cls = "logo-mark") {
-  const shaft = "#5aabff", mid = "#a78bfa", tip = "#f472b6";
-  const on = {
-    "0,2": shaft, "0,3": shaft, "1,2": shaft, "1,3": shaft, "2,2": "#7c9cff", "2,3": "#7c9cff",
-    "3,0": mid, "3,2": mid, "3,3": mid, "3,5": mid, "4,1": "#e879f9", "4,2": "#e879f9", "4,3": "#e879f9", "4,4": "#e879f9",
-    "5,2": tip, "5,3": tip,
-  };
-  let rects = "";
-  for (let y = 0; y < 6; y++)
-    for (let x = 0; x < 6; x++) {
-      const fill = on[`${x},${y}`];
-      rects += `<rect x="${x * 10}" y="${y * 10}" width="8" height="8" rx="1.5" ${fill ? `fill="${fill}"` : 'fill="currentColor" opacity="0.18"'}/>`;
-    }
-  return `<svg class="${cls}" viewBox="0 0 58 58" aria-hidden="true">${rects}</svg>`;
-}
-// The wordmark is the site name, with the domain suffix (".ai") muted and, optionally,
-// the end of the name (site.wordmarkAccent, e.g. "to") in the brand blue.
-const dot = site.name.lastIndexOf(".");
-const nameStem = dot > 0 ? site.name.slice(0, dot) : site.name;
-const accent = site.wordmarkAccent && nameStem.endsWith(site.wordmarkAccent) ? site.wordmarkAccent : "";
-const wordmark =
-  `<span class="wordmark">${esc(nameStem.slice(0, nameStem.length - accent.length))}` +
-  (accent ? `<span class="accent">${esc(accent)}</span>` : "") +
-  (dot > 0 ? `<span class="tld">${esc(site.name.slice(dot))}</span>` : "") +
-  `</span>`;
+// Brand: the C3 kit in brand/ (specifications.html is the standard). Pages show the outlined
+// logo, one file per theme (the canvas trimmed to the artwork; clear space comes from the
+// layout). Spots under 48px use the simplified arrow in assets/brand/symbol-small.svg.
+const logo = () =>
+  ["dark", "light"]
+    .map((t) => `<img class="logo logo-${t}" src="${base}assets/brand/logo-${t}.svg" width="826" height="140" alt="${esc(site.name)}">`)
+    .join("");
 const themeButton = `<button type="button" class="theme-btn" data-theme aria-label="Switch theme" title="Switch theme">
   <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 9.6A5.75 5.75 0 0 1 6.4 2.5a5.75 5.75 0 1 0 7.1 7.1Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
   <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
@@ -109,9 +90,15 @@ function head({ title, description, canonical, jsonld }) {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${esc(canonical)}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="${siteUrl}assets/brand/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="${esc(site.name)}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#000000">
-<link rel="icon" href="${base}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${base}assets/brand/symbol-small.svg" type="image/svg+xml">
+<link rel="icon" href="${base}assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="${base}assets/brand/apple-touch-icon.png">
 <link rel="alternate" type="application/rss+xml" title="${esc(site.name)}: new use cases" href="${siteUrl}feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,7 +142,7 @@ function sponsorBar() {
     s.slot
       ? `<a class="sb-item sb-slot" href="${esc(s.url)}"><span class="sb-plus" aria-hidden="true">+</span>${esc(s.name)}: ${esc(s.text)}</a>`
       : `<a class="sb-item" href="${esc(s.url)}"${s.rel ? ` rel="${s.rel}" target="_blank"` : ""}>${
-          s.house ? logoSVG("sb-logo") : `<span class="sb-mark" aria-hidden="true">${esc((s.abbr || s.name.slice(0, 2)).slice(0, 2))}</span>`
+          s.house ? `<img class="sb-logo" src="${base}assets/brand/symbol-small.svg" width="22" height="22" alt="">` : `<span class="sb-mark" aria-hidden="true">${esc((s.abbr || s.name.slice(0, 2)).slice(0, 2))}</span>`
         }<span><b>${esc(s.name)}</b>: ${esc(s.text)}</span></a>`;
   // Repeat to fill wide screens, then duplicate once so the loop is seamless.
   const reps = Math.max(1, Math.ceil(6 / items.length));
@@ -185,8 +172,7 @@ function sidebar({ activeAgent, activeDomain } = {}) {
   const domainRow = ([name, n]) =>
     `<a href="${categoryHref(name)}"${activeDomain === name ? ' class="is-active"' : ""}><span>${esc(name)}</span><span class="n">${n}</span></a>`;
   return `<aside class="sidebar">
-  <a href="${href()}" aria-label="${esc(site.name)} home">${logoSVG()}</a>
-  <div class="brand-row"><h1><a href="${href()}">${logoSVG("logo-inline")}${wordmark}</a></h1>${themeButton}</div>
+  <h1 class="brand"><a href="${href()}">${logo()}</a></h1>
   <p class="tagline">${esc(site.tagline)}</p>
   <div class="side-ctas">
     <a class="btn-primary" href="${esc(digestHref)}">${DIGEST_CTA}</a>
@@ -255,6 +241,7 @@ ${sidebar()}
         <input id="search" type="search" placeholder="Search use cases" autocomplete="off"><span class="kbd">⌘K</span>
       </label>
       <div class="seg" role="group" aria-label="Sort"><button type="button" class="is-on" data-sort="top">Top</button><button type="button" data-sort="new">New</button></div>
+      ${themeButton}
     </div>
     <div class="chips">
       <button type="button" class="chip-btn is-on" data-chip="all">All ${cases.length}</button>
@@ -300,7 +287,7 @@ function narrowPage({ path: pagePath, title, description, body, list, jsonld }) 
 <body>
 <div class="frame frame-narrow">
   <header class="topnav">
-    <a class="brand" href="${href()}">${logoSVG("")}${wordmark}</a>
+    <a class="brand" href="${href()}">${logo()}</a>
     <div class="topnav-right">${themeButton}<a class="count" href="${href()}">All ${cases.length.toLocaleString("en-US")} use cases</a></div>
   </header>
   <main class="page">${body}

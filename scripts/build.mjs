@@ -706,8 +706,6 @@ await writeFile(
 await writeFile(join(DIST, "feed.xml"), rss());
 await writeFile(join(DIST, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${siteUrl}sitemap.xml\n`);
 await writeFile(join(DIST, "cases.json"), JSON.stringify({ generated: buildDay, count: cases.length, cases }, null, 2));
-await writeFile(join(DIST, ".nojekyll"), "");
-const host = new URL(siteUrl).hostname;
-if (!host.endsWith("github.io") && host !== "localhost") await writeFile(join(DIST, "CNAME"), host + "\n");
+
 
 console.log(`Built ${cases.length} use cases into ${Object.keys(pages).length} pages → dist/ (${PREVIEW ? "preview, relative links" : `base ${ABS_BASE}`})`);

@@ -7,7 +7,7 @@ and category, and always linked to the original source.
 ## How it works
 
 ```
-collect (scripts/collect.mjs)  →  curate with Claude (scripts/curate.mjs)  →  data/cases/*.json  →  build (scripts/build.mjs)  →  GitHub Pages
+collect (scripts/collect.mjs)  →  curate with Claude (scripts/curate.mjs)  →  data/cases/*.json  →  build (scripts/build.mjs)  →  Cloudflare
 ```
 
 1. **Collect** — pulls the last ~36 hours from every source in `config/sources.json`, dedupes
@@ -22,7 +22,7 @@ collect (scripts/collect.mjs)  →  curate with Claude (scripts/curate.mjs)  →
 3. **Build** — renders a static site into `dist/`: home, New, per-agent and per-category pages,
    one page per use case, RSS, sitemap and a public `cases.json`.
 4. **Deploy** — `.github/workflows/daily.yml` runs all of the above every day at 06:17 UTC,
-   commits new entries, and publishes to GitHub Pages once the `SITE_LIVE` repository
+   commits new entries, and publishes to Cloudflare once the `SITE_LIVE` repository
    variable is `true` (see [docs/setup.md](docs/setup.md)).
 
 ## Repository layout
@@ -36,7 +36,7 @@ collect (scripts/collect.mjs)  →  curate with Claude (scripts/curate.mjs)  →
 | `data/runs/` | One log per daily run (what each source returned, what was published) |
 | `data/state/seen.json` | URLs already judged, so they aren't re-evaluated |
 | `docs/editorial-guidelines.md` | The editorial standard — also the curator's instructions |
-| `docs/setup.md` | One-time setup: Pages, secrets, custom domain |
+| `docs/setup.md` | One-time setup: publishing on Cloudflare, secrets, domain |
 | `scripts/` | Collectors, curator, write-up backfill, builder, validator, local preview server |
 | `worker/` | The vote counter (Cloudflare Worker + D1), deployed by `.github/workflows/votes.yml` |
 | `site/assets/` | CSS, browser JS and the rendering code shared with the build |

@@ -81,3 +81,13 @@ test("summaries well over 30 words are queued for shortening; rejected entries a
   assert.equal(needsShorterSummary({ status: "published", summary: "A short one." }), false);
   assert.equal(needsShorterSummary({ status: "rejected", summary: long }), false);
 });
+
+test("plain-language rewrites may not add numbers or run long", async () => {
+  const { problems, numbersIn } = await import("../rewrite.mjs");
+  assert.deepEqual(numbersIn("12,074 tests in 6.5 days for $1k"), ["12074", "6.5", "1"]);
+  const c = { title: "28 coding agents refactor 569 units", summary: "Verified by 12,074 tests.", what_they_did: "Ran 20 at once.", how_it_went: null, worth_knowing: null, outcome: null, agent_role: "", tools: [] };
+  const ok = { title: "Refactor a big app with 28 coding agents", summary: "A CTO ran 20 agents at once; 12074 tests passed.", what_they_did: "x", how_it_went: null, worth_knowing: null };
+  assert.deepEqual(problems(c, ok), []);
+  assert.match(problems(c, { ...ok, summary: "It took 3 weeks." }).join(), /adds 3/);
+  assert.match(problems(c, { ...ok, title: "x".repeat(80) }).join(), /title too long/);
+});

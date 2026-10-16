@@ -268,7 +268,25 @@ document.addEventListener("click", (e) => {
     toggleVote(d.vote);
   } else if (d.copyPrompt) {
     const c = byId.get(d.copyPrompt);
-    if (c?.prompt) navigator.clipboard?.writeText(c.prompt).then(() => toast("Prompt copied"), () => toast("Couldn't copy, select the text instead"));
+    if (c?.prompt)
+      navigator.clipboard?.writeText(c.prompt).then(
+        () => {
+          // The pill itself confirms: "Copied" with a check for two seconds.
+          const label = t.querySelector("span");
+          const icon = t.querySelector("svg path");
+          t._icon ??= icon?.getAttribute("d");
+          t.classList.add("is-copied");
+          if (label) label.textContent = "Copied";
+          icon?.setAttribute("d", "m3.5 8.5 3 3 6-7");
+          clearTimeout(t._copied);
+          t._copied = setTimeout(() => {
+            t.classList.remove("is-copied");
+            if (label) label.textContent = "Copy prompt";
+            if (t._icon) icon?.setAttribute("d", t._icon);
+          }, 2000);
+        },
+        () => toast("Couldn't copy, select the text instead"),
+      );
   } else if ("sponsorsClose" in d) {
     document.body.classList.add("sponsors-closed");
     try {

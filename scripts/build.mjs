@@ -73,7 +73,7 @@ const plural = (n, word) => `${n.toLocaleString("en-US")} ${word}${n === 1 ? "" 
 const issueUrl = (template, title = "") =>
   `https://github.com/${site.repo}/issues/new?template=${template}${title ? `&title=${encodeURIComponent(title)}` : ""}`;
 const digestHref = site.newsletter?.action || `${siteUrl}feed.xml`;
-const DIGEST_CTA = "Get 5 use cases every morning";
+const DIGEST_CTA = "Get 5 use cases every day";
 // Email sign-up (docs/setup.md, "Newsletter"): the form posts to the votes service, which
 // hands the address to Kit. Without a provider configured, the button links to the feed.
 const newsletterOn = site.newsletter?.provider === "kit";
@@ -178,7 +178,7 @@ ${pageData(list, extra)}
 function sponsorBar() {
   const paid = (site.sponsors || []).map((s) => ({ ...s, rel: "sponsored noopener" }));
   const house = [
-    { name: site.name, text: "5 use cases every morning", url: digestHref, house: true },
+    { name: site.name, text: "5 use cases every day", url: digestHref, house: true },
     { name: "Your logo here", text: "sponsor us", url: href("sponsor/"), slot: true },
   ];
   const items = [...paid, ...house];
@@ -525,7 +525,7 @@ function issuePage({ day, list }, i) {
     list,
     body: `<p class="eyebrow"><a href="${href("issues/")}">Newsletter</a> · Issue</p>
 <h1 class="page-title">${esc(formatDate(day))}</h1>
-<p class="page-lead">${plural(list.length, "new thing")} people handed to AI agents, as sent in that morning's email.</p>
+<p class="page-lead">${plural(list.length, "new thing")} people handed to AI agents, as sent in that day's email.</p>
 <ul class="items issue-items">${list.map((c) => itemHTML(c)).join("")}</ul>
 ${nav}
 ${digestBox()}`,
@@ -539,10 +539,10 @@ function issuesIndexPage() {
   return narrowPage({
     path: "issues/",
     title: `Newsletter · ${site.name}`,
-    description: `The ${site.name} newsletter: the day's best new AI agent use cases every morning, each with the prompt. Every past issue is here.`,
+    description: `The ${site.name} newsletter: the day's best new AI agent use cases every day, each with the prompt. Every past issue is here.`,
     list: [],
     body: `<p class="eyebrow">Newsletter</p>
-<h1 class="page-title">Five use cases, every morning</h1>
+<h1 class="page-title">Five use cases, every day</h1>
 <p class="page-lead">One short email a day with the best new things people handed to AI agents, each with the prompt to try it.</p>
 ${digestBox()}
 <h2 class="list-head">Past issues</h2>

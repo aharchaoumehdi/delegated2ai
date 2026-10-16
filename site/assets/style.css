@@ -423,8 +423,14 @@ svg { flex: none; }
 .try { margin-top: 28px; background: var(--surface); border-radius: 12px; padding: 18px; }
 .try-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; font-size: 15px; color: var(--text-muted); }
 .try-head b { font-weight: 500; }
-.btn-copy { flex: none; font: 12px var(--font-mono); color: var(--heading); border: 1px solid var(--border-control); border-radius: 6px; padding: 5px 10px; background: transparent; }
-.btn-copy:hover { background: var(--surface-raised); }
+/* The "<> Copy prompt" pill (design P1); only in the details, so the cards invite a click. */
+.prompt-pill {
+  flex: none; display: inline-flex; align-items: center; gap: 7px; min-height: 34px; padding: 0 13px;
+  border: 1px solid var(--border-control); border-radius: 9px; font: 600 13.5px var(--font-sans); color: var(--heading);
+}
+.prompt-pill svg { width: 15px; height: 15px; }
+.prompt-pill:hover { background: var(--surface-raised); }
+.prompt-pill.is-copied { color: var(--accent-text); border-color: var(--accent-text); background: var(--accent-soft); }
 .prompt { margin: 0; white-space: pre-wrap; word-wrap: break-word; font: 13.5px/1.7 var(--font-prompt); color: var(--heading); }
 /* [placeholders] to fill in before using the prompt */
 .prompt .ph { color: var(--accent-text); background: var(--accent-soft); border-radius: 4px; padding: 1px 2px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }

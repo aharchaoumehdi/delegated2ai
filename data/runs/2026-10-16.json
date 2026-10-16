@@ -239,6 +239,33 @@
           "failures": []
         }
       }
+    },
+    {
+      "id": "gh-38970912699-1",
+      "started": "2026-10-16T21:40:19.819Z",
+      "trigger": "workflow_dispatch",
+      "enrich": {
+        "needed": 0,
+        "written": 0,
+        "failures": [],
+        "summaries": {
+          "needed": 0,
+          "written": 0,
+          "failures": []
+        }
+      },
+      "rewrite": {
+        "needed": 91,
+        "written": 90,
+        "failures": [
+          {
+            "ids": [
+              "developer-remakes-1993-maxis-game-simfarm-for-the-web-with"
+            ],
+            "error": "title adds 1990"
+          }
+        ]
+      }
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "id": "agent-plans-a-day-of-macro-matched-meals-from-bali-grab",
   "title": "Agent plans a day of macro-matched meals from Bali Grab menus and orders them",
-  "summary": "The poster gives an agent macro targets, a budget and preferred ingredients. It scans Grab food menus in Bali, builds a day's meal plan and places the orders, so the poster only has to meet the courier.",
+  "summary": "A poster who reverse engineered Grab has an agent scan Bali menus against his macros and budget and order meals; he says his only job is meeting the courier.",
   "domain": "Daily life",
   "platform": "Other",
   "model": null,

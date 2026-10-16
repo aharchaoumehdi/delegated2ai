@@ -1,7 +1,7 @@
 {
   "id": "open-model-tool-reads-health-insurance-policies-and-maps-out",
   "title": "Open-model tool reads health insurance policies and maps out-of-pocket risks in English and Hindi",
-  "summary": "After his father's policy covered nothing for a hospital stay, a developer built a tool that reads a policy PDF. It flags waiting periods, caps and co-pays, and backs each finding with the exact quote from the policy, in English or Hindi.",
+  "summary": "A developer built Insurance Samjho, where a Gemma model reads health insurance PDFs and flags risks in English or Hindi; he reports 13 findings, four high-risk, on a sample policy.",
   "domain": "Health",
   "platform": "Custom agent",
   "model": "Gemma (gemma-2-9b-it); IndicTrans2 for translation",

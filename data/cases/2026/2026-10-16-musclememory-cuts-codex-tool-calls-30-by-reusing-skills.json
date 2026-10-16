@@ -1,7 +1,7 @@
 {
   "id": "musclememory-cuts-codex-tool-calls-30-by-reusing-skills",
   "title": "MuscleMemory cuts Codex tool calls 30% by reusing skills learned from passing tests",
-  "summary": "Coding agents relearn the same steps every session. MuscleMemory watches agent sessions, saves how tasks were done once tests pass, and hands a short note next time, which its author reports cut tokens, tool calls and time in Codex benchmarks.",
+  "summary": "A developer built MuscleMemory to save reusable skills from coding-agent sessions once tests pass; they report Codex runs used 30.4% fewer tool calls and 25.5% fewer input tokens.",
   "domain": "Software",
   "platform": "Other",
   "model": "Sonnet 5.5",

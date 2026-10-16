@@ -1,7 +1,7 @@
 {
   "id": "claude-code-tests-loads-and-screenshots-a-chrome-extension",
   "title": "Claude Code tests, loads and screenshots a Chrome extension to fix its own failed runs",
-  "summary": "A developer tired of babysitting broken AI-written code had Claude Code run the tests, load the Chrome extension and screenshot the result. Failed runs now get fixed before he looks at them.",
+  "summary": "A developer had Claude Code test, load and screenshot his Chrome extension after each change and fix failures itself; he estimates about three in four debugging moments are gone.",
   "domain": "Software",
   "platform": "Claude Code",
   "model": null,

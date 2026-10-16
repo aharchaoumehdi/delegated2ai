@@ -1,7 +1,7 @@
 {
   "id": "claude-code-works-out-wordle-s-repeated-letter-rules-and",
   "title": "Claude Code works out Wordle's repeated-letter rules and builds a working clone",
-  "summary": "A developer used REA with Claude Code to study how Wordle scores guesses, including repeated letters, and then build their own version based on that logic rather than copying the interface.",
+  "summary": "A developer used REA with Claude Code to work out how Wordle marks guesses, including repeated letters, then build a working clone shown in a video demo.",
   "domain": "Software",
   "platform": "Claude Code",
   "model": null,

@@ -1,7 +1,7 @@
 {
   "id": "web-builder-hands-claude-code-a-website-ad-accounts-and",
   "title": "Web builder hands Claude Code a website, ad accounts and budget to run every 4 hours",
-  "summary": "A website builder gave Claude Code a baseline site, ad accounts on Google, X, LinkedIn and Reddit, a budget and scraping tools, letting it make decisions every four hours. So far it mostly churns out SEO pages and share buttons.",
+  "summary": "A developer gave Claude Code a website, ad accounts and a budget to manage every four hours; he says it mostly churns out SEO pages and share buttons.",
   "domain": "Marketing",
   "platform": "Claude Code",
   "model": null,

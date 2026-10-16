@@ -1,7 +1,7 @@
 {
   "id": "agent-skill-turns-a-one-line-request-into-a-4k-product-promo",
   "title": "Agent skill turns a one-line request into a 4K product promo video with self-checks",
-  "summary": "Making a product promo usually means scripting, design, editing and voiceover. This open skill has a coding agent research the product, offer style mockups, capture real 4K pages, cut to the music's beat, verify narration by transcription, and render a finished video.",
+  "summary": "Developer liyupi's skill has Claude Code research a product, capture 4K screenshots, cut to the beat and add narration; the author shows five promos, with renders taking 4–18 minutes.",
   "domain": "Marketing",
   "platform": "Claude Code",
   "model": null,

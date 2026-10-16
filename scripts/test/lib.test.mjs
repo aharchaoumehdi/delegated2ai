@@ -70,3 +70,14 @@ test("trending puts recent votes first, then all-time votes, then the editor's o
   assert.deepEqual(trendingOrder(list).map((c) => c.id), ["a", "b", "c", "d"]);
   assert.deepEqual(trendingOrder(list, { c: [5, 0], d: [1, 1] }).map((c) => c.id), ["d", "c", "a", "b"]);
 });
+
+test("summaries well over 30 words are queued for shortening; rejected entries are left alone", async () => {
+  const { needsShorterSummary, wordCount } = await import("../enrich.mjs");
+  const words = (n) => Array.from({ length: n }, (_, i) => `w${i}`).join(" ");
+  const long = words(34);
+  assert.equal(needsShorterSummary({ status: "published", summary: words(33) }), false, "a little slack");
+  assert.equal(wordCount("  one two\nthree "), 3);
+  assert.equal(needsShorterSummary({ status: "published", summary: long }), true);
+  assert.equal(needsShorterSummary({ status: "published", summary: "A short one." }), false);
+  assert.equal(needsShorterSummary({ status: "rejected", summary: long }), false);
+});

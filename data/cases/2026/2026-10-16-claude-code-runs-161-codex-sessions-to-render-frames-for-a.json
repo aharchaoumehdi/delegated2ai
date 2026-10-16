@@ -1,7 +1,7 @@
 {
   "id": "claude-code-runs-161-codex-sessions-to-render-frames-for-a",
   "title": "Claude Code runs 161 Codex sessions to render frames for a 63-second animated video",
-  "summary": "Asked to recreate a 63-second video in a specific animation style, Claude Code noticed Codex was installed. It planned to use Codex's built-in image generator across 161 sessions, managing RAM and failures and stitching the frames back together.",
+  "summary": "Asked to recreate a 63-second animated video, Claude Code launched 161 Codex image-generation sessions and stitched the frames together, the poster says, without describing the finished quality.",
   "domain": "Creative",
   "platform": "Claude Code",
   "model": null,

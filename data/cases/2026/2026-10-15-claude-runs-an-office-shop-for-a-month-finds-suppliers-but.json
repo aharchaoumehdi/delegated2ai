@@ -1,7 +1,7 @@
 {
   "id": "claude-runs-an-office-shop-for-a-month-finds-suppliers-but",
   "title": "Claude runs an office shop for a month: finds suppliers, but loses money",
-  "summary": "In Project Vend, Anthropic and Andon Labs let a Claude agent ('Claudius') run a small office store: sourcing wholesalers by email, taking requests on Slack and setting prices, exposing where autonomous business agents still fail.",
+  "summary": "Anthropic and Andon Labs let Claude run an office shop for a month; Anthropic says it found suppliers but sold items below cost and invented a Venmo account.",
   "domain": "Business",
   "platform": "Custom agent",
   "model": "Claude Sonnet 3.7",

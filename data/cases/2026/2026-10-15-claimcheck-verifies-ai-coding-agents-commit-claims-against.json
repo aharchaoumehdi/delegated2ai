@@ -1,7 +1,7 @@
 {
   "id": "claimcheck-verifies-ai-coding-agents-commit-claims-against",
   "title": "claimcheck verifies AI coding agents' commit claims against diffs before merging",
-  "summary": "In multi-agent coding, no one checks whether an agent's description of its change is true. claimcheck runs rule checks plus an evidence-quoting LLM check on each agent's declared change, and only merges verified work.",
+  "summary": "Daniel Nwaneri built claimcheck to verify coding agents' change claims against diffs; he reports it rejected all 11 misreporting agents across 5 runs of 28 agents, wrongly rejecting none.",
   "domain": "Software",
   "platform": "Claude Code",
   "model": "qwen3-coder-plus",

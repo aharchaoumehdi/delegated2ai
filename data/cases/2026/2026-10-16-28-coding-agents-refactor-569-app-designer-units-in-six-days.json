@@ -1,7 +1,7 @@
 {
   "id": "28-coding-agents-refactor-569-app-designer-units-in-six-days",
   "title": "28 coding agents refactor 569 app-designer units in six days, verified by 12,074 tests",
-  "summary": "GoodBarber's CTO ran up to 20 parallel coding agents to move an app designer's settings logic into documented functions behind a new API. Layered checks proved nothing changed for users, while the CTO answered agents' framed questions from a dashboard.",
+  "summary": "GoodBarber's CTO ran 28 coding agents, up to 20 at once, to refactor an app designer; he reports 569 units handled in six days with 0 gaps across 12,074 cases.",
   "domain": "Software",
   "platform": "Other",
   "model": "Claude Opus 5.5",

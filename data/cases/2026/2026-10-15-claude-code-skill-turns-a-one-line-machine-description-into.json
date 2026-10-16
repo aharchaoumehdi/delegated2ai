@@ -1,7 +1,7 @@
 {
   "id": "claude-code-skill-turns-a-one-line-machine-description-into",
   "title": "Claude Code skill turns a one-line machine description into a physics-driven 3D simulation",
-  "summary": "Given a single line like \"a turbofan jet engine\", Claude researches the real machine, writes a small physics solver and builds an interactive three.js cutaway in one HTML file, plus a recorded film. Examples include engines and refinery pumps for training.",
+  "summary": "AirsupHQ's Machine Skill has Claude Code turn one line into a physics-driven three.js simulation; the author reports a 3,597-part turbofan producing about 340 kN.",
   "domain": "Education",
   "platform": "Claude Code",
   "model": null,

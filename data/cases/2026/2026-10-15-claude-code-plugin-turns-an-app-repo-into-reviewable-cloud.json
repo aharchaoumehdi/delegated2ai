@@ -1,7 +1,7 @@
 {
   "id": "claude-code-plugin-turns-an-app-repo-into-reviewable-cloud",
   "title": "Claude Code plugin turns an app repo into reviewable cloud infrastructure with a cost estimate",
-  "summary": "Neckbeard has a coding agent read a repo, ask the questions code can't answer and map the app onto a tested catalog of OpenTofu modules for AWS, GCP or Azure. Users get pipelines, validation results and an Infracost bill before deploying, instead of invented infrastructure.",
+  "summary": "bealesh's neckbeard plugin has Claude Code map a repo onto tested OpenTofu modules with Infracost estimates; the author reports reference-app costs from $77 to about $801 monthly.",
   "domain": "Software",
   "platform": "Claude Code",
   "model": null,

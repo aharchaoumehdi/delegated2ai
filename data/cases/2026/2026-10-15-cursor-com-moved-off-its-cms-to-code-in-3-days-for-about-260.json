@@ -1,7 +1,7 @@
 {
   "id": "cursor-com-moved-off-its-cms-to-code-in-3-days-for-about-260",
   "title": "cursor.com moved off its CMS to code in 3 days for about $260 of agent tokens",
-  "summary": "Cursor's Lee Robinson used coding agents to migrate cursor.com from a headless CMS to raw code and Markdown, arguing the CMS hid content from agents that could otherwise edit the site directly.",
+  "summary": "Cursor's Lee Robinson used agents to move cursor.com off its CMS to code; the event page says it took 3 days, $260 and 297M tokens with zero downtime.",
   "domain": "Software",
   "platform": "Cursor",
   "model": null,

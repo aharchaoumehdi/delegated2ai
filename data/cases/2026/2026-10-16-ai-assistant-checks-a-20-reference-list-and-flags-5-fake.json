@@ -1,7 +1,7 @@
 {
   "id": "ai-assistant-checks-a-20-reference-list-and-flags-5-fake",
   "title": "AI assistant checks a 20-reference list and flags 5 fake papers and 1 retraction in a minute",
-  "summary": "AI-written reference lists can include invented papers. The author had an assistant check a 20-item list on fasting and diabetes through an MCP connector. It found 5 nonexistent papers, 1 with wrong details and 1 retracted study.",
+  "summary": "A developer had Claude check a 20-reference list through their MCP connector; they say in about a minute it flagged 5 fake papers, 1 wrong citation and 1 retraction.",
   "domain": "Science",
   "platform": "Claude",
   "model": null,

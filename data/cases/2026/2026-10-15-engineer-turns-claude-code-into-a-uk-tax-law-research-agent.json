@@ -1,7 +1,7 @@
 {
   "id": "engineer-turns-claude-code-into-a-uk-tax-law-research-agent",
   "title": "Engineer turns Claude Code into a UK tax-law research agent over ~10,000 documents",
-  "summary": "Martin Alderson had Claude Code scrape UK legislation and HMRC tax manuals into folders, then repurposed CLAUDE.md with research instructions so the agent could search the corpus to answer tax-policy questions.",
+  "summary": "Martin Alderson had Claude Code research about 10,000 UK tax documents; he scored its answer to a past exam question 2.5 of 3, where plain Opus failed.",
   "domain": "Legal",
   "platform": "Claude Code",
   "model": null,

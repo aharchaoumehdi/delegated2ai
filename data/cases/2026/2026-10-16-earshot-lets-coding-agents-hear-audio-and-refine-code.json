@@ -1,7 +1,7 @@
 {
   "id": "earshot-lets-coding-agents-hear-audio-and-refine-code",
   "title": "earshot lets coding agents hear audio and refine code-synthesized sounds by listening",
-  "summary": "Coding agents can render videos and games but can't hear them. earshot gives them local tools to describe, match, time and critique audio, and to make sound effects in code. All sounds in its 22-second launch film were made this way.",
+  "summary": "Leonxlnx built earshot so coding agents can analyze audio and synthesize sounds in code; the author says every sound in a 22-second launch film came from it.",
   "domain": "Creative",
   "platform": "Claude Code",
   "model": null,

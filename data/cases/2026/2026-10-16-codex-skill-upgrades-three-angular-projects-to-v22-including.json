@@ -1,7 +1,7 @@
 {
   "id": "codex-skill-upgrades-three-angular-projects-to-v22-including",
   "title": "Codex skill upgrades three Angular projects to v22, including a three-version jump",
-  "summary": "A maintainer who kept postponing Angular upgrades built a Codex skill that branches, runs migrations, updates dependencies and validates with a clean install. It upgraded three open-source projects, and all three PRs were merged.",
+  "summary": "A maintainer had Codex write an Angular upgrade skill that branches, migrates and validates builds; he reports it upgraded three open-source projects to v22, all merged within a week.",
   "domain": "Software",
   "platform": "OpenAI Codex",
   "model": null,

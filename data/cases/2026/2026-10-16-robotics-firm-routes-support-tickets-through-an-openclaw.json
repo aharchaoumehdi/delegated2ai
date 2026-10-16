@@ -1,7 +1,7 @@
 {
   "id": "robotics-firm-routes-support-tickets-through-an-openclaw",
   "title": "Robotics firm routes support tickets through an OpenClaw agent into Discord threads",
-  "summary": "A small robotics company's support had been scattered across WhatsApp chats. It now runs an OpenClaw agent that turns Chatwoot tickets into Discord threads, suggests fixes from past cases, estimates billing and drafts replies for staff to review.",
+  "summary": "A robotics firm's OpenClaw agent turns Chatwoot tickets into Discord threads, suggests fixes and drafts replies; the author says support is now tracked in one place.",
   "domain": "Business",
   "platform": "OpenClaw",
   "model": null,

@@ -28,13 +28,18 @@
   --brand-tld: #b9bec9;
   --shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
   --on-mark: #000;            /* text on the per-agent colour badges (always light fills) */
+  --promo-surface: #0d2833;   /* the newsletter card: a cyan-tinted panel that stands out */
+  --promo-border: #1d5468;
+  --promo-field: #0b0d10;
+  --grid-dot: #262d38;        /* the margin texture: dots on the logo's 24px grid */
+  --grid-glow-peak: 0.11;     /* how bright a glowing cell gets at its peak */
   --logo-tile: #f4f6f8;       /* light tile behind agent logos, so colour and black logos both read */
   --logo-tile-edge: transparent;
   --font-sans: "Funnel Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display: "Funnel Display", "Funnel Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --font-brand: "Space Grotesk", var(--font-display);
-  --font-prompt: "Atkinson Hyperlegible Mono", var(--font-mono); /* built for legibility: clear 0/O, 1/l/I, punctuation */
+  --font-prompt: var(--font-mono);
   color-scheme: dark;
 }
 :root[data-theme="light"] {
@@ -57,6 +62,11 @@
   --brand-to: #007da5;
   --brand-tld: #5c626b;
   --shadow: 0 12px 32px rgba(11, 13, 16, 0.14);
+  --promo-surface: #e0f5fc;
+  --promo-border: #9fdcf2;
+  --promo-field: #ffffff;
+  --grid-dot: #d5dbe2;
+  --grid-glow-peak: 0.16;
   --logo-tile: #ffffff;
   --logo-tile-edge: #dde2e8;
   color-scheme: light;
@@ -65,7 +75,11 @@
 * { box-sizing: border-box; margin: 0; }
 html { -webkit-text-size-adjust: 100%; }
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  /* "Attention grid": dots on the logo's 24px pitch, in the margins (the frame covers the middle). */
+  background-image: radial-gradient(circle at 12px 12px, var(--grid-dot) 1px, transparent 1.6px);
+  background-size: 24px 24px;
+  background-attachment: fixed;
   color: var(--text);
   font: 16px/1.5 var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -81,6 +95,16 @@ svg { flex: none; }
 .mono-label { font: 400 12px/1.5 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
 .signal { color: var(--accent-text); }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* A few grid cells glow and fade, slowly, in the margins (app.js places them, only while invisible).
+   Behind everything, opacity-only, and absent with reduced motion or without margins. */
+.grid-glow { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.grid-glow span {
+  position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 2px;
+  background: var(--accent); opacity: 0; animation: grid-glow 9s ease-in-out infinite;
+}
+@keyframes grid-glow { 0%, 100% { opacity: 0; } 50% { opacity: var(--grid-glow-peak); } }
+@media (prefers-reduced-motion: reduce) { .grid-glow { display: none; } }
 
 /* ---------- frame ---------- */
 .frame {
@@ -115,7 +139,7 @@ svg { flex: none; }
 .theme-btn svg { width: 16px; height: 16px; }
 :root:not([data-theme="light"]) .icon-sun, :root[data-theme="light"] .icon-moon { display: none; }
 .tagline { margin-top: 14px; color: var(--text); font-size: 15px; line-height: 1.6; }
-.side-ctas { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
+.tagline + .news-card { margin-top: 32px; }
 .btn-cta, .btn-primary, .btn-outline {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   border-radius: 8px; padding: 8px 12px; font-size: 14px; line-height: 20px; white-space: nowrap;
@@ -129,29 +153,37 @@ svg { flex: none; }
 .btn-outline:hover { border-color: var(--border-control); background: var(--surface); color: var(--heading); }
 .btn-outline.is-on { border-color: var(--accent-text); color: var(--accent-text); background: var(--accent-soft); }
 .btn-cta svg, .btn-primary svg, .btn-outline svg { width: 14px; height: 14px; }
-/* newsletter sign-up */
-.subscribe { display: grid; gap: 6px; }
-.sub-row { display: flex; flex-direction: column; gap: 8px; }
+/* newsletter card */
+.news-card { background: var(--promo-surface); border: 1px solid var(--promo-border); border-radius: 14px; padding: 18px 16px 16px; }
+.news-card h2 { font: 600 17px/1.3 var(--font-display); letter-spacing: -0.015em; color: var(--heading); }
+.news-lead { margin-top: 6px; font-size: 14px; line-height: 1.55; color: var(--text); }
+.news-card .subscribe { margin-top: 14px; }
+.news-card > .btn-cta { margin-top: 14px; width: 100%; }
+.news-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; margin-top: 10px; font-size: 13px; color: var(--text-muted); }
+.news-foot a { margin-left: auto; display: inline-flex; align-items: center; min-height: 24px; color: var(--heading); text-decoration: underline; text-underline-offset: 3px; }
+.news-foot a:hover { color: var(--accent-text); }
+.subscribe { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.sub-row { display: flex; gap: 8px; min-width: 0; }
 .sub-row[hidden] { display: none; }
 .subscribe input[type="email"] {
-  min-width: 0; height: 40px; padding: 0 12px; border: 1px solid var(--border-control); border-radius: 8px;
-  background: var(--surface); color: var(--heading); font: 15px var(--font-sans);
+  flex: 1; min-width: 0; height: 42px; padding: 0 12px; border: 1px solid var(--border-control); border-radius: 9px;
+  background: var(--promo-field); color: var(--heading); font: 15px var(--font-sans);
 }
 .subscribe input[type="email"]::placeholder { color: var(--text-muted); }
 .subscribe input[type="email"]:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
-.subscribe .btn-cta { height: 40px; }
+.subscribe .btn-cta { flex: none; height: 42px; padding: 0 16px; border-radius: 9px; }
 .subscribe .btn-cta:disabled { opacity: 0.7; cursor: progress; }
-.sub-note { font-size: 13px; line-height: 1.5; color: var(--text-muted); }
+.sub-note { font-size: 13.5px; line-height: 1.5; color: var(--heading); }
+.sub-note:empty { display: none; }
 .sub-note a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
-.subscribe[data-state] .sub-note { color: var(--heading); font-size: 14px; }
-.subscribe[data-state="ok"] .sub-note { padding: 10px 12px; border-radius: 8px; background: var(--accent-soft); }
 .subscribe[data-state="error"] .sub-note::before { content: "Couldn't sign you up: "; font-weight: 600; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-.subscribe-box .sub-row { flex-direction: row; }
-.subscribe-box input[type="email"] { flex: 1; }
+.news-box { margin-top: 48px; padding: 24px 22px; }
+.news-box h2 { font-size: 19px; }
+.news-box .news-lead, .news-box .subscribe { max-width: 34rem; }
 
 /* live counters */
-.stats { margin-top: 16px; padding: 12px 14px 14px; background: var(--surface); border-radius: 10px; }
+.stats { margin-top: 20px; padding: 14px 16px 16px; background: var(--surface); border-radius: 14px; }
 .stats-head { display: flex; align-items: center; gap: 7px; font: 500 12px var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
 .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 .stats-head .updated { margin-left: auto; font-weight: 400; letter-spacing: 0; text-transform: none; }
@@ -161,6 +193,20 @@ svg { flex: none; }
 .stat dd { margin: 0; font: 600 20px/1.2 var(--font-display); color: var(--heading); font-variant-numeric: tabular-nums; }
 .stat dd a { color: var(--accent-text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .stat dt { font-size: 12.5px; color: var(--text-muted); }
+.stats-votes { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+.stats-votes[hidden] { display: none; }
+.stats-votes b { color: var(--heading); font-weight: 600; font-variant-numeric: tabular-nums; }
+.stats-submit { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--divider); }
+.stats-submit p { font-size: 13.5px; color: var(--text); margin-bottom: 8px; }
+.stats-submit .btn-outline { width: 100%; }
+/* issues */
+.issue-items { margin-top: 28px; }
+.issue-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 28px; font-size: 14px; }
+.issue-nav a { display: inline-flex; align-items: center; min-height: 24px; color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+.issue-rows { margin-top: 28px; }
+.issue-row { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--divider); font-size: 15px; }
+.issue-row a { flex: none; width: 9.5rem; color: var(--accent-text); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.issue-row span { color: var(--text-muted); min-width: 0; }
 .promo { margin-top: 20px; background: var(--surface-sponsor); border-radius: 8px; padding: 14px 14px; font-size: 13.5px; line-height: 1.6; color: var(--text-muted); }
 .promo .mono-label { font-size: 12px; }
 .promo strong { display: block; color: var(--heading); font-weight: 500; font-size: 14px; margin: 4px 0 2px; }
@@ -360,7 +406,7 @@ svg { flex: none; }
 .try-head b { font-weight: 500; }
 .btn-copy { flex: none; font: 12px var(--font-mono); color: var(--heading); border: 1px solid var(--border-control); border-radius: 6px; padding: 5px 10px; background: transparent; }
 .btn-copy:hover { background: var(--surface-raised); }
-.prompt { margin: 0; white-space: pre-wrap; word-wrap: break-word; font: 15px/1.75 var(--font-prompt); color: var(--heading); max-width: 70ch; }
+.prompt { margin: 0; white-space: pre-wrap; word-wrap: break-word; font: 13.5px/1.7 var(--font-prompt); color: var(--heading); }
 /* [placeholders] to fill in before using the prompt */
 .prompt .ph { color: var(--accent-text); background: var(--accent-soft); border-radius: 4px; padding: 1px 2px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .try-hint { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
@@ -376,12 +422,6 @@ svg { flex: none; }
 .browse-links { display: flex; flex-direction: column; gap: 8px; font-size: 15px; }
 .browse-links a { text-decoration: underline; text-underline-offset: 3px; color: var(--accent-text); }
 .browse-links a:hover { text-decoration-thickness: 2px; }
-.digest-box {
-  margin-top: 48px; display: flex; flex-direction: column; gap: 16px;
-  background: var(--surface); border-radius: 14px; padding: 24px 22px; box-shadow: inset 3px 0 0 var(--accent);
-}
-.digest-box h2 { font: 500 19px/1.35 var(--font-display); letter-spacing: -0.02em; }
-.digest-box p { margin-top: 6px; font-size: 15px; color: var(--text-muted); max-width: 26rem; }
 .foot-links { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--divider); display: flex; flex-wrap: wrap; gap: 6px 20px; font: 12.5px var(--font-mono); color: var(--text-muted); }
 .foot-links a:hover { color: var(--heading); text-decoration: underline; text-underline-offset: 2px; }
 .topic-rows { margin-top: 32px; }
@@ -473,12 +513,10 @@ body.sponsors-closed .sponsorbar { display: none; }
   .frame-grid { display: block; }
   .sidebar { position: static; height: auto; overflow: visible; padding: 20px 24px 16px; border-right: 0; border-bottom: 1px solid var(--divider); }
   .tagline { margin-top: 8px; font-size: 14px; }
-  .side-ctas { flex-direction: row; flex-wrap: wrap; }
-  .side-ctas > * { flex: 1 1 auto; }
   .promo { display: none; }
-  .side-ctas > .subscribe { flex-basis: 100%; }
   .stats dl { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .stat dd { font-size: 18px; }
+  .tagline + .news-card { margin-top: 20px; }
   .filter-toggle {
     display: flex; width: 100%; margin-top: 10px; justify-content: space-between; align-items: center;
     border: 1px solid var(--border-control); color: var(--heading); background: var(--surface); border-radius: 8px; padding: 10px 12px; font-size: 14px; font-weight: 500;
@@ -507,7 +545,6 @@ body.sponsors-closed .sponsorbar { display: none; }
   .sb-item { font-size: 13px; padding: 0 18px; }
   .topnav-right .count { display: none; }
   .search .kbd { display: none; }
-  .subscribe-box .sub-row { flex-direction: column; }
   .stats dl { grid-template-columns: 1fr 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

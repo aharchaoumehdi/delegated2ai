@@ -1,7 +1,7 @@
 {
   "id": "stripping-168-000-comment-lines-made-no-difference-to-claude",
   "title": "Stripping 168,000 comment lines made no difference to Claude Code's feature work",
-  "summary": "A developer removed every comment from a large WordPress plugin codebase and had Claude Code build the same two features three times on each version. All runs passed lint, type checks and tests, blind-judged quality was unchanged, and the small task used about 22% fewer tokens without comments.",
+  "summary": "Roberto Aranda had Claude Code build two features three times each on a WordPress plugin codebase with and without 168,000 comment lines; he reports quality scores were within noise.",
   "domain": "Software",
   "platform": "Claude Code",
   "model": "Opus 5.5",

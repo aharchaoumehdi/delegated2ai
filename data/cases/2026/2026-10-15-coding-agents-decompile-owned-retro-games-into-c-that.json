@@ -1,7 +1,7 @@
 {
   "id": "coding-agents-decompile-owned-retro-games-into-c-that",
   "title": "Coding agents decompile owned retro games into C that rebuilds byte-for-byte",
-  "summary": "Matching decompilation of old games is slow manual work. decomp.wtf hands agents one function at a time, compiles each attempt with the game's original compiler, and accepts only exact byte matches, building toward ports and mods.",
+  "summary": "Developer i12bp8's decomp.wtf has coding agents decompile retro game functions into C, accepting only byte-exact matches; the README shows one N64 function matching, with no overall results stated.",
   "domain": "Software",
   "platform": "Claude Code",
   "model": null,

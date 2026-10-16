@@ -1,7 +1,7 @@
 {
   "id": "claude-code-skill-turns-biology-questions-into-interactive",
   "title": "Claude Code skill turns biology questions into interactive, fully cited mechanism figures",
-  "summary": "Science graphics are often static or unsourced. Given a request like how cocaine and amphetamine differ at the dopamine transporter, this skill has Claude gather sources, draw real structures with toggles that change the mechanism, cite every number and check the page at multiple sizes.",
+  "summary": "Garinmckayl's Anima skill has Claude Code turn biology questions into interactive, cited mechanism figures; the author has published live examples on dopamine, stimulants, semaglutide and myelinated neurons.",
   "domain": "Science",
   "platform": "Claude Code",
   "model": null,

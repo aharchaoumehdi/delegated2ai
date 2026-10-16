@@ -1,7 +1,7 @@
 {
   "id": "agent-fills-out-a-founder-s-fbar-form-leaving-only-a-few",
   "title": "Agent fills out a founder's FBAR form, leaving only a few details to enter by hand",
-  "summary": "A founder asked an agent to help file their FBAR, the US foreign bank account report. It walked them through the process and filled in the form, leaving a few critical fields for the founder to enter before submitting.",
+  "summary": "A founder had a Warren Buffett-styled board agent walk them through their FBAR and fill in the form; they say it took 5 minutes, entering key details themselves.",
   "domain": "Finance",
   "platform": "Other",
   "model": null,

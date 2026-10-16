@@ -1,7 +1,7 @@
 {
   "id": "agent-skill-rewrites-work-emails-without-changing",
   "title": "Agent skill rewrites work emails without changing commitments, per blind multi-model test",
-  "summary": "A Claude Code/Codex skill removes AI tone from sales, support and HR writing while keeping facts and commitments intact, asking the writer questions when details are missing. Blind tests compared it with other humanizers.",
+  "summary": "Developer phuryn's Claude Code skill rewrites work writing plainly while keeping facts; in the author's blind test, AI judges preferred it 48% of the time versus 20% for blader/humanizer.",
   "domain": "Business",
   "platform": "Claude Code",
   "model": "Claude Sonnet",

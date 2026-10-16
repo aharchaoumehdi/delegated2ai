@@ -1,7 +1,7 @@
 {
   "id": "ai-agent-sets-up-a-home-lte-network-with-open5gs-on-a-7-5",
   "title": "AI agent sets up a home LTE network with Open5GS on a $7.5 secondhand femtocell",
-  "summary": "A PhD student who is a networking hobbyist bought a cheap LTE femtocell and an eSIM card. An AI agent configured an Open5GS core network for a home-lab cellular network almost in one shot.",
+  "summary": "A hobbyist bought a secondhand LTE femtocell for about 50 CNY and had an AI agent configure an Open5GS core network; they say it worked almost in one shot.",
   "domain": "Science",
   "platform": "Other",
   "model": null,

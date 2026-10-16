@@ -1,7 +1,7 @@
 {
   "id": "claude-rewinds-a-deterministic-test-run-to-debug-a-hashicorp",
   "title": "Claude rewinds a deterministic test run to debug a HashiCorp Raft bug via Antithesis",
-  "summary": "Distributed-system bugs are hard to reproduce. Antithesis now lets an agent rewind a failing test run, run commands at any moment in it, and retest its fix, shown with Claude chasing a Raft bug.",
+  "summary": "Antithesis gave Claude its time-travel debugger to rewind a failing test run and probe a HashiCorp Raft bug; the company shows a replay but reports no final fix.",
   "domain": "Software",
   "platform": "Claude",
   "model": null,

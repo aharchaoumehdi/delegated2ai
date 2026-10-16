@@ -1,7 +1,7 @@
 {
   "id": "agent-skill-maps-mcdonald-s-china-party-bookings-across-281",
   "title": "Agent skill maps McDonald's China party bookings across 281 cities and 3,664 stores",
-  "summary": "McDonald's China hides birthday parties and kids' reading events deep in its app. This skill and map pull availability through the official read-only MCP tools, so a parent can ask whether a store near them has a slot this Saturday.",
+  "summary": "Developer johnny37 built an agent skill using McDonald's China's official MCP tools to find bookable parties and kids' events, reporting 3,664 stores across 281 cities mapped.",
   "domain": "Daily life",
   "platform": "Other",
   "model": null,

@@ -1,7 +1,7 @@
 {
   "id": "devin-turns-production-failure-traces-into-evals-lifting-rox",
   "title": "Devin turns production failure traces into evals, lifting Rox's coverage from 43% to 72%",
-  "summary": "Rox's team found their agents shipped faster than people could write tests. They set up Devin to pull failing production traces from Braintrust, recreate each failure in a preview environment and turn it into an eval case.",
+  "summary": "Rox's team had Devin turn failing production traces from Braintrust into eval cases; the author reports eval coverage rising from 43% to 72%.",
   "domain": "Software",
   "platform": "Devin",
   "model": null,

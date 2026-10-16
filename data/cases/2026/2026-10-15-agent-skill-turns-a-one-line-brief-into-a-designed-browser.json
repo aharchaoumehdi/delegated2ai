@@ -1,7 +1,7 @@
 {
   "id": "agent-skill-turns-a-one-line-brief-into-a-designed-browser",
   "title": "Agent skill turns a one-line brief into a designed, browser-tested website",
-  "summary": "An agent skill that takes a one-line request such as a portfolio for a named person and builds a full site. The agent picks a concept, writes a design system, builds it, and checks its own screenshots against a rubric before deploying.",
+  "summary": "Developer juliobsz published an /awwwards skill that has Claude Code turn a one-line brief into a designed, screenshot-checked site; the author says it iterates until every rubric category scores 8/10.",
   "domain": "Creative",
   "platform": "Claude Code",
   "model": null,

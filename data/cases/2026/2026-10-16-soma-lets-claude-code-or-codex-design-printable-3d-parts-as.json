@@ -1,7 +1,7 @@
 {
   "id": "soma-lets-claude-code-or-codex-design-printable-3d-parts-as",
   "title": "SOMA lets Claude Code or Codex design printable 3D parts as CadQuery code",
-  "summary": "Makers who need a case or bracket often don't want to learn CAD. SOMA lets a CLI coding agent write the part as CadQuery code. The app builds and shows each version, and the user points at problems until the part fits, then exports it for printing.",
+  "summary": "A developer built SOMA so coding agents like Claude Code write printable 3D parts as CadQuery code; he reports very good results in this early prototype.",
   "domain": "Creative",
   "platform": "Claude Code",
   "model": "Claude Opus 5.5",

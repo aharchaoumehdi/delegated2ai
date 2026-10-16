@@ -1,7 +1,7 @@
 {
   "id": "claude-code-builds-a-two-phone-pong-game-that-syncs-over",
   "title": "Claude Code builds a two-phone Pong game that syncs over audio chirps",
-  "summary": "Simon Willison wanted to know whether two phones could play a game against each other using only sound for networking. With a single prompt, Claude Code built a static-HTML Pong variant that sends the game state as microphone chirps.",
+  "summary": "Simon Willison had Claude Code build a two-phone Pong game that sends game state as audio chirps through the microphone; he says it seems to work.",
   "domain": "Creative",
   "platform": "Claude Code",
   "model": "Claude Opus 5.5",

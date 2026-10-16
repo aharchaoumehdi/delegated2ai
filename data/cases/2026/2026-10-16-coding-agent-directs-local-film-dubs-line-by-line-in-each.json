@@ -1,7 +1,7 @@
 {
   "id": "coding-agent-directs-local-film-dubs-line-by-line-in-each",
   "title": "Coding agent directs local film dubs line by line in each actor's own cloned voice",
-  "summary": "Many films and shows have no subtitles or dubs in a viewer's language. This repo lets Claude Code or Codex act as dubbing director: it casts lines, fixes transcripts, translates to fit timing and triages QA flags, while local models clone each actor's voice.",
+  "summary": "A developer's repo has Claude Code or Codex direct film dubs in each actor's cloned voice; he reports watchable results, with a full movie taking about seven hours on a laptop.",
   "domain": "Creative",
   "platform": "Claude Code",
   "model": null,

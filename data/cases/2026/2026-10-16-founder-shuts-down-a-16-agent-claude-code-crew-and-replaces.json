@@ -1,7 +1,7 @@
 {
   "id": "founder-shuts-down-a-16-agent-claude-code-crew-and-replaces",
   "title": "Founder shuts down a 16-agent Claude Code crew and replaces it with one on-call assistant",
-  "summary": "A founder built 16 scheduled Claude Code agents to run parts of his company, then found he had stopped using them. He replaced them with one assistant that sees per-project context, calendar and email and answers over iMessage.",
+  "summary": "A founder says he went from 56 messages to his 16 Claude Code agents on day one to nearly none, so he replaced them with one iMessage assistant.",
   "domain": "Business",
   "platform": "Claude Code",
   "model": null,

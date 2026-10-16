@@ -1,7 +1,7 @@
 {
   "id": "claude-code-skill-researches-20-40-web-pages-and-turns-any",
   "title": "Claude Code skill researches 20-40 web pages and turns any topic into a cited audio course",
-  "summary": "Courses on sites like Udemy are fixed and long. This skill has Claude research a topic across 20-40 web pages, compare where sources agree and disagree, and produce about 12 two-minute two-voice audio lessons, each with a summary card and citations.",
+  "summary": "Assaf Kipnis built Claudemy, a Claude Code skill that researches 20-40 web pages per topic; the author says a 12-lesson course yields about 25 minutes of cited two-voice audio.",
   "domain": "Education",
   "platform": "Claude Code",
   "model": null,

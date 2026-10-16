@@ -1,7 +1,7 @@
 {
   "id": "ai-co-scientist-independently-reproduces-an-unpublished",
   "title": "AI co-scientist independently reproduces an unpublished superbug finding in ~48 hours",
-  "summary": "Google's multi-agent co-scientist, built on Gemini 2.0, generated and ranked research hypotheses; for Imperial College researchers it proposed the same mechanism for antimicrobial resistance spread that their unpublished work had found.",
+  "summary": "Google's Gemini 2.0-based AI co-scientist, given an Imperial question on antimicrobial resistance, reportedly reached the team's unpublished hypothesis in about 48 hours and also proposed a hypothesis new to them.",
   "domain": "Science",
   "platform": "Gemini",
   "model": "Gemini 2.0",

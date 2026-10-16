@@ -1,7 +1,7 @@
 {
   "id": "agent-skill-finds-the-cheapest-mcdonald-s-china-order-by",
   "title": "Agent skill finds the cheapest McDonald's China order by combining coupons, cutting ¥47 to ¥21.9",
-  "summary": "Choosing among dozens of menu items and stacking coupons is hard to do by hand. This agent skill pulls the menu and all coupons via McDonald's China MCP, runs a deterministic optimizer for the cheapest valid combo, and places the order after the user confirms.",
+  "summary": "Developer hujjun's WorkBuddy skill pulls McDonald's China menus and coupons to find the cheapest combo; the author reports a ¥47 Big Mac meal dropping to ¥21.90 in sample data.",
   "domain": "Daily life",
   "platform": "WorkBuddy",
   "model": null,

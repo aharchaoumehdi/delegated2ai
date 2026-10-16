@@ -1,7 +1,7 @@
 {
   "id": "non-coding-growth-marketer-cuts-ad-creation-from-30-minutes",
   "title": "Non-coding growth marketer cuts ad creation from 30 minutes to 30 seconds",
-  "summary": "Anthropic growth marketer Austin Lau, who had never written code, used Claude Code to build workflows that find underperforming ads in CSV exports and generate replacement copy within platform character limits.",
+  "summary": "Anthropic marketer Austin Lau, who had never coded, used Claude Code to build ad-copy workflows; Anthropic reports ad creation fell from 30 minutes to 30 seconds.",
   "domain": "Marketing",
   "platform": "Claude Code",
   "model": null,

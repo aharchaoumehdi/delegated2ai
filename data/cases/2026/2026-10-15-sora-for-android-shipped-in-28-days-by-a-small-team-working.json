@@ -1,7 +1,7 @@
 {
   "id": "sora-for-android-shipped-in-28-days-by-a-small-team-working",
   "title": "Sora for Android shipped in 28 days by a small team working alongside Codex",
-  "summary": "OpenAI engineers built and launched the Sora Android app with a lean team running Codex sessions in parallel, using hand-written skeleton features and agent guidelines so Codex could produce most of the implementation.",
+  "summary": "OpenAI engineers had parallel Codex sessions write most of the Sora Android app in 28 days; OpenAI reports it reached #1 in the Play Store on launch day.",
   "domain": "Software",
   "platform": "OpenAI Codex",
   "model": null,

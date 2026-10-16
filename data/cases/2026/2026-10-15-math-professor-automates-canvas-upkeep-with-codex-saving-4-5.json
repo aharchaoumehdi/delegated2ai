@@ -1,7 +1,7 @@
 {
   "id": "math-professor-automates-canvas-upkeep-with-codex-saving-4-5",
   "title": "Math professor automates Canvas upkeep with Codex, saving 4-5 hours a week",
-  "summary": "Cal State math professor Taiyo Inoue had Codex write scripts against Canvas's API to keep his courses updated, then used the freed time to flip his classes toward in-class group problem-solving.",
+  "summary": "Cal State math professor Taiyo Inoue had Codex write scripts to update his Canvas courses; he estimates it saves four to five hours a week.",
   "domain": "Education",
   "platform": "OpenAI Codex",
   "model": null,

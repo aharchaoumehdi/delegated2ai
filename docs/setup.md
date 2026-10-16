@@ -65,12 +65,16 @@ request returns costs $0.005 (no free tier, no subscription for new accounts).
    of starter credit after saving a card.
 3. Add the token as the `X_BEARER_TOKEN` secret.
 
-The collector makes one search a day of up to `maxResults` posts (50 by default in
-`config/sources.json`), sorted by relevance: at most about $0.25 a day, roughly $7.50 a
-month. Every post X returns goes to the curator (X is listed in `alwaysCurate`), so we
-never pay for a post and then discard it unread. Change `maxResults` (10-100) to spend
-more or less. Set a spending limit or turn off auto-recharge in the
-console if you want a hard cap.
+The collector runs three focused searches a day (`x.queries` in `config/sources.json`):
+coding agents in use, personal and business agents, and agents at work. Each is sorted by
+relevance and capped by its own `maxResults` (30, 30 and 20): at most 80 posts, about
+$0.40 a day or $12 a month. Every post X returns goes to the curator (X is listed in
+`alwaysCurate`), so we never pay for a post and then discard it unread. When a post
+links to a repo, write-up or demo, that page is fetched so the curator judges the work,
+not just the post. Each run log shows, per search, how many posts X returned (billed)
+and how many were new. Lower a search's `maxResults` (10-100), or remove a search, to
+spend less. Set a spending limit or turn off auto-recharge in the X console if you want
+a hard cap.
 
 ### Votes ("I want this" and the up arrow)
 
@@ -142,6 +146,6 @@ curator, because new ideas often start with few likes. What reaches Claude each 
 
 That is up to about 110 candidates on a busy day, judged in batches of 6; posts already
 judged are remembered and never paid for twice. Curation cost grows with that number, so
-`maxCandidates`, X's `maxResults` and `CURATOR_MODEL` are the levers to spend less. Each
+`maxCandidates`, each X search's `maxResults` and `CURATOR_MODEL` are the levers to spend less. Each
 run log in `data/runs/` shows how many items every source returned and, for X, how many
 posts were billed (`fetched`).

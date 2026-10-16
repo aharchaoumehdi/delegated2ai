@@ -10,6 +10,7 @@
 import { readFile, writeFile, mkdir, appendFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { parseStructured, Anthropic, MODEL } from "./lib/claude.mjs";
+import { updateRun } from "./lib/runlog.mjs";
 import { z } from "zod";
 import { loadCases, caseFilePath, sortCases } from "./lib/cases.mjs";
 import { CaseSchema } from "./lib/schema.mjs";
@@ -22,11 +23,8 @@ const BATCH_SIZE = 6;
 const SEEN_TTL_DAYS = 120;
 
 const { candidates = [], date = today() } = await readJSON(path(".cache", "candidates.json"), {});
-const runLogFile = path("data", "runs", `${date}.json`);
-const runLog = await readJSON(runLogFile, { date });
-
 async function finish(curate) {
-  await writeJSON(runLogFile, { ...runLog, curate });
+  await updateRun(date, { curate });
 }
 
 if (candidates.length === 0) {
@@ -95,7 +93,7 @@ function renderCandidate(c) {
   const body = [c.text, c.page_text].filter(Boolean).join("\n\n--- linked page ---\n").slice(0, 9000);
   return `<candidate candidate_id="${c.id}">
 source: ${c.source_name}
-url: ${c.url}
+url: ${c.url}${c.link ? `\nlinks to: ${c.link}` : ""}
 author: ${c.author ?? "unknown"}
 posted: ${c.published}
 engagement: ${c.engagement.score} points/likes, ${c.engagement.comments} comments

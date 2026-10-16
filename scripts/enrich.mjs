@@ -9,6 +9,7 @@ import { z } from "zod";
 import { loadCases } from "./lib/cases.mjs";
 import { CaseSchema } from "./lib/schema.mjs";
 import { parseStructured, Anthropic } from "./lib/claude.mjs";
+import { updateRun } from "./lib/runlog.mjs";
 import { path, readJSON, writeJSON, today, truncate, fetchWithTimeout, htmlToText, mapLimit } from "./lib/util.mjs";
 
 const MAX = Number(process.env.ENRICH_MAX || 60);
@@ -22,7 +23,6 @@ async function main() {
   const { cases, errors } = await loadCases();
   if (errors.length) throw new Error(errors.join("\n"));
   const todo = cases.filter(needsWriteUp).sort((a, b) => Number(b.status === "published") - Number(a.status === "published")).slice(0, MAX);
-  const runLogFile = path("data", "runs", `${today()}.json`);
   if (!todo.length) return console.log("Every entry already has a write-up.");
   if (!process.env.ANTHROPIC_API_KEY) {
     console.log(`::warning title=Write-ups skipped::${todo.length} entries need a write-up but ANTHROPIC_API_KEY is not set.`);
@@ -109,8 +109,7 @@ ${c._source_text || "(not available; use the record above)"}
     }
   }
 
-  const runLog = await readJSON(runLogFile, { date: today() });
-  await writeJSON(runLogFile, { ...runLog, enrich: { needed: todo.length, written, failures } });
+  await updateRun(today(), { enrich: { needed: todo.length, written, failures } });
   const line = `Write-ups: ${written} of ${todo.length} written, ${failures.length} failures`;
   console.log(line);
   if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `\n### ${line}\n`);

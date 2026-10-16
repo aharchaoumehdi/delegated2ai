@@ -85,7 +85,9 @@ kept in each visitor's browser only, and "Trending today" uses the editor's orde
    (the account ID is on the Workers & Pages overview page).
 3. Actions → **Deploy votes service** → Run workflow. It creates the database, deploys
    the Worker and prints its URL in the run summary.
-4. Add that URL as the repository **variable** `VOTES_API`. The next deploy uses it.
+4. Put that URL in `votesApi` in `config/site.json` (done: it is
+   `https://delegatedto-votes.aharchaou-mehdi.workers.dev`). A repository variable
+   `VOTES_API` overrides it without a code change.
 
 Allowed site origins are listed in `worker/wrangler.toml` (`ALLOWED_ORIGINS`). What is
 stored, and for how long, is described on the site's Privacy page.

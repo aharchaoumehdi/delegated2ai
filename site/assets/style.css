@@ -159,7 +159,7 @@ svg { flex: none; }
 .news-lead { margin-top: 6px; font-size: 14px; line-height: 1.55; color: var(--text); }
 .news-card .subscribe { margin-top: 14px; }
 .news-card > .btn-cta { margin-top: 14px; width: 100%; }
-.news-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; margin-top: 10px; font-size: 13px; color: var(--text-muted); }
+.news-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; margin-top: 10px; font-size: 13px; color: var(--text-muted); }
 .news-foot a { margin-left: auto; display: inline-flex; align-items: center; min-height: 24px; color: var(--heading); text-decoration: underline; text-underline-offset: 3px; }
 .news-foot a:hover { color: var(--accent-text); }
 .subscribe { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
@@ -178,6 +178,9 @@ svg { flex: none; }
 .sub-note a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
 .subscribe[data-state="error"] .sub-note::before { content: "Couldn't sign you up: "; font-weight: 600; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.news-side .sub-row { flex-direction: column; }
+.news-side .subscribe input[type="email"] { flex: none; }
+.news-side .subscribe .btn-cta { width: 100%; }
 .news-box { margin-top: 48px; padding: 24px 22px; }
 .news-box h2 { font-size: 19px; }
 .news-box .news-lead, .news-box .subscribe { max-width: 34rem; }
@@ -242,6 +245,14 @@ svg { flex: none; }
 .mark-hollow { border: 1px dashed var(--text-muted); color: var(--text-muted); box-shadow: none; }
 .dot { width: 6px; height: 6px; border-radius: 2px; display: inline-block; flex: none; }
 .dot-hollow { border: 1px solid var(--text-muted); }
+
+/* ---------- section nav ---------- */
+.site-nav { display: flex; gap: 4px 22px; padding: 14px 24px 0; overflow-x: auto; scrollbar-width: none; white-space: nowrap; }
+.site-nav::-webkit-scrollbar { display: none; }
+.site-nav a { display: inline-flex; align-items: center; min-height: 32px; font-size: 15px; font-weight: 500; color: var(--text-muted); border-bottom: 2px solid transparent; }
+.site-nav a:hover { color: var(--heading); }
+.site-nav a[aria-current="page"] { color: var(--heading); border-bottom-color: var(--accent-text); }
+.frame-narrow .site-nav { padding: 10px 48px 0; border-bottom: 1px solid var(--divider); }
 
 /* ---------- main column ---------- */
 .main { min-width: 0; padding-bottom: 96px; }
@@ -528,10 +539,13 @@ body.sponsors-closed .sponsorbar { display: none; }
   .tiles { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -24px; padding: 0 24px; scrollbar-width: none; }
   .tile { flex: 0 0 72%; scroll-snap-align: start; }
   .topnav { padding: 18px 20px; }
+  .site-nav { padding-left: 24px; padding-right: 24px; }
+  .frame-narrow .site-nav { padding: 6px 20px 0; }
   .page { padding: 32px 20px 72px; }
 }
 @media (max-width: 640px) {
-  .sidebar, .toolbar, .section { padding-left: 16px; padding-right: 16px; }
+  .sidebar, .toolbar, .section, .site-nav { padding-left: 16px; padding-right: 16px; }
+  .site-nav { gap: 18px; }
   .tiles { margin: 0 -16px; padding: 0 16px; }
   .signal-panel { padding: 16px; margin: 0 -4px; }
   .section-head .blurb, .section-head .kind { display: none; }

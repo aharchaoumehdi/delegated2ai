@@ -36,9 +36,24 @@
   "x": {
     "enabled": true,
     "minLikes": 0,
-    "maxResults": 50,
     "sortOrder": "relevancy",
-    "query": "(\"claude code\" OR codex OR \"ai agent\" OR \"my agent\" OR devin OR \"agentic\") (built OR automated OR shipped OR \"saved me\" OR workflow) -is:retweet -is:reply lang:en"
+    "queries": [
+      {
+        "label": "coding agents in use",
+        "maxResults": 30,
+        "query": "(\"claude code\" OR codex OR \"cursor agent\" OR devin OR openclaw OR \"gemini cli\" OR \"copilot agent\") (\"I built\" OR \"I had\" OR \"I let\" OR \"I asked\" OR \"I used\" OR \"built me\" OR \"built this\" OR overnight OR \"saved me\" OR automated) -is:retweet -is:reply lang:en"
+      },
+      {
+        "label": "personal and business agents",
+        "maxResults": 30,
+        "query": "(\"my agent\" OR \"my AI agent\" OR \"an AI agent\" OR \"chatgpt agent\" OR manus OR n8n OR \"claude cowork\" OR \"openai operator\") (booked OR negotiated OR filed OR \"found me\" OR \"saved me\" OR \"handles my\" OR \"runs my\" OR \"for my business\" OR \"automated my\") -is:retweet -is:reply lang:en"
+      },
+      {
+        "label": "agents at work",
+        "maxResults": 20,
+        "query": "(agent OR agents OR \"claude code\" OR codex OR chatgpt) (\"my research\" OR \"my lab\" OR \"my students\" OR \"my clients\" OR \"my patients\" OR \"our team\" OR \"my company\") (built OR automated OR \"set up\" OR replaced OR saved) -is:retweet -is:reply lang:en"
+      }
+    ]
   },
   "feeds": {
     "enabled": true,

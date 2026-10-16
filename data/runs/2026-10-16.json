@@ -1,8 +1,15 @@
 {
   "date": "2026-10-16",
-  "enrich": {
-    "needed": 44,
-    "written": 44,
-    "failures": []
-  }
+  "runs": [
+    {
+      "id": "gh-38829219647-1",
+      "started": "2026-10-16T00:23:33Z",
+      "trigger": "workflow_dispatch",
+      "enrich": {
+        "needed": 44,
+        "written": 44,
+        "failures": []
+      }
+    }
+  ]
 }

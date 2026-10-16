@@ -14,8 +14,12 @@
   `scripts/build.mjs` accurate if what it stores changes.
 - The site is static and dependency-free in the browser. `site/assets/render.js` is shared by
   the build and the browser: keep it free of Node APIs.
-- Design: dark by default (`--bg: #000`), tokens in `site/assets/style.css`; light theme via
-  `[data-theme="light"]`. Fonts: Funnel Sans / Funnel Display / Geist Mono.
+- Design: dark by default, light via `[data-theme="light"]` (the choice is remembered). Colours are
+  semantic tokens at the top of `site/assets/style.css` (surfaces, `--divider` vs `--border-control`,
+  `--heading`/`--text`/`--text-muted`, `--accent*`); components use tokens, never raw hex. Cyan fill
+  (`.btn-cta`, dark text) is reserved for the newsletter action; selected states pair the accent with a
+  non-colour cue (fill, outline, ✓, weight). Keep every text pair at WCAG AA in both themes.
+  Fonts: Funnel Sans / Funnel Display / Geist Mono; the wordmark text uses Space Grotesk 600.
 - Brand: `brand/` is the C3 logo kit and `brand/specifications.html` is the standard (colours,
   clear space, minimum sizes). The site uses copies in `site/assets/brand/` (logo canvas trimmed
   to the artwork, a simplified small symbol, icons, share image); never redraw or recolour the

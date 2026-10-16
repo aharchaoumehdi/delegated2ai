@@ -68,6 +68,12 @@ const logo = () =>
   ["dark", "light"]
     .map((t) => `<img class="logo logo-${t}" src="${base}assets/brand/logo-${t}.svg" width="826" height="140" alt="${esc(site.name)}">`)
     .join("");
+// The name as the brand wordmark in text (Space Grotesk 600; "to" and ".ai" in the kit's
+// colours), for spots where the logo file would be too small, like the sponsor bar.
+const wordmark = (() => {
+  const m = site.name.match(/^(.*?)(to)?(\.[a-z]+)?$/i);
+  return `<span class="wordmark">${esc(m[1])}${m[2] ? `<span class="wm-to">${esc(m[2])}</span>` : ""}${m[3] ? `<span class="wm-tld">${esc(m[3])}</span>` : ""}</span>`;
+})();
 const themeButton = `<button type="button" class="theme-btn" data-theme aria-label="Switch theme" title="Switch theme">
   <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 9.6A5.75 5.75 0 0 1 6.4 2.5a5.75 5.75 0 1 0 7.1 7.1Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
   <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
@@ -103,6 +109,7 @@ function head({ title, description, canonical, jsonld }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600&family=Funnel+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&text=${encodeURIComponent(site.name)}&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${base}assets/style.css">
 <script>try{var t=JSON.parse(localStorage.getItem("dlg.theme"));document.documentElement.dataset.theme=t==="light"?"light":"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, "\\u003c")}</script>` : ""}
@@ -143,14 +150,14 @@ function sponsorBar() {
       ? `<a class="sb-item sb-slot" href="${esc(s.url)}"><span class="sb-plus" aria-hidden="true">+</span>${esc(s.name)}: ${esc(s.text)}</a>`
       : `<a class="sb-item" href="${esc(s.url)}"${s.rel ? ` rel="${s.rel}" target="_blank"` : ""}>${
           s.house ? `<img class="sb-logo" src="${base}assets/brand/symbol-small.svg" width="22" height="22" alt="">` : `<span class="sb-mark" aria-hidden="true">${esc((s.abbr || s.name.slice(0, 2)).slice(0, 2))}</span>`
-        }<span><b>${esc(s.name)}</b>: ${esc(s.text)}</span></a>`;
+        }<span>${s.house ? wordmark : `<b>${esc(s.name)}</b>`}: ${esc(s.text)}</span></a>`;
   // Repeat to fill wide screens, then duplicate once so the loop is seamless.
   const reps = Math.max(1, Math.ceil(6 / items.length));
   const run = Array.from({ length: reps }, () => items.map(one).join("")).join("");
   const seconds = items.length * reps * 9;
   return `<div class="sponsorbar" id="sponsorbar" role="complementary" aria-label="Sponsors">
-  <span class="sb-label">Sponsors</span>
-  <div class="sb-viewport"><div class="sb-track" style="--sb-duration:${seconds}s">${run}<span class="sb-copy" aria-hidden="true">${run}</span></div></div>
+  <span class="sb-label">Sponsored</span>
+  <div class="sb-viewport"><div class="sb-track" style="--sb-duration:${seconds}s">${run}<span class="sb-copy" aria-hidden="true">${run.replaceAll("<a ", '<a tabindex="-1" ')}</span></div></div>
   <button type="button" class="sb-close" data-sponsors-close aria-label="Hide sponsors"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>
 </div>`;
 }
@@ -161,21 +168,21 @@ const footerLinks = () =>
 function promoCard() {
   if (site.sponsor) {
     const s = site.sponsor;
-    return `<div class="promo"><p class="mono-label">Sponsor</p><strong>${esc(s.name)}</strong>${esc(s.text)}<br><a class="more" href="${esc(s.url)}" rel="sponsored noopener" target="_blank">${esc(s.cta || "Learn more")} ↗</a></div>`;
+    return `<div class="promo"><p class="mono-label">Sponsored</p><strong>${esc(s.name)}</strong>${esc(s.text)}<br><a class="more" href="${esc(s.url)}" rel="sponsored noopener" target="_blank">${esc(s.cta || "Learn more")} ↗</a></div>`;
   }
   return `<div class="promo"><p class="mono-label">Advertise</p><strong>Your product here</strong>Reach people who build and buy AI agents, every day.<br><a class="more" href="${href("sponsor/")}">Sponsor ${esc(site.name)} ↗</a></div>`;
 }
 
 function sidebar({ activeAgent, activeDomain } = {}) {
   const agentRow = ([name, n]) =>
-    `<a href="${agentHref(name)}"${activeAgent === name ? ' class="is-active"' : ""}>${badge(name, "sm")}<span>${esc(name)}</span><span class="n">${n}</span></a>`;
+    `<a href="${agentHref(name)}"${activeAgent === name ? ' class="is-active" aria-current="page"' : ""}>${badge(name, "sm")}<span>${esc(name)}</span><span class="n">${n}</span></a>`;
   const domainRow = ([name, n]) =>
-    `<a href="${categoryHref(name)}"${activeDomain === name ? ' class="is-active"' : ""}><span>${esc(name)}</span><span class="n">${n}</span></a>`;
+    `<a href="${categoryHref(name)}"${activeDomain === name ? ' class="is-active" aria-current="page"' : ""}><span>${esc(name)}</span><span class="n">${n}</span></a>`;
   return `<aside class="sidebar">
   <h1 class="brand"><a href="${href()}">${logo()}</a></h1>
   <p class="tagline">${esc(site.tagline)}</p>
   <div class="side-ctas">
-    <a class="btn-primary" href="${esc(digestHref)}">${DIGEST_CTA}</a>
+    <a class="btn-cta" href="${esc(digestHref)}">${DIGEST_CTA}</a>
     <a class="btn-outline" href="${issueUrl("submit-use-case.yml")}">Submit a use case</a>
   </div>
   <button type="button" class="filter-toggle" data-filters aria-expanded="false">Filter <span>Agents · Categories</span></button>
@@ -240,13 +247,13 @@ ${sidebar()}
         <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.75" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m10.5 10.5 3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
         <input id="search" type="search" placeholder="Search use cases" autocomplete="off"><span class="kbd">⌘K</span>
       </label>
-      <div class="seg" role="group" aria-label="Sort"><button type="button" class="is-on" data-sort="top">Top</button><button type="button" data-sort="new">New</button></div>
+      <div class="seg" role="group" aria-label="Sort"><button type="button" class="is-on" aria-pressed="true" data-sort="top">Top</button><button type="button" aria-pressed="false" data-sort="new">New</button></div>
       ${themeButton}
     </div>
     <div class="chips">
-      <button type="button" class="chip-btn is-on" data-chip="all">All ${cases.length}</button>
-      <button type="button" class="chip-btn" data-chip="week">New this week ${cases.filter((c) => c.added >= weekStart()).length}</button>
-      <button type="button" class="chip-btn" data-chip="saved" hidden>Saved 0</button>
+      <button type="button" class="chip-btn is-on" aria-pressed="true" data-chip="all">All ${cases.length}</button>
+      <button type="button" class="chip-btn" aria-pressed="false" data-chip="week">New this week ${cases.filter((c) => c.added >= weekStart()).length}</button>
+      <button type="button" class="chip-btn" aria-pressed="false" data-chip="saved" hidden>Saved 0</button>
     </div>
   </div>
   <div id="results" hidden></div>
@@ -438,7 +445,7 @@ ${digestBox()}`,
 function digestBox() {
   return `<aside class="digest-box">
   <div><h2>Get 5 like this every morning</h2><p>The best things people got an AI agent to do, each with the prompt to try it.</p></div>
-  <a class="btn-primary" href="${esc(digestHref)}">${DIGEST_CTA}</a>
+  <a class="btn-cta" href="${esc(digestHref)}">${DIGEST_CTA}</a>
 </aside>`;
 }
 

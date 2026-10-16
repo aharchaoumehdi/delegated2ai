@@ -8,7 +8,7 @@ compatibility_date = "2026-09-01"
 crons = ["17 4 * * *"]
 
 [vars]
-ALLOWED_ORIGINS = "https://aharchaoumehdi.github.io,https://delegatedto.ai,https://www.delegatedto.ai,http://localhost:4173"
+ALLOWED_ORIGINS = "https://delegatedto.ai,https://www.delegatedto.ai,https://delegatedto-site.aharchaou-mehdi.workers.dev,https://aharchaoumehdi.github.io,http://localhost:4173"
 
 [[d1_databases]]
 binding = "DB"

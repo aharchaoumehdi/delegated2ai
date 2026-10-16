@@ -23,8 +23,6 @@ on:
 permissions:
   contents: write
   issues: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: daily-site
@@ -100,15 +98,16 @@ jobs:
   deploy:
     needs: curate
     # Launch switch: nothing is published until the repository variable SITE_LIVE is "true"
-    # (Settings → Secrets and variables → Actions → Variables). A Pages site is public.
+    # (Settings → Secrets and variables → Actions → Variables). Publishes to Cloudflare
+    # (deploy/wrangler.toml) with the same CLOUDFLARE_* secrets as the votes service.
     # Runs after curation, or on its own when curation was skipped (push / skip_curation).
     if: >-
       always() && vars.SITE_LIVE == 'true' &&
       (needs.curate.result == 'success' || needs.curate.result == 'skipped')
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -123,12 +122,12 @@ jobs:
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           VOTES_API: ${{ vars.VOTES_API }}
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publish to Cloudflare
+        run: |
+          npx --yes wrangler@4 deploy --config deploy/wrangler.toml | tee deploy.log
+          url=$(grep -Eo 'https://[a-zA-Z0-9.-]+\.workers\.dev' deploy.log | head -1)
+          echo "### Site published" >> "$GITHUB_STEP_SUMMARY"
+          echo "Cloudflare address: ${url:-see the log above}. Custom domain: docs/setup.md, \"Publish on Cloudflare\"." >> "$GITHUB_STEP_SUMMARY"
 
       # The daily email (docs/setup.md, "Newsletter"). Scheduled runs only, after the deploy,
       # so its links work; it skips itself without KIT_API_KEY and never sends twice a day.

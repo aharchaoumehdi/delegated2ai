@@ -1,7 +1,7 @@
 {
   "id": "linus-torvalds-had-claude-code-fix-the-linux-page-cache",
   "title": "Linus Torvalds had Claude Code fix the Linux page cache; reviewers then found a race",
-  "summary": "Linus Torvalds let Claude Code write a fix to the Linux kernel's page cache, and kernel reviewers later found a race condition in it, a reminder that agent patches to concurrent code need careful review.",
+  "summary": "Linus Torvalds let Claude Code write a fix for the Linux kernel's page cache; The New Stack reports kernel reviewers then found a race condition in it.",
   "domain": "Software",
   "platform": "Claude Code",
   "model": null,

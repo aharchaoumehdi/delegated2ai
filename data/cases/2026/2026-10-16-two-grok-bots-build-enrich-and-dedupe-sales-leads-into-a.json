@@ -1,7 +1,7 @@
 {
   "id": "two-grok-bots-build-enrich-and-dedupe-sales-leads-into-a",
   "title": "Two Grok bots build, enrich and dedupe sales leads into a master spreadsheet",
-  "summary": "A small-business owner runs two Grok bots: one finds and enriches leads with Apollo and Quickenrich, the other merges them into a master spreadsheet with deduplication. Spending needs his approval, freeing his time for client calls.",
+  "summary": "A small-business owner runs two Grok bots that find, enrich and dedupe leads into a master spreadsheet, and says they free many hours for client calls.",
   "domain": "Business",
   "platform": "Other",
   "model": "Grok",

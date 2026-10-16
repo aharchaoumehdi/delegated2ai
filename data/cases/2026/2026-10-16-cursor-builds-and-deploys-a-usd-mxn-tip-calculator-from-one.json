@@ -1,7 +1,7 @@
 {
   "id": "cursor-builds-and-deploys-a-usd-mxn-tip-calculator-from-one",
   "title": "Cursor builds and deploys a USD/MXN tip calculator from one prompt in eight minutes",
-  "summary": "A developer had Claude write a detailed spec, then pasted it into Cursor. Cursor built a dual-currency tip calculator, created the GitHub repo and turned on GitHub Pages without any corrections. A later review by Claude found one minor bug.",
+  "summary": "A developer pasted a Claude-written spec into Cursor, which built and deployed a USD/MXN tip calculator to GitHub Pages; they say it went live in eight minutes.",
   "domain": "Software",
   "platform": "Cursor",
   "model": null,

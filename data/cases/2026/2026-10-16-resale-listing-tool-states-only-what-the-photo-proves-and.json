@@ -1,7 +1,7 @@
 {
   "id": "resale-listing-tool-states-only-what-the-photo-proves-and",
   "title": "Resale listing tool states only what the photo proves and blocks risky claims from publishing",
-  "summary": "AI listing writers guess brands, sizes and materials, which can get resellers refunded or banned. This open-source tool turns a photo into evidence-backed claims, prices the item from comparable sales, and blocks publishing until high-risk guesses are confirmed.",
+  "summary": "A developer built Honest Lister to write resale listings from photos; on 7 test items, he reports unsupported claims fell from 1.14 per listing to 0.",
   "domain": "Business",
   "platform": "Custom agent",
   "model": "moondream2",

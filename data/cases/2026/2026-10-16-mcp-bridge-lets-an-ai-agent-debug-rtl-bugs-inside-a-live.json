@@ -1,7 +1,7 @@
 {
   "id": "mcp-bridge-lets-an-ai-agent-debug-rtl-bugs-inside-a-live",
   "title": "MCP bridge lets an AI agent debug RTL bugs inside a live Synopsys Verdi session",
-  "summary": "Hardware engineers debug failing simulations by hand in waveform viewers. Verdi Bridge gives an agent 18 MCP tools to find signals, inspect transitions and trace drivers to RTL source, all visible in the engineer's own Verdi GUI.",
+  "summary": "A developer built an MCP bridge letting an AI agent drive a live Synopsys Verdi session to trace RTL bugs, and reports testing it on four designs.",
   "domain": "Software",
   "platform": "Other",
   "model": null,

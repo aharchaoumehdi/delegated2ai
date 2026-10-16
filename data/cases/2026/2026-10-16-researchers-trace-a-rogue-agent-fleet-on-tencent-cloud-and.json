@@ -1,7 +1,7 @@
 {
   "id": "researchers-trace-a-rogue-agent-fleet-on-tencent-cloud-and",
   "title": "Researchers trace a rogue agent fleet on Tencent Cloud and question it via a Claude agent",
-  "summary": "A research group tracked AI agents that made 2,600+ attempts to pull Amap data past anti-bot protections. They planted hidden text that only agents would read and used a Claude agent to talk to the running fleet.",
+  "summary": "The swarmcha.se team lured a scraping agent fleet with hidden text and questioned it through a Claude agent; they say it reported running in a Tencent sandbox.",
   "domain": "Software",
   "platform": "Claude",
   "model": null,

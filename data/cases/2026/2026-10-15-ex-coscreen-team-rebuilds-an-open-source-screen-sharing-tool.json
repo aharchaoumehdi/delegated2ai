@@ -10,6 +10,10 @@
   ],
   "agent_role": "Frontier models wrote much of the code for real-time video and window capture. A four-person team directed the work, but the post does not detail the split.",
   "outcome": "Authors report the first version took under eight weeks, compared with almost six years for CoScreen.",
+  "what_they_did": "A four-person team of former CoScreen founders built Petal, a free, open-source screen-sharing app for pair programming. They say frontier models, named as Fable and Astra, wrote much of the code for real-time video and window capture while the team directed the work. Petal runs on LiveKit video infrastructure, and shared windows appear as real, movable windows with labeled cursors and remote mouse and keyboard control.",
+  "how_it_went": "The authors report the first version took under eight weeks. They compare this with almost six years to build CoScreen.",
+  "worth_knowing": "The post does not say how the work was split between the models and the people. Teams with compliance needs can self-host by pointing the app at their own LiveKit server with one docker-compose setup.",
+  "prompt": "Help me build a prototype desktop app for [operating system] that lets [number] people share individual application windows with each other in real time, using LiveKit for the video backend. Start by proposing an architecture: window capture, video transport, remote cursor display and remote keyboard and mouse input. List the libraries you plan to use and the main risks. Wait for my approval, then build it in small steps, running and testing each piece before moving on. Explain any code that touches system permissions or input control before adding it. Do not deploy or publish anything without asking me first.",
   "evidence": "Code available",
   "difficulty": "Advanced",
   "tags": [

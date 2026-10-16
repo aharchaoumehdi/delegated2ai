@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Claude Code edits and validates the configuration locally; the user describes automations, reviews changes and triggers the push over SSH.",
   "outcome": null,
+  "what_they_did": "Developer philippb published an open-source repo that lets Claude Code manage a Home Assistant setup. The user adds an HA token and SSH details, then runs make pull to download the live config. Claude Code writes YAML automations from plain-English requests. Validation hooks check syntax and entity references against the real entity registry. The user then runs make push, which validates again before uploading over rsync/SSH.",
+  "how_it_went": null,
+  "worth_knowing": "You need the Advanced SSH & Web Terminal add-on installed in Home Assistant. The first make pull overwrites the repo's template config folder with your real configuration.",
+  "prompt": "In this Home Assistant config repo, I want an automation that [describe behavior, e.g. turns on the hallway lights at sunset when someone is home]. First search the entity registry and list the entities you plan to use, so I can confirm them. Then write the YAML in the right config file and run the validation tools for syntax, entity references and HA config checks. Show me the diff and the validation results. Do not run make push until I approve.",
   "evidence": "Code available",
   "difficulty": "Intermediate",
   "tags": [

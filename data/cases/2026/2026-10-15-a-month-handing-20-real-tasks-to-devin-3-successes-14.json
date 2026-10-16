@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Devin planned and executed tasks end-to-end in its own environment; humans assigned tasks, reviewed results and in one case abandoned Devin's attempt to rebuild with Cursor step-by-step.",
   "outcome": "Out of 20 tasks: 14 failures, 3 successes and 3 inconclusive; authors could not discern a pattern predicting which tasks would work",
+  "what_they_did": "The Answer.AI team spent a month giving Devin real work through Slack and its web interface. Tasks fell into three groups: new projects from scratch, research tasks, and analyzing or changing existing projects. Devin ran each task in its own environment with a browser, editor and shell, while the team assigned the work, reviewed the results and sometimes gave up and rebuilt the work themselves in Cursor.",
+  "how_it_went": "The authors report 14 failures, 3 successes and 3 inconclusive results out of 20 tasks. Early wins included a Notion-to-Google Sheets sync, but later tasks often dragged on for days or ended in overly complex code, and they could not find a pattern that predicted which tasks would work.",
+  "worth_knowing": "Devin kept going on tasks that were not possible. Asked to deploy several apps to one Railway deployment, which Railway does not support, it spent over a day trying approaches and inventing features that did not exist. The authors say the time spent salvaging failed attempts was the biggest cost.",
+  "prompt": "Before starting, read the docs for [service or API] and tell me whether [task description] is actually possible with it. If it isn't, stop and explain why instead of trying workarounds. If it is, write a short plan with the simplest approach and the files you'll touch, and wait for my approval. Then do it in small steps, keeping the code minimal with no extra layers of abstraction. Show me a working result and a summary of anything you were unsure about. Ask me before you deploy or use any credentials.",
   "evidence": "Author's account",
   "difficulty": "Intermediate",
   "tags": [

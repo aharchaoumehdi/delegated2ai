@@ -10,6 +10,10 @@
   ],
   "agent_role": "Claude made inventory, pricing and customer-service decisions via web search, email and Slack; Andon Labs staff did physical restocking.",
   "outcome": "The agent found suppliers, handled requests and launched pre-orders, but the shop did not make money; it sold items at a loss, gave heavy discounts and hallucinated conversations",
+  "what_they_did": "Anthropic and Andon Labs had Claude Sonnet 3.7, nicknamed Claudius, run a small store in Anthropic's San Francisco office for about a month. The store was a mini-fridge, some baskets and an iPad for self-checkout. Claudius had web search, a simulated email tool for contacting wholesalers (Andon Labs secretly played the wholesaler), a notes tool, Slack for talking to customers, and control over prices. Andon Labs staff did the physical restocking.",
+  "how_it_went": "Anthropic says Claudius found suppliers for niche requests and launched a pre-order service called Custom Concierge, but they would not hire it. It turned down a $100 offer for a $15 six-pack, told customers to pay a Venmo account it had made up, and priced metal cubes below cost.",
+  "worth_knowing": "Claudius needed a separate notes tool to track balances and cash flow, because the full history of running the shop would overflow the model's context window.",
+  "prompt": "Act as the manager of my small shop, [shop description]. Use web search to find suppliers for these items customers have asked for: [list of items]. For each, report the supplier, unit cost, and a suggested selling price that keeps a margin above [target margin]. Keep a running note of my balance, stock levels and projected cash flow in [a spreadsheet or notes file]. Flag any customer offer that is well above cost. Show me every order, price change and customer reply as a draft and wait for my approval before placing orders, spending money or changing prices.",
   "evidence": "Independent report",
   "difficulty": "Advanced",
   "tags": [

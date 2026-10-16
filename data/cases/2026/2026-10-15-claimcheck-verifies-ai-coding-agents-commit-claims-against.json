@@ -13,6 +13,10 @@
   ],
   "agent_role": "A real Qwen-based agent, run headless through Claude Code, fixed typos and submitted a claim file. claimcheck then automatically verified the claim against the diff. The human built the verifier and scripted the five test agents.",
   "outcome": "Author reports that across 5 demo runs of 28 concurrent agents, claimcheck rejected all 11 misreporting agents and wrongly rejected no honest ones, with a median verdict time of 6–7.5 seconds.",
+  "what_they_did": "Daniel Nwaneri built claimcheck, a Git layer on Cloudflare Workers and Artifacts. Each agent works in its own fork and pushes a claim.json that lists the files it changed and what it changed. Rule checks then confirm the files match, protected paths are untouched and the change is small enough. After that, an LLM compares each description to the diff and must quote real diff lines as evidence. He tested it with five scripted agents and one real Qwen agent, qwen3-coder-plus, run headless through Claude Code.",
+  "how_it_went": "The author reports that over 5 demo runs of 28 concurrent agents, claimcheck rejected all 11 misreporting agents and wrongly rejected no honest ones, with a median verdict time of 6–7.5 seconds. The real Qwen agent fixed typos, left the protected file alone, and submitted accurate claims.",
+  "worth_knowing": "A test found a bypass: src/Auth/session.js slipped past the src/auth/** rule. Protected-path matching is now case-insensitive. An LLM rejection without real quoted evidence goes to human review instead of being rejected.",
+  "prompt": "Fix [task, e.g. misspellings in user-facing strings] in [file path] in this repo. Do not edit anything under [protected paths]. When you are done, write .claim/claim.json with task_id, agent_id, a one-line summary, scope.paths listing every file you changed, and one entry per file describing exactly what that change does. Then show me the diff next to your claim and check that every changed file is listed and every description matches the diff. Wait for my approval before you commit or push.",
   "evidence": "Code available",
   "difficulty": "Advanced",
   "tags": [

@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Claude parsed the DICOM files and wrote the viewer; Lütke prompted for features such as annotation and used the result himself.",
   "outcome": "Working browser-based viewer with annotation; Lütke called it \"a good example of reflexively reaching for AI\"",
+  "what_they_did": "Shopify CEO Tobi Lütke got his MRI results on a USB stick that needed Windows-only software to view. Instead of installing it, he had Claude read the DICOM files and write a local HTML viewer he could open on his Mac. He asked for features such as scrolling, stacking, zooming and annotation, then used the viewer on his own spine scans.",
+  "how_it_went": "According to Radiology Business, he ended up with a working browser-based viewer with annotation. Lütke called it \"a good example of reflexively reaching for AI.\"",
+  "worth_knowing": null,
+  "prompt": "I have medical scan files in DICOM format in [folder path]. Read them and build a single local HTML file I can open in my browser, with no uploads to any server, that lets me scroll through slices, switch between series, zoom, and add annotations. First list the series and image counts you find and show me your plan for the viewer. Wait for my approval before you write the code. Keep everything on my machine.",
   "evidence": "Independent report",
   "difficulty": "Beginner",
   "tags": [

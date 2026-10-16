@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Sub-agents analyze ad performance, write headlines and descriptions and export upload-ready CSVs; the marketer defines the brief and reviews before upload.",
   "outcome": "Ad creation dropped from about 30 minutes to about 30 seconds per ad",
+  "what_they_did": "Anthropic growth marketer Austin Lau, who had never written code, used Claude Code to build two workflows. One is a Figma plugin that creates ad creative variations from pasted headline copy. The other is a custom /rsa slash command. It asks for campaign data, existing copy and keywords, checks them against Agent Skills for brand voice, product accuracy and Google Ads best practices, and exports 15 headlines and 4 descriptions per ad to an upload-ready CSV. He refines the copy with Claude and reviews it before upload.",
+  "how_it_went": "Anthropic reports that ad creation fell from 30 minutes per ad to 30 seconds. The Figma plugin took 45 minutes to an hour to build and saves him nearly 30 minutes each time he updates a large batch of creatives.",
+  "worth_knowing": "Lau says the first output often isn't right and needs back-and-forth refinement. The example copy given to Claude was written with product marketing and copywriting teams. The source is Anthropic's own blog.",
+  "prompt": "Help me build a reusable workflow for Google Ads responsive search ads. When I run it, ask me for campaign data, existing ad copy and target keywords for [product]. Use my brand voice guide [file] and performance data [CSV export] to see which messaging works. Draft 15 headlines and 4 descriptions per ad group and check each one against Google's character limits. Let me revise the drafts with you. When I approve, export a CSV with the campaign and ad group columns that is ready for upload. Do not upload anything to Google Ads yourself.",
   "evidence": "Author's account",
   "difficulty": "Beginner",
   "tags": [

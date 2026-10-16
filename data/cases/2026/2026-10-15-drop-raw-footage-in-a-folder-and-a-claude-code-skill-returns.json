@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "The agent plans and executes the edit with ffmpeg and ElevenLabs transcription; the user describes the edit and approves the plan before rendering.",
   "outcome": null,
+  "what_they_did": "Browser Use released video-use, an open-source skill that lets Claude Code or another shell-capable agent edit video. You point the agent at a folder of raw takes and describe the edit, for example 'edit these into a launch video'. The agent transcribes each clip with ElevenLabs Scribe and reads the word-level transcript. It looks at filmstrip and waveform images only at decision points. It proposes a strategy and waits for approval. Then it cuts filler words and dead space, grades color, burns in subtitles and renders with ffmpeg.",
+  "how_it_went": null,
+  "worth_knowing": "The model never watches the video. It works from a roughly 12KB transcript plus a few PNG snapshots instead of thousands of frames. It also checks every cut in the render and re-renders up to three times before showing you a preview. You need an ElevenLabs API key and ffmpeg.",
+  "prompt": "Set up https://github.com/browser-use/video-use for me. Read install.md, install ffmpeg and dependencies, register the skill, and ask me for my ElevenLabs API key when needed. Then read SKILL.md and helpers/. When I drop footage into [folder path], inventory the clips. Propose an edit plan for [describe the video you want, e.g. a 60-second launch video], including cuts, color grade style and subtitle style. Wait for my approval before cutting or rendering. Then produce edit/final.mp4.",
   "evidence": "Code available",
   "difficulty": "Intermediate",
   "tags": [

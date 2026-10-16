@@ -15,6 +15,10 @@
   ],
   "agent_role": "Models read evidence posts, propose and screen keyword phrases, and judge whether terms are names. Scripts gather signals and run checks, and the human acts on the decisions.",
   "outcome": "Author shares a real 2026-10-12 run and reports about $15 a month in API costs with the example config.",
+  "what_they_did": "Developer zhuyansen built new-term-radar, an open-source daily radar packaged for Claude Code. Scripts collect first mentions of new AI names from chosen X accounts, Hugging Face trending, fast-rising GitHub repos and AI directory sitemaps. Models then read the top posts or README for each name, propose the search phrases people would type, and screen them. The tool checks Google Ads volume, Google Trends and page-one competition, then labels each keyword prioritize, watch or skip.",
+  "how_it_went": "The README shows a shortened real run from 2026-10-12, with names like 'photocraft' and 'claude haiku 5.5' marked prioritize. The author reports about $15 a month with the example config: $10 for X reads and $5 for the keyword table.",
+  "worth_knowing": "Most of the cost comes from reading X accounts, so reading fewer accounts or reading them once a day cuts it in proportion. Phrases built on another brand's name, like 'photoshop alternative', are kept but flagged, and using them is your call.",
+  "prompt": "Every day, find newly surging AI model, product and repo names for my niche [your niche]. Check first mentions from these X accounts [account list], new entries in Hugging Face trending, GitHub repos under 14 days old gaining stars fast, and new URLs in these directory sitemaps [sitemap URLs]. For each new name, read the most-liked posts or the README and suggest the generic search phrases people would type for what it does. Check search volume and Google Trends for each phrase. Then give me a table with keyword, type, estimated searches, trend direction and a decision: prioritize, watch or skip. Show me the table before creating any pages.",
   "evidence": "Code available",
   "difficulty": "Intermediate",
   "tags": [

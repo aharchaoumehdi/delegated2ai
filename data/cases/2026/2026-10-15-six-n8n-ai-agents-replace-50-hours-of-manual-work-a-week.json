@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Agents run the recurring workflows across Slack, Gmail, CRM and accounting tools; the agency scoped and built each agent and the client team consumes the outputs.",
   "outcome": "Agents replace 50+ hours of manual work every week across 20+ integrated platforms (vendor-reported)",
+  "what_they_did": "Agency Metizsoft built client Consistent Minds six n8n agents, each scoped, built, tested and deployed in a one-week sprint. The agents are an email and calendar assistant run from Slack or Teams, a document Q&A tool over manuals and contracts, a LinkedIn post creator, a Google Maps lead scraper, an invoice processor that pulls data from PDFs into AP workflows, and a scheduled scraper for JavaScript-heavy sites.",
+  "how_it_went": "Metizsoft says the agents together replace 50+ hours of manual work a week across 20+ platforms. Per-agent claims include 5+ hours saved weekly by the email assistant and invoices processed in under 60 seconds. These are the vendor's own figures from its case study.",
+  "worth_knowing": "This is a vendor marketing case study. Metizsoft says its metrics come from n8n execution logs and before-and-after time tracking, but they are not independently confirmed.",
+  "prompt": "Help me build an n8n workflow that processes PDF invoices arriving in [email inbox or folder]. Extract vendor, invoice number, date, line items and total with an LLM, then add a row to [spreadsheet or accounting tool]. Flag low-confidence extractions for my review. First show me the node-by-node plan and a sample of the extracted fields from [test invoice]. Wait for my approval before connecting it to live accounts or pushing anything into payment workflows.",
   "evidence": "Author's account",
   "difficulty": "Intermediate",
   "tags": [

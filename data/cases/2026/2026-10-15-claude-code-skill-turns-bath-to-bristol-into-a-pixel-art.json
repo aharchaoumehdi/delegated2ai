@@ -15,6 +15,10 @@
   ],
   "agent_role": "Claude routes the trip, bakes map data, generates and cleans art, and runs layout and frame-sweep checks, re-rolling bad images. The user picks the detail level and budget after seeing a cost estimate.",
   "outcome": "The author reports that Bath to Bristol cost $5.76 for 32 pictures and Kyoto cost $0.72. Both runs passed the self-check across 627 and 345 frames, and 10-34% of pictures needed re-rolls in testing.",
+  "what_they_did": "Jon Wheatley built Pixel Path, a Claude Code skill that turns a trip between two places into a scrolling pixel-art fly-through of the real road. Claude routes the trip with OSRM and Nominatim. It bakes buildings, land cover and elevation from OpenStreetMap and AWS Terrain Tiles, and generates scenery art with RetroDiffusion. Then it checks its own screenshots with Playwright and re-rolls bad pictures. The user picks a detail level after seeing a cost estimate.",
+  "how_it_went": "The author reports Bath to Bristol cost $5.76 for 32 pictures and Kyoto Station to Kinkaku-ji cost $0.72 for four. Both runs passed the full self-check sweep, across 627 and 345 frames. In testing, 10% to 34% of pictures had to be re-rolled.",
+  "worth_knowing": "The author suggests allowing about 25% on top of the estimate for re-rolls. The RetroDiffusion link in the README is an affiliate link. A placeholders level costs nothing.",
+  "prompt": "Make me a pixel path from [start place] to [end place]. Route the trip and bake the map and elevation data. Then print the cost estimate for the placeholders, sparse, moderate and detailed levels, and wait for me to pick one and confirm a budget of [budget] before generating any paid art. Never ask me for the API key. After building, run the layout check and screenshot sweep. Re-roll bad pictures within the budget, and show me the worst frames before calling it done.",
   "evidence": "Code available",
   "difficulty": "Intermediate",
   "tags": [

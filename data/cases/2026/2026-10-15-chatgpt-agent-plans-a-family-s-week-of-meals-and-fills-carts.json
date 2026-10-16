@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "The agent planned meals and browsed store sites to build carts; Maurer verified logins and adjusted items before checkout.",
   "outcome": null,
+  "what_they_did": "Aaron Maurer asked ChatGPT agent to plan a week of healthier meals for his family on a budget under $300. The agent wrote recipes and snacks, compared prices, and built shopping carts at Hy-Vee and Fareway. Maurer handled the store logins and adjusted items before checkout, and he recorded the whole run on video.",
+  "how_it_went": null,
+  "worth_knowing": "The agent did not check out on its own. Maurer had to verify the logins and fix items himself before buying.",
+  "prompt": "Plan a week of healthier dinners and snacks for a family of [number of people], with a total grocery budget under [budget]. Write a short recipe for each meal. Then compare prices at [store 1] and [store 2] and build a cart on each store's website. I will log in to the store sites myself when you ask. Before anything is purchased, show me both carts with item prices and totals, point out any substitutions, and wait for my approval. Do not check out.",
   "evidence": "Demo",
   "difficulty": "Beginner",
   "tags": [

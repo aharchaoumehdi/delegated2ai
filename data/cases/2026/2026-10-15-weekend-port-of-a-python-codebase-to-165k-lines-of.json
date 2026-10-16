@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Hundreds of agents translated code, ran adversarial reviews and parity diffs across eight phase gates; humans designed the process (rulebook, dependency maps, gates) and fixed the loop rather than the code.",
   "outcome": "Python codebase migrated to 165,000 lines of TypeScript over a weekend, verified by a final output-parity check against the Python original",
+  "what_they_did": "Mike Krieger, co-lead of Anthropic Labs, used Claude Code to port an internal Python tool to TypeScript. He built a parity harness of seven real-world scenarios first, treating any behavior change as a bug. Hundreds of agents translated code across eight phase gates and three adversarial review rounds. He ran the whole migration end to end, revised the rules and workflow, and discarded the output until the third run.",
+  "how_it_went": "Anthropic reports the port produced 165,000 lines of TypeScript over a weekend, with a final check diffing every command's output against the Python original. The main portion used 27 million tokens. Compiling the binary went from about eight minutes per platform to about two seconds, and it starts 6x faster.",
+  "worth_knowing": "The core lesson is to fix the process that produced the code, not the code itself. Build a judge first that runs against both the old and new code and fails on deliberately broken code.",
+  "prompt": "I want to port [repo URL] from [source language] to [target language]. Don't translate anything yet. First, list which existing tests can run as external calls against both versions and which depend on internals, and propose a parity harness of [number] real-world scenarios that compare outputs. Then draft a migration rulebook, a dependency map of modules in porting order, and an inventory of features with no direct equivalent. Show me all of this and wait for approval. After that, port one module at a time, run the parity harness after each, and when you hit an edge case, add a rule to the rulebook rather than patching quietly.",
   "evidence": "Author's account",
   "difficulty": "Advanced",
   "tags": [

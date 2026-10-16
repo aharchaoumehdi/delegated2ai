@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Codex generated and ran Python scripts against the Canvas API; Inoue described what he needed and checked the course updates.",
   "outcome": "Inoue estimates Codex saves him roughly four to five hours a week",
+  "what_they_did": "Cal State math professor Taiyo Inoue used Codex to generate Python scripts that talk to Canvas's API, the interface other programs use to update Canvas. He is not a programmer but knows enough Python to describe what he wants. The scripts update course shells, shift materials to a new academic calendar, adapt to different meeting patterns and create timely announcements.",
+  "how_it_went": "Inoue estimates Codex saves him roughly four to five hours a week. In demos he can start from a blank Canvas shell and fill in a full semester of materials. He used the time to flip his classes so students solve problems together at whiteboards.",
+  "worth_knowing": "The source is OpenAI's own blog. Inoue also uses this low-stakes admin workflow to show AI-skeptical faculty where AI can help without raising cheating concerns.",
+  "prompt": "Help me automate upkeep of my Canvas course [course name] using the Canvas API. I need Python scripts that: shift all assignment due dates and materials from [old term dates] to [new term dates], adapt the schedule to a [meeting pattern, e.g. Tuesday/Thursday] pattern, upload files from [folder], and draft announcements for [events]. Explain how to create and safely store an API token for [your institution's Canvas URL]. Start with read-only scripts that list what would change. Show me the planned changes and wait for my approval before writing anything to the live course. If possible, test on a sandbox course first.",
   "evidence": "Author's account",
   "difficulty": "Beginner",
   "tags": [

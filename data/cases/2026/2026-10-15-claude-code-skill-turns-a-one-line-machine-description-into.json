@@ -13,6 +13,10 @@
   ],
   "agent_role": "Claude researches dimensions and physics, builds the model, solver and interactive modes; the human writes the one-line prompt and runs the recording script.",
   "outcome": "Author reports example outputs such as a turbofan producing about 340 kN from a Brayton cycle solver with 3,597 parts, each generated from a single prompt line.",
+  "what_they_did": "AirsupHQ released Machine Skill, a Claude Code skill. You type /machine plus a one-line description, such as a turbofan or a refinery process pump. Claude researches the real machine's dimensions and physics, writes a small solver for it, and builds an interactive three.js page in a single HTML file. The page has explode, cutaway, x-ray and 'break it' modes. A Node script then records a film of it with ffmpeg.",
+  "how_it_went": "The author reports example outputs, each made from one line. A turbofan with 3,597 parts produces about 340 kN from a Brayton cycle solver. A rocket engine reaches 2,462 kN. A pump and a compressor are cut open for plant training.",
+  "worth_knowing": "The README says naming the real thing (for example, 'a turbofan like the ones on a 787') and saying what should move and what should break gives the best results. Recording needs Node and ffmpeg.",
+  "prompt": "/machine [a specific real machine, e.g. a centrifugal pump of a named type], cut open for [audience or purpose]. Look up its real dimensions and operating point. Write down the physics that drive it before you build. Show [what should move] and let me break it by [failure to simulate]. Output one standalone HTML file with cutaway, explode and labels. Show the equations under 'How it is computed'. Then tell me the record command to make a [1080x1080 or 1080x1350] film of it.",
   "evidence": "Code available",
   "difficulty": "Intermediate",
   "tags": [

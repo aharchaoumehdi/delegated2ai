@@ -10,6 +10,10 @@
   ],
   "agent_role": "Agents generated, debated and ranked hypotheses from a research goal; scientists set the goal and validated selected hypotheses in wet-lab experiments.",
   "outcome": "Reached the Imperial team's unpublished hypothesis in about 48 hours and proposed further hypotheses, one new to the researchers; Google also reports end-to-end lab validation in drug repurposing and treatment-target work",
+  "what_they_did": "Google Research built AI co-scientist, a multi-agent system on Gemini 2.0. A scientist states a research goal in plain language. A Supervisor agent then assigns specialized agents (Generation, Reflection, Ranking, Evolution, Proximity and Meta-review) that generate, debate and rank hypotheses in Elo tournaments, using tools like web search. Imperial College researchers set a goal on how antimicrobial resistance spreads. Scientists set the goals and tested selected hypotheses in lab experiments.",
+  "how_it_went": "Per the record, the system reached the Imperial team's unpublished hypothesis in about 48 hours and proposed other hypotheses, one of which was new to the researchers. Google also reports lab validation in drug repurposing for acute myeloid leukaemia and in proposing new treatment targets.",
+  "worth_knowing": "The Elo ratings that drive the system's self-improvement are an auto-evaluation, not an independent ground truth. The expert assessment of novelty and impact covered only 11 research goals.",
+  "prompt": "My research goal is: [research question in plain language]. Search the literature and summarize what is known, with citations. Generate 10 candidate hypotheses that explain [phenomenon]. Critique each one for evidence, novelty and testability. Then compare them head-to-head and rank them, and refine the top three. For each top hypothesis, outline an experimental protocol I could use to test it and say what result would falsify it. Flag any hypothesis that rests on weak or unverified evidence.",
   "evidence": "Independent report",
   "difficulty": "Advanced",
   "tags": [

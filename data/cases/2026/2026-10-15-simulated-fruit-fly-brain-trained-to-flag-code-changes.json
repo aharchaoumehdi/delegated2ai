@@ -12,6 +12,10 @@
   ],
   "agent_role": "An agent helped the author explore running the connectome simulation, and a model called Jev answered thirty yes/no questions about each code change to feed the fly. The author designed the experiment and drew the conclusions.",
   "outcome": "Author reports the fly agreed with tests on 290 of 301 unseen changes, versus 298 for a logistic regression on the same answers.",
+  "what_they_did": "Nick Nisi asked an agent whether Google's 176,422-neuron fruit fly brain simulation could run on a laptop, then whether it could do something engineering-focused like code review. The fly can't read code, so a model called Jev answered thirty yes/no questions about each change, and those answers became the fly's input. He used mutation testing to label good and bad parts of the codebase and trained the fly's memories on that.",
+  "how_it_went": "The author reports that on 301 changes it had never seen, the fly agreed with the tests 290 times. A logistic regression on the same thirty answers got 298.",
+  "worth_knowing": "A plain logistic regression beat the fly. A commenter suggested splitting results by change type, such as tests, refactors and behavioral changes, because overall agreement can hide a weak slice that matters in review.",
+  "prompt": "Help me run an experiment on automated code review for [repo URL]. First, define thirty yes/no questions that describe a code change, for example whether it touches core business logic or changes tests. Then run mutation testing to label which changes are good or bad. For each change in [commit range], answer the thirty questions and train a simple classifier, starting with logistic regression, to predict the test outcome. Hold out unseen changes for evaluation and report agreement overall and by change type (tests, refactors, behavioral changes). Show me the question list and plan before running anything.",
   "evidence": "Author's account",
   "difficulty": "Advanced",
   "tags": [

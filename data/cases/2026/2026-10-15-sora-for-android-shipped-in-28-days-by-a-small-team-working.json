@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Codex wrote most feature code across parallel sessions; engineers set architecture, wrote example features for Codex to imitate, and reviewed output.",
   "outcome": "Built from Oct 8 to Nov 5, 2025 using roughly 5 billion tokens; the app reached #1 in the Play Store on launch day",
+  "what_they_did": "OpenAI engineers built the Sora Android app with a small team running several Codex sessions in parallel. The engineers set the architecture, hand-wrote skeleton features as examples for Codex to imitate, and wrote guidelines for the agent. Codex then produced most of the feature code, which the engineers reviewed.",
+  "how_it_went": "OpenAI reports the app was built from Oct 8 to Nov 5, 2025, using roughly 5 billion tokens, and that it reached #1 in the Play Store on launch day.",
+  "worth_knowing": "The human work moved to the front: example features and written guidelines gave Codex patterns to follow before it wrote the bulk of the code.",
+  "prompt": "I'm building [app description] for [platform]. First, read the architecture notes in [docs path] and the example feature in [example feature path], which shows how features should be structured. Then implement [feature name] following the same patterns, conventions and file layout. Before writing code, show me your plan: which files you'll create or change and how they map to the example. Wait for my approval. After implementing, run the build and tests, summarize what changed, and flag anywhere you departed from the example pattern so I can review it.",
   "evidence": "Author's account",
   "difficulty": "Advanced",
   "tags": [

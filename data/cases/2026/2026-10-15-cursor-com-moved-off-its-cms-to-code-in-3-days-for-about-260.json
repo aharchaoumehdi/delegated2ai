@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Agents rewrote content and pages across the repo; Robinson directed the migration, reviewed commits and handled the cutover.",
   "outcome": "Migration done in 3 days: 344 agent requests, 297M tokens, $260, 67 commits across 1023 files, zero site downtime",
+  "what_they_did": "Lee Robinson, Cursor's VP of Developer Experience, used agents to move cursor.com from a CMS to raw code. Per the event page, he had AI write a full implementation plan, used agents to export and transform the content, iterated with browser integration to get designs pixel-perfect, ran subagents in parallel, and reviewed changes with Bugbot to catch regressions.",
+  "how_it_went": "The event page says the migration took 3 days, 344 agent requests and 297M tokens, cost $260, and produced 67 commits across 1023 files with zero site downtime, saving weeks off the projected timeline.",
+  "worth_knowing": null,
+  "prompt": "I want to move my website in [repo URL] off [CMS name] so all content lives in the repo as Markdown and code. First write a detailed implementation plan: how to export the content, the new file structure, which pages change, and how to check each page matches the current design. Wait for my approval. Then export and convert the content, rebuild the pages, and compare them in the browser against the live site. Split independent pages into parallel tasks. Commit in small steps and do not deploy or remove the CMS until I approve.",
   "evidence": "Author's account",
   "difficulty": "Intermediate",
   "tags": [

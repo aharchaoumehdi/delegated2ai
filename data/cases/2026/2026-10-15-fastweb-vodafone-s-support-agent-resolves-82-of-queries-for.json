@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Agents answer and resolve customer requests and assist human operators; call-center staff handle escalations and the team monitors quality through evaluations.",
   "outcome": "Super TOBi: 90% correctness, 82% resolution rate, Customer Effort Score 5.2/7; Super Agent: one-call resolution above 86%",
+  "what_they_did": "Fastweb + Vodafone, an Italian telco, rebuilt its TOBi chatbot as Super TOBi using LangGraph. A Supervisor agent applies guardrails, handles handovers and routes queries to specialized Use Case agents that call customer APIs and can trigger actions such as offer activation or payment updates. A second system, Super Agent, helps call-center consultants by running troubleshooting procedures stored as a Neo4j knowledge graph. LangSmith is used for tracing and evaluation.",
+  "how_it_went": "The company reports Super TOBi serves nearly 9.5 million customers with 90% correctness, an 82% resolution rate and a Customer Effort Score of 5.2 out of 7. It says Super Agent pushed one-call resolution above 86%.",
+  "worth_knowing": "Super Agent never talks to customers directly; it gives the human consultant the next step. Business specialists write procedures in structured templates that a pipeline turns into graph nodes, reaching production within hours.",
+  "prompt": "Help me design a LangGraph customer-support agent for [your business]. Start with a Supervisor node that filters unsafe or invalid input, handles greetings and handovers to a human, and routes each question to one of these use cases: [list of use cases, e.g. billing, account changes]. For each use case, define which [your APIs or data sources] it may call and what it should answer. Any action that changes an account, such as a payment or a cancellation, must be shown to the customer or a staff member for confirmation before it runs. Show me the graph design and a test plan with sample conversations, and wait for my approval before writing code.",
   "evidence": "Independent report",
   "difficulty": "Advanced",
   "tags": [

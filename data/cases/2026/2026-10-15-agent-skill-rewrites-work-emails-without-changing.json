@@ -14,6 +14,10 @@
   ],
   "agent_role": "The agent lists each fact with its certainty, rewrites the text, runs a mechanical style check and audits facts sentence by sentence, optionally interviewing the writer first; the human supplies notes and answers.",
   "outcome": "Author reports blind AI judges preferred its rewrites 48% of the time versus 20% for blader/humanizer, with 18 meaning changes across 12 texts versus 33, and no invented facts across 56 texts.",
+  "what_they_did": "Developer phuryn built an Agent Skill for Claude Code, Codex and Cursor that rewrites work writing, such as sales, support or HR text, in a plain human voice. It first lists every fact and how certain it is. It then rewrites the piece, runs an optional Python style check, and audits facts sentence by sentence. In interview mode it asks the writer up to five questions when a draft is missing details only they know.",
+  "how_it_went": "In the author's blind test with four AI judges, the judges said they would send its rewrite 48% of the time, against 20% for blader/humanizer. Across 12 texts it made 18 meaning changes, against 33 for blader/humanizer, and it invented no facts in the 56 texts it rewrote.",
+  "worth_knowing": "No rewrite passed the Pangram AI detector; all scored 2 to 4% human. Built from the writer's own notes, though, its output scored 100% human on 4 of 4 texts. The author notes the samples are small and the interview mode was tested with an AI answering for the writers.",
+  "prompt": "Rewrite this [email/support reply/post] so it sounds like a person wrote it, without changing what it says or promises. First, list every fact, commitment and caveat with its level of certainty. If it's missing something only I know, like a real example, number or my actual opinion, ask me up to five short questions before rewriting. Write it in plain everyday words and avoid stock AI phrasing. Keep every claim at the same strength: no added apologies, conditions or new facts. Finish with a sentence-by-sentence check against the original. Here is the text: [paste text or your notes]",
   "evidence": "Code available",
   "difficulty": "Beginner",
   "tags": [

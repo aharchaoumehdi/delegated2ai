@@ -15,6 +15,10 @@
   ],
   "agent_role": "Parallel agents claim functions, write C, and iterate on instruction diffs until the compiled output matches the ROM. The tool controls file layout and reverts regressions, and humans review the git commits before sending them upstream.",
   "outcome": "README shows an agent-written C function that compiles to the exact original N64 bytes. No overall project results are stated.",
+  "what_they_did": "Developer i12bp8 built decomp.wtf, a local tool that plugs coding agents like Claude Code into game decompilation via an MCP server. splat and spimdisasm find every function in a ROM; each agent claims one and gets its assembly, related data, callers, an m2c draft and notes from earlier attempts. Every attempt is compiled with the game's original compiler, linked at the real address and compared to the ROM, and a miss returns an instruction diff.",
+  "how_it_went": "The README shows an agent-written clamp_s32 function in C that compiles to exactly the original N64 bytes with KMC GCC 2.7.2 at -O2. No overall project results are given.",
+  "worth_knowing": "The author archived the project because much of the decompilation community opposes AI decompiling like this. They ask users to only use it on games they own, not share the code, and respect projects that don't accept AI contributions.",
+  "prompt": "Decompile my game at [path to ROM I own]. First confirm it is my own copy, then import it and open the live view so I can watch. Work one function at a time and only accept C that compiles to the exact original bytes with the game's original compiler. Keep a log of matched and unmatched functions. Do not share the output or open pull requests to any public project; show me the commits and wait for my review first.",
   "evidence": "Code available",
   "difficulty": "Advanced",
   "tags": [

@@ -13,6 +13,10 @@
   ],
   "agent_role": "Claude sizes the job, collects sources, builds the standalone HTML figure, and checks it zoomed in, in both themes and at phone width. The human writes the request and reviews the result.",
   "outcome": "The author publishes live figures on dopamine receptors, stimulants, addiction circuits, semaglutide, estrogen and myelinated neurons.",
+  "what_they_did": "Garinmckayl built Anima, a Claude Code skill that turns a biology request into a standalone interactive figure. One example is how cocaine and amphetamine act at the dopamine transporter. Claude sizes the job, gathers sources and pulls skeletal formulas from PubChem. It draws real structures with a Node drawing kit and adds toggles that change the mechanism. Then it checks the page zoomed in, in both themes and at phone width.",
+  "how_it_went": "The author publishes live figures made with the skill. They cover dopamine receptors, stimulants at the transporter, reward and addiction, semaglutide, estrogen and aggression, and a myelinated neuron. Each figure has a sources block.",
+  "worth_knowing": "Numbers that cannot be verified are left out. Drug figures explain mechanism only, with no doses or routes. The figures are educational and not medical advice.",
+  "prompt": "/anima show [biological subject and mechanism] for [audience], with a [toggle or slider, e.g. inhibitor on/off] that changes the mechanism. Collect sources before drawing. Cite every number with its species, conditions and units, and leave out anything you cannot verify. Separate what is established from what is one leading model. Output a standalone HTML page in dark and light themes with an educational-use note. Then check it zoomed in, in both themes and at phone width.",
   "evidence": "Demo",
   "difficulty": "Intermediate",
   "tags": [

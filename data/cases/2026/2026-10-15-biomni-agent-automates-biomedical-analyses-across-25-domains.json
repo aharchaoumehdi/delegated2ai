@@ -10,6 +10,10 @@
   ],
   "agent_role": "The agent plans, retrieves resources and writes and runs analysis code; researchers pose questions and interpret results, and it still struggles where clinical judgment is needed.",
   "outcome": "Authors report strong generalization across biomedical tasks without task-specific prompt tuning, approaching human-level on some tasks such as database querying and molecular cloning",
+  "what_they_did": "Stanford researchers, Kexin Huang and colleagues, built Biomni, a biomedical agent. They mined tools, databases and protocols from tens of thousands of papers. The agent combines LLM planning with code execution: it plans, retrieves resources, and writes and runs analysis code. It handles tasks such as gene prioritization, rare-disease diagnosis and cloning design. Researchers pose the questions and interpret the results.",
+  "how_it_went": "The authors report that it generalizes well across biomedical tasks without task-specific prompt tuning. They say it approaches human level on some tasks, such as database querying and molecular cloning.",
+  "worth_knowing": "It still struggles where clinical judgment is needed.",
+  "prompt": "Help me with this biomedical analysis: [question, e.g. prioritize candidate genes for [phenotype]]. First lay out a step-by-step plan and list the databases or tools you would use. Wait for my approval. Then write and run the analysis code on [your data file or public dataset], showing intermediate results. End with a ranked result, the evidence behind each item, and the limitations. Clearly flag anything that would need expert or clinical judgment.",
   "evidence": "Paper",
   "difficulty": "Advanced",
   "tags": [

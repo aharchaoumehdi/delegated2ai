@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "The agent ran inventory search and the email negotiation loop; Stuyvenberg made the final price call and signed paperwork.",
   "outcome": null,
+  "what_they_did": "Engineer AJ Stuyvenberg wanted a 2026 Hyundai Palisade and built an OpenClaw agent to shop for it. The agent scraped dealer inventories in his region and found lots with the trim and color he wanted. It filled out contact forms at several dealerships, then answered dealer emails with counteroffers based on competing quotes. AJ made the final call on price. This account comes from an OpenClaw DC blog roundup, not AJ's own post.",
+  "how_it_went": "The blog says the agent handled the comparison shopping and back-and-forth that usually takes a whole weekend, while AJ decided the price. No final price or savings figure is given.",
+  "worth_knowing": "The blog credits the result to a narrow, measurable task built on public inventory data, with a human making the final decision. It also advises giving agents draft-only permissions at first.",
+  "prompt": "I want to buy a [year make model] in [trim] and [color] within [distance] of [your city]. Search dealer inventories and list the lots that have it, with stock numbers and listed prices. Draft a short inquiry for each dealer's contact form asking for an out-the-door quote. Show me the drafts and wait for my approval before you submit anything. When quotes come back, put them in a table. Draft counteroffers that cite the best competing quote, and show me each one before sending. Never agree to a price, place a deposit or sign anything. I will make the final decision.",
   "evidence": "Independent report",
   "difficulty": "Intermediate",
   "tags": [

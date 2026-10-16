@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Claude Code read local statements and invoices, categorized items and drafted the filing; Hashim reviewed the draft before filing.",
   "outcome": "Hashim says the draft \"got everything right\"",
+  "what_they_did": "Shakeel Hashim, editor of the Transformer newsletter, says he has zero coding experience. Over two weeks he had Claude Code go through his bank statements and invoices to prepare a first draft of his tax filing. The Charter article quotes his post and gives no further detail on his steps.",
+  "how_it_went": "Hashim wrote that the draft \"got everything right.\"",
+  "worth_knowing": null,
+  "prompt": "I have my bank statements and invoices for [tax year] in [folder]. Read them and build a spreadsheet that lists every income and expense item with date, amount, source file and a suggested category for a [your country] tax filing as a [employee / freelancer / business type]. Flag anything you are unsure about or that might need a receipt. Then draft the figures for each section of my tax return and explain how you got each one. Do not submit or file anything. I will review the draft myself and check it with [a tax professional or official guidance].",
   "evidence": "Independent report",
   "difficulty": "Beginner",
   "tags": [

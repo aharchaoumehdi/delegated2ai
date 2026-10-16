@@ -10,6 +10,10 @@
   ],
   "agent_role": "Agents decompose the query, search, verify and synthesize an answer; no human in the loop during answering, with humans judging outputs in evaluation.",
   "outcome": "On LegalSearchQA (200 questions on 2025 law), authors report substantially better factual accuracy, less uncertainty and higher human and LLM judge preference",
+  "what_they_did": "Researchers Ziqi Wang and Boqin Yuan built L-MARS, a multi-agent system for legal questions. A Query Agent breaks a question into sub-questions, searches run across the web (Serper), a local legal database and CourtListener case law, and a Judge Agent checks whether the evidence is sufficient, from the right jurisdiction and still current. A Summary Agent then writes the answer. They tested it on LegalSearchQA, a new set of 200 multiple-choice questions on 2025 law.",
+  "how_it_went": "The authors report substantially better factual accuracy, less uncertainty and higher preference from human and LLM judges than baseline GPT, Claude and Gemini models.",
+  "worth_knowing": "It has two modes: a fast single-pass Simple Mode and a slower Multi-Turn Mode that loops until evidence is sufficient. The code is on GitHub.",
+  "prompt": "Answer this legal question: [your question], for [jurisdiction]. First, break it into sub-questions and show them to me. Then search official and reputable sources, including statutes and case law, for each sub-question. Before answering, check that each source applies to [jurisdiction], is current as of [date], and actually supports the point. If evidence is missing, refine your search and try again. Give a final answer with a citation for every legal claim and note anything you could not confirm.",
   "evidence": "Paper",
   "difficulty": "Advanced",
   "tags": [

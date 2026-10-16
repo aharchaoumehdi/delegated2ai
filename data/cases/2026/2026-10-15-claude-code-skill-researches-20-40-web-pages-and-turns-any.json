@@ -14,6 +14,10 @@
   ],
   "agent_role": "The agent maps sub-topics, researches and reads sources with reader agents, merges themes, plans and writes lessons, and generates audio. The human reviews one sample lesson before the rest are made.",
   "outcome": "The author says a 12-lesson course takes one long Claude Code session and yields about 25 minutes of audio.",
+  "what_they_did": "Assaf Kipnis built Claudemy, a Claude Code skill. You ask it to \"teach me [topic]\". It maps the topic into sub-topics and researches 20–40 web pages, with no more than 3 from any one site. Reader agents take cited notes, and the skill merges them into themes with counts of how many sources agree. It then plans about 12 two-minute lessons, makes one sample lesson, and waits for the user's reaction before writing and recording the rest. Audio uses ElevenLabs or the free macOS voices.",
+  "how_it_went": "The author says a 12-lesson course takes one long Claude Code session and produces about 25 minutes of audio. Each lesson comes with a card, and the course comes with a playbook.",
+  "worth_knowing": "A checker rejects any lesson that cites a page the research didn't actually read. Without an ElevenLabs key, the skill falls back to plainer macOS voices. Health, legal and financial topics get a note that the advice depends on your situation.",
+  "prompt": "Teach me [topic] at a [beginner/intermediate] level. Research 20–40 web pages from practitioners, official docs, research summaries and a few dissenting views, with no more than 3 from any one site. Take cited notes, group them into themes, and show how many sources agree on each point and where they disagree. Plan about 12 two-minute lessons, foundations first. Write one sample lesson as a two-host script with a three-line summary, one thing to try and source links, then wait for my feedback before writing the rest. Only cite pages you actually read.",
   "evidence": "Code available",
   "difficulty": "Intermediate",
   "tags": [

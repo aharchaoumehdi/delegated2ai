@@ -13,6 +13,10 @@
   ],
   "agent_role": "The agent performs bookkeeping tasks such as AP reconciliation, reading bills, matching payments and investigating differences against simulated business data. Humans designed the worlds, wrote the rubrics and chose which harness changes to ship.",
   "outcome": "Author reports that trimming eight skills to four gained 2.8 points of mean score, and compressing the spreadsheet skill by 61% saved about $30k a month with quality essentially unchanged. Memory distilled from prior…",
+  "what_they_did": "Ryan Stevens describes how Ramp tested a bookkeeping agent for Ramp Stack. The team built synthetic businesses, called worlds, each with messy books and Excel files. One example is a DTC home goods brand. Each eval case gave the agent a task, such as a Q4 AP reconciliation, and an LLM judge graded the output against criteria written by accountants. The team used these evals to ablate skills, compress them and test memory across worlds advanced by one month.",
+  "how_it_went": "The author reports that trimming eight skills to four raised mean score by 2.8 points across six worlds. Cutting the spreadsheet skill by 61% left quality essentially unchanged and saved about $30k a month. Distilled memory added 5.7 points over skills alone. Auto-tuned prompts and high reasoning effort did not help.",
+  "worth_knowing": "Memory should keep how the business works but drop period-specific amounts. One memory that carried over last month's specific recipe dropped a task from 75% to 25%.",
+  "prompt": "Help me build an end-to-end eval for my [type of] agent. First, list the main task categories in the job and break one task into the steps a human expert would take. Then design a synthetic test dataset with realistic messy data, not clean examples. For each eval case, define the task, the data the agent can access, and a rubric of [number] specific criteria that a [domain expert] would check. Then propose a plan to ablate the agent's skills one at a time against a no-skill baseline. Show me the design before building anything.",
   "evidence": "Author's account",
   "difficulty": "Advanced",
   "tags": [

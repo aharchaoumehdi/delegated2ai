@@ -10,6 +10,10 @@
   ],
   "agent_role": "Each model decided and executed its own trades on live markets; organizers set the prompts and rules and did not intervene during the season.",
   "outcome": "Qwen 3 Max finished first at $12,231 and DeepSeek second at $10,489; the other four models ended with large losses",
+  "what_they_did": "Nof1.ai ran Alpha Arena Season 1 from October 18 to November 3, 2025. Six models, Qwen 3 Max, DeepSeek v3.1, GPT-5, Gemini 2.5 Pro, Claude Sonnet 4.5 and Grok 4, each got $10,000 to trade crypto perpetuals on Hyperliquid with no human intervention. The organizers set the prompts and rules, and the models chose and placed their own trades.",
+  "how_it_went": "GNcrypto reports Qwen 3 Max won with about 22% returns, and DeepSeek was the only other model to make a profit. GPT-5 did worst, ending with around $3,733.",
+  "worth_knowing": "Nof1 founder Jay Azhang said the models were given only numerical time series data, which LLMs don't handle well, plus a constrained set of assets and limited actions. He also saw consistent biases that persisted across many prompt iterations.",
+  "prompt": "Act as a paper-trading agent for [asset list] using [data source]. Each [interval], review recent price data, decide whether to open, close or hold a position within a simulated balance of [starting amount], and log each decision with a short rationale. Do not place real trades or move any money. At the end of [test period], summarize performance, drawdowns and any recurring biases in your decisions. Show me your trading rules and logging format first and wait for my approval before starting.",
   "evidence": "Independent report",
   "difficulty": "Advanced",
   "tags": [

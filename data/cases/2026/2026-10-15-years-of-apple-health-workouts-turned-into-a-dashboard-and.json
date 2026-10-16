@@ -8,6 +8,10 @@
   "tools": [],
   "agent_role": "Claude Code wrote and ran the parsing script, produced statistics and built the dashboard; Simon posed the questions, such as how his HIIT calorie burn changed over the years.",
   "outcome": null,
+  "what_they_did": "Phil Simon wanted answers Strava and Apple Health's free plans couldn't give, like how his Thursday HIIT calorie burn changed over the years. He exported his Apple Health data as XML and had Claude write a Python script to parse it into a clean CSV, which he ran in Claude Code to get summary stats. About forty more minutes in Claude and Claude Code produced an interactive dashboard, and he also asked Claude plain-English questions about the data.",
+  "how_it_went": "He says the tool gives him far better insight into his exercise history than Apple Health or Strava. Instructor friends wanted to use it, so he published it as a public GitHub repo.",
+  "worth_knowing": "The dashboard doesn't sync new workouts, so he must rerun the export and parsing each time. Apple Health also records no distance for strength and HIIT workouts, so treadmill miles in those classes are missing.",
+  "prompt": "I've exported my Apple Health data to [path to export.xml]. Write a Python script that parses the workouts into a clean CSV with date, workout type, duration, calories and distance, run it, and show me summary stats by workout type and year. Point out any fields that are empty for certain workout types. Then build an interactive local dashboard that answers questions like: [your questions, e.g. average calories per [workout type] by year, workout time histogram, weekly patterns by day]. Show me the plan for the dashboard before building it.",
   "evidence": "Author's account",
   "difficulty": "Beginner",
   "tags": [

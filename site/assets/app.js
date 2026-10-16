@@ -1,4 +1,4 @@
-import { configure, itemHTML, detailHTML, dayLabel, esc, caseHref } from "./render.js";
+import { configure, itemHTML, tileHTML, detailHTML, dayLabel, esc, caseHref, trendingOrder, voteCount } from "./render.js";
 
 const dataEl = document.getElementById("page-data");
 const DATA = dataEl ? JSON.parse(dataEl.textContent) : { cases: [], base: "/", today: "", platforms: {}, repo: "" };
@@ -21,6 +21,66 @@ const store = {
   },
 };
 const saved = new Set(store.get("dlg.saved", []));
+const voted = new Set(store.get("dlg.votes", []));
+
+// ---------- votes ----------
+// With the votes service configured, counts are shared by everyone; without it, a
+// vote is remembered in this browser only and the count reflects just that vote.
+const API = DATA.votesApi || "";
+let counts = {}; // id -> [total, last 24h]
+const total = (id) => (API ? counts[id]?.[0] || 0 : voted.has(id) ? 1 : 0);
+
+function syncVotes(root = document) {
+  root.querySelectorAll("[data-vote]").forEach((b) => {
+    const on = voted.has(b.dataset.vote);
+    b.classList.toggle("is-on", on);
+    b.setAttribute("aria-pressed", on);
+  });
+  root.querySelectorAll("[data-vote-n]").forEach((el) => (el.textContent = voteCount(total(el.dataset.voteN))));
+  root.querySelectorAll("[data-vote-sep]").forEach((el) => (el.hidden = total(el.dataset.voteSep) === 0));
+}
+
+async function loadCounts() {
+  if (!API) return;
+  try {
+    const res = await fetch(`${API}/counts`);
+    if (!res.ok) return;
+    counts = (await res.json()).counts || {};
+    syncVotes();
+    renderTrending();
+  } catch {}
+}
+
+async function toggleVote(id) {
+  const on = !voted.has(id);
+  on ? voted.add(id) : voted.delete(id);
+  store.set("dlg.votes", [...voted]);
+  if (API) {
+    const c = counts[id] || [0, 0];
+    counts[id] = [Math.max(0, c[0] + (on ? 1 : -1)), Math.max(0, c[1] + (on ? 1 : -1))];
+  }
+  syncVotes();
+  if (!API) return;
+  try {
+    const res = await fetch(`${API}/vote`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, on }) });
+    if (res.ok) {
+      const { total: t } = await res.json();
+      counts[id] = [t, counts[id]?.[1] || 0];
+      syncVotes();
+    } else if (res.status === 429) toast("Too many votes, try again later");
+  } catch {}
+}
+
+// "Trending today": re-ranked by real votes once they are known.
+function renderTrending() {
+  const grid = $("#trending");
+  if (!grid || !DATA.trendingSeed) return;
+  const anyRecent = Object.values(counts).some((c) => c[1] > 0);
+  if (!anyRecent) return;
+  const seed = DATA.trendingSeed.map((id) => byId.get(id)).filter(Boolean);
+  grid.innerHTML = trendingOrder(seed, counts).slice(0, grid.children.length || 12).map(tileHTML).join("");
+  syncVotes(grid);
+}
 
 // ---------- home: search / sort / chips ----------
 // With no query and the default view, the curated sections show. Anything
@@ -52,6 +112,13 @@ function writeURL() {
   } catch {}
 }
 
+function updateSavedChip() {
+  const chip = $('[data-chip="saved"]');
+  if (!chip) return;
+  chip.textContent = `Saved ${saved.size}`;
+  chip.hidden = saved.size === 0 && state.chip !== "saved";
+}
+
 function filtered() {
   let list = DATA.cases;
   if (state.chip === "week") list = list.filter((c) => c.added >= weekAgo);
@@ -74,8 +141,7 @@ function renderHome() {
   if (!sections || !results) return;
   document.querySelectorAll("[data-sort]").forEach((b) => b.classList.toggle("is-on", b.dataset.sort === state.sort));
   document.querySelectorAll("[data-chip]").forEach((b) => b.classList.toggle("is-on", b.dataset.chip === state.chip));
-  const savedChip = $('[data-chip="saved"]');
-  if (savedChip) savedChip.textContent = `Saved ${saved.size}`;
+  updateSavedChip();
   const search = $("#search");
   if (search && document.activeElement !== search) search.value = state.q;
   writeURL();
@@ -101,13 +167,15 @@ function renderHome() {
         day = c.added;
         html += `</ul><p class="mono-label day-head">${esc(dayLabel(day))}</p><ul class="items">`;
       }
-      html += itemHTML(c, { saved: saved.has(c.id) });
+      html += itemHTML(c);
     }
     html += "</ul>";
   } else {
-    html += `<ul class="items">${list.map((c) => itemHTML(c, { saved: saved.has(c.id) })).join("")}</ul>`;
+    html += `<ul class="items">${list.map((c) => itemHTML(c)).join("")}</ul>`;
   }
   results.innerHTML = html + "</div>";
+  syncSaved(results);
+  syncVotes(results);
 }
 
 let searchTimer;
@@ -156,11 +224,27 @@ function toggleShare(btn) {
 
 // ---------- detail dialog ----------
 const dialog = $("#detail");
-function openDetail(id) {
+let dialogList = []; // ids in the order of the list the dialog was opened from, for "Next"
+function openDetail(id, from) {
   const c = byId.get(id);
   if (!c || !dialog) return false;
+  if (from) {
+    const ul = from.closest("ul");
+    const ids = ul ? [...ul.querySelectorAll(":scope > li[data-id]")].map((li) => li.dataset.id) : [];
+    dialogList = ids.includes(id) ? ids : DATA.cases.map((x) => x.id);
+  }
+  const i = dialogList.indexOf(id);
+  const next = byId.get(dialogList[i + 1]) || null;
   $("#detail-body").innerHTML = detailHTML(c);
-  dialog.showModal();
+  $("#detail-foot").innerHTML = `<span class="share-wrap share-up"><button type="button" class="btn-outline" data-share="${esc(c.id)}" aria-haspopup="menu" aria-expanded="false">Share</button></span>${
+    next ? `<button type="button" class="next" data-next="${esc(next.id)}"><span class="next-label">Next</span><span class="next-title">${esc(next.title)}</span><span aria-hidden="true">→</span></button>` : ""
+  }`;
+  const page = $("#detail-page");
+  if (page) page.href = caseHref(c);
+  syncSaved(dialog);
+  syncVotes(dialog);
+  if (!dialog.open) dialog.showModal();
+  dialog.querySelector(".dialog-body").scrollTop = 0;
   return true;
 }
 dialog?.addEventListener("click", (e) => {
@@ -176,7 +260,19 @@ document.addEventListener("click", (e) => {
 
   if (d.open) {
     if (e.metaKey || e.ctrlKey || e.shiftKey) return;
-    if (openDetail(d.open)) e.preventDefault();
+    if (openDetail(d.open, t)) e.preventDefault();
+  } else if (d.next) {
+    openDetail(d.next);
+  } else if (d.vote) {
+    toggleVote(d.vote);
+  } else if (d.copyPrompt) {
+    const c = byId.get(d.copyPrompt);
+    if (c?.prompt) navigator.clipboard?.writeText(c.prompt).then(() => toast("Prompt copied"), () => toast("Couldn't copy, select the text instead"));
+  } else if ("sponsorsClose" in d) {
+    document.body.classList.add("sponsors-closed");
+    try {
+      sessionStorage.setItem("dlg.sponsors", "closed");
+    } catch {}
   } else if (d.share) {
     toggleShare(t);
   } else if (d.copyUrl) {
@@ -187,10 +283,7 @@ document.addEventListener("click", (e) => {
     store.set("dlg.saved", [...saved]);
     syncSaved();
     if (state.chip === "saved") renderHome();
-    else if (sections) {
-      const chip = $('[data-chip="saved"]');
-      if (chip) chip.textContent = `Saved ${saved.size}`;
-    }
+    else updateSavedChip();
   } else if (d.sort) {
     state.sort = d.sort;
     renderHome();
@@ -238,6 +331,11 @@ if (/Mac|iPhone|iPad/.test(navigator.platform) === false) {
   const k = $(".kbd");
   if (k) k.textContent = "Ctrl K";
 }
+try {
+  if (sessionStorage.getItem("dlg.sponsors") === "closed") document.body.classList.add("sponsors-closed");
+} catch {}
 readURL();
 syncSaved();
+syncVotes();
 renderHome();
+loadCounts();

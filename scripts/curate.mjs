@@ -9,16 +9,13 @@
 // The source URL always comes from the collector, never from the model.
 import { readFile, writeFile, mkdir, appendFile } from "node:fs/promises";
 import { dirname } from "node:path";
-import Anthropic from "@anthropic-ai/sdk";
-import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
+import { parseStructured, Anthropic, MODEL } from "./lib/claude.mjs";
 import { z } from "zod";
 import { loadCases, caseFilePath, sortCases } from "./lib/cases.mjs";
 import { CaseSchema } from "./lib/schema.mjs";
 import { DOMAINS, EVIDENCE, DIFFICULTY, PLATFORMS, normalizePlatform } from "./lib/taxonomy.mjs";
 import { path, readJSON, writeJSON, slugify, today, truncate } from "./lib/util.mjs";
 
-const MODEL = process.env.CURATOR_MODEL || "claude-opus-5-5";
-const EFFORT = process.env.CURATOR_EFFORT || "medium";
 const PUBLISH_THRESHOLD = Number(process.env.PUBLISH_THRESHOLD || 5);
 const DAILY_MAX = Number(process.env.DAILY_MAX || 25);
 const BATCH_SIZE = 6;
@@ -68,6 +65,10 @@ const Evaluation = z.object({
   tools: z.array(z.string()).describe("integrations/tools the agent used, max 6"),
   agent_role: z.string(),
   outcome: z.string().nullable(),
+  what_they_did: z.string().describe("The write-up: What they did"),
+  how_it_went: z.string().nullable().describe("The write-up: How it went"),
+  worth_knowing: z.string().nullable().describe("The write-up: Worth knowing"),
+  prompt: z.string().nullable().describe("The write-up: a ready-to-paste prompt to try it"),
   evidence: z.string().describe(`one of: ${EVIDENCE.join(", ")}`),
   difficulty: z.string().describe(`one of: ${DIFFICULTY.join(", ")}`),
   tags: z.array(z.string()),
@@ -104,25 +105,14 @@ ${body || "(no text available — judge from the title only and score conservati
 </candidate>`;
 }
 
-const client = new Anthropic();
-
 async function evaluate(batch) {
   const recentList = recent.map((c) => `- ${c.id}: ${c.title}`).join("\n") || "(none yet)";
-  const response = await client.messages.parse({
-    model: MODEL,
-    max_tokens: 16000,
-    output_config: { effort: EFFORT, format: zodOutputFormat(Batch) },
+  const { parsed } = await parseStructured({
     system,
-    messages: [
-      {
-        role: "user",
-        content: `Recently published entries (for duplicate detection):\n${recentList}\n\nEvaluate these ${batch.length} candidates:\n\n${batch.map(renderCandidate).join("\n\n")}`,
-      },
-    ],
+    schema: Batch,
+    user: `Recently published entries (for duplicate detection):\n${recentList}\n\nEvaluate these ${batch.length} candidates:\n\n${batch.map(renderCandidate).join("\n\n")}`,
   });
-  if (response.stop_reason === "refusal") throw new Error("model declined this batch");
-  if (!response.parsed_output) throw new Error(`unparseable output (stop_reason: ${response.stop_reason})`);
-  return response.parsed_output.evaluations;
+  return parsed.evaluations;
 }
 
 function pick(value, allowed, fallback) {
@@ -178,6 +168,13 @@ for (const ev of evaluations) {
     tools: ev.tools.slice(0, 6).map((t) => truncate(t, 40)),
     agent_role: truncate(ev.agent_role, 380),
     outcome: ev.outcome ? truncate(ev.outcome, 230) : null,
+    // A too-short write-up is left out (or null) rather than failing the whole entry;
+    // the backfill step fills it in on a later run.
+    what_they_did: (ev.what_they_did || "").trim().length >= 40 ? truncate(ev.what_they_did, 880) : undefined,
+    how_it_went: ev.how_it_went ? truncate(ev.how_it_went, 780) : null,
+    worth_knowing: ev.worth_knowing ? truncate(ev.worth_knowing, 580) : null,
+    // null = "not reproducible by a reader" (a deliberate verdict); undefined = needs a retry.
+    prompt: ev.prompt === null ? null : ev.prompt.trim().length >= 40 ? truncate(ev.prompt, 1480) : undefined,
     evidence: pick(ev.evidence, EVIDENCE, "Author's account"),
     difficulty: pick(ev.difficulty, DIFFICULTY, "Intermediate"),
     tags: [...new Set(ev.tags.map((t) => t.toLowerCase().replace(/[^a-z0-9 +.-]/g, "").trim()).filter(Boolean))].slice(0, 5),

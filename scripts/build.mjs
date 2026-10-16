@@ -4,6 +4,7 @@
 //   /agents/  /agents/x/   browse by agent
 //   /category/x/           browse by category
 //   /use-case/x/           one page per use case
+//   /topics/ /about/ /sponsor/ /privacy/
 //   feed.xml, sitemap.xml, cases.json, robots.txt
 //
 //   SITE_URL=http://localhost:4173/ npm run build   # override the public URL
@@ -13,8 +14,8 @@ import { loadCases, sortCases } from "./lib/cases.mjs";
 import { taxonomy } from "./lib/taxonomy.mjs";
 import { path, readJSON, today } from "./lib/util.mjs";
 import {
-  configure, href, esc, formatDate, dayLabel, slug, badge, itemHTML, tileHTML, detailHTML,
-  caseHref, agentHref, categoryHref, ICON,
+  configure, href, esc, formatDate, dayLabel, slug, badge, itemHTML, tileHTML, detailHTML, relatedHTML,
+  trendingOrder, caseHref, agentHref, categoryHref, ICON,
 } from "../site/assets/render.js";
 
 const site = await readJSON(path("config", "site.json"));
@@ -23,6 +24,8 @@ const PREVIEW = process.env.PREVIEW === "1"; // relative links, for hosting as p
 const ABS_BASE = new URL(siteUrl).pathname; // e.g. "/delegated2ai/"
 let base = ABS_BASE;
 const DIST = path("dist");
+// The vote counter service (worker/). Without it, votes are kept in each visitor's browser only.
+const votesApi = (process.env.VOTES_API || site.votesApi || "").replace(/\/+$/, "");
 
 const { cases: all, errors } = await loadCases();
 if (errors.length) {
@@ -46,10 +49,15 @@ const countBy = (key) => {
 const agentCounts = countBy("platform");
 const domainCounts = countBy("domain");
 const newest = cases.filter((c) => c.added === latestDay);
+// Order used for "Trending today" before any votes exist: this week's finds first, best first.
+const trendingSeed = [...cases].sort(
+  (a, b) => Number(b.added >= weekStart()) - Number(a.added >= weekStart()) || b.score - a.score || b.added.localeCompare(a.added),
+);
 const plural = (n, word) => `${n.toLocaleString("en-US")} ${word}${n === 1 ? "" : "s"}`;
 const issueUrl = (template, title = "") =>
   `https://github.com/${site.repo}/issues/new?template=${template}${title ? `&title=${encodeURIComponent(title)}` : ""}`;
 const digestHref = site.newsletter?.action || `${siteUrl}feed.xml`;
+const DIGEST_CTA = "Get 5 use cases every morning";
 
 // ---------- shared fragments ----------
 // Logo: a 6×6 pixel grid with an arrow picked out — work handed off.
@@ -114,24 +122,60 @@ ${analytics}
 </head>`;
 }
 
-function pageData(list) {
-  return `<script id="page-data" type="application/json">${JSON.stringify({ cases: list, base, today: latestDay, platforms, repo: site.repo }).replace(/</g, "\\u003c")}</script>`;
+function pageData(list, extra = {}) {
+  return `<script id="page-data" type="application/json">${JSON.stringify({ cases: list, base, today: latestDay, platforms, repo: site.repo, votesApi, ...extra }).replace(/</g, "\\u003c")}</script>`;
 }
 
-const dialogAndScripts = (list) => `<dialog id="detail" aria-label="Use case details">
-  <div class="dialog-bar"><button type="button" class="theme-btn" data-close aria-label="Close"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button></div>
+const dialogAndScripts = (list, extra) => `<dialog id="detail" aria-label="Use case details">
+  <div class="dialog-bar">
+    <a class="icon-btn" id="detail-page" href="#" title="Open as a page" aria-label="Open as a page">${ICON.ext}</a>
+    <button type="button" class="icon-btn" data-close aria-label="Close"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+  </div>
   <div class="dialog-body" id="detail-body"></div>
+  <div class="dialog-foot" id="detail-foot"></div>
 </dialog>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-${pageData(list)}
+${sponsorBar()}
+${pageData(list, extra)}
 <script type="module" src="${base}assets/app.js"></script>`;
+
+// ---------- sponsor bar ----------
+// A slow ticker along the bottom of every page: paid sponsors from config/site.json
+// ("sponsors"), plus our own digest and an open slot. Pauses on hover; static for
+// visitors who prefer reduced motion; can be closed.
+function sponsorBar() {
+  const paid = (site.sponsors || []).map((s) => ({ ...s, rel: "sponsored noopener" }));
+  const house = [
+    { name: site.name, text: "5 use cases every morning", url: digestHref, house: true },
+    { name: "Your logo here", text: "sponsor us", url: href("sponsor/"), slot: true },
+  ];
+  const items = [...paid, ...house];
+  const one = (s) =>
+    s.slot
+      ? `<a class="sb-item sb-slot" href="${esc(s.url)}"><span class="sb-plus" aria-hidden="true">+</span>${esc(s.name)}: ${esc(s.text)}</a>`
+      : `<a class="sb-item" href="${esc(s.url)}"${s.rel ? ` rel="${s.rel}" target="_blank"` : ""}>${
+          s.house ? logoSVG("sb-logo") : `<span class="sb-mark" aria-hidden="true">${esc((s.abbr || s.name.slice(0, 2)).slice(0, 2))}</span>`
+        }<span><b>${esc(s.name)}</b>: ${esc(s.text)}</span></a>`;
+  // Repeat to fill wide screens, then duplicate once so the loop is seamless.
+  const reps = Math.max(1, Math.ceil(6 / items.length));
+  const run = Array.from({ length: reps }, () => items.map(one).join("")).join("");
+  const seconds = items.length * reps * 9;
+  return `<div class="sponsorbar" id="sponsorbar" role="complementary" aria-label="Sponsors">
+  <span class="sb-label">Sponsors</span>
+  <div class="sb-viewport"><div class="sb-track" style="--sb-duration:${seconds}s">${run}<span class="sb-copy" aria-hidden="true">${run}</span></div></div>
+  <button type="button" class="sb-close" data-sponsors-close aria-label="Hide sponsors"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>
+</div>`;
+}
+
+const footerLinks = () =>
+  `<nav class="foot-links"><a href="${href()}">All use cases</a><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("new/")}">New</a><a href="${siteUrl}feed.xml">RSS</a><a href="${href("about/")}">About</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>`;
 
 function promoCard() {
   if (site.sponsor) {
     const s = site.sponsor;
     return `<div class="promo"><p class="mono-label">Sponsor</p><strong>${esc(s.name)}</strong>${esc(s.text)}<br><a class="more" href="${esc(s.url)}" rel="sponsored noopener" target="_blank">${esc(s.cta || "Learn more")} ↗</a></div>`;
   }
-  return `<div class="promo"><p class="mono-label">Advertise</p><strong>Your product here</strong>Reach people who build and buy AI agents, every day.<br><a class="more" href="${issueUrl("sponsor.yml", "[sponsor] ")}">Sponsor ${esc(site.name)} ↗</a></div>`;
+  return `<div class="promo"><p class="mono-label">Advertise</p><strong>Your product here</strong>Reach people who build and buy AI agents, every day.<br><a class="more" href="${href("sponsor/")}">Sponsor ${esc(site.name)} ↗</a></div>`;
 }
 
 function sidebar({ activeAgent, activeDomain } = {}) {
@@ -144,7 +188,7 @@ function sidebar({ activeAgent, activeDomain } = {}) {
   <div class="brand-row"><h1><a href="${href()}">${logoSVG("logo-inline")}${wordmark}</a></h1>${themeButton}</div>
   <p class="tagline">${esc(site.tagline)}</p>
   <div class="side-ctas">
-    <a class="btn-primary" href="${esc(digestHref)}">Get the daily digest</a>
+    <a class="btn-primary" href="${esc(digestHref)}">${DIGEST_CTA}</a>
     <a class="btn-outline" href="${issueUrl("submit-use-case.yml")}">Submit a use case</a>
   </div>
   <button type="button" class="filter-toggle" data-filters aria-expanded="false">Filter <span>Agents · Categories</span></button>
@@ -158,7 +202,7 @@ function sidebar({ activeAgent, activeDomain } = {}) {
       }</nav>
     </section>
     <section class="side-section">
-      <div class="side-head"><h2 class="mono-label">Categories</h2></div>
+      <div class="side-head"><h2 class="mono-label">Categories</h2><a href="${href("topics/")}">Topic pages</a></div>
       <nav class="side-list">${domainCounts.map(domainRow).join("")}</nav>
     </section>
   </div>
@@ -166,14 +210,14 @@ function sidebar({ activeAgent, activeDomain } = {}) {
     <b>${plural(cases.length, "use case")}</b><br>
     Updated ${esc(formatDate(buildDay))}<br>
     Sources: the open web, X, Reddit, Hacker News, GitHub
-    <nav><a href="${href("agents/")}">Agents</a><a href="${href("new/")}">New</a><a href="https://github.com/${esc(site.repo)}/blob/main/docs/editorial-guidelines.md">How we curate</a><a href="${siteUrl}feed.xml">RSS feed</a><a href="${issueUrl("sponsor.yml", "[sponsor] ")}">Sponsor</a></nav>
+    <nav><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("about/")}">About</a><a href="${siteUrl}feed.xml">RSS feed</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>
   </div>
 </aside>`;
 }
 
 // ---------- home ----------
 function homePage() {
-  const picks = [...cases].sort((a, b) => b.score - a.score || b.added.localeCompare(a.added)).slice(0, 9);
+  const picks = trendingOrder(trendingSeed).slice(0, 12);
   const latest = newest.length >= 3 ? newest : cases.slice(0, 8);
   const topicSections = domainCounts
     .map(([name, n], i) => {
@@ -214,14 +258,14 @@ ${sidebar()}
     <div class="chips">
       <button type="button" class="chip-btn is-on" data-chip="all">All ${cases.length}</button>
       <button type="button" class="chip-btn" data-chip="week">New this week ${cases.filter((c) => c.added >= weekStart()).length}</button>
-      <button type="button" class="chip-btn" data-chip="saved">Saved 0</button>
+      <button type="button" class="chip-btn" data-chip="saved" hidden>Saved 0</button>
     </div>
   </div>
   <div id="results" hidden></div>
   <div id="sections">
     <section class="section">
-      <h2 class="mono-label" style="margin-bottom:12px">Top picks</h2>
-      <ul class="tiles">${picks.map(tileHTML).join("")}</ul>
+      <h2 class="mono-label" style="margin-bottom:12px">Trending today</h2>
+      <ul class="tiles" id="trending">${picks.map(tileHTML).join("")}</ul>
     </section>
     <section class="section">
       <div class="signal-panel">
@@ -237,7 +281,7 @@ ${sidebar()}
   </div>
 </main>
 </div>
-${dialogAndScripts(cases)}
+${dialogAndScripts(cases, { trendingSeed: trendingSeed.map((c) => c.id) })}
 </body>
 </html>
 `;
@@ -258,7 +302,8 @@ function narrowPage({ path: pagePath, title, description, body, list, jsonld }) 
     <a class="brand" href="${href()}">${logoSVG("")}${wordmark}</a>
     <div class="topnav-right">${themeButton}<a class="count" href="${href()}">All ${cases.length.toLocaleString("en-US")} use cases</a></div>
   </header>
-  <main class="page">${body}</main>
+  <main class="page">${body}
+  ${footerLinks()}</main>
 </div>
 ${dialogAndScripts(list)}
 </body>
@@ -266,10 +311,10 @@ ${dialogAndScripts(list)}
 `;
 }
 
-const itemList = (list) => `<ul class="items">${list.map((c) => itemHTML(c, { showOutcome: true })).join("")}</ul>`;
+const itemList = (list) => `<ul class="items">${list.map((c) => itemHTML(c)).join("")}</ul>`;
 
 function topAgentsSentence(list) {
-  const named = list.filter((c) => !["Custom agent", "Not specified"].includes(c.platform));
+  const named = list.filter((c) => !["Custom agent", "Other"].includes(c.platform));
   const counts = new Map();
   for (const c of named) counts.set(c.platform, (counts.get(c.platform) || 0) + 1);
   const top = [...counts].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([p]) => p);
@@ -354,7 +399,7 @@ function newPage() {
       const n = cases.filter((x) => x.added === day).length;
       body += `<h2 class="list-head">${esc(dayLabel(day, buildDay))} · ${plural(n, "use case")}</h2><ul class="items">`;
     }
-    body += itemHTML(c, { showOutcome: true });
+    body += itemHTML(c);
   }
   if (day) body += "</ul>";
   return narrowPage({
@@ -374,8 +419,10 @@ ${body}`,
 function casePage(c) {
   const related = cases
     .filter((o) => o.id !== c.id && (o.domain === c.domain || o.platform === c.platform))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 4);
+    .sort((a, b) => Number(b.platform === c.platform) - Number(a.platform === c.platform) || b.score - a.score)
+    .slice(0, 6);
+  const nAgent = cases.filter((o) => o.platform === c.platform).length;
+  const nDomain = cases.filter((o) => o.domain === c.domain).length;
   return narrowPage({
     path: `use-case/${c.id}/`,
     title: `${c.title} · ${site.name}`,
@@ -392,7 +439,103 @@ function casePage(c) {
       about: [c.platform, c.domain, ...c.tags],
     },
     body: `${detailHTML(c, { heading: "h1" })}
-${related.length ? `<section class="related"><h2 class="list-head">Related use cases</h2><ul class="items">${related.map((r) => itemHTML(r)).join("")}</ul></section>` : ""}`,
+${related.length ? `<section class="related"><h2 class="list-head">Related use cases</h2><ul class="items">${related.map(relatedHTML).join("")}</ul></section>` : ""}
+<section class="related"><h2 class="list-head">Keep browsing</h2>
+  <p class="browse-links"><a href="${agentHref(c.platform)}">All ${plural(nAgent, `${c.platform} use case`)}</a><a href="${categoryHref(c.domain)}">All ${plural(nDomain, `${c.domain} use case`)}</a></p>
+</section>
+${digestBox()}`,
+  });
+}
+
+function digestBox() {
+  return `<aside class="digest-box">
+  <div><h2>Get 5 like this every morning</h2><p>The best things people got an AI agent to do, each with the prompt to try it.</p></div>
+  <a class="btn-primary" href="${esc(digestHref)}">${DIGEST_CTA}</a>
+</aside>`;
+}
+
+function topicsPage() {
+  const rows = domainCounts
+    .map(([name, n]) => {
+      const named = cases.filter((c) => c.domain === name && !["Custom agent", "Other"].includes(c.platform));
+      const top = countByIn(named, "platform").slice(0, 3).map(([a]) => a);
+      return `<div class="topic-row">
+  <div class="topic-head"><a class="name" href="${categoryHref(name)}">${esc(name)}</a><span class="n">${n}</span></div>
+  <p class="desc">${esc(domainInfo.get(name).blurb)}</p>
+  ${top.length ? `<p class="often">Most used named agents: ${top.map(esc).join(" · ")}</p>` : ""}
+</div>`;
+    })
+    .join("");
+  return narrowPage({
+    path: "topics/",
+    title: `Topics: AI agent use cases by kind of job · ${site.name}`,
+    description: "The directory grouped by the kind of job an agent was given.",
+    list: [],
+    body: `<p class="eyebrow">Browse by kind of job</p>
+<h1 class="page-title">Topics</h1>
+<p class="page-lead">These pages group the directory by the kind of job an agent was given. Each one lists every use case in that category, best first.</p>
+<div class="topic-rows">${rows}</div>`,
+  });
+}
+
+function aboutPage() {
+  return narrowPage({
+    path: "about/",
+    title: `About · ${site.name}`,
+    description: site.description,
+    list: [],
+    body: `<h1 class="page-title">About</h1>
+<div class="prose">
+<p>${esc(site.name)} is a daily directory of real things people have handed to AI agents. Each entry is something a person or team actually did with an agent, explained in our own words, with a prompt to try it yourself and a link to the original post.</p>
+<p>Every day a pipeline scans Hacker News, Reddit, X, GitHub, DEV and a handful of blogs for new posts. Claude reads each candidate against our <a href="https://github.com/${esc(site.repo)}/blob/main/docs/editorial-guidelines.md">editorial guidelines</a>, keeps the genuine agent applications, and writes the summary and write-up from the source. Links always come from the source itself, never from the model. Results are reported as the source states them, not independently verified.</p>
+<p>Anyone can <a href="${issueUrl("submit-use-case.yml")}">submit a use case</a>. Submissions go through the same check as everything else.</p>
+<p>The code, the data and the guidelines are on <a href="https://github.com/${esc(site.repo)}">GitHub</a>. Spotted a mistake? <a href="https://github.com/${esc(site.repo)}/issues/new">Open an issue</a>.</p>
+</div>`,
+  });
+}
+
+function sponsorPage() {
+  return narrowPage({
+    path: "sponsor/",
+    title: `Sponsor · ${site.name}`,
+    description: `Reach people who build with and buy AI agents, every day, on ${site.name}.`,
+    list: [],
+    body: `<p class="eyebrow">Advertise</p>
+<h1 class="page-title">Sponsor ${esc(site.name)}</h1>
+<p class="page-lead">Put your product in front of people who build with and buy AI agents, every day.</p>
+<div class="prose">
+<h2>Placements</h2>
+<ul>
+<li><b>Sponsor bar.</b> Your logo, name and one line along the bottom of every page.</li>
+<li><b>Sidebar card.</b> A short pitch and a link at the top of the home page sidebar.</li>
+</ul>
+<p>Sponsors are clearly labelled and never affect which use cases are published or how they are ranked.</p>
+<p><a class="btn-primary" href="${issueUrl("sponsor.yml", "[sponsor] ")}">Ask about sponsoring</a></p>
+</div>`,
+  });
+}
+
+function privacyPage() {
+  return narrowPage({
+    path: "privacy/",
+    title: `Privacy · ${site.name}`,
+    description: `What ${site.name} collects, and why.`,
+    list: [],
+    body: `<h1 class="page-title">Privacy</h1>
+<div class="prose">
+<p>This site collects very little. There are no accounts, no cookies and no advertising trackers.</p>
+<h2>In your browser</h2>
+<p>Your saved use cases, the use cases you voted for and your theme are kept in your browser's local storage; whether you closed the sponsor bar is kept only until you close the tab. None of it leaves your device, and clearing your browser data removes it.</p>
+<h2>Votes</h2>
+<p>When you press “I want this” or the up arrow, we add one to that use case's count. We keep no lasting record of who voted. To stop the same visitor voting again and again, we keep a salted, one-way hash of your network address, the use case and the day for two days, and a similar hash of your address for one hour to limit floods. Neither stores the address itself, and both are deleted automatically.</p>
+${site.analytics?.plausibleDomain ? `<h2>Visitor statistics</h2><p>We count page views, referring sites, countries and device types in aggregate with Plausible Analytics, which uses no cookies and does not follow you to other sites.</p>` : ""}
+<h2>Submissions</h2>
+<p>Use cases are submitted through GitHub issues, so what you write there, and your GitHub username, are public on GitHub under GitHub's own privacy terms.</p>
+<h2>Sponsors</h2>
+<p>Sponsor links go straight to the sponsor's site. We don't share anything about you with sponsors.</p>
+<h2>Questions</h2>
+<p><a href="https://github.com/${esc(site.repo)}/issues/new">Open an issue</a> on GitHub.</p>
+</div>`,
   });
 }
 
@@ -428,6 +571,10 @@ const renderers = {
   "index.html": homePage,
   "new/index.html": newPage,
   "agents/index.html": agentsIndexPage,
+  "topics/index.html": topicsPage,
+  "about/index.html": aboutPage,
+  "sponsor/index.html": sponsorPage,
+  "privacy/index.html": privacyPage,
 };
 for (const [d] of domainCounts) renderers[`category/${slug(d)}/index.html`] = () => categoryPage(d);
 for (const [p] of agentCounts) renderers[`agents/${slug(p)}/index.html`] = () => agentPage(p);

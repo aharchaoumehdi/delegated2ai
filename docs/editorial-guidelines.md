@@ -70,7 +70,7 @@ small boost (+0.5).
   verified. Use null when no outcome is stated.
 - **Platform**: the agent product or framework (Claude Code, OpenAI Codex, Devin,
   Cursor, ChatGPT Agent, Manus, n8n, LangGraph, Custom agent, …). Use
-  "Not specified" when the source doesn't say — never guess.
+  "Other" when the source doesn't say — never guess.
 - **Model**: the underlying model only if the source states it, else null.
 - **Evidence**: one of "Author's account", "Demo", "Code available", "Paper",
   "Independent report" — pick the strongest that genuinely applies.
@@ -78,6 +78,38 @@ small boost (+0.5).
   (Beginner / Intermediate / Advanced).
 - **Tags**: 3–5 short lowercase tags describing the task (e.g. "code migration",
   "grocery", "literature review").
+
+## The write-up
+
+Each entry also gets a short write-up, shown on its page and when a reader clicks
+"View prompt". Write it for a curious reader who wants to know what happened and
+try it themselves. Short sentences, plain words, no hype, no emojis.
+
+- **What they did** (2–4 sentences, ≤ 600 characters): the concrete setup and
+  steps — which agent, which tools or data, what the person asked for, and where
+  they stepped in. Start with who did it ("The poster…", "A developer…", "PwC's
+  team…").
+- **How it went** (1–3 sentences, ≤ 450 characters): the result as the source
+  reports it, attributed ("They say…", "The author reports…"), including numbers
+  only when the source gives them. Use null when the source states no result.
+- **Worth knowing** (1–2 sentences, ≤ 350 characters): the single most useful
+  catch, limitation, cost, risk or tip from the source or its discussion. Use null
+  when the source offers none; never invent a caveat.
+- **Prompt** (≤ 120 words): a ready-to-paste prompt that lets a reader try the
+  same thing with the agent named in Platform (or any capable agent when it is
+  "Custom agent" or "Other"). Rules:
+  - Write it as the reader talking to their agent, in the imperative
+    ("Every weekday before the market opens, review…").
+  - Use [square-bracket placeholders] for anything personal or variable:
+    [your city], [budget], [repo URL]. Never fill in the original person's
+    private details.
+  - Ask the agent to show its plan or a draft and wait for approval before any
+    irreversible step: sending messages, spending or moving money, buying,
+    trading, deleting, submitting forms, or deploying.
+  - Only mention tools and data sources the use case actually involves, or
+    generic ones ("my email", "a spreadsheet"). Don't promise the original result.
+  - Use null only when the use case can't be reproduced by a reader at all (for
+    example, a lab experiment on proprietary systems).
 
 ## Accuracy and attribution
 

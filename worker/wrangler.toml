@@ -1,0 +1,16 @@
+# Deployed by .github/workflows/votes.yml, which fills in database_id after creating
+# the D1 database on the first run. See docs/setup.md, "Votes".
+name = "delegatedto-votes"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[triggers]
+crons = ["17 4 * * *"]
+
+[vars]
+ALLOWED_ORIGINS = "https://aharchaoumehdi.github.io,https://delegatedto.ai,https://www.delegatedto.ai,http://localhost:4173"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "delegatedto-votes"
+database_id = "REPLACED_BY_WORKFLOW"

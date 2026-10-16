@@ -3,7 +3,7 @@
   "title": "Agent skill maps 620 bookable McDonald's family events in Beijing from official store data",
   "summary": "Families looking for McDonald's birthday parties or reading sessions nearby face scattered listings. This skill has an agent query the official MCP, verify which sessions are bookable and check prices against the store catalog, then draw a cartoon map with calendar export.",
   "domain": "Daily life",
-  "platform": "Not specified",
+  "platform": "Other",
   "model": null,
   "tools": [
     "McDonald's China MCP",

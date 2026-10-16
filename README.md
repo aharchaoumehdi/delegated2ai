@@ -17,6 +17,8 @@ collect (scripts/collect.mjs)  →  curate with Claude (scripts/curate.mjs)  →
    25 a day; any overflow publishes first on the next run). There is no human review step.
    Everything judged is remembered in `data/state/seen.json` so it is
    never paid for twice. Source URLs always come from the collector, never from the model.
+   A backfill step (`scripts/enrich.mjs`) fills in any missing write-ups (what they did,
+   how it went, worth knowing, a prompt to try it).
 3. **Build** — renders a static site into `dist/`: home, New, per-agent and per-category pages,
    one page per use case, RSS, sitemap and a public `cases.json`.
 4. **Deploy** — `.github/workflows/daily.yml` runs all of the above every day at 06:17 UTC,
@@ -35,7 +37,8 @@ collect (scripts/collect.mjs)  →  curate with Claude (scripts/curate.mjs)  →
 | `data/state/seen.json` | URLs already judged, so they aren't re-evaluated |
 | `docs/editorial-guidelines.md` | The editorial standard — also the curator's instructions |
 | `docs/setup.md` | One-time setup: Pages, secrets, custom domain |
-| `scripts/` | Collectors, curator, builder, validator, local preview server |
+| `scripts/` | Collectors, curator, write-up backfill, builder, validator, local preview server |
+| `worker/` | The vote counter (Cloudflare Worker + D1), deployed by `.github/workflows/votes.yml` |
 | `site/assets/` | CSS, browser JS and the rendering code shared with the build |
 
 ## Local development

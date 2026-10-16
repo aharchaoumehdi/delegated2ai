@@ -1,7 +1,7 @@
 // Shared rendering helpers, used by the browser (app.js) and by the static
 // build (scripts/build.mjs) so pre-rendered and live HTML are identical.
 
-let CONF = { base: "/", index: "", today: "", platforms: {}, repo: "" };
+let CONF = { base: "/", index: "", today: "", platforms: {}, repo: "", unnamed: ["Custom agent", "Other"] };
 export function configure(conf) {
   CONF = { ...CONF, ...conf };
 }
@@ -80,87 +80,115 @@ function dot(name) {
 const ICON = {
   save: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.25 2.75h7.5a.5.5 0 0 1 .5.5v10.2L8 11.1 3.75 13.45V3.25a.5.5 0 0 1 .5-.5Z" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg>',
   ext: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  up: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.2 13.2 12.4H2.8Z" fill="currentColor"/></svg>',
 };
 export { ICON };
+
+/** Upvote counts, filled in by the browser (from the votes service or this browser's own votes). */
+export const voteCount = (n) => (n > 0 ? String(n) : "");
 
 function metaLine(c) {
   const isNew = c.added === CONF.today;
   const bits = [esc(c.source.name), c.source.published ? monthYear(c.source.published) : ""].filter(Boolean).join(" · ");
   return `<div class="meta">
     <a class="meta-agent" href="${agentHref(c.platform)}" title="More ${esc(c.platform)} use cases">${dot(c.platform)}${esc(c.platform)}</a>
-    <span class="meta-rest">${isNew ? '<span class="signal">New · </span>' : ""}${bits}</span>
+    <span class="meta-rest">${isNew ? '<span class="signal">New</span> · ' : ""}${bits}</span>
   </div>`;
 }
 
-function actions(c, saved) {
-  return `<div class="actions">
-    <button type="button" class="btn-sm" data-open="${esc(c.id)}">Details</button>
-    <span class="share-wrap"><button type="button" class="btn-sm" data-share="${esc(c.id)}" aria-haspopup="menu" aria-expanded="false">Share</button></span>
-    <a class="btn-sm" href="${esc(c.source.url)}" target="_blank" rel="noopener">Original ${ICON.ext}</a>
-  </div>`;
+const shareButton = (c, cls = "btn-sm") =>
+  `<span class="share-wrap"><button type="button" class="${cls}" data-share="${esc(c.id)}" aria-haspopup="menu" aria-expanded="false">Share</button></span>`;
+
+function voteButton(c) {
+  return `<button type="button" class="vote" data-vote="${esc(c.id)}" aria-pressed="false" aria-label="Upvote: ${esc(c.title)}">${ICON.up}<span class="vote-n" data-vote-n="${esc(c.id)}"></span></button>`;
 }
 
-function saveButton(c, saved) {
-  return `<div class="side-actions">
-    <button type="button" class="save${saved ? " is-on" : ""}" data-save="${esc(c.id)}" aria-pressed="${saved}" aria-label="Save: ${esc(c.title)}">${ICON.save}<span>${saved ? "Saved" : "Save"}</span></button>
-  </div>`;
+function saveButton(c) {
+  return `<button type="button" class="save" data-save="${esc(c.id)}" aria-pressed="false" aria-label="Save: ${esc(c.title)}">${ICON.save}<span>Save</span></button>`;
 }
 
-/** A use case in a list (latest finds, topic sections, category pages). */
-export function itemHTML(c, { saved = false, showOutcome = false } = {}) {
+/** A use case in a list (latest finds, topic sections, agent and category pages). */
+export function itemHTML(c) {
   return `<li class="item" data-id="${esc(c.id)}">
   ${badge(c.platform)}
   <div class="item-body">
     <h3 class="item-title"><a href="${caseHref(c)}" data-open="${esc(c.id)}">${esc(c.title)}</a></h3>
-    <p class="item-summary${showOutcome ? " no-clamp" : ""}">${esc(c.summary)}</p>
-    ${showOutcome && c.outcome ? `<p class="how"><span class="label">How it went</span> ${esc(c.outcome)}</p>` : ""}
+    <p class="item-summary">${esc(c.summary)}</p>
     ${metaLine(c)}
-    ${actions(c, saved)}
+    <div class="actions"><button type="button" class="btn-sm" data-open="${esc(c.id)}">View prompt</button>${shareButton(c)}</div>
   </div>
-  ${saveButton(c, saved)}
+  <div class="side-actions">${voteButton(c)}${saveButton(c)}</div>
 </li>`;
 }
 
-/** A compact card for the "Top picks" grid. */
+/** A compact related-use-case row, as under a use case. */
+export function relatedHTML(c) {
+  return `<li class="item item-compact" data-id="${esc(c.id)}">
+  ${badge(c.platform)}
+  <div class="item-body">
+    <h3 class="item-title"><a href="${caseHref(c)}">${esc(c.title)}</a></h3>
+    <p class="item-summary">${esc(c.summary)}</p>
+    <div class="meta"><span class="meta-agent">${dot(c.platform)}${esc(c.platform)}</span></div>
+  </div>
+</li>`;
+}
+
+/** A card for the "Trending today" grid. */
 export function tileHTML(c) {
   return `<li class="tile" data-id="${esc(c.id)}">
-  <div class="tile-top">${badge(c.platform, "sm")}<span>${esc(c.platform)}</span></div>
+  <div class="tile-votes">${ICON.up}<span data-vote-n="${esc(c.id)}"></span></div>
   <h3 class="tile-title"><a href="${caseHref(c)}" data-open="${esc(c.id)}">${esc(c.title)}</a></h3>
-  <div class="tile-actions"><span class="share-wrap"><button type="button" class="btn-sm" data-share="${esc(c.id)}" aria-haspopup="menu" aria-expanded="false">Share</button></span></div>
+  <div class="tile-actions">${shareButton(c)}</div>
 </li>`;
 }
 
+/** Ranks use cases for "Trending today": votes in the last day, then all-time votes, then the editor's order. */
+export function trendingOrder(list, counts = {}) {
+  const pos = new Map(list.map((c, i) => [c.id, i]));
+  const v = (c) => counts[c.id] || [0, 0];
+  return [...list].sort((a, b) => v(b)[1] - v(a)[1] || v(b)[0] - v(a)[0] || pos.get(a.id) - pos.get(b.id));
+}
+
+const para = (text) => `<p>${esc(text)}</p>`;
+
+/** The full write-up, used on the use-case page and in the "View prompt" dialog. */
 export function detailHTML(c, { heading = "h2" } = {}) {
-  const row = (label, value) => (value ? `<div class="d-row"><dt>${label}</dt><dd>${value}</dd></div>` : "");
   const H = heading;
+  const did = c.what_they_did || c.agent_role;
+  const went = c.how_it_went ?? c.outcome;
+  const named = !CONF.unnamed.includes(c.platform);
+  const date = c.source.published ? formatDate(c.source.published) : "";
   return `<article class="detail">
-  <p class="eyebrow"><a href="${agentHref(c.platform)}">${esc(c.platform)}</a> · <a href="${categoryHref(c.domain)}">${esc(c.domain)}</a></p>
+  <p class="eyebrow"><a href="${categoryHref(c.domain)}">${esc(c.domain)}</a></p>
   <${H} class="detail-title">${esc(c.title)}</${H}>
   <p class="detail-lead">${esc(c.summary)}</p>
-  ${c.outcome ? `<p class="how how-lg"><span class="label">How it went</span> ${esc(c.outcome)}</p>` : ""}
-  <dl class="d-grid">
-    ${row("What the agent did", esc(c.agent_role))}
-    ${row("Agent", `<a class="meta-agent" href="${agentHref(c.platform)}">${dot(c.platform)}${esc(c.platform)}</a>`)}
-    ${row("Model", esc(c.model || "Not specified"))}
-    ${row("Tools", c.tools.length ? c.tools.map((t) => `<span class="chip">${esc(t)}</span>`).join(" ") : "")}
-    ${row("Evidence", esc(c.evidence))}
-    ${row("Difficulty", esc(c.difficulty))}
-    ${row("Tags", c.tags.map((t) => `<span class="chip">${esc(t)}</span>`).join(" "))}
-    ${row(
-      "Source",
-      `<a href="${esc(c.source.url)}" target="_blank" rel="noopener">${esc(c.source.name)} · ${esc(hostOf(c.source.url))}</a>${
-        c.source.author ? ` · ${esc(c.source.author)}` : ""
-      }${c.source.published ? ` · ${formatDate(c.source.published)}` : ""}`,
-    )}
-    ${row("Added", formatDate(c.added))}
-  </dl>
+  <p class="done-with">Done with <a class="agent-chip" href="${agentHref(c.platform)}">${badge(c.platform, "sm")}${esc(c.platform)}</a>${
+    c.model ? `<span class="model-note">${esc(c.model)}</span>` : ""
+  }</p>
+  <div class="writeup">
+    ${did ? `<h3 class="mono-label">What they did</h3>${para(did)}` : ""}
+    ${went ? `<h3 class="mono-label">How it went</h3>${para(went)}` : ""}
+    ${c.worth_knowing ? `<h3 class="mono-label">Worth knowing</h3>${para(c.worth_knowing)}` : ""}
+  </div>
+  ${
+    c.prompt
+      ? `<div class="try">
+    <div class="try-head"><p><b>Try it yourself</b>${named ? ` with ${esc(c.platform)}` : ""}</p><button type="button" class="btn-copy" data-copy-prompt="${esc(c.id)}">Copy prompt</button></div>
+    <pre class="prompt">${esc(c.prompt)}</pre>
+  </div>`
+      : ""
+  }
   <div class="detail-actions">
     <a class="btn-primary" href="${esc(c.source.url)}" target="_blank" rel="noopener">Read the original ${ICON.ext}</a>
-    <a class="btn-outline" href="${caseHref(c)}">Permalink</a>
-    <span class="share-wrap"><button type="button" class="btn-outline" data-share="${esc(c.id)}" aria-haspopup="menu" aria-expanded="false">Share</button></span>
+    <button type="button" class="btn-outline vote-wide" data-vote="${esc(c.id)}" aria-pressed="false">${ICON.up}<span>I want this</span><span class="vote-sep" data-vote-sep="${esc(c.id)}"> · </span><span data-vote-n="${esc(c.id)}"></span></button>
+    <button type="button" class="btn-outline save-wide" data-save="${esc(c.id)}" aria-pressed="false"><span>Save</span></button>
+    ${shareButton(c, "btn-outline")}
   </div>
-  <p class="fineprint">Summary written with AI assistance from the original post and checked against our
+  <p class="source-line">Source: <a href="${esc(c.source.url)}" target="_blank" rel="noopener">${esc(c.source.name)}</a>${
+    c.source.author ? ` · ${esc(c.source.author)}` : ""
+  }${date ? ` · ${date}` : ""}</p>
+  <p class="fineprint">Written with AI assistance from the original post and checked against our
   <a href="https://github.com/${esc(CONF.repo)}/blob/main/docs/editorial-guidelines.md">editorial guidelines</a>.
-  Outcomes are as reported by the source, not independently verified.</p>
+  Results are as reported by the source, not independently verified.</p>
 </article>`;
 }

@@ -96,6 +96,30 @@ kept in each visitor's browser only, and "Trending today" uses the editor's orde
 Allowed site origins are listed in `worker/wrangler.toml` (`ALLOWED_ORIGINS`). What is
 stored, and for how long, is described on the site's Privacy page.
 
+### Newsletter (the daily email)
+
+The sign-up form posts to the votes service, which passes the address to
+[Kit](https://kit.com) (free up to 10,000 subscribers, API included). Kit sends the
+"confirm your address" email, hosts the list and adds the unsubscribe link; we never
+store addresses. Every scheduled daily run then emails that day's best new use cases
+(up to 5) as a Kit broadcast. Until Kit is connected, the form says sign-ups open soon
+and points to the RSS feed.
+
+1. Create a Kit account and a form (any design; it is never shown on the site). In
+   the form's settings keep **double opt-in** on (Kit calls the confirmation message
+   the "incentive email"). The form's ID is the number in its URL in Kit.
+2. In **Settings → Developer**, create a **v4 API key**.
+3. Add two repository secrets: `KIT_API_KEY` (the key) and `KIT_FORM_ID` (the number).
+4. Actions → **Deploy votes service** → Run workflow. It hands both to the Worker; the
+   run summary says "Newsletter sign-ups connected to Kit".
+5. The daily email starts with the first scheduled run after launch (`SITE_LIVE`), and
+   only on scheduled runs, so every link already works. Each broadcast is tagged
+   `digest <date>` and is never sent twice for the same day.
+
+Set `newsletter.showCountFrom` in `config/site.json` to the subscriber count at which
+"Join N readers" appears under the form (100 by default). Set `newsletter.provider` to
+`""` to go back to a plain link to the RSS feed.
+
 ### Sponsors
 
 Paid placements live in `config/site.json`: `sponsors` (the bar along the bottom of

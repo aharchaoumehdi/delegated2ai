@@ -1,6 +1,6 @@
 name: Deploy votes service
 
-# Deploys worker/ (the "I want this" vote counter) to Cloudflare Workers + D1.
+# Deploys worker/ (votes, newsletter sign-ups, live stats) to Cloudflare Workers + D1.
 # Needs the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets; without
 # them the run explains what to add and stops. See docs/setup.md, "Votes".
 on:
@@ -18,6 +18,8 @@ jobs:
     env:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+      KIT_FORM_ID: ${{ secrets.KIT_FORM_ID }}
       WRANGLER: npx --yes wrangler@4
     defaults:
       run:
@@ -63,4 +65,15 @@ jobs:
         run: |
           if ! $WRANGLER secret list | grep -q '"SALT"'; then
             openssl rand -hex 32 | $WRANGLER secret put SALT
+          fi
+
+      - name: Connect the newsletter (Kit), when its secrets are set
+        if: steps.creds.outputs.ok == 'true'
+        run: |
+          if [ -n "$KIT_API_KEY" ] && [ -n "$KIT_FORM_ID" ]; then
+            printf '%s' "$KIT_API_KEY" | $WRANGLER secret put KIT_API_KEY
+            printf '%s' "$KIT_FORM_ID" | $WRANGLER secret put KIT_FORM_ID
+            echo "Newsletter sign-ups connected to Kit." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Newsletter sign-ups are off: add the KIT_API_KEY and KIT_FORM_ID repository secrets (docs/setup.md, \"Newsletter\") and re-run." >> "$GITHUB_STEP_SUMMARY"
           fi

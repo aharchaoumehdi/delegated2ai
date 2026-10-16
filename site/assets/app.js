@@ -358,12 +358,12 @@ async function loadStats() {
     const res = await fetch(`${API}/stats`);
     if (!res.ok) return;
     const st = await res.json();
-    document.querySelectorAll('[data-stat="votes24h"]').forEach((cell) => {
-      cell.querySelector("dd").textContent = Number(st.votes24h || 0).toLocaleString("en-US");
-      cell.hidden = false;
+    document.querySelectorAll('[data-stat="votes24h"]').forEach((el) => {
+      el.querySelector("b").textContent = Number(st.votes24h || 0).toLocaleString("en-US");
+      el.hidden = !st.votes24h;
     });
     if (st.subscribers >= (DATA.subCountFrom ?? 100))
-      document.querySelectorAll("[data-sub-count]").forEach((el) => (el.textContent = ` Join ${st.subscribers.toLocaleString("en-US")} readers.`));
+      document.querySelectorAll("[data-sub-count]").forEach((el) => (el.textContent = `Join ${st.subscribers.toLocaleString("en-US")} readers`));
   } catch {}
 }
 
@@ -404,6 +404,45 @@ document.addEventListener("submit", async (e) => {
 });
 if (new URLSearchParams(location.search).get("subscribed") === "1") toast("Check your inbox to confirm your subscription");
 
+// ---------- margin texture: a few grid cells that glow and fade ----------
+// Each cell fades in and out over 9 s; when it is fully faded it moves to another free cell
+// in the margins, so nothing ever jumps while visible. Skipped with reduced motion.
+function ambientGrid() {
+  const frame = $(".frame");
+  if (!frame || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const PITCH = 24, CELLS = 8, PERIOD = 9;
+  const layer = document.createElement("div");
+  layer.className = "grid-glow";
+  layer.setAttribute("aria-hidden", "true");
+  document.body.prepend(layer);
+  const place = (el) => {
+    const { left, right } = frame.getBoundingClientRect();
+    const cols = [];
+    for (let c = 0; (c + 1) * PITCH <= left - PITCH; c++) cols.push(c); // keep a cell clear of the frame
+    for (let c = Math.ceil((right + PITCH) / PITCH); (c + 1) * PITCH <= innerWidth; c++) cols.push(c);
+    const rows = Math.floor(innerHeight / PITCH);
+    el.hidden = !cols.length || !rows;
+    if (el.hidden) return;
+    const col = cols[Math.floor(Math.random() * cols.length)];
+    const row = Math.floor(Math.random() * rows);
+    el.style.transform = `translate(${col * PITCH + 2}px, ${row * PITCH + 2}px)`;
+  };
+  const cells = Array.from({ length: CELLS }, (_, i) => {
+    const el = document.createElement("span");
+    el.style.animationDelay = `${(i * PERIOD) / CELLS}s`;
+    el.addEventListener("animationiteration", () => place(el));
+    layer.append(el);
+    place(el);
+    return el;
+  });
+  let t;
+  addEventListener("resize", () => {
+    clearTimeout(t);
+    t = setTimeout(() => cells.forEach(place), 200);
+  });
+}
+
+ambientGrid();
 syncSaved();
 syncVotes();
 renderHome();

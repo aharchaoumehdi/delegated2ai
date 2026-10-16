@@ -60,9 +60,14 @@ small boost (+0.5).
 - **Title** (≤ 90 characters): outcome-led and specific. Say what was accomplished.
   Good: "Claude Code migrated a 40k-line Flask app to FastAPI in two days".
   Bad: "Amazing AI agent use case", "How I use Codex".
-- **Summary** (≤ 280 characters, 1–2 sentences): the problem, what the agent did,
-  and why it helped. Plain language for a curious non-specialist. No hype words
+- **Summary** (one sentence, at most 30 words): who did it, what the agent did, and how it
+  turned out. Lead with the person or the agent ("A founder had Claude Code…", "Manus
+  researched…"), name concrete things and numbers from the source, and skip background
+  and setup; the write-up carries the detail. Attribute results the way the source does
+  ("says", "reports"). Plain language for a curious non-specialist. No hype words
   ("revolutionary", "game-changing", "insane"). No emojis.
+  Good: "A Redditor pointed Claude at their tax folder; they say both returns came back in
+  15 minutes and matched TurboTax."
 - **Agent's role** (1–2 sentences): which steps the agent performed and where
   humans intervened.
 - **Outcome**: the reported result *attributed to its source*, e.g. "Author reports

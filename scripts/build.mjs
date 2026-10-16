@@ -13,6 +13,7 @@ import { join } from "node:path";
 import { loadCases, sortCases } from "./lib/cases.mjs";
 import { taxonomy } from "./lib/taxonomy.mjs";
 import { path, readJSON, today } from "./lib/util.mjs";
+import { pickDigest } from "./digest.mjs";
 import {
   configure, href, esc, formatDate, dayLabel, slug, badge, itemHTML, tileHTML, detailHTML, relatedHTML,
   trendingOrder, caseHref, agentHref, categoryHref, ICON,
@@ -51,9 +52,19 @@ const countBy = (key) => {
 const agentCounts = countBy("platform");
 const domainCounts = countBy("domain");
 const newest = cases.filter((c) => c.added === latestDay);
-// Posts the pipeline looked at on the latest day (every run's collection, before filtering).
-const latestLog = await readJSON(path("data", "runs", `${latestDay}.json`), null);
-const scanned = (latestLog?.runs || []).reduce((n, r) => n + (Number(r.collect?.raw) || 0), 0);
+// Daily issues: what the morning email sends for each day (scripts/digest.mjs picks them),
+// also published on the site as issues/<date>/, newest first.
+const issueDays = [...new Set(cases.map((c) => c.added))].sort().reverse();
+const pageCase = new Map(cases.map((c) => [c.id, c]));
+const issues = issueDays.map((day) => ({ day, list: pickDigest(all, day).map((c) => pageCase.get(c.id)) })).filter((i) => i.list.length);
+const issueHref = (day) => href(`issues/${day}/`);
+function latestIssueLink() {
+  const day = issues[0]?.day;
+  if (!day) return "";
+  const label = dayLabel(day, buildDay);
+  const which = label === "Today" ? "today's issue" : label === "Yesterday" ? "yesterday's issue" : "the latest issue";
+  return `<a href="${issueHref(day)}">See ${which}</a>`;
+}
 // Order used for "Trending today" before any votes exist: this week's finds first, best first.
 const trendingSeed = [...cases].sort(
   (a, b) => Number(b.added >= weekStart()) - Number(a.added >= weekStart()) || b.score - a.score || b.added.localeCompare(a.added),
@@ -67,15 +78,23 @@ const DIGEST_CTA = "Get 5 use cases every morning";
 // hands the address to Kit. Without a provider configured, the button links to the feed.
 const newsletterOn = site.newsletter?.provider === "kit";
 let formCount = 0;
-function subscribeForm(variant = "") {
-  if (!newsletterOn) return `<a class="btn-cta" href="${esc(digestHref)}">${DIGEST_CTA}</a>`;
-  const id = `sub-email-${++formCount}`;
-  return `<form class="subscribe${variant ? ` subscribe-${variant}` : ""}" method="post" action="${esc(votesApi ? `${votesApi}/subscribe` : "")}" data-subscribe>
-  <label class="sr-only" for="${id}">Email address</label>
-  <div class="sub-row"><input id="${id}" type="email" name="email" required autocomplete="email" placeholder="you@example.com"><button type="submit" class="btn-cta">${DIGEST_CTA}</button></div>
-  <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-  <p class="sub-note" role="status" data-sub-note>Free. One email a day, unsubscribe anytime.<span data-sub-count></span></p>
-</form>`;
+// The newsletter card: the one cyan-tinted panel on a page, so it stands out from the grey ones.
+function newsletterCard(variant = "side") {
+  const id = `sub-${++formCount}`;
+  const head = `<h2 id="${id}-h">${DIGEST_CTA}</h2>
+  <p class="news-lead">The best things people got an agent to do yesterday, each with the prompt. Free, one email a day.</p>`;
+  if (!newsletterOn)
+    return `<section class="news-card news-${variant}" aria-labelledby="${id}-h">${head}<a class="btn-cta" href="${esc(digestHref)}">Follow the RSS feed</a></section>`;
+  return `<section class="news-card news-${variant}" aria-labelledby="${id}-h">
+  ${head}
+  <form class="subscribe" method="post" action="${esc(votesApi ? `${votesApi}/subscribe` : "")}" data-subscribe>
+    <label class="sr-only" for="${id}">Email address</label>
+    <div class="sub-row"><input id="${id}" type="email" name="email" required autocomplete="email" placeholder="you@company.com"><button type="submit" class="btn-cta">Subscribe</button></div>
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="sub-note" role="status" data-sub-note></p>
+  </form>
+  <p class="news-foot"><span data-sub-count></span>${latestIssueLink()}</p>
+</section>`;
 }
 
 // ---------- shared fragments ----------
@@ -126,7 +145,7 @@ function head({ title, description, canonical, jsonld }) {
 <link rel="alternate" type="application/rss+xml" title="${esc(site.name)}: new use cases" href="${siteUrl}feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600&family=Funnel+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600&family=Funnel+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&text=${encodeURIComponent(site.name)}&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${base}assets/style.css">
 <script>try{var t=JSON.parse(localStorage.getItem("dlg.theme"));document.documentElement.dataset.theme=t==="light"?"light":"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
@@ -181,7 +200,7 @@ function sponsorBar() {
 }
 
 const footerLinks = () =>
-  `<nav class="foot-links"><a href="${href()}">All use cases</a><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("new/")}">New</a><a href="${siteUrl}feed.xml">RSS</a><a href="${href("about/")}">About</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>`;
+  `<nav class="foot-links"><a href="${href()}">All use cases</a><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("new/")}">New</a><a href="${href("issues/")}">Daily email</a><a href="${siteUrl}feed.xml">RSS</a><a href="${href("about/")}">About</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>`;
 
 function promoCard() {
   if (site.sponsor) {
@@ -199,10 +218,7 @@ function sidebar({ activeAgent, activeDomain } = {}) {
   return `<aside class="sidebar">
   <h1 class="brand"><a href="${href()}">${logo()}</a></h1>
   <p class="tagline">${esc(site.tagline)}</p>
-  <div class="side-ctas">
-    ${subscribeForm("side")}
-    <a class="btn-outline" href="${issueUrl("submit-use-case.yml")}">Submit a use case</a>
-  </div>
+  ${newsletterCard("side")}
   ${liveStats()}
   <button type="button" class="filter-toggle" data-filters aria-expanded="false">Filter <span>Agents · Categories</span></button>
   ${promoCard()}
@@ -222,7 +238,7 @@ function sidebar({ activeAgent, activeDomain } = {}) {
     <b>${plural(cases.length, "use case")}</b><br>
     Updated ${esc(formatDate(buildDay))}<br>
     Sources: the open web, X, Reddit, Hacker News, GitHub
-    <nav><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("about/")}">About</a><a href="${siteUrl}feed.xml">RSS feed</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>
+    <nav><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("issues/")}">Daily email</a><a href="${href("about/")}">About</a><a href="${siteUrl}feed.xml">RSS feed</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>
   </div>
 </aside>`;
 }
@@ -231,15 +247,18 @@ function sidebar({ activeAgent, activeDomain } = {}) {
 // "updated … ago" are filled in by app.js from the votes service and the build time.
 function liveStats() {
   const newLabel = dayLabel(latestDay, buildDay) === "Today" ? "New today" : `New ${dayLabel(latestDay, buildDay).toLowerCase()}`;
-  const cell = (label, value, attrs = "") => `<div class="stat"${attrs}><dt>${label}</dt><dd>${value}</dd></div>`;
+  const cell = (label, value) => `<div class="stat"><dt>${label}</dt><dd>${value}</dd></div>`;
+  const link = (url, n) => `<a href="${url}">${n}</a>`;
   return `<section class="stats" aria-label="Live numbers">
   <p class="stats-head"><span class="live-dot" aria-hidden="true"></span>Live<span class="updated" data-updated="${new Date().toISOString()}">Updated ${esc(formatDate(buildDay))}</span></p>
   <dl>
     ${cell("Use cases", cases.length.toLocaleString("en-US"))}
-    <div class="stat"><dt>${esc(newLabel)}</dt><dd><a href="${href("new/")}">${newest.length}</a></dd></div>
-    ${scanned ? cell("Posts scanned", scanned.toLocaleString("en-US")) : ""}
-    ${cell("Upvotes, 24h", "–", ' data-stat="votes24h" hidden')}
+    ${cell(esc(newLabel), link(href("new/"), newest.length))}
+    ${cell("Agents", link(href("agents/"), agentCounts.length))}
+    ${cell("Categories", link(href("topics/"), domainCounts.length))}
   </dl>
+  <p class="stats-votes" data-stat="votes24h" hidden><span aria-hidden="true">▲</span> <b>–</b> upvotes in the last 24 hours</p>
+  <div class="stats-submit"><p>Know a use case worth sharing?</p><a class="btn-outline" href="${issueUrl("submit-use-case.yml")}">Submit a use case</a></div>
 </section>`;
 }
 
@@ -438,7 +457,7 @@ function newPage() {
     list: cases,
     body: `<p class="eyebrow">New</p>
 <h1 class="page-title">New use cases, day by day</h1>
-<p class="page-lead">Found fresh every day across the web, checked, and summarised in two sentences. ${plural(newest.length, "use case")} added ${
+<p class="page-lead">Found fresh every day across the web, checked, and summed up in a sentence. ${plural(newest.length, "use case")} added ${
       dayLabel(latestDay, buildDay) === "Today" ? "today" : `on ${formatDate(latestDay)}`
     }.</p>
 ${body}`,
@@ -477,10 +496,42 @@ ${digestBox()}`,
 }
 
 function digestBox() {
-  return `<aside class="digest-box">
-  <div><h2>Get 5 like this every morning</h2><p>The best things people got an AI agent to do, each with the prompt to try it.</p></div>
-  ${subscribeForm("box")}
-</aside>`;
+  return newsletterCard("box");
+}
+
+// ---------- issues (the daily email, on the web) ----------
+function issuePage({ day, list }, i) {
+  const newer = issues[i - 1], older = issues[i + 1];
+  const nav = `<nav class="issue-nav">${older ? `<a href="${issueHref(older.day)}">← ${esc(formatDate(older.day))}</a>` : "<span></span>"}<a href="${href("issues/")}">All issues</a>${newer ? `<a href="${issueHref(newer.day)}">${esc(formatDate(newer.day))} →</a>` : "<span></span>"}</nav>`;
+  return narrowPage({
+    path: `issues/${day}/`,
+    title: `${formatDate(day)} issue: ${list.length} new AI agent use cases · ${site.name}`,
+    description: `The ${formatDate(day)} issue of the ${site.name} daily email: ${list.map((c) => c.title).join("; ")}.`,
+    list,
+    body: `<p class="eyebrow">Daily email · <a href="${href("issues/")}">Issues</a></p>
+<h1 class="page-title">${esc(formatDate(day))}</h1>
+<p class="page-lead">${plural(list.length, "new thing")} people handed to AI agents, as sent in that morning's email.</p>
+<ul class="items issue-items">${list.map((c) => itemHTML(c)).join("")}</ul>
+${nav}
+${digestBox()}`,
+  });
+}
+
+function issuesIndexPage() {
+  const rows = issues
+    .map(({ day, list }) => `<li class="issue-row"><a href="${issueHref(day)}">${esc(formatDate(day))}</a><span>${esc(list[0].title)}${list.length > 1 ? ` and ${list.length - 1} more` : ""}</span></li>`)
+    .join("");
+  return narrowPage({
+    path: "issues/",
+    title: `Daily email archive · ${site.name}`,
+    description: `Every issue of the ${site.name} daily email: the best new AI agent use cases each morning.`,
+    list: [],
+    body: `<p class="eyebrow">Daily email</p>
+<h1 class="page-title">Every issue</h1>
+<p class="page-lead">Each morning's email: the day's best new use cases, each with the prompt to try it.</p>
+<ul class="issue-rows">${rows}</ul>
+${digestBox()}`,
+  });
 }
 
 function topicsPage() {
@@ -602,6 +653,7 @@ ${items}
 const renderers = {
   "index.html": homePage,
   "new/index.html": newPage,
+  "issues/index.html": issuesIndexPage,
   "agents/index.html": agentsIndexPage,
   "topics/index.html": topicsPage,
   "about/index.html": aboutPage,
@@ -611,6 +663,7 @@ const renderers = {
 for (const [d] of domainCounts) renderers[`category/${slug(d)}/index.html`] = () => categoryPage(d);
 for (const [p] of agentCounts) renderers[`agents/${slug(p)}/index.html`] = () => agentPage(p);
 for (const c of cases) renderers[`use-case/${c.id}/index.html`] = () => casePage(c);
+issues.forEach((issue, i) => (renderers[`issues/${issue.day}/index.html`] = () => issuePage(issue, i)));
 renderers["404.html"] = () =>
   narrowPage({ path: "404.html", title: `Not found · ${site.name}`, description: site.description, list: [], body: `<h1 class="page-title">Page not found</h1><p class="page-lead"><a href="${href()}">Back to all use cases</a></p>` });
 

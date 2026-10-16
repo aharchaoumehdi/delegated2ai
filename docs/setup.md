@@ -72,6 +72,38 @@ never pay for a post and then discard it unread. Change `maxResults` (10-100) to
 more or less. Set a spending limit or turn off auto-recharge in the
 console if you want a hard cap.
 
+### Votes ("I want this" and the up arrow)
+
+Vote counts are shared through a small Cloudflare Worker with a D1 database
+(`worker/`), on Cloudflare's free plan. Until it is set up, votes still work but are
+kept in each visitor's browser only, and "Trending today" uses the editor's order.
+
+1. Create a free Cloudflare account, then an API token at
+   dash.cloudflare.com → My Profile → API Tokens → Create Token → "Edit Cloudflare
+   Workers" template, with **D1: Edit** added under Account permissions.
+2. Add the repository secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`
+   (the account ID is on the Workers & Pages overview page).
+3. Actions → **Deploy votes service** → Run workflow. It creates the database, deploys
+   the Worker and prints its URL in the run summary.
+4. Add that URL as the repository **variable** `VOTES_API`. The next deploy uses it.
+
+Allowed site origins are listed in `worker/wrangler.toml` (`ALLOWED_ORIGINS`). What is
+stored, and for how long, is described on the site's Privacy page.
+
+### Sponsors
+
+Paid placements live in `config/site.json`: `sponsors` (the bar along the bottom of
+every page: `{ "name", "text", "url", "abbr" }`) and `sponsor` (the sidebar card:
+`{ "name", "text", "url", "cta" }`). With none set, the bar shows our own digest and a
+"Your logo here" slot linking to the Sponsor page.
+
+### Write-ups
+
+Every entry has a write-up: what they did, how it went, what's worth knowing, and a
+prompt to try it. The curator writes it for new entries; `scripts/enrich.mjs` fills in
+any that are missing on each daily run. To backfill right away, run **Daily update &
+deploy** with "Only fill in missing write-ups" ticked.
+
 ## 4. Allow the workflow to push
 
 Settings → Actions → General → **Workflow permissions: Read and write permissions**.

@@ -107,6 +107,20 @@ kept in each visitor's browser only, and "Trending today" uses the editor's orde
 Allowed site origins are listed in `worker/wrangler.toml` (`ALLOWED_ORIGINS`). What is
 stored, and for how long, is described on the site's Privacy page.
 
+### Email addresses (hello@, sponsors@)
+
+`hello@delegatedto.ai` (the newsletter's sender, where replies land) and
+`sponsors@delegatedto.ai` (on the Sponsor page) forward to your own inbox through Cloudflare
+Email Routing (free). To set them up:
+
+1. Give `CLOUDFLARE_API_TOKEN` these extra permissions (Cloudflare → My Profile → API
+   Tokens → edit the token): Zone · Email Routing Rules · Edit, Zone · DNS · Edit,
+   Zone · Zone · Read, Account · Email Routing Addresses · Edit.
+2. Actions → **Set up email addresses** → Run workflow, with your inbox as the destination.
+3. Click the verification link Cloudflare emails to that inbox. Forwarding starts then.
+
+The workflow is safe to re-run; it only adds what is missing.
+
 ### Newsletter (the daily email)
 
 The sign-up form posts to the votes service, which passes the address to

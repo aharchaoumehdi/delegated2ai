@@ -1,0 +1,42 @@
+{
+  "id": "claude-code-and-codex-build-and-review-a-personal-booking",
+  "title": "Claude Code and Codex build and review a personal booking app overnight; live by Sunday",
+  "summary": "Instead of paying for a scheduling service, the author had Claude Code build a booking app and Codex review it overnight. The site went live the next day with Google Meet calls and a time picker.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "OpenAI Codex",
+    "Google Meet"
+  ],
+  "agent_role": "Claude Code built the app and Codex reviewed it while the author slept. The author came up with the idea and launched the site.",
+  "outcome": "Author reports going from idea on Saturday lunch to a live booking site by Sunday.",
+  "what_they_did": "The poster had the idea for his own booking app over lunch on a Saturday. He set Claude Code to build it and Codex to review it overnight while he slept. The result is a live page for booking 30-minute Google Meet calls.",
+  "how_it_went": "He says the app was live by Sunday and is now his public booking page.",
+  "worth_knowing": null,
+  "prompt": "Build me a simple booking web app: visitors pick a [30]-minute slot from my availability in [time zone], enter their details, and get a [Google Meet] invite. After building, review your own code for bugs and security issues, fix them, and write tests. Show me a summary and a local preview, and wait for my approval before deploying anything.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "scheduling",
+    "web app",
+    "code review",
+    "small business"
+  ],
+  "source": {
+    "url": "https://x.com/Explosion5000/status/2110407788769759655",
+    "name": "X",
+    "author": "@Explosion5000",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real overnight build-and-review loop with a live result, but it is a familiar agent-built-my-app story with few process details."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "teen-hands-a-truck-tire-purchase-to-an-ai-agent-which-finds",
+  "title": "Teen hands a truck-tire purchase to an AI agent, which finds tires and books the fitting",
+  "summary": "A father asked his son to buy tires for a 2011 Tundra. The son gave an AI agent some basic info, and it found suitable tires and booked the install appointment.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "web search",
+    "online booking"
+  ],
+  "agent_role": "The agent searched for the right tires and booked the service appointment. The son supplied the vehicle details and handed off the task.",
+  "outcome": "The father reports the agent found the tires and booked the appointment, and says his son would not have done it without the agent.",
+  "what_they_did": "A father told his son he needed to buy tires for the family's 2011 Toyota Tundra. The son gave an AI agent a little information about the truck and let it handle the job.",
+  "how_it_went": "The father says the agent found the tires and booked the fitting appointment. He is now looking for other errands his son could hand to the agent.",
+  "worth_knowing": null,
+  "prompt": "I need new tires for my [year make model], [tire size if known]. My budget is [budget] and I live near [your city]. Find 3 good tire options with prices and reviews. Then find nearby shops that can install them, and list their available times. Show me your recommendation and wait for my approval before buying anything or booking an appointment.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "car maintenance",
+    "shopping",
+    "appointment booking",
+    "errands"
+  ],
+  "source": {
+    "url": "https://x.com/mhp_guy/status/2110843596815647137",
+    "name": "X",
+    "author": "@mhp_guy",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real everyday errand with a clear agent role: it found tires and booked the install. Very thin on details, with no platform named, but it is a rarer daily-life example."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "resale-listing-tool-states-only-what-the-photo-proves-and",
+  "title": "Resale listing tool states only what the photo proves and blocks risky claims from publishing",
+  "summary": "AI listing writers guess brands, sizes and materials, which can get resellers refunded or banned. This open-source tool turns a photo into evidence-backed claims, prices the item from comparable sales, and blocks publishing until high-risk guesses are confirmed.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": "moondream2",
+  "tools": [
+    "moondream2 vision model",
+    "evidence ledger classifier",
+    "comparable sales pricing",
+    "FastAPI"
+  ],
+  "agent_role": "The system extracts per-attribute claims from a photo, classifies each by confidence and visual evidence, prices from comps or abstains, and gates publishing. The seller confirms any unverified attributes manually.",
+  "outcome": "Author reports that on a 7-item annotated benchmark, unsupported claims fell from 1.14 per listing to 0, while 96% of knowable attributes were kept.",
+  "what_they_did": "A developer built Honest Lister after a reseller had an item refunded because an AI tool wrongly called it leather. The tool asks an open-weight vision model, for each attribute, what it is, how confident it is and what in the photo shows it. A small classifier then marks each claim observed, inferred, unverified or contradicted. It prices the item from comparable sales or abstains, and refuses to publish while a high-risk claim is unresolved.",
+  "how_it_went": "The author reports cutting unsupported claims from 1.14 per listing to 0 and raising correct abstention from 47% to 100% on 7 annotated items. It kept 96% of the attributes that were genuinely knowable from the photo.",
+  "worth_knowing": "Running the 2B model on a laptop CPU took 285 seconds for a single query, so real inference needs a GPU. The hosted demo uses a deterministic backend.",
+  "prompt": "Look at this photo of a second-hand item I want to sell: [photo]. For each attribute (category, colour, condition, brand, size, material), tell me the value, your confidence, and what in the photo shows it. Treat brand, size and material as unverified unless a label or logo is clearly visible. Then do two things. First, draft a listing using only the well-supported attributes, hedging the uncertain ones. Second, list what I must confirm manually and which extra photo would settle each point. Suggest a price range only if you can find enough comparable sold listings, and tell me the sample size. Do not post anything.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "resale",
+    "listings",
+    "hallucination control",
+    "pricing"
+  ],
+  "source": {
+    "url": "https://dev.to/rudratosh/i-built-an-ai-that-writes-resale-listings-then-refuses-to-publish-the-ones-it-cant-prove-2i8a",
+    "name": "DEV Community",
+    "author": "Rudratosh Shastri",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A multi-step pipeline: vision claims, an evidence ledger, comparable-sales pricing and a publish gate. It comes with code, a demo and a small benchmark. It is closer to a structured LLM pipeline than an autonomous agent, and the benchmark covers only 7 items."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "obsidian-vault-serves-as-shared-memory-for-8-ai-agents-with",
+  "title": "Obsidian vault serves as shared memory for 8 AI agents, with a nightly cleanup agent",
+  "summary": "The author uses one Obsidian vault as shared memory for eight AI agents, including Claude Code and Codex. Each night an agent corrects outdated facts and links loose notes.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Obsidian",
+    "Claude Code",
+    "OpenAI Codex",
+    "Grok"
+  ],
+  "agent_role": "Agents read from and write to a shared notes vault. A scheduled agent fixes old facts and links unconnected notes every night.",
+  "outcome": "Author says the project is free and has over 4,700 stars; no other results are stated.",
+  "what_they_did": "The poster connected eight AI agents, including Claude Code, Codex and a Grok bot, to a single Obsidian vault that acts as their shared memory. An agent runs every night to fix outdated facts and link loose notes. A full manual is in a linked article.",
+  "how_it_went": null,
+  "worth_knowing": null,
+  "prompt": "Use my Obsidian vault at [vault path] as long-term memory. Every night, review notes changed in the last [N] days. Find facts that contradict newer notes and notes with no links. Propose fixes and new links as a list, and wait for my approval before you edit or delete anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "knowledge management",
+    "agent memory",
+    "obsidian",
+    "note maintenance"
+  ],
+  "source": {
+    "url": "https://x.com/eugeniu_ghelbur/status/2110437592885854617",
+    "name": "X",
+    "author": "@eugeniu_ghelbur",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine multi-agent setup with a nightly maintenance agent, but the post itself is thin and the details sit in a linked article not provided here."
+  }
+}

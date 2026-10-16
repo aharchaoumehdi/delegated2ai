@@ -1,0 +1,42 @@
+{
+  "id": "owner-s-bookkeeping-agent-cross-checks-books-bank-and-email",
+  "title": "Owner's bookkeeping agent cross-checks books, bank and email, finds a year of misfiled payments",
+  "summary": "A multi-company owner connected an agent to their accounting software and email. It reconciles bank statements against the books and flags mismatches, such as a year of contractor payments lumped into one account.",
+  "domain": "Finance",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "accounting software API",
+    "email API",
+    "bank statements"
+  ],
+  "agent_role": "The agent reads the accounting records, bank statements and email threads, flags discrepancies and answers financial questions. The owner reviews its findings.",
+  "outcome": "Author reports saving $12K per year compared with an outside bookkeeper.",
+  "what_they_did": "A business owner running more than one company built an agent connected by API to their accounting software and email. It goes through bank statements, the books and email threads, then reports where the numbers don't line up.",
+  "how_it_went": "The author says it found that a year of contractor payments had all been booked to one account, with marketing and landscaping mixed in with staff. They say it is rarely wrong and estimate $12K a year in savings.",
+  "worth_knowing": null,
+  "prompt": "Connect to my accounting software [tool name] and my bank statements for [period]. Reconcile them line by line. Flag duplicate vendor payments, transactions booked to the wrong account, and anything that doesn't match. Check related email threads in [mailbox] for context. Give me a list of findings with amounts and suggested corrections. Don't change any entries until I approve.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "bookkeeping",
+    "reconciliation",
+    "small business",
+    "accounting"
+  ],
+  "source": {
+    "url": "https://x.com/TheElliottSmith/status/2110437882871906325",
+    "name": "X",
+    "author": "@TheElliottSmith",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A practical small-business finance use with a concrete finding: a year of misbooked contractor payments. Tooling and setup details are thin, and the claims are self-reported."
+  }
+}

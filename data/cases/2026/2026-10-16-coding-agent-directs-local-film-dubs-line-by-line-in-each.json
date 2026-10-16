@@ -1,0 +1,45 @@
+{
+  "id": "coding-agent-directs-local-film-dubs-line-by-line-in-each",
+  "title": "Coding agent directs local film dubs line by line in each actor's own cloned voice",
+  "summary": "Many films and shows have no subtitles or dubs in a viewer's language. This repo lets Claude Code or Codex act as dubbing director: it casts lines, fixes transcripts, translates to fit timing and triages QA flags, while local models clone each actor's voice.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Whisper large-v3",
+    "OmniVoice",
+    "IndexTTS",
+    "Chatterbox",
+    "Mel-Band Roformer",
+    "ffmpeg"
+  ],
+  "agent_role": "The agent works out who says each line, corrects speech-recognition errors, writes translations timed to each actor, triages QA flags and re-renders problem lines. The human listens, judges acting and mix, and asks for fixes.",
+  "outcome": "Author reports watchable dubs, with a full movie in both voices taking about seven hours of machine time on a laptop RTX 4090.",
+  "what_they_did": "A developer spent weeks building scripts and an AGENTS.md so a coding agent such as Claude Code, Codex or Cursor can dub a video file. The pipeline splits the video, separates voices from music, transcribes with Whisper and two backup recognisers, and casts lines by voice matching and video frames. The agent then corrects, translates and times every line, and each take is cloned, re-timed, mixed and transcribed back for checking.",
+  "how_it_went": "The author shares demos of a Japanese anime and a Japanese film dubbed into English. A short clip takes minutes; a movie in both voices takes about seven hours of machine time on a laptop RTX 4090, or about half that with the actor's voice alone.",
+  "worth_knowing": "The agent can't hear, so you have to judge the voices and the mix yourself. A movie used about 85 GB of disk until cleanup. Only dub media you have rights to, and clone voices only with consent.",
+  "prompt": "Using the dub-anything repo and its AGENTS.md, dub [path to video file] from [source language] into [target language]. First confirm the setup is installed and ask me which voice option I want. Show me the cast list and any lines you are unsure about before rendering the full dub. When finished, give me the dubbed file and a list of timestamps I should listen to and check.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "video dubbing",
+    "voice cloning",
+    "translation",
+    "media"
+  ],
+  "source": {
+    "url": "https://github.com/swax/dub-anything",
+    "name": "Hacker News",
+    "author": "swax",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 8,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A novel use with real depth: a coding agent directs a full local dubbing pipeline line by line, including casting, translation timing and QA. It comes with code, demos, detailed docs and stated machine-time costs."
+  }
+}

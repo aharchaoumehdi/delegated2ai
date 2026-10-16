@@ -1,0 +1,42 @@
+{
+  "id": "devin-turns-production-failure-traces-into-evals-lifting-rox",
+  "title": "Devin turns production failure traces into evals, lifting Rox's coverage from 43% to 72%",
+  "summary": "Rox's team found their agents shipped faster than people could write tests. They set up Devin to pull failing production traces from Braintrust, recreate each failure in a preview environment and turn it into an eval case.",
+  "domain": "Software",
+  "platform": "Devin",
+  "model": null,
+  "tools": [
+    "Braintrust",
+    "preview environments",
+    "eval suite"
+  ],
+  "agent_role": "Devin pulls production traces, reproduces each failure in a preview environment and writes it up as an eval. The team designed the loop.",
+  "outcome": "The author reports eval suite coverage rising from 43% to 72%, and still climbing.",
+  "what_they_did": "Rox's applied AI team built a loop around Devin. Devin pulls production traces from Braintrust and rebuilds each failure in a preview environment. It then converts the failure into an eval for their agent test suite.",
+  "how_it_went": "The author says eval coverage went from 43% to 72% and is still growing.",
+  "worth_knowing": "The post gives no detail on how evals are reviewed or how flaky reproductions are handled. It is also partly a hiring announcement.",
+  "prompt": "Pull the last [number] failed traces from [observability tool, e.g. Braintrust] for [project]. For each one, reproduce the failure in a preview environment of [repo URL]. Then write an eval case that captures the expected correct behaviour, using our existing eval format in [eval folder]. Group duplicates together. Show me the list of proposed evals with the trace each came from, and wait for my approval before opening a PR.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "evals",
+    "test coverage",
+    "production traces",
+    "agent testing"
+  ],
+  "source": {
+    "url": "https://x.com/shriram_s/status/2110780063700619334",
+    "name": "X",
+    "author": "@shriram_s",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine and fairly original loop: Devin turns production failures into evals, with a reported coverage number. Evidence is a short post that is partly a hiring pitch, and there is little detail on setup."
+  }
+}

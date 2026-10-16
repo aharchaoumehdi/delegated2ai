@@ -1,0 +1,41 @@
+{
+  "id": "codex-and-tripo-cli-build-a-playable-3d-island-adventure",
+  "title": "Codex and Tripo CLI build a playable 3D island adventure game in under an hour",
+  "summary": "A creator connected the Tripo 3D-asset CLI to Codex. GPT-6 Astra built a playable island game, swapped rough placeholders for generated, rigged and animated models, then polished lighting and camera, all in under an hour.",
+  "domain": "Creative",
+  "platform": "OpenAI Codex",
+  "model": "GPT-6 Astra",
+  "tools": [
+    "Codex",
+    "Tripo CLI"
+  ],
+  "agent_role": "The agent built the prototype, used Tripo to generate, rig and animate 3D assets, integrated them, and polished lighting, movement, camera and the finale. The human set the creative brief and directed each phase.",
+  "outcome": "Author reports the playable game, LUMEN ISLES, was built in under an hour, shown in a video.",
+  "what_they_did": "The creator asked GPT-6 Astra for a small, cozy island adventure with a lighthouse, cottages and lanterns. Tripo CLI was connected to Codex. Astra first built a playable prototype with rough placeholder models. Tripo then generated the 3D assets and rigged and animated the main character, and Astra integrated everything and polished lighting, movement, camera and a lighthouse finale.",
+  "how_it_went": "The author says the result, LUMEN ISLES, is playable and was made in under an hour, and shows it in a video.",
+  "worth_knowing": "Building the playable prototype first with placeholder models, then swapping in generated assets, kept the workflow simple.",
+  "prompt": "Using the Tripo CLI connected to this environment, build a small playable 3D game: [describe the world, e.g. a cozy island with a lighthouse and cottages]. First make a working prototype with simple placeholder models and show it to me. Once I approve, use Tripo to generate the 3D assets, rig and animate the main character, and replace the placeholders. Then integrate everything and polish lighting, movement and camera. End with [finale idea]. Summarize what you built and how to run it.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "game development",
+    "3d assets",
+    "prototyping",
+    "asset generation"
+  ],
+  "source": {
+    "url": "https://x.com/TokenGremlin/status/2110756756200587414",
+    "name": "X",
+    "author": "@TokenGremlin",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A clear multi-step workflow combining a coding agent with a 3D-asset CLI to produce a playable game, shown in a demo video. The steps are only lightly detailed."
+  }
+}

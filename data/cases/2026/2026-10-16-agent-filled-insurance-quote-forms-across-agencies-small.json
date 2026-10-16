@@ -1,0 +1,41 @@
+{
+  "id": "agent-filled-insurance-quote-forms-across-agencies-small",
+  "title": "Agent filled insurance quote forms across agencies; small agency got cyber cover same day",
+  "summary": "Turned down by local brokers, a marketing-agency owner had an AI agent fill in tech and cyber insurance quote forms across many agencies; one called back within a minute and he had coverage by day's end.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "web forms",
+    "email"
+  ],
+  "agent_role": "The agent submitted the owner's details to multiple agency quote forms; the owner then spoke with the responding agency and an underwriter.",
+  "outcome": "Author reports most agencies never called, one called within a minute, and he had coverage by the end of the day.",
+  "what_they_did": "The author needed tech and cyber coverage for his small, mostly remote marketing agency after local brokers declined. He had an AI agent go out and fill in quote forms at multiple agencies. He then took the calls and did a screen share with an underwriter himself.",
+  "how_it_went": "He says most agencies never called, but one called within a minute, followed up 20 minutes later, and he had coverage the same day.",
+  "worth_knowing": "The agent applied for the wrong product: the underwriter found he had accidentally requested D&O coverage he didn't need. Check what the agent submits.",
+  "prompt": "I need a quote for [type of insurance, e.g. tech and cyber liability] for my business, [business description, size, location]. Find [number] reputable agencies or carriers that offer this coverage for businesses like mine and list them with links. Then draft the information you'd submit on each quote form, showing exactly which coverage types you'll select. Wait for my approval before submitting any form, and don't apply for any coverage I haven't confirmed. Afterwards, give me a tracker of where you submitted and any responses.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "insurance quotes",
+    "form filling",
+    "small business",
+    "comparison shopping"
+  ],
+  "source": {
+    "url": "https://x.com/BrandonDendas/status/2110735832738853096",
+    "name": "X",
+    "author": "@BrandonDendas",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real case of an agent filling out business insurance quote forms across agencies leading to same-day coverage, but the post is mostly sales advice for agents and gives no tool or setup details."
+  }
+}

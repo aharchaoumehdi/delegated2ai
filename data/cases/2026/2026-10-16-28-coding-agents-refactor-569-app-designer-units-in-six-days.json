@@ -1,0 +1,45 @@
+{
+  "id": "28-coding-agents-refactor-569-app-designer-units-in-six-days",
+  "title": "28 coding agents refactor 569 app-designer units in six days, verified by 12,074 tests",
+  "summary": "GoodBarber's CTO ran up to 20 parallel coding agents to move an app designer's settings logic into documented functions behind a new API. Layered checks proved nothing changed for users, while the CTO answered agents' framed questions from a dashboard.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "git worktrees",
+    "headless browser",
+    "task queue",
+    "dashboard",
+    "dev deployments"
+  ],
+  "agent_role": "Worker agents pulled units from a queue, refactored them on their own branches and ran equivalence checks. A single integrator agent merged and deployed in batches. The CTO designed the process for two weeks, answered 88 escalated questions and reviewed 185 precedent decisions; merging to production stayed a human step.",
+  "outcome": "Author reports 964 hours of agent session time, more than 6,000 commits and 717 dev deployments. 445 units were completed and a final campaign of 12,074 cases found 0 gaps.",
+  "what_they_did": "GoodBarber's CTO spent two weeks designing the refactor with Claude Opus 5.5 and about 200 sub-agents. He then ran an autonomous loop: 28 worker agents, up to 20 at once, plus one integrator that alone could merge and deploy. A shared protocol file in git, a queue and a dashboard coordinated the agents. Checks compared app state before and after each change, including undo and redo, and confirmed the new API matched the UI.",
+  "how_it_went": "He reports 569 units (445 done, 124 dropped or merged) finished in six days, with 0 gaps across 12,074 final cases. He followed the agents' recommendation on 47 of 59 questions, and validated 166 of 185 precedent decisions while rejecting 19. One overnight run completed 173 units in 11 hours.",
+  "worth_knowing": "The human cost was decision fatigue, not hours: the questions arrived all day and piled up, once 63 in an hour. Ten of the 19 rejected precedents involved an agent excluding something that resisted it.",
+  "prompt": "Help me plan a parallel agent refactor of [codebase/module]. First, propose how to split the work into independent units and define 'done' as automated equivalence checks: before/after state snapshots, an exact undo, and parity between the API and the UI. Design a queue in which workers each use their own branch and worktree, plus one integrator that batches merges to [dev environment]. When a worker hits a decision it cannot make alone, it should post a question with 2-3 options, their costs and a recommendation, then move on to the next unit. Show me the plan and the protocol file, and wait for my approval before running any workers or deploying.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "multi-agent",
+    "refactoring",
+    "orchestration",
+    "verification",
+    "human in the loop"
+  ],
+  "source": {
+    "url": "https://dev.to/dsiacci/964-hours-of-agent-work-in-six-days-heres-where-my-own-hours-went-13oc",
+    "name": "DEV Community",
+    "author": "Dominique Siacci",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 8.5,
+  "featured": true,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An exceptionally detailed account of a 28-agent refactor with hard numbers, the orchestration protocol, verification checks and a candid look at the human decision load. It is novel and well-evidenced."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "hobbyist-has-an-ai-agent-set-up-a-home-lte-network-with",
+  "title": "Hobbyist has an AI agent set up a home LTE network with Open5GS and a $7.50 femtocell",
+  "summary": "A PhD student wanted a home lab cellular network for security and bufferbloat experiments. Using a second-hand LTE femtocell and a cheap programmable eSIM, he had an AI agent set up the Open5GS core almost in one shot.",
+  "domain": "Science",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Open5GS",
+    "LTE femtocell",
+    "SGP.26 eUICC"
+  ],
+  "agent_role": "The agent configured the Open5GS core to work with the femtocell; the human sourced the hardware and chose the setup.",
+  "outcome": "Author reports the agent set up Open5GS with his LTE femto 'in almost one shot'.",
+  "what_they_did": "The poster, a networking hobbyist, bought an LTE Band 40 femtocell for about 50 CNY and an SGP.26 eUICC for 80 CNY. He then used an AI agent to set up the open-source Open5GS core network with the femtocell. He plans to use it to probe phone IMS security and test TCP BBR against cellular bufferbloat.",
+  "how_it_went": "He says the setup worked almost in one shot and that agents let him explore areas outside his PhD at low time cost.",
+  "worth_knowing": null,
+  "prompt": "Help me set up a private LTE network in my home lab using Open5GS. My hardware: [femtocell model and band], a programmable eSIM/eUICC [model], and a Linux machine [OS version]. First, check what Open5GS components and config are needed, list the network parameters (PLMN, TAC, frequencies) and how to write the SIM profile, and show me the plan. Wait for my approval before installing packages, writing to the SIM, or transmitting on any band, and remind me to confirm the band is legal to use in [country].",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "cellular network",
+    "home lab",
+    "open5gs",
+    "network research"
+  ],
+  "source": {
+    "url": "https://x.com/yangyuc/status/2110650630494933009",
+    "name": "X",
+    "author": "@yangyuc",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An unusual hobbyist use: an AI agent configured an Open5GS LTE core with a cheap femtocell and eUICC almost in one shot. The agent's steps and tools are barely described."
+  }
+}

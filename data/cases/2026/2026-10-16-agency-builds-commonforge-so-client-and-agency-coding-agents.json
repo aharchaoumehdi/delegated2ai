@@ -1,0 +1,41 @@
+{
+  "id": "agency-builds-commonforge-so-client-and-agency-coding-agents",
+  "title": "Agency builds CommonForge so client and agency coding agents can work on one app safely",
+  "summary": "Clients began sending an agency software they built with AI and wanted their own agents to keep working on it. The agency built an open-source system that isolates each task's code, blocks backend access, and gates changes through staging.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Cloudflare Artifacts",
+    "Git"
+  ],
+  "agent_role": "Client and agency coding agents make changes in parallel in per-task repos; the system catches conflicts and holds changes in staging until they are cleared before production.",
+  "outcome": "Author says it is open source (MIT) and deploys into your own Cloudflare account with one script; no usage results stated.",
+  "what_they_did": "An agency owner whose clients now build working software with AI built CommonForge so client agents and agency agents can work on the same app. Each task gets its own Git repos on Cloudflare Artifacts holding only the code it needs. Client credentials can't reach the agency backend. Every change goes through staging before production.",
+  "how_it_went": "The author shares an 8-minute demo and says the tool is MIT-licensed and deploys with one script. No metrics are given.",
+  "worth_knowing": "The design limits each agent to only the code a task needs and keeps client agents off the backend, which is the main safety idea to borrow.",
+  "prompt": "Help me set up a workflow where outside contributors' coding agents and my own agents can work on [project] in parallel. Propose a structure where each task gets its own repo or branch containing only the code it needs, outside credentials cannot reach [backend services], conflicts are detected before merge, and every change deploys to staging first. Show me the plan and any access changes before applying them, and never deploy to production without my approval.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "multi-agent coding",
+    "access control",
+    "agency workflow",
+    "staging"
+  ],
+  "source": {
+    "url": "https://x.com/TheDustinRandle/status/2110576756990054486",
+    "name": "X",
+    "author": "@TheDustinRandle",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real agency problem — client and agency coding agents working on the same app — solved with an open-source setup and a demo, but the post mostly lists features and gives no results."
+  }
+}

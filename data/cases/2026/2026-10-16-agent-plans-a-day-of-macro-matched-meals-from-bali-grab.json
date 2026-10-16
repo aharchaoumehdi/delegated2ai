@@ -1,0 +1,41 @@
+{
+  "id": "agent-plans-a-day-of-macro-matched-meals-from-bali-grab",
+  "title": "Agent plans a day of macro-matched meals from Bali Grab menus and orders them",
+  "summary": "The poster gives an agent macro targets, a budget and preferred ingredients. It scans Grab food menus in Bali, builds a day's meal plan and places the orders, so the poster only has to meet the courier.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Grab (reverse-engineered)",
+    "food delivery menus"
+  ],
+  "agent_role": "The agent searches restaurant menus, picks meals that fit the macros and budget, and places the delivery orders. The human sets the targets and receives the food.",
+  "outcome": "Author reports the agent runs his whole day of food and he only meets the courier.",
+  "what_they_did": "The poster reverse engineered the Grab food delivery app so an AI agent could use it. He gives the agent his macros, budget and ingredients. The agent scans menus across Bali, builds a meal plan for the day and places the orders. He shared a video demo.",
+  "how_it_went": "The author says the agent now handles his whole day of food, and his only job is meeting the courier.",
+  "worth_knowing": null,
+  "prompt": "Help me plan a day of food delivery that fits my goals. My targets: [daily calories and protein/carb/fat grams], budget [amount], preferred ingredients [list], area [your city]. Search the menus on [delivery app] near me, pick breakfast, lunch and dinner that best fit the macros and budget, and show me a table with each dish, restaurant, estimated macros and price. Wait for my approval before placing any order or spending money.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "meal planning",
+    "food delivery",
+    "nutrition",
+    "macros"
+  ],
+  "source": {
+    "url": "https://x.com/kairox36/status/2110427140378509446",
+    "name": "X",
+    "author": "@kairox36",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-step daily-life agent that plans meals against macros and budget and places Grab orders, backed by a video demo. Details are very thin: no tools, model, or method for the reverse-engineered Grab access."
+  }
+}

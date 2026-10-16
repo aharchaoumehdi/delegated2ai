@@ -1,0 +1,42 @@
+{
+  "id": "phone-agent-rebooks-a-full-garage-spot-then-wins-the-parking",
+  "title": "Phone agent rebooks a full garage spot, then wins the parking refund using an email receipt",
+  "summary": "A pre-booked garage turned the author away minutes before a Broadway show. Their AI agent booked and paid for a nearby spot, requested a refund from the parking app, and sent the receipt from email as proof when asked.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "parking app",
+    "email",
+    "payments"
+  ],
+  "agent_role": "The agent found and paid for a replacement spot, filed the refund request, and pulled the receipt from email to answer the app's proof request. The human only opened the agent and made the initial ask.",
+  "outcome": "Author reports the new spot was booked within two minutes and the refund arrived three days later, with no typing on their part.",
+  "what_they_did": "The poster had pre-booked parking for a Broadway show, but the garage was full on arrival. They opened an AI agent on their phone, which booked and paid for a spot a few blocks away. During the show it asked the parking app for a refund. When the app asked for proof of parking elsewhere, it found the new receipt in their email and sent it.",
+  "how_it_went": "The author says the replacement spot took about two minutes. The refund came through three days later, and they say they didn't type a word.",
+  "worth_knowing": "The post does not name the agent or explain how it was connected to payments and email. Giving an agent that kind of access is what made the hands-off refund possible.",
+  "prompt": "The parking I booked at [garage name] for [date/time] fell through. Find available parking within [distance] of [destination] for [duration] under [budget]. Show me the top 3 options and wait for my approval before booking or paying. After I park, draft a refund request to [original parking app] explaining the garage was full. If they ask for proof, find the new parking receipt in my email and show me the reply before sending it.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "parking",
+    "refunds",
+    "errands",
+    "customer support"
+  ],
+  "source": {
+    "url": "https://x.com/theonlyhaitham/status/2110377623540949077",
+    "name": "X",
+    "author": "@theonlyhaitham",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine multi-step daily-life errand: the agent rebooked parking, filed a refund claim and answered a proof request using an emailed receipt. It is a short first-hand anecdote with no named product or setup details; daily-life boost applied."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "codex-skill-upgrades-three-angular-projects-to-v22-including",
+  "title": "Codex skill upgrades three Angular projects to v22, including a three-version jump",
+  "summary": "A maintainer who kept postponing Angular upgrades built a Codex skill that branches, runs migrations, updates dependencies and validates with a clean install. It upgraded three open-source projects, and all three PRs were merged.",
+  "domain": "Software",
+  "platform": "OpenAI Codex",
+  "model": null,
+  "tools": [
+    "Angular CLI",
+    "npm",
+    "Git",
+    "GitHub CI"
+  ],
+  "agent_role": "Codex generated the skill and then ran the upgrades: branch, migrations, dependency updates and build validation. The author fixed the skill after CI and npm-publishing failures and tested the results.",
+  "outcome": "The author reports three upgrades merged (two 21→22, one 19→22) in one week. The skill was trimmed from 1,252 to 701 words.",
+  "what_they_did": "A developer had Codex write an Angular Update Skill. The skill follows the official update guide, creates a branch, handles migrations and dependencies, and validates the build. When CI failed on npm ci and npm publishing failed on Node/npm versions, he added a clean-install check and version rules. He then ran it on three open-source projects.",
+  "how_it_went": "He says all three upgrades were merged, including a 19→22 upgrade and a PrimeNG-to-Optimus UI swap. He finally finished upgrades in one week instead of postponing them.",
+  "worth_knowing": "The first version worked locally but broke CI because it never tested a clean install. Run npm ci from a fresh copy before calling an upgrade done.",
+  "prompt": "Upgrade the Angular project in [repo path] from version [current] to [target]. Follow the official Angular Update Guide one major version at a time. Create a new git branch first. Run ng update migrations and update dependencies. Then verify with npm ci in a clean copy without node_modules, plus a production build and the tests. Make sure the Node.js and npm versions meet [publishing or CI requirements]. Summarize every change and any manual follow-ups. Wait for my approval before pushing or opening a PR.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "angular",
+    "dependency upgrades",
+    "agent skills",
+    "ci"
+  ],
+  "source": {
+    "url": "https://dev.to/gramli/i-vibe-coded-my-way-out-of-angular-upgrades-4fkh",
+    "name": "DEV Community",
+    "author": "Daniel Balcarek",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, reproducible Codex skill used on three real projects with merged PRs, including a 19-to-22 jump across three major versions. The write-up of each real failure and fix is useful, though the domain is coding."
+  }
+}

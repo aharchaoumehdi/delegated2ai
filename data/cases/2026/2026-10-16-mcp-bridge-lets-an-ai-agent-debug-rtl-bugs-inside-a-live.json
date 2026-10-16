@@ -1,0 +1,44 @@
+{
+  "id": "mcp-bridge-lets-an-ai-agent-debug-rtl-bugs-inside-a-live",
+  "title": "MCP bridge lets an AI agent debug RTL bugs inside a live Synopsys Verdi session",
+  "summary": "Hardware engineers debug failing simulations by hand in waveform viewers. Verdi Bridge gives an agent 18 MCP tools to find signals, inspect transitions and trace drivers to RTL source, all visible in the engineer's own Verdi GUI.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Synopsys Verdi",
+    "MCP",
+    "nWave",
+    "nTrace",
+    "SSH"
+  ],
+  "agent_role": "The agent picks signals, moves the cursor around error times, reads value changes and follows drivers into RTL source. The human gives the debugging question and watches in the GUI; the bridge does not edit or repair RTL.",
+  "outcome": "The author reports testing with UART TX, AXI-Lite, FIFO and arbiter RTL in licensed VCS/Verdi sessions, on FSDBs up to 2.7 GB.",
+  "what_they_did": "A developer built an MCP server that connects an AI agent to a live Synopsys Verdi session, locally or over SSH. They asked an agent in natural language to investigate bugs, such as why a FIFO full flag stayed high. The agent added signals, jumped to before the error, inspected waveforms and navigated to the driving RTL.",
+  "how_it_went": "The author shares a 1m38s demo in which the agent, not a replay script, chooses its tool calls. They report it worked on several real RTL designs and include a blind debugging trial.",
+  "worth_knowing": "It is experimental (v0.3.3) and needs a licensed Verdi install. Attaching to an arbitrary existing GUI session is not yet separately validated.",
+  "prompt": "Using the Verdi Bridge MCP tools connected to my Verdi session for [design name], investigate [describe failure, e.g. why signal X stayed high]. Read the simulation log to find the error time. Add the relevant signals, set the cursor [N] cycles before the error, and inspect their transitions. Trace the drivers of the suspicious signal into the RTL source. Report your findings with times, signal values and file/line references. Do not modify any RTL.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "hardware verification",
+    "rtl debugging",
+    "waveforms",
+    "eda"
+  ],
+  "source": {
+    "url": "https://github.com/RuihongY/verdi_bridge",
+    "name": "GitHub",
+    "author": "RuihongY",
+    "published": "2026-10-13"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Unusual domain (chip verification), with a recorded demo of an agent choosing signals and tracing RTL in a live Verdi session. It is still mainly a tool README with limited outcome detail, and the validation is self-reported."
+  }
+}

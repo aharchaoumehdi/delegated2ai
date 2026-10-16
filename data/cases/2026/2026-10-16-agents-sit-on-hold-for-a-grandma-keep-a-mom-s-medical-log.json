@@ -1,0 +1,45 @@
+{
+  "id": "agents-sit-on-hold-for-a-grandma-keep-a-mom-s-medical-log",
+  "title": "Agents sit on hold for a grandma, keep a mom's medical log and watch parents' accounts",
+  "summary": "A roundup of three people who set up Grok Bot agents for elderly relatives: one booked a clinic appointment and cut a cable bill, one logs medical data into a spreadsheet for the doctor, one monitors bank activity.",
+  "domain": "Daily life",
+  "platform": "Grok Bot",
+  "model": null,
+  "tools": [
+    "phone calls",
+    "text messages",
+    "spreadsheet",
+    "email",
+    "bank account links"
+  ],
+  "agent_role": "The agents placed calls and waited on hold, collected health entries by text and built a spreadsheet, and monitored linked accounts to email reports; family members set the rules and approved money matters.",
+  "outcome": "Per the roundup, one agent waited 41 minutes on hold to book a clinic appointment and got a cable bill cut from $89 to $54 a month.",
+  "what_they_did": "The poster collects three cases. One grandson had an agent call his grandmother's clinic, cable company and pharmacy, with rules like one task per call and confirmations to his number. Another set up an agent that turns his mom's texts about meals, readings and meds into a spreadsheet emailed to her doctor. A third linked his parents' banks and cards to an agent that emails him and his brother updates and flags abnormal activity.",
+  "how_it_went": "The roundup says the call agent sat on hold 41 minutes to book the appointment and lowered the cable bill from $89 to $54 for the same channels. The nurse reportedly thought the medical log was science fiction.",
+  "worth_knowing": "The grandson's guardrails are the useful part: one task per call, never call family, nothing involving money without his approval, and confirmations go to him rather than the parent.",
+  "prompt": "Help me take one recurring chore off [parent's name]'s plate: [e.g. booking a clinic appointment / keeping a daily log of meals, readings and meds / reviewing their bank activity]. First propose a plan: what you will do, what information you need from me, and how you'll report back. Rules: handle one task at a time, never contact other family members, send all confirmations to [my phone or email], and do not agree to any payment, plan change or money movement without my explicit approval. For logging, ask for any missing fields and keep a spreadsheet I can share with [doctor's office]. Wait for my approval before making any call or sending anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "eldercare",
+    "phone calls",
+    "health log",
+    "bill negotiation",
+    "finance monitoring"
+  ],
+  "source": {
+    "url": "https://x.com/p_kuperman/status/2110388094637604963",
+    "name": "X",
+    "author": "@p_kuperman (roundup of @ventry089, @thenovelninja, @ryskco)",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Three concrete eldercare uses (phone calls on hold, a medical diary, finance monitoring) with some numbers and sensible guardrails, but it is a roundup of other people's posts with thin setup detail. Small boost for a daily-life domain."
+  }
+}

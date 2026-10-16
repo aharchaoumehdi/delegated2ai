@@ -1,0 +1,42 @@
+{
+  "id": "two-grok-bots-build-enrich-and-dedupe-sales-leads-into-a",
+  "title": "Two Grok bots build, enrich and dedupe sales leads into a master spreadsheet",
+  "summary": "A small-business owner runs two Grok bots: one finds and enriches leads with Apollo and Quickenrich, the other merges them into a master spreadsheet with deduplication. Spending needs his approval, freeing his time for client calls.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": "Grok",
+  "tools": [
+    "Apollo",
+    "Quickenrich",
+    "Spreadsheets"
+  ],
+  "agent_role": "One bot scouts and enriches leads and dedupes them; a second updates a master sheet in a set structure. The owner approves all spend, such as unlocking phone numbers.",
+  "outcome": "Author reports the process saved him many hours so he can focus on calling and serving clients; no figures given.",
+  "what_they_did": "The poster runs two Grok bots on lead generation. The first scouts leads in Apollo, waits for approval, unlocks mobile numbers via Quickenrich, and hard-dedupes. The second writes results into a master spreadsheet following a fixed structure and dedupes again. He approves all spending and keeps the bots to small batches.",
+  "how_it_went": "The author says the process has given him back many hours to spend calling and fulfilling for clients. No numbers are given.",
+  "worth_knowing": "He found errors increase when the bots pull from a massive list, so he keeps batches small and never lets them spend without his approval.",
+  "prompt": "Help me build a lead list for [target industry] in [region]. In small batches of [batch size], search [Apollo or my lead source] for matching contacts, show me the list, and wait for my approval before unlocking any paid contact data. Then enrich approved leads, remove duplicates against my master spreadsheet [sheet link], and add new rows using these columns: [column list]. Report how many were added and skipped as duplicates. Never spend credits without my explicit approval.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "lead generation",
+    "data enrichment",
+    "deduplication",
+    "sales"
+  ],
+  "source": {
+    "url": "https://x.com/MrrDistribution/status/2110487089922076985",
+    "name": "X",
+    "author": "@MrrDistribution",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine small-business two-agent lead pipeline with useful guardrails (spend approval, small batches, dedupe), though lightly evidenced with no numbers."
+  }
+}

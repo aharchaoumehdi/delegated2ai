@@ -1,0 +1,42 @@
+{
+  "id": "chatgpt-agent-haggles-a-tv-down-190-in-a-dutch-retailer-s",
+  "title": "ChatGPT agent haggles a TV down €190 in a Dutch retailer's live chat",
+  "summary": "A shopper had ChatGPT agent negotiate an LG OLED TV price in a retailer's live chat. It got a €939 delivered offer, down from €1,129, but missed the €935 target by €4.",
+  "domain": "Daily life",
+  "platform": "ChatGPT Agent",
+  "model": null,
+  "tools": [
+    "web browser",
+    "retailer live chat",
+    "email"
+  ],
+  "agent_role": "The agent ran the Dutch live-chat negotiation, waited through delays and handled several representatives. It cited earlier and competitor offers and declined upsells. The human set the price ceiling and kept the final purchase decision.",
+  "outcome": "The author reports a €939 delivered offer with an emailed order link, €190 below the starting price but €4 above the €935 ceiling. No paid receipt is reported.",
+  "what_they_did": "Reddit user u/TRNC_NL wanted an LG OLED55C46LA TV advertised at €1,129. They told ChatGPT agent to open the retailer's website chat and negotiate to €935 or less including shipping, staying polite and keeping the chat open. The agent negotiated in Dutch, dealt with multiple representatives, referenced competitor prices and an earlier offer, and turned down upsells.",
+  "how_it_went": "The author says the chat produced a €939 price including delivery and an order link by email. That is €190 below the start, but €4 over the target.",
+  "worth_knowing": "Commenters disputed whether the deal was competitive, and the author valued local service and warranty. Compare the final offer with other sellers before you use the order link.",
+  "prompt": "Go to [retailer website], open the live chat, and negotiate the price of [exact product model] down to [your price ceiling] or less, including shipping. Stay polite and keep the chat open through delays or changes of representative. You may mention competitor prices you can verify. Decline any upsells or bundles. Do not place an order or enter payment details. When you get a final offer, report the price, what it includes, and any order link, then wait for my decision.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "price negotiation",
+    "shopping",
+    "live chat",
+    "electronics"
+  ],
+  "source": {
+    "url": "https://x.com/agentsinuse/status/2110892794055213092",
+    "name": "X",
+    "author": "u/TRNC_NL",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine, specific multi-step negotiation in a retailer's live chat with clear numbers and the original prompt. The post is an aggregator write-up of a Reddit account by u/TRNC_NL rather than the original, so the score is lowered; it gets a small daily-life boost."
+  }
+}

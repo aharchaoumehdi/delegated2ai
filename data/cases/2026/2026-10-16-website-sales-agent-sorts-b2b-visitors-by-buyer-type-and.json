@@ -1,0 +1,42 @@
+{
+  "id": "website-sales-agent-sorts-b2b-visitors-by-buyer-type-and",
+  "title": "Website sales agent sorts B2B visitors by buyer type and books qualified meetings itself",
+  "summary": "Agency Boldest built a sales agent for B2B software company Delectable. It classifies website visitors by the questions they ask and books a Calendly meeting with qualified leads without sales staff stepping in.",
+  "domain": "Marketing",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Calendly",
+    "website chat",
+    "Pathfinder"
+  ],
+  "agent_role": "The agent answers visitor questions, sorts visitors into buyer types using a structured sales method, and books meetings for qualified leads. The sales team only takes the booked meetings.",
+  "outcome": "Boldest's co-founder says the agent books qualified meetings without sales involvement. The interviewer notes no conversion figures were given.",
+  "what_they_did": "Boldest built a website sales agent for Delectable, trained on the product and a structured sales method. It sorts visitors into buyer types based on their questions. When a visitor qualifies, it books a meeting in Calendly with no salesperson involved. It runs on Pathfinder, Boldest's in-house platform. This account comes from an interview with co-founder Keith Pires, reposted by the interviewer.",
+  "how_it_went": "The founder says qualified visitors get booked automatically. The interviewer says no numbers were shared and they would want to see how many meetings turn into real pipeline.",
+  "worth_knowing": "All evidence so far is the founder's own account. Track how many booked meetings become real pipeline before trusting a setup like this.",
+  "prompt": "Act as the sales assistant on [company website] for [product]. Use [product docs] and this qualification method: [criteria, e.g. budget, authority, need, timeline]. Answer visitor questions, and classify each visitor as one of [buyer types] based on what they ask. When a visitor meets [qualification threshold], offer a meeting through [Calendly link]. Log each conversation with its buyer type and the reason for your decision in [spreadsheet]. Show me 10 sample conversations and your classifications for review before going live.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "sales",
+    "lead qualification",
+    "meeting booking",
+    "b2b"
+  ],
+  "source": {
+    "url": "https://x.com/VCoconsulting/status/2110801853814370397",
+    "name": "X",
+    "author": "@VCoconsulting",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real deployed sales agent that qualifies website visitors and books Calendly meetings on its own. Evidence is only the founder's interview account, retold by a third party who notes there are no figures, and the post is largely event promotion."
+  }
+}

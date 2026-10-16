@@ -1,0 +1,43 @@
+{
+  "id": "claude-rewinds-a-deterministic-test-run-to-debug-a-hashicorp",
+  "title": "Claude rewinds a deterministic test run to debug a HashiCorp Raft bug via Antithesis",
+  "summary": "Distributed-system bugs are hard to reproduce. Antithesis now lets an agent rewind a failing test run, run commands at any moment in it, and retest its fix, shown with Claude chasing a Raft bug.",
+  "domain": "Software",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "Antithesis",
+    "Multiverse Debugger",
+    "Snouty CLI",
+    "antithesis-debug skill"
+  ],
+  "agent_role": "Claude returns to the failing execution, branches time to run diagnostic commands, works on a fix and reruns it in Antithesis. Humans write the tests and review the result.",
+  "outcome": "Antithesis shows a replay of Claude investigating a bug it found in HashiCorp's Raft implementation. The post does not report the final fix.",
+  "what_they_did": "Antithesis, a deterministic testing company, exposed its time-travel debugger to agents through skills, a CLI and an API. In their demo, Claude takes a bug Antithesis found in HashiCorp's Raft implementation and rewinds to moments before the failure. It runs commands in branched copies of the run to test hypotheses, then reruns the changed code to check the fix.",
+  "how_it_went": "The company shows a replay of Claude hunting the Raft bug. They say this removes the need for a person to operate the debugger and relay findings to the agent. No fix metrics are given.",
+  "worth_knowing": "This requires an Antithesis setup (Release 64) and existing Antithesis tests with a failing property. It is a commercial product, and the post is its launch announcement.",
+  "prompt": "Using the antithesis-debug skill, take the failing property [property name] from Antithesis run [run ID]. Rewind to just before the assertion failed. Run diagnostic commands in branched timelines to find the root cause, and explain the sequence of events. Propose a fix and show me the diff before committing. Then launch a new Antithesis run to check that the fix holds.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "debugging",
+    "distributed systems",
+    "deterministic testing",
+    "raft"
+  ],
+  "source": {
+    "url": "https://antithesis.com/blog/2026/time-traveling-agents/",
+    "name": "Hacker News",
+    "author": "David Koenitzer",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly a vendor launch post, but it includes a concrete demo of Claude using deterministic replay to investigate a real bug in HashiCorp's Raft implementation. The outcome of the fix is not detailed."
+  }
+}

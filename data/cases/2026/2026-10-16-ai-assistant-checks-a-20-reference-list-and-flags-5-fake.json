@@ -1,0 +1,44 @@
+{
+  "id": "ai-assistant-checks-a-20-reference-list-and-flags-5-fake",
+  "title": "AI assistant checks a 20-reference list and flags 5 fake papers and 1 retraction in a minute",
+  "summary": "AI-written reference lists can include invented papers. The author had an assistant check a 20-item list on fasting and diabetes through an MCP connector. It found 5 nonexistent papers, 1 with wrong details and 1 retracted study.",
+  "domain": "Science",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "MCP connector",
+    "Crossref",
+    "PubMed",
+    "OpenAlex",
+    "retraction databases"
+  ],
+  "agent_role": "The assistant called the connector to look up each reference, sorted the results and found corrected details. The human built the test list and reviewed the flags.",
+  "outcome": "Author reports 13 references correct, 1 with wrong year and journal (corrected), 5 nonexistent and 1 retracted (PREDIMED), in about a minute.",
+  "what_they_did": "The author built a 20-reference list on intermittent fasting and type 2 diabetes that mixed real and invented papers. They added their open-source Phở Research Tools MCP connector to Claude and asked the assistant to check the list. The connector checks each reference against Crossref, PubMed, OpenAlex and retraction notices.",
+  "how_it_went": "They say it took about a minute and flagged 5 nonexistent papers: two had DOIs belonging to unrelated papers and three were not registered anywhere. It also found 1 paper with the wrong year and journal, giving the correct details, and caught the retracted 2013 PREDIMED paper.",
+  "worth_knowing": "The tool is the author's own project. It allows 30 checks a day without an account and 300 a month with a free one, and the code is MIT-licensed.",
+  "prompt": "Check this reference list before I use it: [paste reference list]. For each entry, look it up in scholarly databases such as Crossref, PubMed and OpenAlex using my connected tools. Tell me which references do not exist, which have wrong details (and give the correct ones), which DOIs point to a different paper, and which have been retracted. Present the results as a table and do not edit my document until I confirm.",
+  "evidence": "Code available",
+  "difficulty": "Beginner",
+  "tags": [
+    "citation checking",
+    "literature review",
+    "research integrity",
+    "mcp"
+  ],
+  "source": {
+    "url": "https://x.com/tranvu129/status/2110751655298007314",
+    "name": "X",
+    "author": "@tranvu129",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, useful worked example: an assistant checked 20 references against Crossref, PubMed, OpenAlex and retraction notices, with specific results and open-source code. It promotes the author's own tool, but the steps can be reproduced and it is a non-coding use."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "claude-code-renders-an-animated-sticker-peel-motion-graphic",
+  "title": "Claude Code renders an animated sticker-peel motion graphic from code to a final MP4",
+  "summary": "A creator used Claude Code to build a sticker-peel motion graphic entirely in code. The agent rendered the frames, synthesized matching sound, and the creator combined video and audio with ffmpeg, with no animation software involved.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "ffmpeg",
+    "transparent PNG textures",
+    "Opus 5.5 Motion Lab prompt pack"
+  ],
+  "agent_role": "Claude wrote the time-based rendering code for the animation and, from a separate prompt, the code-synthesized audio synced to frames. The human adapted a base prompt pack, supplied PNG artwork and directed the final combination.",
+  "outcome": "Author reports a 60 fps animation with synced audio, shown in the post.",
+  "what_they_did": "The creator started from a ready-made prompt pack (Opus 5.5 Motion Lab) that defines time-based rendering with renderAt(t), paper movement and frame-timed peels. They rewrote the sticker stack for their own layers and supplied transparent PNGs as textures rather than having the model draw art. A separate prompt generated sound in code, synced to frames, and video and audio were combined with ffmpeg.",
+  "how_it_went": "The author shows the finished MP4 and describes it as 60 fps with flawless animation.",
+  "worth_knowing": "Using your own transparent PNGs as textures, with the alpha channel as the cutout, avoids asking the model to draw artwork. The method credits the Motion Lab prompt pack and @seeconvm.",
+  "prompt": "Build a code-rendered motion graphic of [describe the animation, e.g. a stack of stickers peeling off one by one]. Write a renderAt(t) function so every frame is a pure function of time, and render at [frame rate] fps for [duration] seconds. Use my transparent PNGs in [folder] as textures, with the alpha channel as each cutout. Do not draw the artwork yourself. Then write code that synthesizes a soundtrack synced to the key frames. Combine video and audio into an MP4 with ffmpeg. Show me a few preview frames before the full render.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "motion graphics",
+    "video",
+    "animation",
+    "code rendering"
+  ],
+  "source": {
+    "url": "https://x.com/0xmagic_money/status/2110754013209583670",
+    "name": "X",
+    "author": "@0xmagic_money",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real prompt-to-MP4 workflow with useful specifics: time-based rendering, PNG textures and ffmpeg muxing. It builds on someone else's prompt pack and resembles existing code-rendered video entries."
+  }
+}

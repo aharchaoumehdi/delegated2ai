@@ -1,0 +1,42 @@
+{
+  "id": "ai-agent-sets-up-a-home-lte-network-with-open5gs-on-a-7-5",
+  "title": "AI agent sets up a home LTE network with Open5GS on a $7.5 secondhand femtocell",
+  "summary": "A PhD student who is a networking hobbyist bought a cheap LTE femtocell and an eSIM card. An AI agent configured an Open5GS core network for a home-lab cellular network almost in one shot.",
+  "domain": "Science",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Open5GS",
+    "LTE femtocell",
+    "SGP.26 eUICC"
+  ],
+  "agent_role": "The agent set up and configured the Open5GS core to work with the femtocell. The human bought and supplied the femtocell and eUICC hardware.",
+  "outcome": "Author reports the agent set up Open5GS with the femtocell in almost one shot.",
+  "what_they_did": "The poster bought an LTE B40 femtocell for about 50 CNY on the secondhand market XianYu and an SGP.26 eUICC for 80 CNY on Taobao. They then had an AI agent set up the open-source Open5GS core network with the femtocell, creating a private cellular network in their home lab.",
+  "how_it_went": "The author says the setup worked in almost one shot. They now plan to probe phone IMS security and test cellular bufferbloat fixes in the core network.",
+  "worth_knowing": "The author notes that agents let them explore a field outside their PhD topic with little time cost. The post gives no configuration details, so expect to do your own debugging.",
+  "prompt": "Help me set up a private LTE network in my home lab using Open5GS and my [femtocell model, band]. First, check what hardware and SIM/eUICC programming I need. Then install and configure Open5GS on [your Linux machine], set the network identifiers to [test PLMN], and connect the femtocell. Show me each config change before applying it. Explain how to verify that a phone attaches. Stay within test-network and local radio regulations.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "homelab",
+    "cellular network",
+    "open5gs",
+    "networking"
+  ],
+  "source": {
+    "url": "https://x.com/yangyuc/status/2110648993390666186",
+    "name": "X",
+    "author": "@yangyuc",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An unusual, concrete use: an agent standing up a private LTE core on cheap hardware. But the agent's steps and the result are described in a single sentence."
+  }
+}

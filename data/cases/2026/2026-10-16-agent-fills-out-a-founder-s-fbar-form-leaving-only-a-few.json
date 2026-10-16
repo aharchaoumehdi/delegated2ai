@@ -1,0 +1,40 @@
+{
+  "id": "agent-fills-out-a-founder-s-fbar-form-leaving-only-a-few",
+  "title": "Agent fills out a founder's FBAR form, leaving only a few details to enter by hand",
+  "summary": "A founder asked an agent to help file their FBAR, the US foreign bank account report. It walked them through the process and filled in the form, leaving a few critical fields for the founder to enter before submitting.",
+  "domain": "Finance",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "FBAR form"
+  ],
+  "agent_role": "The agent guided the process and filled in the form. The human entered a couple of critical details and clicked submit.",
+  "outcome": "Author reports the FBAR was done in 5 minutes.",
+  "what_they_did": "A founder runs a set of persona-based board agents, including one modeled on Warren Buffett, built inside a platform referred to as @bot. They asked that agent to help file their FBAR. It walked them through it and filled in the form, leaving key details for the founder to enter.",
+  "how_it_went": "The author says the whole filing took 5 minutes and they clicked submit themselves.",
+  "worth_knowing": "The agent left critical details for the human to fill in. Keep sensitive account data and the final submission in your own hands.",
+  "prompt": "Help me file my FBAR (FinCEN 114) for [tax year]. Ask me which foreign accounts I hold and their maximum balances. Walk me through each section and draft the entries. Leave account numbers and other sensitive fields for me to enter. Show me the completed form for review and do not submit anything until I approve.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "tax filing",
+    "fbar",
+    "personal finance",
+    "forms"
+  ],
+  "source": {
+    "url": "https://x.com/rijulkalra/status/2110527708606128142",
+    "name": "X",
+    "author": "@rijulkalra",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine agent action: it filled out a whole tax form, with the human submitting it. But the post is brief and somewhat promotional, with few specifics."
+  }
+}

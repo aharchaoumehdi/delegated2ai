@@ -1,0 +1,44 @@
+{
+  "id": "open-model-tool-reads-health-insurance-policies-and-maps-out",
+  "title": "Open-model tool reads health insurance policies and maps out-of-pocket risks in English and Hindi",
+  "summary": "After his father's policy covered nothing for a hospital stay, a developer built a tool that reads a policy PDF. It flags waiting periods, caps and co-pays, and backs each finding with the exact quote from the policy, in English or Hindi.",
+  "domain": "Health",
+  "platform": "Custom agent",
+  "model": "Gemma (gemma-2-9b-it); IndicTrans2 for translation",
+  "tools": [
+    "vLLM",
+    "Gemma",
+    "IndicTrans2",
+    "Modal",
+    "GitHub Copilot coding agent"
+  ],
+  "agent_role": "The pipeline segments the PDF, extracts coverage terms, cross-checks each finding against the original text, and builds risk cards, with Hindi translation on demand. The GitHub Copilot coding agent configured and debugged the model setup, and the user verifies each finding against its quote.",
+  "outcome": "Author reports the sample policy produced 13 findings, 4 of them high risk. His father used the results to challenge the agent who sold him the policy.",
+  "what_they_did": "A developer built Insurance Samjho after his father's health policy paid nothing for a knee-related hospital stay. Users upload a policy PDF. A Gemma model extracts waiting periods, exclusions, room-rent caps, sub-limits and co-pays, then cross-checks each finding so every card carries the supporting quote. IndicTrans2 translates the results into Hindi. The model can run locally or on Modal, and the GitHub Copilot coding agent handled the model setup.",
+  "how_it_went": "The author says his father loved it and now understands his policy far better. His father sent screenshots of the results to the insurance agent who had sold him the policy, and shared the link with relatives.",
+  "worth_knowing": "The 9B model sometimes repeats a finding or flags a benefit as a risk, so treat the output as questions for your insurer, not legal advice. Cold starts on the hosted version took close to 30 minutes.",
+  "prompt": "Read my health insurance policy PDF [file]. Find every clause that could leave me paying out of pocket, including waiting periods for pre-existing conditions, room rent caps, deductibles, sub-limits, co-pays and exclusions. For each one, give a risk level (high, medium or note), a plain-language explanation, and the exact quote and page from the policy. Flag anything you are unsure about. Then turn the findings into a list of questions I should ask my insurer before [buying / renewing / claiming].",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "health insurance",
+    "document analysis",
+    "translation",
+    "personal finance"
+  ],
+  "source": {
+    "url": "https://dev.to/halfbloodcoder/my-dads-health-insurance-covered-nothing-so-i-built-an-ai-that-reads-the-fine-print-for-him-2c72",
+    "name": "DEV Community",
+    "author": "Jayant Jeet Tomar",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A practical health and finance use: a multi-step pipeline segments the policy, extracts terms, cross-checks quotes and translates, and it was used by a real person with a concrete result. The 'agent' aspect is modest, but the non-coding domain earns a small boost."
+  }
+}

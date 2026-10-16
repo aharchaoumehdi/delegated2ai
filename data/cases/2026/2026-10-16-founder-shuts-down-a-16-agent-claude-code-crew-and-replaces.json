@@ -1,0 +1,44 @@
+{
+  "id": "founder-shuts-down-a-16-agent-claude-code-crew-and-replaces",
+  "title": "Founder shuts down a 16-agent Claude Code crew and replaces it with one on-call assistant",
+  "summary": "A founder built 16 scheduled Claude Code agents to run parts of his company, then found he had stopped using them. He replaced them with one assistant that sees per-project context, calendar and email and answers over iMessage.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "iMessage",
+    "email",
+    "calendar",
+    "local voice transcription",
+    "scheduled runs"
+  ],
+  "agent_role": "The original agents ran on schedules, handed tasks to each other and sent morning briefings. The replacement assistant answers only when asked, drawing on per-client project folders, calendar, messages and email.",
+  "outcome": "Author reports sending the agents 56 messages on day one and one or none a week later, so he switched off 26 of 28 scheduled runs and moved to a single assistant.",
+  "what_they_did": "The poster set up 16 Claude Code agents, each with a company role and schedule, passing tasks between themselves and sending a morning briefing. After usage collapsed, he replaced them with one assistant, 'Optimus', on top of per-client folders with their own context and logs. He texts or sends voice notes via iMessage; his Mac transcribes them locally and Optimus replies in text and voice.",
+  "how_it_went": "He says the crew generated constant approval requests and a ~100-item task list where he couldn't tell what was done. He found working per project with one assistant that only speaks when asked works much better.",
+  "worth_knowing": "The assistant runs on his MacBook, so it sleeps when the lid closes; he plans a Mac mini for always-on reachability, not autonomy. He argues autonomy without knowing what matters just adds noise.",
+  "prompt": "Help me set up a single on-demand assistant for my work. Create one folder per project in [workspace path], each with a context file and a running log. Then read my calendar, email and messages for [accounts] and keep one consolidated list of open tasks and things I'm waiting on. Only respond when I ask; do not run scheduled jobs or contact anyone on your own. When I ask about a project, load only that project's folder. Before sending any email or message or changing my calendar, show me the draft and wait for my approval.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "personal assistant",
+    "multi-agent",
+    "project management",
+    "lessons learned"
+  ],
+  "source": {
+    "url": "https://x.com/igor_fedorko/status/2110799794922770527",
+    "name": "X",
+    "author": "@igor_fedorko",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A first-hand account of running a 16-agent Claude Code crew, with concrete usage numbers and a clear switch to a single on-demand assistant. Useful lessons, but light on setup details and tooling."
+  }
+}

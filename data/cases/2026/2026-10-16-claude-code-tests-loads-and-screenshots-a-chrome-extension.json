@@ -1,0 +1,42 @@
+{
+  "id": "claude-code-tests-loads-and-screenshots-a-chrome-extension",
+  "title": "Claude Code tests, loads and screenshots a Chrome extension to fix its own failed runs",
+  "summary": "A developer tired of babysitting broken AI-written code had Claude Code run the tests, load the Chrome extension and screenshot the result. Failed runs now get fixed before he looks at them.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "test runner",
+    "Chrome",
+    "screenshots"
+  ],
+  "agent_role": "Claude Code runs the tests, loads the extension in Chrome, checks screenshots and fixes failures on its own. The human wired up the loop and reviews the finished result.",
+  "outcome": "Author estimates roughly 3 out of 4 of his \"why is this broken\" moments are gone.",
+  "what_they_did": "A developer building a Chrome extension wired Claude Code to check its own work. After each change, the agent runs the test suite, loads the extension in Chrome and takes a screenshot of the result. It then fixes any failures before handing the work back.",
+  "how_it_went": "The author says failed runs he used to babysit now fix themselves before he sees them. He estimates about three in four of his debugging moments have disappeared.",
+  "worth_knowing": null,
+  "prompt": "For every change you make to [project, e.g. my Chrome extension], verify it yourself before reporting back. First run the test suite with [test command]. Then load the extension in Chrome and take a screenshot of [the page or popup to check]. If a test fails or the screenshot looks wrong, fix the problem and repeat. Only report back once tests pass and the screenshot matches what I asked for. Include the final screenshot and a short list of what you fixed. Do not commit or push anything without my approval.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "self-verification",
+    "testing",
+    "browser extension",
+    "debugging"
+  ],
+  "source": {
+    "url": "https://x.com/shrikar84/status/2110400277463314635",
+    "name": "X",
+    "author": "@shrikar84",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine self-verification loop where Claude Code runs tests, loads a Chrome extension and screenshots the result. It is very thin, with only a rough self-estimate and no setup details."
+  }
+}

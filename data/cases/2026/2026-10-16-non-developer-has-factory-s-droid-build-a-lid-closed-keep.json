@@ -1,0 +1,44 @@
+{
+  "id": "non-developer-has-factory-s-droid-build-a-lid-closed-keep",
+  "title": "Non-developer has Factory's Droid build a lid-closed keep-awake Mac app in about 3 hours",
+  "summary": "Wanting agents to keep running overnight with his MacBook lid shut, a non-developer asked Factory's Droid to build a fix. In about three hours it researched, built, tested and debugged an open-source menu-bar app, then made a launch video and thumbnails.",
+  "domain": "Software",
+  "platform": "Factory Droid",
+  "model": null,
+  "tools": [
+    "Swift/AppKit",
+    "pmset",
+    "three.js",
+    "Python",
+    "GitHub"
+  ],
+  "agent_role": "Droid did the research, build, tests and bug fixes, and produced the launch video (three.js MacBook, Python-generated music) and thumbnails. The human described the problem, switched the app on to test it and asked for fixes and the video.",
+  "outcome": "Author reports a first version in 15 minutes and the finished app, video and thumbnails in about 3 hours of Droid time.",
+  "what_they_did": "The poster, a self-described non-dev, wanted CLI agents to keep working with his MacBook lid closed, which caffeinate does not prevent. He asked Factory's Droid to build a solution and had a first version in 15 minutes. He then turned the app on and asked Droid to find and fix bugs and make a launch video. The result is LidAwake, an MIT-licensed menu-bar app that uses pmset disablesleep, with battery and heat cutoffs and a crash watchdog.",
+  "how_it_went": "He says Droid did the research, build, tests, every fix, the launch video and three thumbnails in about three hours. The app is published on GitHub with a 12-step manual test plan.",
+  "worth_knowing": "The app installs a sudoers rule for pmset and a watchdog LaunchAgent. Keeping the Mac awake does not keep it online, and an agent waiting on a permission prompt or usage limit still stalls. The README warns against running it in a bag.",
+  "prompt": "I'm not a developer. Help me build a small [macOS menu-bar / desktop] app that solves this problem: [describe the problem]. First research why existing options like [existing tool] fall short, and propose a plan. Wait for my approval before changing any system settings or permissions. Build a first version, then write and run tests and fix any bugs you find. Document exactly what the app changes on my machine and how to uninstall it. Finally, draft a short launch video and [number] thumbnails. Show me everything before publishing anything.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "macos app",
+    "utility",
+    "launch video",
+    "non-developer"
+  ],
+  "source": {
+    "url": "https://x.com/nkgoutham/status/2110416798281777565",
+    "name": "X",
+    "author": "@nkgoutham",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A self-described non-developer had an agent research, build, test and fix a working macOS utility, plus make a launch video and thumbnails. The open-source repo includes a detailed README and test plan."
+  }
+}

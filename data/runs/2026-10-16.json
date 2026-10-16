@@ -10,6 +10,107 @@
         "written": 44,
         "failures": []
       }
+    },
+    {
+      "id": "gh-38834421444-1",
+      "started": "2026-10-16T01:19:05.736Z",
+      "trigger": "workflow_dispatch",
+      "collect": {
+        "sources": {
+          "submissions": {
+            "status": "ok",
+            "items": 0,
+            "ms": 289
+          },
+          "reddit": {
+            "status": "error",
+            "error": "r/ClaudeAI: HTTP 403 for https://www.reddit.com/r/ClaudeAI/top.json?t=day&limit=25&raw_json=1; r/ClaudeCode: HTTP 403 for https://www.reddit.com/r/ClaudeCode/top.json?t=day&limit=25&raw_json=1; r/ChatGPTCoding: HTTP 403 for https://www.reddit.com/r/ChatGPTCoding/top.json?t=day&limit=25&raw_json=1; r"
+          },
+          "x": {
+            "status": "ok",
+            "items": 80,
+            "ms": 588,
+            "fetched": 80,
+            "searches": [
+              {
+                "label": "coding agents in use",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "personal and business agents",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "agents at work",
+                "fetched": 20,
+                "kept": 20
+              }
+            ]
+          },
+          "feeds": {
+            "status": "ok",
+            "items": 15,
+            "ms": 776
+          },
+          "github": {
+            "status": "ok",
+            "items": 55,
+            "ms": 1738
+          },
+          "hackernews": {
+            "status": "ok",
+            "items": 85,
+            "ms": 2159
+          },
+          "devto": {
+            "status": "ok",
+            "items": 26,
+            "ms": 6620
+          }
+        },
+        "raw": 261,
+        "unique_new": 165,
+        "candidates": 124
+      },
+      "curate": {
+        "status": "ok",
+        "model": "claude-opus-5-5",
+        "evaluated": 124,
+        "published": 25,
+        "from_backlog": 0,
+        "queued_for_review": 14,
+        "rejected": 85,
+        "failures": [],
+        "published_ids": [
+          "28-coding-agents-refactor-569-app-designer-units-in-six-days",
+          "coding-agent-directs-local-film-dubs-line-by-line-in-each",
+          "non-developer-has-factory-s-droid-build-a-lid-closed-keep",
+          "codex-skill-upgrades-three-angular-projects-to-v22-including",
+          "researchers-trace-a-rogue-agent-fleet-on-tencent-cloud-and",
+          "ai-assistant-checks-a-20-reference-list-and-flags-5-fake",
+          "claude-code-runs-161-codex-sessions-to-render-frames-for-a",
+          "codex-and-tripo-cli-build-a-playable-3d-island-adventure",
+          "claude-code-builds-and-self-corrects-a-unity-explosion",
+          "chatgpt-agent-haggles-a-tv-down-190-in-a-dutch-retailer-s",
+          "phone-agent-rebooks-a-full-garage-spot-then-wins-the-parking",
+          "agents-sit-on-hold-for-a-grandma-keep-a-mom-s-medical-log",
+          "founder-shuts-down-a-16-agent-claude-code-crew-and-replaces",
+          "owner-s-bookkeeping-agent-cross-checks-books-bank-and-email",
+          "two-grok-bots-build-enrich-and-dedupe-sales-leads-into-a",
+          "devin-turns-production-failure-traces-into-evals-lifting-rox",
+          "soma-lets-claude-code-or-codex-design-printable-3d-parts-as",
+          "claude-code-builds-a-two-phone-pong-game-that-syncs-over",
+          "mcp-bridge-lets-an-ai-agent-debug-rtl-bugs-inside-a-live",
+          "agent-skill-maps-mcdonald-s-china-party-bookings-across-281",
+          "cursor-builds-and-deploys-a-usd-mxn-tip-calculator-from-one",
+          "claude-code-plugin-masks-secrets-and-customer-data-then",
+          "open-model-tool-reads-health-insurance-policies-and-maps-out",
+          "ai-agent-books-a-medical-check-up-by-chasing-hospitals-over",
+          "claude-code-builds-a-photography-portfolio-site-from-a-figma"
+        ]
+      }
     }
   ]
 }

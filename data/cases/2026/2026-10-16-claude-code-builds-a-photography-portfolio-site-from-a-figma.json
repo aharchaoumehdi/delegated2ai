@@ -1,0 +1,43 @@
+{
+  "id": "claude-code-builds-a-photography-portfolio-site-from-a-figma",
+  "title": "Claude Code builds a photography portfolio site from a Figma file's exact values",
+  "summary": "A developer had Claude Code read spacing, type, colours and image crops directly from a Figma design to build a portfolio site, while he directed the motion and performance work.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "Figma",
+    "Next.js",
+    "GSAP",
+    "Vercel"
+  ],
+  "agent_role": "Claude Code pulled exact design values from Figma and implemented the site; the developer directed the animations and performance tuning.",
+  "outcome": "Author shows a live deployed portfolio site built this way.",
+  "what_they_did": "A developer gave Claude Code (running Claude Opus 5.5) a Figma file for a photographer's portfolio. The agent read the exact spacing, typography, colours and image crops from Figma rather than estimating them, and built the site in Next.js with GSAP. He handled the motion design and performance work himself.",
+  "how_it_went": "He shared the live site on Vercel and a video of it; no time or cost figures are given.",
+  "worth_knowing": "The win he highlights is reading values straight from Figma instead of eyeballing screenshots; motion and performance still needed human direction.",
+  "prompt": "Using the Figma file at [Figma file URL], build a [type of site] in [framework, e.g. Next.js]. Read exact spacing, font sizes, colours and image crops from the Figma data rather than estimating from screenshots. First list the pages, components and design tokens you extracted and wait for my approval. Then build it section by section, comparing each against the Figma frame. Leave animations as simple placeholders so I can direct the motion. Don't deploy until I review it locally.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "figma to code",
+    "portfolio site",
+    "web design",
+    "frontend"
+  ],
+  "source": {
+    "url": "https://x.com/jeff_okoli/status/2110721738140979274",
+    "name": "X",
+    "author": "@jeff_okoli",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine design-to-code build with a live site and video, and a clear split between agent and human, but the post is brief and design-to-code is a familiar use."
+  }
+}

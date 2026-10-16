@@ -1,0 +1,40 @@
+{
+  "id": "ai-agent-books-a-medical-check-up-by-chasing-hospitals-over",
+  "title": "AI agent books a medical check-up by chasing hospitals over email until one confirms",
+  "summary": "Booking a check-up meant chasing unresponsive hospitals. The poster's agent emailed hospitals, followed up until one confirmed, and moved on when one went quiet and time was short.",
+  "domain": "Health",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "email"
+  ],
+  "agent_role": "The agent sent the booking emails, followed up, and decided when to drop an unresponsive hospital for the next one. The poster only turned up for the appointment.",
+  "outcome": "The author reports the check-up was booked without speaking to the hospital once before walking in.",
+  "what_they_did": "The poster had an AI agent book a medical check-up by email. The agent kept following up with the hospital, and if one went quiet while time was tight, it switched to the next option.",
+  "how_it_went": "The author says the booking was confirmed and they never spoke to the hospital until they arrived.",
+  "worth_knowing": "The author argues that the follow-up work, not the first request, is where the value lies, especially where replies are slow, as they find in Southeast Asia.",
+  "prompt": "Help me book a [type of appointment] at a clinic or hospital in [your city] between [date range]. List 3-5 suitable providers and draft a booking request email for each. Show me the drafts and wait for my approval before sending anything. After that, check my email daily for replies and draft polite follow-ups if there is no answer within [number] days. If one goes quiet and time is short, suggest moving to the next provider. Ask me before confirming any booking.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "appointment booking",
+    "healthcare admin",
+    "email follow-up",
+    "scheduling"
+  ],
+  "source": {
+    "url": "https://x.com/nelsenafc/status/2110559474931163188",
+    "name": "X",
+    "author": "@nelsenafc",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-16",
+  "status": "published",
+  "score": 5.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine multi-step health-admin task: the agent emailed, chased replies and switched hospitals when one went quiet. Evidence is thin and the platform is unnamed, but it is a useful non-coding pattern."
+  }
+}

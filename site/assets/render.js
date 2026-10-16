@@ -80,7 +80,7 @@ function dot(name) {
 const ICON = {
   save: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.25 2.75h7.5a.5.5 0 0 1 .5.5v10.2L8 11.1 3.75 13.45V3.25a.5.5 0 0 1 .5-.5Z" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg>',
   ext: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  up: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.2 13.2 12.4H2.8Z" fill="currentColor"/></svg>',
+  up: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.2 13.2 12.4H2.8Z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>',
 };
 export { ICON };
 

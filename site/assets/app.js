@@ -139,8 +139,9 @@ function filtered() {
 
 function renderHome() {
   if (!sections || !results) return;
-  document.querySelectorAll("[data-sort]").forEach((b) => b.classList.toggle("is-on", b.dataset.sort === state.sort));
-  document.querySelectorAll("[data-chip]").forEach((b) => b.classList.toggle("is-on", b.dataset.chip === state.chip));
+  const press = (b, on) => (b.classList.toggle("is-on", on), b.setAttribute("aria-pressed", on));
+  document.querySelectorAll("[data-sort]").forEach((b) => press(b, b.dataset.sort === state.sort));
+  document.querySelectorAll("[data-chip]").forEach((b) => press(b, b.dataset.chip === state.chip));
   updateSavedChip();
   const search = $("#search");
   if (search && document.activeElement !== search) search.value = state.q;

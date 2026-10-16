@@ -1,0 +1,33 @@
+name: Set up email addresses
+
+# One-time setup of Cloudflare Email Routing: hello@ and sponsors@ (or the addresses you
+# list) forward to your inbox. Run it from the Actions tab; safe to re-run. Needs the
+# CLOUDFLARE_API_TOKEN to include Email Routing and DNS permissions (docs/setup.md, "Email").
+on:
+  workflow_dispatch:
+    inputs:
+      destination:
+        description: "Inbox that receives the mail (Cloudflare emails it a verification link)"
+        required: true
+      addresses:
+        description: "Addresses to create, comma-separated, before the @"
+        default: "hello,sponsors"
+
+permissions:
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/setup-email-routing.mjs
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DOMAIN: delegatedto.ai
+          DESTINATION: ${{ inputs.destination }}
+          ADDRESSES: ${{ inputs.addresses }}

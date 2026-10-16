@@ -51,7 +51,7 @@ if (!process.env.ANTHROPIC_API_KEY) {
 const Evaluation = z.object({
   candidate_id: z.string(),
   is_agent_application: z.boolean(),
-  duplicate_of: z.string().nullable().describe("id of an already-published entry covering the same work, else null"),
+  duplicate_of: z.string().nullable().describe("id of an already-published entry, or of a candidate kept earlier in this run or in this batch, covering the same work; else null"),
   reject_reason: z.string().nullable(),
   score: z.number().describe("0-10 per the guidelines"),
   score_rationale: z.string().describe("one or two sentences"),
@@ -103,13 +103,21 @@ ${body || "(no text available — judge from the title only and score conservati
 </candidate>`;
 }
 
+// Candidates kept earlier in this run, so a later batch doesn't keep the same work twice
+// (the same story often arrives as several posts, or on several sites).
+const keptThisRun = [];
+
 async function evaluate(batch) {
   const recentList = recent.map((c) => `- ${c.id}: ${c.title}`).join("\n") || "(none yet)";
+  const thisRun = keptThisRun.map((k) => `- ${k.id}: ${k.title}`).join("\n") || "(none yet)";
   const { parsed } = await parseStructured({
     system,
     schema: Batch,
-    user: `Recently published entries (for duplicate detection):\n${recentList}\n\nEvaluate these ${batch.length} candidates:\n\n${batch.map(renderCandidate).join("\n\n")}`,
+    user: `Recently published entries (for duplicate detection):\n${recentList}\n\nAlready kept earlier in this run (also duplicates):\n${thisRun}\n\nEvaluate these ${batch.length} candidates. If two of them describe the same work, keep the better one and set duplicate_of on the other to its candidate_id.\n\n${batch.map(renderCandidate).join("\n\n")}`,
   });
+  for (const ev of parsed.evaluations) {
+    if (ev.is_agent_application && !ev.duplicate_of && ev.score >= PUBLISH_THRESHOLD) keptThisRun.push({ id: ev.candidate_id, title: ev.title });
+  }
   return parsed.evaluations;
 }
 

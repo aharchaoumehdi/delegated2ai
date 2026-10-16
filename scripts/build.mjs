@@ -25,7 +25,8 @@ const ABS_BASE = new URL(siteUrl).pathname; // e.g. "/delegated2ai/"
 let base = ABS_BASE;
 const DIST = path("dist");
 // The vote counter service (worker/). Without it, votes are kept in each visitor's browser only.
-const votesApi = (process.env.VOTES_API || site.votesApi || "").replace(/\/+$/, "");
+// The private preview is served from an origin the service doesn't accept, so it stays local.
+const votesApi = PREVIEW ? "" : (process.env.VOTES_API || site.votesApi || "").replace(/\/+$/, "");
 
 const { cases: all, errors } = await loadCases();
 if (errors.length) {

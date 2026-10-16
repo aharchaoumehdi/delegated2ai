@@ -1,7 +1,7 @@
 {
   "id": "shopify-ceo-has-claude-build-a-browser-mri-viewer-instead-of",
   "title": "Shopify CEO has Claude build a browser MRI viewer instead of installing Windows software",
-  "summary": "Tobi Lütke's MRI came on a USB stick that needed Windows-only software; he had Claude read the DICOM files and generate a local HTML viewer to scroll, stack, zoom and annotate his spine scans on his Mac.",
+  "summary": "Shopify CEO Tobi Lütke had Claude read his MRI's DICOM files and write a local HTML viewer, avoiding Windows-only software; Radiology Business says he got a working, annotatable viewer.",
   "domain": "Health",
   "platform": "Claude",
   "model": null,

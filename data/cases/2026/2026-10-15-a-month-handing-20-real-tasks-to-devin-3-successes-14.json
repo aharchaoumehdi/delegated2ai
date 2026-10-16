@@ -1,7 +1,7 @@
 {
   "id": "a-month-handing-20-real-tasks-to-devin-3-successes-14",
   "title": "A month handing 20 real tasks to Devin: 3 successes, 14 failures",
-  "summary": "The Answer.AI team gave Devin 20+ real tasks (new projects, research, changes to existing repos) and documented where the autonomous agent succeeded, stalled or produced over-complex code, a useful reality check on delegation.",
+  "summary": "The Answer.AI team spent a month giving Devin 20 real project and research tasks; they report 14 failures, 3 successes and 3 inconclusive, with no pattern predicting success.",
   "domain": "Software",
   "platform": "Devin",
   "model": null,

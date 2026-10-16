@@ -1,7 +1,7 @@
 {
   "id": "chatgpt-agent-plans-a-family-s-week-of-meals-and-fills-carts",
   "title": "ChatGPT agent plans a family's week of meals and fills carts at two grocers",
-  "summary": "Aaron Maurer had ChatGPT agent plan a week of healthier family meals under $300, write recipes and snacks, compare prices and build carts at Hy-Vee and Fareway, recording the run on video.",
+  "summary": "Aaron Maurer had ChatGPT agent plan a week of healthier family meals under $300 and build carts at Hy-Vee and Fareway, then adjusted items himself before checkout.",
   "domain": "Daily life",
   "platform": "ChatGPT Agent",
   "model": null,

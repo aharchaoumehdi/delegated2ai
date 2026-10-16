@@ -1,7 +1,7 @@
 {
   "id": "openclaw-agent-plays-car-dealers-quotes-against-each-other",
   "title": "OpenClaw agent plays car dealers' quotes against each other over email",
-  "summary": "Engineer AJ Stuyvenberg had OpenClaw scan dealer inventories, fill in contact forms at several dealerships, and counter each reply with competing quotes by email until he chose the price for a Hyundai Palisade.",
+  "summary": "Engineer AJ Stuyvenberg had an OpenClaw agent find a 2026 Hyundai Palisade, contact dealerships and counter emails with competing quotes; a blog roundup says he made the final price call.",
   "domain": "Daily life",
   "platform": "OpenClaw",
   "model": null,

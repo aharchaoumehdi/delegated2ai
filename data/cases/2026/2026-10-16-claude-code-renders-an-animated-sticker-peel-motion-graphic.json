@@ -1,7 +1,7 @@
 {
   "id": "claude-code-renders-an-animated-sticker-peel-motion-graphic",
   "title": "Claude Code renders an animated sticker-peel motion graphic from code to a final MP4",
-  "summary": "A creator used Claude Code to build a sticker-peel motion graphic entirely in code. The agent rendered the frames, synthesized matching sound, and the creator combined video and audio with ffmpeg, with no animation software involved.",
+  "summary": "A creator had Claude Code render a sticker-peel animation and its sound entirely in code, then merged them with ffmpeg; they report a 60 fps MP4 with synced audio.",
   "domain": "Creative",
   "platform": "Claude Code",
   "model": "Claude Opus 5.5",

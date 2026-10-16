@@ -1,7 +1,7 @@
 {
   "id": "years-of-apple-health-workouts-turned-into-a-dashboard-and",
   "title": "Years of Apple Health workouts turned into a dashboard and plain-English Q&A",
-  "summary": "Phil Simon found Strava and Apple Health too thin for his questions, so he exported his Apple Health XML and had Claude Code convert it to CSV, compute summary stats and build an interactive dashboard.",
+  "summary": "Phil Simon had Claude Code parse his exported Apple Health data and build an interactive workout dashboard; he says it beats Apple Health and Strava and published it on GitHub.",
   "domain": "Data",
   "platform": "Claude Code",
   "model": null,

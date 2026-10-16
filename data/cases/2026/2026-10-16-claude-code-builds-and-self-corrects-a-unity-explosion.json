@@ -1,7 +1,7 @@
 {
   "id": "claude-code-builds-and-self-corrects-a-unity-explosion",
   "title": "Claude Code builds and self-corrects a Unity explosion effect by checking captured frames",
-  "summary": "A game developer asked Claude Code to make an explosion effect in Unity's Shuriken particle system. The agent built it, captured frames, reviewed them and kept iterating without help. Textures came from Codex image generation.",
+  "summary": "A game developer had Claude Code build a Unity explosion effect; the agent captured and reviewed frames and kept fixing it without help, the author says, sharing first and final versions.",
   "domain": "Creative",
   "platform": "Claude Code",
   "model": null,

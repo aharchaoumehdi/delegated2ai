@@ -1,7 +1,7 @@
 {
   "id": "weekend-port-of-a-python-codebase-to-165k-lines-of",
   "title": "Weekend port of a Python codebase to 165k lines of TypeScript with hundreds of agents",
-  "summary": "Anthropic's Mike Krieger used Claude Code agents to migrate a Python codebase to TypeScript over a weekend, structured as phase gates, adversarial review rounds and a parity check that diffed every command's output against the original.",
+  "summary": "Anthropic's Mike Krieger had hundreds of Claude Code agents port a Python tool to 165,000 lines of TypeScript over a weekend, Anthropic reports, checked against the original's output.",
   "domain": "Software",
   "platform": "Claude Code",
   "model": null,

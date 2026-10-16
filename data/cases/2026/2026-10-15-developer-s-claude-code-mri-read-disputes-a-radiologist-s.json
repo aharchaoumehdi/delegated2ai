@@ -1,7 +1,7 @@
 {
   "id": "developer-s-claude-code-mri-read-disputes-a-radiologist-s",
   "title": "Developer's Claude Code MRI read disputes a radiologist's tendon-tear diagnosis",
-  "summary": "Antoine Finkelstein pointed Claude Code at the DICOM files from his shoulder MRI, had it run its own analysis and compare it with the radiologist's report; the agent argued for an intact tendon rather than a partial tear.",
+  "summary": "Antoine Finkelstein had Claude Code analyze his shoulder MRI files; it argued, with moderate-to-high confidence, for no tear where the radiologist reported one, and radiologists pushed back.",
   "domain": "Health",
   "platform": "Claude Code",
   "model": null,

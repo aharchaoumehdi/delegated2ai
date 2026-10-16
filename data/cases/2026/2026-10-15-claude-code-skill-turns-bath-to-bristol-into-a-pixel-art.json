@@ -1,7 +1,7 @@
 {
   "id": "claude-code-skill-turns-bath-to-bristol-into-a-pixel-art",
   "title": "Claude Code skill turns Bath-to-Bristol into a pixel-art road fly-through for $5.76",
-  "summary": "This skill has Claude route a trip, pull real buildings, land cover and elevation from OpenStreetMap, and generate pixel art for each region. It then checks its own screenshots and fixes gaps until you can scroll along the real road.",
+  "summary": "Jon Wheatley's Pixel Path skill has Claude Code build pixel-art road fly-throughs from OpenStreetMap data; the author reports Bath to Bristol cost $5.76 and Kyoto $0.72.",
   "domain": "Creative",
   "platform": "Claude Code",
   "model": null,

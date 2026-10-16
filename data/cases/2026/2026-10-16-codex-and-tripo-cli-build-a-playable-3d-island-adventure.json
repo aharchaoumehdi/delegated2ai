@@ -1,7 +1,7 @@
 {
   "id": "codex-and-tripo-cli-build-a-playable-3d-island-adventure",
   "title": "Codex and Tripo CLI build a playable 3D island adventure game in under an hour",
-  "summary": "A creator connected the Tripo 3D-asset CLI to Codex. GPT-6 Astra built a playable island game, swapped rough placeholders for generated, rigged and animated models, then polished lighting and camera, all in under an hour.",
+  "summary": "A creator had GPT-6 Astra in Codex, with Tripo CLI generating 3D models, build a playable island adventure game, which they say took under an hour.",
   "domain": "Creative",
   "platform": "OpenAI Codex",
   "model": "GPT-6 Astra",

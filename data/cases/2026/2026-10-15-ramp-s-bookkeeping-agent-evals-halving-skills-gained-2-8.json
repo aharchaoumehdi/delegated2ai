@@ -1,7 +1,7 @@
 {
   "id": "ramp-s-bookkeeping-agent-evals-halving-skills-gained-2-8",
   "title": "Ramp's bookkeeping agent evals: halving skills gained 2.8 points and memory added 5.7",
-  "summary": "Ramp built synthetic businesses with messy books to test an agent that reconciles accounts and does data entry. Accountant-written rubrics showed which skills helped; trimming skills and adding cleaned memory raised scores and cut costs.",
+  "summary": "Ramp tested its bookkeeping agent on synthetic businesses with messy books; the author reports trimming eight skills to four gained 2.8 points and distilled memory added 5.7.",
   "domain": "Finance",
   "platform": "Other",
   "model": null,

@@ -1,7 +1,7 @@
 {
   "id": "ex-coscreen-team-rebuilds-an-open-source-screen-sharing-tool",
   "title": "Ex-CoScreen team rebuilds an open-source screen-sharing tool in under eight weeks with AI models",
-  "summary": "Former CoScreen founders built Petal, a free multi-user pair-programming screen-sharing app, saying frontier models did much of the work. The first version took under eight weeks, versus about six years for CoScreen.",
+  "summary": "Former CoScreen founders had frontier models write much of Petal, an open-source pair-programming screen-sharing app; they report under eight weeks, versus almost six years for CoScreen.",
   "domain": "Software",
   "platform": "Other",
   "model": "Fable and Astra",

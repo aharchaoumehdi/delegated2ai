@@ -1,7 +1,7 @@
 {
   "id": "daily-radar-catches-new-ai-product-names-and-turns-them-into",
   "title": "Daily radar catches new AI product names and turns them into sized SEO keyword picks",
-  "summary": "For SEO and newsletter writers, this tool scans X, Hugging Face, GitHub and sitemaps daily for new AI names. Models then derive the search phrases behind them, check volume and Google Trends, and label each keyword prioritize, watch or skip.",
+  "summary": "Developer zhuyansen built a Claude Code radar that spots new AI names daily and scores search keywords; he reports about $15 a month in API costs.",
   "domain": "Marketing",
   "platform": "Claude Code",
   "model": null,

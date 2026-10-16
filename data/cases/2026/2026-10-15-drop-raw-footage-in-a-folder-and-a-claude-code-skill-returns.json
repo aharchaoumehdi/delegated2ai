@@ -1,7 +1,7 @@
 {
   "id": "drop-raw-footage-in-a-folder-and-a-claude-code-skill-returns",
   "title": "Drop raw footage in a folder and a Claude Code skill returns an edited video",
-  "summary": "Browser Use's open-source video-use skill has Claude Code inventory clips, propose an edit plan, then cut filler words, grade color, add subtitles and render a final MP4 using transcripts and on-demand frame snapshots.",
+  "summary": "Browser Use's open-source video-use skill has Claude Code transcribe raw clips, propose an edit plan, then cut filler, grade color, add subtitles and render the final video.",
   "domain": "Creative",
   "platform": "Claude Code",
   "model": null,

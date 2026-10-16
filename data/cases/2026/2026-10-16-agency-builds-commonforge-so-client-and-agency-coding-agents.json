@@ -1,7 +1,7 @@
 {
   "id": "agency-builds-commonforge-so-client-and-agency-coding-agents",
   "title": "Agency builds CommonForge so client and agency coding agents can work on one app safely",
-  "summary": "Clients began sending an agency software they built with AI and wanted their own agents to keep working on it. The agency built an open-source system that isolates each task's code, blocks backend access, and gates changes through staging.",
+  "summary": "An agency owner built open-source CommonForge so client and agency coding agents can share one app, isolating each task's code and gating changes through staging; no usage results are given.",
   "domain": "Software",
   "platform": "Other",
   "model": null,

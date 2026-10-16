@@ -1,7 +1,7 @@
 {
   "id": "fastweb-vodafone-s-support-agent-resolves-82-of-queries-for",
   "title": "Fastweb + Vodafone's support agent resolves 82% of queries for 9.5M customers",
-  "summary": "The Italian telco built Super TOBi, a LangGraph customer-service agent, plus Super Agent for call-center staff, mapping its support process onto a graph of decisions with LangSmith for tracing and evaluation.",
+  "summary": "Fastweb + Vodafone built a LangGraph customer-service agent for nearly 9.5 million customers; the company reports 90% correctness and an 82% resolution rate.",
   "domain": "Business",
   "platform": "LangGraph",
   "model": null,

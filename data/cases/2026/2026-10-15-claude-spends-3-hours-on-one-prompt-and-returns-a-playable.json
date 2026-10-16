@@ -1,7 +1,7 @@
 {
   "id": "claude-spends-3-hours-on-one-prompt-and-returns-a-playable",
   "title": "Claude spends 3 hours on one prompt and returns a playable spot-the-difference tree game",
-  "summary": "Simon Willison gave Claude a single prompt in the iPhone app to build a three.js game about appreciating differences between generated trees. Claude worked for over three hours and returned a game with music, animation and achievements.",
+  "summary": "Simon Willison gave Claude's iPhone app one prompt for a three.js tree game; he reports it worked 3 hours 7 minutes and returned a compelling spot-the-difference game.",
   "domain": "Creative",
   "platform": "Claude",
   "model": "Claude Opus 5.5 Max",

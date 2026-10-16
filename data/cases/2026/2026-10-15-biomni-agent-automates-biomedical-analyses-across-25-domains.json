@@ -1,7 +1,7 @@
 {
   "id": "biomni-agent-automates-biomedical-analyses-across-25-domains",
   "title": "Biomni agent automates biomedical analyses across 25 domains with 150 tools",
-  "summary": "Stanford's Biomni mined tools, databases and protocols from tens of thousands of papers, then combined LLM planning with code execution to run tasks like gene prioritization, rare-disease diagnosis and cloning design.",
+  "summary": "Stanford researchers built Biomni, an agent that runs biomedical analyses with 150 tools; the authors report it approaches human level on tasks like database querying and molecular cloning.",
   "domain": "Science",
   "platform": "Custom agent",
   "model": null,

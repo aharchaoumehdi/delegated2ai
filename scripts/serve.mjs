@@ -7,7 +7,7 @@ import { path, readJSON } from "./lib/util.mjs";
 const site = await readJSON(path("config", "site.json"));
 const base = new URL(process.env.SITE_URL || site.url).pathname;
 const port = Number(process.env.PORT || 4173);
-const types = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".json": "application/json", ".svg": "image/svg+xml", ".xml": "application/xml", ".txt": "text/plain" };
+const types = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".xml": "application/xml", ".txt": "text/plain" };
 
 createServer(async (req, res) => {
   let p = decodeURIComponent(new URL(req.url, "http://x").pathname);

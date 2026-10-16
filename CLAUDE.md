@@ -16,4 +16,8 @@
   the build and the browser: keep it free of Node APIs.
 - Design: dark by default (`--bg: #000`), tokens in `site/assets/style.css`; light theme via
   `[data-theme="light"]`. Fonts: Funnel Sans / Funnel Display / Geist Mono.
+- Brand: `brand/` is the C3 logo kit and `brand/specifications.html` is the standard (colours,
+  clear space, minimum sizes). The site uses copies in `site/assets/brand/` (logo canvas trimmed
+  to the artwork, a simplified small symbol, icons, share image); never redraw or recolour the
+  logo in code. The accent `--signal` is the logo's "to" cyan.
 - Preview locally with `SITE_URL=http://localhost:4173/ npm run dev`.

@@ -199,8 +199,21 @@ function sponsorBar() {
 </div>`;
 }
 
+// The site's sections, as a bar above the search (home) or under the header (other pages).
+const SECTIONS = [
+  ["Agents", "agents/", /^agents\//],
+  ["Topics", "topics/", /^(topics|category)\//],
+  ["New", "new/", /^new\//],
+  ["Newsletter", "issues/", /^issues\//],
+  ["Sponsor", "sponsor/", /^sponsor\//],
+  ["About", "about/", /^about\//],
+];
+const siteNav = (pagePath = "") =>
+  `<nav class="site-nav" aria-label="Sections">${SECTIONS.map(([label, to, match]) =>
+    `<a href="${href(to)}"${match.test(pagePath) ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</nav>`;
+
 const footerLinks = () =>
-  `<nav class="foot-links"><a href="${href()}">All use cases</a><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("new/")}">New</a><a href="${href("issues/")}">Daily email</a><a href="${siteUrl}feed.xml">RSS</a><a href="${href("about/")}">About</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>`;
+  `<nav class="foot-links"><a href="${href()}">All use cases</a><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("new/")}">New</a><a href="${href("issues/")}">Newsletter</a><a href="${siteUrl}feed.xml">RSS</a><a href="${href("about/")}">About</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>`;
 
 function promoCard() {
   if (site.sponsor) {
@@ -238,7 +251,7 @@ function sidebar({ activeAgent, activeDomain } = {}) {
     <b>${plural(cases.length, "use case")}</b><br>
     Updated ${esc(formatDate(buildDay))}<br>
     Sources: the open web, X, Reddit, Hacker News, GitHub
-    <nav><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("issues/")}">Daily email</a><a href="${href("about/")}">About</a><a href="${siteUrl}feed.xml">RSS feed</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>
+    <nav><a href="${siteUrl}feed.xml">RSS feed</a><a href="${href("privacy/")}">Privacy</a></nav>
   </div>
 </aside>`;
 }
@@ -294,6 +307,7 @@ function homePage() {
 <div class="frame frame-grid">
 ${sidebar()}
 <main class="main">
+  ${siteNav()}
   <div class="toolbar">
     <div class="toolbar-row">
       <label class="search"><span class="sr-only">Search use cases</span>
@@ -350,6 +364,7 @@ function narrowPage({ path: pagePath, title, description, body, list, jsonld }) 
     <a class="brand" href="${href()}">${logo()}</a>
     <div class="topnav-right">${themeButton}<a class="count" href="${href()}">All ${cases.length.toLocaleString("en-US")} use cases</a></div>
   </header>
+  ${siteNav(pagePath)}
   <main class="page">${body}
   ${footerLinks()}</main>
 </div>
@@ -508,7 +523,7 @@ function issuePage({ day, list }, i) {
     title: `${formatDate(day)} issue: ${list.length} new AI agent use cases · ${site.name}`,
     description: `The ${formatDate(day)} issue of the ${site.name} daily email: ${list.map((c) => c.title).join("; ")}.`,
     list,
-    body: `<p class="eyebrow">Daily email · <a href="${href("issues/")}">Issues</a></p>
+    body: `<p class="eyebrow"><a href="${href("issues/")}">Newsletter</a> · Issue</p>
 <h1 class="page-title">${esc(formatDate(day))}</h1>
 <p class="page-lead">${plural(list.length, "new thing")} people handed to AI agents, as sent in that morning's email.</p>
 <ul class="items issue-items">${list.map((c) => itemHTML(c)).join("")}</ul>
@@ -523,14 +538,15 @@ function issuesIndexPage() {
     .join("");
   return narrowPage({
     path: "issues/",
-    title: `Daily email archive · ${site.name}`,
-    description: `Every issue of the ${site.name} daily email: the best new AI agent use cases each morning.`,
+    title: `Newsletter · ${site.name}`,
+    description: `The ${site.name} newsletter: the day's best new AI agent use cases every morning, each with the prompt. Every past issue is here.`,
     list: [],
-    body: `<p class="eyebrow">Daily email</p>
-<h1 class="page-title">Every issue</h1>
-<p class="page-lead">Each morning's email: the day's best new use cases, each with the prompt to try it.</p>
-<ul class="issue-rows">${rows}</ul>
-${digestBox()}`,
+    body: `<p class="eyebrow">Newsletter</p>
+<h1 class="page-title">Five use cases, every morning</h1>
+<p class="page-lead">One short email a day with the best new things people handed to AI agents, each with the prompt to try it.</p>
+${digestBox()}
+<h2 class="list-head">Past issues</h2>
+<ul class="issue-rows">${rows}</ul>`,
   });
 }
 

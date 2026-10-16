@@ -434,6 +434,7 @@ svg { flex: none; }
 .browse-links a { text-decoration: underline; text-underline-offset: 3px; color: var(--accent-text); }
 .browse-links a:hover { text-decoration-thickness: 2px; }
 .foot-links { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--divider); display: flex; flex-wrap: wrap; gap: 6px 20px; font: 12.5px var(--font-mono); color: var(--text-muted); }
+.foot-links a { display: inline-flex; align-items: center; min-height: 24px; }
 .foot-links a:hover { color: var(--heading); text-decoration: underline; text-underline-offset: 2px; }
 .topic-rows { margin-top: 32px; }
 .topic-row { padding: 16px 0; border-bottom: 1px solid var(--divider); }

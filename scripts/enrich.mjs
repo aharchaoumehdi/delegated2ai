@@ -22,7 +22,9 @@ const NO_FETCH = /(^|\.)(x\.com|twitter\.com|reddit\.com|linkedin\.com|youtube\.
 export const needsWriteUp = (c) => c.status !== "rejected" && (!c.what_they_did || c.prompt === undefined);
 export const SUMMARY_WORDS = 30;
 export const wordCount = (text = "") => text.trim().split(/\s+/).filter(Boolean).length;
-export const needsShorterSummary = (c) => c.status !== "rejected" && wordCount(c.summary) > SUMMARY_WORDS;
+// A little slack over the guideline, so a 31-word sentence isn't rewritten on every run.
+export const SUMMARY_SLACK = 3;
+export const needsShorterSummary = (c) => c.status !== "rejected" && wordCount(c.summary) > SUMMARY_WORDS + SUMMARY_SLACK;
 
 async function loadAll() {
   const { cases, errors } = await loadCases();
@@ -175,7 +177,7 @@ how it went: ${c.how_it_went ?? "(none)"}
     for (const { id, summary } of list) {
       const c = byId.get(id);
       const text = summary.trim();
-      if (!c || wordCount(text) > SUMMARY_WORDS + 3 || text.length < 20) continue; // keep the old one
+      if (!c || wordCount(text) > SUMMARY_WORDS + SUMMARY_SLACK || text.length < 20) continue; // keep the old one
       const { _file, ...record } = c;
       record.summary = text;
       const parsed = CaseSchema.safeParse(record);

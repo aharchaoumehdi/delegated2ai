@@ -1,0 +1,25 @@
+{
+  "_source": "LobeHub Icons (MIT), https://github.com/lobehub/lobe-icons, package @lobehub/icons-static-svg 1.95.1. Files live in site/assets/agents/. Logos are trademarks of their owners and are shown only to identify each product; agents without an exact match keep their letter badge.",
+  "logos": {
+    "Claude Code": "claudecode-color",
+    "Claude": "claude-color",
+    "Claude Agent SDK": "claude-color",
+    "OpenAI Codex": "codex-color",
+    "ChatGPT Agent": "openai",
+    "OpenAI Agents SDK": "openai",
+    "Devin": "devin-color",
+    "Cursor": "cursor",
+    "GitHub Copilot": "githubcopilot",
+    "Gemini": "gemini-color",
+    "Manus": "manus",
+    "Replit Agent": "replit-color",
+    "Lovable": "lovable-color",
+    "n8n": "n8n-color",
+    "Zapier": "zapier-color",
+    "LangGraph": "langgraph-color",
+    "CrewAI": "crewai-color",
+    "OpenClaw": "openclaw-color",
+    "Grok Bot": "grok",
+    "AWS DevOps Agent": "aws-color"
+  }
+}

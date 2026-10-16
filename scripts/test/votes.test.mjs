@@ -4,7 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
-import worker, { counts, vote, cleanup } from "../../worker/src/index.js";
+import worker, { counts, vote, cleanup, subscribe, stats } from "../../worker/src/index.js";
 
 function d1() {
   const db = new DatabaseSync(":memory:");
@@ -73,4 +73,70 @@ test("HTTP: CORS, validation and the vote round trip", async () => {
   assert.equal((await call("POST", "/vote", { id: "Bad Id!", on: true })).status, 400);
   assert.equal((await call("POST", "/vote", { id: "a", on: true }, "https://evil.example")).status, 403);
   assert.equal((await call("OPTIONS", "/vote")).status, 204);
+});
+
+// A fake Kit API that records calls.
+function fakeKit({ total = 7, fail = false } = {}) {
+  const calls = [];
+  const fetch = async (url, init = {}) => {
+    calls.push({ url, method: init.method || "GET", body: init.body ? JSON.parse(init.body) : null, key: init.headers["X-Kit-Api-Key"] });
+    if (fail) return new Response("{}", { status: 500 });
+    if (url.includes("/subscribers?")) return Response.json({ subscribers: [], pagination: { total_count: total } });
+    return Response.json({ subscriber: { email_address: "x" } }, { status: 201 });
+  };
+  return { calls, fetch };
+}
+const kitEnv = (kit) => ({ ...envWith(), KIT_API_KEY: "k", KIT_FORM_ID: "123", fetch: kit.fetch });
+
+test("subscribe creates an unconfirmed subscriber and adds them to the double opt-in form", async () => {
+  const kit = fakeKit();
+  const env = kitEnv(kit);
+  const r = await subscribe(env, { email: " Ada@Example.com ", address: "1.1.1.1", referrer: "https://delegatedto.ai/", now: T });
+  assert.deepEqual(r, { status: 200, body: { ok: true } });
+  assert.deepEqual(kit.calls.map((c) => [c.method, c.url.replace("https://api.kit.com/v4", "")]), [["POST", "/subscribers"], ["POST", "/forms/123/subscribers"]]);
+  assert.deepEqual(kit.calls[0].body, { email_address: "ada@example.com", state: "inactive" });
+  assert.equal(kit.calls[1].body.email_address, "ada@example.com");
+  assert.equal(kit.calls[0].key, "k");
+  const tables = ["rate", "seen", "meta", "votes", "daily"];
+  const stored = JSON.stringify(await Promise.all(tables.map(async (t) => (await env.DB.prepare(`SELECT * FROM ${t}`).all()).results)));
+  assert.ok(!stored.includes("ada@"), "no email is stored");
+});
+
+test("subscribe validates, rate-limits, and reports when it isn't set up", async () => {
+  assert.equal((await subscribe(envWith(), { email: "a@b.co", address: "x", now: T })).status, 503);
+  const kit = fakeKit();
+  const env = kitEnv(kit);
+  assert.equal((await subscribe(env, { email: "not-an-email", address: "x", now: T })).status, 400);
+  assert.equal(kit.calls.length, 0);
+  let last;
+  for (let i = 0; i < 6; i++) last = await subscribe(env, { email: `a${i}@b.co`, address: "x", now: T });
+  assert.equal(last.status, 429);
+  assert.equal((await subscribe(kitEnv(fakeKit({ fail: true })), { email: "a@b.co", address: "y", now: T })).status, 502);
+});
+
+test("stats: vote totals, and a cached subscriber count", async () => {
+  const kit = fakeKit({ total: 42 });
+  const env = kitEnv(kit);
+  await vote(env, { id: "a", on: true, address: "1", now: T });
+  await vote(env, { id: "b", on: true, address: "1", now: T - 3 * 86400e3 });
+  assert.deepEqual(await stats(env, T), { subscribers: 42, votesTotal: 2, votes24h: 1 });
+  await stats(env, T + 60e3);
+  assert.equal(kit.calls.length, 1, "the count is cached");
+  assert.equal((await stats(envWith(), T)).subscribers, null, "no provider, no count");
+});
+
+test("HTTP: a plain form post redirects back with the outcome; bots get a quiet success", async () => {
+  const kit = fakeKit();
+  const env = kitEnv(kit);
+  const post = (body, referer = "https://delegatedto.ai/use-case/x/") =>
+    worker.fetch(new Request("https://votes.example/subscribe", {
+      method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded", Referer: referer, "CF-Connecting-IP": "5.5.5.5" }, body: new URLSearchParams(body).toString(),
+    }), env);
+  let r = await post({ email: "a@b.co" });
+  assert.equal(r.status, 303);
+  assert.equal(r.headers.get("Location"), "https://delegatedto.ai/use-case/x/?subscribed=1");
+  r = await post({ email: "a@b.co", website: "spam" });
+  assert.equal(r.headers.get("Location"), "https://delegatedto.ai/use-case/x/?subscribed=1");
+  assert.equal(kit.calls.length, 2, "the honeypot post never reached Kit");
+  assert.equal((await post({ email: "a@b.co" }, "https://evil.example/")).status, 403);
 });

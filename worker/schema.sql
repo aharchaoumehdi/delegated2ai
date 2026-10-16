@@ -5,3 +5,5 @@ CREATE TABLE IF NOT EXISTS daily (case_id TEXT NOT NULL, day TEXT NOT NULL, n IN
 -- Short-lived abuse guards. `k` is a salted SHA-256 hash; no IP address is stored.
 CREATE TABLE IF NOT EXISTS seen (k TEXT PRIMARY KEY, exp INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS rate (k TEXT PRIMARY KEY, n INTEGER NOT NULL, exp INTEGER NOT NULL);
+-- Small cached values (the newsletter subscriber count), with an expiry.
+CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT NOT NULL, exp INTEGER NOT NULL);

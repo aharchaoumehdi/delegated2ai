@@ -119,6 +119,15 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
+      # The daily email (docs/setup.md, "Newsletter"). Scheduled runs only, after the deploy,
+      # so its links work; it skips itself without KIT_API_KEY and never sends twice a day.
+      - name: Send the daily email
+        if: github.event_name == 'schedule'
+        run: node scripts/digest.mjs
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+
   deploy-held:
     needs: curate
     if: always() && vars.SITE_LIVE != 'true'

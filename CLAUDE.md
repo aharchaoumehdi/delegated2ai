@@ -10,8 +10,11 @@
   first on the next run) or, for `curation.method: "manual"`, held until its facts are verified.
 - Each entry's write-up (`what_they_did`, `how_it_went`, `worth_knowing`, `prompt`) follows
   "The write-up" in the guidelines; `scripts/enrich.mjs` backfills missing ones.
-- Votes go through `worker/` (Cloudflare Worker + D1); keep the Privacy page in
-  `scripts/build.mjs` accurate if what it stores changes.
+- Votes, newsletter sign-ups (passed to Kit, never stored) and live stats go through `worker/`
+  (Cloudflare Worker + D1); `scripts/digest.mjs` sends the daily email. Keep the Privacy page in
+  `scripts/build.mjs` accurate if what is stored or shared changes.
+- Agent logos: `config/agent-logos.json` maps an agent name to an icon in `site/assets/agents/`
+  (LobeHub Icons, MIT). Only add a logo that is that exact product's; otherwise the letter badge stays.
 - The site is static and dependency-free in the browser. `site/assets/render.js` is shared by
   the build and the browser: keep it free of Node APIs.
 - Design: dark by default, light via `[data-theme="light"]` (the choice is remembered). Colours are

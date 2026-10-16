@@ -39,8 +39,9 @@ const latestDay = cases[0]?.added || buildDay;
 
 const platforms = Object.fromEntries(taxonomy.platforms.map((p) => [p.name, { abbr: p.abbr, color: p.color }]));
 const platformInfo = new Map(taxonomy.platforms.map((p) => [p.name, p]));
+const { logos } = await readJSON(path("config", "agent-logos.json"), { logos: {} });
 const domainInfo = new Map(taxonomy.domains.map((d) => [d.name, d]));
-configure({ base, index: PREVIEW ? "index.html" : "", today: latestDay, platforms, repo: site.repo });
+configure({ base, index: PREVIEW ? "index.html" : "", today: latestDay, platforms, logos, repo: site.repo });
 
 const countBy = (key) => {
   const m = new Map();
@@ -50,6 +51,9 @@ const countBy = (key) => {
 const agentCounts = countBy("platform");
 const domainCounts = countBy("domain");
 const newest = cases.filter((c) => c.added === latestDay);
+// Posts the pipeline looked at on the latest day (every run's collection, before filtering).
+const latestLog = await readJSON(path("data", "runs", `${latestDay}.json`), null);
+const scanned = (latestLog?.runs || []).reduce((n, r) => n + (Number(r.collect?.raw) || 0), 0);
 // Order used for "Trending today" before any votes exist: this week's finds first, best first.
 const trendingSeed = [...cases].sort(
   (a, b) => Number(b.added >= weekStart()) - Number(a.added >= weekStart()) || b.score - a.score || b.added.localeCompare(a.added),
@@ -59,6 +63,20 @@ const issueUrl = (template, title = "") =>
   `https://github.com/${site.repo}/issues/new?template=${template}${title ? `&title=${encodeURIComponent(title)}` : ""}`;
 const digestHref = site.newsletter?.action || `${siteUrl}feed.xml`;
 const DIGEST_CTA = "Get 5 use cases every morning";
+// Email sign-up (docs/setup.md, "Newsletter"): the form posts to the votes service, which
+// hands the address to Kit. Without a provider configured, the button links to the feed.
+const newsletterOn = site.newsletter?.provider === "kit";
+let formCount = 0;
+function subscribeForm(variant = "") {
+  if (!newsletterOn) return `<a class="btn-cta" href="${esc(digestHref)}">${DIGEST_CTA}</a>`;
+  const id = `sub-email-${++formCount}`;
+  return `<form class="subscribe${variant ? ` subscribe-${variant}` : ""}" method="post" action="${esc(votesApi ? `${votesApi}/subscribe` : "")}" data-subscribe>
+  <label class="sr-only" for="${id}">Email address</label>
+  <div class="sub-row"><input id="${id}" type="email" name="email" required autocomplete="email" placeholder="you@example.com"><button type="submit" class="btn-cta">${DIGEST_CTA}</button></div>
+  <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <p class="sub-note" role="status" data-sub-note>Free. One email a day, unsubscribe anytime.<span data-sub-count></span></p>
+</form>`;
+}
 
 // ---------- shared fragments ----------
 // Brand: the C3 kit in brand/ (specifications.html is the standard). Pages show the outlined
@@ -108,7 +126,7 @@ function head({ title, description, canonical, jsonld }) {
 <link rel="alternate" type="application/rss+xml" title="${esc(site.name)}: new use cases" href="${siteUrl}feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600&family=Funnel+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600&family=Funnel+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&text=${encodeURIComponent(site.name)}&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${base}assets/style.css">
 <script>try{var t=JSON.parse(localStorage.getItem("dlg.theme"));document.documentElement.dataset.theme=t==="light"?"light":"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
@@ -118,7 +136,7 @@ ${analytics}
 }
 
 function pageData(list, extra = {}) {
-  return `<script id="page-data" type="application/json">${JSON.stringify({ cases: list, base, today: latestDay, platforms, repo: site.repo, votesApi, ...extra }).replace(/</g, "\\u003c")}</script>`;
+  return `<script id="page-data" type="application/json">${JSON.stringify({ cases: list, base, today: latestDay, platforms, logos, repo: site.repo, votesApi, subCountFrom: site.newsletter?.showCountFrom ?? 100, ...extra }).replace(/</g, "\\u003c")}</script>`;
 }
 
 const dialogAndScripts = (list, extra) => `<dialog id="detail" aria-label="Use case details">
@@ -182,11 +200,11 @@ function sidebar({ activeAgent, activeDomain } = {}) {
   <h1 class="brand"><a href="${href()}">${logo()}</a></h1>
   <p class="tagline">${esc(site.tagline)}</p>
   <div class="side-ctas">
-    <a class="btn-cta" href="${esc(digestHref)}">${DIGEST_CTA}</a>
+    ${subscribeForm("side")}
     <a class="btn-outline" href="${issueUrl("submit-use-case.yml")}">Submit a use case</a>
   </div>
+  ${liveStats()}
   <button type="button" class="filter-toggle" data-filters aria-expanded="false">Filter <span>Agents · Categories</span></button>
-  <a class="new-today" href="${href("new/")}"><span><span class="pulse"></span>New ${esc(dayLabel(latestDay, buildDay) === "Today" ? "today" : dayLabel(latestDay, buildDay).toLowerCase())}</span><span class="n">${newest.length}</span></a>
   ${promoCard()}
   <div class="side-lists">
     <section class="side-section">
@@ -207,6 +225,22 @@ function sidebar({ activeAgent, activeDomain } = {}) {
     <nav><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("about/")}">About</a><a href="${siteUrl}feed.xml">RSS feed</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>
   </div>
 </aside>`;
+}
+
+// Live counters. Totals come from the data at build time; upvotes in the last 24 hours and
+// "updated … ago" are filled in by app.js from the votes service and the build time.
+function liveStats() {
+  const newLabel = dayLabel(latestDay, buildDay) === "Today" ? "New today" : `New ${dayLabel(latestDay, buildDay).toLowerCase()}`;
+  const cell = (label, value, attrs = "") => `<div class="stat"${attrs}><dt>${label}</dt><dd>${value}</dd></div>`;
+  return `<section class="stats" aria-label="Live numbers">
+  <p class="stats-head"><span class="live-dot" aria-hidden="true"></span>Live<span class="updated" data-updated="${new Date().toISOString()}">Updated ${esc(formatDate(buildDay))}</span></p>
+  <dl>
+    ${cell("Use cases", cases.length.toLocaleString("en-US"))}
+    <div class="stat"><dt>${esc(newLabel)}</dt><dd><a href="${href("new/")}">${newest.length}</a></dd></div>
+    ${scanned ? cell("Posts scanned", scanned.toLocaleString("en-US")) : ""}
+    ${cell("Upvotes, 24h", "–", ' data-stat="votes24h" hidden')}
+  </dl>
+</section>`;
 }
 
 // ---------- home ----------
@@ -445,7 +479,7 @@ ${digestBox()}`,
 function digestBox() {
   return `<aside class="digest-box">
   <div><h2>Get 5 like this every morning</h2><p>The best things people got an AI agent to do, each with the prompt to try it.</p></div>
-  <a class="btn-cta" href="${esc(digestHref)}">${DIGEST_CTA}</a>
+  ${subscribeForm("box")}
 </aside>`;
 }
 
@@ -484,6 +518,7 @@ function aboutPage() {
 <p>${esc(site.name)} is a daily directory of real things people have handed to AI agents. Each entry is something a person or team actually did with an agent, explained in our own words, with a prompt to try it yourself and a link to the original post.</p>
 <p>Every day a pipeline scans Hacker News, Reddit, X, GitHub, DEV and a handful of blogs for new posts. Claude reads each candidate against our <a href="https://github.com/${esc(site.repo)}/blob/main/docs/editorial-guidelines.md">editorial guidelines</a>, keeps the genuine agent applications, and writes the summary and write-up from the source. Links always come from the source itself, never from the model. Results are reported as the source states them, not independently verified.</p>
 <p>Anyone can <a href="${issueUrl("submit-use-case.yml")}">submit a use case</a>. Submissions go through the same check as everything else.</p>
+<p>Agent logos are trademarks of their owners, shown only to identify each product. The icons come from <a href="https://github.com/lobehub/lobe-icons">LobeHub Icons</a> (MIT licence).</p>
 <p>The code, the data and the guidelines are on <a href="https://github.com/${esc(site.repo)}">GitHub</a>. Spotted a mistake? <a href="https://github.com/${esc(site.repo)}/issues/new">Open an issue</a>.</p>
 </div>`,
   });
@@ -524,7 +559,9 @@ function privacyPage() {
 <h2>Votes</h2>
 <p>When you press “I want this” or the up arrow, we add one to that use case's count. We keep no lasting record of who voted. To stop the same visitor voting again and again, we keep a salted, one-way hash of your network address, the use case and the day for two days, and a similar hash of your address for one hour to limit floods. Neither stores the address itself, and both are deleted automatically.</p>
 ${site.analytics?.plausibleDomain ? `<h2>Visitor statistics</h2><p>We count page views, referring sites, countries and device types in aggregate with Plausible Analytics, which uses no cookies and does not follow you to other sites.</p>` : ""}
-<h2>Submissions</h2>
+${newsletterOn ? `<h2>Newsletter</h2>
+<p>When you sign up for the daily email, your address goes straight to our email provider, Kit, which sends a message asking you to confirm. We don't keep your address on our own servers. To limit abuse, sign-ups use the same short-lived, salted hash of your network address as votes. Every email has an unsubscribe link, and <a href="https://kit.com/privacy">Kit's privacy policy</a> covers how they hold your address.</p>
+` : ""}<h2>Submissions</h2>
 <p>Use cases are submitted through GitHub issues, so what you write there, and your GitHub username, are public on GitHub under GitHub's own privacy terms.</p>
 <h2>Sponsors</h2>
 <p>Sponsor links go straight to the sponsor's site. We don't share anything about you with sponsors.</p>

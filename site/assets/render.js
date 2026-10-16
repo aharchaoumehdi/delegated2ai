@@ -1,7 +1,7 @@
 // Shared rendering helpers, used by the browser (app.js) and by the static
 // build (scripts/build.mjs) so pre-rendered and live HTML are identical.
 
-let CONF = { base: "/", index: "", today: "", platforms: {}, repo: "", unnamed: ["Custom agent", "Other"] };
+let CONF = { base: "/", index: "", today: "", platforms: {}, logos: {}, repo: "", unnamed: ["Custom agent", "Other"] };
 export function configure(conf) {
   CONF = { ...CONF, ...conf };
 }
@@ -65,8 +65,12 @@ export const caseHref = (c) => href(`use-case/${c.id}/`);
 export const agentHref = (name) => href(`agents/${slug(name)}/`);
 export const categoryHref = (name) => href(`category/${slug(name)}/`);
 
-/** Two-letter agent mark, as in the sidebar and list items. */
+/** Agent mark, as in the sidebar and list items: the product's logo on a light tile when we
+ *  have one (assets/agents/, config/agent-logos.json), otherwise a two-letter badge. */
 export function badge(name, size = "md") {
+  const logo = CONF.logos?.[name];
+  if (logo)
+    return `<span class="mark mark-${size} mark-logo" aria-hidden="true"><img src="${CONF.base}assets/agents/${esc(logo)}.svg" alt="" width="14" height="14" loading="lazy" decoding="async"></span>`;
   const m = platformMeta(name);
   const hollow = m.color === "transparent";
   return `<span class="mark mark-${size}${hollow ? " mark-hollow" : ""}" aria-hidden="true"${hollow ? "" : ` style="background-color:${m.color}"`}>${esc(m.abbr)}</span>`;
@@ -76,6 +80,9 @@ function dot(name) {
   const m = platformMeta(name);
   return `<span class="dot${m.color === "transparent" ? " dot-hollow" : ""}" aria-hidden="true"${m.color === "transparent" ? "" : ` style="background-color:${m.color}"`}></span>`;
 }
+
+// A prompt with its [placeholders] marked, so it's clear what to fill in.
+const promptHTML = (text) => esc(text).replace(/\[[^\]\n]{1,80}\]/g, (m) => `<span class="ph">${m}</span>`);
 
 const ICON = {
   save: '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.25 2.75h7.5a.5.5 0 0 1 .5.5v10.2L8 11.1 3.75 13.45V3.25a.5.5 0 0 1 .5-.5Z" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg>',
@@ -174,7 +181,7 @@ export function detailHTML(c, { heading = "h2" } = {}) {
     c.prompt
       ? `<div class="try">
     <div class="try-head"><p><b>Try it yourself</b>${named ? ` with ${esc(c.platform)}` : ""}</p><button type="button" class="btn-copy" data-copy-prompt="${esc(c.id)}">Copy prompt</button></div>
-    <pre class="prompt">${esc(c.prompt)}</pre>
+    <pre class="prompt">${promptHTML(c.prompt)}</pre>${/\[[^\]\n]{1,80}\]/.test(c.prompt) ? `<p class="try-hint">Swap the <span class="ph-key">highlighted [parts]</span> for your own details.</p>` : ""}
   </div>`
       : ""
   }

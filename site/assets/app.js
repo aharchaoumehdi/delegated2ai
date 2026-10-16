@@ -336,7 +336,78 @@ try {
   if (sessionStorage.getItem("dlg.sponsors") === "closed") document.body.classList.add("sponsors-closed");
 } catch {}
 readURL();
+// ---------- live counters ----------
+function ago(iso) {
+  const min = Math.round((Date.now() - Date.parse(iso)) / 60e3);
+  if (!(min >= 0)) return "";
+  if (min < 2) return "Updated just now";
+  if (min < 60) return `Updated ${min} min ago`;
+  const h = Math.round(min / 60);
+  return h < 36 ? `Updated ${h} h ago` : `Updated ${Math.round(h / 24)} days ago`;
+}
+function tickUpdated() {
+  document.querySelectorAll("[data-updated]").forEach((el) => {
+    const text = ago(el.dataset.updated);
+    if (text) el.textContent = text;
+  });
+}
+
+async function loadStats() {
+  if (!API) return;
+  try {
+    const res = await fetch(`${API}/stats`);
+    if (!res.ok) return;
+    const st = await res.json();
+    document.querySelectorAll('[data-stat="votes24h"]').forEach((cell) => {
+      cell.querySelector("dd").textContent = Number(st.votes24h || 0).toLocaleString("en-US");
+      cell.hidden = false;
+    });
+    if (st.subscribers >= (DATA.subCountFrom ?? 100))
+      document.querySelectorAll("[data-sub-count]").forEach((el) => (el.textContent = ` Join ${st.subscribers.toLocaleString("en-US")} readers.`));
+  } catch {}
+}
+
+// ---------- newsletter sign-up ----------
+// Posts to the votes service (which hands the address to the email provider). Without
+// JavaScript the same form posts normally and the service redirects back here.
+const FEED = `${DATA.base}feed.xml`;
+const notYet = `Sign-ups open soon. Meanwhile, the <a href="${FEED}">RSS feed</a> has every new use case.`;
+document.addEventListener("submit", async (e) => {
+  const form = e.target.closest("[data-subscribe]");
+  if (!form) return;
+  e.preventDefault();
+  const note = form.querySelector("[data-sub-note]");
+  const button = form.querySelector("button[type=submit]");
+  const say = (html, state) => {
+    note.innerHTML = html;
+    form.dataset.state = state;
+  };
+  if (!API) return say(notYet, "info");
+  button.disabled = true;
+  try {
+    const res = await fetch(`${API}/subscribe`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: form.email.value, website: form.website.value }),
+    });
+    const body = await res.json().catch(() => ({}));
+    if (res.ok) {
+      form.querySelector(".sub-row").hidden = true;
+      say("<b>Almost there.</b> Check your inbox and confirm your address to start getting the email.", "ok");
+    } else if (res.status === 503) say(notYet, "info");
+    else say(esc(body.error || "That didn't work. Try again in a moment."), "error");
+  } catch {
+    say("That didn't work. Check your connection and try again.", "error");
+  } finally {
+    button.disabled = false;
+  }
+});
+if (new URLSearchParams(location.search).get("subscribed") === "1") toast("Check your inbox to confirm your subscription");
+
 syncSaved();
 syncVotes();
 renderHome();
 loadCounts();
+loadStats();
+tickUpdated();
+setInterval(tickUpdated, 60e3);

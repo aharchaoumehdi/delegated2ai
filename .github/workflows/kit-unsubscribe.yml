@@ -1,0 +1,25 @@
+name: Unsubscribe addresses (Kit)
+
+# Unsubscribes the given addresses from the newsletter, e.g. test sign-ups.
+on:
+  workflow_dispatch:
+    inputs:
+      emails:
+        description: "Addresses to unsubscribe, comma-separated"
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  unsubscribe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/kit-unsubscribe.mjs
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          EMAILS: ${{ inputs.emails }}

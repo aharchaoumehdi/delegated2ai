@@ -4,6 +4,10 @@
   "description": "delegatedto.ai is a daily, searchable feed of real-world AI agent applications across software, business, science and everyday life. Every entry is explained in plain language, tagged by platform, and links to the original source.",
   "url": "https://delegatedto.ai/",
   "repo": "aharchaoumehdi/delegated2ai",
+  "email": {
+    "hello": "hello@delegatedto.ai",
+    "sponsors": "sponsors@delegatedto.ai"
+  },
   "newsletter": {
     "action": "",
     "provider": "kit",

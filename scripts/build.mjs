@@ -586,7 +586,7 @@ function aboutPage() {
 <p>Every day a pipeline scans Hacker News, Reddit, X, GitHub, DEV and a handful of blogs for new posts. Claude reads each candidate against our <a href="https://github.com/${esc(site.repo)}/blob/main/docs/editorial-guidelines.md">editorial guidelines</a>, keeps the genuine agent applications, and writes the summary and write-up from the source. Links always come from the source itself, never from the model. Results are reported as the source states them, not independently verified.</p>
 <p>Anyone can <a href="${issueUrl("submit-use-case.yml")}">submit a use case</a>. Submissions go through the same check as everything else.</p>
 <p>Agent logos are trademarks of their owners, shown only to identify each product. The icons come from <a href="https://github.com/lobehub/lobe-icons">LobeHub Icons</a> (MIT licence).</p>
-<p>The code, the data and the guidelines are on <a href="https://github.com/${esc(site.repo)}">GitHub</a>. Spotted a mistake? <a href="https://github.com/${esc(site.repo)}/issues/new">Open an issue</a>.</p>
+<p>The code, the data and the guidelines are on <a href="https://github.com/${esc(site.repo)}">GitHub</a>. Spotted a mistake? <a href="https://github.com/${esc(site.repo)}/issues/new">Open an issue</a>, or email <a href="mailto:${esc(site.email.hello)}">${esc(site.email.hello)}</a>.</p>
 </div>`,
   });
 }
@@ -607,7 +607,8 @@ function sponsorPage() {
 <li><b>Sidebar card.</b> A short pitch and a link at the top of the home page sidebar.</li>
 </ul>
 <p>Sponsors are clearly labelled and never affect which use cases are published or how they are ranked.</p>
-<p><a class="btn-primary" href="${issueUrl("sponsor.yml", "[sponsor] ")}">Ask about sponsoring</a></p>
+<p>Email <a href="mailto:${esc(site.email.sponsors)}">${esc(site.email.sponsors)}</a> with your product and the placement you'd like, and we'll get back to you.</p>
+<p><a class="btn-primary" href="mailto:${esc(site.email.sponsors)}?subject=${encodeURIComponent(`Sponsoring ${site.name}`)}">Ask about sponsoring</a></p>
 </div>`,
   });
 }
@@ -633,7 +634,7 @@ ${newsletterOn ? `<h2>Newsletter</h2>
 <h2>Sponsors</h2>
 <p>Sponsor links go straight to the sponsor's site. We don't share anything about you with sponsors.</p>
 <h2>Questions</h2>
-<p><a href="https://github.com/${esc(site.repo)}/issues/new">Open an issue</a> on GitHub.</p>
+<p>Email <a href="mailto:${esc(site.email.hello)}">${esc(site.email.hello)}</a>, or <a href="https://github.com/${esc(site.repo)}/issues/new">open an issue</a> on GitHub.</p>
 </div>`,
   });
 }

@@ -14,7 +14,9 @@
     "showCountFrom": 100
   },
   "analytics": {
-    "plausibleDomain": ""
+    "plausibleDomain": "",
+    "cloudflareToken": "",
+    "googleVerification": "aMwMyiL0iUgWhrlft3AxB7SHMyG9ORIJlavE_9fsQ3k"
   },
   "sponsor": null,
   "sponsors": [],

@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       kit_form_id:
-        description: "Kit form ID (the number in the form's URL), when the account has several forms"
+        description: "Kit form ID (the number in the form's URL); overrides config/site.json"
         required: false
   push:
     branches: [main]
@@ -76,6 +76,8 @@ jobs:
         run: |
           KIT_API_KEY=$(printf '%s' "$KIT_API_KEY" | tr -d '[:space:]')
           KIT_FORM_ID=$(printf '%s' "$KIT_FORM_ID" | tr -d '[:space:]')
+          # The form ID isn't secret: it normally lives in config/site.json (newsletter.kitFormId).
+          [ -n "$KIT_FORM_ID" ] || KIT_FORM_ID=$(node -p 'require("../config/site.json").newsletter?.kitFormId || ""')
           # Without KIT_FORM_ID, use the account's form when it has exactly one.
           if [ -n "$KIT_API_KEY" ] && [ -z "$KIT_FORM_ID" ]; then
             KIT_FORM_ID=$(node -e '
@@ -92,7 +94,7 @@ jobs:
             printf '%s' "$KIT_FORM_ID" | $WRANGLER secret put KIT_FORM_ID
             echo "Newsletter sign-ups connected to Kit (form $KIT_FORM_ID)." >> "$GITHUB_STEP_SUMMARY"
           elif [ -n "$KIT_API_KEY" ]; then
-            echo "Newsletter sign-ups are off: couldn't pick a Kit form (see the log). Re-run with the form's ID (or add the KIT_FORM_ID repository secret)." >> "$GITHUB_STEP_SUMMARY"
+            echo "Newsletter sign-ups are off: couldn't pick a Kit form (see the log). Set newsletter.kitFormId in config/site.json (the number in the form's URL in Kit)." >> "$GITHUB_STEP_SUMMARY"
             exit 1
           else
             echo "Newsletter sign-ups are off: add the KIT_API_KEY repository secret (docs/setup.md, \"Newsletter\") and re-run." >> "$GITHUB_STEP_SUMMARY"

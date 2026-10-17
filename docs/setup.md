@@ -140,8 +140,9 @@ and points to the RSS feed.
    the form's settings keep **double opt-in** on (Kit calls the confirmation message
    the "incentive email"). The form's ID is the number in its URL in Kit.
 2. In **Settings → Developer**, create a **v4 API key**.
-3. Add the repository secret `KIT_API_KEY` (the key). If the Kit account has exactly one
-   form, that is the one used; otherwise also add `KIT_FORM_ID` (the number).
+3. Add the repository secret `KIT_API_KEY` (the key), and put the form's number in
+   `newsletter.kitFormId` in `config/site.json` (it isn't secret). Left empty, the
+   workflow uses the account's form if it has exactly one.
 4. Actions → **Deploy votes service** → Run workflow. It hands both to the Worker; the
    run summary says "Newsletter sign-ups connected to Kit".
 5. The daily email starts with the first scheduled run after launch (`SITE_LIVE`), and

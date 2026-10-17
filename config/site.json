@@ -11,6 +11,7 @@
   "newsletter": {
     "action": "",
     "provider": "kit",
+    "kitFormId": "10059124",
     "showCountFrom": 100
   },
   "analytics": {

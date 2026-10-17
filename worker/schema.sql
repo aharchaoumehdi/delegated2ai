@@ -7,3 +7,5 @@ CREATE TABLE IF NOT EXISTS seen (k TEXT PRIMARY KEY, exp INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS rate (k TEXT PRIMARY KEY, n INTEGER NOT NULL, exp INTEGER NOT NULL);
 -- Small cached values (the newsletter subscriber count), with an expiry.
 CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT NOT NULL, exp INTEGER NOT NULL);
+-- Reader submissions: a link and an optional note (nothing about the sender), kept 30 days.
+CREATE TABLE IF NOT EXISTS submissions (url TEXT PRIMARY KEY, note TEXT NOT NULL DEFAULT '', created INTEGER NOT NULL);

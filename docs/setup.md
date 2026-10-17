@@ -104,6 +104,11 @@ kept in each visitor's browser only, and "Trending today" uses the editor's orde
    `https://delegatedto-votes.aharchaou-mehdi.workers.dev`). A repository variable
    `VOTES_API` overrides it without a code change.
 
+The same Worker takes the site's **Submit a use case** form (`/submit/`): it keeps the link
+and the reader's note for 30 days, and the daily run reads new ones from the database through
+Cloudflare's API with the same two secrets, so each goes through curation. (GitHub issues
+labelled `submission` are read too, for people with access to this private repository.)
+
 Allowed site origins are listed in `worker/wrangler.toml` (`ALLOWED_ORIGINS`). What is
 stored, and for how long, is described on the site's Privacy page.
 

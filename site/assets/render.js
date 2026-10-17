@@ -1,7 +1,7 @@
 // Shared rendering helpers, used by the browser (app.js) and by the static
 // build (scripts/build.mjs) so pre-rendered and live HTML are identical.
 
-let CONF = { base: "/", index: "", today: "", platforms: {}, logos: {}, repo: "", unnamed: ["Custom agent", "Other"] };
+let CONF = { base: "/", index: "", today: "", platforms: {}, logos: {}, contact: "", unnamed: ["Custom agent", "Other"] };
 export function configure(conf) {
   CONF = { ...CONF, ...conf };
 }
@@ -196,7 +196,9 @@ export function detailHTML(c, { heading = "h2" } = {}) {
     c.source.author ? ` · ${esc(c.source.author)}` : ""
   }${date ? ` · ${date}` : ""}</p>
   <p class="fineprint">Written with AI assistance from the original post and checked against our
-  <a href="https://github.com/${esc(CONF.repo)}/blob/main/docs/editorial-guidelines.md">editorial guidelines</a>.
-  Results are as reported by the source, not independently verified.</p>
+  <a href="${href("about/")}#how-we-choose">editorial guidelines</a>.
+  Results are as reported by the source, not independently verified.${
+    CONF.contact ? ` Spotted a mistake? <a href="mailto:${esc(CONF.contact)}?subject=${encodeURIComponent(`Correction: ${c.title}`)}">Tell us</a>.` : ""
+  }</p>
 </article>`;
 }

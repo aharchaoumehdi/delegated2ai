@@ -31,7 +31,8 @@
   },
   "submissions": {
     "enabled": true,
-    "label": "submission"
+    "label": "submission",
+    "database": "delegatedto-votes"
   },
   "x": {
     "enabled": true,

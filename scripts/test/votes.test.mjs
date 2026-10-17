@@ -4,7 +4,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
-import worker, { counts, vote, cleanup, subscribe, stats } from "../../worker/src/index.js";
+import worker, { counts, vote, cleanup, subscribe, stats, submit } from "../../worker/src/index.js";
 
 function d1() {
   const db = new DatabaseSync(":memory:");
@@ -139,4 +139,32 @@ test("HTTP: a plain form post redirects back with the outcome; bots get a quiet 
   assert.equal(r.headers.get("Location"), "https://delegatedto.ai/use-case/x/?subscribed=1");
   assert.equal(kit.calls.length, 2, "the honeypot post never reached Kit");
   assert.equal((await post({ email: "a@b.co" }, "https://evil.example/")).status, 403);
+});
+
+test("submit keeps a link and a note, once per link, and nothing about the sender", async () => {
+  const env = envWith();
+  assert.deepEqual(await submit(env, { url: " https://example.com/post#top ", note: "  Great one  ", address: "1.1.1.1", now: T }), { status: 200, body: { ok: true } });
+  await submit(env, { url: "https://example.com/post", note: "again", address: "2.2.2.2", now: T });
+  const rows = (await env.DB.prepare("SELECT * FROM submissions").all()).results.map((r) => ({ ...r }));
+  assert.deepEqual(rows, [{ url: "https://example.com/post", note: "Great one", created: T }]);
+  for (const url of ["", "example.com/post", "javascript:alert(1)", "ftp://example.com/x", "https://localhost/x"])
+    assert.equal((await submit(env, { url, address: "1.1.1.1", now: T })).status, 400, url);
+  const guards = JSON.stringify((await env.DB.prepare("SELECT * FROM rate").all()).results);
+  assert.ok(!guards.includes("1.1.1.1"));
+  await cleanup(env, T + 31 * 86400e3);
+  assert.equal((await env.DB.prepare("SELECT COUNT(*) AS n FROM submissions").first()).n, 0, "kept 30 days");
+});
+
+test("HTTP: submit by JSON and by plain form post", async () => {
+  const env = envWith();
+  const r = await worker.fetch(new Request("https://votes.example/submit", {
+    method: "POST", headers: { "Content-Type": "application/json", Origin: "https://delegatedto.ai", "CF-Connecting-IP": "5.5.5.5" }, body: JSON.stringify({ url: "https://example.com/a" }),
+  }), env);
+  assert.equal(r.status, 200);
+  const form = await worker.fetch(new Request("https://votes.example/submit", {
+    method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded", Referer: "https://delegatedto.ai/submit/", "CF-Connecting-IP": "5.5.5.5" }, body: "url=not-a-link",
+  }), env);
+  assert.equal(form.headers.get("Location"), "https://delegatedto.ai/submit/?submitted=0");
+  for (let i = 0; i < 10; i++) await submit(env, { url: `https://example.com/${i}`, address: "9.9.9.9", now: T });
+  assert.equal((await submit(env, { url: "https://example.com/z", address: "9.9.9.9", now: T })).status, 429);
 });

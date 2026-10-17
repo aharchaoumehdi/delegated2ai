@@ -42,7 +42,7 @@ const platforms = Object.fromEntries(taxonomy.platforms.map((p) => [p.name, { ab
 const platformInfo = new Map(taxonomy.platforms.map((p) => [p.name, p]));
 const { logos } = await readJSON(path("config", "agent-logos.json"), { logos: {} });
 const domainInfo = new Map(taxonomy.domains.map((d) => [d.name, d]));
-configure({ base, index: PREVIEW ? "index.html" : "", today: latestDay, platforms, logos, repo: site.repo });
+configure({ base, index: PREVIEW ? "index.html" : "", today: latestDay, platforms, logos, contact: site.email.hello });
 
 const countBy = (key) => {
   const m = new Map();
@@ -70,8 +70,6 @@ const trendingSeed = [...cases].sort(
   (a, b) => Number(b.added >= weekStart()) - Number(a.added >= weekStart()) || b.score - a.score || b.added.localeCompare(a.added),
 );
 const plural = (n, word) => `${n.toLocaleString("en-US")} ${word}${n === 1 ? "" : "s"}`;
-const issueUrl = (template, title = "") =>
-  `https://github.com/${site.repo}/issues/new?template=${template}${title ? `&title=${encodeURIComponent(title)}` : ""}`;
 const digestHref = site.newsletter?.action || `${siteUrl}feed.xml`;
 const DIGEST_CTA = "Get 5 use cases every day";
 // Email sign-up (docs/setup.md, "Newsletter"): the form posts to the votes service, which
@@ -160,7 +158,7 @@ ${analytics}
 }
 
 function pageData(list, extra = {}) {
-  return `<script id="page-data" type="application/json">${JSON.stringify({ cases: list, base, today: latestDay, platforms, logos, repo: site.repo, votesApi, subCountFrom: site.newsletter?.showCountFrom ?? 100, ...extra }).replace(/</g, "\\u003c")}</script>`;
+  return `<script id="page-data" type="application/json">${JSON.stringify({ cases: list, base, today: latestDay, platforms, logos, contact: site.email.hello, votesApi, subCountFrom: site.newsletter?.showCountFrom ?? 100, ...extra }).replace(/</g, "\\u003c")}</script>`;
 }
 
 const dialogAndScripts = (list, extra) => `<dialog id="detail" aria-label="Use case details">
@@ -218,7 +216,7 @@ const siteNav = (pagePath = "") =>
     `<a href="${href(to)}"${match.test(pagePath) ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</nav>`;
 
 const footerLinks = () =>
-  `<nav class="foot-links"><a href="${href()}">All use cases</a><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("new/")}">New</a><a href="${href("issues/")}">Newsletter</a><a href="${siteUrl}feed.xml">RSS</a><a href="${href("about/")}">About</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>`;
+  `<nav class="foot-links"><a href="${href()}">All use cases</a><a href="${href("agents/")}">Agents</a><a href="${href("topics/")}">Topics</a><a href="${href("new/")}">New</a><a href="${href("issues/")}">Newsletter</a><a href="${siteUrl}feed.xml">RSS</a><a href="${href("about/")}">About</a><a href="${href("submit/")}">Submit</a><a href="${href("sponsor/")}">Sponsor</a><a href="${href("privacy/")}">Privacy</a></nav>`;
 
 function promoCard() {
   if (site.sponsor) {
@@ -276,7 +274,7 @@ function liveStats() {
     ${cell("Categories", link(href("topics/"), domainCounts.length))}
   </dl>
   <p class="stats-votes" data-stat="votes24h" hidden><span aria-hidden="true">▲</span> <b>–</b> upvotes in the last 24 hours</p>
-  <div class="stats-submit"><p>Know a use case worth sharing?</p><a class="btn-outline" href="${issueUrl("submit-use-case.yml")}">Submit a use case</a></div>
+  <div class="stats-submit"><p>Know a use case worth sharing?</p><a class="btn-outline" href="${href("submit/")}">Submit a use case</a></div>
 </section>`;
 }
 
@@ -588,10 +586,16 @@ function aboutPage() {
     body: `<h1 class="page-title">About</h1>
 <div class="prose">
 <p>${esc(site.name)} is a daily directory of real things people have handed to AI agents. Each entry is something a person or team actually did with an agent, explained in our own words, with a prompt to try it yourself and a link to the original post.</p>
-<p>Every day a pipeline scans Hacker News, Reddit, X, GitHub, DEV and a handful of blogs for new posts. Claude reads each candidate against our <a href="https://github.com/${esc(site.repo)}/blob/main/docs/editorial-guidelines.md">editorial guidelines</a>, keeps the genuine agent applications, and writes the summary and write-up from the source. Links always come from the source itself, never from the model. Results are reported as the source states them, not independently verified.</p>
-<p>Anyone can <a href="${issueUrl("submit-use-case.yml")}">submit a use case</a>. Submissions go through the same check as everything else.</p>
+<p>Every day a pipeline scans Hacker News, Reddit, X, GitHub, DEV and a handful of blogs for new posts. Claude reads each candidate against our editorial guidelines (below), keeps the genuine agent applications, and writes the summary and write-up from the source. Links always come from the source itself, never from the model. Results are reported as the source states them, not independently verified.</p>
+<p>Anyone can <a href="${href("submit/")}">submit a use case</a>. Submissions go through the same check as everything else.</p>
+<h2 id="how-we-choose">How we choose</h2>
+<p>An entry needs an AI agent that took actions or worked through several steps toward a goal, and a post that shows a concrete result. For example, an agent that migrates a codebase, runs the tests and opens the pull request; one that plans a family's meals and fills the grocery cart; or one that searches the literature and runs the analyses for a lab.</p>
+<p>We leave out product launches, funding news and benchmarks with no concrete use, generic prompting tips and listicles, single chatbot answers with no actions, feature lists with nothing anyone actually did, vague claims, and anything unsafe, deceptive or mainly an advert.</p>
+<p>Each candidate is scored from 0 to 10 on how useful it is to a reader, how well it is evidenced (a demo, code, numbers or a walkthrough), how original it is, whether you could reproduce it, and how clear the agent's part is. Scores of 5 and up are published. Popularity is never a reason to score higher or lower, and everyday, science, health, education, finance and small-business uses get a small boost, because they're rarer than coding ones.</p>
+<p>Every summary and write-up is written from the original post in plain words, with results attributed the way the source states them.</p>
 <p>Agent logos are trademarks of their owners, shown only to identify each product. The icons come from <a href="https://github.com/lobehub/lobe-icons">LobeHub Icons</a> (MIT licence).</p>
-<p>The code, the data and the guidelines are on <a href="https://github.com/${esc(site.repo)}">GitHub</a>. Spotted a mistake? <a href="https://github.com/${esc(site.repo)}/issues/new">Open an issue</a>, or email <a href="mailto:${esc(site.email.hello)}">${esc(site.email.hello)}</a>.</p>
+<h2>Contact</h2>
+<p>Spotted a mistake, or want an entry about your work changed or removed? Email <a href="mailto:${esc(site.email.hello)}">${esc(site.email.hello)}</a>.</p>
 </div>`,
   });
 }
@@ -618,6 +622,33 @@ function sponsorPage() {
   });
 }
 
+function submitPage() {
+  const action = votesApi ? `${votesApi}/submit` : "";
+  return narrowPage({
+    path: "submit/",
+    title: `Submit a use case · ${site.name}`,
+    description: `Seen someone hand real work to an AI agent? Send us the link and it goes through the same check as everything on ${site.name}.`,
+    list: [],
+    body: `<p class="eyebrow">Submit</p>
+<h1 class="page-title">Submit a use case</h1>
+<p class="page-lead">Seen someone hand real work to an AI agent? Send us the link: a post, a thread, a repository or an article.</p>
+${action ? `<form class="submit-form" method="post" action="${esc(action)}" data-submit>
+  <label for="sub-url">Link</label>
+  <input id="sub-url" type="url" name="url" required maxlength="2000" inputmode="url" placeholder="https://" autocomplete="off">
+  <label for="sub-note">Anything we should know? <span class="optional">(optional)</span></label>
+  <textarea id="sub-note" name="note" rows="4" maxlength="1000" placeholder="What did the agent do, and how did it go?"></textarea>
+  <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <div class="submit-row"><button type="submit" class="btn-primary">Submit</button></div>
+  <p class="sub-note" role="status" data-submit-note></p>
+</form>` : `<p><a class="btn-primary" href="mailto:${esc(site.email.hello)}?subject=${encodeURIComponent("Use case submission")}">Email us the link</a></p>`}
+<div class="prose">
+<h2>What happens next</h2>
+<p>Our curator reads it with the next daily run, against the same <a href="${href("about/")}#how-we-choose">guidelines</a> as everything else. If it's a real piece of work done by an agent, with a concrete result, it's written up and published, usually within a day. We don't reply to each submission.</p>
+<p>Only the link and your note are kept, for 30 days; see <a href="${href("privacy/")}">Privacy</a>.</p>
+</div>`,
+  });
+}
+
 function privacyPage() {
   return narrowPage({
     path: "privacy/",
@@ -635,11 +666,11 @@ ${site.analytics?.plausibleDomain || site.analytics?.cloudflareToken || site.ana
 ${newsletterOn ? `<h2>Newsletter</h2>
 <p>When you sign up for the daily email, your address goes straight to our email provider, Kit, which sends a message asking you to confirm. We don't keep your address on our own servers. To limit abuse, sign-ups use the same short-lived, salted hash of your network address as votes. Every email has an unsubscribe link, and <a href="https://kit.com/privacy">Kit's privacy policy</a> covers how they hold your address.</p>
 ` : ""}<h2>Submissions</h2>
-<p>Use cases are submitted through GitHub issues, so what you write there, and your GitHub username, are public on GitHub under GitHub's own privacy terms.</p>
+<p>When you submit a use case, we keep the link and the note you add, and nothing about you, for 30 days. They're read by our curator and are never published as you wrote them. To limit abuse, submissions use the same short-lived, salted hash of your network address as votes. Please don't put personal details in the note.</p>
 <h2>Sponsors</h2>
 <p>Sponsor links go straight to the sponsor's site. We don't share anything about you with sponsors.</p>
 <h2>Questions</h2>
-<p>Email <a href="mailto:${esc(site.email.hello)}">${esc(site.email.hello)}</a>, or <a href="https://github.com/${esc(site.repo)}/issues/new">open an issue</a> on GitHub.</p>
+<p>Email <a href="mailto:${esc(site.email.hello)}">${esc(site.email.hello)}</a>.</p>
 </div>`,
   });
 }
@@ -680,6 +711,7 @@ const renderers = {
   "topics/index.html": topicsPage,
   "about/index.html": aboutPage,
   "sponsor/index.html": sponsorPage,
+  "submit/index.html": submitPage,
   "privacy/index.html": privacyPage,
 };
 for (const [d] of domainCounts) renderers[`category/${slug(d)}/index.html`] = () => categoryPage(d);

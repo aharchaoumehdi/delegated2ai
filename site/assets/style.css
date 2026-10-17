@@ -177,6 +177,19 @@ svg { flex: none; }
 .sub-note:empty { display: none; }
 .sub-note a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
 .subscribe[data-state="error"] .sub-note::before { content: "Couldn't sign you up: "; font-weight: 600; }
+.submit-form { display: grid; gap: 8px; max-width: 34rem; margin-top: 24px; }
+.submit-form label { margin-top: 8px; font-weight: 600; color: var(--heading); }
+.submit-form .optional { font-weight: 400; color: var(--text-muted); }
+.submit-form input[type="url"], .submit-form textarea {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--border-control); border-radius: 9px;
+  background: var(--surface-raised); color: var(--heading); font: 15px/1.5 var(--font-sans);
+}
+.submit-form textarea { resize: vertical; min-height: 96px; }
+.submit-form input[type="url"]::placeholder, .submit-form textarea::placeholder { color: var(--text-muted); }
+.submit-form input[type="url"]:focus-visible, .submit-form textarea:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.submit-row { margin-top: 8px; }
+.submit-form .btn-primary:disabled { opacity: 0.7; cursor: progress; }
+.submit-form[data-state="error"] .sub-note::before { content: "Couldn't send it: "; font-weight: 600; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .news-side .sub-row { flex-direction: column; }
 .news-side .subscribe input[type="email"] { flex: none; }

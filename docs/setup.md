@@ -113,9 +113,10 @@ stored, and for how long, is described on the site's Privacy page.
 `sponsors@delegatedto.ai` (on the Sponsor page) forward to your own inbox through Cloudflare
 Email Routing (free). To set them up:
 
-1. Give `CLOUDFLARE_API_TOKEN` these extra permissions (Cloudflare → My Profile → API
-   Tokens → edit the token): Zone · Email Routing Rules · Edit, Zone · DNS · Edit,
-   Zone · Zone · Read, Account · Email Routing Addresses · Edit.
+1. Create a separate Cloudflare token (My Profile → API Tokens → Create Token → Custom
+   token) with Zone · Email Routing Rules · Edit, Zone · DNS · Edit, Zone · Zone · Read and
+   Account · Email Routing Addresses · Edit, and save it as the repository secret
+   `CLOUDFLARE_EMAIL_TOKEN`. (Without it the workflow tries `CLOUDFLARE_API_TOKEN`.)
 2. Actions → **Set up email addresses** → Run workflow, with your inbox as the destination.
 3. Click the verification link Cloudflare emails to that inbox. Forwarding starts then.
 

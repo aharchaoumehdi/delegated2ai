@@ -8,7 +8,9 @@
 import { appendFile } from "node:fs/promises";
 
 const API = "https://api.cloudflare.com/client/v4";
-const { CLOUDFLARE_API_TOKEN: token, CLOUDFLARE_ACCOUNT_ID: account, DOMAIN: domain, DESTINATION: destination } = process.env;
+// Trimmed: a secret pasted with a line break would otherwise be an invalid header.
+const env = (k) => (process.env[k] || "").trim();
+const [token, account, domain, destination] = ["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "DOMAIN", "DESTINATION"].map(env);
 const names = (process.env.ADDRESSES || "hello,sponsors").split(",").map((s) => s.trim()).filter(Boolean);
 const log = [];
 const say = (line) => (console.log(line), log.push(line));

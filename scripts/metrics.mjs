@@ -330,6 +330,12 @@ async function health(siteUrl, votesApi) {
 }
 
 // ---------- run ----------
+/** Every file the dashboard reads (each one is a dataset there, under the same name). */
+export const DATASETS = [
+  "traffic_daily", "traffic_breakdown", "subscribers_daily", "emails", "top_voted", "submissions_daily",
+  "search_daily", "search_breakdown", "pipeline_daily", "content_breakdown", "collector_sources",
+  "health", "status", "history", "updated",
+];
 export async function collect({ now = Date.now(), previousHistory = [] } = {}) {
   const site = await readJSON(path("config", "site.json"));
   const siteUrl = site.url.replace(/\/?$/, "/");
@@ -380,6 +386,16 @@ async function main() {
   } catch {}
   const out = await collect({ previousHistory });
   for (const [name, rows] of Object.entries(out)) await writeFile(join(dir, `${name}.json`), JSON.stringify(rows, null, 1) + "\n");
+  // A source that failed this time keeps its last file (the directory starts from the
+  // previous run's); one that has never worked gets an empty file, so the dashboard
+  // always has every dataset.
+  for (const name of DATASETS) {
+    try {
+      await readFile(join(dir, `${name}.json`));
+    } catch {
+      await writeFile(join(dir, `${name}.json`), "[]\n");
+    }
+  }
   await writeFile(join(dir, "updated.json"), JSON.stringify([{ at: new Date().toISOString() }]) + "\n");
   for (const s of out.status) console.log(`${s.ok ? "✓" : "✗"} ${s.label}: ${s.detail}`);
   if (process.env.GITHUB_STEP_SUMMARY)

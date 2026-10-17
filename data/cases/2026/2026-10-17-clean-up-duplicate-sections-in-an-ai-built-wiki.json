@@ -1,0 +1,42 @@
+{
+  "id": "clean-up-duplicate-sections-in-an-ai-built-wiki",
+  "title": "Clean up duplicate sections in an AI-built wiki",
+  "summary": "The Synthadoc team had an AI fix flagged wiki pages for approval; they report it rewrote pages, kept weak duplicates and leaked notes until they added checks.",
+  "domain": "Data",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Synthadoc",
+    "Claude Code",
+    "opencode"
+  ],
+  "agent_role": "A simple scanner flags problems; the AI proposes fixes; a person reviews a before-and-after view and approves, with a saved copy for undo.",
+  "outcome": "The authors report five failure types and the safeguards they added to catch them; no success rate is given.",
+  "what_they_did": "The makers of Synthadoc, an open-source wiki that builds pages from documents, built a cleanup step. A plain script flags repeated or thin sections. An AI proposes fixes, the user sees before and after, and approves before anything is saved.",
+  "how_it_went": "They say the AI first rewrote whole pages, kept a short duplicate over one with citations, leaked file-reading commands, left planning notes, and dropped a year it thought was wrong. They added output cleaning and draft detection.",
+  "worth_knowing": "Telling the AI 'keep the first copy' was precise but wrong; the rule needed to be 'keep the best'. Better instructions alone did not stop failures, so they also kept the approval step and undo.",
+  "prompt": "Review the Markdown pages in [wiki folder]. List every page with repeated headings, empty sections or very short sections. For each problem, propose the smallest fix: merge duplicates by keeping the most detailed version with its citations, and never rename headings, change dates or add facts that are not on the page. Show each change as a before-and-after view and wait for my approval. Save a copy of the original before writing anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "wiki cleanup",
+    "human review",
+    "documentation",
+    "ai safeguards"
+  ],
+  "source": {
+    "url": "https://dev.to/paul_chen_90371fe7426cb44/harnessing-the-nondeterministic-machine-practical-lessons-in-agentic-ai-hardening-8bo",
+    "name": "DEV Community",
+    "author": "Paul Chen",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, honest account of an open-source workflow where an AI fixes wiki pages with human approval, listing five concrete failures and fixes; strong on lessons but no numeric results."
+  }
+}

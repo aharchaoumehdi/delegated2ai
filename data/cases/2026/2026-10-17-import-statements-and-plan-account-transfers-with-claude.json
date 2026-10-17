@@ -1,0 +1,41 @@
+{
+  "id": "import-statements-and-plan-account-transfers-with-claude",
+  "title": "Import statements and plan account transfers with Claude",
+  "summary": "A developer connected Claude to his cash-flow app and says it imported PDF bank statements, tagged vacation spending and planned transfers to cover upcoming bills.",
+  "domain": "Finance",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "Stoke Money",
+    "PDF statements"
+  ],
+  "agent_role": "Claude read uploaded statements, entered and tagged transactions, and proposed transfers between accounts; the author uploaded files and decided what to do.",
+  "outcome": "The author says the Claude connection made the biggest difference in using his app.",
+  "what_they_did": "A developer built a personal finance app around a cash flow forecast instead of budgets. He connected it to Claude so the AI could act in the app. He asked Claude to import past transactions from PDF statements, tag vacation spending, and plan transfers between accounts.",
+  "how_it_went": "The author says this connection made the biggest difference for him, but gives no numbers.",
+  "worth_knowing": "The app forecasts cash by account, since card charges usually leave checking the month after.",
+  "prompt": "Read the account statements in [folder of PDF statements] and add the transactions to [my finance app or spreadsheet]. Tag every transaction between [trip start date] and [trip end date] as vacation. Then look at my upcoming bills and suggest transfers between my accounts so none runs low. Show me the plan and wait for my approval before moving any money.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "personal finance",
+    "cash flow",
+    "bank statements",
+    "transaction tagging"
+  ],
+  "source": {
+    "url": "https://stoke.money",
+    "name": "Hacker News",
+    "author": "_wesley",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly a product launch, but the author describes concrete finance jobs Claude did through the app's connector; light on results, with a small boost for finance."
+  }
+}

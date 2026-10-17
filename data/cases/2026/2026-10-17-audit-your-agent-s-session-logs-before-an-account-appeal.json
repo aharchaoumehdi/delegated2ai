@@ -1,0 +1,43 @@
+{
+  "id": "audit-your-agent-s-session-logs-before-an-account-appeal",
+  "title": "Audit your agent's session logs before an account appeal",
+  "summary": "A developer whose Claude account was banned mid-task had Codex audit 7,478 local session records for an appeal; they report no safety flags found, but the appeal was denied.",
+  "domain": "Software",
+  "platform": "OpenAI Codex",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "local session logs",
+    "Antigravity CLI"
+  ],
+  "agent_role": "Claude Code made the code changes, testing and production rollout for a model upgrade. Codex then screened the session history and transcripts for anything that might have triggered a ban; the human wrote and sent the appeal.",
+  "outcome": "Author reports Codex found zero safety refusals or warnings in 7,478 records, but Anthropic denied the appeal and changed the cited reason.",
+  "what_they_did": "The poster had Claude Code switch their app to Google's new Gemini model and roll it out to production. On another machine their Claude account was banned mid-task. They asked Codex to audit 76 sessions and 52 transcript files from their Mac to see if any prompt or tool call broke a rule, then used the findings in a full-disclosure appeal.",
+  "how_it_went": "They say Codex found zero safety refusals or warnings across 7,478 timestamped records. The appeal was still denied, with the reason switched to a general usage policy. Codex finished the integration work instead.",
+  "worth_knowing": "They audited only the Mac and overlooked the other machine where the production rollout ran. They also suspect their overly candid appeal may have given reviewers a different rule to cite.",
+  "prompt": "Review my local coding-agent session logs in [log folder path] from [start date] to [end date]. List every session and transcript file you checked, with counts. Flag any prompt, tool call or output that could look like a policy violation, a safety refusal or unusual automated activity. For each flag, quote the record and explain why. Then write a short, factual summary I could use in an account appeal. Show me the summary for review; do not send anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "log audit",
+    "account appeal",
+    "model upgrade",
+    "coding agents"
+  ],
+  "source": {
+    "url": "https://x.com/xiaohuaxi28/status/2111385915516240181",
+    "name": "X",
+    "author": "@xiaohuaxi28",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-step use: Claude Code shipped a model upgrade to production, then Codex audited 7,478 local log records to build an account-ban appeal. The audit idea is unusual, but it is one person's account and the post is mostly a ban story."
+  }
+}

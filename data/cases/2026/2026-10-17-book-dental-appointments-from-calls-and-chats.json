@@ -1,0 +1,43 @@
+{
+  "id": "book-dental-appointments-from-calls-and-chats",
+  "title": "Book dental appointments from calls and chats",
+  "summary": "A freelancer built a dental clinic an AI that answers calls and chats, books visits in Google Calendar through n8n, and messages doctor and patient on WhatsApp.",
+  "domain": "Health",
+  "platform": "n8n",
+  "model": null,
+  "tools": [
+    "Google Calendar",
+    "WhatsApp",
+    "n8n"
+  ],
+  "agent_role": "The AI handles patient calls and chats, then creates calendar bookings and sends WhatsApp notices. The builder designed and wired up the system.",
+  "outcome": null,
+  "what_they_did": "A freelance builder set up an AI helper for a dental clinic. It answers patient phone calls and chat messages. It books appointments straight into Google Calendar using the n8n automation tool. It then sends WhatsApp messages to both the doctor and the patient.",
+  "how_it_went": null,
+  "worth_knowing": "The builder's main point is that an AI reply alone is not a booking. The value comes from linking the conversation to a real calendar entry and a confirmation message.",
+  "prompt": "Help me set up an assistant for my [type of clinic or business] that answers patient messages on [chat channel], checks free slots in my Google Calendar, and books appointments. After booking, it should send a confirmation to the patient and a notice to [staff member] on WhatsApp. First, show me the full workflow and sample messages, and test it on a dummy calendar. Wait for my approval before it books real appointments or messages real patients.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "appointment booking",
+    "dental clinic",
+    "small business",
+    "whatsapp",
+    "calendar"
+  ],
+  "source": {
+    "url": "https://x.com/Rao_Rabi465/status/2111390298928799901",
+    "name": "X",
+    "author": "@Rao_Rabi465",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real small-business setup where an AI handles calls and chats and books appointments into a calendar, but the post is brief and the linked case study shows no detail or results."
+  }
+}

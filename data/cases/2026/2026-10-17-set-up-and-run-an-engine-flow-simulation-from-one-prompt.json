@@ -1,0 +1,41 @@
+{
+  "id": "set-up-and-run-an-engine-flow-simulation-from-one-prompt",
+  "title": "Set up and run an engine flow simulation from one prompt",
+  "summary": "NavierAI's team says one prompt had their agent set up a supersonic engine-firing simulation, run it on their in-house graphics-card solver and render the start-up.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "in-house GPU flow solver",
+    "rendering"
+  ],
+  "agent_role": "The agent set up the simulation case, ran it on the solver and rendered the result; humans wrote the single prompt.",
+  "outcome": "The team reports the agent produced a rendered start-up of an engine firing into supersonic flow from one prompt.",
+  "what_they_did": "NavierAI's team gave their agent one prompt: simulate an engine firing into supersonic air, like a rocket booster slowing to land. The agent set up the case, ran it on the team's own fast solver that uses graphics cards, and made a video of the start-up.",
+  "how_it_went": "The team says the run finished and rendered in one morning. They argue such simulations, once reserved for flow specialists, are becoming usable by everyday engineers.",
+  "worth_knowing": "The solver is the company's own unreleased tool, so this exact setup isn't available to readers yet.",
+  "prompt": "Using [your simulation software], set up a simulation of [the flow problem, e.g. a jet firing into supersonic air]. First show me the geometry, mesh size, boundary conditions and solver settings you plan to use, and wait for my approval. Then run it, check that the results look physically sensible, and render a short animation of [the quantity to show, e.g. pressure or speed] over time. Summarize any warnings or settings you were unsure about.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "fluid simulation",
+    "engineering",
+    "aerospace",
+    "simulation setup"
+  ],
+  "source": {
+    "url": "https://x.com/NavierAI/status/2111223221382971570",
+    "name": "X",
+    "author": "@NavierAI",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine science agent run (set up, ran and rendered a supersonic engine simulation from one prompt), but it is a short company post with little detail and an in-house solver."
+  }
+}

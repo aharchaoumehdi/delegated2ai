@@ -1,0 +1,42 @@
+{
+  "id": "check-what-a-company-decision-will-break-before-approving",
+  "title": "Check what a company decision will break before approving",
+  "summary": "A developer built DecisionDebt, which maps docs, tickets and chats into a cited graph; on a made-up company it flagged 12 affected services and one owner gap.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "FalkorDB",
+    "FastAPI",
+    "React Flow"
+  ],
+  "agent_role": "A limited agent with eight approved tools handles unclear cases and drafts review tasks; people must accept decisions and assign unclear owners.",
+  "outcome": "Author reports the demo found 12 affected services, 1 owner gap, 1 ownership conflict and 5 stale-doc findings, each linked to its source sentence.",
+  "what_they_did": "Himanshu Kumar fed 40 docs, 30 tickets and 24 chat threads from a fictional company into a graph. Each link cites the exact sentence that supports it. When someone proposes a change, the system walks the graph to find what breaks. A limited agent drafts follow-up work but cannot approve anything.",
+  "how_it_went": "The author reports 315 checked links from 94 sources, and perfect scores against a separate checker. Editing a ticket added and then removed one affected service, as expected.",
+  "worth_knowing": "The author stresses the perfect score only shows the pipeline matches its own made-up data. It does not prove accuracy on real company writing.",
+  "prompt": "Read the documents, tickets and chat threads in [folder]. List which systems depend on [system being changed], directly or through other systems, and who owns each one. Quote the exact sentence that supports every link, and mark anything hedged or unclear as unconfirmed. Flag systems with no owner or two owners, and docs not reviewed in [number] days. Show me the report and draft review tasks, but do not assign owners or change any records without my approval.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "impact analysis",
+    "knowledge graph",
+    "decision review",
+    "documentation"
+  ],
+  "source": {
+    "url": "https://dev.to/himanshu_748/decisiondebt-know-what-a-decision-breaks-before-you-make-it-built-on-falkordb-dcj",
+    "name": "DEV Community",
+    "author": "Himanshu Kumar",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed hackathon demo with code where a bounded agent helps map what a company decision would break, but it runs on synthetic data and the agent's role is secondary to the graph."
+  }
+}

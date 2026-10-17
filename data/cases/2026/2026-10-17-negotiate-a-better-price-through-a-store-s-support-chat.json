@@ -1,0 +1,39 @@
+{
+  "id": "negotiate-a-better-price-through-a-store-s-support-chat",
+  "title": "Negotiate a better price through a store's support chat",
+  "summary": "Brent's assistant Dot joined a company's support chat and haggled with its bot; he says both bots then asked their humans to confirm the price.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "customer service chat"
+  ],
+  "agent_role": "Dot opened the support chat, introduced itself as Brent's agent and negotiated. It then handed back to Brent for final confirmation.",
+  "outcome": "Author reports the company's bot negotiated back and both sides asked their humans to confirm; final price not stated.",
+  "what_they_did": "The poster had his AI assistant, Dot, contact a company's customer service chat. Dot said it was acting for him and asked for a better price.",
+  "how_it_went": "He says the company's own bot negotiated back and asked if Brent would be satisfied. Both bots then called in their humans to confirm.",
+  "worth_knowing": "Both agents stopped for a human to approve the deal before it was final.",
+  "prompt": "Open the customer service chat on [company website] about [product or bill]. Tell them you are my assistant. Ask for a better price or discount, aiming for [target price]. Do not accept any offer or agree to anything. Report every offer back to me and wait for my approval.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "negotiation",
+    "customer service",
+    "shopping"
+  ],
+  "source": {
+    "url": "https://x.com/btraut/status/2111265536181248015",
+    "name": "X",
+    "author": "@btraut",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine agent-to-agent price negotiation in a customer service chat, but very thin: no product, price or final result given."
+  }
+}

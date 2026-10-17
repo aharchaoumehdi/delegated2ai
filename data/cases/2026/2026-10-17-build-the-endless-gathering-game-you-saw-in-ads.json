@@ -1,0 +1,40 @@
+{
+  "id": "build-the-endless-gathering-game-you-saw-in-ads",
+  "title": "Build the endless gathering game you saw in ads",
+  "summary": "A former web designer who had never made a game wrote the story while Codex built Point Nemo, refining it through repeated play-and-feedback rounds.",
+  "domain": "Creative",
+  "platform": "OpenAI Codex",
+  "model": null,
+  "tools": [
+    "Codex"
+  ],
+  "agent_role": "Codex wrote and rebuilt the game code. The human wrote the story, played each version and gave feedback.",
+  "outcome": "The author reports finishing a polished game called Point Nemo.",
+  "what_they_did": "The poster, a web designer who had just closed their company, wanted the kind of game seen in mobile ads: gather things, sell them, expand your facilities forever. They had never made a game. They wrote the story, Codex built a version, they played it, then gave feedback for the next round.",
+  "how_it_went": "They say the build-play-feedback loop produced a polished game called Point Nemo.",
+  "worth_knowing": "The human's job was story and play-testing, not coding. Repeated short rounds of play and feedback did the polishing.",
+  "prompt": "Help me build a simple browser game where the player gathers [resource], sells it, and spends the money to expand [facilities] in an endless loop. Here is the story and setting: [your story]. Start with a small playable version, tell me how to run it, and wait for my feedback after I play it. Then improve it one round at a time based on what I say.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "game development",
+    "idle game",
+    "non-programmer",
+    "play testing"
+  ],
+  "source": {
+    "url": "https://x.com/phi_sato/status/2111371007625994470",
+    "name": "X",
+    "author": "@phi_sato",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A non-programmer built a full idle-style game with Codex by writing the story and play-testing each build. It is a genuine agent build loop, but the post gives few details and no numbers."
+  }
+}

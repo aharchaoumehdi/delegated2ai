@@ -1,0 +1,43 @@
+{
+  "id": "pick-a-nearby-meal-that-fits-your-calorie-budget",
+  "title": "Pick a nearby meal that fits your calorie budget",
+  "summary": "A developer built Walk-Kcal, an agent skill that checks nearby restaurants and McDonald's official nutrition data and marks which dishes fit your calorie budget after walking.",
+  "domain": "Health",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "McDonald's China ordering connector",
+    "Amap maps",
+    "Chinese recipe database",
+    "Chat bot"
+  ],
+  "agent_role": "When asked 'what can I eat nearby', the agent finds nearby stores, pulls dish nutrition, estimates calories and flags each dish as fits or over; the user sets the budget.",
+  "outcome": "Author reports a new location goes from address to finished image in about 16 seconds, with Chinese dish estimates off by 25–28% on average.",
+  "what_they_did": "A developer built a skill for agents and chat bots. You give a calorie budget and location. It adds 4 kcal per 80 meters walked, lists nearby restaurants, pulls McDonald's official nutrition and estimates other dishes from 1.55 million recipes.",
+  "how_it_went": "The author says it outputs a phone-sized image marking each dish green or red. They found many McDonald's items fit a normal meal budget, while a nearby noodle-shop rice dish started at 780 kcal.",
+  "worth_knowing": "Maps and recipe data are Chinese only. Non-McDonald's estimates can be off by about a quarter, so the tool shows 'unknown' rather than guess when data is thin.",
+  "prompt": "I have [calorie budget] kcal left for this meal and I am at [your address]. I am willing to walk up to [distance] meters; add about 4 kcal to my budget for every 80 meters. Find restaurants within that walk, list their popular dishes, and estimate calories per dish using official nutrition data where it exists. Say where each number comes from and how unsure it is, and mark 'unknown' instead of guessing. Show a table of dishes that fit my budget and ones that go over.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "calorie counting",
+    "meal choice",
+    "walking",
+    "nutrition"
+  ],
+  "source": {
+    "url": "https://github.com/adexbn/walk-kcal",
+    "name": "GitHub",
+    "author": "adexbn",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working agent skill with code, a demo and stated error rates that turns walking distance into a calorie budget and checks nearby dishes; a contest entry tied to China-only data, with a health boost."
+  }
+}

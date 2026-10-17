@@ -1,0 +1,42 @@
+{
+  "id": "keep-your-coding-agent-on-task-when-you-add-requests",
+  "title": "Keep your coding agent on task when you add requests",
+  "summary": "A developer wrote a skill that makes Codex and Claude Code finish the current job before new requests; one live Codex test passed all 10 checks, they report.",
+  "domain": "Software",
+  "platform": "OpenAI Codex",
+  "model": "gpt-6-sol",
+  "tools": [
+    "Codex",
+    "Claude Code",
+    "agent skill"
+  ],
+  "agent_role": "The agent tracks one active task, applies corrections right away, and queues new requests until the current work is checked. The human can still pause, cancel or reprioritize.",
+  "outcome": "Author reports one live Codex run passed all 10 recorded checks; a second stop test passed 11 of 12, with slow cancellation.",
+  "what_they_did": "A developer wrote a set of standing instructions, called a skill, for Codex and Claude Code. When you send a new message mid-task, the agent decides whether it is a correction, a question, or a new job. New jobs wait in a queue until the current one is finished and checked.",
+  "how_it_went": "The author reports a live Codex test where a second request arrived mid-task. The first task was finished and checked before the second began, passing all 10 checks. A stop test passed 11 of 12, but cancelling took about 35 seconds.",
+  "worth_knowing": "It is only instructions, so it cannot force the agent to comply. Claude Code was not part of the live tests.",
+  "prompt": "For the rest of this session, follow this rule. Keep one active task at a time. If I send a new, unrelated request while you work, add it to a queue and tell me it is queued. Then finish and check the current task before starting it. If my message corrects the current task, apply it right away. If I ask for status, answer briefly and continue. If I say pause, cancel or stop, do that at once and don't start queued work. Show me the queue whenever it changes. Start with: [your first task].",
+  "evidence": "Code available",
+  "difficulty": "Beginner",
+  "tags": [
+    "coding agents",
+    "task management",
+    "agent skill",
+    "interruptions"
+  ],
+  "source": {
+    "url": "https://x.com/emreba4g/status/2111285506462118008",
+    "name": "X",
+    "author": "@emreba4g",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A shared skill that changes how coding agents handle new requests mid-task, backed by one documented live test with honest limits; narrow and meta, but reproducible."
+  }
+}

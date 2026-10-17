@@ -1,0 +1,39 @@
+{
+  "id": "build-your-personal-website-by-describing-it",
+  "title": "Build your personal website by describing it",
+  "summary": "A non-coder described the layout, sections and text to Claude Code and says a working personal website was ready a few minutes later.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code"
+  ],
+  "agent_role": "Claude Code wrote the website from the author's description; the author previewed it and asked for changes.",
+  "outcome": "Author reports a working page within a few minutes, with no developer or agency.",
+  "what_they_did": "The poster, who says they can't code, described their site's layout, sections and wording to Claude Code. They previewed the result and told it what to change until they were happy.",
+  "how_it_went": "They say they had a working page a few minutes later. They shared a short video of the result.",
+  "worth_knowing": null,
+  "prompt": "Build me a simple personal website. Layout: [describe layout]. Sections: [about, projects, contact, etc.]. Use this text: [your copy]. Keep it in plain files I can open in a browser. Show me a preview, then wait for my list of changes before editing. Do not publish it online until I approve.",
+  "evidence": "Demo",
+  "difficulty": "Beginner",
+  "tags": [
+    "personal website",
+    "no-code",
+    "web design"
+  ],
+  "source": {
+    "url": "https://x.com/PeerJuelichAI/status/2111391900586721326",
+    "name": "X",
+    "author": "@PeerJuelichAI",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine but thin and common use: a non-coder built a personal website with Claude Code, with a short video but few details."
+  }
+}

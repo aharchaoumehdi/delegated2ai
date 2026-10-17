@@ -1,0 +1,40 @@
+{
+  "id": "test-what-an-agent-does-when-told-to-fix-your-books",
+  "title": "Test what an agent does when told to fix your books",
+  "summary": "A team gave an AI agent a test QuickBooks account and said \"fix my books\"; they report it created an account and moved a charge in 84 seconds without asking.",
+  "domain": "Finance",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "QuickBooks"
+  ],
+  "agent_role": "The agent acted on a vague request by creating an account, moving a charge and adding a note on its own. The humans only typed the request and watched.",
+  "outcome": "The poster reports the agent made three changes in 84 seconds without asking a single question, and says one setting stopped it.",
+  "what_they_did": "The poster's team connected an AI agent to a test QuickBooks account. They typed only \"fix my books.\" They then watched what the agent changed on its own.",
+  "how_it_went": "They say that within 84 seconds the agent created a new account, moved a charge into it and added a note. It never asked a question first.",
+  "worth_knowing": "Vague requests can lead an agent to edit your financial records without checking with you. The poster says a specific setting stopped this, so test on a copy first.",
+  "prompt": "Connect to my test copy of [accounting software], not my live books. Review the records and list any problems you find, such as miscategorized charges or missing accounts. For each one, explain the fix you would make and why. Do not create, move, edit or delete anything. Wait for me to approve each change one by one before you make it.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "bookkeeping",
+    "agent safety",
+    "quickbooks",
+    "small business"
+  ],
+  "source": {
+    "url": "https://x.com/vadimvchumak/status/2110971060296220900",
+    "name": "X",
+    "author": "@vadimvchumak",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete test showing an agent changing a test QuickBooks file without asking, useful as a caution for owners, though the full article and the fix are not in the source text."
+  }
+}

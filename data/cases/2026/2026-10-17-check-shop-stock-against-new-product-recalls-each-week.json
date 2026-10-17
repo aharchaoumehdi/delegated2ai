@@ -1,0 +1,45 @@
+{
+  "id": "check-shop-stock-against-new-product-recalls-each-week",
+  "title": "Check shop stock against new product recalls each week",
+  "summary": "Three developers built RecallDesk, an agent that reads new U.S. product recalls weekly and checks a shop's stock and eBay listings; a 60-item check reportedly cost $0.035.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": "qwen3.5-4b (fine-tuned)",
+  "tools": [
+    "CPSC recall notices",
+    "SerpApi eBay search",
+    "Temporal",
+    "Tinker",
+    "Backboard memory",
+    "Next.js dashboard"
+  ],
+  "agent_role": "Every Thursday the agent turns each new recall into a checklist, compares every stock item and listing, applies past shop corrections, and prints a card. Shop staff check labels and correct wrong matches.",
+  "outcome": "Authors report a full re-check of a 60-item demo shop took 179 model calls and cost about $0.035; they flag one over-cautious mistake on the sample card.",
+  "what_they_did": "The team built RecallDesk for kids' consignment shops and resellers. A shop loads its stock list and, optionally, its eBay store once. Every Thursday after the U.S. safety agency posts recalls, the agent reads them, compares each item, and prints one page: do not sell, or check the label and where to look.",
+  "how_it_went": "They report a 60-item check took 179 model calls and cost $0.035. Their research found only 45 of 12,562 eBay listings named a recalled model number. The sample card had one item marked do-not-sell that should have been check-label.",
+  "worth_knowing": "It reads text only and can't see a label in a photo, so most items need a human to turn them over. It covers U.S. recalls only and is not legal advice.",
+  "prompt": "Every [day of week], read the new product recalls posted at cpsc.gov/Recalls. For each recall, list the brand, model numbers, date or batch codes, sale dates, and where the label is found. Then compare them against my stock list in [spreadsheet or file]. Make a one-page report with three groups: 'Do not sell' for clear matches, 'Check label' with exactly what to look for and where, and no entry for non-matches. Show me the report first; do not remove any listings or contact anyone.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "product recalls",
+    "resale",
+    "inventory check",
+    "small business"
+  ],
+  "source": {
+    "url": "https://dev.to/dronzer2code/we-searched-ebay-for-237-recalled-products-only-45-of-12562-listings-named-the-model-2efi",
+    "name": "DEV Community",
+    "author": "Subarna Maity",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A well-evidenced, original small-business workflow with open code, real data counts, costs, and an honest note about its own mistake. Non-coding domain earns a small boost."
+  }
+}

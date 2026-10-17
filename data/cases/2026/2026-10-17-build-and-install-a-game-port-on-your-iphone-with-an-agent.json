@@ -1,0 +1,42 @@
+{
+  "id": "build-and-install-a-game-port-on-your-iphone-with-an-agent",
+  "title": "Build and install a game port on your iPhone with an agent",
+  "summary": "The D2R Mobile project lets Claude Code or Codex build, sign and install a Diablo II port on iPhone from one sentence, using the player's own game files.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "agent skill",
+    "Apple code signing",
+    "shell"
+  ],
+  "agent_role": "The agent checks the machine, prepares the workspace, signs and installs the app, and copies the game files. The human supplies game files and Apple signing details, and approves installs that need admin rights.",
+  "outcome": "The project reports 60 frames per second in-game on an iPhone 17 Pro Max.",
+  "what_they_did": "The D2R Mobile team packaged its build steps as a skill for Claude Code or Codex. A player gives one sentence naming the skill and where their own Switch game files are. The agent checks the computer, sets up the workspace, signs and installs the app on the iPhone. It asks for Apple signing details and before any install needing admin rights.",
+  "how_it_went": "The project reports 60 frames per second on an iPhone 17 Pro Max and about one second from menu to game. It does not report how often the agent build succeeds.",
+  "worth_knowing": "You need your own Switch copy of the game; game files are not included. The project is not affiliated with Blizzard or Nintendo.",
+  "prompt": "Use the [skill name] skill from [repo URL] to build [app name] for my [iPhone/iPad/Mac]. My files are in [path]. First check my machine and list what is missing. Show me your plan before installing anything. Ask me for my Apple signing details, and wait for my approval before any step that needs admin rights or installs onto my device.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "game port",
+    "app install",
+    "agent skill",
+    "ios"
+  ],
+  "source": {
+    "url": "https://github.com/d2r-mobile/d2r-mobile",
+    "name": "GitHub",
+    "author": "d2r-mobile",
+    "published": "2026-10-12"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "The repo ships an agent skill that lets Claude Code or Codex check the machine, set up, sign and install a game port from one sentence. It is a concrete automated workflow, but evidence of agent runs is light."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "split-app-building-work-across-cheaper-and-stronger-agents",
+  "title": "Split app-building work across cheaper and stronger agents",
+  "summary": "A developer had Claude Code take an iOS app to a working build and a company site through to launch in a week, using about 30% of his weekly limit.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "Opus 5.5, Sonnet 5.5, Haiku",
+  "tools": [
+    "Claude Code helper agents",
+    "Xcode",
+    "CLAUDE.md rules file"
+  ],
+  "agent_role": "A main agent planned, scoped tickets, ran builds, reviewed and committed; helper agents searched code, implemented single tickets, did design and reviewed. The human set up the roles and rules.",
+  "outcome": "Author reports finishing both projects in a week using about 30% of his weekly Claude Code limit; he notes the app isn't launched, so quality is unproven.",
+  "what_they_did": "A developer used Claude Code to take an iOS app from design to a working build and his company site from mockup to launch. A main agent on the strongest model planned and ran builds. Cheaper helper agents searched code, built single tickets, did layout work and reviewed code. Rules lived in one instructions file.",
+  "how_it_went": "He says both projects used only about 30% of his weekly limit, when he expected to hit the cap. He stresses the app isn't launched, so this says nothing about product quality.",
+  "worth_knowing": "Helper agents write code but never build; only the main agent runs builds, one at a time, to keep long build logs out of every agent's memory. Helpers are short, one-shot runs.",
+  "prompt": "Help me set up Claude Code for [my project] with a main agent and helper agents. The main agent plans, splits work into small tickets, runs every build and reviews before committing. Create helpers: a read-only code searcher on a cheap model, an implementer that handles one ticket per run, a designer for layout work, and a reviewer that never edits. Helpers must not run builds. Write these rules into CLAUDE.md. Show me the plan and the file before making any commits.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "ios app",
+    "multi-agent setup",
+    "cost control",
+    "website build"
+  ],
+  "source": {
+    "url": "https://x.com/noelkimx/status/2111079167999811960",
+    "name": "X",
+    "author": "@noelkimx",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, reproducible breakdown of how one person split work across Claude Code helper agents on different models to build an iOS app and a company site cheaply; the product isn't launched, so evidence of quality is limited."
+  }
+}

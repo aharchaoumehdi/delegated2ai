@@ -1,0 +1,44 @@
+{
+  "id": "make-game-characters-talk-back-in-their-own-voices",
+  "title": "Make game characters talk back in their own voices",
+  "summary": "A modder built agent skills that wire talking characters into games; the GTA V example has 19 characters answering live in cloned voices about a second later.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Fish Audio",
+    "Modal",
+    "fal",
+    "Cerebras",
+    "TypeSafe"
+  ],
+  "agent_role": "A coding agent follows the skills to study the game, set up the voice server, make voice clips, hook up characters and test in the real game; the player supplies recordings and keys.",
+  "outcome": "The author reports a full GTA V mod with 19 characters, and voice-match scores up to 0.707 versus 0.612 for an ElevenLabs clone.",
+  "what_they_did": "A modder packaged step-by-step skills, a voice server and a command-line tool for coding agents. The agent studies the game, sets up a voice service, makes voices from recordings, and connects characters. It then tests everything in the real game and writes notes for next time.",
+  "how_it_went": "The GTA V example lets the player talk to anyone nearby with a mic. The author measured voice likeness on one character, with the best setup scoring 0.707 against 0.612 for an ElevenLabs clone.",
+  "worth_knowing": "You need several paid accounts and keys, and should only clone voices from recordings you have the rights to.",
+  "prompt": "Using the make-npcs-talk skill, make the characters in [game] answer when I talk to them, in their own voices. First check the game version and how mods run, then set up the voice server and test it outside the game. Use only voice recordings from [folder I have rights to]. Show me your plan and any costs before creating cloud accounts or spending money.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "game modding",
+    "voice cloning",
+    "game characters",
+    "text to speech"
+  ],
+  "source": {
+    "url": "https://github.com/christos-antono/NPCTalk",
+    "name": "GitHub",
+    "author": "christos-antono",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A repo of agent skills with a full working GTA V mod and measured voice-quality numbers; original and reproducible, though the agent's exact share of the build is only linked, not shown."
+  }
+}

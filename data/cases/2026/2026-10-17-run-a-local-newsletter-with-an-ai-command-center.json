@@ -1,0 +1,38 @@
+{
+  "id": "run-a-local-newsletter-with-an-ai-command-center",
+  "title": "Run a local newsletter with an AI command center",
+  "summary": "A newsletter owner built an AI command center that finds stories, writes issues, tracks advertisers and reports reader clicks for his 15,000-subscriber local newsletter.",
+  "domain": "Marketing",
+  "platform": "Other",
+  "model": null,
+  "tools": [],
+  "agent_role": "The system finds stories, drafts issues, tracks advertisers and shows clicks. The owner's review role is not described.",
+  "outcome": "Author reports using it to run his 15,000-subscriber local newsletter.",
+  "what_they_did": "The poster built an AI command center for his local newsletter. It finds stories, writes issues, tracks advertisers and shows what readers click.",
+  "how_it_went": "He says it runs his 15,000-subscriber newsletter; the full build is in a linked article.",
+  "worth_knowing": null,
+  "prompt": "Help me run my local newsletter about [your town]. Each week, search local news sources and event listings for [topics] and list 10 story ideas with links. After I pick, draft the issue in my style using [past issue example]. Keep a spreadsheet of advertisers with dates, ad slots and payment status. Show me the draft and wait for my approval before sending anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "newsletter",
+    "local news",
+    "advertising",
+    "content writing"
+  ],
+  "source": {
+    "url": "https://x.com/itsjohnapolinar/status/2111104284976652548",
+    "name": "X",
+    "author": "@itsjohnapolinar",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real non-coding small-business use running a 15,000-subscriber newsletter, but the post is a teaser and the details sit in an article we can't see."
+  }
+}

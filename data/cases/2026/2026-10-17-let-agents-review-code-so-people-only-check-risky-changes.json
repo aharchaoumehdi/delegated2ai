@@ -1,0 +1,44 @@
+{
+  "id": "let-agents-review-code-so-people-only-check-risky-changes",
+  "title": "Let agents review code so people only check risky changes",
+  "summary": "The Claude Code team says merged changes more than doubled from June to September while reverts fell over 40%, after moving most code reading to Claude reviewers.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "automatic tests",
+    "parallel review agents",
+    "security review",
+    "risk classifier",
+    "feature flags"
+  ],
+  "agent_role": "Claude runs tests and builds, a second agent reviews each change, parallel agents hunt bugs with verifiers voting, and a classifier decides whether zero, one or two people must approve. Humans handle risky paths and watch releases.",
+  "outcome": "The team reports merged pull requests more than doubled from June to September while the share reverted fell by more than 40 percent.",
+  "what_they_did": "Anthropic's Claude Code team rebuilt its code review around agents. Claude runs tests and builds, then a fresh agent reviews the change before anyone opens it. On each change, several agents hunt for bugs and others vote on each finding. A separate security pass runs, and a classifier sets how many people must approve.",
+  "how_it_went": "The team reports merged changes more than doubled from June to September, while reverts fell by more than 40 percent. Most changes now merge with at most one human involved.",
+  "worth_knowing": "They stress giving Claude a way to check its own work, like tests or a screenshot. Repeated reviewer complaints are fixed at the source in project instruction files.",
+  "prompt": "Before I open a pull request for [repo], run the tests, build and linter and show me the output, not a summary. Then review the full change as a fresh reviewer, using [CLAUDE.md or review guide]. List each problem with a file and line as evidence, ranked by severity, starting with a count. Say plainly if there is nothing to fix. Suggest fixes, but wait for my approval before changing code or pushing anything.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "code review",
+    "quality checks",
+    "software teams",
+    "automation"
+  ],
+  "source": {
+    "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+    "name": "Hacker News",
+    "author": "Addy Osmani, Morgan Westlee Lunt, Qing Wang",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Detailed first-party account of how agents check, review and gate code changes at high volume, with concrete numbers on merged changes and reverts. Very useful for any team using coding agents."
+  }
+}

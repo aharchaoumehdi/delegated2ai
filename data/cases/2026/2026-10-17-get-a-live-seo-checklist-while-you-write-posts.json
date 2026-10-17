@@ -1,0 +1,41 @@
+{
+  "id": "get-a-live-seo-checklist-while-you-write-posts",
+  "title": "Get a live SEO checklist while you write posts",
+  "summary": "A marketer had Claude Code write two add-ons that tick off search-ranking checks and preview Google results as he writes blog posts.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Claude Code hooks"
+  ],
+  "agent_role": "Claude Code suggested ideas and wrote the add-ons that react to its own actions; the author described what he wanted and picked which to build.",
+  "outcome": "Author reports a live SEO scorecard and a Google preview strip working without writing code himself.",
+  "what_they_did": "The author asked Claude Code to build small add-ons that run automatically when it does something. One checks whether the keyword is in the title, a heading and the first 100 words, and flags short posts. The other shows how the title and description will look in Google results.",
+  "how_it_went": "He says both work in plain English with no code, and the checklist resets when he switches keywords.",
+  "worth_knowing": "These add-ons have the same access to your computer as Claude Code. Test one in a single session first, and don't pile up ones you never use.",
+  "prompt": "Build an add-on that runs automatically whenever you edit a blog post in [folder]. Check my target keyword [keyword]: is it in the title, a heading, and the first 100 words? Flag the post if it is under [word count] words. Also show how the title and description would look in Google results and warn if the title is cut off. Explain what the add-on can access before installing it, and wait for my approval.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "seo",
+    "blogging",
+    "writing tools",
+    "automation"
+  ],
+  "source": {
+    "url": "https://x.com/JulianGoldieSEO/status/2111108315434696864",
+    "name": "X",
+    "author": "@JulianGoldieSEO",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real build: Claude Code wrote add-ons that show a live search-ranking checklist and a Google preview while writing. Light on evidence and ends with a sales-style call to DM."
+  }
+}

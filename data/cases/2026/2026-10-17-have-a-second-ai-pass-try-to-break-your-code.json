@@ -1,0 +1,42 @@
+{
+  "id": "have-a-second-ai-pass-try-to-break-your-code",
+  "title": "Have a second AI pass try to break your code",
+  "summary": "A developer built a web app prototype with Claude in a weekend and caught a payment bug the model missed, then added a separate 'skeptic' review pass.",
+  "domain": "Software",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "Next.js",
+    "Postgres",
+    "Tailwind"
+  ],
+  "agent_role": "Claude wrote most of the setup and feature code; the developer read every change, spotted the payment bug and owns the final merge.",
+  "outcome": "Author reports a working prototype of the core feature by Sunday night, plus one near-miss bug he caught by hand.",
+  "what_they_did": "A developer used Claude to build a web app over a weekend. Claude wrote the setup, database and main feature while he steered and read the code. When Claude wrote the payment handler, he noticed it told the payment company 'success' before saving the record.",
+  "how_it_went": "He says setup took a couple of hours and the core feature worked by Sunday. The payment bug compiled and passed Claude's own test; he only caught it because he had shipped the same bug years ago.",
+  "worth_knowing": "His fix is structural: the model that writes code never approves it. A separate pass is asked 'find the input that makes this lose money', and a human makes the final call.",
+  "prompt": "You are reviewing a code change, not writing it. Here is the change: [paste diff]. Do not praise it. Try to break it. List the specific inputs, retries, timing problems or failures that would make it lose data or money, with the exact lines involved. Pay special attention to the order of steps, such as replying 'success' before saving. Rank the problems by how much harm they would cause and suggest the smallest fix for each. Do not edit any files; show me your findings first.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "code review",
+    "web app",
+    "payments",
+    "prototype"
+  ],
+  "source": {
+    "url": "https://dev.to/infoinlet1/how-i-built-a-saas-in-a-weekend-with-claude-nextjs-the-honest-breakdown-2le6",
+    "name": "DEV Community",
+    "author": "Info Inlet",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real build with Claude and a specific, useful catch (a payment handler that confirmed before saving), but the app itself is vague and the post ends as a pitch for the author's platform."
+  }
+}

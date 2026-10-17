@@ -1,0 +1,44 @@
+{
+  "id": "track-unpaid-invoices-and-draft-payment-reminders",
+  "title": "Track unpaid invoices and draft payment reminders",
+  "summary": "A developer built InvoicePilot, an agent that reads invoice photos, saves the details locally, answers questions like which invoices are overdue, and drafts reminder emails; tested only on samples.",
+  "domain": "Finance",
+  "platform": "Custom agent",
+  "model": "Qwen 2.5 3B, gemini-flash-latest",
+  "tools": [
+    "Ollama",
+    "SQLite",
+    "tool connector server",
+    "TEv1 tool picker",
+    "Python"
+  ],
+  "agent_role": "The agent reads invoice images, picks the right tool to save or query invoices, and drafts reminder emails. The user confirms extracted fields before saving.",
+  "outcome": "Author says it has only been used on his own sample invoices, with no outside users yet.",
+  "what_they_did": "The developer built a local invoice helper for freelancers. You upload an invoice photo, a vision model pulls out the client, amount and due date, and you confirm before it saves to a local database. You can then ask plain questions and get a polite reminder email draft.",
+  "how_it_went": "The author tested it only on his own sample invoices. He says this showed users would want PDF support, a way to fix misread dates, and marking invoices as paid.",
+  "worth_knowing": "The post says the vision model runs locally but names a Gemini cloud model for it, so check where invoice images actually go if privacy matters.",
+  "prompt": "Read the invoice images in [folder]. For each, extract the client name, amount, invoice date and due date, and show them to me to confirm before saving to [spreadsheet]. Then list which invoices are overdue as of today, with days overdue and total owed per client. Draft a short, polite reminder email for each overdue invoice that states the exact amount and due date. Do not send anything; show me the drafts for approval.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "invoices",
+    "freelancing",
+    "payment reminders",
+    "bookkeeping"
+  ],
+  "source": {
+    "url": "https://dev.to/abhisekroy169/invoicepilot-ai-smarter-invoice-automation-with-tev1-and-mcp-2dlb",
+    "name": "DEV Community",
+    "author": "Abhisek Roy",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine small agent that reads invoices, stores them and drafts reminders, with code available, but tested only on the author's own samples with no reported results. Finance angle gives a small boost."
+  }
+}

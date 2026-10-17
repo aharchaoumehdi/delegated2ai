@@ -1,0 +1,40 @@
+{
+  "id": "scan-an-open-source-project-for-hidden-security-bugs",
+  "title": "Scan an open-source project for hidden security bugs",
+  "summary": "Pion maintainers added their code to Anthropic's open-source bug scanner; they report it found 36 bugs, including 6 security flaws, some hidden for over four years.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Anthropic open-source scanner",
+    "GitHub"
+  ],
+  "agent_role": "The scanner reviewed the Pion DTLS code on its own and produced a bug report. The maintainers then checked every finding by hand and wrote the fixes and advisories.",
+  "outcome": "Maintainer reports 36 bugs found, including 6 security vulnerabilities (2 critical, 3 high, 1 moderate), plus 3 bugs an earlier OpenAI code review missed.",
+  "what_they_did": "The maintainers of Pion, a widely used library for secure video and voice connections, added it to Anthropic's open-source code scanner. The scanner ran overnight and sent back a bug report. The team then reviewed each finding by hand and published fixes and security notices.",
+  "how_it_went": "They report 36 bugs, including 6 security flaws, two of them critical. Some had sat in the code for over four years. The scanner also caught 3 bugs in a new feature that an earlier OpenAI review had missed.",
+  "worth_knowing": "Neither company's models would help verify or filter the findings, so the team spent a full day checking them one by one.",
+  "prompt": "Review the code in [repo URL], focusing on [component, e.g. the login or encryption code]. Look for security flaws, crashes, deadlocks and ways an attacker could use up memory or processing power. For each finding, explain the problem in plain words, show the exact lines, rate how serious it is, and describe how to confirm it is real. Rank the list from most to least serious. Do not open public issues or push changes; give me the report first so I can verify each item.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "security review",
+    "bug finding",
+    "open source"
+  ],
+  "source": {
+    "url": "https://news.ycombinator.com/item?id=50124600",
+    "name": "Hacker News",
+    "author": "JoTurk",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-17",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A maintainer reports a concrete, checkable outcome: an automated AI scanner found 36 bugs including 6 published security flaws, with public advisories and fixes. Light on how to reproduce it, but well evidenced and useful for open-source maintainers."
+  }
+}

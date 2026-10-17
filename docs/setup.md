@@ -147,6 +147,18 @@ Set `newsletter.showCountFrom` in `config/site.json` to the subscriber count at 
 "Join N readers" appears under the form (100 by default). Set `newsletter.provider` to
 `""` to go back to a plain link to the RSS feed.
 
+### Visitor statistics and Search Console
+
+Cloudflare Web Analytics (free, no cookies) counts visits. In the dashboard, Web Analytics →
+Add a site → `delegatedto.ai`, with **Enable** (automatic): Cloudflare then adds its script to
+every page, and `analytics.cloudflareAuto: true` in `config/site.json` only updates the Privacy
+page. For a host Cloudflare can't inject into, use "Enable with JS Snippet installation" and set
+`analytics.cloudflareToken` instead; the build then adds the script itself.
+
+For Google Search Console, add the `https://delegatedto.ai/` URL-prefix property, pick the HTML
+tag method and put its `content` value in `analytics.googleVerification`. After verifying, submit
+`sitemap.xml`.
+
 ### Sponsors
 
 Paid placements live in `config/site.json`: `sponsors` (the bar along the bottom of

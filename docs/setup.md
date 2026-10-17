@@ -114,8 +114,8 @@ stored, and for how long, is described on the site's Privacy page.
 Email Routing (free). To set them up:
 
 1. Create a separate Cloudflare token (My Profile → API Tokens → Create Token → Custom
-   token) with Zone · Email Routing Rules · Edit, Zone · DNS · Edit, Zone · Zone · Read and
-   Account · Email Routing Addresses · Edit, and save it as the repository secret
+   token) with Zone · Zone Settings · Edit, Zone · Email Routing Rules · Edit, Zone · DNS ·
+   Edit, Zone · Zone · Read and Account · Email Routing Addresses · Edit, and save it as the repository secret
    `CLOUDFLARE_EMAIL_TOKEN`. (Without it the workflow tries `CLOUDFLARE_API_TOKEN`.)
 2. Actions → **Set up email addresses** → Run workflow, with your inbox as the destination.
 3. Click the verification link Cloudflare emails to that inbox. Forwarding starts then.

@@ -8,7 +8,14 @@
 import { appendFile } from "node:fs/promises";
 
 const API = "https://api.cloudflare.com/client/v4";
-const { CLOUDFLARE_API_TOKEN: token, CLOUDFLARE_ACCOUNT_ID: account, DOMAIN: domain, DESTINATION: destination } = process.env;
+// Trimmed: a secret pasted with a line break would otherwise be an invalid header.
+const env = (k) => (process.env[k] || "").trim();
+const [rawToken, account, domain, destination] = ["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "DOMAIN", "DESTINATION"].map(env);
+// If more than the token was pasted (Cloudflare shows a test command next to it, which
+// repeats the token), keep the token-shaped part: one run of letters, digits, - and _.
+const pieces = rawToken.split(/[\s"']+/).filter((p) => /^[A-Za-z0-9_-]{30,}$/.test(p));
+const token = /\s/.test(rawToken) ? pieces[0] || "" : rawToken;
+if (token !== rawToken) console.log("Note: the token secret holds more than the token; using the token-shaped part. Re-save it with just the token when convenient.");
 const names = (process.env.ADDRESSES || "hello,sponsors").split(",").map((s) => s.trim()).filter(Boolean);
 const log = [];
 const say = (line) => (console.log(line), log.push(line));
@@ -37,7 +44,7 @@ async function main() {
   else {
     let on = await cf("POST", `/zones/${zone}/email/routing/dns`, { name: domain });
     if (!on.ok) on = await cf("POST", `/zones/${zone}/email/routing/enable`, {}); // older endpoint
-    if (!on.ok) throw new Error(`Couldn't turn on Email Routing (${why(on)}). The token needs Zone · Email Routing Rules · Edit and Zone · DNS · Edit.`);
+    if (!on.ok) throw new Error(`Couldn't turn on Email Routing (${why(on)}). The token needs Zone · Zone Settings · Edit (and Zone · DNS · Edit).`);
     say(`Turned on Email Routing for ${domain}.`);
   }
 

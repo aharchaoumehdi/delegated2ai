@@ -5,6 +5,10 @@ name: Deploy votes service
 # them the run explains what to add and stops. See docs/setup.md, "Votes".
 on:
   workflow_dispatch:
+    inputs:
+      kit_form_id:
+        description: "Kit form ID (the number in the form's URL), when the account has several forms"
+        required: false
   push:
     branches: [main]
     paths: ["worker/**", ".github/workflows/votes.yml"]
@@ -19,7 +23,7 @@ jobs:
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
-      KIT_FORM_ID: ${{ secrets.KIT_FORM_ID }}
+      KIT_FORM_ID: ${{ inputs.kit_form_id || secrets.KIT_FORM_ID }}
       WRANGLER: npx --yes wrangler@4
     defaults:
       run:
@@ -88,7 +92,7 @@ jobs:
             printf '%s' "$KIT_FORM_ID" | $WRANGLER secret put KIT_FORM_ID
             echo "Newsletter sign-ups connected to Kit (form $KIT_FORM_ID)." >> "$GITHUB_STEP_SUMMARY"
           elif [ -n "$KIT_API_KEY" ]; then
-            echo "Newsletter sign-ups are off: couldn't pick a Kit form (see the log). Add the KIT_FORM_ID repository secret and re-run." >> "$GITHUB_STEP_SUMMARY"
+            echo "Newsletter sign-ups are off: couldn't pick a Kit form (see the log). Re-run with the form's ID (or add the KIT_FORM_ID repository secret)." >> "$GITHUB_STEP_SUMMARY"
             exit 1
           else
             echo "Newsletter sign-ups are off: add the KIT_API_KEY repository secret (docs/setup.md, \"Newsletter\") and re-run." >> "$GITHUB_STEP_SUMMARY"

@@ -15,6 +15,7 @@
   },
   "analytics": {
     "plausibleDomain": "",
+    "cloudflareAuto": true,
     "cloudflareToken": "",
     "googleVerification": "aMwMyiL0iUgWhrlft3AxB7SHMyG9ORIJlavE_9fsQ3k"
   },

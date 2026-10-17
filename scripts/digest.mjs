@@ -75,7 +75,7 @@ export async function sendDigest({ key, date, email, fetch: f = fetch, now = Dat
 }
 
 async function main() {
-  const key = process.env.KIT_API_KEY;
+  const key = (process.env.KIT_API_KEY || "").trim();
   if (!key) {
     console.log("No KIT_API_KEY: the daily email is off (docs/setup.md, \"Newsletter\").");
     return;

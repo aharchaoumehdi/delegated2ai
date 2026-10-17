@@ -1,7 +1,7 @@
 import { configure, itemHTML, tileHTML, detailHTML, dayLabel, esc, caseHref, trendingOrder, voteCount } from "./render.js";
 
 const dataEl = document.getElementById("page-data");
-const DATA = dataEl ? JSON.parse(dataEl.textContent) : { cases: [], base: "/", today: "", platforms: {}, repo: "" };
+const DATA = dataEl ? JSON.parse(dataEl.textContent) : { cases: [], base: "/", today: "", platforms: {}, contact: "" };
 configure(DATA);
 const byId = new Map(DATA.cases.map((c) => [c.id, c]));
 const $ = (s) => document.querySelector(s);
@@ -421,6 +421,45 @@ document.addEventListener("submit", async (e) => {
   }
 });
 if (new URLSearchParams(location.search).get("subscribed") === "1") toast("Check your inbox to confirm your subscription");
+
+// ---------- use case submissions ----------
+// Same pattern: posted to the votes service, with a plain form post as the fallback.
+document.addEventListener("submit", async (e) => {
+  const form = e.target.closest("[data-submit]");
+  if (!form || !API) return;
+  e.preventDefault();
+  const note = form.querySelector("[data-submit-note]");
+  const button = form.querySelector("button[type=submit]");
+  const say = (html, state) => {
+    note.innerHTML = html;
+    form.dataset.state = state;
+  };
+  button.disabled = true;
+  try {
+    const res = await fetch(`${API}/submit`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url: form.url.value, note: form.note.value, website: form.website.value }),
+    });
+    const body = await res.json().catch(() => ({}));
+    if (res.ok) {
+      form.reset();
+      say("<b>Thanks, got it.</b> It goes through the next daily check. Send another any time.", "ok");
+    } else say(esc(body.error || "That didn't work. Try again in a moment."), "error");
+  } catch {
+    say("That didn't work. Check your connection and try again.", "error");
+  } finally {
+    button.disabled = false;
+  }
+});
+{
+  const sent = new URLSearchParams(location.search).get("submitted");
+  const note = document.querySelector("[data-submit-note]");
+  if (sent && note) {
+    note.innerHTML = sent === "1" ? "<b>Thanks, got it.</b> It goes through the next daily check." : "check the link starts with https:// and try again.";
+    note.closest("form").dataset.state = sent === "1" ? "ok" : "error";
+  }
+}
 
 // ---------- margin texture: a few grid cells that glow and fade ----------
 // Each cell fades in and out over 9 s; when it is fully faded it moves to another free cell

@@ -10,7 +10,8 @@
   first on the next run) or, for `curation.method: "manual"`, held until its facts are verified.
 - Each entry's write-up (`what_they_did`, `how_it_went`, `worth_knowing`, `prompt`) follows
   "The write-up" in the guidelines; `scripts/enrich.mjs` backfills missing ones.
-- Votes, newsletter sign-ups (passed to Kit, never stored) and live stats go through `worker/`
+- Votes, newsletter sign-ups (passed to Kit, never stored), use case submissions (link + note,
+  kept 30 days, read by `scripts/collectors/submissions.mjs`) and live stats go through `worker/`
   (Cloudflare Worker + D1); `scripts/digest.mjs` sends the daily email. Keep the Privacy page in
   `scripts/build.mjs` accurate if what is stored or shared changes.
 - Agent logos: `config/agent-logos.json` maps an agent name to an icon in `site/assets/agents/`

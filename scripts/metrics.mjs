@@ -60,9 +60,12 @@ async function traffic(now, siteTag) {
   if (!env("CLOUDFLARE_API_TOKEN") || !account || !site) throw new Error("not set up: needs CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID and analytics.cloudflareSiteTag");
   const days = daysBack(90, now);
   const start = days[0], end = days.at(-1), start28 = days.at(-28);
+  // Bots are left out, as in Cloudflare's own dashboard ("Exclude bots"); if the API
+  // refuses that filter, the run falls back to all traffic and says so in status.json.
+  let botFilter = ", bot: 0";
   const group = (alias, dims, from, limit, order) =>
-    `${alias}: rumPageloadEventsAdaptiveGroups(limit: ${limit}, filter: {siteTag: $site, date_geq: "${from}", date_leq: $end}, orderBy: [${order}]) { count sum { visits } dimensions { ${dims} } }`;
-  const query = `query ($account: String!, $site: String!, $end: Date!) { viewer { accounts(filter: {accountTag: $account}) {
+    `${alias}: rumPageloadEventsAdaptiveGroups(limit: ${limit}, filter: {siteTag: $site, date_geq: "${from}", date_leq: $end${botFilter}}, orderBy: [${order}]) { count sum { visits } dimensions { ${dims} } }`;
+  const build = () => `query ($account: String!, $site: String!, $end: Date!) { viewer { accounts(filter: {accountTag: $account}) {
     ${group("daily", "date", start, 1000, "date_ASC")}
     ${group("pages", "requestPath", start28, 20, "count_DESC")}
     ${group("referrers", "refererHost", start28, 20, "count_DESC")}
@@ -70,7 +73,16 @@ async function traffic(now, siteTag) {
     ${group("devices", "deviceType", start28, 10, "count_DESC")}
     ${group("browsers", "userAgentBrowser", start28, 10, "count_DESC")}
   } } }`;
-  const { data } = await cf("/graphql", { method: "POST", body: JSON.stringify({ query, variables: { account, site, end } }) });
+  const ask = () => cf("/graphql", { method: "POST", body: JSON.stringify({ query: build(), variables: { account, site, end } }) });
+  let data, note = "updated (bots excluded)";
+  try {
+    ({ data } = await ask());
+  } catch (e) {
+    if (!/bot/i.test(e.message)) throw e;
+    botFilter = "";
+    note = "updated (includes bots: the API refused the bot filter)";
+    ({ data } = await ask());
+  }
   const a = data?.viewer?.accounts?.[0];
   if (!a) throw new Error("Cloudflare returned no account data (check CLOUDFLARE_ACCOUNT_ID)");
   const daily = trimLeading(
@@ -95,7 +107,7 @@ async function traffic(now, siteTag) {
     m.visits += r.visits;
     merged.set(k, m);
   }
-  return { traffic_daily: daily, traffic_breakdown: [...merged.values()] };
+  return { traffic_daily: daily, traffic_breakdown: [...merged.values()], _note: note };
 }
 
 async function d1(sql, params = []) {
@@ -304,7 +316,14 @@ async function health(siteUrl, votesApi) {
         headers: { Authorization: `Bearer ${env("GITHUB_TOKEN")}`, Accept: "application/vnd.github+json" },
       }).then((r) => r.json()).catch(() => ({}));
       const run = res.workflow_runs?.[0];
-      if (run) rows.push({ check: `${name} (last run)`, ok: run.conclusion === "success", detail: `${run.conclusion || run.status} · ${run.created_at.slice(0, 16).replace("T", " ")} UTC`, ms: null });
+      // A run still going is neither a pass nor a failure: ok is null.
+      if (run)
+        rows.push({
+          check: `${name} (last run)`,
+          ok: run.status === "completed" ? run.conclusion === "success" : null,
+          detail: `${run.status === "completed" ? run.conclusion : "running"} · ${run.created_at.slice(0, 16).replace("T", " ")} UTC`,
+          ms: null,
+        });
     }
   }
   return rows;
@@ -321,8 +340,8 @@ export async function collect({ now = Date.now(), previousHistory = [] } = {}) {
   const run = async (name, label, fn) => {
     try {
       const r = await fn();
-      for (const [k, v] of Object.entries(r)) if (k === "_totals") Object.assign(totals, v); else out[k] = v;
-      status.push({ source: name, label, ok: true, detail: "updated", at: new Date(now).toISOString() });
+      for (const [k, v] of Object.entries(r)) if (k === "_totals") Object.assign(totals, v); else if (k !== "_note") out[k] = v;
+      status.push({ source: name, label, ok: true, detail: r._note || "updated", at: new Date(now).toISOString() });
     } catch (e) {
       status.push({ source: name, label, ok: false, detail: String(e.message).slice(0, 300), at: new Date(now).toISOString() });
     }

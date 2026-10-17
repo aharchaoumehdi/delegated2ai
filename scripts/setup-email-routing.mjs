@@ -44,7 +44,7 @@ async function main() {
   else {
     let on = await cf("POST", `/zones/${zone}/email/routing/dns`, { name: domain });
     if (!on.ok) on = await cf("POST", `/zones/${zone}/email/routing/enable`, {}); // older endpoint
-    if (!on.ok) throw new Error(`Couldn't turn on Email Routing (${why(on)}). The token needs Zone · Email Routing Rules · Edit and Zone · DNS · Edit.`);
+    if (!on.ok) throw new Error(`Couldn't turn on Email Routing (${why(on)}). The token needs Zone · Zone Settings · Edit (and Zone · DNS · Edit).`);
     say(`Turned on Email Routing for ${domain}.`);
   }
 

@@ -117,9 +117,13 @@ const themeButton = `<button type="button" class="theme-btn" data-theme aria-lab
 </button>`;
 
 function head({ title, description, canonical, jsonld }) {
-  const analytics = site.analytics?.plausibleDomain
-    ? `<script defer data-domain="${esc(site.analytics.plausibleDomain)}" src="https://plausible.io/js/script.js"></script>`
-    : "";
+  const a = site.analytics || {};
+  const analytics = [
+    a.plausibleDomain && `<script defer data-domain="${esc(a.plausibleDomain)}" src="https://plausible.io/js/script.js"></script>`,
+    // Cloudflare Web Analytics: no cookies, aggregate counts only. The token is public.
+    a.cloudflareToken && `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${esc(JSON.stringify({ token: a.cloudflareToken }))}'></script>`,
+    a.googleVerification && `<meta name="google-site-verification" content="${esc(a.googleVerification)}">`,
+  ].filter(Boolean).join("\n");
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -626,7 +630,7 @@ function privacyPage() {
 <p>Your saved use cases, the use cases you voted for and your theme are kept in your browser's local storage; whether you closed the sponsor bar is kept only until you close the tab. None of it leaves your device, and clearing your browser data removes it.</p>
 <h2>Votes</h2>
 <p>When you press “I want this” or the up arrow, we add one to that use case's count. We keep no lasting record of who voted. To stop the same visitor voting again and again, we keep a salted, one-way hash of your network address, the use case and the day for two days, and a similar hash of your address for one hour to limit floods. Neither stores the address itself, and both are deleted automatically.</p>
-${site.analytics?.plausibleDomain ? `<h2>Visitor statistics</h2><p>We count page views, referring sites, countries and device types in aggregate with Plausible Analytics, which uses no cookies and does not follow you to other sites.</p>` : ""}
+${site.analytics?.plausibleDomain || site.analytics?.cloudflareToken ? `<h2>Visitor statistics</h2><p>We count page views, referring sites, countries, device types and page load times in aggregate with ${site.analytics.cloudflareToken ? "Cloudflare Web Analytics" : "Plausible Analytics"}, which uses no cookies, doesn't store your network address and does not follow you to other sites.</p>` : ""}
 ${newsletterOn ? `<h2>Newsletter</h2>
 <p>When you sign up for the daily email, your address goes straight to our email provider, Kit, which sends a message asking you to confirm. We don't keep your address on our own servers. To limit abuse, sign-ups use the same short-lived, salted hash of your network address as votes. Every email has an unsubscribe link, and <a href="https://kit.com/privacy">Kit's privacy policy</a> covers how they hold your address.</p>
 ` : ""}<h2>Submissions</h2>

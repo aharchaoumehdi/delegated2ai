@@ -101,7 +101,8 @@ kept in each visitor's browser only, and "Trending today" uses the editor's orde
 3. Actions → **Deploy votes service** → Run workflow. It creates the database, deploys
    the Worker and prints its URL in the run summary.
 4. Put that URL in `votesApi` in `config/site.json` (done: it is
-   `https://delegatedto-votes.aharchaou-mehdi.workers.dev`). A repository variable
+   `https://api.delegatedto.ai`, a custom domain declared in `worker/wrangler.toml`; its
+   `*.workers.dev` address is off). A repository variable
    `VOTES_API` overrides it without a code change.
 
 The same Worker takes the site's **Submit a use case** form (`/submit/`): it keeps the link

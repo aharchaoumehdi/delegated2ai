@@ -3,6 +3,7 @@
 # "Publish on Cloudflare". The custom domains are declared below.
 name = "delegatedto-site"
 compatibility_date = "2026-09-01"
+workers_dev = false   # only the custom domains below; no *.workers.dev address
 
 [assets]
 directory = "../dist"

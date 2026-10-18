@@ -1,0 +1,41 @@
+{
+  "id": "open-a-small-online-shop-from-one-sentence",
+  "title": "Open a small online shop from one sentence",
+  "summary": "@i_am_dflame says one sentence to their agent, Awning, put a coffee shop online on its own domain, and a separate chat then booked a paid $5 tasting.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "PayBox payments",
+    "Web domain hosting"
+  ],
+  "agent_role": "The agent created and published the shop from a one-line description after one human payment approval. A separate agent chat later found the shop and booked and paid for a tasting.",
+  "outcome": "Author reports the shop went live on its own domain and received a $5 booking paid straight to the owner's wallet.",
+  "what_they_did": "The poster gave their agent one sentence: \"Ridge Roast, coffee from Accra.\" They approved one payment step through PayBox. The agent then put the shop live on its own web address. To test it, a fresh chat with an agent searched for the shop and booked a tasting.",
+  "how_it_went": "The author says the shop went live and a $5 tasting was booked. They say the payment went straight to the owner's wallet. A video demo accompanies the post.",
+  "worth_knowing": "This is a launch post for the poster's own tool, Awning, so the demo comes from its maker and gives few details on setup.",
+  "prompt": "Help me set up a simple online shop for [business name], which sells [what you sell] in [your city]. Draft a short description, a product or booking list with prices, and a plan for a web page and payment setup. Show me the full draft and the costs before you register a domain, connect payments or publish anything, and wait for my approval at each step.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "online store",
+    "small business",
+    "payments",
+    "shop setup"
+  ],
+  "source": {
+    "url": "https://x.com/i_am_dflame/status/2111549446312042809",
+    "name": "X",
+    "author": "@i_am_dflame",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A short demo shows an agent setting up a live storefront from one sentence, and a second agent booking and paying for a $5 tasting. It reads largely as a product introduction with few details, so it is thin."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "send-your-family-your-travel-plans-with-an-agent",
+  "title": "Send your family your travel plans with an agent",
+  "summary": "A traveler says his assistant agent arranged airport cars and weather updates for a Guatemala trip, then drafted his worried mother a full itinerary email from 15 seconds of speech.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "voice chat",
+    "email"
+  ],
+  "agent_role": "One assistant agent coordinated airport car bookings and reported on the weather. A second agent drafted an itinerary email to his mother after a short voice request. The human booked the flights and hotel and gave the request.",
+  "outcome": "Author reports that 15 seconds of speaking produced a full itinerary email for his mother.",
+  "what_they_did": "The poster had booked flights, a hotel and airport cars for a trip to Guatemala. His personal assistant agent, called Muse, coordinated the cars and reported the weather on its own. He then spoke for about 15 seconds to his main agent, Dot, and asked it to write his mother an email with the full itinerary.",
+  "how_it_went": "He says the email was ready from that short voice request. He calls it a task he never would have bothered with on his own.",
+  "worth_knowing": null,
+  "prompt": "I'm traveling to [destination] on [dates]. Gather my flight, hotel and ground transport bookings from [my email / calendar] into one clear itinerary. Include times, addresses, confirmation numbers and the weather forecast for each day. Then draft a warm, reassuring email to [family member's name] with this itinerary and how to reach me. Show me the draft and wait for my approval before sending anything.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "travel planning",
+    "itinerary",
+    "family",
+    "email drafting"
+  ],
+  "source": {
+    "url": "https://x.com/heywayfinder/status/2111623121346134374",
+    "name": "X",
+    "author": "@heywayfinder",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real daily-life use: assistant agents arranged airport cars, checked the weather and drafted an itinerary email for a worried parent. It is thin on detail and evidence, but it is a rare non-coding example."
+  }
+}

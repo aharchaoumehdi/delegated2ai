@@ -1,0 +1,45 @@
+{
+  "id": "make-a-rap-battle-video-between-two-historical-figures",
+  "title": "Make a rap battle video between two historical figures",
+  "summary": "A creator built a Claude Code skill that writes sourced lyrics, prepares songs and lip-sync clips, and edits a rap battle video; one 1:42 episode cost about $16.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Suno",
+    "Midjourney",
+    "Seedance (Jimeng)",
+    "MiniMax",
+    "ffmpeg",
+    "faster-whisper"
+  ],
+  "agent_role": "Claude writes lyrics with historical sources, writes prompts, splits vocals, times each line, aligns lip sync, edits, adds subtitles and drafts covers and captions. The human generates the song in Suno, images in Midjourney and video clips on the Jimeng site.",
+  "outcome": "The author reports a 1 minute 42 second Zhou Yu vs Zhuge Liang episode with 34 original lines, costing about $16 in video generation.",
+  "what_they_did": "A creator known as 硅基废话 packaged a Claude Code skill: you type something like \"make an episode of Cao Cao vs Liu Bei\". Claude writes two 16-line verses, each line tied to a historical source. It hands you exact settings for Suno and Midjourney, then splits vocals, times each half-line, and builds clip packs. You generate clips on the Jimeng site, and Claude aligns mouths, color-grades, adds subtitles and makes covers.",
+  "how_it_went": "The author shares a finished Zhou Yu vs Zhuge Liang video: 1 minute 42 seconds, 34 lines, about $16 for video generation. They say lip sync lands first try thanks to precise per-line timing rules.",
+  "worth_knowing": "The historical notes are AI-written, so the author says to check them against the original texts. Songs from Suno's free plan can't be used commercially.",
+  "prompt": "Help me make a short rap battle video between [historical figure A] and [historical figure B]. Write two 16-line verses, one historical reference per line, and list the source for each. Then give me exact settings for [music tool] to generate the song, and image prompts for the two characters and the stage. Once I hand you the audio and images, split the vocals, time each line, and prepare clip prompts for [video tool]. Assemble the final cut with subtitles and a cover. Show me the lyrics and sources for approval before anything else.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "music video",
+    "history",
+    "lip sync",
+    "video editing"
+  ],
+  "source": {
+    "url": "https://github.com/10291124jcjc-dotcom/ancient-rap-battle",
+    "name": "GitHub",
+    "author": "硅基废话 (@DDJCXX)",
+    "published": "2026-10-13"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Novel creative pipeline with a clear human/agent split, a finished example video, cost figure and open code; the many paid accounts make it harder to reproduce."
+  }
+}

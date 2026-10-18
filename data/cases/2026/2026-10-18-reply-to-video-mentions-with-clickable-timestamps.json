@@ -1,0 +1,44 @@
+{
+  "id": "reply-to-video-mentions-with-clickable-timestamps",
+  "title": "Reply to video mentions with clickable timestamps",
+  "summary": "A developer built an agent skill that reads Bilibili @-mentions, watches the linked video locally, and posts a reply with clickable chapter timestamps, sharing example replies.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "DeepSeek Harness",
+    "BrowserSkill browser automation",
+    "video-watch",
+    "faster-whisper",
+    "ffmpeg"
+  ],
+  "agent_role": "The agent checks notifications, verifies who mentioned it, finds the video, transcribes it and samples frames, writes a reply by video type, and posts it. The human sets up the accounts and can run a watcher that checks every 30 seconds.",
+  "outcome": "The author shares masked screenshots of real replies: chapter timestamps for tutorials and a short reaction for fun videos.",
+  "what_they_did": "A developer wrote a skill for the DeepSeek Harness agent that drives a logged-in browser. When you @ a bot account under a Bilibili video, the agent finds that video and transcribes it locally. It picks key frames and replies in the right thread with clickable timestamps. An optional script checks for mentions every 30 seconds and messages you on WeChat.",
+  "how_it_went": "The author shows real replies in screenshots. They report fixing several traps, such as music videos producing no transcript until a setting was changed (0 segments to 57).",
+  "worth_knowing": "It posts publicly under your account, so the author recommends a secondary account and a replies-per-hour limit. Bilibili blocks accounts that post too fast.",
+  "prompt": "Check my [video site] notifications for new mentions of [bot account name] by [my main account name]. For each one, confirm the sender's name matches before acting. Open the video, transcribe it and look at key frames. If it's a tutorial, draft a reply with chapter timestamps in 00:00 format; otherwise draft one short reaction. Show me the draft and wait for my approval before posting it as a reply in that thread.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "video summary",
+    "comment replies",
+    "browser automation",
+    "social media"
+  ],
+  "source": {
+    "url": "https://github.com/bronyacccxz/dsh-bilibili-reply",
+    "name": "GitHub",
+    "author": "bronyacccxz",
+    "published": "2026-10-14"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine multi-step agent that finds a mention, watches the video locally and posts a timestamped reply, with documented pitfalls and screenshots; niche and setup-heavy."
+  }
+}

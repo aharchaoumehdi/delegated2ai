@@ -1,0 +1,42 @@
+{
+  "id": "turn-whatsapp-cake-orders-into-tomorrow-s-bake-sheet",
+  "title": "Turn WhatsApp cake orders into tomorrow's bake sheet",
+  "summary": "A developer built Pakka, where Gemma 4 reads home bakers' exported WhatsApp chats on the phone and builds a daily bake sheet, flagging anything unclear instead of guessing.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": "Gemma 4 E2B",
+  "tools": [
+    "WhatsApp chat export",
+    "Web browser",
+    "Vercel"
+  ],
+  "agent_role": "The model finds each order and copies exact words for each detail. Code checks the quotes, works out dates and weights, and flags doubts; the baker and customer confirm.",
+  "outcome": "Author reports the split design fixed date mistakes the model made when asked for finished answers directly.",
+  "what_they_did": "Rohit Purkait built a web app for home bakers in India who take orders on WhatsApp. The baker exports chats and adds them. Gemma reads each chat in the browser and copies the exact words for item, weight, date, eggless and price. Code then checks those words are really in the chat and drafts a confirmation message.",
+  "how_it_went": "The author says asking the model for finished answers put orders on the wrong day, because 'kal' means both yesterday and tomorrow. Letting code work out dates fixed this, and unclear orders get a flagged note.",
+  "worth_knowing": "Have the AI quote exact words and let simple rules interpret them. Everything runs on the phone, but the first run downloads about 2 GB.",
+  "prompt": "I take orders over chat. Here are exported chats: [attach chat files]. Find every order and list, for each: customer, item, size, date and time, special requests, message on top, price, advance paid and amount due. For every detail, quote the exact words from the chat it came from. If a date, size or detail is unclear or changed later, flag it and ask me instead of guessing. Then draft a short confirmation message for each customer, but don't send anything until I approve.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "order tracking",
+    "small business",
+    "whatsapp",
+    "bakery"
+  ],
+  "source": {
+    "url": "https://dev.to/codeswithroh/kal-means-yesterday-and-tomorrow-i-built-home-bakers-a-whatsapp-order-sheet-that-never-guesses-21p3",
+    "name": "DEV Community",
+    "author": "Rohit Purkait",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A thoughtful small-business workflow that turns WhatsApp chats into a checked order sheet, with code and a demo. It is more an AI pipeline than an agent taking actions; a small boost applies for the non-coding domain."
+  }
+}

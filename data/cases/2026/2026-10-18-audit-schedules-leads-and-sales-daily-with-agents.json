@@ -1,0 +1,46 @@
+{
+  "id": "audit-schedules-leads-and-sales-daily-with-agents",
+  "title": "Audit schedules, leads and sales daily with agents",
+  "summary": "A 21-person shutter maker runs Claude-built agents that check routes, stale leads and sales data, posting fixes to Slack; the owner says first-hour lead misses fell from 9 to 1.",
+  "domain": "Business",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "Slack",
+    "Google Calendar",
+    "GoHighLevel",
+    "QuickBooks",
+    "Google Sheets",
+    "Google and Meta Ads"
+  ],
+  "agent_role": "Scheduled agents pull data from the company's existing tools, flag problems and suggest fixes in Slack. The owner and general manager set the rules, and staff review and make the corrections.",
+  "outcome": "The owner reports first-hour lead response misses dropped from 9 to 1 in a week, though not all due to AI, and says it saves time and cuts mistakes without a precise ROI figure.",
+  "what_they_did": "The owner of a 21-person shutter and shade business and his general manager used Claude and Viktor to build agents on top of tools they already use. One checks sales and install routes for drive times that don't work. Another reviews the sales contact system each morning for leads nobody followed up. A third combines sales, accounting and ad data into a weekly view. Problems and suggested fixes go to Slack for the responsible employee.",
+  "how_it_went": "The route check caught 6 unworkable sales appointments and a missing install stop. The lead check found a lead ignored for 19 days. The performance agent flagged a 53% sales drop and questioned whether orders were simply not entered.",
+  "worth_knowing": "Agents have failed from permission problems and broken connections, and one core platform still won't share quote and order data. The owner suggests starting with one daily manual check.",
+  "prompt": "Every weekday morning, review my [sales contact system] and [calendar]. List leads with no reply in [X] days, follow-ups that are overdue, and appointments not properly recorded. Check that the drive times between booked appointments fit the time allowed. For each problem, write a short note with the person responsible and a suggested fix. Show me the draft list first, and only post it to [Slack channel] after I approve. Do not change any records yourself.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "small business",
+    "lead follow-up",
+    "scheduling",
+    "business reporting",
+    "slack"
+  ],
+  "source": {
+    "url": "https://x.com/SMB_RealEstate/status/2111460113793827242",
+    "name": "X",
+    "author": "@SMB_RealEstate",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A 21-person manufacturer describes three working agent checks (routes, leads, performance) with concrete numbers and honest failures, a rare non-coding small-business example. Evidence is the owner's own account with screenshots mentioned but not shown."
+  }
+}

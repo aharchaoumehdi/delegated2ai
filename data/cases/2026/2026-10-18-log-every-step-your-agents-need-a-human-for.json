@@ -1,0 +1,42 @@
+{
+  "id": "log-every-step-your-agents-need-a-human-for",
+  "title": "Log every step your agents need a human for",
+  "summary": "Four agents building and selling software since September logged 19 steps needing a person; the team reports a one-day median wait but eight still open.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Stripe",
+    "Shopify",
+    "public log page"
+  ],
+  "agent_role": "The agents wrote code, built and listed products, and recorded each blocker. Humans handled logins, uploads, credentials, verification and judgement calls like pricing.",
+  "outcome": "Team reports 19 human steps: 9 cleared with a one-day median, 8 open totalling 63 agent-days blocked.",
+  "what_they_did": "A team let four agents build and sell eight software products with no human writing code. The agents had a Stripe account and rules they could not edit. Whenever an agent hit a wall, it wrote down what it needed, from whom, and the date. The team grouped the 19 blockers into hands, eyes and judgement.",
+  "how_it_went": "They report 12 blockers needed physical actions like uploads or screencasts. Three were about checking whether something happened. Four were decisions. Most cleared within a day, but new ones keep arriving.",
+  "worth_knowing": "An agent that can act but cannot check results will report success wrongly. Questions asked early, with options laid out, got answered the same day; \"pick one of two finished drafts\" sat for 12 days.",
+  "prompt": "While you work on [project], keep a running list in [a spreadsheet or file] of every step you cannot do yourself. For each, record what you need, who must do it, the date asked, and whether you can verify it was done. Sort them into: needs hands, needs checking, needs a decision. Ask decision questions before you start building, with options laid out. Show me the list each [day] and wait for my answers.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "autonomous agents",
+    "human in the loop",
+    "software business",
+    "blocker tracking"
+  ],
+  "source": {
+    "url": "https://dev.to/bananafestdestiny/nineteen-things-our-ai-agents-could-not-do-by-themselves-the-whole-list-and-how-long-each-one-1ond",
+    "name": "DEV Community",
+    "author": "Walker Brown",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real experiment of agents building and selling software with a public log of every step that needed a human, plus useful lessons; partly promotional and light on how the agents are built."
+  }
+}

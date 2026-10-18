@@ -1,0 +1,44 @@
+{
+  "id": "run-a-small-business-through-a-team-of-planning-agents",
+  "title": "Run a small business through a team of planning agents",
+  "summary": "KamilMatysikAI built a Claude Code setup where a lead agent plans and five role agents do the work, and says it has run his property and retail business since August 2026.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Markdown files",
+    "scheduled task queue",
+    "local web panel",
+    "git",
+    "Obsidian"
+  ],
+  "agent_role": "A lead 'CEO' agent turns a goal into a plan and tasks. Five role agents (marketing, copy, web, software, research) carry them out, and an optional queue runs one task every 30 minutes. The human handles only tasks of 15 minutes or less and approves decisions the agents have already written up with a recommendation.",
+  "outcome": "The author reports the system has been running in his property development, online retail and rentals business since August 2026.",
+  "what_they_did": "The author built a system of plain text files for Claude Code. A lead agent writes a project plan and tasks. Five role agents do the work. A timed queue picks one task every 30 minutes and runs it with limited permissions. He gets back only short tasks and decisions that come with a ready recommendation.",
+  "how_it_went": "He says it grew out of his own business and has run there since August 2026. The 40 rules shipped with it were each written after something went wrong.",
+  "worth_knowing": "The top rule is 'no evidence, no close': a task counts as done only with a file path, link, screenshot or test output. The project is an early version, and the author warns to expect rough edges.",
+  "prompt": "Act as the planner for my project: [goal]. Write a short project file with a measurable success target and a date, then a plan in phases. Break the first phase into at most 5 tasks. Give each task to a role: marketing, copy, web, software or research. Separate out anything that needs me into tasks of 15 minutes or less. For each decision, write your recommendation and its cost. Mark a task done only when you can point to evidence such as a file, link or test result. Show me the plan and wait for my approval before doing any work.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "project management",
+    "multi-agent",
+    "small business",
+    "task planning"
+  ],
+  "source": {
+    "url": "https://github.com/KamilMatysikAI/claude-agent-os",
+    "name": "GitHub",
+    "author": "KamilMatysikAI",
+    "published": "2026-10-11"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An open-source multi-agent setup for Claude Code that the author says has run a real property, retail and rental business since August 2026, with 40 rules drawn from real incidents. The repo mostly describes features, and it reports no measured results."
+  }
+}

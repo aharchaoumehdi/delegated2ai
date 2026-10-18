@@ -1,0 +1,43 @@
+{
+  "id": "strip-ads-from-your-android-tv-and-add-a-clean-home-screen",
+  "title": "Strip ads from your Android TV and add a clean home screen",
+  "summary": "A developer had Claude Code connect to an Android TV, switch off preinstalled bloat and install a custom Apple TV-style home screen, built in an afternoon.",
+  "domain": "Home",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Android debug connection",
+    "Android SDK",
+    "TV screenshots",
+    "Python scripts"
+  ],
+  "agent_role": "The agent asks which apps the user keeps, backs up, disables unwanted apps, builds and installs the launcher, and verifies with TV screenshots. The human enables debugging on the TV and answers the checklist.",
+  "outcome": "Author reports building it in an afternoon with Claude Code; tested on the TV models listed in the repo.",
+  "what_they_did": "A developer turned on debugging on their Android TV and gave Claude Code a ready-made prompt. The agent asked which apps they use and which four go in the dock. It then backed up the TV, disabled ad-heavy apps, built a new home screen app and installed it, taking screenshots from the TV to check each step.",
+  "how_it_went": "The author says the project was built in an afternoon. The result is a black, clean home screen with a four-app dock, and everything can be undone with a restore script.",
+  "worth_knowing": "Apps are disabled, never uninstalled. Install the new home screen before disabling the old one, or the Home button opens a factory test app. Does not work on Samsung, LG or Fire TV.",
+  "prompt": "I have a [TV brand and model] running Android TV / Google TV at IP [TV IP address] with USB debugging on. Connect to it over the network and list its installed apps. Ask me which apps I use and which four should go in a home-screen dock. Back up the current setup first. Then show me the list of apps you plan to disable and wait for my approval. Disable apps (never uninstall), build and install a simple, fast home screen, and only switch off the stock launcher once the new one works. Take a screenshot from the TV after each step to confirm, and write a restore script so I can undo everything.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "smart tv",
+    "debloat",
+    "home screen",
+    "home tech"
+  ],
+  "source": {
+    "url": "https://github.com/Gathin23/tv-vibehack",
+    "name": "GitHub",
+    "author": "Gathin23",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, reproducible home project: the coding agent works on a real TV, removes bloat, builds and installs a new home screen, and checks each step with screenshots. Ships the prompt and practical gotchas; non-coding household use earns a small boost."
+  }
+}

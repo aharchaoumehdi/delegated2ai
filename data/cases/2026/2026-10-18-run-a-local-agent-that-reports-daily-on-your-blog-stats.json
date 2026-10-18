@@ -1,0 +1,43 @@
+{
+  "id": "run-a-local-agent-that-reports-daily-on-your-blog-stats",
+  "title": "Run a local agent that reports daily on your blog stats",
+  "summary": "A developer built a free local agent that checks their latest 10 DEV articles daily; after it misremembered an undecided idea as \"not yet,\" they removed its ability to save memories.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": "llama3.2",
+  "tools": [
+    "Ollama",
+    "DEV API",
+    "cron scheduler",
+    "Python"
+  ],
+  "agent_role": "The agent answers questions in a terminal, looks up the author's DEV articles and recalls saved notes. Code, not the model, writes the daily report and memory, and only the human can save preferences or decisions.",
+  "outcome": "Author reports the first scheduled daily check ran on its own and produced an accurate report, but answers take 45 seconds to about 4 minutes each.",
+  "what_they_did": "A developer built a companion agent that runs on their Mac with a free local model. It chats in a terminal and checks their latest 10 DEV articles. A daily scheduled job compares the stats with the last check and writes a report. After the model saved a twisted version of their words, they took away its memory-writing tool.",
+  "how_it_went": "The author says the model turned \"I have not decided\" into \"not yet\" despite clear rules. Now only typed commands save memories, and code writes the report. The first unattended daily run worked once.",
+  "worth_knowing": "In an early version, the model invented what a new comment said when only the comment count had been fetched. Have code report only facts that were actually retrieved.",
+  "prompt": "Set up a small agent on my computer that, every morning at [time], checks my latest [number] posts on [blog platform] and compares likes and comment counts with yesterday. Write a short report listing only what actually changed, and say plainly when something (like comment text) was not fetched. Do not guess. Only save notes to memory when I type a command like /remember. Show me the plan and the schedule before installing anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "personal agent",
+    "agent memory",
+    "daily report",
+    "blog stats"
+  ],
+  "source": {
+    "url": "https://dev.to/kenielzep97/my-agent-turned-i-havent-decided-into-not-yet-now-the-model-isnt-allowed-to-write-its-own-23ma",
+    "name": "DEV Community",
+    "author": "Self-Correcting Systems (kenielzep97)",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A small, honest build log of a local companion agent that checks the author's articles daily, with public code and a concrete lesson about stopping the model from writing its own memory. Narrow in scope and only one unattended run so far."
+  }
+}

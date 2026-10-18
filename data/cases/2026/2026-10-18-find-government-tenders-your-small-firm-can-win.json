@@ -1,0 +1,43 @@
+{
+  "id": "find-government-tenders-your-small-firm-can-win",
+  "title": "Find government tenders your small firm can win",
+  "summary": "A developer built Tender Radar, where a local Gemma 4 model checked 8 tenders against a contractor's documents and drafted bid packs in 22 minutes at no cost, per the author.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": "Gemma 4",
+  "tools": [
+    "Ollama",
+    "TabPFN",
+    "SQLite",
+    "Tender portals"
+  ],
+  "agent_role": "The pipeline pulls eligibility rules from each tender, matches them to the firm's files with quotes, scores win chances and drafts letters. A guard deletes unsupported claims, and a coding agent helped build it.",
+  "outcome": "Author reports 51 clauses extracted across 8 tenders in 22 minutes on an 8 GB laptop, with 8 unsupported sentences removed from drafts.",
+  "what_they_did": "Pranesh Nikhar built a tool for small electrical contractors bidding on public tenders. It reads tender notices, pulls out rules like turnover and licences, and checks each one against the firm's own documents. It flags risky terms, estimates win chances from past bids and drafts covering letters. It used a coding agent to build it, on a realistic made-up firm.",
+  "how_it_went": "The author reports 24 rules met, 5 partly met and 19 missing across 8 tenders. The checker rejected 3 bad citations and caught 4 number conflicts, at zero cost.",
+  "worth_knowing": "The author caught the small model marking a rule 'met' while its own reasoning said otherwise, so every claim must carry a quote checked against the documents.",
+  "prompt": "Read these tender notices: [paste or attach notices]. For each, list the eligibility rules: turnover, deposit, past experience, licences and certificates. Check each rule against my firm's documents in [folder of documents], and quote the exact line that proves it, or mark it missing. Flag risky terms in plain words, like tight deadlines or a job much bigger than past work. Rank the tenders by fit. Then draft a covering letter for the best one, using only claims my documents support. Show me everything before anything is submitted.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "government tenders",
+    "bid preparation",
+    "small business",
+    "document checking"
+  ],
+  "source": {
+    "url": "https://dev.to/praneshnikhar/tender-radar-finding-government-tenders-for-small-contractors-entirely-on-their-own-laptop-466k",
+    "name": "DEV Community",
+    "author": "Pranesh Nikhar",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, multi-step local pipeline that finds government tenders, checks eligibility against a firm's documents and drafts bid paperwork, with code and measured numbers. It runs on synthetic data, but is reproducible and serves an unusual small-business need."
+  }
+}

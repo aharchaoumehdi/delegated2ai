@@ -1,0 +1,43 @@
+{
+  "id": "trace-what-breaks-when-one-part-of-your-system-fails",
+  "title": "Trace what breaks when one part of your system fails",
+  "summary": "A developer built RIPPLE, an agent that queries a map of service connections; in the demo, an Inventory failure points to three affected services and two business workflows.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "FalkorDB graph database",
+    "Groq",
+    "Node.js backend",
+    "React dashboard"
+  ],
+  "agent_role": "The agent picks from five tools to list services, analyze failure impact, find connection paths and pull related workflows, then explains its answer. The developer built the map of services and the scoring rule.",
+  "outcome": "Author reports the demo flagged Order Service one step away and Shipping and Analytics two steps away, plus Checkout and Fulfillment workflows. He notes these are simulated results.",
+  "what_they_did": "For a hackathon, the developer stored services, databases, queues, teams and workflows as a connected map. He gave an AI agent five tools to search that map. Users ask questions like 'What happens if the Inventory Service fails?' The agent traces the paths and shows them on a dashboard.",
+  "how_it_went": "In the demo, the agent found three affected services and two workflows, ranked by a simple priority score. The author says he tested the five tools one by one.",
+  "worth_knowing": "The author stresses that the priority score is a rough guide, not a real failure probability. The results only reflect the modeled map, not what would happen in a live system.",
+  "prompt": "Here is a list of my systems and what each depends on: [list of services, databases and their dependencies]. Build a dependency map from it. Then answer: if [service name] fails, which other services are affected, and through which chain of dependencies? Also say which business workflows are at risk. Show each path step by step. Label anything you are assuming rather than reading from my list.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "failure analysis",
+    "dependency mapping",
+    "system reliability",
+    "graph database"
+  ],
+  "source": {
+    "url": "https://dev.to/narasimha_lakshmi_8cb9876/what-if-one-microservice-fails-building-ripple-an-ai-agent-that-investigates-the-ripple-effect-4pkp",
+    "name": "DEV Community",
+    "author": "Narasimha Lakshmi",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A hackathon demo where an agent uses five tools to query a map of service connections and trace what a failure would affect. It runs on a small modeled system, and the author is open that the results are simulated."
+  }
+}

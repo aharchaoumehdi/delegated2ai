@@ -1,0 +1,42 @@
+{
+  "id": "build-and-research-sales-prospect-lists-from-slack",
+  "title": "Build and research sales prospect lists from Slack",
+  "summary": "A cold-email agency says its in-house agent, Hermes, now sources, checks and researches prospect lists for almost all clients, and credits it with over $70M in pipeline.",
+  "domain": "Marketing",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Slack",
+    "Clay",
+    "Claude Code"
+  ],
+  "agent_role": "Team members send requests in Slack. The agent then finds, fills in, checks and researches each target account. Claude Code takes over for some later steps, which the post does not detail.",
+  "outcome": "The author claims over $70M in sales pipeline tied to the setup.",
+  "what_they_did": "A cold-email agency built its own agent, called Hermes. Anyone on the team can message it in Slack with a list request. It finds target companies, fills in their details, checks the data and researches each account. The author says it builds lists that Clay, a common list-building tool, cannot.",
+  "how_it_went": "The author says Hermes now builds lists for almost all of the agency's clients. They credit it with over $70M in sales pipeline.",
+  "worth_knowing": "The author's full write-up stresses how to word a request so the agent returns a usable list.",
+  "prompt": "Build me a list of [number] target companies matching this profile: [industry], [company size], [region], [buying signal]. For each company, find the website, a likely decision-maker and their role, and a short note on recent news or why they might need [your offer]. Check each entry for missing or doubtful data and flag it. Put the results in a spreadsheet and show me the first 10 rows before finishing the rest. Do not contact anyone.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "lead generation",
+    "sales prospecting",
+    "account research",
+    "slack"
+  ],
+  "source": {
+    "url": "https://x.com/coldemailchris/status/2111582794451137018",
+    "name": "X",
+    "author": "@coldemailchris",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine in-house agent that builds and researches sales prospect lists from Slack requests, but the post is a teaser with few specifics, and the $70M pipeline claim is unverified and promotional."
+  }
+}

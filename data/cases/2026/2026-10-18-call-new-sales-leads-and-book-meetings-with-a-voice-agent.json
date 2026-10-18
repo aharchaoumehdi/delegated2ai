@@ -1,0 +1,43 @@
+{
+  "id": "call-new-sales-leads-and-book-meetings-with-a-voice-agent",
+  "title": "Call new sales leads and book meetings with a voice agent",
+  "summary": "A user shows a video of ElevenLabs Agents phoning each new form lead within seconds, asking qualifying questions and booking a meeting.",
+  "domain": "Marketing",
+  "platform": "ElevenLabs Agents",
+  "model": null,
+  "tools": [
+    "ElevenLabs Agents",
+    "web form",
+    "phone calls",
+    "calendar booking"
+  ],
+  "agent_role": "The voice agent calls the lead after a form is filled, asks qualifying questions and books the meeting; the human set up the flow.",
+  "outcome": null,
+  "what_they_did": "The poster built a flow with ElevenLabs voice agents. When a lead fills out a web form, the agent calls them within seconds. It asks questions to judge fit and books a meeting. The flow was inspired by two other creators.",
+  "how_it_went": "The poster shares a video demo and calls themselves a happy user, but gives no numbers.",
+  "worth_knowing": "The poster says they are not affiliated with ElevenLabs. The demo shows the flow, not results from real leads.",
+  "prompt": "When a new lead submits [your web form], call them within a minute using a friendly voice. Introduce yourself as calling from [business name]. Ask these qualifying questions: [budget], [timeline], [need]. If they fit [criteria], offer open slots from [my calendar] and book the one they pick. If not, thank them politely. After each call, write a short summary to [spreadsheet or CRM]. Before going live, show me the call script and run a test call to me for approval.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "lead follow-up",
+    "voice agent",
+    "sales calls",
+    "meeting booking"
+  ],
+  "source": {
+    "url": "https://x.com/ted_sandico/status/2111488094415225078",
+    "name": "X",
+    "author": "@ted_sandico",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A thin but genuine demo of a voice agent that calls new leads, qualifies them and books meetings; a video exists but few details or results are given."
+  }
+}

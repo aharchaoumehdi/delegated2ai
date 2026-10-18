@@ -1,0 +1,43 @@
+{
+  "id": "let-an-agent-work-through-your-code-changes-overnight",
+  "title": "Let an agent work through your code changes overnight",
+  "summary": "A developer had Amp review open code changes, answer Codex review comments and run end-to-end checks overnight; he says it got confusing and ate almost all his usage.",
+  "domain": "Software",
+  "platform": "Amp",
+  "model": null,
+  "tools": [
+    "Amp",
+    "Claude Code",
+    "Codex review bot",
+    "GitHub"
+  ],
+  "agent_role": "Amp started several agent threads to review proposed changes, wait for automatic checks, fix Codex review comments and run a test app. The human agreed the plan and milestones beforehand.",
+  "outcome": "Author reports the many threads became confusing and used almost all of his Amp plan's usage.",
+  "what_they_did": "A developer talked through an approach and milestones with Amp for his open-source repo. He then let it run overnight. He asked it to review every pending change, wait for checks, fix Codex review comments and re-request review. He also asked for an end-to-end test proving everything worked.",
+  "how_it_went": "He says Claude Code ran out of usage for five hours, so the work shifted to Amp's agents. He reports the many threads became confusing to follow and used almost all his plan's usage.",
+  "worth_knowing": "Leaving many parallel agent threads unattended overnight can burn through a usage plan fast and leave you unsure what happened.",
+  "prompt": "Work through the open pull requests in [repo URL] one at a time. For each, wait for the automatic checks to finish, read any review comments, fix them, and ask the reviewer to look again. Keep a short running log of what you changed in each pull request. Stop if usage passes [usage limit]. Do not merge anything. At the end, run an end-to-end test with [example app]. Show me the log and the test results for approval.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "code review",
+    "overnight run",
+    "pull requests",
+    "usage limits"
+  ],
+  "source": {
+    "url": "https://x.com/GaurangKaria/status/2111455083476988312",
+    "name": "X",
+    "author": "@GaurangKaria",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine overnight multi-step run with an honest, cautionary result, but it is thin on detail and evidence."
+  }
+}

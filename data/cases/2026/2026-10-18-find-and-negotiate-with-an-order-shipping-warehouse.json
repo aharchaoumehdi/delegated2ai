@@ -1,0 +1,40 @@
+{
+  "id": "find-and-negotiate-with-an-order-shipping-warehouse",
+  "title": "Find and negotiate with an order-shipping warehouse",
+  "summary": "A hobby founder's agent picked warehouses near likely customers, sent specs, gathered terms and negotiated prices with seven contenders; she signed a contract after three days.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "email"
+  ],
+  "agent_role": "The agent found warehouses near customers, sent product specs, collected terms and negotiated pricing. The founder reviewed the choice and signed the contract herself.",
+  "outcome": "Author reports signing with one of 7 warehouses after a 3-day process, mostly spent waiting for replies.",
+  "what_they_did": "The poster runs a hobby product project. She had her agent find order-packing and shipping warehouses close to likely customers, to cut delivery time. The agent sent them specs, gathered their terms and negotiated prices. She signed the final contract.",
+  "how_it_went": "She says the agent compared 7 contenders and she signed a contract the same morning. The whole process took 3 days, mostly waiting on the warehouses.",
+  "worth_knowing": "Most of the time went to waiting for the warehouses to reply, not to the agent's own work.",
+  "prompt": "I sell [your product] and need a warehouse to store, pack and ship orders. My customers are mostly in [regions]. Find 5 to 8 order-fulfillment warehouses close to those customers. Draft an email for each with my product specs: [size, weight, monthly order volume]. Show me the drafts and wait for my approval before sending. As replies come in, put each company's terms and prices in a spreadsheet. Suggest counteroffers, but ask me before sending any. Then recommend the best option and explain why.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "fulfillment",
+    "supplier search",
+    "negotiation",
+    "small business"
+  ],
+  "source": {
+    "url": "https://x.com/aarthir/status/2111415338474578398",
+    "name": "X",
+    "author": "@aarthir",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, uncommon small-business task where the agent shortlisted, contacted and negotiated with seven warehouses, but the post gives no tools or setup details."
+  }
+}

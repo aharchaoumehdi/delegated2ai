@@ -1,0 +1,45 @@
+{
+  "id": "produce-a-product-launch-video-with-an-ai-film-crew",
+  "title": "Produce a product launch video with an AI film crew",
+  "summary": "A founder had Claude Code act as creative director, coordinating AI video scenes, animation and AI review panels; after 20 versions they say it's still not good enough.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Grok video generation",
+    "Remotion",
+    "FFmpeg",
+    "Gemini",
+    "FrameJam",
+    "Muse"
+  ],
+  "agent_role": "Claude Code orchestrated the whole production: generating scenes, assembling animation, rendering, and gathering feedback from AI reviewers. The human iterates on versions and adjusts the setup.",
+  "outcome": "Author reports nearing version 21 and says the stack he now uses would have saved him 48 hours.",
+  "what_they_did": "The poster wanted a high-quality product launch video. Claude Code acted as creative director, running the whole process. Grok made scenes, Remotion handled animation, and FFmpeg rendered the final file. Gemini played review panels of industry pros and target customers.",
+  "how_it_went": "The author says it is \"not going so hot\" and he is about to hit version 21. He says the setup he ended with would have saved him 48 hours.",
+  "worth_knowing": "His newest fix is having the director keep a strict written style guide to stop the look drifting between stages. He calls it unproven but promising.",
+  "prompt": "Act as creative director for a [length]-second launch video for [product]. First write a short style guide (tone, colors, pacing, music) as a structured file and stick to it at every stage. Draft a story outline and scene list, then show me for approval. Next, generate scenes with [video tool], assemble them with [animation/editing tool], and render a draft. Then review the draft as three viewers: an ad director, an editor and a [target customer]. List their notes on timing and clarity, propose fixes, and wait for my go-ahead before the next version.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "video production",
+    "product launch",
+    "creative direction",
+    "ai review"
+  ],
+  "source": {
+    "url": "https://x.com/dcarps14/status/2111705508508049598",
+    "name": "X",
+    "author": "@dcarps14",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine multi-step pipeline with Claude Code directing video generation, editing and AI reviewer feedback, shared with an honest 'not going well' status. Thin on results but specific about the stack."
+  }
+}

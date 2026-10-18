@@ -1,0 +1,43 @@
+{
+  "id": "make-your-coding-agent-prove-each-step-before-saying-done",
+  "title": "Make your coding agent prove each step before saying done",
+  "summary": "A developer built vstack, a small command-line guide for Claude Code and Codex; its README shows it stopping an agent that claimed 'done' without running the code.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "vstack command-line tool",
+    "automatic tests",
+    "code style checker",
+    "git"
+  ],
+  "agent_role": "The coding agent does each step of a task and reports what it did. The tool runs the checks and only moves the agent on when they pass; the human approves pushing the code.",
+  "outcome": "The README shows a sample run where the tool rejected 'it should work now' and flagged an unsafe type, a hidden error and a needless comment.",
+  "what_they_did": "A developer liked an existing setup called pstack, where agents follow fixed steps and must show proof before calling work done. They built a smaller version, vstack, for Claude Code, Codex and Cursor. The agent gets one step at a time, such as plan, build and verify. To finish a step it must describe what it actually ran and saw, and the tool runs the project's tests and code checks.",
+  "how_it_went": "The README shows a real small task. The agent first said 'it should work now' and was told to report what it observed. After it did, the tool still blocked it for a loose type, a swallowed error and a needless comment.",
+  "worth_knowing": "The author notes vstack gives the agent far fewer instructions than pstack, and says this is a different design, not a better one. Pushing code still needs the person's permission.",
+  "prompt": "Work on [task, e.g. add CSV export] in [repo] in clear steps: goal, read the code, design, build, verify, review. Do not say a step is done until you show proof: quote the commands you ran and what you saw. Before marking verify done, run the tests, type checks and linter, and fix any loose types, empty error handlers or comments that just repeat the code. Show me the final summary and proposed commits, and wait for my approval before pushing anything.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "coding agents",
+    "quality checks",
+    "workflow",
+    "code review"
+  ],
+  "source": {
+    "url": "https://x.com/valentinoswe/status/2111573253785329669",
+    "name": "X",
+    "author": "@valentinoswe",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-18",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A small open-source tool that makes coding agents work step by step and prove each step before moving on. The README shows a real run where the check stopped sloppy code, but most of it describes features."
+  }
+}

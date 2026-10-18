@@ -59,10 +59,8 @@ jobs:
         if: steps.creds.outputs.ok == 'true'
         run: |
           $WRANGLER deploy | tee deploy.log
-          url=$(grep -Eo 'https://[a-zA-Z0-9.-]+\.workers\.dev' deploy.log | head -1)
           echo "### Votes service deployed" >> "$GITHUB_STEP_SUMMARY"
-          echo "URL: ${url:-see the log above}" >> "$GITHUB_STEP_SUMMARY"
-          echo "Set the repository variable **VOTES_API** to this URL so the site uses it." >> "$GITHUB_STEP_SUMMARY"
+          echo "Served at https://api.delegatedto.ai (worker/wrangler.toml); the site reads it from config/site.json." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Set the hashing salt once
         if: steps.creds.outputs.ok == 'true'

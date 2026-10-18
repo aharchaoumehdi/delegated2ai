@@ -3,12 +3,19 @@
 name = "delegatedto-votes"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
+# Served only at api.delegatedto.ai: the account's *.workers.dev address (which carries
+# the account name) is switched off, so no page points to it.
+workers_dev = false
+
+[[routes]]
+pattern = "api.delegatedto.ai"
+custom_domain = true
 
 [triggers]
 crons = ["17 4 * * *"]
 
 [vars]
-ALLOWED_ORIGINS = "https://delegatedto.ai,https://www.delegatedto.ai,https://delegatedto-site.aharchaou-mehdi.workers.dev,https://aharchaoumehdi.github.io,http://localhost:4173"
+ALLOWED_ORIGINS = "https://delegatedto.ai,https://www.delegatedto.ai,http://localhost:4173"
 
 [[d1_databases]]
 binding = "DB"

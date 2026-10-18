@@ -23,6 +23,6 @@
   },
   "sponsor": null,
   "sponsors": [],
-  "votesApi": "https://delegatedto-votes.aharchaou-mehdi.workers.dev",
+  "votesApi": "https://api.delegatedto.ai",
   "domain": "delegatedto.ai"
 }

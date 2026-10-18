@@ -330,6 +330,13 @@ async function health(siteUrl, votesApi) {
 }
 
 // ---------- run ----------
+/** Which source fills each dataset (for the note on an empty one). */
+const SOURCE_OF = {
+  traffic_daily: "traffic", traffic_breakdown: "traffic", subscribers_daily: "newsletter", emails: "newsletter",
+  top_voted: "engagement", submissions_daily: "engagement", search_daily: "search", search_breakdown: "search",
+  pipeline_daily: "content", content_breakdown: "content", collector_sources: "content",
+};
+
 /** Every file the dashboard reads (each one is a dataset there, under the same name). */
 export const DATASETS = [
   "traffic_daily", "traffic_breakdown", "subscribers_daily", "emails", "top_voted", "submissions_daily",
@@ -385,15 +392,22 @@ async function main() {
     previousHistory = JSON.parse(await readFile(join(dir, "history.json"), "utf8"));
   } catch {}
   const out = await collect({ previousHistory });
-  for (const [name, rows] of Object.entries(out)) await writeFile(join(dir, `${name}.json`), JSON.stringify(rows, null, 1) + "\n");
+  // The dashboard can't load a file with no rows, so a source with nothing to show yet
+  // gets one row holding only a `note` (why it's empty); the dashboard skips such rows.
+  const why = (name) => {
+    const s = out.status.find((x) => SOURCE_OF[name] === x.source);
+    return s && !s.ok ? s.detail : "nothing recorded yet";
+  };
+  const write = (name, rows) => writeFile(join(dir, `${name}.json`), JSON.stringify(rows.length ? rows : [{ note: why(name) }], null, 1) + "\n");
+  for (const [name, rows] of Object.entries(out)) await write(name, rows);
   // A source that failed this time keeps its last file (the directory starts from the
-  // previous run's); one that has never worked gets an empty file, so the dashboard
-  // always has every dataset.
+  // previous run's); one that has never worked gets a note row.
   for (const name of DATASETS) {
     try {
-      await readFile(join(dir, `${name}.json`));
+      const prev = JSON.parse(await readFile(join(dir, `${name}.json`), "utf8"));
+      if (!Array.isArray(prev) || !prev.length) await write(name, []);
     } catch {
-      await writeFile(join(dir, `${name}.json`), "[]\n");
+      await write(name, []);
     }
   }
   await writeFile(join(dir, "updated.json"), JSON.stringify([{ at: new Date().toISOString() }]) + "\n");

@@ -1,0 +1,42 @@
+{
+  "id": "build-an-editor-for-your-old-synthesizer-with-an-agent",
+  "title": "Build an editor for your old synthesizer with an agent",
+  "summary": "A musician had Claude Code build a full editor for a Yamaha Reface DX in under an hour, including a tool that sets every sound setting from a plain description.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Claude API",
+    "MIDI"
+  ],
+  "agent_role": "Claude Code wrote the editor, mapped every editable setting, and added a sound generator that calls Claude. The musician described what they wanted and played with the result.",
+  "outcome": "The author says the editor was built in under an hour and was more fun than expected.",
+  "what_they_did": "The poster asked Claude Code to build an editor for their Yamaha Reface DX keyboard synth. It put every editable setting on one screen. It lets them play and tweak sounds from another keyboard. It also added a generator that uses Claude to turn a plain-words sound description into settings.",
+  "how_it_went": "The author says it took under an hour and brought the little synth back to life.",
+  "worth_knowing": null,
+  "prompt": "Build a desktop or web editor for my [synth model] that talks to it over MIDI. First, find its MIDI documentation and list every editable setting with its control number, then show me the plan before coding. Put all settings on one screen with sliders and switches. Let me play notes from a second keyboard at [MIDI input]. Add a feature where I describe a sound in plain words and an AI model picks values for every setting. Test each setting on the real synth with me before calling it done.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "music",
+    "synthesizer",
+    "midi",
+    "sound design"
+  ],
+  "source": {
+    "url": "https://x.com/Sameflat/status/2111848181680189899",
+    "name": "X",
+    "author": "@Sameflat",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A fun creative use: Claude Code built a full synth editor with a describe-a-sound patch generator in under an hour. Evidence is a short author's account with no code or demo."
+  }
+}

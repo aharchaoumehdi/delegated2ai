@@ -1,0 +1,42 @@
+{
+  "id": "run-a-beam-stress-test-and-check-it-against-theory",
+  "title": "Run a beam stress test and check it against theory",
+  "summary": "Claude drove the open-source FieldCraft modeler from one prompt to mesh and load a steel I-beam. The repo reports a tip bend of 0.176 mm versus 0.177 mm from beam theory.",
+  "domain": "Science",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "FieldCraft",
+    "FieldCraft connector for agents",
+    "command line"
+  ],
+  "agent_role": "Claude opened the part, built the mesh, set the material, clamp and 1000 N load, ran the solver and compared the result with beam theory. The human gave the single prompt.",
+  "outcome": "The repo reports a tip deflection of 0.176 mm against 0.177 mm predicted by beam theory with shear.",
+  "what_they_did": "The FieldCraft team connected Claude to their free engineering simulation app through a connector that lets agents run its commands. With one prompt, Claude opened an I-beam and split it into small blocks for analysis. It then set the material, clamped one end, added a 1000 N load at the tip and solved. Finally it checked the bend against textbook beam theory.",
+  "how_it_went": "The recorded session shows a tip bend of 0.176 mm. Beam theory gives 0.177 mm. The video is a real session with waits shortened.",
+  "worth_knowing": "The app is early. Buckling and contact between parts are not built yet. The repo also lists 6 of 176 checked quantities as known failures.",
+  "prompt": "Using FieldCraft through its agent connector, open [part file]. Mesh it, then set the material to [material], clamp [face to fix] and apply [load in newtons] at [load location]. Solve the analysis and show me the stress and deformed shape. Then compare the key result, such as tip deflection, against a hand calculation from standard theory. Explain each step and flag any mismatch over [tolerance]%.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "engineering simulation",
+    "stress analysis",
+    "meshing",
+    "verification"
+  ],
+  "source": {
+    "url": "https://github.com/tangency-labs/fieldcraft",
+    "name": "GitHub",
+    "author": "tangency-labs",
+    "published": "2026-10-13"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real recorded session shows Claude running a full engineering stress test from one prompt and checking the answer against textbook theory. It is a clear, uncommon science example, though centered on the tool itself."
+  }
+}

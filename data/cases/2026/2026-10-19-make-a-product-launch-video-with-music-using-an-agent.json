@@ -1,0 +1,43 @@
+{
+  "id": "make-a-product-launch-video-with-music-using-an-agent",
+  "title": "Make a product launch video with music using an agent",
+  "summary": "Huashu had Claude Code make launch films with self-written music and click-to-edit fixes; he reports twenty films in one day and one costing about 2 yuan.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": "Opus 5.5; DeepSeek V4.1 Flash",
+  "tools": [
+    "Chrome",
+    "FFmpeg",
+    "GSAP",
+    "Kokoro voice"
+  ],
+  "agent_role": "The agent reads the product, offers three directions, writes the animation and a music score, then fixes only the spot the person clicks and comments on. The person picks a direction and gives feedback.",
+  "outcome": "Author reports 20 films made in one day, and a 22-second film with a cheaper model in under half an hour for 1.95 yuan.",
+  "what_they_did": "Huashu built a skill so Claude Code or Codex can make short product launch videos in code. You ask for a 30-second film. The agent reads your product, offers three looks, writes the film and composes music. You click on any frame in a browser editor to request a change.",
+  "how_it_went": "He reports making 20 films in one day. A 22-second film made with DeepSeek took three rounds of feedback, under half an hour, and cost 1.95 yuan. A 30-second film renders in about 12 to 15 seconds on his Mac.",
+  "worth_knowing": "The agent cannot hear, so you must judge the music yourself. It only draws with code, so real people or footage must come from your own material.",
+  "prompt": "Install the huashu-motion skill from github.com/alchaincyf/huashu-motion and run the demo. Then make a 30-second launch film for my product at [website]. Read the product first and show me three directions to pick from before writing the film. Compose the music, open the editor, and wait for my comments before exporting.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "launch video",
+    "motion graphics",
+    "music",
+    "marketing"
+  ],
+  "source": {
+    "url": "https://github.com/alchaincyf/huashu-motion",
+    "name": "GitHub",
+    "author": "alchaincyf (Huashu)",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Detailed, working skill with reported results: twenty launch films in a day and a cheap-model film made in under half an hour, with code and samples."
+  }
+}

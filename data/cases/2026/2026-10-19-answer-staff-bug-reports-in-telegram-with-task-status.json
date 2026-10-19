@@ -1,0 +1,44 @@
+{
+  "id": "answer-staff-bug-reports-in-telegram-with-task-status",
+  "title": "Answer staff bug reports in Telegram with task status",
+  "summary": "A developer built a Telegram agent for a client that takes staff bug reports and questions, finds matching issues, and links a plain-language task page with a short report.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Telegram",
+    "git issue tracker",
+    "Sentry",
+    "staff CRM",
+    "pi-durable"
+  ],
+  "agent_role": "The agent gathers message context, decides if a message is meant for it, searches issues and system monitoring with read-only access, and returns a readable task link and report; developers built and maintain it.",
+  "outcome": "Author says such an agent can now be put together in an evening.",
+  "what_they_did": "A developer's client had non-technical staff who don't speak English and couldn't follow the task board. He connected Telegram to an agent built on the pi-durable framework. The agent collects replies, forwards and attachments, decides if a message is for it, then searches code issues, error logs and the staff CRM. It replies with a link to a plain-language copy of the task and a short report.",
+  "how_it_went": "The author says the flow can break at almost every step, but the framework handles much of the hard work. He says a proper agent now takes an evening to assemble.",
+  "worth_knowing": "The hardest parts are gathering context correctly (forwarded messages are still messy) and deciding whether a message is actually meant for the bot.",
+  "prompt": "Watch [chat group] for staff messages about bugs or questions. For each message, first decide if it is meant for you; ignore it if not. Gather any replies, forwarded messages and attachments as context. Search [issue tracker] for matching issues using read-only access. Reply in [staff language] with a short plain-language summary of the task's status and a link to it. If nothing matches, draft a new issue and show it to me for approval before creating it.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "support triage",
+    "telegram",
+    "task status",
+    "translation"
+  ],
+  "source": {
+    "url": "https://x.com/naqerl/status/2111955807231193396",
+    "name": "X",
+    "author": "@naqerl",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real, specific workflow bridging non-technical, non-English-speaking staff to a task tracker via a Telegram agent, with honest notes on failure points; no outcome numbers."
+  }
+}

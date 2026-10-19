@@ -1,0 +1,43 @@
+{
+  "id": "check-a-code-project-is-safe-before-you-install-it",
+  "title": "Check a code project is safe before you install it",
+  "summary": "Sarvar Nadaf built RepoPilot, an agent that reads any public GitHub project, scores it 0 to 100 for safety and trust, and flags risky install steps.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": "Amazon Nova Pro",
+  "tools": [
+    "GitHub",
+    "AWS Lambda",
+    "Amazon Bedrock",
+    "Strands Agents SDK"
+  ],
+  "agent_role": "The agent fetches a project's files and history, runs seven fixed checks that produce the score and warnings, then has the model explain the results in plain words. It also gives an ordered setup path and explains errors.",
+  "outcome": "The author reports Ollama scored a D because its install pipes a web script straight into the shell, and that an early false alarm on Flask was fixed.",
+  "what_they_did": "Sarvar Nadaf built RepoPilot after reports of thousands of fake GitHub projects posing as AI add-ons. You give it a project name and it reads the real files. Plain code scores safety, trust, upkeep, maturity and documentation. A cheap AI model then narrates the result and lays out setup steps.",
+  "how_it_went": "The author says a scan takes a minute or two. Ollama, a legitimate tool, dropped to a D because of its install command, which he calls a fair warning, not a malware verdict. The project has 25 tests and a live demo.",
+  "worth_knowing": "The author kept the AI out of the scoring on purpose, so the model cannot talk a risky project into looking safe. His first scanner wrongly flagged Flask until he taught it to ignore local addresses.",
+  "prompt": "Before I install anything from [GitHub project URL], inspect it for me. Read the README, install scripts, package files and recent activity. Flag any setup step that downloads and runs remote code, any install hooks, and any signs of fake popularity like many stars on a very new account. Give the project a 0-100 trust score with reasons for each point lost. Then list the safest step-by-step way to get a first run working. Do not run any commands yourself; show me the plan and wait for my approval.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "security check",
+    "open source",
+    "software install",
+    "risk scoring"
+  ],
+  "source": {
+    "url": "https://dev.to/aws-builders/i-built-an-aws-agent-that-scores-any-github-repo-before-you-clone-it-4omp",
+    "name": "DEV Community",
+    "author": "Sarvar Nadaf",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working agent with a live demo and code that reads a repo's files, scores its safety and gives setup steps, with concrete test results such as Ollama's grade and a fixed false alarm. It is mostly a tool write-up for a challenge, so real-world use is light."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "call-your-vet-and-book-your-pet-s-appointment",
+  "title": "Call your vet and book your pet's appointment",
+  "summary": "A retired Army veteran gave his Grok-based bot its own phone number; he says it called his vet and booked his dog's appointment.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": "Grok",
+  "tools": [
+    "phone number",
+    "voice calling"
+  ],
+  "agent_role": "The agent placed the call to the vet and booked the appointment. The owner set up the phone number and gave it the errand.",
+  "outcome": "Author reports the bot booked his dog's vet appointment by phone.",
+  "what_they_did": "The poster set up his Grok-based bot with its own phone number. He then had it call his vet's office to book an appointment for his dog.",
+  "how_it_went": "He says the bot made the call and booked the appointment.",
+  "worth_knowing": "The author notes that a phone call is harder to undo than an email, so think about which errands to hand off first.",
+  "prompt": "Call [vet clinic name] at [phone number] to book a [checkup/vaccination] for my dog [dog's name]. I am free on [days and times]. Before you call, show me a short script of what you will say and wait for my approval. During the call, do not agree to any extra services or payments. Afterward, tell me the date, time and any instructions the clinic gave.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "phone calls",
+    "pet care",
+    "appointment booking",
+    "errands"
+  ],
+  "source": {
+    "url": "https://x.com/RetiredArmy_Guy/status/2112154131028652535",
+    "name": "X",
+    "author": "@RetiredArmy_Guy",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real everyday errand: the agent placed a phone call and booked a vet visit. The post is very brief, with no setup details. A small boost applies because this is a daily-life example."
+  }
+}

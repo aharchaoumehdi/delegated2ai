@@ -1,0 +1,38 @@
+{
+  "id": "file-an-overdue-tax-return-with-an-agent",
+  "title": "File an overdue tax return with an agent",
+  "summary": "A poster says their agent filed their missed 2024 German tax return plus three other filings in three days, and a refund letter for €1,144 arrived 10 days later.",
+  "domain": "Finance",
+  "platform": "Other",
+  "model": null,
+  "tools": [],
+  "agent_role": "The agent prepared and filed the tax return and three other filings; the poster later turned the process into a reusable skill.",
+  "outcome": "Author reports a €1,144 refund letter arriving 10 days after the agent filed.",
+  "what_they_did": "The poster had never filed their 2024 German taxes. They had their agent file that return plus three other filings over three days. Afterward they packaged the process as a reusable skill for the agent.",
+  "how_it_went": "The poster says a letter arrived 10 days later, and that the state had been holding €1,144 of their money for two years.",
+  "worth_knowing": null,
+  "prompt": "Help me file my overdue [year] tax return for [country]. First, list the documents and figures you need from me, such as income statements and receipts. Then work through the forms step by step and explain each entry. Show me the full completed return and a summary of the expected refund or amount owed. Wait for my approval before submitting anything to the tax office.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "taxes",
+    "tax refund",
+    "germany",
+    "paperwork"
+  ],
+  "source": {
+    "url": "https://x.com/fedepontehq/status/2111968580648554777",
+    "name": "X",
+    "author": "@fedepontehq",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine but very thin account of an agent filing an overdue German tax return and other filings; concrete refund figure but no details on tools or steps. Small boost for finance."
+  }
+}

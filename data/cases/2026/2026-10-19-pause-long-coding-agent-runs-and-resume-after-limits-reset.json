@@ -1,0 +1,43 @@
+{
+  "id": "pause-long-coding-agent-runs-and-resume-after-limits-reset",
+  "title": "Pause long coding-agent runs and resume after limits reset",
+  "summary": "A developer built Steward, which stops unattended Claude Code runs at 90% of the usage window and resumes them after the reset with the conversation intact.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "local models",
+    "Python scripts"
+  ],
+  "agent_role": "Claude Code does the coding work and writes a five-part checkpoint for its future self; Steward watches usage, pauses, queues and resumes runs. The human writes the brief and schedules it.",
+  "outcome": "Author reports self-tests pass and a real Codex task passed; local-model completion remains unverified.",
+  "what_they_did": "A developer wrote Steward to manage overnight Claude Code runs. Every run goes through one manager that saves the session and a checkpoint: done, in progress, next, files touched, how to verify. At 90% of the five-hour usage window it stops the run and queues a resume for just after the reset. Crashes write a report with the exact resume command.",
+  "how_it_went": "The author shows a demo of a run pausing at 91% usage and resuming with its conversation. They say a real Codex task passed, while timings in the launch film are illustrative.",
+  "worth_knowing": "Automatic context rotation and model fallback only work with Claude. Switching providers starts a fresh chat from the checkpoint rather than the full conversation.",
+  "prompt": "Work on [task description] in [repo path]. Before you start, write a checkpoint file with five sections: Done, In progress, Next, Files touched, How to verify. Update it after each meaningful step so a future session with no memory could continue. If you are stopped partway, I will resume you and point you at this file. Do not push, deploy or delete anything without showing me the plan first.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "long-running agents",
+    "usage limits",
+    "checkpoints",
+    "automation"
+  ],
+  "source": {
+    "url": "https://x.com/CMills_Dev/status/2111802788414185581",
+    "name": "X",
+    "author": "@CMills_Dev",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Open-source runner with a concrete workflow for pausing long unattended Claude Code runs before usage limits and resuming them, with demo output; real-world results are thin and the demo uses a stand-in."
+  }
+}

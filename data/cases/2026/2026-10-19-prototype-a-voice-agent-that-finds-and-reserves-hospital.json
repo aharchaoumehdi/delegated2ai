@@ -1,0 +1,46 @@
+{
+  "id": "prototype-a-voice-agent-that-finds-and-reserves-hospital",
+  "title": "Prototype a voice agent that finds and reserves hospital beds",
+  "summary": "Roshni Mishra built CareGraph AI for a hackathon, a voice agent that matches spoken symptoms to a hospital bed and specialist, then phones the hospital to reserve it.",
+  "domain": "Health",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "FalkorDB",
+    "Twilio",
+    "LiveKit",
+    "Murf Falcon",
+    "Deepgram",
+    "Vercel"
+  ],
+  "agent_role": "The agent listens to the patient, turns speech into symptoms and searches a linked database of conditions, allergies, hospitals, doctors and beds. It then reassures the patient by voice, calls the hospital desk, marks the bed as taken and calls back 24 hours later. The developer designed the database and the sample data.",
+  "outcome": "Author reports the database lookup runs in about 14 milliseconds in her demo; no real patient use is described.",
+  "what_they_did": "A developer built a voice agent for a hackathon after talking to a doctor friend near Varanasi. It turns a patient's speech into symptoms and searches a linked database for the right hospital, specialist and open bed. It flags allergies, phones the hospital through Twilio and marks the bed as reserved. It also schedules a follow-up call for the next day.",
+  "how_it_went": "The author reports the hospital-and-bed search runs in about 14 milliseconds. She shares a live demo and the code. The example patient and hospital data appear to be samples.",
+  "worth_knowing": "This is a hackathon prototype on sample data, not a tested medical tool. It should not be relied on for real emergencies.",
+  "prompt": "Help me build a demo voice assistant using made-up sample data only, not for real medical use. Create a small linked database of sample patients, symptoms, conditions, allergies, hospitals, doctors and beds. When I describe symptoms by text or voice, find the most suitable sample hospital with a free bed and the right specialist, and list any allergy warnings. Then draft the alert message you would send to the hospital desk. Show me the plan and the database design first and wait for my approval. Do not place any real phone calls or send messages without asking me.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "emergency triage",
+    "voice agent",
+    "hospital beds",
+    "healthcare",
+    "hackathon"
+  ],
+  "source": {
+    "url": "https://dev.to/roshni_mishra_9ed865d304f/how-i-built-an-autonomous-voice-healthcare-agent-on-falkordb-that-actually-saves-lives-5gg8",
+    "name": "DEV Community",
+    "author": "Roshni Mishra",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A hackathon voice triage agent that looks up a matching hospital bed, places a phone call and books a follow-up call, with code and a live demo. It runs on sample data with no real-world use reported, and its life-saving framing is unproven."
+  }
+}

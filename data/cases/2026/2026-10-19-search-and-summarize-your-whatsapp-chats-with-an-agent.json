@@ -1,0 +1,43 @@
+{
+  "id": "search-and-summarize-your-whatsapp-chats-with-an-agent",
+  "title": "Search and summarize your WhatsApp chats with an agent",
+  "summary": "A developer built a free read-only WhatsApp connector so Claude can search chats, summarize missed group messages and fill in contact names from Google Contacts.",
+  "domain": "Daily life",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "WhatsApp",
+    "Cloudflare Workers",
+    "Google Contacts",
+    "Claude Code"
+  ],
+  "agent_role": "The agent sets up the server from the repo, then searches and reads messages on request and matches unknown phone numbers to contacts. The person links their phone by scanning a code once.",
+  "outcome": "Author says it runs in their own Cloudflare account and works with Claude on mobile.",
+  "what_they_did": "A developer wanted Claude on their phone to read their personal WhatsApp. They built a small read-only server that links like WhatsApp Web and stores messages in their own cloud account. They suggest pointing an agent at the repo to set it up. The agent can then search chats and look up unnamed numbers in Google Contacts.",
+  "how_it_went": "The author says it answers questions like what a friend said about flights or what was missed in a family group. Names saved for numbers also show up in group chats.",
+  "worth_knowing": "It uses an unofficial method that breaks WhatsApp's terms, so there is a small risk to your account. Large history imports need a paid Cloudflare plan of a few dollars a month.",
+  "prompt": "Clone [repo URL] and follow its setup steps to deploy the WhatsApp reader to my Cloudflare account. Stop and ask me when you need me to scan the code or enter a password. Once linked, summarize what I missed in [group name] this week. Then list my chats that show only phone numbers, match them against my contacts, and show me the proposed names before saving any.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "messaging",
+    "whatsapp",
+    "search",
+    "contacts"
+  ],
+  "source": {
+    "url": "https://github.com/finereli/whatsapp-mcp",
+    "name": "Hacker News",
+    "author": "zoozla",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A read-only connector with clear example jobs, like summarizing a family group or naming unknown chats from contacts, but mostly a tool description with little reported use."
+  }
+}

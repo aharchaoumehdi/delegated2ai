@@ -1,0 +1,44 @@
+{
+  "id": "turn-a-single-player-game-into-co-op-with-an-agent",
+  "title": "Turn a single-player game into co-op with an agent",
+  "summary": "A poster shares a repo whose instructions let Claude Code revive or build co-op mods for games; it lists Deus Ex as released and Ocarina of Time as fully synced.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Steam relay",
+    "emulators",
+    "Nucleus Co-op",
+    "PartyDeck"
+  ],
+  "agent_role": "The agent researches existing mods or reverse engineers the game, adds networking and state syncing, runs tests with real game clients and opens a draft pull request; the human reviews it.",
+  "outcome": "The post reports Deus Ex co-op released and Zelda: Ocarina of Time fully synced, with Fallout: New Vegas and others in progress.",
+  "what_they_did": "A poster shared a repo with instructions for coding agents. You paste two lines naming a game. The agent either repairs a broken co-op mod or reverse engineers the game to add one. It then tests with real game clients and opens a draft change for review.",
+  "how_it_went": "The post says Deus Ex co-op is released and Ocarina of Time is fully synced. Several other games and 230+ mods are listed as in progress or gaps.",
+  "worth_knowing": "Some games take far more agent hours than others. The rules require owning the game, a copy per player, and no touching anti-cheat or others' online play.",
+  "prompt": "Read https://github.com/cranebeaker/coop-anything and follow AGENTS.md. I want to play [game I own] in co-op with my friends. First check whether a co-op mod already exists and show me your plan. Only work with my legally owned copy and do not touch anti-cheat or online multiplayer. Wait for my approval before submitting any pull request.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "gaming",
+    "modding",
+    "reverse engineering",
+    "multiplayer"
+  ],
+  "source": {
+    "url": "https://x.com/21_borv/status/2111869165367676967",
+    "name": "X",
+    "author": "@21_borv",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A novel workflow where agents research, reverse engineer and test co-op mods for games, with named results like Deus Ex; posted by a promoter rather than the repo creator, in a hype tone."
+  }
+}

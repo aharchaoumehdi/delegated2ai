@@ -1,0 +1,41 @@
+{
+  "id": "let-your-coding-agents-message-each-other-for-help",
+  "title": "Let your coding agents message each other for help",
+  "summary": "A developer built agentsocks so Claude Code and Codex sessions can ask each other questions and hand off tasks; they use it to plan, build and review features.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "agentsocks"
+  ],
+  "agent_role": "Claude plans and coordinates, Codex writes the code, another model reviews and sends findings back; the human decides what ships.",
+  "outcome": "Author reports Codex asked another agent to sharpen a tagline and got the answer back automatically.",
+  "what_they_did": "A developer built a free tool that lets one coding agent session message another. Claude plans a feature and hands work to Codex. A different model reviews the changes and sends findings straight back. Stuck agents ask another model to challenge their diagnosis.",
+  "how_it_went": "The author says it removes the need to relay messages by hand, and shows Codex getting a tagline improved by another agent. They still decide what ships.",
+  "worth_knowing": "Group channels and asking up to 16 sessions at once are labelled experimental. It runs on one machine by default.",
+  "prompt": "Using a tool that lets my coding agent sessions message each other, plan the feature [feature description] for [repo]. Hand the coding work to my second agent session as a tracked task. When it finishes, send the changes to a third session for review and route its findings back to the builder. If anyone gets stuck on a bug, ask another session to challenge the diagnosis first. Show me the final changes and wait for my approval before committing or merging.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "multi-agent",
+    "code review",
+    "agent coordination"
+  ],
+  "source": {
+    "url": "https://x.com/d3rkst3r/status/2112123618750582884",
+    "name": "X",
+    "author": "@d3rkst3r",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly a tool launch, but it describes a real workflow where one agent plans, another builds and a third reviews, with messages passed automatically; results are lightly evidenced."
+  }
+}

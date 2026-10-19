@@ -1,0 +1,42 @@
+{
+  "id": "make-game-music-and-sound-effects-on-your-own-computer",
+  "title": "Make game music and sound effects on your own computer",
+  "summary": "A developer's add-on lets Claude Code generate, loop and export music and sound effects locally; they share unedited samples made on an M1 Mac.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Stable Audio 3",
+    "ffmpeg",
+    "Hugging Face"
+  ],
+  "agent_role": "The agent turns a plain request into a sound prompt, generates candidates, picks loop lengths, trims, sets loudness and exports files; the person asks and chooses.",
+  "outcome": "The author shares samples they say were generated on an M1 Mac without hand editing, and a session where Claude chose an 11-bar loop so the beat repeats cleanly.",
+  "what_they_did": "A developer built a connector that gives Claude Code a local sound studio using the Stable Audio 3 model. You ask in plain words for background music or an effect. The agent generates options, loops them, evens out loudness and exports files for a game engine or video editor.",
+  "how_it_went": "The author shares lo-fi, orchestral, chiptune and sound-effect samples they say were made on an M1 Mac and not edited. In one shown session, Claude picked an 11-bar loop so the beat stays in time.",
+  "worth_knowing": "It needs an Apple Silicon Mac or an NVIDIA graphics card and several gigabytes of disk. On Windows you must accept the model license on Hugging Face and log in yourself.",
+  "prompt": "Using my local sound generation tool, make [length]-second [style] background music at [BPM] BPM for [scene], loopable without a jump. Give me 3 candidates. Then make a sound effect of [describe the sound and the space]. Normalize loudness to [target loudness] and export as [WAV/OGG] to [folder]. Show me the options before overwriting any existing files.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "music generation",
+    "sound effects",
+    "game audio",
+    "local ai"
+  ],
+  "source": {
+    "url": "https://github.com/kanaworksai-hue/audio-studio-mcp",
+    "name": "GitHub",
+    "author": "kanaworksai-hue",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly a tool README, but it shows a real Claude session making loopable music and publishes unedited samples with prompts and seeds; useful for game and video makers."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "give-your-coding-agent-a-project-memory-and-done-checks",
+  "title": "Give your coding agent a project memory and done-checks",
+  "summary": "A developer built a three-language website with Claude Code, using a wiki, lesson rules turned into tests, and screenshot checks before the agent may call work done.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Playwright",
+    "Lighthouse",
+    "project wiki",
+    "Claude Code hooks",
+    "subagents"
+  ],
+  "agent_role": "Claude Code researched, built and checked each site section, took and reviewed its own screenshots, and ran fact-check subagents; the author corrected mistakes, picked designs and reviewed results.",
+  "outcome": "Author reports the setup let him request all remaining sections in one evening and review real pages the next morning; a fact-check subagent verified 12 claims in under a minute.",
+  "what_they_did": "Mateusz Muszarski built his multilingual website with Claude Code. He kept a 33-page project wiki and a lessons file, fed to the agent by hooks at every prompt and after memory resets. Every correction became a rule, and rules that slipped became tests. Done meant passing checks plus screenshots the agent had to open.",
+  "how_it_went": "He says he could ask for every remaining section in one go and review real pages the next morning. A subagent checked 12 claims in under a minute. He reports catching bugs that never threw errors, like an animation that silently didn't run.",
+  "worth_knowing": "A build piped through another command reported success while its log said it failed. Read the actual output, not the agent's summary, or turn on pipefail.",
+  "prompt": "Help me set up memory and done-checks for my project at [repo]. Create a short project guide that points to wiki pages by topic, and a lessons file where each correction I give becomes a one-line dated rule. Before calling any task done, run type checks, tests and [other checks], then take screenshots at phone and desktop widths in [languages] and look at them yourself. When facts are missing, insert a searchable placeholder instead of inventing them. Show me the proposed setup files before writing them.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "agent memory",
+    "quality checks",
+    "website build",
+    "screenshot review"
+  ],
+  "source": {
+    "url": "https://dev.to/muchassak/how-i-work-with-claude-code-memory-gates-and-the-mistakes-that-built-them-1n8l",
+    "name": "DEV Community",
+    "author": "Mateusz Muszarski",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Detailed, real-project walkthrough of memory, checks and screenshot review with Claude Code; useful and reproducible, though the theme overlaps other proof-before-done setups."
+  }
+}

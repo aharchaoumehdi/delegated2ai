@@ -1,0 +1,43 @@
+{
+  "id": "edit-your-slide-deck-by-leaving-comments-for-an-agent",
+  "title": "Edit your slide deck by leaving comments for an agent",
+  "summary": "A consulting teacher built Decks so Claude Code or Codex edits slides from his comments and replies on each slide; he says it replaced PowerPoint as his daily tool.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": "Opus 5.5",
+  "tools": [
+    "Decks",
+    "Playwright screenshots",
+    "git",
+    "PDF export"
+  ],
+  "agent_role": "The human writes comments under slides and approves or reopens changes. The agent edits the deck, replies on each slide, screenshots its work, runs slide checks, exports a PDF and saves a version.",
+  "outcome": "The author says it is now his daily driver and he may never align boxes in PowerPoint again.",
+  "what_they_did": "A former consultant who teaches deck-making built a local slide tool. Each deck is a single web page file. He writes comments under slides and pastes a prompt into Claude Code or Codex. The agent applies changes using his rules, like full-sentence titles and one idea per slide. It replies under each slide and checks its own work.",
+  "how_it_went": "The author says this is now how he makes all his slides. Each round ends with screenshots, an audit, a numbered PDF and a saved version.",
+  "worth_knowing": "Everything stays on your computer, but the agent still sends what it reads to its model provider. He has only tried Opus 5.5 and Sol 6.1.",
+  "prompt": "Open my slide deck at [deck file path]. Read the comments I left under each slide. For each one, make the change, or explain why you did not. Write a short reply under that slide. Follow these rules: titles are full sentences that state the point, one idea per slide, and charts that prove the title. Then screenshot the changed slides and check that the titles alone tell the story. Show me a summary before saving a new version.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "presentations",
+    "slide editing",
+    "consulting",
+    "feedback loop"
+  ],
+  "source": {
+    "url": "https://github.com/paulmil11/decks",
+    "name": "GitHub",
+    "author": "paulmil11",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A former consultant describes a concrete daily workflow where a coding agent edits slides from comments, runs checks and replies on each slide. It is useful and reproducible, but its results are mainly the author's say-so."
+  }
+}

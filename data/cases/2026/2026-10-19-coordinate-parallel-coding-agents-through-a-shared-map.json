@@ -1,0 +1,43 @@
+{
+  "id": "coordinate-parallel-coding-agents-through-a-shared-map",
+  "title": "Coordinate parallel coding agents through a shared map",
+  "summary": "A developer built Nodes, a shared project graph for Claude subagents; he reports team decisions rose from 12% to 38% correct and clean merges from 22 to 35 of 45.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "Claude Haiku 5.5, Claude Sonnet 5.5",
+  "tools": [
+    "Nodes",
+    "FalkorDB",
+    "Claude Code hooks",
+    "dashboard"
+  ],
+  "agent_role": "Claude subagents split work, claim code, wait for each other and share sourced facts through the graph; the human designed the system and ran the tests.",
+  "outcome": "Author reports 38% correct team decisions versus 12% for a placebo, and 35 of 45 clean merges versus 22 with chat coordination.",
+  "what_they_did": "Abhinav Ayyagari was tired of merging overlapping work from parallel Claude subagents. He built Nodes, a shared map of the project that tracks who owns which code and where each fact came from. Agents must check it before acting. He tested it on two public benchmarks and ran it with four subagents on a real project.",
+  "how_it_went": "He reports correct team decisions rose to 38%, against 12% for a placebo notepad. Coding pairs merged cleanly 35 times out of 45, versus 22 when coordinating by chat. He says each correct decision also cost less.",
+  "worth_knowing": "A shared board without source checks scored the same as the placebo. The gain came from enforced rules, not just a shared space.",
+  "prompt": "I want to run several coding agents in parallel on [repo] without their changes clashing. Before starting, set up a shared ownership file listing which files or modules each agent owns. Each agent must claim code before editing, wait if another agent owns it, and release it when done. Any fact an agent shares with others must include where it came from. Split these tasks among agents: [list of features]. Show me the ownership plan and wait for my approval before any agent edits code.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "multi-agent",
+    "coordination",
+    "merge conflicts",
+    "benchmarks"
+  ],
+  "source": {
+    "url": "https://dev.to/scorp2006/from-12-to-38-how-a-graph-turned-claude-subagents-into-a-team-1h3n",
+    "name": "DEV Community",
+    "author": "Abhinav Ayyagari",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine multi-agent coordination setup with benchmark numbers and a live run with four subagents, though the real-project evidence is thin and mostly self-reported."
+  }
+}

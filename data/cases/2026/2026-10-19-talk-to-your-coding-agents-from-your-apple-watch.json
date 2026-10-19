@@ -1,0 +1,44 @@
+{
+  "id": "talk-to-your-coding-agents-from-your-apple-watch",
+  "title": "Talk to your coding agents from your Apple Watch",
+  "summary": "A developer built Chums, letting people speak tasks to Claude Code or Codex on their Mac from an Apple Watch or iPhone and approve actions with a tap.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Apple Watch",
+    "iPhone",
+    "Tailscale",
+    "WhisperKit",
+    "Codex"
+  ],
+  "agent_role": "Agents run on the Mac and carry out spoken requests, report their state, and ask for approval on the watch. The agent can also install Chums itself, pausing when it needs the person's hands.",
+  "outcome": "Author says first setup takes 20 to 30 minutes plus some waiting.",
+  "what_they_did": "A developer made a watch and phone app that connects to Claude Code and Codex running on their Mac. You hold the screen, speak, and the Mac turns it into text for the agent. Each agent appears as an animated character. You can set it up by pasting one line into your agent.",
+  "how_it_went": "The author describes approving actions, getting screenshots, and hearing short spoken replies from the watch. No usage results are reported.",
+  "worth_knowing": "You build the apps yourself in Xcode. With a free Apple account the installs expire after 7 days.",
+  "prompt": "Set up Chums for me: clone https://github.com/lcoutodemos/chums and follow its AGENTS.md. Stop and tell me whenever you need me to sign in, plug in my iPhone, or change a phone setting. Show me each step before installing anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "voice control",
+    "apple watch",
+    "remote approval",
+    "coding agents"
+  ],
+  "source": {
+    "url": "https://github.com/lcoutodemos/chums",
+    "name": "GitHub",
+    "author": "lcoutodemos",
+    "published": "2026-10-13"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working setup to talk to and approve coding agents from a watch, with a setup the agent itself performs, but it is mostly a feature description."
+  }
+}

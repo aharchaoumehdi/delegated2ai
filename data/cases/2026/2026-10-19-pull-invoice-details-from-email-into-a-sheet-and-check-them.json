@@ -1,0 +1,45 @@
+{
+  "id": "pull-invoice-details-from-email-into-a-sheet-and-check-them",
+  "title": "Pull invoice details from email into a sheet and check them",
+  "summary": "Mohamed Zaghloul shares an n8n workflow where Gemini reads PDF invoices from Gmail into Google Sheets, checks the totals, and flags low-confidence rows.",
+  "domain": "Finance",
+  "platform": "n8n",
+  "model": "Gemini",
+  "tools": [
+    "Gmail",
+    "Google Sheets",
+    "n8n",
+    "Cloudflare Worker",
+    "RapidAPI"
+  ],
+  "agent_role": "The workflow watches a Gmail label, splits PDF attachments and has Gemini extract vendor, totals and line items into a fixed format. Code checks the math, flags uncertain rows and logs them to a sheet. A separate service checks bank account numbers. People review anything flagged.",
+  "outcome": null,
+  "what_they_did": "A developer built a free n8n workflow that watches a Gmail label for invoice PDFs. Gemini pulls out the vendor, dates, totals and line items in a strict format. A code step checks that subtotal plus tax equals the total and flags low-confidence rows for review. Rows go into Google Sheets, and the email is marked read so it is not processed twice. He also shows how to add a separate check of bank account and tax numbers.",
+  "how_it_went": "The author says setup takes about 10 minutes. He reports that a strict output format and doing the math in code made it more reliable.",
+  "worth_knowing": "A commenter notes a valid bank number can still be a fraudster's. Treat any change to a vendor's account as needing review, and confirm it by a phone number you already have.",
+  "prompt": "Build an n8n workflow that watches my Gmail for unread emails labelled [invoice label] with PDF attachments. For each PDF, extract the vendor, invoice number, dates, currency, subtotal, tax, total, line items and the vendor's bank account number in a strict format. Check in code that subtotal plus tax equals the total, allowing a cent of rounding. Flag uncertain rows as needs review, and flag any vendor whose bank account differs from earlier rows. Append each row to the Invoices tab of [Google Sheet name], then mark the email read. Show me the workflow plan first and wait for my approval before turning it on. Never pay or approve anything automatically.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "invoices",
+    "accounts payable",
+    "email automation",
+    "spreadsheet",
+    "fraud checks"
+  ],
+  "source": {
+    "url": "https://dev.to/mowa/extracting-invoices-from-gmail-with-n8n-and-gemini-then-checking-the-iban-before-anyone-pays-it-27fe",
+    "name": "DEV Community",
+    "author": "Mohamed Zaghloul",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, reproducible multi-step workflow for pulling invoice details from email into a spreadsheet, with useful review safeguards. It is partly a pitch for the author's paid checking service and reports no usage results."
+  }
+}

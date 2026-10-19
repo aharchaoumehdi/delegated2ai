@@ -1,0 +1,41 @@
+{
+  "id": "find-the-cause-of-system-alerts-and-open-a-fix",
+  "title": "Find the cause of system alerts and open a fix",
+  "summary": "A developer's team had Claude Code routines hunt down why alerts fired, explain it in Slack and propose fixes; they say their first urgent alert reached a merged fix in 13 minutes.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Slack",
+    "GitHub"
+  ],
+  "agent_role": "The agent investigates the alert, finds the cause, posts an explanation in Slack and opens a proposed code fix; humans review and merge.",
+  "outcome": "Author reports their first top-priority incident went from alert to merged fix in 13 minutes.",
+  "what_they_did": "A developer's team set up scheduled Claude routines to watch for incident alerts. When one fires, the agent hunts for the root cause. It explains the cause in Slack and opens a proposed code fix for review.",
+  "how_it_went": "The author says their first top-priority incident went from alert to merged fix in 13 minutes.",
+  "worth_knowing": "The author's point is that finding the cause, not writing the fix, is now the slow part of bug fixing.",
+  "prompt": "When an alert arrives from [alerting tool] for [repo URL], investigate it. Read recent logs, errors and code changes to find the most likely root cause. Post a plain-language summary in [Slack channel]: what broke, why, and how confident you are. Then prepare a fix on a new branch and open it as a draft for review. Do not merge or deploy anything; wait for a person to approve.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "incident response",
+    "root cause",
+    "bug fixing",
+    "slack"
+  ],
+  "source": {
+    "url": "https://x.com/adarshkumar909/status/2111874421359263759",
+    "name": "X",
+    "author": "@adarshkumar909",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Genuine incident-response agent with a concrete 13-minute result, but the post is very thin and details sit in a linked article not provided."
+  }
+}

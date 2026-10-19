@@ -1,0 +1,41 @@
+{
+  "id": "pick-your-airline-seat-by-texting-an-agent",
+  "title": "Pick your airline seat by texting an agent",
+  "summary": "A user gave the Instinct agent on WhatsApp her Delta reservation number; she says it found the booking and chose her window seat without checking back.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "WhatsApp",
+    "Delta Air Lines website"
+  ],
+  "agent_role": "The agent looked up the booking from a reservation number and selected a window seat online. The human only sent the request over WhatsApp.",
+  "outcome": "Author reports the agent booked her window seat without needing the airline app or customer service.",
+  "what_they_did": "The poster tried Instinct, an agent you message on WhatsApp that acts for you. She sent it her Delta reservation number and asked for a window seat. It found the booking and picked the seat on the airline's site.",
+  "how_it_went": "She says it got the seat without her opening the airline app or calling customer service. It did not come back to her for confirmation before acting.",
+  "worth_knowing": "The agent acted without asking her to confirm first. That was fine for a seat choice, but you may want to require approval for anything that costs money.",
+  "prompt": "Here is my airline booking: [airline], reservation number [reservation number], last name [last name]. Find my booking on the airline's website and check which seats are available on [flight]. I want a [window/aisle] seat, ideally [front/back of the plane]. Show me the best two or three options and any extra fees. Wait for my approval before selecting a seat or paying anything.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "travel",
+    "airline seat",
+    "messaging agent",
+    "errands"
+  ],
+  "source": {
+    "url": "https://x.com/MarwaTechSpot/status/2111936966618911206",
+    "name": "X",
+    "author": "@MarwaTechSpot",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real but thin example: a chat-based agent found an airline booking and picked a window seat on its own. Most of the post is opinion, with few details, but daily-life use earns it a place."
+  }
+}

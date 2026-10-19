@@ -1,0 +1,42 @@
+{
+  "id": "run-your-agency-s-client-reporting-with-agents",
+  "title": "Run your agency's client reporting with agents",
+  "summary": "An agency owner says agents reading Google Ads hourly and checking report readiness helped lift their net margin from 2.6% in 2023 to 17.8% in Q1 2026.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Google Ads",
+    "analytics",
+    "Google Business Profile"
+  ],
+  "agent_role": "Agents pull ad, search and analytics data on a schedule and check whether each client report can be built; a named person approves anything touching clients, money or publishing.",
+  "outcome": "The author reports net margin rising from 2.6% (2023) to 17.8% (Q1 2026) and 28.0% for July-August 2026, with revenue per head up 2.2x.",
+  "what_they_did": "The poster runs three agencies and built one system holding a single record per client. Agents read every connected Google Ads account hourly and collect search, analytics and business profile data every six hours. Before reports are made, the system checks if each can be built and names what is blocking it. A person approves anything client-facing.",
+  "how_it_went": "The author reports net margin grew from 2.6% in 2023 to 17.8% in Q1 2026, and 28.0% for July and August 2026. Revenue per head rose 2.2 times while the team got leaner.",
+  "worth_knowing": "The poster's company sells this kind of system, so the results come from an interested party. Their tip: start with one record per client fed by tools you already use.",
+  "prompt": "Every hour, read my connected Google Ads accounts for [client list]. Every six hours, collect search, analytics and business profile data for each client into one shared spreadsheet, one row per client. Before each monthly report, check whether every client report can be built and list exactly what is missing or blocking it. Draft the reports, but do not send anything to clients, change ad spend or publish without my approval.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "agency operations",
+    "client reporting",
+    "ad monitoring",
+    "small business"
+  ],
+  "source": {
+    "url": "https://x.com/csloane/status/2111925805399875938",
+    "name": "X",
+    "author": "@csloane",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real agency running agents on hourly ad data and report readiness checks with reported margin numbers, but light on how it works and ends as a sales pitch."
+  }
+}

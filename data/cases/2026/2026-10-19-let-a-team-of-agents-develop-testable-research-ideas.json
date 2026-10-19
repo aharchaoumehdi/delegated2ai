@@ -1,0 +1,43 @@
+{
+  "id": "let-a-team-of-agents-develop-testable-research-ideas",
+  "title": "Let a team of agents develop testable research ideas",
+  "summary": "Researchers built DiscoveryRSI, where agents grow and revise life-science hypotheses into experiment plans; they report their 27B model compiled 50% more runnable tasks than its base.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": "DiscoveryRSI-27B",
+  "tools": [
+    "Harbor tasks",
+    "vLLM",
+    "Codex",
+    "Claude Code"
+  ],
+  "agent_role": "Agents propose hypotheses, add controls and evidence, revise them over rounds, and turn chosen ones into runnable computational tasks; experts must review the output.",
+  "outcome": "The authors report DiscoveryRSI-27B selected 16.7% more unique hypotheses and compiled 50% more tasks than its base model in matched runs.",
+  "what_they_did": "A research team built a system where several agents propose research hypotheses in life science. Each idea carries evidence, a plan and rules for disproving it. The agents revise ideas over rounds and turn some into runnable computer experiments. They also trained a 27B model on this research experience and run a live public demo.",
+  "how_it_went": "The authors report their model had the highest rate of usable references in their comparison, at 6.3%. They say it picked 16.7% more unique hypotheses and compiled 50% more tasks than its base model.",
+  "worth_knowing": "The authors warn it can produce plausible but unsupported claims or infeasible experiments, so every hypothesis needs expert review and checking.",
+  "prompt": "Help me develop research hypotheses on [research question] in [field]. For each, write a clear claim backed by sources, a plan to test it, what result would prove it wrong, and alternative explanations. Then critique each one, add missing controls or measurements, and revise. Keep a record of how each idea changed and why. Use only data I provide: [dataset or sources]. Show me the ranked list with sources before going further, and flag anything you are unsure of.",
+  "evidence": "Paper",
+  "difficulty": "Advanced",
+  "tags": [
+    "hypothesis generation",
+    "life science",
+    "research planning",
+    "multi-agent"
+  ],
+  "source": {
+    "url": "https://github.com/Gen-Verse/DiscoveryRSI",
+    "name": "GitHub",
+    "author": "Gen-Verse",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-agent research workflow for life-science hypotheses with a paper, code, live demo and comparison numbers, though it reads mostly as a model and framework release with benchmark-style results."
+  }
+}

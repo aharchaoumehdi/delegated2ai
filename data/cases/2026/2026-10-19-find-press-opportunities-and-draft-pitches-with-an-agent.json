@@ -1,0 +1,43 @@
+{
+  "id": "find-press-opportunities-and-draft-pitches-with-an-agent",
+  "title": "Find press opportunities and draft pitches with an agent",
+  "summary": "A poster walks through Newsjack, free agent skills by @elvissun that watch the news, suggest story angles, find fitting journalists and critique pitches before you send them.",
+  "domain": "Marketing",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Newsjack skills",
+    "RSS feeds",
+    "HARO",
+    "Qwoted"
+  ],
+  "agent_role": "The agent sets up daily news monitoring, flags relevant stories, generates angles, builds a short journalist list and drafts and critiques pitches; the human reviews and sends every pitch.",
+  "outcome": null,
+  "what_they_did": "The poster installs Newsjack, a free set of agent skills built by @elvissun, through a dedicated bot. The agent learns the company's audience and writing voice, watches chosen topics and news feeds, and flags fresh stories. It then suggests story angles, picks one fitting reporter per outlet, roasts the draft pitch, and answers press request sites only when there is a real fit.",
+  "how_it_went": null,
+  "worth_knowing": "The poster notes you still review and send every pitch yourself, and the angle tool is designed not to invent facts.",
+  "prompt": "Help me install Newsjack from its GitHub repo and set up daily news monitoring for [your company]. First, work out my audience, positioning and news hooks. Learn my voice from these writing samples: [5-20 samples]. Watch these topics, competitors and news feeds: [list]. Each day, flag fresh stories I have real credibility to comment on, suggest 3-7 angles without inventing facts, and list one fitting journalist per outlet. Draft a pitch, then critique it harshly. Show me everything and do not send any pitch or reply without my approval.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "public relations",
+    "media pitching",
+    "news monitoring",
+    "personal brand"
+  ],
+  "source": {
+    "url": "https://x.com/coreyganim/status/2111888819079291157",
+    "name": "X",
+    "author": "@coreyganim",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A clear, step-by-step agent workflow for finding news to comment on and pitching journalists using a free skill set, but it is a promoter's walkthrough of someone else's repo with no reported results."
+  }
+}

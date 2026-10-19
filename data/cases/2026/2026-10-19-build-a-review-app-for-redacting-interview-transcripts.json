@@ -1,0 +1,40 @@
+{
+  "id": "build-a-review-app-for-redacting-interview-transcripts",
+  "title": "Build a review app for redacting interview transcripts",
+  "summary": "Every's team built an app with AI to let editors, OpenAI and their agents mark, flag and contest redactions in interview transcripts for its story \"How Codex Happened.\"",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "custom redaction app"
+  ],
+  "agent_role": "AI helped build the app, and agents assisted people in the redaction back-and-forth. Editors approved or contested each redaction.",
+  "outcome": "Every says the app supported the redaction process for its published story, and that AI let them build tools around how their team works.",
+  "what_they_did": "Every's team needed to remove sensitive material from interviews before publishing them. Jack Cheng built an app with AI where editors marked passages and previewed what OpenAI would see. OpenAI flagged sensitive information, and editors approved or contested those redactions.",
+  "how_it_went": "Every says the app supported people and their agents throughout the process. They found AI let them build a tool shaped around one story's needs.",
+  "worth_knowing": null,
+  "prompt": "Help me build a simple web app for reviewing redactions in a set of [interview transcripts]. Let me highlight passages to remove and preview the redacted version. Let a second reviewer flag extra sensitive passages, and let me approve or contest each flag with a comment. Keep a log of every decision. Show me your plan and a first draft before building the full app, and do not share or publish any transcript.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "redaction",
+    "journalism",
+    "document review",
+    "internal tools"
+  ],
+  "source": {
+    "url": "https://x.com/every/status/2112150873602392433",
+    "name": "X",
+    "author": "@every",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real, unusual newsroom workflow where an AI-built app supported people and their agents redacting interview transcripts with OpenAI, but the agent's exact role is only lightly described."
+  }
+}

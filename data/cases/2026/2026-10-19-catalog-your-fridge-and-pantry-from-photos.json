@@ -1,0 +1,40 @@
+{
+  "id": "catalog-your-fridge-and-pantry-from-photos",
+  "title": "Catalog your fridge and pantry from photos",
+  "summary": "A user says their AI agent catalogued their whole fridge and pantry from 17 photos, sorted which owned domains to drop, and filed archive removal requests.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "photo analysis"
+  ],
+  "agent_role": "The agent turned photos into a food inventory, reviewed the domain list to recommend which to drop, and filed archive removals. The user supplied the photos and the decisions.",
+  "outcome": "Author reports the agent completed all three tasks over one week.",
+  "what_they_did": "Over a week, the poster gave their AI agent several household jobs. It listed everything in the fridge and pantry from 17 photos. It also sorted the web domains they own to decide which not to renew, and filed archive removal requests.",
+  "how_it_went": "The author reports all three jobs got done during the week.",
+  "worth_knowing": null,
+  "prompt": "Here are photos of my fridge and pantry: [attach photos]. List every item you can see in a table, with item, rough amount, and where it is kept. Flag anything that looks close to running out or expiring. Then suggest [number] meals I could make this week from what I have, and a short shopping list for what's missing. Show me the list before saving it anywhere.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "pantry inventory",
+    "household admin",
+    "domains",
+    "personal assistant"
+  ],
+  "source": {
+    "url": "https://x.com/kukulobo/status/2111924170577920239",
+    "name": "X",
+    "author": "@kukulobo",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "The poster lists concrete household jobs, such as cataloguing a pantry from 17 photos and pruning domain renewals. Detail is thin, but these are uncommon everyday uses, which earns a small boost."
+  }
+}

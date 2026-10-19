@@ -1,0 +1,45 @@
+{
+  "id": "run-four-coding-agents-on-one-shared-machine-around-the",
+  "title": "Run four coding agents on one shared machine around the clock",
+  "summary": "A founder open-sourced Aisevak, where Codex, Claude Code, Cursor and Devin share one server, hand off tasks and open new ones; he says much of Embedr runs on it.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "OpenAI Codex",
+    "Claude Code",
+    "Cursor",
+    "Devin",
+    "GitHub",
+    "PostgreSQL"
+  ],
+  "agent_role": "A lead agent splits tasks and hands them to builder and reviewer agents, each in its own copy of the code. People assign tasks and steer through a web app.",
+  "outcome": "The author says a lot of his company Embedr now runs on it.",
+  "what_they_did": "The developer built a self-hosted workspace where several coding agents run 24/7 on one server. A lead agent breaks tasks down and assigns them to other agents. Each works in its own copy of the code. They message each other through a shared command tool, and can run scheduled jobs and log incidents.",
+  "how_it_went": "The author says a lot of his company Embedr runs on it, and he has now open-sourced it.",
+  "worth_knowing": "It ships with a safety mode that only records unsafe or duplicate work at first. The readme suggests switching to blocking it once the logs look right.",
+  "prompt": "Help me set up Aisevak from [repo URL] on [my server]. Walk me through installing it, then connect [Codex / Claude Code / other agent] with my own account. Create two agents: a Builder and a Reviewer, with prompts describing their jobs. Then add my repository [repo] and create a first task: [small task]. Have the Builder do it in its own copy of the code and the Reviewer check it. Show me the final changes and wait for my approval before merging anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "multi-agent",
+    "coding agents",
+    "task handoff",
+    "self-hosted"
+  ],
+  "source": {
+    "url": "https://x.com/rshabhsinha/status/2111948615086448903",
+    "name": "X",
+    "author": "@rshabhsinha",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Open-source setup where Codex, Claude Code, Cursor and Devin share one machine and hand work to each other, which the author says runs much of their company. Mostly a feature description with little concrete outcome."
+  }
+}

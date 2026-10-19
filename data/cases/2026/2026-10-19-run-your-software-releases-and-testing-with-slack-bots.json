@@ -1,0 +1,42 @@
+{
+  "id": "run-your-software-releases-and-testing-with-slack-bots",
+  "title": "Run your software releases and testing with Slack bots",
+  "summary": "A developer set up two Grok Slack bots that notify contributors, run builds, send 10+ agents to test like users, and hand bugs to a fixing bot.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": "Grok 4.7",
+  "tools": [
+    "Grok Bot",
+    "Slack",
+    "Cursor"
+  ],
+  "agent_role": "The release bot messages contributors, runs and monitors the build, and launches testing agents; the engineer bot triages and fixes high-priority bugs. The human starts each release and decides whether fixes go into a patch or the next release.",
+  "outcome": "Author says the release and testing process is now automated.",
+  "what_they_did": "A developer made two team bots with Grok Bot in a dedicated Slack channel. When told to start a release, the release bot messages each contributor about their changes so they can raise blockers. It runs the build and launches 10+ testing agents, some following a feature map and some clicking randomly. Found bugs go to an engineer bot that fixes them in Cursor.",
+  "how_it_went": "The author says the whole release and testing process is now handled by the bots. He decides by severity whether a fix ships as a patch or waits for the next release.",
+  "worth_knowing": "Mixing directed testers with a few random-clicking 'chaos' agents helps catch problems scripted tests miss.",
+  "prompt": "When I say 'start release' in [Slack channel], list all changes merged since the last release of [repo URL] and message each contributor with links to their changes, asking for blockers. Then start the build and monitor it. Once it passes, test the build like a real user, following [feature list], plus some random exploring. Report each problem with steps to reproduce and severity. Draft fixes for high-priority issues but wait for my approval before merging or publishing any release.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "release management",
+    "qa testing",
+    "multi-agent",
+    "slack"
+  ],
+  "source": {
+    "url": "https://x.com/irongiantXBT/status/2111789641955455185",
+    "name": "X",
+    "author": "@irongiantXBT",
+    "published": "2026-10-18"
+  },
+  "added": "2026-10-19",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Detailed, original multi-agent release and testing workflow with clear roles for each bot and the human, though no numbers on results."
+  }
+}

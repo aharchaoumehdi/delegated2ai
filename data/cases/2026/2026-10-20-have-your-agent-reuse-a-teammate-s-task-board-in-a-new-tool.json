@@ -1,0 +1,41 @@
+{
+  "id": "have-your-agent-reuse-a-teammate-s-task-board-in-a-new-tool",
+  "title": "Have your agent reuse a teammate's task board in a new tool",
+  "summary": "A developer building a code review tool had an agent find and plug in a colleague's existing task board; the team says it ran within five minutes.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "shared component library",
+    "kanban board"
+  ],
+  "agent_role": "The agent found the team's existing task board, added it to the new project and wired it up. The developer set the goal and kept extending the tool.",
+  "outcome": "The team reports the tool went from first prompt to running in under five minutes, with no changes to the board's code.",
+  "what_they_did": "A developer on the poster's team was building a tool for reviewing code changes with an agent. He wanted questions about specific lines to become tickets that agents pick up. Instead of building a task board, the agent found one a colleague had built and added it to the project.",
+  "how_it_went": "The poster says the tool was running in under five minutes. The developer kept expanding it over the next hour, and the board's code never needed to change.",
+  "worth_knowing": "This depends on having a library of reusable parts your agent can find. The post comes from the company that makes the development environment used.",
+  "prompt": "Before building anything new for [project name], search [our shared code library or repo] for existing parts that already do what I need, such as [task board, login screen, table]. List what you find and how each would fit. Wait for my choice, then add the chosen part to the project and connect it so that [describe the behavior, e.g. comments on code lines become tickets]. Do not change the shared part's own code.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "code reuse",
+    "code review",
+    "task board",
+    "developer tools"
+  ],
+  "source": {
+    "url": "https://x.com/mfpiccolo/status/2112191345108427005",
+    "name": "X",
+    "author": "@mfpiccolo",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real case of an agent finding and reusing a teammate's task board inside a new code review tool, but it is short, light on detail and partly promotes the company's product."
+  }
+}

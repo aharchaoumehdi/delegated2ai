@@ -1,0 +1,44 @@
+{
+  "id": "replace-a-bakery-s-paper-notebook-with-an-invoicing-app",
+  "title": "Replace a bakery's paper notebook with an invoicing app",
+  "summary": "A developer had Claude Code interview him, plan and build a count, delivery and invoice app for his wife's four-cafe bakery in about 20 hours.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Devpost skill pack",
+    "VS Code",
+    "Vercel",
+    "PDF invoices",
+    "email"
+  ],
+  "agent_role": "Claude Code interviewed the author to write scope, plan and spec documents, then built the app in 8 checked slices, listing its own judgment calls for approval. The author directed, tested and decided; a second Claude chat wrote prompts and reviewed the code.",
+  "outcome": "Author reports a working app in about 20 hours; planning caught a time-zone invoice bug and price-change issue before coding.",
+  "what_they_did": "The author's wife ran her bakery from one paper notebook of shelf counts and invoices. He used Claude Code with a skill pack that interviewed him one question at a time. It wrote the scope, plan and spec, which he approved. It then built the app in 8 small checked slices: count, deliver, branded invoice, and a ledger of who owes what.",
+  "how_it_went": "He says the interview caught a server clock that would misdate evening invoices and a pricing link that would rewrite old invoices. Each slice ended with 'calls I made that you should check.' A hand-timed run still found a wrong assumption in the plan.",
+  "worth_knowing": "Keeping decisions in plan files let him start fresh chats without losing context. Only real use caught the one wrong guess the plan carried to the end.",
+  "prompt": "I want an app for my [type of small business] to replace [current paper process]. Interview me one question at a time, then write a scope document, a screen-by-screen plan and a technical spec. Wait for my approval on each. Build it in small slices, and end each slice with a list of decisions you made that I should check. Store money in whole cents and dates in [your time zone]. Ask before deploying or sending any emails.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "invoicing",
+    "small business",
+    "bakery",
+    "app building"
+  ],
+  "source": {
+    "url": "https://dev.to/earlgreyhot1701d/an-app-built-for-one-why-a-devpost-skill-pack-made-me-spec-it-anyway-knh",
+    "name": "DEV Community",
+    "author": "Earl Grey",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real small-business tool with code, demo video and a clear look at how the agent interviewed, planned and flagged its own decisions."
+  }
+}

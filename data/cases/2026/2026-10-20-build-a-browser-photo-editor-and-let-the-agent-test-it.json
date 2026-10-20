@@ -1,0 +1,42 @@
+{
+  "id": "build-a-browser-photo-editor-and-let-the-agent-test-it",
+  "title": "Build a browser photo editor and let the agent test it",
+  "summary": "A poster had Claude Code build a Photoshop-style editor and test each build in the ego lite browser; he says it caught and fixed an eraser bug wiping the whole image.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "ego lite browser",
+    "browser control skill"
+  ],
+  "agent_role": "Claude Code wrote the editor, then used a browser built for agents to click tools, drag sliders, type, undo, and export. It found and fixed its own bug.",
+  "outcome": "Author reports the agent spotted the eraser wiping the whole picture and fixed it in the next build.",
+  "what_they_did": "The poster asked Claude Code to build a Photoshop-like image editor in the browser. Using a skill for the ego lite browser, the agent tested each build like a user. It clicked every tool, dragged sliders, typed text, used undo and redo, and exported a picture file.",
+  "how_it_went": "He says the agent noticed the eraser was wiping the whole image and fixed it in the next build.",
+  "worth_knowing": "The post is partly a promotion for the ego lite browser, which now also runs on Windows.",
+  "prompt": "Build a simple image editor that runs in the browser with [tools you want, e.g. brush, eraser, text, sliders, undo, export]. After each build, open it in a browser you control and test it like a real user: click every tool, drag sliders, type text, undo and redo, and export a picture. List any bugs you find, fix them, and repeat. Show me a summary of each round.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "image editor",
+    "browser testing",
+    "self-testing",
+    "web app"
+  ],
+  "source": {
+    "url": "https://x.com/0xMovez/status/2112215588655321501",
+    "name": "X",
+    "author": "@0xMovez",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real build-and-test loop where the agent clicked through its own app and fixed a bug, but the post is hype-heavy and largely promotes a browser product."
+  }
+}

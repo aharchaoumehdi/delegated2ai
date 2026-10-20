@@ -1,0 +1,43 @@
+{
+  "id": "watch-each-software-release-for-problems-with-agents",
+  "title": "Watch each software release for problems with agents",
+  "summary": "An engineer built a prototype where agents plan monitoring for each release and investigate alerts; he says it caught regressions in systems he didn't understand.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "codebase access",
+    "logs and metrics",
+    "monitoring scheduler",
+    "human escalation"
+  ],
+  "agent_role": "One agent reads the service code and writes a monitoring plan; a fixed system runs that plan, and another agent investigates any triggered checks. Humans get escalations.",
+  "outcome": "Author reports detecting regressions in unfamiliar systems with speed and precision he says was impossible a year ago.",
+  "what_they_did": "Ben Congdon prototyped agent-driven monitoring around software releases and settings changes. An agent reads the service code and writes a plan for what to watch. A regular program runs that plan. A second agent digs into anything that trips, and hands off to a person when needed.",
+  "how_it_went": "He says even the early version caught problems in systems he knew nothing about, faster and more accurately than he could before.",
+  "worth_knowing": "He found a pure agent loop worked worse. Having the agent write a monitoring plan that a plain program runs gave cleaner signals and used far fewer tokens.",
+  "prompt": "Read the code for [service name] and the change in [release or config change]. Write a monitoring plan for the next [hours] after it goes live: which metrics and log lines to watch, normal ranges, and what counts as a problem. Save it as a file I can run on a schedule. When a check trips, investigate using [your logs and metrics tool], summarize the likely cause and evidence, and message me before taking any action like rolling back.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "system monitoring",
+    "release safety",
+    "incident triage",
+    "operations"
+  ],
+  "source": {
+    "url": "https://benjamincongdon.me/blog/2026/10/19/Agentic-Monitoring/",
+    "name": "Hacker News",
+    "author": "bcongdon",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A practitioner describes a working prototype that plans, runs and investigates release monitoring with agents and gives useful design lessons. There are no numbers or code, so it lands at worth-a-look."
+  }
+}

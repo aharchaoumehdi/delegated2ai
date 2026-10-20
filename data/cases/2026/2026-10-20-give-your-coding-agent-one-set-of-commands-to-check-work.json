@@ -1,0 +1,43 @@
+{
+  "id": "give-your-coding-agent-one-set-of-commands-to-check-work",
+  "title": "Give your coding agent one set of commands to check work",
+  "summary": "A developer had AI agents set up and verify web apps with Vite+'s single set of commands. He reports CI dropped from 4 minutes to 50 seconds in one monorepo.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Vite+",
+    "Vitest",
+    "GitHub Actions",
+    "Git hooks"
+  ],
+  "agent_role": "The agent creates the project, writes code, runs the check, test and build commands, and fixes failures. The developer writes the instructions, reviews diffs and approves merges.",
+  "outcome": "Author reports CI time falling from 4 minutes to 50 seconds and a pre-commit check from 11 seconds to under 2. He notes these are his projects, not a benchmark.",
+  "what_they_did": "A developer used Vite+ on four projects for three weeks. It is a toolkit that puts building, testing and code checks behind one command. He gives the agent a set-up prompt and repo instructions. They tell it to run the check, test and build commands and fix what fails before reporting done.",
+  "how_it_went": "He says the agent stopped guessing which command to run. Earlier messes like two formatters and three lockfiles stopped. He also reports much faster checks in CI.",
+  "worth_knowing": "Moving an existing project over still needs a careful review of the changes. Also, the agent must not assume Vite+'s build command replaces a framework's own, such as Next.js.",
+  "prompt": "Create a new [React + TypeScript] app in [folder] using Vite+. First read the current guide for Vite+'s create command. Do not overwrite existing files. Use one package manager and keep a single lockfile. Do not add another linter or formatter. After setup, run the install, check, test and build commands. Add a test for what you built. If a check fails, fix the cause and rerun it. Report the Vite+ version, the commands you ran and the actual results. Wait for my review before committing.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "developer tooling",
+    "project setup",
+    "automatic checks",
+    "coding agents"
+  ],
+  "source": {
+    "url": "https://janmichalek.com/blog/vite-plus-agentni-vyvoj?lang=en",
+    "name": "Hacker News",
+    "author": "Jan Michálek",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A personal account across four projects with a shared setup prompt, repo instructions and timing numbers. It reads more as a toolchain review, and the 'define done' idea overlaps earlier entries."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "let-agents-explore-a-virtual-island-before-real-tasks",
+  "title": "Let agents explore a virtual island before real tasks",
+  "summary": "MIT researchers left 13 Claude Code agents on a virtual island for 30 hours; the paper reports they invented games and later beat fresh agents on most new tasks.",
+  "domain": "Science",
+  "platform": "Claude Code",
+  "model": "Claude Opus 4.7",
+  "tools": [
+    "simulated game world",
+    "text world descriptions",
+    "memory files"
+  ],
+  "agent_role": "Each agent moved, jumped, picked up and threw objects in the simulated world with no set goal, keeping its own notes. Researchers set up the world, sent continuation prompts and ran the later tests.",
+  "outcome": "The paper reports 30-hour agents placed 10.3 objects on the Spire on average versus 3.5 for fresh agents; deleting one memory note raised one task from 60 seconds to 19 minutes.",
+  "what_they_did": "An MIT team ran 13 copies of Claude Opus 4.7 inside Claude Code, each steering a body on a simulated island for 30 hours. The agents got text descriptions of the world and replied with moves like jump, pick up and throw. They had no task, only a note calling them curious. Afterward the researchers tested them against fresh copies.",
+  "how_it_went": "The agents built towers, drew pictures and made up games like a basketball variant. The paper reports they beat fresh agents on most new tasks, with their skills stored in their own note files.",
+  "worth_knowing": "This article summarizes the paper; the study has not been peer-reviewed. It used only 13 agents, and the authors say the play could be role-playing.",
+  "prompt": null,
+  "evidence": "Paper",
+  "difficulty": "Advanced",
+  "tags": [
+    "ai research",
+    "open-ended exploration",
+    "agent memory",
+    "simulation"
+  ],
+  "source": {
+    "url": "https://dev.to/techaiwire/claude-opus-47-agents-invent-games-on-a-virtual-island-4h7l",
+    "name": "DEV Community",
+    "author": "Nathan Cloos, Antonio Norelli et al. (via techaiwire)",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine research study in which agents acted on their own in a simulated world, with measured results. The post is a news-site summary of an MIT paper rather than the original, and readers can't easily reproduce it."
+  }
+}

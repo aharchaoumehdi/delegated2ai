@@ -1,0 +1,43 @@
+{
+  "id": "make-your-coding-agent-ask-before-risky-actions",
+  "title": "Make your coding agent ask before risky actions",
+  "summary": "A developer built a free add-on that makes Claude Code, Codex and Cursor stop before deleting, deploying or running live steps; in their small trials agents stopped leaving live steps armed.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "OpenAI Codex",
+    "Cursor",
+    "Python helper scripts"
+  ],
+  "agent_role": "The coding agent sorts each request by risk, does safe work, writes tests and records checks, then stops and lists decisions for the human before risky live actions.",
+  "outcome": "Author reports that in their trials, cheaper models left a live database sync one command from running in 12 of 12 runs without the add-on and 0 of 6 with it.",
+  "what_they_did": "A developer wrote a set of rules that coding agents load as an add-on. It sorts each request by size and risk. It stops before deleting data, pushing, deploying or changing live databases. It refuses to call anything checked without a saved record of the check.",
+  "how_it_went": "The author ran small tests with and without the add-on. They report agents stopped changing payment rules nobody asked about, and left regression tests behind in every run. On new tasks written by another model, results were mostly the same either way.",
+  "worth_knowing": "The author says these are small tests they wrote, not a benchmark. The add-on makes agents more careful but does not make an app secure.",
+  "prompt": "Before you change anything in [project folder], sort my request: small safe edit, review, new feature, fix, or new product. Do the safe, reversible work. Write tests that fail without your change and pass with it. Do not delete data, push code, deploy, run database changes or touch live services. Instead, list each of those steps for me and wait for my approval. Only call something verified if you saved the output of the check that proves it.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "coding safety",
+    "guardrails",
+    "testing",
+    "release checks"
+  ],
+  "source": {
+    "url": "https://x.com/404kidwiz2/status/2112348037221581010",
+    "name": "X",
+    "author": "@404kidwiz2",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly a tool, but the README reports small before-and-after trials showing how agents behaved with and without the guardrails. Author-run tests, lightly evidenced."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "revive-a-cloud-dead-robot-vacuum-with-a-local-server",
+  "title": "Revive a cloud-dead robot vacuum with a local server",
+  "summary": "A user had Claude Code reverse-engineer a $400 robot vacuum's link to its shut-down cloud and build a local server; they say it now cleans on schedule again.",
+  "domain": "Home",
+  "platform": "Claude Code",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "local server",
+    "home Wi-Fi",
+    "scheduler"
+  ],
+  "agent_role": "Claude Code worked out how the vacuum talked to the maker's servers and built a local server to control it. The human set the schedule and ran three checks before leaving it running.",
+  "outcome": "Author reports the vacuum, unused for two years after the maker's cloud shut down, now cleans at 8:30 every weekday under local control.",
+  "what_they_did": "The poster's $400 robot vacuum sat in a cupboard for two years after the maker's online service shut down. They used Claude Code to work out how the robot talked to those servers, then build a replacement server on their own computer. Their first request was to clean at 8:30 every weekday at 40% suction and return to the dock.",
+  "how_it_went": "They say the robot works again, handling navigation itself while their computer runs the server and schedule. They tested it with internet blocked, after a server restart, and with the robot disconnected.",
+  "worth_knowing": "The computer must stay on to run the server and schedule. The author checked that a restart would not repeat a cleaning job and that lost connections were flagged.",
+  "prompt": "My [robot vacuum brand and model] stopped working because the maker's cloud service shut down, but the hardware is fine. Help me figure out how it communicates on my home network and build a small local server on my computer to control it. Explain your plan and each step before changing any device settings. Then set a schedule: clean at [time] on [days], use [suction level], and return to the dock when done. Before we finish, help me test that it works with internet blocked, that restarting the server doesn't repeat a job, and that a lost connection is clearly flagged.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "smart home",
+    "device repair",
+    "robot vacuum",
+    "reverse engineering"
+  ],
+  "source": {
+    "url": "https://x.com/mika_systems/status/2112179207681839137",
+    "name": "X",
+    "author": "@mika_systems",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An original home use: reviving abandoned hardware by having Claude Code figure out its cloud protocol and replace it with a local server, with concrete safety checks. Full process is promised but not included, so evidence is the author's account."
+  }
+}

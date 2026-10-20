@@ -1,0 +1,43 @@
+{
+  "id": "make-a-product-demo-video-without-opening-an-editor",
+  "title": "Make a product demo video without opening an editor",
+  "summary": "A software founder had agents record, edit and script an 81-second product demo, and build a fake store with 25 campaigns checked by 932 automatic checks.",
+  "domain": "Marketing",
+  "platform": "Other",
+  "model": "GPT-6 Astra and Claude Opus",
+  "tools": [
+    "web browser",
+    "screen recording",
+    "ElevenLabs voice clone",
+    "video editing"
+  ],
+  "agent_role": "Agents recorded the product in a browser, edited the cut, designed and checked demo data, coded it into the product's demo mode and rewrote the script. The founder gave prompts and feedback and supplied his cloned voice.",
+  "outcome": "The founder reports an 81-second demo video made without opening a video editor, where his part was mostly feedback.",
+  "what_they_did": "The founder of Sembot, an ad software company, had an agent record his product's dashboard in a browser and edit the video. He gave feedback on each cut. Two models designed a fictional outdoor store with 25 ad campaigns as demo data. A developer agent added it to the product, and the script was rewritten for the new data.",
+  "how_it_went": "He says the first cut had no intro and jarring camera jumps. The second added an intro, smooth fades and a slow zoom. The final version runs 81 seconds, and he says his main contribution was complaining.",
+  "worth_knowing": "His biggest note was not about editing: an empty dashboard makes a weak demo. A separate checker ran 932 automatic checks so the numbers on screen agree.",
+  "prompt": "Help me make a short demo video of [product name] for [audience]. First, review the product in the browser and propose realistic demo data that shows [the problem it solves], with checks that all numbers agree. Then draft a script under [length] seconds with an intro and a clear finale. Show me the data and script for approval. After that, record the screen, edit with smooth transitions, and add narration in [my voice file or chosen voice]. Share each cut for feedback before finalizing.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "product demo",
+    "video editing",
+    "demo data",
+    "marketing video"
+  ],
+  "source": {
+    "url": "https://x.com/BartoszFerenc/status/2112216305336021115",
+    "name": "X",
+    "author": "@BartoszFerenc",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed walkthrough of agents recording, editing, scripting and even building believable demo data for a product video, with concrete iterations and checks. Thin on exact tools but clear about who did what."
+  }
+}

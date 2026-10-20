@@ -1,0 +1,43 @@
+{
+  "id": "rebuild-an-old-game-s-source-code-with-ai-models",
+  "title": "Rebuild an old game's source code with AI models",
+  "summary": "A developer used OpenAI, Anthropic and Google models to reconstruct Civilization 1's source; it builds with 1991-era tools into a byte-for-byte match, apart from a four-byte fix.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Microsoft C 5.1",
+    "MASM assembler",
+    "DOSBox-X emulator",
+    "GitHub Actions"
+  ],
+  "agent_role": "The AI models wrote the reconstructed code and documentation, guided to use earlier OpenCiv1 work; the developer edited the results and set up build checks against the original program.",
+  "outcome": "Author reports the rebuilt CIV.EXE matches version 474.05 byte for byte, aside from a checked four-byte startup correction.",
+  "what_they_did": "A developer directed AI models from OpenAI, Anthropic and Google to turn the 1991 Civilization program back into readable C code. He pointed them at an earlier project, OpenCiv1, then edited the output. He built it with the original-era Microsoft compiler in an emulator and checked the result against the real game file. The AI also helped write a technical book about the game.",
+  "how_it_went": "He reports the rebuilt program matches the original byte for byte, except a four-byte fix for a likely post-build patch. He also used the code to make a modern version of the game.",
+  "worth_knowing": "The author credits OpenCiv1 with most of the work and warns the names and comments are guesses, so a matching program does not prove this is the original source.",
+  "prompt": "Help me reconstruct readable source code for [old program name and version]. Use [existing reverse-engineering project or notes] as a starting point. Work one function at a time: write the code, build it with [period compiler/toolchain], and compare the output with the original file. Keep a log of which parts match and which don't. Show me your plan first and pause after each batch of functions for my review.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "decompilation",
+    "game preservation",
+    "reverse engineering",
+    "retro computing"
+  ],
+  "source": {
+    "url": "https://github.com/sjmelia/civd",
+    "name": "Hacker News",
+    "author": "crc32 (sjmelia)",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A developer used AI models to rebuild Civilization's 1991 source code so it compiles to a byte-identical game, with public code, checks and a book. Novel and verifiable, though the AI's exact workflow is only briefly described."
+  }
+}

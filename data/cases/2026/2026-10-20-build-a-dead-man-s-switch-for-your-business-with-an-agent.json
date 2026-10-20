@@ -1,0 +1,42 @@
+{
+  "id": "build-a-dead-man-s-switch-for-your-business-with-an-agent",
+  "title": "Build a dead man's switch for your business with an agent",
+  "summary": "A solo web studio owner had Claude Code build a self-hosted check-in system from a detailed spec; it alerts next of kin, then clients, if he goes silent.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "PHP web server",
+    "email sending",
+    "scheduled jobs"
+  ],
+  "agent_role": "Claude Code wrote the software from the owner's long written spec, and it passed 42 automatic tests. The owner designed the plan, set it up and tested it on himself.",
+  "outcome": "Author reports running it on himself for weeks and says clients see it as a strong sales feature.",
+  "what_they_did": "Peter Bishop runs a one-person web studio and wanted a plan in case he dies or goes missing. He wrote a detailed spec and had Claude Code build the tool. It emails him weekly. If he doesn't press the check-in button, it asks his next of kin first. Only then does it send his prepared messages to other contacts.",
+  "how_it_went": "He says the code passed 42 automatic tests and he has been running it on himself. He reports clients like it when they trust him with their accounts.",
+  "worth_knowing": "It only sends emails and stores no passwords. It should run on hosting separate from the sites it protects, so one outage can't take down both.",
+  "prompt": "Build a small self-hosted check-in tool for my business. Every week at [day and time] it should email me a check-in button. If I don't press it, send reminders at 24 and 48 hours. Then ask [next of kin email] whether I'm all right. If they say something is wrong or don't reply within [days], email each contact in [contact list] their own prepared message. Opening a link must not count as checking in. Write automatic tests, show me the plan first, and don't send any real emails until I approve.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "succession planning",
+    "small business",
+    "check-in alerts",
+    "self-hosted"
+  ],
+  "source": {
+    "url": "https://deathplanswitch.com/",
+    "name": "Hacker News",
+    "author": "Peter Bishop (romeo19361)",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A useful, original small-business tool built with Claude Code from a written spec, with code released. Details on what the agent did are thin."
+  }
+}

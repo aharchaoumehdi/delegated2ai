@@ -1,0 +1,42 @@
+{
+  "id": "file-a-hospital-insurance-claim-with-a-browser-agent",
+  "title": "File a hospital insurance claim with a browser agent",
+  "summary": "A poster pointed Gemini 4 Argon in Antigravity at their insurance portal; they say it merged scans into a 17-page PDF, pulled bill details and filed the claim.",
+  "domain": "Health",
+  "platform": "Google Antigravity",
+  "model": "Gemini 4 Argon",
+  "tools": [
+    "Chrome browser",
+    "Insurance portal",
+    "PDF merging"
+  ],
+  "agent_role": "The agent opened the portal, downloaded the form and checklist, merged scans, extracted bill details and uploaded the claim; the human supplied the scans and started the task.",
+  "outcome": "Poster reports the agent filed the entire claim by itself.",
+  "what_they_did": "The poster used the browser mode in Google's Antigravity tool with Gemini 4 Argon. They pointed it at their health insurance website. It downloaded the claim form and checklist, merged their raw scans into one 17-page PDF, and pulled out bill numbers, dates, lab and heart test charges and totals.",
+  "how_it_went": "The poster says the agent uploaded and filed the whole claim for them.",
+  "worth_knowing": "The post does not say whether the poster reviewed the extracted figures before submitting; check amounts and documents before letting an agent file.",
+  "prompt": "Open my insurance portal at [portal URL] and find the hospital claim form and document checklist. Download both. Merge my scanned bills and reports in [folder] into one PDF in the checklist order. Extract every bill number, date, charge type and total into a table. Fill in the claim form. Show me the table, the filled form and the PDF, and wait for my approval before uploading or submitting anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "insurance claim",
+    "health",
+    "paperwork",
+    "browser automation"
+  ],
+  "source": {
+    "url": "https://x.com/StatsWire/status/2112506363662221320",
+    "name": "X",
+    "author": "@StatsWire",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete first-hand account of a browser agent handling a full hospital insurance claim, a useful non-coding task; lightly evidenced with no screenshots or result beyond filing."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "let-your-ai-agent-build-on-a-plot-in-a-shared-game",
+  "title": "Let your AI agent build on a plot in a shared game",
+  "summary": "A developer made Brick City, a free game where players' agents claim land and build; he says Grok built him the pyramids and Sphinx, while others used Codex and Claude Code.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Brick City game",
+    "Grok",
+    "Codex",
+    "Claude Code"
+  ],
+  "agent_role": "Each player's agent claims a block of land and builds on it from the player's request. The human only picks what to build.",
+  "outcome": "Author reports Grok built the pyramids and the Sphinx on his plot, and that players can compare builds from different agents.",
+  "what_they_did": "The poster built Brick City, a free online game. Each player connects their own AI agent, which claims a block of land and builds on it. He asked Grok for the pyramids and the Sphinx. Other players used Codex and Claude Code.",
+  "how_it_went": "The author says Grok built the pyramids and Sphinx. He says the shared map lets players compare which model builds best.",
+  "worth_knowing": "The author pitches it as a way to use spare AI credits you would otherwise not spend.",
+  "prompt": "Join the Brick City game and claim a block of land for me. Build [landmark or scene you want, e.g. a medieval castle] on it. Before you start, show me your plan for the layout and materials, and wait for my approval. When done, describe what you built and anything you couldn't finish.",
+  "evidence": "Demo",
+  "difficulty": "Beginner",
+  "tags": [
+    "game",
+    "building",
+    "model comparison",
+    "fun"
+  ],
+  "source": {
+    "url": "https://x.com/ShekOMP/status/2112396767434097138",
+    "name": "X",
+    "author": "@ShekOMP",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A playful, unusual idea where agents build structures in a shared game world, but the post is thin and mostly promotional, with little detail on how the agents work."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "find-local-businesses-not-running-online-ads-yet",
+  "title": "Find local businesses not running online ads yet",
+  "summary": "An ad agency owner had a Grok Bot team rank 36 Palm Beach County gyms, then check Meta's Ad Library; he says none of the top 10 ran Meta ads.",
+  "domain": "Marketing",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Grok Bot",
+    "Meta Ad Library"
+  ],
+  "agent_role": "The agent team ranked the gyms and studios and checked the top 10 in Meta's public ad library. The owner chose the area and the goal.",
+  "outcome": "Author reports none of the top 10 gyms were running Meta ads.",
+  "what_they_did": "The poster runs an ad agency. He had a team of Grok Bot agents rank 36 gyms and studios in Palm Beach County. Then the agents looked up the top 10 in Meta's Ad Library, a public list of ads running on Facebook and Instagram.",
+  "how_it_went": "He says none of the top 10 were running Meta ads, which he reads as an open market for his agency.",
+  "worth_knowing": null,
+  "prompt": "Find [type of business] in [your area]. Rank the top [number] by how established they look, using reviews, website quality and social presence. Explain your ranking. For the top 10, search Meta's Ad Library and note whether each is running Facebook or Instagram ads right now. Put the results in a table with name, website, ranking reason and ad status. Don't contact anyone; I'll review the list first.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "lead research",
+    "local business",
+    "advertising",
+    "prospecting"
+  ],
+  "source": {
+    "url": "https://x.com/MilesKetcham/status/2112230556591087871",
+    "name": "X",
+    "author": "@MilesKetcham",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 5.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-step research task for a small ad agency, ranking local businesses and checking the public ad library. Thin on detail but a useful, non-coding prospecting idea (+0.5)."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "study-a-web-app-through-the-browser-to-plan-a-rebuild",
+  "title": "Study a web app through the browser to plan a rebuild",
+  "summary": "A developer released a Claude Code skill that explores a web product in a trial account and writes up its screens, rules, data and launch hurdles for rebuilding it.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude in Chrome",
+    "Playwright",
+    "Chrome DevTools",
+    "web fetch",
+    "Node.js scripts"
+  ],
+  "agent_role": "The agent reads public docs, maps every screen, tests one feature at a time in a trial account, records evidence, and writes a report plus a build brief; the human sets the goal and prepares the trial account.",
+  "outcome": "The author shows sample findings from studying Pipedrive, such as a business rule with evidence and a WhatsApp approval hurdle.",
+  "what_they_did": "A developer packaged a skill for Claude Code that drives a real browser logged into a trial account. The agent reads public docs, maps every screen, studies each feature, and saves notes to files. It ends with a readable report and a zip that a coding agent can use to rebuild the product.",
+  "how_it_went": "The author shows example outputs from a Pipedrive study, including rules written as test cases and launch barriers like needing Meta approval for WhatsApp messages. Notes are saved to disk so a study can span many sessions.",
+  "worth_knowing": "Use it only on products you are allowed to study, and prefer a trial account in a separate browser profile so the agent cannot touch real data.",
+  "prompt": "Using my browser connected to the separate profile logged into a trial account of [product], study how [product] works so my team can rebuild it for [target market]. Read its public docs and pricing first. Then map every screen and document one feature at a time: states, business rules with evidence, data fields and design styles. Only observe; do not create, change or delete anything without asking me. Save notes to files as you go. At the end, give me a report with a build plan and the hurdles to launching, such as required approvals or licenses.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "product research",
+    "browser automation",
+    "reverse engineering",
+    "competitor analysis"
+  ],
+  "source": {
+    "url": "https://github.com/alextnetto/res",
+    "name": "GitHub",
+    "author": "alextnetto",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A reusable Claude Code skill with a specific browser workflow and sample outputs (rules with evidence, launch barriers) from studying a CRM; useful and original, though results are mostly shown as examples rather than a full reported run."
+  }
+}

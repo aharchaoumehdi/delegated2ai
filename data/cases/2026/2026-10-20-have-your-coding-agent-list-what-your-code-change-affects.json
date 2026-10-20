@@ -1,0 +1,43 @@
+{
+  "id": "have-your-coding-agent-list-what-your-code-change-affects",
+  "title": "Have your coding agent list what your code change affects",
+  "summary": "A developer built LayerMap so coding agents can see which web addresses and tests a code edit reaches; in the author's tests agents found 97.9% of affected endpoints versus 58.8%.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "gpt-5.5",
+  "tools": [
+    "Claude Code",
+    "OpenAI Codex",
+    "Git",
+    "LayerMap"
+  ],
+  "agent_role": "The coding agent calls LayerMap to trace who calls a piece of code and which tests relate to an edit, then confirms in the source. The human asks questions as usual.",
+  "outcome": "Author reports agents found 97.9% of affected endpoints with the map versus 58.8% without under a 15-request limit, and Claude Code cost 33% less with no limit.",
+  "what_they_did": "A developer built LayerMap, a local add-on for Claude Code and Codex. It reads unsaved code changes and lists the web addresses and existing tests they reach. In a replayed session on the open-source app Miniflux, one call found every path to a function.",
+  "how_it_went": "The author reports agents found 97.9% of affected endpoints with the map versus 58.8% without, when limited to 15 requests. Claude Code cost a third less with no limit.",
+  "worth_knowing": "The author notes these are small samples on tasks they wrote. On small everyday tasks the map changed nothing but added about a fifth more time and cost.",
+  "prompt": "Before I commit, look at my uncommitted changes in this repository. Trace every place that calls the code I changed, up to the web routes, scheduled jobs or commands that start them. List the affected routes and the existing tests that cover them, then run those tests. Show me the list and test results and wait for my go-ahead before changing any code.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "change impact",
+    "code review",
+    "testing",
+    "coding agents"
+  ],
+  "source": {
+    "url": "https://x.com/Griffin_Liu/status/2112437715421872216",
+    "name": "X",
+    "author": "@Griffin_Liu",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly a tool, but the README shows a replayed Claude Code session and author-run tests with numbers on how much better agents find affected code; small samples by the authors."
+  }
+}

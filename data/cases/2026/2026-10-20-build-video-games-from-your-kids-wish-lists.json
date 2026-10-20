@@ -1,0 +1,41 @@
+{
+  "id": "build-video-games-from-your-kids-wish-lists",
+  "title": "Build video games from your kids' wish lists",
+  "summary": "A dad and his sons, 6 and 9, wrote game requirements; an AI model built two web games they play nightly and keep revising together.",
+  "domain": "Education",
+  "platform": "Other",
+  "model": "6.1 Astra Medium",
+  "tools": [
+    "Vue.js",
+    "home wifi"
+  ],
+  "agent_role": "The AI built two browser games from written requirement lists. The dad and kids wrote the requirements, checked the result and asked for changes.",
+  "outcome": "Author reports two games playable on any device on their home wifi, which the kids play 15 minutes each night.",
+  "what_they_did": "A father sat down with his two sons to write requirements for two games: a garage where you buy door openers, and a sports car racer. He added his own requirements and gave both lists to an AI model. Then they checked the games against the list together.",
+  "how_it_went": "He says they got two web games playable on any device on their home wifi. One son was upset it didn't match his idea, so they revised the requirements and tried again. The kids now play 15 minutes a night.",
+  "worth_knowing": "The author used it to teach iteration: the AI interprets what you ask, so you refine the requirements and try again. They keep a running list of changes for the next round.",
+  "prompt": "Help me build a simple browser game for my kids. Here are the requirements we wrote together: [list of requirements, e.g. what the world looks like, what you can choose, what you can buy]. First show me a short plan and how each requirement will be met, and wait for my OK. Then build it as a web game that runs in a browser on devices on my home network, and tell me how to start it. Afterward, give me a checklist of the requirements so my kids and I can test each one and write down changes for the next version.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "kids",
+    "game building",
+    "teaching",
+    "family"
+  ],
+  "source": {
+    "url": "https://x.com/henryhund/status/2112271834171543634",
+    "name": "X",
+    "author": "@henryhund",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A warm, original family use: kids write requirements, an AI builds two playable web games, and they iterate together; light on technical detail and agent tooling isn't named."
+  }
+}

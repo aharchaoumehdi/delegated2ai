@@ -1,0 +1,42 @@
+{
+  "id": "turn-a-technical-question-into-an-animated-explainer-video",
+  "title": "Turn a technical question into an animated explainer video",
+  "summary": "A hackathon team built Reel Lab, where six agents research a technical question and produce a 60-second narrated, animated explainer video.",
+  "domain": "Education",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "research",
+    "narration",
+    "animation"
+  ],
+  "agent_role": "Six agents research the question, write and narrate the script, and animate the video. People supply the question.",
+  "outcome": "The team shared a demo video from the Nebius Build Week Hackathon in Berlin.",
+  "what_they_did": "At a hackathon in Berlin, the poster's team built Reel Lab. It is a workspace where six agents take a technical question and research it. They then narrate and animate the answer as a short video.",
+  "how_it_went": "The team posted a demo video of a 60-second explainer. No other results are given.",
+  "worth_knowing": null,
+  "prompt": "I want a 60-second explainer video answering: [your technical question]. First research the topic from reliable sources and list them. Then write a short narrated script for a general audience, and propose simple animated scenes for each line. Show me the script and scene plan for approval before producing narration and animation.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "explainer video",
+    "animation",
+    "research",
+    "multi-agent"
+  ],
+  "source": {
+    "url": "https://x.com/DarshanScripts/status/2112371223216943358",
+    "name": "X",
+    "author": "@DarshanScripts",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A hackathon demo of six agents turning a technical question into a narrated animated explainer. It is a genuine multi-step agent workflow, but the post gives almost no detail beyond a video."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "have-an-agent-order-dinner-when-you-work-late",
+  "title": "Have an agent order dinner when you work late",
+  "summary": "A poster says their agent noticed a late work night, checked their calendar, found the best Domino's deal and ordered their usual pizza for carryout.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Calendar",
+    "Domino's ordering"
+  ],
+  "agent_role": "The agent decided to order, checked the calendar, picked a deal and chose carryout, and placed the order without asking first.",
+  "outcome": "Poster reports the agent found the best deal and saved them money.",
+  "what_they_did": "The poster was planning to work late. Their agent decided they would be hungry and ordered their usual Domino's pizza. It checked their calendar, saw they would be out nearby later, and chose carryout.",
+  "how_it_went": "The poster says the agent found the best deal and saved them money.",
+  "worth_knowing": "The agent placed the order on its own without asking; most people will want an approval step before any purchase.",
+  "prompt": "When my calendar shows I am working past [time], suggest ordering dinner. Check my calendar for where I will be, then compare current deals at [restaurant] for my usual order: [order]. Pick delivery or carryout based on my plans and location. Show me the order, price and pickup time, and wait for my approval before placing it.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "food ordering",
+    "calendar",
+    "deals",
+    "daily life"
+  ],
+  "source": {
+    "url": "https://x.com/LuminaForge_AI/status/2112187453641814196",
+    "name": "X",
+    "author": "@LuminaForge_AI",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A short first-hand account of an agent that checked a calendar, found a deal and placed a food order; thin on detail and tools, but a genuine multi-step daily-life action."
+  }
+}

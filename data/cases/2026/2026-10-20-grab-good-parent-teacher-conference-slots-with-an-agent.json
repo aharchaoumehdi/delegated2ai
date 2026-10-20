@@ -1,0 +1,42 @@
+{
+  "id": "grab-good-parent-teacher-conference-slots-with-an-agent",
+  "title": "Grab good parent-teacher conference slots with an agent",
+  "summary": "A parent's agent, Dots, spotted the school's signup email, booked preferred conference slots on SignupGenius and saved calendar invites while they were on a call.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Email",
+    "Calendar",
+    "SignupGenius"
+  ],
+  "agent_role": "The agent watched for the school email, picked slots using the family calendars and time rules, signed up on SignupGenius and saved invites. The parent set up the rules and connections beforehand.",
+  "outcome": "The parent reports the agent booked their priority slots while they were on a call, avoiding the usual inconvenient times.",
+  "what_they_did": "A parent connected their agent, Dots, to their email and the family calendars. They gave it time preferences ahead of time and told it to watch for the school's conference email. When the email arrived, the agent signed up on SignupGenius and saved calendar invites.",
+  "how_it_went": "The parent says the agent booked their preferred slots while they were busy on a call. They say popular times usually go fast and they normally end up with awkward 5pm slots.",
+  "worth_knowing": "The setup was done before the email arrived: calendars connected and time rules given, since exact dates weren't known yet.",
+  "prompt": "Watch my email for a message from [school name] about parent-teacher conference signups. When it arrives, check my calendar and [partner]'s calendar. Pick the best open slot for each of [children's names] that fits these rules: [preferred days and times], avoiding [regular commitments like pickups or activities]. Show me the slots you plan to book and wait for my OK, unless I've told you to book right away because slots go fast. Then sign up on the signup page and add calendar invites for each booking.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "school",
+    "scheduling",
+    "calendar",
+    "parenting"
+  ],
+  "source": {
+    "url": "https://x.com/leveragedupside/status/2112286973205360673",
+    "name": "X",
+    "author": "@leveragedupside",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 5.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real daily-life agent action (watching email, booking slots on a signup site, adding calendar invites) with a clear result, though thinly detailed and the platform is unclear."
+  }
+}

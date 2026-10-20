@@ -1,0 +1,43 @@
+{
+  "id": "run-home-server-chores-on-a-schedule-with-an-agent",
+  "title": "Run home server chores on a schedule with an agent",
+  "summary": "A poster says his AI agent on a home server ran 30 days straight, with 12 scheduled jobs handling backups, spending checks, health checks and a weekly email audit.",
+  "domain": "Home",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "home server",
+    "scheduled jobs",
+    "NAS backup",
+    "email"
+  ],
+  "agent_role": "The agent runs 12 scheduled jobs on its own, from nightly backups to a weekly mail audit. The poster set up the schedule.",
+  "outcome": "Author reports 30 days of uptime with the 12 jobs running.",
+  "what_they_did": "The poster runs an AI agent on a home server. Twelve scheduled jobs give it work: a 7am system check, a 2:30am backup to a home storage drive, a spending check every three hours, a watchdog every 15 minutes and a Monday email audit.",
+  "how_it_went": "He reports 30 days of uptime. He says the value comes from the boring jobs never stopping, not from the model.",
+  "worth_knowing": "The poster credits steady scheduled routines, not model smarts, for making the agent useful.",
+  "prompt": "Help me set up recurring jobs for you on my home server. Propose a schedule for: a morning check that my services are running, a nightly backup of [folders] to [backup drive], a check on my [API or subscription] spending every few hours, a watchdog that alerts me if something stops, and a weekly audit of my email for [what to look for]. Show me the schedule and commands and wait for my approval before installing anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "home server",
+    "backups",
+    "scheduled tasks",
+    "monitoring"
+  ],
+  "source": {
+    "url": "https://x.com/ChrisSherrod/status/2112277710609199151",
+    "name": "X",
+    "author": "@ChrisSherrod",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine home-server agent running scheduled chores for 30 days with named jobs, but light on tools and results."
+  }
+}

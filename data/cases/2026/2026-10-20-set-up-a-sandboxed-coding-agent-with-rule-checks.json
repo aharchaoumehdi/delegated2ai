@@ -1,0 +1,43 @@
+{
+  "id": "set-up-a-sandboxed-coding-agent-with-rule-checks",
+  "title": "Set up a sandboxed coding agent with rule checks",
+  "summary": "Gojko Adzic shared a Claude Code starter setup from his Votito project; he reports its planner cut token spending by about 80%.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Docker container",
+    "command approval rules",
+    "code style checker",
+    "workflow script generator"
+  ],
+  "agent_role": "Claude Code plans and implements changes inside a sealed container, while fixed scripts approve commands, check code and run the workflow steps. The human sets the rules and approves plans.",
+  "outcome": "Author reports the orchestrator reduced token spend by around 80% compared with a bare Claude workflow on Votito.",
+  "what_they_did": "The author packaged the setup he built for his product Votito. Claude Code runs in a sealed container that only sees the project folder. A rule script auto-approves or blocks shell commands, and a code checker runs after every edit. A generator turns a plan into a multi-agent workflow so routine steps run without the model.",
+  "how_it_went": "He reports the orchestrator cut token spending by around 80% compared with running Claude workflows on their own.",
+  "worth_knowing": "He suggests asking the agent to add a new rule each time it asks you for approval or you repeat the same review feedback.",
+  "prompt": "Set up my project [repo URL] so you work inside a container that only sees the project folder. Write a list of allowed and blocked shell commands for this project, and add a check that runs the code style checker after every file you edit. Then, for my next change, [describe change], write a step-by-step plan with test checkpoints. Show me the plan and wait for my approval before writing code.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "coding workflow",
+    "sandbox",
+    "code review",
+    "cost saving"
+  ],
+  "source": {
+    "url": "https://github.com/gojko/lights-on-software-factory",
+    "name": "Hacker News",
+    "author": "gojkoa",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A starter kit drawn from a real project, with one reported result (about 80% lower token spend), but the post mostly describes features rather than a worked outcome."
+  }
+}

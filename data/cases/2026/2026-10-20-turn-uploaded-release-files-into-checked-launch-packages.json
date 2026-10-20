@@ -1,0 +1,45 @@
+{
+  "id": "turn-uploaded-release-files-into-checked-launch-packages",
+  "title": "Turn uploaded release files into checked launch packages",
+  "summary": "A developer built StreamForge, where uploading a release file triggers Gemma 3 agents to extract specs, translate copy and price tiers; a reviewer agent fixed a euro rounding error.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": "Gemma 3 12B",
+  "tools": [
+    "Google Agent Development Kit",
+    "Google Cloud Eventarc",
+    "Cloud Pub/Sub",
+    "Cloud Run",
+    "Cloud Firestore",
+    "Cloud Storage"
+  ],
+  "agent_role": "Three agents work in parallel on specs, localization and revenue forecasts; a critic agent audits and repairs the combined result, and a publisher agent saves the final package. The human uploads the file and designs the pipeline.",
+  "outcome": "Author reports the critic caught a €459.08 price breaking a German rounding rule, corrected it to €460, and passed on the second check.",
+  "what_they_did": "A developer wired cloud storage so that uploading a product release file starts a team of agents. One pulls out technical highlights, one writes launch headlines in English, German and Japanese, and one forecasts revenue and regional prices. A reviewer agent then checks everything and loops up to three times to fix problems before the result is saved.",
+  "how_it_went": "In the walkthrough, the reviewer flagged a German price that wasn't rounded to the nearest €5 and changed it to €460. The second check passed and the package was saved.",
+  "worth_knowing": "Running the agents in parallel is faster, but the author adds the reviewer step because parallel output can publish unrounded or inconsistent prices.",
+  "prompt": "When I give you a product release file [file path], extract the key technical highlights, write launch headlines for [target languages/regions], and draft prices for [price tiers] in [currencies]. Then review all three together against these rules: [pricing rules, e.g. round euro prices to nearest €5]. List any problems, fix them, and recheck up to three times. Show me the final launch package and wait for my approval before saving or publishing it.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "product launch",
+    "localization",
+    "pricing checks",
+    "multi-agent pipeline"
+  ],
+  "source": {
+    "url": "https://dev.to/gde/beyond-chatbots-and-cron-jobs-event-driven-multi-agent-pipelines-on-google-cloud-with-adk-gemma-3-3cbk",
+    "name": "DEV Community",
+    "author": "Robina Mirbahar",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-20",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A code-backed guide where a file upload triggers agents that extract specs, translate launch copy and check regional pricing, with a reviewer loop fixing a euro price. Mostly an architecture tutorial with a demo scenario."
+  }
+}

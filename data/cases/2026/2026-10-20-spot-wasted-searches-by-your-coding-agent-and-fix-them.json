@@ -1,0 +1,43 @@
+{
+  "id": "spot-wasted-searches-by-your-coding-agent-and-fix-them",
+  "title": "Spot wasted searches by your coding agent and fix them",
+  "summary": "JJ Englert had Claude Code build Search Radar, a meter that flags wasted file lookups; he says it exposed messy folders and writes shortcut notes so later runs go faster.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "file search",
+    "command line",
+    "project docs"
+  ],
+  "agent_role": "Claude Code built the add-on from one prompt. It then tracks its own lookups and, when the user clicks, writes a shortcut note into the docs.",
+  "outcome": "Author reports one test found an unneeded file read, patched in one click, and another revealed repeated reads that showed his folder setup needed work.",
+  "what_they_did": "The poster asked Claude Code to build an add-on he calls a Mod. It shows a live meter above the prompt. It counts empty searches and files Claude read but didn't need. A button has Claude write a short shortcut note in the project docs for next time.",
+  "how_it_went": "He says a quality question was answered fast but with one unneeded read, fixed in one click. A messier request showed two repeated reads and needless searching, which told him his folders needed reorganizing.",
+  "worth_knowing": "He keeps it on for every project, and you need to start a new chat after installing so it loads.",
+  "prompt": "Build me a live meter shown above the prompt called Search Radar. For each question I type, track every file read, search and command you run, and score how efficiently you found what you needed. Count empty results and unneeded reads as waste. Offer a button that writes a short shortcut note in [docs folder] so the next session knows where to look. Show me the note before saving it.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "coding agent",
+    "efficiency",
+    "project docs",
+    "search"
+  ],
+  "source": {
+    "url": "https://x.com/JJEnglert/status/2112274506253541628",
+    "name": "X",
+    "author": "@JJEnglert",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, reproducible add-on with the exact build prompt and two real test runs, though evidence is only the author's own account."
+  }
+}

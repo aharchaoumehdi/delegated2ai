@@ -1,0 +1,44 @@
+{
+  "id": "research-a-security-alert-and-draft-a-cited-brief",
+  "title": "Research a security alert and draft a cited brief",
+  "summary": "A Valyu tutorial builds an agent that takes a known Next.js security alert, gathers public advisories and sources, and writes a cited brief with open questions for human review.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Valyu Search",
+    "Vercel AI SDK",
+    "OpenAI model",
+    "GitHub advisory database",
+    "US government exploited-bugs list"
+  ],
+  "agent_role": "The agent picks search queries, selects relevant source passages and suggests follow-up questions. Plain code checks version ranges and the exploited-bugs list, and a developer makes the final call on fixes.",
+  "outcome": "The author reports the script produces a cited evidence brief for the example alert, with deployment risk left marked as not assessed.",
+  "what_they_did": "The author built a small agent around a past Next.js security alert. Code first checks the installed version against the public GitHub advisory and a government list of exploited bugs. The agent then searches a few trusted sites through Valyu and picks source passages. It ends by drafting review questions for a developer.",
+  "how_it_went": "The tutorial shares the complete script. It reports that the agent outputs a brief that cites real source text. The model is not allowed to rewrite quotes or give a final verdict.",
+  "worth_knowing": "The agent does not scan your app or prove you are exposed. Its free-form questions can still contain unsupported claims and need a human check. Search and model calls both cost money.",
+  "prompt": "I received a security alert for [package name] version [exact version], identifier [alert ID]. Find the official advisory and check whether my version falls in the affected range. Check whether the issue is listed as actively exploited. Search only trusted sources such as the vendor's site and public advisory databases, and quote the exact passages you rely on with links. Then list the deployment conditions I still need to check myself. Do not change my code or install anything. Give me the brief for review.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "security alerts",
+    "vulnerability research",
+    "cited research",
+    "dependencies"
+  ],
+  "source": {
+    "url": "https://dev.to/valyuai/how-to-build-an-ai-agent-that-investigates-vulnerability-alerts-2c91",
+    "name": "DEV Community",
+    "author": "Prosper Otemuyiwa",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A full code walkthrough of a bounded research agent that turns a security alert into a cited brief, with a clear split between agent and human. It is a vendor tutorial built on a historical example."
+  }
+}

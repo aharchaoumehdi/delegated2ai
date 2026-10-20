@@ -1,0 +1,43 @@
+{
+  "id": "turn-your-kid-s-favorite-books-into-phonics-readers",
+  "title": "Turn your kid's favorite books into phonics readers",
+  "summary": "A parent built a free phonics reading app for his six-year-old; connected agents like Claude or ChatGPT can type in owned books or write stories using only sounds she knows.",
+  "domain": "Education",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Yara Reads app connector",
+    "PDF or phone scans",
+    "word checker",
+    "picture generation"
+  ],
+  "agent_role": "The agent reads a book PDF or photos, types the story into the app or writes a new one, checks each word against the child's known sounds, adds pictures and shows the parent the result.",
+  "outcome": "The author says the app is free, open source, and his 12-year-old son wrote the first story.",
+  "what_they_did": "A father built a reading app for his daughter after she finished a phonics game. She taps any word to hear its sounds. Parents set which sounds the child knows. They can connect their own AI agent, hand it a PDF or phone photos of a book they own, and have it import the book or write new stories.",
+  "how_it_went": "The author reports the agent checks its own words, adds pictures and shows the parent the result, kept private to their account. Included stories are free to reuse.",
+  "worth_knowing": "The built-in checker rejects any word the child can't sound out yet; the author's advice is to rewrite the story rather than loosen the sounds.",
+  "prompt": "Using the Yara Reads connection, import the book in [PDF or photos of a book I own] for my child. My child knows these sounds: [list of sounds] and these tricky words: [list]. Check every word against what they know. Where a word uses a sound they haven't learned, suggest a simpler rewrite and list the changes for me. Add simple pictures for each page. Show me the finished draft and wait for my approval before saving it to my account.",
+  "evidence": "Code available",
+  "difficulty": "Beginner",
+  "tags": [
+    "early reading",
+    "phonics",
+    "kids",
+    "story writing"
+  ],
+  "source": {
+    "url": "https://github.com/finereli/yarareads",
+    "name": "Hacker News",
+    "author": "zoozla (finereli)",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A parent built a phonics reader whose agent connection lets Claude or ChatGPT import owned books or write stories limited to the sounds a child knows, then check every word; a novel education workflow, though the agent outcome is lightly evidenced."
+  }
+}

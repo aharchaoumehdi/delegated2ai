@@ -1,0 +1,44 @@
+{
+  "id": "build-a-3d-racing-game-with-no-art-files-using-an-agent",
+  "title": "Build a 3D racing game with no art files using an agent",
+  "summary": "Jhin Lee had Gemini 4 Argon build a kart racing game in 15 short prompts; he reports about 3.5 hours of build time and zero image or model files.",
+  "domain": "Creative",
+  "platform": "Gemini",
+  "model": "Gemini 4 Argon",
+  "tools": [
+    "Antigravity",
+    "Flutter",
+    "headless Chrome",
+    "macOS built-in instruments",
+    "GitHub Pages"
+  ],
+  "agent_role": "The agent wrote all code, built characters from basic shapes, screenshotted the running game to fix visuals, made music and deployed a web build. The human gave short playtest feedback like 'the music sounds too cheap'.",
+  "outcome": "Author reports 15 prompts, 3h 26m of active build time, about 12,000 lines of code, and a web version running in under 7 minutes.",
+  "what_they_did": "Jhin Lee asked Gemini 4 Argon, inside Google's Antigravity tool, for a Mario Kart-style game with no outside art or sound files. He gave casual feedback like a playtester. The agent built characters from simple shapes and screenshotted the game to fix them. It also generated music from instruments built into macOS and published a browser version.",
+  "how_it_went": "He says it took 15 prompts and about 3.5 hours. The agent spotted a character looked wrong from behind and fixed it. It also traced a broken web deploy to a hidden file blocking graphics.",
+  "worth_knowing": "It needed pushback: first audio sounded cheap, characters were designed only from the front, and the game started about 22% too fast for humans.",
+  "prompt": "Build a [type of game] in [framework] using no outside image, model or sound files; generate everything in code. After each change, run the game, take a screenshot, and check it looks right from the player's view. I'll give short playtest feedback and you fix it. When it works, show me how you plan to publish a browser version to [hosting service] and wait for my approval before deploying.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "game development",
+    "3d graphics",
+    "procedural audio",
+    "web deploy"
+  ],
+  "source": {
+    "url": "https://dev.to/gde/stress-testing-gemini-4-argon-building-a-3d-flutter-kart-game-in-15-prompts-with-zero-assets-55ha",
+    "name": "DEV Community",
+    "author": "Jhin Lee",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Detailed walkthrough with live demo and open code, showing the agent checking its own screenshots, generating music and fixing a deploy bug; still a game-building case."
+  }
+}

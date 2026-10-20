@@ -1,0 +1,42 @@
+{
+  "id": "build-a-full-action-game-solo-with-parallel-coding-agents",
+  "title": "Build a full action game solo with parallel coding agents",
+  "summary": "A solo developer reportedly built a Ragnarok-Online-meets-Monster-Hunter game in Godot in five weeks, running up to eight Claude Code and Codex agents at once.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Godot",
+    "Claude Code",
+    "OpenAI Codex"
+  ],
+  "agent_role": "Claude Code and Codex agents, up to eight at a time, wrote and changed the game's code. The developer directed the work as a one-person studio.",
+  "outcome": "The repost reports a playable game in five weeks, using 38.5 billion tokens and 112,000 tool calls.",
+  "what_they_did": "A solo game developer, credited as @afterthewinddev, built an online action game in the Godot game engine. They ran Claude Code and Codex agents side by side, up to eight at once. The post here is a repost by another account.",
+  "how_it_went": "The repost says the game came together in five weeks. It reports 38.5 billion tokens of agent work and 112,000 tool calls.",
+  "worth_knowing": "That volume of agent work implies a large usage bill. The repost gives no cost or workflow details.",
+  "prompt": "I'm building a [genre] game in Godot. Read the project folder and propose a split of the next milestone, [milestone], into independent tasks that separate agents can work on at the same time without touching the same files. For each task, list the files involved and how we'll test it in the game. Show me the plan and wait for my approval before starting any agent.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "game development",
+    "parallel agents",
+    "godot",
+    "solo developer"
+  ],
+  "source": {
+    "url": "https://x.com/Sanemavcil/status/2112183031125381576",
+    "name": "X",
+    "author": "@afterthewinddev",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-agent game build with striking reported numbers, but this is a repost crediting @afterthewinddev and gives almost no detail on how it was done."
+  }
+}

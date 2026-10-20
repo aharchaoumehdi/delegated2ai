@@ -1,0 +1,44 @@
+{
+  "id": "point-at-parts-of-your-web-app-to-tell-an-agent-what-to-fix",
+  "title": "Point at parts of your web app to tell an agent what to fix",
+  "summary": "A developer built Spotnote, which lets you click an element in your running web app and leave a note. A coding agent like Claude Code then edits the right file.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Spotnote",
+    "Vite",
+    "Claude Code",
+    "Cursor",
+    "Codex"
+  ],
+  "agent_role": "The human clicks an element and writes the requested change. The coding agent reads the note with its file and line, edits the code, and replies on the note.",
+  "outcome": "The demo shows Claude Code turning a button into a pill shape from a browser note.",
+  "what_they_did": "The developer made a free add-on for web projects that run on the Vite development tool. You click any part of your running app and type what should change. It sends the agent the exact file and line, plus the current styles. With a connector, Claude Code watches for notes and acts on them directly.",
+  "how_it_went": "The demo shows the agent picking up a note, making the change, and replying, without the user leaving the browser. Designers can also leave notes on test builds.",
+  "worth_knowing": "It only works with projects built on Vite. It runs in development or in test builds you choose, not in your live app.",
+  "prompt": "Watch my Spotnote notes from my running app at [local dev address]. For each new note, open the file and line it points to and make the requested change. Keep the change limited to that element. Show me the diff and reply on the note with what you changed. Wait for my approval before committing anything.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "ui feedback",
+    "web design",
+    "coding agents",
+    "front end"
+  ],
+  "source": {
+    "url": "https://github.com/harukikuri/spotnote",
+    "name": "Hacker News",
+    "author": "kuri-sun",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-20",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly a tool feature list, but the demo shows a concrete loop: click an element in the app, and Claude Code picks up the note and makes the change. Thin evidence beyond the demo."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "negotiate-a-higher-internet-bill-down-with-an-agent",
+  "title": "Negotiate a higher internet bill down with an agent",
+  "summary": "A poster says their AI agent Muse called their internet provider after a surprise price rise, lowered the monthly bill and won two months of credit.",
+  "domain": "Finance",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "phone calls"
+  ],
+  "agent_role": "The agent contacted customer care and negotiated live; the poster did not call or wait on hold.",
+  "outcome": "The poster reports a lower monthly bill and a credit for the past two months.",
+  "what_they_did": "The poster's internet bill went up without notice. Instead of calling, they had their AI agent, Muse, contact customer care. The agent negotiated with the provider live.",
+  "how_it_went": "The poster says the agent brought the monthly bill down and got a credit back for the previous two months. No amounts are given.",
+  "worth_knowing": null,
+  "prompt": "My [internet provider] bill rose from [old price] to [new price] without notice. Review my account details and recent bills, then prepare a negotiation plan: what to ask for, competitor prices in [your area], and what credit to request. Show me the plan and wait for my approval. Before agreeing to any new plan, contract or charge on my behalf, check with me first, then summarize what was agreed.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "bill negotiation",
+    "customer service",
+    "household bills"
+  ],
+  "source": {
+    "url": "https://x.com/CryptoTamilza/status/2112648082496053496",
+    "name": "X",
+    "author": "@CryptoTamilza",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real-sounding personal task where the agent negotiated live with a provider, but no numbers or details are given and the tone is promotional. Small daily-life boost keeps it at 5."
+  }
+}

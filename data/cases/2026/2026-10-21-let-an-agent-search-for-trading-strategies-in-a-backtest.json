@@ -1,0 +1,42 @@
+{
+  "id": "let-an-agent-search-for-trading-strategies-in-a-backtest",
+  "title": "Let an agent search for trading strategies in a backtest",
+  "summary": "A developer let DeepSeek V3 propose 40 crypto trading strategies scored by a fixed backtest; it first lost to a simple search, then exposed three silent bugs and mapped a modest edge.",
+  "domain": "Finance",
+  "platform": "Custom agent",
+  "model": "DeepSeek V3",
+  "tools": [
+    "OpenRouter",
+    "backtest harness",
+    "Python"
+  ],
+  "agent_role": "The agent proposed strategy settings each round based on what had failed or worked; a fixed testing harness scored every proposal. The developer fixed bugs, compared against a cheap heuristic and judged whether results were real.",
+  "outcome": "Author reports the agent's best pick hit +123.7% but didn't survive an overfitting check; averaging the stable range gave about +75.8% with a much smaller worst case.",
+  "what_they_did": "Pavel Kazantsev built a strict backtest that tests strategies on 451 coins across 76 time windows, with fees. A loop asked DeepSeek V3 for a strategy as structured settings, scored it, and fed results back for 40 rounds. A free random-search method ran alongside as a baseline.",
+  "how_it_went": "The model's early picks lost money while the simple search found about +52%. Flat, zero-trade results led him to three silent bugs. After fixes, the agent mapped where the strategy worked. Its +123.7% peak failed a statistical check, so he averaged the good range instead.",
+  "worth_knowing": "Picking the best of many tries inflates results. He says the agent can't fake scores because it never touches the judge, and a free baseline mattered a lot.",
+  "prompt": "Help me build a loop where you propose trading strategy settings for [market/data set] as structured fields (strategy type, bar size, lookback, holding period, entry threshold). After each proposal, run it through my backtest at [script path], which includes fees and only scores out-of-sample periods. Read the results, explain what you learned, and propose the next one, for [number] rounds. Also run a simple random-search baseline for comparison. Flag any result with zero trades as a possible bug. This is research only: do not place any real trades.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "trading",
+    "backtesting",
+    "strategy search",
+    "overfitting"
+  ],
+  "source": {
+    "url": "https://dev.to/pavel_kkkkazantsev/i-let-an-llm-agent-search-for-trading-strategies-a-simple-heuristic-beat-it-10k2",
+    "name": "DEV Community",
+    "author": "Pavel Kazantsev",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A candid, well-documented finance experiment with code, numbers and a random-search baseline, showing both the agent's value (surfacing silent bugs) and its overfitting trap. Non-coding domain boost applied."
+  }
+}

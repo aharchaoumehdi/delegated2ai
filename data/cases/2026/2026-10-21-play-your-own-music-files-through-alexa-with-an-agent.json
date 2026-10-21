@@ -1,0 +1,42 @@
+{
+  "id": "play-your-own-music-files-through-alexa-with-an-agent",
+  "title": "Play your own music files through Alexa with an agent",
+  "summary": "Pieter Levels had Claude Code help build an Alexa skill that plays his purchased MP3s from cloud storage on voice command; he says it worked and may replace Spotify.",
+  "domain": "Home",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Alexa Developer Console",
+    "Cloudflare R2",
+    "Alexa Routines"
+  ],
+  "agent_role": "Claude Code wrote the skill's code files and guided setup; the author uploaded music, built the skill in the console and added an Alexa Routine by hand.",
+  "outcome": "Author reports that saying \"Alexa, coffee jazz\" now plays his own files, and he plans to cancel Spotify.",
+  "what_they_did": "Pieter Levels put purchased jazz MP3s in a cloud storage bucket. Claude Code wrote the code for a custom Alexa skill it named Jukebox. He built it in Amazon's developer console and added a routine so a short phrase starts it.",
+  "how_it_went": "He says it worked, with playlists for coffee jazz, bossa nova and lofi. New music dropped into storage plays automatically.",
+  "worth_knowing": "He had to manually add an Alexa Routine so \"Alexa, coffee jazz\" maps to \"Alexa, ask the jukebox to play coffee jazz.\"",
+  "prompt": "Help me build a custom Alexa skill that plays my own music files. My MP3s are in [cloud storage bucket]. Organize them into playlists by folder, like [genre names]. Write the skill code, then walk me step by step through creating and testing it in the Alexa Developer Console. Explain how to set up an Alexa Routine so I can say a short phrase like \"Alexa, [playlist name]\". Show me the plan before writing code, and don't make any files public without asking me.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "smart speaker",
+    "music",
+    "home automation",
+    "voice"
+  ],
+  "source": {
+    "url": "https://x.com/levelsio/status/2112586600194424926",
+    "name": "X",
+    "author": "@levelsio",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, relatable home project with clear steps and a clear split between what Claude Code did and the manual setup; lightly evidenced but easy to try."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "give-your-coding-agents-one-notes-file-per-app-feature",
+  "title": "Give your coding agents one notes file per app feature",
+  "summary": "A team at Kodea keeps about 93 short feature files that coding agents read before editing; they say agents guess less and break fewer things.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "markdown files",
+    "automatic build checks"
+  ],
+  "agent_role": "Coding agents read an index plus one feature file, then change and test that feature using the listed test scenarios. Humans set up the files and the rule that every code change updates its file.",
+  "outcome": "Author reports agents stop guessing, use less context, test more accurately and cause fewer surprise breaks.",
+  "what_they_did": "A developer's team at Kodea wrote one plain-text file per app feature, about 93 in all. Each lists who can use the feature, its pages, named test scenarios, the full flow, how to log in to test, and known traps. Agents read the index and only the file they need. An automatic check fails any code change that touches a feature without updating its file.",
+  "how_it_went": "The author says agents stop guessing, use less context, test the right things as the right user, and break less. New sessions start fast because no one re-explains the app.",
+  "worth_knowing": "The rule that keeps it working is enforcement: the build fails if a change doesn't update the matching feature file, so the notes never go stale.",
+  "prompt": "Read the code for [your app or repo]. For each user-facing feature, draft one short notes file covering: who can use it, its pages or routes, named test scenarios, the step-by-step flow, how to log in to test it, and known gotchas. Also draft an index file listing all features. Show me the list of features and one sample file first and wait for my approval before writing the rest. Then suggest a simple check for our build that fails when a code change touches a feature without updating its notes file.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "coding agents",
+    "documentation",
+    "testing",
+    "agent context"
+  ],
+  "source": {
+    "url": "https://x.com/AndresRuggiero3/status/2112577331843969058",
+    "name": "X",
+    "author": "@AndresRuggiero3",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real team practice: about 93 per-feature notes files that coding agents read before changing code, kept current by an automatic check. It is useful but lightly evidenced, with no numbers on results."
+  }
+}

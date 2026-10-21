@@ -1,0 +1,41 @@
+{
+  "id": "find-your-buyers-top-reason-from-sales-call-transcripts",
+  "title": "Find your buyers' top reason from sales call transcripts",
+  "summary": "A marketer had Claude tally why 25 clients booked; most cited bad-quality leads, and the poster says ads built on that closed $30K in 10 days.",
+  "domain": "Marketing",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "Claude",
+    "Fathom"
+  ],
+  "agent_role": "Claude went through each transcript, pulled out booking reasons, pains and goals in the buyers' words, and counted how often each came up. The human chose the throughline and wrote the ads.",
+  "outcome": "The author reports 14 of 25 buyers cited getting the wrong leads, and that ads built on it closed $30K in 10 days with $50K in the pipeline.",
+  "what_they_did": "The poster loaded their last 25 qualified sales call transcripts into Claude. They asked it to note why each client booked, their problems, wants and current situation. Claude logged how often each reason appeared. The team then built ads around the top reason.",
+  "how_it_went": "They say 14 of 25 were getting the wrong people as leads, and nobody asked for more leads. For a coaching business, they report $30K closed in the first 10 days of ads and over $50K in the pipeline.",
+  "worth_knowing": "The poster stresses keeping the buyers' exact words, not paraphrases, when writing the ads.",
+  "prompt": "Here are transcripts from my last [number] qualified sales calls: [paste or attach transcripts]. For each call, note in the buyer's exact words: why they booked, their problems, what they want, the outcome they hope for, and their current situation. Then group similar reasons and count how often each appears across all calls. Show me a ranked table with counts and example quotes. Finally, suggest 10 ad headlines and one landing page headline built around the top reason, using the buyers' own phrasing.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "sales calls",
+    "ad copy",
+    "customer research",
+    "transcripts"
+  ],
+  "source": {
+    "url": "https://x.com/brillaas/status/2112544386416529669",
+    "name": "X",
+    "author": "@brillaas",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, reproducible workflow of having Claude mine 25 sales call transcripts for recurring buyer reasons, with reported numbers; the AI's role is light analysis rather than tool use, so it is thin."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "research-dark-web-threats-and-map-them-as-a-graph",
+  "title": "Research dark web threats and map them as a graph",
+  "summary": "A security researcher built VoidAccess, which turns one question into a dark web search, filters out noise and unsafe content, and returns a sourced report and graph.",
+  "domain": "Data",
+  "platform": "Custom agent",
+  "model": "Claude Haiku",
+  "tools": [
+    "Tor",
+    "threat intelligence feeds",
+    "VirusTotal",
+    "Have I Been Pwned",
+    "Shodan"
+  ],
+  "agent_role": "The engine searches 12+ dark web search engines and feeds, follows new links, filters content, extracts entities and builds a report on its own. The human only asks the question and sets limits.",
+  "outcome": "The author says the engine runs until the job is done or a time limit hits. The README reports output as a sourced report, searchable graph and exportable threat indicators.",
+  "what_they_did": "Security researcher Katriel built an open-source tool that takes one question, like a ransomware group's name. It searches dark web search engines, code sites and security feeds, follows new links, and drops banned or explicit content. It then pulls out names, addresses and wallets into a linked graph.",
+  "how_it_went": "The author says it removes the need to browse the dark web by hand. A live view shows every link kept or discarded, and results can be exported in common security formats.",
+  "worth_knowing": "It is meant only for authorized security research. A quick test mode runs without the dark web network or an AI key.",
+  "prompt": "Help me run an authorized threat-intelligence investigation on [threat actor or malware name] using VoidAccess. First walk me through installing it and setting up [AI provider] and optional Tor. Then run a shallow investigation, summarize the main actors, infrastructure and indicators found, and list the sources for each. Do not export or share anything until I approve.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "threat intelligence",
+    "dark web",
+    "security research",
+    "investigation"
+  ],
+  "source": {
+    "url": "https://github.com/KatrielMoses/voidaccess",
+    "name": "Hacker News",
+    "author": "Katriel Moses (coding-maniac)",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An open-source pipeline that runs a whole investigation from one question to a sourced report and graph. It is useful for security work, but the post is mostly a feature list without a reported investigation result."
+  }
+}

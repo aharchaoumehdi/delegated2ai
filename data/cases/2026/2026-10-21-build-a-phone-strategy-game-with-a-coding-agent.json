@@ -1,0 +1,42 @@
+{
+  "id": "build-a-phone-strategy-game-with-a-coding-agent",
+  "title": "Build a phone strategy game with a coding agent",
+  "summary": "Simon Willison had coding agents, mainly Claude Code, make 321 commits building a 3D strategy game in the browser, including multiplayer synced by sound between nearby phones.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "GitHub",
+    "web browser"
+  ],
+  "agent_role": "Coding agents wrote the game code across 12 major versions; Simon set goals for each version, playtested and steered, including asking it to make the game more fun.",
+  "outcome": "Author reports a playable browser game for phone and desktop with six maps, a random map generator, 3D units, and local sound-based plus online multiplayer, and says it is actually fun to play.",
+  "what_they_did": "Simon Willison wanted a Command & Conquer style strategy game for his phone. He had coding agents, mostly Claude Code, build it in 12 major versions. Steps added sprites, terrain, 3D models, maps, agent battles and multiplayer. He playtested each version and gave direction.",
+  "how_it_went": "He reports 321 agent commits and a game with 9 buildings, 16 vehicle and infantry types, fog of war and six maps. Two nearby devices can play together using sound to sync the game. He later added online multiplayer.",
+  "worth_knowing": "He says the big jump in fun came from simply telling Claude to \"Make it a LOT more fun\". He also notes the sound-based multiplayer gave him headaches, so he added online play.",
+  "prompt": "Build a browser-based real-time strategy game that works on phone and desktop, in the style of [classic game you like]. Start with a small playable first version: one map, a base, a few units, and simple enemy behaviour. Show me your plan for the first version before writing code. After each version, wait for me to playtest and tell you what to change next, such as new units, terrain, maps or multiplayer. Keep the code in [repo or folder] and commit each working step.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "game development",
+    "strategy game",
+    "multiplayer",
+    "vibe coding"
+  ],
+  "source": {
+    "url": "https://simonwillison.net/2026/Oct/20/battledrones/",
+    "name": "Simon Willison's Weblog",
+    "author": "Simon Willison",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Detailed, well-evidenced build log with playable demo and public code over 321 agent commits, plus an unusual sound-based multiplayer feature; game-building is common but this is richer than most."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "edit-raw-videos-by-giving-notes-to-your-agent",
+  "title": "Edit raw videos by giving notes to your agent",
+  "summary": "A developer packaged a free skill that lets Claude Code cut, caption and add motion graphics to raw videos, then learns the creator's notes as lasting style rules.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "FFmpeg",
+    "Groq transcription",
+    "faster-whisper",
+    "HyperFrames",
+    "Chrome"
+  ],
+  "agent_role": "The agent installs tools, transcribes the clip, cuts dead air, adds captions, zooms, color and sound, and renders drafts. The person watches each draft and gives notes until saying final.",
+  "outcome": "Author reports it was tested on Windows 11 with Claude Code for setup, test render, transcription and cutting.",
+  "what_they_did": "A developer built free247editor, a set of instructions a coding agent follows to edit video. You drop a raw clip in an inbox folder and say \"edit this\". The agent transcribes it, removes pauses and retakes, adds captions, zooms and music, and saves a draft. You give notes in plain words, and lasting ones are saved as rules for future edits.",
+  "how_it_went": "The author says it was tested on Windows 11 with Claude Code. Other agents and Mac or Linux are not tested yet.",
+  "worth_knowing": "Editing uses a lot of your agent plan's usage; the author suggests a higher Claude plan if you edit often. It never posts videos for you.",
+  "prompt": "Set up a video editing workflow in [folder]. Install what's missing only after asking me (FFmpeg, a free transcription option). Then take the raw video in [inbox folder]: transcribe it, cut dead air, breaths and retakes, add word-by-word captions in [caption style], a hook in the first 3 seconds, gentle zoom-ins, and background music from [my sounds folder]. Export a vertical 9:16 draft to [outbox folder] and wait for my notes. Save any lasting notes I give as rules in a file and apply them to every future edit. Don't call any paid service or upload anything without asking.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "video editing",
+    "captions",
+    "short-form video",
+    "content creation"
+  ],
+  "source": {
+    "url": "https://github.com/riecodes/free247editor",
+    "name": "GitHub",
+    "author": "riecodes",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A free, reproducible setup that turns a coding agent into a video editor that learns your notes, with clear steps; but no concrete results or sample edits are reported beyond testing on Windows with Claude Code."
+  }
+}

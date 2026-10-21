@@ -1,0 +1,43 @@
+{
+  "id": "compare-a-local-model-and-a-cloud-model-on-a-real-feature",
+  "title": "Compare a local model and a cloud model on a real feature",
+  "summary": "Deepu Sasidharan had coding agents build the same cache feature 12 times; all PRs passed, with Opus scoring 87% at $17.78 versus a local Qwen model at 69% for cents.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "Claude Opus 5.5; Qwen3.8-Flash-Next",
+  "tools": [
+    "Claude Code",
+    "Pi",
+    "llama-server",
+    "GitHub"
+  ],
+  "agent_role": "Each agent measured performance, designed and coded the feature, wrote tests and docs, proved it end to end and opened a PR unattended. The author wrote the task, scored PRs on review questions and CI.",
+  "outcome": "Author reports all 12 runs finished and passed the end-to-end test; best averages were 87% for Opus xhigh at $17.78 and 69% for local Qwen medium at about $0.02 in electricity.",
+  "what_they_did": "The author picked a real roadmap item for his project LlamaStash: save a model's memory cache before unloading and restore it later. He ran six setups, two agent tools, two models and two effort levels, twice each from a fresh copy. A detailed prompt said what \"done\" meant, ending with an open PR.",
+  "how_it_went": "He reports every run finished and passed. Opus scored higher but cost far more; the local model took up to twice as long. With the local model, Claude Code passed automatic checks on 4 of 4 PRs versus 1 of 4 for Pi.",
+  "worth_knowing": "In the first set the agents ran a slow measurement on the laptop CPU for about 50 minutes each; giving the numbers in the prompt made runs cleaner.",
+  "prompt": "You are in a fresh copy of [repo] on branch [branch]. Implement [feature from the roadmap]. First measure [key performance numbers] and save them in a doc. Then design the feature, write it, add tests, update docs and the changelog, and prove it works end to end on an isolated test setup. Run only narrow tests while coding and the full suite once at the end. Do not ask me questions; note any assumptions for the PR. Before opening a PR, show me a summary of the design and test results and wait for my approval.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "model comparison",
+    "local models",
+    "feature build",
+    "cost"
+  ],
+  "source": {
+    "url": "https://dev.to/deepu105/qwen38-flash-next-vs-claude-opus-55-six-way-benchmark-on-a-real-rust-feature-1n98",
+    "name": "DEV Community",
+    "author": "Deepu K Sasidharan",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A benchmark framing, but each run is a real agent building a feature, testing it and opening a PR, with the full prompt, public PRs and cost numbers. Useful for readers weighing a local model."
+  }
+}

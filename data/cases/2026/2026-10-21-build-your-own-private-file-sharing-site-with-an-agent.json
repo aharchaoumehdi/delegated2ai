@@ -1,0 +1,42 @@
+{
+  "id": "build-your-own-private-file-sharing-site-with-an-agent",
+  "title": "Build your own private file-sharing site with an agent",
+  "summary": "A founder asked his Hermes agent over Telegram to build a WeTransfer-style file sharing site on his own domain; he says it works, with codes, expiry and upload alerts.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Telegram",
+    "Cloudflare",
+    "Tailscale"
+  ],
+  "agent_role": "The agent first shared files straight from the owner's Mac on request, then set up a subdomain and built the sharing service. The human gave the request and set the requirements.",
+  "outcome": "Author reports a working share site with per-link 6-digit codes, auto-deletion, 5 GB client uploads and Telegram alerts, free up to 10 GB.",
+  "what_they_did": "The poster runs an agent called Mero on Hermes, which he messages through Telegram. When a developer needed a client's raw videos, Mero shared them directly from his Mac over the team's private network. That night he had Mero set up a share subdomain and build a file-transfer site on Cloudflare.",
+  "how_it_went": "He says each share gets its own link and 6-digit code, files delete after a time he picks, clients can upload up to 5 GB, and he gets a Telegram ping on opens and uploads.",
+  "worth_knowing": "The author admits it may be abandoned within a week; a home-built tool still needs someone to keep it running.",
+  "prompt": "Build me a private file-sharing site on [your domain] using [hosting service, e.g. Cloudflare]. Each share should get its own link and a 6-digit access code. Let me set how long each share lives, then delete the files automatically. Let clients upload files up to [size limit]. Send me a message on [Telegram or email] when someone opens or uploads. Show me your plan and expected costs first, and wait for my approval before changing my domain settings or deploying.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "file sharing",
+    "self-hosting",
+    "web app",
+    "messaging"
+  ],
+  "source": {
+    "url": "https://x.com/niklas11891/status/2112781012786892909",
+    "name": "X",
+    "author": "@niklas11891",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete case of a messaging-controlled agent building and deploying a private file-sharing service overnight, with specific features. It is self-reported with no code or demo."
+  }
+}

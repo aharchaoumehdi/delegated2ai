@@ -1,0 +1,44 @@
+{
+  "id": "rebuild-a-motion-design-video-as-editable-animation-code",
+  "title": "Rebuild a motion design video as editable animation code",
+  "summary": "Using lovisdotio's skill, Claude rebuilt six AI-generated motion clips as small looping web animations, each checked side by side against the source video frame by frame.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "Python scripts",
+    "ffmpeg",
+    "Playwright browser",
+    "GSAP animation library",
+    "SVG"
+  ],
+  "agent_role": "The agent breaks the video into frames and colors, writes the animation, then renders and compares it to the source and fixes the worst moments. The human supplies the clip and the request.",
+  "outcome": "The author reports six clips rebuilt as 24–60 KB self-contained pages, some as working interactive sites, published in a live gallery.",
+  "what_they_did": "A developer wrote a skill that teaches coding agents to recreate a short animation video as code. The agent pulls frames every quarter second, samples the exact colors, and writes one animation timeline. Then it renders its version and compares it with the original, frame by frame, scoring the worst mismatches. Screen recordings of fake websites become real clickable pages.",
+  "how_it_went": "The author shows six clips made with a video model and rebuilt by Claude. Each weighs tens of kilobytes, loops cleanly and stays sharp at any size.",
+  "worth_knowing": "Agents can't watch video, so without the frame checks they guess timing and colors or quietly embed the video. The scripts need Python, ffmpeg and a headless browser installed.",
+  "prompt": "Rebuild [clip.mp4] as a self-contained web page using SVG shapes animated by one timeline, looping seamlessly. First extract frames every 0.25 seconds, the frames around each cut, and the exact color palette. Keep all text exactly as in the source. Do not embed or trace the video. After building, render your version and compare it side by side with the source at many timestamps, list the five worst-matching moments, and fix them. Show me the comparison before calling it done.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "motion design",
+    "animation",
+    "video to code",
+    "visual checking"
+  ],
+  "source": {
+    "url": "https://github.com/lovisdotio/motion2code",
+    "name": "GitHub",
+    "author": "lovisdotio",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, novel creative workflow where the agent studies a video, rebuilds it as code and checks frame by frame, with a public gallery of six rebuilt clips and open code."
+  }
+}

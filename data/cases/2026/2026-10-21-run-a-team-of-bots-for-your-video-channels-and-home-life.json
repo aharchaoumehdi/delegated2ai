@@ -1,0 +1,43 @@
+{
+  "id": "run-a-team-of-bots-for-your-video-channels-and-home-life",
+  "title": "Run a team of bots for your video channels and home life",
+  "summary": "A creator says her fleet of named bots helps run 7 YouTube channels, posting 21 short talking videos, 14 extra-footage clips and a carousel daily, alongside a full-time job.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Gmail",
+    "Google Calendar",
+    "YouTube",
+    "X"
+  ],
+  "agent_role": "Bots plan the day, lock topics and scripts, find trends, edit video, write posts, research a newsletter, triage email and track finances. The creator records footage and joins a nightly session to approve topics.",
+  "outcome": "Author reports managing 7 YouTube channels and 21 short talking videos, 14 extra-footage clips and 1 carousel per day while holding a full-time job.",
+  "what_they_did": "The poster gave each job to a named bot. One plans her day and schedules posts, and one finds trending videos to adapt. Others edit short and long videos for different channels, and one writes her posts on X. Others research her newsletter, triage personal email and calendar, and track her retirement savings plan. A separate bot fixes the other bots and runs weekly checkups.",
+  "how_it_went": "She says the bots now handle 7 YouTube channels and a daily output of 21 short talking videos, 14 extra-footage clips and one carousel. She also says she built a dashboard to track the bots' tasks in one prompt and 5 minutes.",
+  "worth_knowing": "She gives no setup details or tools for each bot. This is a list of roles, not a how-to.",
+  "prompt": "Act as my content planner. Each evening, review trending videos in [your niche] on [platforms]. Propose 3 topics with a hook and a short script for each. Wait for my approval. Then draft a posting schedule for tomorrow in [your time zone]. Show me the schedule before posting or scheduling anything.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "content creation",
+    "video editing",
+    "social media",
+    "personal assistant"
+  ],
+  "source": {
+    "url": "https://x.com/ashnichrist/status/2112669769077789026",
+    "name": "X",
+    "author": "@ashnichrist",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A creator lists a named fleet of bots that plan, script, edit and schedule content across seven YouTube channels, plus personal and finance chores. The breadth is interesting, but there is no setup detail or proof."
+  }
+}

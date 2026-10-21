@@ -1,0 +1,44 @@
+{
+  "id": "build-a-small-3d-game-from-a-milestone-plan-with-an-agent",
+  "title": "Build a small 3D game from a milestone plan with an agent",
+  "summary": "A game maker says Claude Code built most of Mowtopia, a Unity planet-mowing game, in two days from a 7-milestone plan, with 60 passing tests and AI-made art.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Unity 6",
+    "Magnific",
+    "Meshy",
+    "three.js",
+    "Remotion"
+  ],
+  "agent_role": "Claude Code built the game one plan milestone at a time; the author wrote the plan and generated art, 3D models and audio with image and 3D tools.",
+  "outcome": "Author reports a working game in two days with 60 passing tests and a 15 MB web build, with art costing about 7,010 credits on the cheapest tier.",
+  "what_they_did": "The author wrote a 7-milestone product plan for a cozy Unity game about mowing small planets. Claude Code built it one milestone at a time. Concept art and 3D models came from image and 3D generators on Magnific.",
+  "how_it_went": "They say Claude Code built most of it in two days, with 60 passing tests and a 15 MB web build. A separate three.js game had a first version in 30 minutes from a 7-line plan.",
+  "worth_knowing": "Turning concepts into 3D models was the biggest cost, about 5,240 of the 7,010 credits.",
+  "prompt": "Help me build a small [game engine] game: [one-paragraph game idea]. First, write a plan split into about 7 milestones, each with clear goals and tests. Show me the plan and wait for my approval. Then build one milestone at a time, write automatic tests for each, run them, and stop to show me progress before moving on. Tell me which art, models and sounds I need to supply, with file names and formats.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "game development",
+    "3d models",
+    "unity",
+    "project planning"
+  ],
+  "source": {
+    "url": "https://x.com/froessell/status/2112629173441495320",
+    "name": "X",
+    "author": "@froessell",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Gives concrete numbers for an agent-built game and its art costs, but most of the post is a tool list and the build steps are thin."
+  }
+}

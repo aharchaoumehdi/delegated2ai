@@ -1,0 +1,41 @@
+{
+  "id": "contest-a-transit-fine-abroad-with-an-agent",
+  "title": "Contest a transit fine abroad with an agent",
+  "summary": "A traveler says their AI agent filed a claim over a €140 Paris transit fine and emailed RATP and the Canadian consulate; RATP accepted the refund within three days.",
+  "domain": "Legal",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "email",
+    "online claim form"
+  ],
+  "agent_role": "The agent filed the claim and sent emails to the transit operator and the consulate; the poster filled out no forms.",
+  "outcome": "The poster reports RATP accepted the refund of the €140 fine within three days.",
+  "what_they_did": "The poster was fined €140 on the Paris transit system. They had their AI agent file a claim with RATP, the transit operator. The agent also emailed RATP and the Canadian consulate.",
+  "how_it_went": "The poster says it took three days, they filled out zero forms, and RATP accepted the refund. A video accompanies the post.",
+  "worth_knowing": null,
+  "prompt": "I was fined [amount] by [transit operator or agency] in [city] on [date] for [reason]. Here are my ticket, receipt and notes: [details]. Find the official way to contest this fine, then draft the claim and any supporting emails, including one to [my consulate] if useful. Show me every draft and the form answers, and wait for my approval before submitting or sending anything.",
+  "evidence": "Demo",
+  "difficulty": "Beginner",
+  "tags": [
+    "fine dispute",
+    "travel",
+    "refund claim",
+    "paperwork"
+  ],
+  "source": {
+    "url": "https://x.com/fabiandelafu/status/2112573329794281956",
+    "name": "X",
+    "author": "@fabiandelafu",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, multi-step dispute handled by an agent with a stated result and a video, though the agent and steps are not detailed. Non-everyday, daily-life use earns a small boost."
+  }
+}

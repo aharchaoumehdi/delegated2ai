@@ -1,0 +1,44 @@
+{
+  "id": "turn-a-spreadsheet-of-ideas-into-short-videos-with-n8n",
+  "title": "Turn a spreadsheet of ideas into short videos with n8n",
+  "summary": "A creator built an n8n pipeline that wrote a script, gathered media, added a voice, assembled a reel and sent it to Telegram for review; they say it worked end to end.",
+  "domain": "Creative",
+  "platform": "n8n",
+  "model": null,
+  "tools": [
+    "n8n",
+    "Airtable",
+    "Text-to-speech",
+    "FFmpeg",
+    "Telegram"
+  ],
+  "agent_role": "The pipeline pulled an idea from Airtable, wrote the script, gathered media, generated narration, stitched the video and sent it for review. The human approved it in Telegram before the result was logged back to Airtable.",
+  "outcome": "Author reports the first reel was produced end to end, though the voice sounded creepy.",
+  "what_they_did": "The poster set up an automation in n8n that starts from an idea stored in an Airtable spreadsheet. It writes a script, collects images or clips, and adds a computer voice. A video tool then stitches everything into a short reel. The finished reel goes to Telegram for the poster to review, and the result is saved back to Airtable.",
+  "how_it_went": "The author says the whole chain worked on the first reel. The voice sounded creepy, but they found that one rough full run taught them more than polishing each part separately.",
+  "worth_knowing": "The author suggests getting a rough version working from start to finish before perfecting any single step. The computer voice was the weakest part.",
+  "prompt": "Help me build an n8n workflow that turns ideas from my [Airtable base / spreadsheet] into short vertical videos. For each new idea: write a 30-second script, find matching images or clips from [media source], create a voiceover with [text-to-speech service], and assemble the video. Then send it to me on [Telegram / email] for review. Show me the workflow plan first. Do not post anything publicly. Only mark an idea as done in the spreadsheet after I approve the video.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "video creation",
+    "social media",
+    "content automation",
+    "short-form video"
+  ],
+  "source": {
+    "url": "https://x.com/vtguy65/status/2112772219546063320",
+    "name": "X",
+    "author": "@vtguy65",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine multi-step automation that ran from an idea list to a finished video with a human review step, but the post is brief and gives few details."
+  }
+}

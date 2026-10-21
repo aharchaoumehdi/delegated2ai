@@ -1,0 +1,42 @@
+{
+  "id": "fix-a-broken-scan-to-folder-setup-with-an-agent",
+  "title": "Fix a broken scan-to-folder setup with an agent",
+  "summary": "A home user asked the Hermes agent, running on a local Qwen model, to fix his scanner's broken send-to-drive feature; he says it fixed it within minutes.",
+  "domain": "Home",
+  "platform": "Hermes",
+  "model": "Qwen-Next-3.8-Flash",
+  "tools": [
+    "password vault",
+    "scanner admin page",
+    "home network drive"
+  ],
+  "agent_role": "The agent stored the scanner's admin password, connected to the device and fixed the setting. The human only described the problem and gave the password.",
+  "outcome": "Author reports the agent fixed the scanner within a few minutes, saving him a lot of time.",
+  "what_they_did": "The poster's printer-scanner sends scanned PDFs to a shared folder on his home storage drive. One day it stopped working. He asked his Hermes agent to look into it. The agent saved the scanner's admin password in its secure vault, connected to the scanner and found the problem.",
+  "how_it_went": "He says it had the problem fixed within a few minutes. Everything ran on his own computer using a local Qwen model.",
+  "worth_knowing": "The agent needed the scanner's admin password. He had it kept in the agent's secure vault rather than pasted in plain text.",
+  "prompt": "My [scanner model] should save scans as PDFs to [shared folder] on my home network drive, but it stopped working. Connect to the scanner's admin page at [scanner address] using the password I'll give you, and store it securely. Check the scan-to-folder settings and the drive's sharing settings. Tell me what's wrong and what you plan to change before you change anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "home it",
+    "troubleshooting",
+    "scanner",
+    "local ai"
+  ],
+  "source": {
+    "url": "https://x.com/PaulWavelength/status/2112638539792048253",
+    "name": "X",
+    "author": "@PaulWavelength",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete home fix: a local agent logged into a scanner's admin page and repaired scan-to-network-drive in minutes. It is short, but practical and unusual, and a home example earns a small boost."
+  }
+}

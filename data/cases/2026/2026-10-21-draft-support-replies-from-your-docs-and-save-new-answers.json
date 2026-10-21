@@ -1,0 +1,45 @@
+{
+  "id": "draft-support-replies-from-your-docs-and-save-new-answers",
+  "title": "Draft support replies from your docs and save new answers",
+  "summary": "A community manager built answerLoops, where one agent drafts replies to Discord, Slack and GitHub questions from a knowledge base and another scores confidence before human review.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Mastra",
+    "CopilotKit",
+    "Discord",
+    "Slack",
+    "GitHub",
+    "Notion"
+  ],
+  "agent_role": "One agent drafts answers from the knowledge base and a second scores confidence; humans review drafts, approve new articles and decide whether to allow automatic replies.",
+  "outcome": null,
+  "what_they_did": "Nathan Tarbert answers community questions for CopilotKit and built an open-source tool to help. It pulls questions from Discord, Slack, GitHub and Telegram into one dashboard. One agent drafts replies from imported docs and another scores how confident and complete each draft is. Unanswered questions go to a review queue, and solved tickets can be turned into new help articles.",
+  "how_it_went": null,
+  "worth_knowing": "Automatic replies are off by default. If no article matches a question, the assistant falls back to general knowledge that may not fit your product, so filling gaps matters.",
+  "prompt": "Gather the new questions from [your support channels, e.g. Discord and email] since [time]. For each, search [your docs or help articles] and draft a reply that cites the article used. Rate your confidence for each draft and flag questions the docs don't cover. Show me all drafts and the list of gaps, and wait for my approval before sending anything or adding new articles.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "customer support",
+    "knowledge base",
+    "community",
+    "drafting replies"
+  ],
+  "source": {
+    "url": "https://dev.to/nathan_tarbert/your-team-has-answered-this-before-im-building-a-tool-that-remembers-5604",
+    "name": "DEV Community",
+    "author": "Nathan Tarbert",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real support workflow the author built for their own community work, with agents drafting and grading answers and humans reviewing; mostly a feature tour with no reported results."
+  }
+}

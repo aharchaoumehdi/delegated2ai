@@ -1,0 +1,44 @@
+{
+  "id": "contribute-to-open-source-projects-with-an-agent-you-approve",
+  "title": "Contribute to open-source projects with an agent you approve",
+  "summary": "Hamza Hasanain had a coding agent find, claim and fix GitLab issues with his approval on every push; he reports 20 changes in a week, 15 merged.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "GitLab",
+    "GitLab command-line tool",
+    "git",
+    "Antigravity CLI",
+    "custom approval hooks"
+  ],
+  "agent_role": "The agent scouts free issues, writes plans, drafts claim comments, writes code and change descriptions, and checks test pipelines. The human approves every push, comment and post to GitLab.",
+  "outcome": "Author reports 20 merge requests across 7 GitLab projects in one hackathon week, with 15 merged, 5 in review and none closed.",
+  "what_they_did": "A developer returning to GitLab contributions wrote the process down as rules and eight workflows a coding agent can follow. The agent finds simple open issues, analyzes them, posts a one-line claim, writes the fix and the description, then follows up on reviews. A guard script blocks pushes to the main project and asks him before every push or GitLab comment. He used Claude Code for the hackathon and shared the kit publicly.",
+  "how_it_went": "He reports 20 merge requests in 7 projects in one week, with 15 merged and none closed. A later demo run opened 4 more, one already merged. Review comments went into per-project notes so the agent learns.",
+  "worth_knowing": "Rules written in instructions are only suggestions; an agent with full computer access could get around them. He keeps permission prompts on and uses hard-blocking scripts. He also rewrote the wording guide from his own past comments so posts don't sound generic.",
+  "prompt": "Help me contribute to [project name] on GitLab. Find 3 to 5 small, unassigned issues, read their comments, and rank them. For each, write a short plan and a go or no-go. For the one I pick, draft a one-line claim comment and wait for my OK before posting. Then write the fix on a feature branch in my fork, run light checks only, and draft a merge request description with a real reproduction and test output. Show me every push and every comment and wait for my approval before sending anything. Never push to the main project, and add one honest line noting AI was used.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "open source",
+    "code contribution",
+    "human approval",
+    "issue triage"
+  ],
+  "source": {
+    "url": "https://dev.to/hamzahassanain0/how-i-contribute-to-gitlab-with-a-coding-agent-and-approve-every-push-2a50",
+    "name": "DEV Community",
+    "author": "Hamza Hasanain",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 8,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Detailed, public kit with a clear human-approval loop, real merge numbers and a step-by-step walkthrough; a useful and reproducible pattern for open-source contribution."
+  }
+}

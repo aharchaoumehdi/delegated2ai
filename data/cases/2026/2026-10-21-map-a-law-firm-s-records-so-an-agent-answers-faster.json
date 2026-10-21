@@ -1,0 +1,43 @@
+{
+  "id": "map-a-law-firm-s-records-so-an-agent-answers-faster",
+  "title": "Map a law firm's records so an agent answers faster",
+  "summary": "Lexifina built a linked map of a simulated law firm's matters, documents and emails; they report their agent answered complex questions as accurately with 73% less time.",
+  "domain": "Legal",
+  "platform": "Custom agent",
+  "model": "gpt-5.4-mini",
+  "tools": [
+    "knowledge graph",
+    "document text extraction",
+    "time ledgers",
+    "email archive"
+  ],
+  "agent_role": "Fixed rules and a small model build the map of who, what and when across the firm. The agent then searches that map to answer questions. The team designed the rules and tests.",
+  "outcome": "Lexifina reports 73% less time to answer, 92% fewer input tokens read and 66% fewer model calls, at the same accuracy.",
+  "what_they_did": "Lexifina's team loaded a simulated firm's exported records into one linked map. These covered 120 matters, 245 documents, 1,459 emails and time ledgers. Simple rules pulled out dates, liability caps and cases. A small model read only the 1.6% of sentences the rules flagged but could not read. An agent then answered complex questions using the map.",
+  "how_it_went": "They report the agent was as accurate with 73% less time and 92% fewer tokens read. The rules-plus-model approach cost under 5 cents and beat sending every sentence to the model, which cost 27 times more.",
+  "worth_knowing": "The model reading every sentence mistook service credits for liability caps. Some deadlines in scanned court orders were missed because a line break hid their context.",
+  "prompt": "Using the exported files in [folder of client, matter and document records], build a linked map of my practice. Connect each matter to its client, other side, team, documents, deadlines and amounts. Pull dates and liability limits with simple patterns first. Only send sentences you can't read to the model. Show me a summary of what you linked and anything you were unsure about. Then answer: [your question about matters or deadlines], citing the documents you used. Don't change or send anything.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "legal",
+    "knowledge graph",
+    "document extraction",
+    "law firm"
+  ],
+  "source": {
+    "url": "https://lexifina.com/blog/building-full-firm-knowledge-graphs-to-dramatically-speed-up-agents",
+    "name": "Hacker News",
+    "author": "Lexifina",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, numbers-backed experiment giving a question-answering agent a map of a whole law firm's records. It is a simulated firm and partly a vendor blog, but legal is a rare domain."
+  }
+}

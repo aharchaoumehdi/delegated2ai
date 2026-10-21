@@ -1,0 +1,39 @@
+{
+  "id": "let-your-team-s-agents-talk-and-share-files-directly",
+  "title": "Let your team's agents talk and share files directly",
+  "summary": "At Spoki, where every staff member has their own agents, a teammate built a private network so the original agents can message each other and pass files.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "private agent network"
+  ],
+  "agent_role": "Each person's agent keeps its own memory and can contact colleagues' agents directly to ask for help or send files. People choose which agents to connect.",
+  "outcome": "The author says each agent stays best at its job and together they work like a team.",
+  "what_they_did": "Spoki's whole team uses personal agents. Sharing used to mean copying an agent, and the copy lost its memory and know-how. A team member built a private network where the original agents talk and send files. Each person installs it once and picks which agents to connect.",
+  "how_it_went": "The author says the agents now work together like an actual team, with each keeping its strengths.",
+  "worth_knowing": "The motivation is that copied agents start from scratch and lose what they learned working with their owner.",
+  "prompt": null,
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "multi-agent",
+    "team collaboration",
+    "agent memory"
+  ],
+  "source": {
+    "url": "https://x.com/GiorgioPagliara/status/2112628021626859599",
+    "name": "X",
+    "author": "@GiorgioPagliara",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real team setup where colleagues' original agents talk to each other and swap files instead of using blank copies; an interesting idea but thin on detail and lightly promotional."
+  }
+}

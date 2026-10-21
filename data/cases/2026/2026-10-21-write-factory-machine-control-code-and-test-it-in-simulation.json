@@ -1,0 +1,41 @@
+{
+  "id": "write-factory-machine-control-code-and-test-it-in-simulation",
+  "title": "Write factory machine control code and test it in simulation",
+  "summary": "A controls instructor had Claude Code write one conveyor program in five factory-controller languages, then imported it into Siemens software and ran it against a simulated factory.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Siemens TIA Portal",
+    "Factory I/O simulator"
+  ],
+  "agent_role": "Claude Code wrote the conveyor control logic in ladder, function block, structured text, statement list and step-sequence formats. The author imported the code, ran it in simulation and judged what was right or wrong.",
+  "outcome": "Author says he documented what the agent got right and wrong, but the post itself gives no specific results.",
+  "what_they_did": "Markus Splawn, who runs a community teaching factory-controller programming with AI, asked Claude Code to write the same conveyor program five times. Each version used a different language for industrial controllers. He imported all five into Siemens TIA Portal, the software used to program those controllers. Then he ran them against Factory I/O, a simulated factory line.",
+  "how_it_went": "The author says he wrote up what the agent got right, what it got wrong, and the prompts he used. The details are on his community page, not in the post.",
+  "worth_knowing": "His community's rules: test only in simulation, never connect AI to a live machine, and never let AI write safety logic. Give the platform and version, and paste real exports rather than letting the model guess.",
+  "prompt": "Write a simple conveyor control program for [controller platform and version], for example start/stop buttons, a motor output and a photo-eye sensor that stops the belt when a part arrives. Produce the same logic in [list of languages, e.g. ladder and structured text]. Use these tag names and addresses: [paste your I/O list]. Give each version as a file I can import, plus a table of every tag used. List any assumptions you made. Do not include any safety logic. I will only test this in a simulator such as [your simulator], never on a real machine.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "plc programming",
+    "industrial automation",
+    "simulation",
+    "code generation"
+  ],
+  "source": {
+    "url": "https://x.com/Markus_864/status/2112529347244421450",
+    "name": "X",
+    "author": "@Markus_864",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A rare industrial-automation use: Claude Code wrote the same conveyor control program in five languages, which the author ran in a factory simulator. The results and prompts sit behind a community link that partly promotes paid content, so evidence is thin."
+  }
+}

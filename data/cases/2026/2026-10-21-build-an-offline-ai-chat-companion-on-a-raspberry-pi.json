@@ -1,0 +1,41 @@
+{
+  "id": "build-an-offline-ai-chat-companion-on-a-raspberry-pi",
+  "title": "Build an offline AI chat companion on a Raspberry Pi",
+  "summary": "A founder with no hardware background says Claude Code helped build Hans, a keyboard-and-screen AI beaver running Gemma 4 offline on a Raspberry Pi 5.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Raspberry Pi 5",
+    "Gemma 4"
+  ],
+  "agent_role": "Claude Code guided and built the software and setup for the device; the human assembled the hardware and directed the project.",
+  "outcome": "The author shows a working first version in a video: typing to Hans and getting answers on a screen with no internet.",
+  "what_they_did": "The poster, who says they know nothing about hardware, used Claude Code to build Hans. Hans is a beaver-themed AI companion. You type on a keyboard and he replies on a screen. A small open model, Gemma 4, runs on a Raspberry Pi 5.",
+  "how_it_went": "They share a video of the first working version answering typed messages fully offline.",
+  "worth_knowing": null,
+  "prompt": "I have a Raspberry Pi 5, a keyboard and a small screen, and no hardware experience. Help me build an offline chat companion called [name] with a [personality]. Pick a small open model that runs locally on the Pi, then walk me through setup step by step. Write the code for a simple text chat shown full-screen. Explain each command before running it, and ask before installing anything or changing system settings.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "raspberry pi",
+    "local ai",
+    "hardware project",
+    "companion device"
+  ],
+  "source": {
+    "url": "https://x.com/vlady_nyz/status/2112615641702408508",
+    "name": "X",
+    "author": "@vlady_nyz",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A non-hardware person used Claude Code to build an offline AI companion device on a Raspberry Pi, shown in a video, but steps and details are thin."
+  }
+}

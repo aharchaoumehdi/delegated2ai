@@ -1,0 +1,42 @@
+{
+  "id": "run-a-coding-agent-on-a-free-model-on-your-own-computer",
+  "title": "Run a coding agent on a free model on your own computer",
+  "summary": "A developer connected Claude Code to a local model through Ollama and had it build a small Java task manager, which it planned, wrote, ran and fixed.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "qwen3.5:9b (via Ollama)",
+  "tools": [
+    "Ollama",
+    "IntelliJ IDEA",
+    "terminal"
+  ],
+  "agent_role": "Claude Code planned the app, created the files, ran the program and fixed its own errors; the author approved each action.",
+  "outcome": "The author reports the agent built and ran a working console task manager, with local quality good for small tasks.",
+  "what_they_did": "The author installed Claude Code and ran it inside IntelliJ's built-in terminal. They downloaded a coding model with Ollama and pointed Claude Code at it instead of the cloud. They then asked it to build a simple Java task manager that saves tasks to a file.",
+  "how_it_went": "The author says the agent planned the work, created the files, ran the program and fixed its own errors. They rate local quality as good for small tasks, with speed depending on your hardware.",
+  "worth_knowing": "Your code stays on your machine and there is no per-request cost, but a small local model is slower and weaker than the cloud version.",
+  "prompt": "Create a simple [language] console app: a [type of app, e.g. task manager]. Users can [list the actions, e.g. add, list, complete and delete items]. Save data to a text file so it persists. Keep it to 2-3 files. Show me your plan first and ask before creating or changing files, then run the app and fix any errors you find.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "local models",
+    "coding setup",
+    "privacy",
+    "java"
+  ],
+  "source": {
+    "url": "https://dev.to/mohammed_sebaa_2610/running-claude-code-with-ollama-and-local-models-4c49",
+    "name": "DEV Community",
+    "author": "SEBAA Mohammed",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A clear step-by-step guide to running Claude Code on a free local model, tested on a small Java app; useful for privacy but mostly a setup tutorial with a basic demo."
+  }
+}

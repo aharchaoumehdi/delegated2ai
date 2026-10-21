@@ -1,0 +1,42 @@
+{
+  "id": "redesign-your-website-and-diagram-it-with-agent-add-ons",
+  "title": "Redesign your website and diagram it with agent add-ons",
+  "summary": "Erik Hanchett had his Kiro agent use two add-on skills: one gave a plain cat website a sticker-style redesign, the other drew a diagram of how it works.",
+  "domain": "Software",
+  "platform": "Kiro",
+  "model": null,
+  "tools": [
+    "Impeccable skill",
+    "Diagram Design skill",
+    "npx"
+  ],
+  "agent_role": "The agent studied the project, asked questions, proposed five or six design directions and rebuilt the site in the chosen one, then picked and drew a flow diagram unprompted. The author chose the design direction.",
+  "outcome": "Author says the redesigned site looked much more polished, and the diagram correctly showed the visitor flow and local saving.",
+  "what_they_did": "Erik Hanchett had a model build a simple cat-spotting website. He installed two add-on skills into his Kiro agent. Impeccable scanned the project, asked questions, wrote a product notes file and offered design directions. Diagram Design drew a diagram of the site without being told what to show.",
+  "how_it_went": "He picked the sticker direction and says it kept the features while looking far more polished. The diagram showed clicks, count updates and saving to the browser, in the site's own pink style.",
+  "worth_knowing": "Read a skill's instructions and scripts before installing; they run with your agent's permissions, like any downloaded package.",
+  "prompt": "Look through my website project at [project folder] and ask me about anything you can't work out, like audience and tone. Then propose five design directions and build each on its own branch so I can compare them. Keep all features working. After I choose one, draw a single-file diagram showing how a visitor's actions flow through the site and where data is saved. Don't merge anything until I approve.",
+  "evidence": "Demo",
+  "difficulty": "Beginner",
+  "tags": [
+    "web design",
+    "diagrams",
+    "agent skills",
+    "frontend"
+  ],
+  "source": {
+    "url": "https://dev.to/erikch/2-agent-skills-every-frontend-developer-should-try-16pl",
+    "name": "DEV Community",
+    "author": "Erik Hanchett",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Partly a skills roundup, but the author shows a concrete before-and-after: an agent redesigned a site and drew a diagram of how it works. Easy to reproduce, lightly evidenced."
+  }
+}

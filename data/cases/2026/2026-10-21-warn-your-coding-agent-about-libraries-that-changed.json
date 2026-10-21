@@ -1,0 +1,43 @@
+{
+  "id": "warn-your-coding-agent-about-libraries-that-changed",
+  "title": "Warn your coding agent about libraries that changed",
+  "summary": "A developer built stalemap, which tells coding agents which libraries changed after their training; they report Claude agents passed 89% of test tasks with it versus 68% without.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "claude-sonnet-5-5",
+  "tools": [
+    "TypeScript compiler",
+    "changelogs",
+    "AGENTS.md / CLAUDE.md",
+    "GitHub Actions"
+  ],
+  "agent_role": "The coding agent reads change notes before working and gets compiler errors with fixes after each edit. The person installs the tool and picks the model.",
+  "outcome": "Author reports 89% of sessions passed with stalemap versus 68% with no help and 73% with a plain type-check, across 66 tasks.",
+  "what_they_did": "The author built a tool that checks which project libraries changed since the agent's training cutoff. It writes short change notes into the agent's instructions file. After each edit, it runs the project's type checker and shows the matching note when old code breaks.",
+  "how_it_went": "In a blind test of 66 tasks, the author reports Claude agents passed 89% of sessions with the tool. That compares with 68% with no help.",
+  "worth_knowing": "It only covers JavaScript and TypeScript projects. The setup for Cursor, Codex and OpenCode hasn't been tried in real installs yet.",
+  "prompt": "Before you write code in [project folder], check which of my dependencies have new major versions released after your training cutoff. For each one, list the removed or renamed functions and options we actually use, citing the changelog. Add a short notes section to CLAUDE.md. Show me the notes before saving. After each edit, run the type checker and fix errors using those notes.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "dependencies",
+    "coding agents",
+    "outdated knowledge",
+    "type checking"
+  ],
+  "source": {
+    "url": "https://github.com/Umair/stalemap",
+    "name": "GitHub",
+    "author": "Umair",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A tool, but it shows a specific workflow (keeping a coding agent current on changed libraries) with a measured 66-task test. Useful and reproducible, though it is coding-focused and author-run."
+  }
+}

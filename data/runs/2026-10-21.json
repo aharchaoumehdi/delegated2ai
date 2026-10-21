@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-21",
+  "runs": [
+    {
+      "id": "gh-39596242467-1",
+      "started": "2026-10-21T12:01:39.693Z",
+      "trigger": "schedule",
+      "collect": {
+        "sources": {
+          "x": {
+            "status": "ok",
+            "items": 80,
+            "ms": 744,
+            "fetched": 80,
+            "searches": [
+              {
+                "label": "coding agents in use",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "personal and business agents",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "agents at work",
+                "fetched": 20,
+                "kept": 20
+              }
+            ]
+          },
+          "reddit": {
+            "status": "error",
+            "error": "r/ClaudeAI: HTTP 403 for https://www.reddit.com/r/ClaudeAI/top.json?t=day&limit=25&raw_json=1; r/ClaudeCode: HTTP 403 for https://www.reddit.com/r/ClaudeCode/top.json?t=day&limit=25&raw_json=1; r/ChatGPTCoding: HTTP 403 for https://www.reddit.com/r/ChatGPTCoding/top.json?t=day&limit=25&raw_json=1; r"
+          },
+          "feeds": {
+            "status": "ok",
+            "items": 11,
+            "ms": 1546
+          },
+          "github": {
+            "status": "ok",
+            "items": 48,
+            "ms": 2145
+          },
+          "submissions": {
+            "status": "ok",
+            "items": 0,
+            "ms": 2921
+          },
+          "devto": {
+            "status": "ok",
+            "items": 35,
+            "ms": 8328
+          },
+          "hackernews": {
+            "status": "ok",
+            "items": 79,
+            "ms": 36336
+          }
+        },
+        "raw": 253,
+        "unique_new": 145,
+        "candidates": 115
+      },
+      "curate": {
+        "status": "ok",
+        "model": "claude-opus-5-5",
+        "evaluated": 115,
+        "published": 25,
+        "from_backlog": 8,
+        "queued_for_review": 15,
+        "rejected": 83,
+        "failures": [],
+        "published_ids": [
+          "build-a-dead-man-s-switch-for-your-business-with-an-agent",
+          "give-your-coding-agent-one-set-of-commands-to-check-work",
+          "have-your-agent-reuse-a-teammate-s-task-board-in-a-new-tool",
+          "let-agents-explore-a-virtual-island-before-real-tasks",
+          "point-at-parts-of-your-web-app-to-tell-an-agent-what-to-fix",
+          "set-up-a-sandboxed-coding-agent-with-rule-checks",
+          "turn-a-technical-question-into-an-animated-explainer-video",
+          "turn-uploaded-release-files-into-checked-launch-packages",
+          "contribute-to-open-source-projects-with-an-agent-you-approve",
+          "build-a-phone-strategy-game-with-a-coding-agent",
+          "let-an-agent-search-for-trading-strategies-in-a-backtest",
+          "play-your-own-music-files-through-alexa-with-an-agent",
+          "rebuild-a-motion-design-video-as-editable-animation-code",
+          "find-code-your-software-exposes-but-doesn-t-need-to",
+          "build-a-small-3d-game-from-a-milestone-plan-with-an-agent",
+          "fix-a-broken-scan-to-folder-setup-with-an-agent",
+          "contest-a-transit-fine-abroad-with-an-agent",
+          "find-duplicate-subscription-charges-and-claim-refunds",
+          "build-your-own-private-file-sharing-site-with-an-agent",
+          "warn-your-coding-agent-about-libraries-that-changed",
+          "edit-raw-videos-by-giving-notes-to-your-agent",
+          "compare-a-local-model-and-a-cloud-model-on-a-real-feature",
+          "map-a-law-firm-s-records-so-an-agent-answers-faster",
+          "build-an-offline-ai-chat-companion-on-a-raspberry-pi",
+          "write-factory-machine-control-code-and-test-it-in-simulation"
+        ]
+      },
+      "enrich": {
+        "needed": 0,
+        "written": 0,
+        "failures": [],
+        "summaries": {
+          "needed": 0,
+          "written": 0,
+          "failures": []
+        }
+      }
+    }
+  ]
+}

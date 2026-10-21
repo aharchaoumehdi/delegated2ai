@@ -1,0 +1,45 @@
+{
+  "id": "hand-your-company-admin-and-paperwork-to-your-own-agent",
+  "title": "Hand your company admin and paperwork to your own agent",
+  "summary": "A CEO says his self-built agent now handles admin, tax, accounting and legal busywork across his companies, plus texts, email and financial accounts, with his approval needed for payments.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "email",
+    "text messages",
+    "voicemail",
+    "bank accounts",
+    "brokerage accounts",
+    "crypto wallets"
+  ],
+  "agent_role": "The agent handles admin, tax, accounting and legal busywork and manages messages and accounts. The CEO approves anything that sends money, and human staff do the final check.",
+  "outcome": "Author reports his overhead as CEO has dropped a lot.",
+  "what_they_did": "Over a couple of weeks, the author handed paperwork across his companies to an agent he built himself. That covers admin, tax, accounting and legal busywork. The agent also handles his texts, voicemail and email, and his bank, brokerage and crypto accounts. Any payment needs his final approval.",
+  "how_it_went": "He says his overhead as CEO has dropped a lot and he feels free. Next he plans to add a voice model so the agent can make phone calls.",
+  "worth_knowing": "He still keeps a human admin, finance lead, accountant and lawyer to do final checks. The agent cannot send money without his approval.",
+  "prompt": "Each morning, go through my email, texts and voicemail. Sort out anything about admin, tax, accounting or legal matters for [your company]. For each item, draft a reply or next step and list any deadlines. Never send money, sign or submit anything. Show me the drafts and wait for my approval.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "admin",
+    "bookkeeping",
+    "inbox triage",
+    "executive assistant"
+  ],
+  "source": {
+    "url": "https://x.com/agentzh/status/2112728120675504611",
+    "name": "X",
+    "author": "@agentzh",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A CEO says his self-built agent now handles admin, tax, accounting, legal grunt work, messages and financial accounts, with approval needed for payments. It is notable but has no specifics or evidence."
+  }
+}

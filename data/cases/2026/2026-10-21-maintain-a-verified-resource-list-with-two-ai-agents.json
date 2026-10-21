@@ -1,0 +1,42 @@
+{
+  "id": "maintain-a-verified-resource-list-with-two-ai-agents",
+  "title": "Maintain a verified resource list with two AI agents",
+  "summary": "sit-in runs a Chinese Grok Bot resource list where Grok Bot gathers material daily and Claude Code verifies and reviews it; 84 entries are checked, with a human approving.",
+  "domain": "Education",
+  "platform": "Grok Bot",
+  "model": null,
+  "tools": [
+    "Grok Bot",
+    "Claude Code",
+    "GitHub"
+  ],
+  "agent_role": "Grok Bot scouts new links each day; Claude Code checks each repo exists, is active and relevant, and writes the short review. The human only makes the final call.",
+  "outcome": "The author reports 84 verified entries, 9 reusable recipes and 136 vetted tutorials and articles.",
+  "what_they_did": "The maintainer set up two agents to keep a list of Grok Bot resources current. Grok Bot searches for new material every day. Claude Code checks each item through GitHub and the web page and writes a short review. The human approves what goes in, and the agents' handoff notes are public.",
+  "how_it_went": "The author reports 84 checked entries, 9 tested recipes and 136 vetted tutorials and posts, updated over 140 commits.",
+  "worth_knowing": "Entries carry three trust levels: actually run, docs read, or repo only checked. Only items really tried get the top mark.",
+  "prompt": "Help me keep a curated list of resources on [topic] up to date. Each day, search for new tools, guides and posts. For each find, check that the link works, it was updated recently, and it truly relates to [topic]. Note its license. Draft a one-line review and a trust level (tested, docs read, or link checked only). Put all drafts in [a file or spreadsheet] and wait for my approval before adding anything to the list.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "curation",
+    "multi-agent",
+    "research",
+    "resource list"
+  ],
+  "source": {
+    "url": "https://github.com/sit-in/awesome-grokbot-playbooks",
+    "name": "GitHub",
+    "author": "sit-in",
+    "published": "2026-10-17"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly a curated list, but it is openly maintained by two agents (one finds material daily, one verifies and writes reviews) with a human approving, and the collaboration log is public. Thin on results beyond the list itself."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "track-coffee-shop-stock-and-plan-weather-based-promos",
+  "title": "Track coffee shop stock and plan weather-based promos",
+  "summary": "At a Build with Gemini event in Jakarta, a developer built WarungBot, an agent that tracks a coffee shop's stock, records sales and suggests promotions based on the day's weather.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "inventory records",
+    "sales log",
+    "weather data",
+    "menu poster maker"
+  ],
+  "agent_role": "The agent checks stock, records sales, reports weekly sales, suggests promotions from the weather and makes menu posters. The owner asks questions in chat.",
+  "outcome": "Author shares a live demo built in one day at a hackathon.",
+  "what_they_did": "A developer at a Build with Gemini event in Jakarta built a chat assistant for a coffee shop. It answers in Indonesian. Owners can ask which stock is running low, log sales, see weekly sales or ask for a promotion idea. It can also make a menu poster.",
+  "how_it_went": "The author says it was built the same day and shares a working demo page.",
+  "worth_knowing": null,
+  "prompt": "Act as the assistant for my [type of shop] in [your city]. Keep a stock list in [a spreadsheet] and record each sale I tell you. Every morning, tell me which items are running low. Check today's weather and suggest one item to promote. Draft the promotion text, but don't post it anywhere until I approve.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "inventory",
+    "coffee shop",
+    "sales tracking",
+    "promotions"
+  ],
+  "source": {
+    "url": "https://x.com/geraldiaditya/status/2112820946541425008",
+    "name": "X",
+    "author": "@geraldiaditya",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A hackathon prototype with a live demo for a coffee shop: stock tracking, sales logging and weather-based promotion ideas. It is early and thin on detail, but a genuine small-business use."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "find-code-your-software-exposes-but-doesn-t-need-to",
+  "title": "Find code your software exposes but doesn't need to",
+  "summary": "Anthropic ran Claude over 25 open-source projects to map which code is reachable; it reports 493 issues, including 94 settings combinations that silently turned off a security control.",
+  "domain": "Software",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "code reading",
+    "configuration inventory"
+  ],
+  "agent_role": "Claude listed every configuration option, checked which code runs by default, before login or under risky setting combinations, and reported issues. Researchers set the three search methods and grouped projects into categories.",
+  "outcome": "Anthropic reports Claude found 493 issues across 25 projects and over five million lines of code, including 93 unneeded pre-login surfaces in gated projects.",
+  "what_they_did": "Anthropic's researchers gave Claude three ways to look for needless exposure: code on by default that nothing uses, setting pairs that clash, and risky code that runs before login. Claude worked through 25 open-source projects in languages like C, Java, PHP and Python. It built an inventory of over 17,000 settings, 3,842 of them security related.",
+  "how_it_went": "The team reports 493 issues. All eleven login-protected projects had code reachable without logging in. Claude found 162 risky setting combinations accepted with no warning, and in 94 of them a security control was silently switched off.",
+  "worth_knowing": "None of the issues were exploitable on their own; the point is to shrink how much code an attacker can reach, so unknown bugs become harder to use.",
+  "prompt": "Review the code in [repo path] and list every configuration option. For each, note whether it affects security. Then find: code that runs in the default setup but no default feature needs; pairs of settings that quietly weaken or disable a security control when used together; and complex code that runs before login or without user action. Report each finding with the file, the setting involved and a suggested way to put it behind a gate. Do not change any code yet; show me the list first.",
+  "evidence": "Paper",
+  "difficulty": "Advanced",
+  "tags": [
+    "security",
+    "attack surface",
+    "configuration review",
+    "open source"
+  ],
+  "source": {
+    "url": "https://www.anthropic.com/research/attack-surface-reduction",
+    "name": "Hacker News",
+    "author": "Chris Rohlf (Anthropic)",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Anthropic ran Claude across 25 open-source projects to find code exposed more than it needs to be, with detailed numbers and a clear method. It is a novel defensive use, though the exact setup is not fully reproducible from the post."
+  }
+}

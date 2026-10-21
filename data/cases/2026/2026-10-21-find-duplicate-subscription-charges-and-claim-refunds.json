@@ -1,0 +1,42 @@
+{
+  "id": "find-duplicate-subscription-charges-and-claim-refunds",
+  "title": "Find duplicate subscription charges and claim refunds",
+  "summary": "A founder's agent noticed an Adobe plan billed twice for about 13 months, found old emails, contacted support and won a £580.35 refund, the author says.",
+  "domain": "Finance",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Email",
+    "Bank statements",
+    "Customer support chat"
+  ],
+  "agent_role": "The agent spotted the double billing and found past email with Adobe as proof. It then contacted support and negotiated the refund; the author says they did not step in.",
+  "outcome": "Author reports a £580.35 refund paid into their bank account.",
+  "what_they_did": "The poster's agent reviewed their company's charges and noticed one Adobe account had paid twice for the same plan for about 13 months. It found an old email thread with Adobe that confirmed the duplicate. It then contacted Adobe Support, raised the issue and negotiated with the support agent.",
+  "how_it_went": "The author says Adobe refunded £580.35 straight to their bank account, with no effort on their part.",
+  "worth_knowing": null,
+  "prompt": "Review my [bank or card statements] for the last [12-24] months and list every recurring subscription. Flag any service charged more than once for the same plan, or for something I no longer seem to use. For each flagged charge, search my email for related receipts or support threads as proof. Show me your findings and a draft message to each company's support asking for a refund. Wait for my approval before contacting anyone or agreeing to any settlement.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "subscriptions",
+    "refunds",
+    "billing errors",
+    "customer support"
+  ],
+  "source": {
+    "url": "https://x.com/stefivanov_/status/2112533221992800372",
+    "name": "X",
+    "author": "@stefivanov_",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, useful finance task that the agent handled from finding the charge through to getting a refund, though it rests only on a short author's account with no setup details. Gets a small boost as a non-coding example."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "take-customer-orders-in-messenger-with-an-agent",
+  "title": "Take customer orders in Messenger with an agent",
+  "summary": "An automation builder made an n8n agent that reads Messenger orders, checks inventory, logs the sale, emails the order, alerts Slack and replies to the customer.",
+  "domain": "Business",
+  "platform": "n8n",
+  "model": null,
+  "tools": [
+    "Facebook Messenger",
+    "Slack",
+    "email",
+    "inventory sheet"
+  ],
+  "agent_role": "The agent handles each incoming message end to end: stock check, sale record, order email, team alert and customer reply. The human builds the workflow.",
+  "outcome": "Author shows the flow running in a video.",
+  "what_they_did": "The poster built an agent in n8n, a tool for linking apps into automatic workflows. When a customer messages on Messenger, the agent checks inventory and logs the sale. It then emails the order, posts a note in Slack and replies to the customer.",
+  "how_it_went": "The author says it runs automatically and shares a video demo.",
+  "worth_knowing": "The template is only offered to people who comment on the post. The post gives no build details.",
+  "prompt": "Help me build an n8n workflow for my shop. When a customer sends an order on Messenger, check stock in [your inventory sheet] and log the sale. Email the order to [your email] and post a note in [Slack channel]. Then draft a reply to the customer. Show me the workflow and test it on a sample message before turning it on.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "order handling",
+    "small business",
+    "messenger",
+    "inventory"
+  ],
+  "source": {
+    "url": "https://x.com/aiautomationexp/status/2112525241125855650",
+    "name": "X",
+    "author": "@aiautomationexp",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-21",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete small-business order flow in n8n with a video demo, though the post is short and mostly asks people to comment for a template."
+  }
+}

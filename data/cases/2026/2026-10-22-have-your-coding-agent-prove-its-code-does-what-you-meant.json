@@ -1,0 +1,42 @@
+{
+  "id": "have-your-coding-agent-prove-its-code-does-what-you-meant",
+  "title": "Have your coding agent prove its code does what you meant",
+  "summary": "A research lab built KIT, an add-on for Claude Code and Codex. The agent writes down what code is meant to do, then mathematically proves it; their example proves an absolute-value function.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "KIT plugin",
+    "Prover Client",
+    "Codex"
+  ],
+  "agent_role": "The agent works out what the code is meant to do and writes that as a formal rule. It then runs the proof, checks the proof and reports which concerns hold, ranked by severity. The human picks which code to check.",
+  "outcome": "The lab shows an example where KIT proves a Python function returns the absolute value for every integer. They say they plan to run it on open-source projects to find real bugs.",
+  "what_they_did": "A university research lab built KIT, an add-on for Claude Code and Codex. You install it, connect an account, and ask the agent to check an important file. The agent writes down what the code is supposed to do as precise rules. It then proves the code follows them, checks the proof and reports the results. It works on Python and Solidity, a language for blockchain programs, for now.",
+  "how_it_went": "The lab's example proves a small Python function always returns the absolute value of any whole number. They say they are about to run it on many open-source projects to hunt for real bugs.",
+  "worth_knowing": "It only supports Python and Solidity today, with Rust, C, JavaScript and more listed as coming. Proofs run through the lab's online service, so you need to sign in and approve your machine.",
+  "prompt": "Using the KIT add-on, open [repo path] and pick the most safety-critical source file. Work out what each key function is meant to do, write it down as a formal rule, and try to prove the code matches it. Then check the proof. Report each concern ranked by severity from P0 (most severe) to P3. Explain in plain words what was proved and what failed. Do not change any code until I review the report.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "formal verification",
+    "code correctness",
+    "bug finding",
+    "python"
+  ],
+  "source": {
+    "url": "https://x.com/RosuGrigore/status/2113009285709889551",
+    "name": "X",
+    "author": "@RosuGrigore",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "This is a novel add-on that lets coding agents produce mathematical proofs, with a step-by-step workflow and a worked example. It is mostly a tool launch, and real-world bug results are still to come."
+  }
+}

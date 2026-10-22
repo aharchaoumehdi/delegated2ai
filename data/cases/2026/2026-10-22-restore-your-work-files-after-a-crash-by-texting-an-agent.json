@@ -1,0 +1,43 @@
+{
+  "id": "restore-your-work-files-after-a-crash-by-texting-an-agent",
+  "title": "Restore your work files after a crash by texting an agent",
+  "summary": "A business owner says his Hermes Agent, which kept backups on a rented server, restored all his business files to a reinstalled Mac mini after one text message.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Hermes Agent",
+    "messaging apps",
+    "Obsidian wiki",
+    "rented server"
+  ],
+  "agent_role": "The agent kept ongoing backups, restored files on request, repaired a remote desktop connection and helped with fixes. The owner sent the requests from his phone.",
+  "outcome": "The author reports the agent restored everything after a macOS beta bricked his Mac mini, with no lost weekend.",
+  "what_they_did": "The poster runs Hermes Agent on a rented server, a Mac and Windows machines. The agents share notes through an Obsidian wiki and can be messaged from his phone. When a test version of macOS broke his Mac mini, he reinstalled it and sent the agent one message to restore his business files.",
+  "how_it_went": "He says the agent restored everything from backups it had quietly kept. He also reports it repaired a broken remote desktop connection while he was away from the office.",
+  "worth_knowing": "This only worked because the agent had been backing up files beforehand on a separate server. The agent can't restore what it never saved.",
+  "prompt": "Every night, back up the folders [list of folders] from my computer to [backup location] and keep a short log of what changed. If I message you that my computer was reset, show me what you plan to restore and where, then wait for my approval before copying anything back.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "backups",
+    "disaster recovery",
+    "remote support",
+    "small business"
+  ],
+  "source": {
+    "url": "https://x.com/EpiphanyDynamic/status/2113081460642988217",
+    "name": "X",
+    "author": "@EpiphanyDynamic",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A personal account of a Hermes Agent setup that restored business files after a Mac failure and handled remote fixes by text. Real, but light on detail and heavy on promotion."
+  }
+}

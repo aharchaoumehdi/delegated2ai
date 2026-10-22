@@ -1,0 +1,41 @@
+{
+  "id": "test-how-well-ai-agents-team-up-in-pokemon-battles",
+  "title": "Test how well AI agents team up in Pokémon battles",
+  "summary": "A student had pairs of Qwen3.8-27B agents play Pokémon doubles; teams that chatted freely won 64% against a simple bot versus 42% without talking.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": "Qwen3.8-27B",
+  "tools": [
+    "Pokémon Showdown simulator",
+    "private team chat"
+  ],
+  "agent_role": "Each agent read a battle summary, messaged its partner and picked moves each turn; the researcher built the environment and ran the comparisons.",
+  "outcome": "Author reports a 64% win rate with free talk, 52% with one message each, 54% with one model controlling both, and 42% with no talk.",
+  "what_they_did": "Oliver Grabner wrapped the Pokémon Showdown game so four AI players each control one Pokémon. Teammates could send private messages before choosing moves. He compared free talk, one message, no talk and one model playing both sides against a bot that always picks the strongest hit.",
+  "how_it_went": "He reports talking helped: 64% wins with free talk versus 42% without. Free talk used about 3.8 times more text processed per battle.",
+  "worth_knowing": "Conversation is costly: free talk used 978k prompt tokens per battle versus 259k with no talk.",
+  "prompt": "Set up a game where two AI agents play as teammates against a simple bot. Each turn, give each agent a plain-English summary of the game state and its legal moves. Let them send private messages to each other before choosing. Run [number] games with talking allowed and the same games with talking turned off. Show me the setup plan before running, then report win rates and how much text each version used.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "multi-agent",
+    "games",
+    "agent coordination",
+    "research"
+  ],
+  "source": {
+    "url": "https://olivergrabner.com/research/pokemon/",
+    "name": "Hacker News",
+    "author": "Oliver Grabner",
+    "published": "2026-10-10"
+  },
+  "added": "2026-10-22",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-agent experiment with code, a demo battle and clear numbers on how talking affects teamwork; niche but original."
+  }
+}

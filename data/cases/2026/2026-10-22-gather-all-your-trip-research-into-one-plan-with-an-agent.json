@@ -1,0 +1,42 @@
+{
+  "id": "gather-all-your-trip-research-into-one-plan-with-an-agent",
+  "title": "Gather all your trip research into one plan with an agent",
+  "summary": "A blind developer built a travel skill that has an agent compare flights, hotels and neighborhoods in the browser and save addresses, phone numbers and open questions for the trip.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "web browser",
+    "maps",
+    "travel booking sites"
+  ],
+  "agent_role": "The agent browses travel sites and a map, compares flights and stays, checks prices over time and keeps a list of what is unchecked. The traveler makes choices and does the booking.",
+  "outcome": null,
+  "what_they_did": "The poster, who is blind, built a travel skill for an AI agent. The agent compares flights by price, baggage and connections, and looks at hotels and their neighborhoods. It finds nearby cafés, pharmacies and transit, and saves addresses, phone numbers and links. During the trip, it answers questions from that saved information.",
+  "how_it_went": null,
+  "worth_knowing": "The author says the plan should show what was checked, which sources are official and what still needs confirming. Airport assistance requests are planned, not yet handled.",
+  "prompt": "Help me prepare a trip to [destination] from [home city] on [dates]. Use the browser to compare flights by price, baggage and connections. Then look at places to stay near [place I need to be] and check each neighborhood. List nearby cafés, shops, pharmacies and transit. Save addresses, phone numbers and links in one trip file. Mark which sources are official and list what still needs confirming. Show me your shortlist and wait for my choice before booking anything. Then build a list of tasks to do before I leave.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "travel planning",
+    "accessibility",
+    "trip research",
+    "price tracking"
+  ],
+  "source": {
+    "url": "https://x.com/Denis_skripnik/status/2112922385607200986",
+    "name": "X",
+    "author": "@Denis_skripnik",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A blind traveler built an agent skill that browses travel sites and maps and keeps one trip file, which is an original accessibility use. It describes what the skill does but shows no specific trip or result."
+  }
+}

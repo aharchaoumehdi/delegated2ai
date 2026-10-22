@@ -1,0 +1,41 @@
+{
+  "id": "answer-business-calls-and-book-jobs-with-a-voice-agent",
+  "title": "Answer business calls and book jobs with a voice agent",
+  "summary": "A business owner set up an xAI voice agent that takes calls, discusses customer needs and books them into his calendar; he says callers still prefer not talking to AI.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "xAI voice agent",
+    "calendar"
+  ],
+  "agent_role": "The voice agent answers incoming calls, talks through what the caller needs using company information, and books the appointment into the owner's calendar. The owner set it up and loaded the company details.",
+  "outcome": "Author reports the workflow worked well, but says people just don't want to talk to AIs yet.",
+  "what_they_did": "A business owner set up a phone booking agent using xAI's voice agent. He loaded it with his company information. Customers call, explain what they need, and the agent books them into his calendar.",
+  "how_it_went": "He calls it a really nice workflow. The catch, he says, was that callers didn't want to talk to an AI, at least not yet.",
+  "worth_knowing": "The technology worked, but customer willingness was the problem. Consider offering a clear way to reach a human.",
+  "prompt": "Help me set up a phone answering agent for [your business name]. Use this company information: [services, prices, hours, service area]. When someone calls, greet them, ask what they need, answer questions from the information above, and offer open times from my calendar [calendar link or tool]. Before booking, read back the date, time, name, phone number and job details and get the caller's confirmation. Always offer to take a message for a human if the caller prefers. Show me the full call script and booking rules first, and wait for my approval before turning it on.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "voice agent",
+    "appointment booking",
+    "small business",
+    "phone calls"
+  ],
+  "source": {
+    "url": "https://x.com/Brenn_Clinton/status/2113218369377996928",
+    "name": "X",
+    "author": "@Brenn_Clinton",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine small-business phone agent that takes calls and books appointments into a calendar, with an honest lesson about caller reluctance, but very thin on setup details."
+  }
+}

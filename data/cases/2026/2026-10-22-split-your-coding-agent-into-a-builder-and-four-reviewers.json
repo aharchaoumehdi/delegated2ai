@@ -1,0 +1,42 @@
+{
+  "id": "split-your-coding-agent-into-a-builder-and-four-reviewers",
+  "title": "Split your coding agent into a builder and four reviewers",
+  "summary": "A web developer set up OpenCode with one building agent that hands off to four helper agents for code review, design, search ranking and docs, each needing approval.",
+  "domain": "Software",
+  "platform": "OpenCode",
+  "model": null,
+  "tools": [
+    "OpenCode",
+    "web fetch",
+    "file editing"
+  ],
+  "agent_role": "The main agent plans and builds features, then calls helper agents for review, design, search optimization and documentation; the human approves every proposal and each file write.",
+  "outcome": "The author says the setup changed how he works and stopped him micromanaging prompts, though it costs more tokens and waiting.",
+  "what_they_did": "Domenico Tenace replaced one do-everything agent with a team in OpenCode. A main web-developer agent builds features and calls four helpers: a code reviewer, a design expert, a search-ranking auditor and a docs updater. Each helper is one text file with its own checklist, and nothing is edited without his approval.",
+  "how_it_went": "He says a fresh reviewer catches more than asking the same agent to review its own work. He reports cleaner conversations and a built-in routine of checks before finishing.",
+  "worth_knowing": "More agents means more tokens and waiting, so he skips the team for one-line fixes. Similar helper descriptions can make the main agent call the wrong one.",
+  "prompt": "Set up a small agent team for my project in [project folder]. Create one main agent that builds features and one helper agent that reviews code changes. The reviewer should list issues from critical to minor, with file, line, why it matters and a suggested fix. Neither agent may edit files without first showing me a proposal (files, changes, reasons) and waiting for my approval. Block access to anything outside this project folder. If a fact only I know is needed, such as brand details or a version number, ask me instead of guessing. Show me the agent setup files for approval before saving them.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "code review",
+    "multi-agent",
+    "approval workflow",
+    "web development"
+  ],
+  "source": {
+    "url": "https://dev.to/playfulprogramming/one-dev-four-specialists-my-agent-team-for-opencode-5f31",
+    "name": "DEV Community",
+    "author": "Domenico Tenace",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real, reproducible personal setup with config details and an approval-first design, but no concrete project results or numbers."
+  }
+}

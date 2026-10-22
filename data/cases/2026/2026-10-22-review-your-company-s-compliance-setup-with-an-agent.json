@@ -1,0 +1,43 @@
+{
+  "id": "review-your-company-s-compliance-setup-with-an-agent",
+  "title": "Review your company's compliance setup with an agent",
+  "summary": "ISMS Copilot published 60 compliance skills; their recorded Claude Code run on a fictional company read its policies and wrote a gap audit and 30-day plan in about four minutes.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "Cursor",
+    "skill files"
+  ],
+  "agent_role": "The agent reads the skill descriptions and the company's policies and registers read-only, then drafts the ranking, audit and plan. Humans keep every judgment call, such as accepting risks or signing documents.",
+  "outcome": "The authors report a headless Claude Code run on a fictional company took about 4 minutes and produced four files: an inventory, a top-10 skill list, an audit and a 30-day plan.",
+  "what_they_did": "The team behind ISMS Copilot wrote 60 skills covering security and privacy compliance work. Examples include risk registers, audit prep, vendor checks and AI rules. You paste one prompt in the folder holding your compliance documents. The agent reads them without changing anything. It ranks the 10 most useful skills, lists what is broken or missing, and writes a 30-day plan.",
+  "how_it_went": "The authors share a recorded run on a fictional company that took about four minutes. It wrote four files, and the sample folder and transcript are in the repository.",
+  "worth_knowing": "Each skill names the points where the agent must stop and hand the decision back. It never accepts a risk, approves a document or signs for anyone.",
+  "prompt": "In this folder are my company's compliance documents: policies, risk register and audit exports for [framework, e.g. ISO 27001 or SOC 2]. Read them without changing anything. Then write four files: an inventory of what exists, a list of what is broken or missing, the 10 tasks that would help most, and a 30-day plan. Do not accept risks, approve documents or mark controls as effective. Flag those as decisions for me. Show me the drafts before saving anything outside this folder.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "compliance",
+    "risk management",
+    "audit prep",
+    "security policies"
+  ],
+  "source": {
+    "url": "https://github.com/better-isms/grcskills",
+    "name": "GitHub",
+    "author": "better-isms",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-22",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A library of compliance skills with a recorded headless Claude Code run on a fictional company that produced an inventory, top-10, audit and 30-day plan in about four minutes. It is promotional and the demo is fictional, but the workflow is concrete and non-coding."
+  }
+}

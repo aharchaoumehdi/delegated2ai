@@ -1,0 +1,42 @@
+{
+  "id": "build-a-take-apart-3d-model-to-learn-how-a-drone-flies",
+  "title": "Build a take-apart 3D model to learn how a drone flies",
+  "summary": "A poster had Claude Code build an interactive drone model from one prompt; they say it worked out the propeller spin directions, checked every frame and wrote motor sounds.",
+  "domain": "Education",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "anatomy skill",
+    "headless Chrome",
+    "code-generated audio"
+  ],
+  "agent_role": "Claude Code built the drone part by part from a single prompt, worked out the propeller directions, checked the visuals in a hidden browser and wrote the sound. The human asked the question and gave the prompt.",
+  "outcome": "Author reports a working take-apart drone model with spinning props, motor sound and a playground.",
+  "what_they_did": "The poster wanted to understand how a drone stays in the air. They asked Claude Code to build a drone they could take apart, using a free add-on for anatomy-style models. Claude built it part by part and checked each frame in a hidden browser window.",
+  "how_it_went": "They say Claude worked out on its own that two propellers spin clockwise and two counter-clockwise so the twist cancels. It also wrote a soundtrack in code, with the motor whirr rising as the propellers speed up.",
+  "worth_knowing": "Having the agent check its own output in a browser helped catch visual details, like propellers blurring into discs at high speed.",
+  "prompt": "Build me an interactive 3D model of a [object, e.g. drone] that I can take apart piece by piece to learn how it works. Add each part one at a time and label it. Explain the key physics in plain words, and make the model show it in motion. Open the result in a browser and check each step looks right before moving on. Show me your plan for the parts first and wait for my approval.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "interactive learning",
+    "3d model",
+    "physics",
+    "explainer"
+  ],
+  "source": {
+    "url": "https://x.com/elvar_official/status/2113233371178422472",
+    "name": "X",
+    "author": "@elvar_official",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-22",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Claude Code built and self-checked an interactive drone model to learn how drones fly, an original educational use. Evidence is the author's thread only, and the full build sits in a linked article."
+  }
+}

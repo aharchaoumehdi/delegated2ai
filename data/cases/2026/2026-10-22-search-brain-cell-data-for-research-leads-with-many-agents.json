@@ -1,0 +1,38 @@
+{
+  "id": "search-brain-cell-data-for-research-leads-with-many-agents",
+  "title": "Search brain cell data for research leads with many agents",
+  "summary": "OpenAI, PerturbAI and Scripps Research say they used thousands of AI agents to find promising research leads in data from millions of brain cells.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [],
+  "agent_role": "Thousands of distributed agents analyzed the biological data to surface leads; the human role is not described in the provided text.",
+  "outcome": "OpenAI reports the agents uncovered promising research leads.",
+  "what_they_did": "OpenAI worked with PerturbAI and Scripps Research. They ran thousands of AI agents in parallel over data from millions of brain cells to look for new research leads.",
+  "how_it_went": "OpenAI says the effort turned up promising leads; the summary gives no numbers.",
+  "worth_knowing": null,
+  "prompt": null,
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "biology",
+    "data analysis",
+    "research",
+    "neuroscience"
+  ],
+  "source": {
+    "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
+    "name": "OpenAI News",
+    "author": "OpenAI",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine large-scale science agent application, but the source text is a one-line summary with no detail on steps or results."
+  }
+}

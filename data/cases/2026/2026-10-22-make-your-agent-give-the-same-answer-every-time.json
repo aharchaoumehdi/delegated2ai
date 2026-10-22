@@ -1,0 +1,42 @@
+{
+  "id": "make-your-agent-give-the-same-answer-every-time",
+  "title": "Make your agent give the same answer every time",
+  "summary": "Researchers had a tool find near coin-flip steps in a GPT-4.1 agent's runs and turned them into guidelines; they report tasks passing all five runs rose from 53.0% to 69.0%.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": "GPT-4.1",
+  "tools": [
+    "ALTK-Evolve",
+    "Consistency Analyzer",
+    "AppWorld benchmark"
+  ],
+  "agent_role": "A task-doing agent worked through app tasks such as reading notes. A second step re-asked the model at each recorded decision and wrote guidelines for the shaky ones. Researchers designed the setup and ran the evaluation.",
+  "outcome": "Authors report that tasks passed on all five runs rose from 53.0% to 69.0%, while average success rose from 77.4% to 81.0%.",
+  "what_they_did": "The authors ran an agent on GPT-4.1 against 168 everyday app tasks and recorded one run per task. A tool called the Consistency Analyzer re-asked the model for five answers at each recorded step. This found steps where the agent could easily have chosen differently. Those steps became short written guidelines that are fed back to the agent on later runs.",
+  "how_it_went": "They say the agent passed every one of five runs on 69.0% of tasks, up from 53.0%. Average success also rose slightly, from 77.4% to 81.0%. In their demo, five runs that split 3-2 on one note-counting task all agreed after the guidelines were added.",
+  "worth_knowing": "Setting the model's randomness to zero does not fix this. On hosted models the odds shift slightly between runs, so near-tied choices can still flip. Average success scores hide this problem.",
+  "prompt": "Here is a recorded log of you completing [task description]: [paste log]. Go through it step by step. For each decision (which tool to call, what input to pass, whether to retry), list the other choices you could reasonably have made. Mark the steps where the choice was a close call. For each close call, write one short general guideline that would make the right choice reliable next time. Show me the list of close calls and draft guidelines for review before adding anything to [your agent's instructions file].",
+  "evidence": "Paper",
+  "difficulty": "Advanced",
+  "tags": [
+    "agent reliability",
+    "consistency",
+    "agent evaluation",
+    "guidelines"
+  ],
+  "source": {
+    "url": "https://dev.to/vatchei/your-agent-aced-the-task-will-it-do-it-again-4bg0",
+    "name": "DEV Community",
+    "author": "Vatche Isahagian",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A research method that finds the shaky decision points in an agent's past run and turns them into written guidelines, backed by a paper, a demo and benchmark numbers. It is about improving agents on a benchmark rather than a real-world job, so it is useful but narrow."
+  }
+}

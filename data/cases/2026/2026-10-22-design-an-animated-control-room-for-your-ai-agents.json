@@ -1,0 +1,41 @@
+{
+  "id": "design-an-animated-control-room-for-your-ai-agents",
+  "title": "Design an animated control room for your AI agents",
+  "summary": "A developer used Claude Code and Three.js to build an animated visual prototype showing agent runs moving through stages, jobs and system health on one screen.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Three.js"
+  ],
+  "agent_role": "Claude Code wrote the animated interface from the author's concept; the author designed the run stages and panel ideas.",
+  "outcome": "Author reports a working visual prototype only, not yet connected to real agents.",
+  "what_they_did": "The author wanted a clearer view of many agents running at once. They sketched run stages like start, busy and done. Then they had Claude Code build an animated 3D interface with Three.js, a web graphics library.",
+  "how_it_went": "The author says they got a visual prototype with panels for jobs, activity and system health. It is only a concept so far.",
+  "worth_knowing": "It is a look-and-feel mockup; it does not yet read real data from running agents.",
+  "prompt": "Build a single-page web prototype using Three.js that visualizes a set of AI agent runs. Show each run moving through these stages: [list your stages, e.g. started, working, busy, done]. Add side panels for active jobs, recent activity and overall system health, using sample data for now. Keep the code in [project folder]. Show me your plan and file layout first, then build it and tell me how to open it in my browser.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "dashboard",
+    "3d animation",
+    "agent monitoring",
+    "prototype"
+  ],
+  "source": {
+    "url": "https://x.com/T0vi7/status/2113033685444317618",
+    "name": "X",
+    "author": "@T0vi7",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine but thin example of using Claude Code to build an animated 3D dashboard prototype; little detail on steps or the agent's role."
+  }
+}

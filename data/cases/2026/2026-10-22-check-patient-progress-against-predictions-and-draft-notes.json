@@ -1,0 +1,41 @@
+{
+  "id": "check-patient-progress-against-predictions-and-draft-notes",
+  "title": "Check patient progress against predictions and draft notes",
+  "summary": "A clinician built a Telegram agent that compares each patient's progress with their Predict+ outcome prediction and drafts a goals letter to the patient's physical therapist.",
+  "domain": "Health",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Telegram",
+    "Predict+"
+  ],
+  "agent_role": "The agent reads the Predict+ prediction, compares where the patient is with where they should be, and drafts a letter of goals. The clinician presumably reviews the draft before sending; the post does not say.",
+  "outcome": "The author shows the agent working in a demo video; no numbers are reported.",
+  "what_they_did": "A clinician built an agent that runs inside the Telegram chat app. It reads a patient's predicted outcome from a tool called Predict+. It then compares the patient's current progress with where they should be. Finally, it drafts a letter to the physical therapist (PT) setting out the team's goals.",
+  "how_it_went": "The author shares a video of the agent working in Telegram. No results or time savings are given.",
+  "worth_knowing": null,
+  "prompt": "For each patient I list, read their predicted recovery outcome from [prediction tool or file] and their latest progress notes from [source]. Compare where they are now with where the prediction says they should be at this point. Flag anyone falling behind and explain the gap in plain words. Then draft a short letter to their physical therapist with our goals for the next [time period]. Show me every draft and wait for my approval before sending anything. Do not include more patient details than the letter needs.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "patient follow-up",
+    "physical therapy",
+    "outcome tracking",
+    "letter drafting"
+  ],
+  "source": {
+    "url": "https://x.com/bgobbato1981/status/2112925311180722343",
+    "name": "X",
+    "author": "@bgobbato1981",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "published",
+  "score": 5.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real health workflow: the agent reads a prediction, compares it with patient status and drafts a letter. It is backed by a short video but gives few details, and gets a small boost as a non-coding example."
+  }
+}

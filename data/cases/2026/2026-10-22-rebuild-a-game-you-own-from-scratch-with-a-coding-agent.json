@@ -1,0 +1,45 @@
+{
+  "id": "rebuild-a-game-you-own-from-scratch-with-a-coding-agent",
+  "title": "Rebuild a game you own from scratch with a coding agent",
+  "summary": "Developer tanepiper built GameFrame, a set of step-by-step guides your coding agent follows to study a game you own, rebuild it, and check the copy matches.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Ghidra",
+    "Unicorn emulator",
+    "REA",
+    "Claude Code",
+    "Codex",
+    "Cursor"
+  ],
+  "agent_role": "The coding agent installs the toolkit, runs its tests, and works through inventory, study, decompiling, tracing, rebuilding and checking. The human supplies their own copy of the game and approves installs.",
+  "outcome": "The author lists case studies on Un-Banished, Tyrian 2000 and Frontier Elite II, but reports no detailed results on the page.",
+  "what_they_did": "A developer, tanepiper, built GameFrame, a set of guides and tools that run inside a coding agent such as Claude Code, Codex or Cursor. The agent sets up tools for taking programs apart and running old code. It then works step by step: list the game's files, watch it run, decompile it, trace it, rebuild it and check it. The user provides their own copy of the game and approves installs.",
+  "how_it_went": "The author says each rebuilt piece must give exactly the same results as the original, which is run in an emulator for comparison. Case studies are listed for Un-Banished, Tyrian 2000 and Frontier Elite II.",
+  "worth_knowing": "You need your own legal copy of the game. The project warns never to put the game's files, extracted assets or decompiled code into a code repository.",
+  "prompt": "Help me study and rebuild [game name], which I own, from my copy at [path to game folder]. First, show me the tools you need and how large each is, and wait for my approval before installing anything. Then work in steps: list the game's files, run and observe it, decompile key parts, and rebuild one small system in new code. Check each rebuilt piece against the original running in an emulator, and tell me where results differ. Never copy the game's files, extracted assets or decompiled code into a git repository.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "reverse engineering",
+    "game preservation",
+    "decompiling",
+    "emulation"
+  ],
+  "source": {
+    "url": "https://tanepiper.github.io/game-frame/",
+    "name": "Hacker News",
+    "author": "tanepiper",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A playbook that has a coding agent take apart a game you own and rebuild it, with every result checked against the original. Three case studies are named, but the page gives no results from them, so evidence is thin."
+  }
+}

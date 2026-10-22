@@ -1,0 +1,43 @@
+{
+  "id": "check-whether-an-open-source-project-actually-runs",
+  "title": "Check whether an open-source project actually runs",
+  "summary": "Argusic had an agent install the ownmem project on a clean machine; it reports the agent fixed an outdated Node.js error alone and all tests passed within minutes.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "terminal",
+    "npm",
+    "Node.js",
+    "GitHub"
+  ],
+  "agent_role": "The agent cloned, installed and ran the project's tests following its docs, and fixed a version error itself; no human stepped in.",
+  "outcome": "Argusic reports the run finished in about 3 minutes for $0.01, with all tests passing after one fixed error; an earlier attempt did not run.",
+  "what_they_did": "The poster shared a test run by Argusic, a service that has an agent install open-source projects on a fresh machine. The agent followed ownmem's own instructions, ran its tests and fixed what broke. The whole session was recorded.",
+  "how_it_went": "The linked page says the agent hit one error, an outdated Node.js version, and fixed it without help. All test suites passed and the run cost $0.01. A first attempt failed, so the overall score was 60 of 100.",
+  "worth_knowing": "The post claims 2 minutes and a perfect score, but the linked page shows 3 minutes and a 60/100 average across two runs, one failed.",
+  "prompt": "Clone [repo URL] into a fresh, disposable folder or container. Read its README and install it exactly as documented. Run its test suite and any basic commands it lists. If something breaks, diagnose and fix it, noting each error, its cause and how long it took. Do not change my system-wide settings or install anything outside the project folder without asking me first. Finish with a short report: did it run, install time, errors hit and fixed, test results, and anything the docs left out.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "software testing",
+    "installation check",
+    "open source",
+    "coding agents"
+  ],
+  "source": {
+    "url": "https://x.com/tranngocthuycom/status/2113072947355382255",
+    "name": "X",
+    "author": "@tranngocthuycom",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine, recorded workflow where an agent installs and tests an open-source project on a clean machine and fixes errors itself, though the post doubles as promotion for the testing service and its numbers are inconsistent with the linked page."
+  }
+}

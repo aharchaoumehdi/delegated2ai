@@ -1,0 +1,41 @@
+{
+  "id": "have-an-agent-shop-in-a-phone-app-and-stop-before-paying",
+  "title": "Have an agent shop in a phone app and stop before paying",
+  "summary": "A poster describes a PhoneUse demo where an agent opened Amazon on a real cloud phone, added a 12-pack of Diet Coke and stopped at the $8.87 order review.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "PhoneUse cloud phones",
+    "Amazon app"
+  ],
+  "agent_role": "The agent opened the app, searched, picked the product and moved through the cart to the order screen. The human keeps the final 'Place your order' tap.",
+  "outcome": "The poster reports the demo reached order review with an $8.87 total and stopped before buying.",
+  "what_they_did": "The poster shares a demo of PhoneUse, a service that gives an agent a real Android or iPhone in the cloud. The agent was asked to find a 12-pack of Diet Coke on Amazon and go to order review. It opened the app, searched, picked the pack and walked the cart to the order sheet.",
+  "how_it_went": "The poster says it reached an $8.87 total and stopped on 'Place your order', leaving payment to the human. The launch also showed Uber rides, TikTok trend research and an old insurance app.",
+  "worth_knowing": "Read each app's terms first. The poster notes Amazon is blocking shopping agents and some apps clearly don't want agents inside them.",
+  "prompt": "Using a phone I give you access to, open [shopping app] and find [item and size]. Add it to the cart and go to the order review screen. Show me the item, quantity and total price. Do not place the order or enter any payment details; stop there and wait for me to tap the final button myself.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "phone apps",
+    "shopping",
+    "browser automation",
+    "human approval"
+  ],
+  "source": {
+    "url": "https://x.com/fayzonnn/status/2113013880649826544",
+    "name": "X",
+    "author": "@fayzonnn",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A launch-style post for PhoneUse with one concrete demo: an agent shops in the real Amazon phone app and stops before payment. It is promotional and relays someone else's launch, but it shows a specific multi-step task."
+  }
+}

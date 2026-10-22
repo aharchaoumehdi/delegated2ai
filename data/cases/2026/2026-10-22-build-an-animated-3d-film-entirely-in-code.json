@@ -1,0 +1,42 @@
+{
+  "id": "build-an-animated-3d-film-entirely-in-code",
+  "title": "Build an animated 3D film entirely in code",
+  "summary": "A developer built a 70-second Japanese temple film from about 31,000 lines of JavaScript with no models or textures; the repo is tagged as made with Claude Code.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "three.js",
+    "headless Chrome",
+    "ffmpeg"
+  ],
+  "agent_role": "The repo is tagged with Claude Code, but it does not say which parts the agent wrote versus the developer.",
+  "outcome": "The repo reports a 24.4-million-triangle scene rendered into a 70-second 1080p60 film, taking about 4 hours on a laptop.",
+  "what_they_did": "The developer generated an entire temple scene in code: buildings, statues, trees, water and sky. A script renders it frame by frame in a hidden browser and joins frames into a video. Music is added afterward.",
+  "how_it_went": "The repo shows a finished 70-second film in 10 shots. The full render took about 4 hours on a laptop with built-in graphics.",
+  "worth_knowing": "The first build and shader compile can take several minutes, and the full film render runs for hours, with built-in rest pauses to protect the laptop.",
+  "prompt": "Help me build a small 3D scene of [subject] entirely in code with three.js, without any downloaded models or image files. Start with a plan of the objects, lighting and a few camera shots. Build it step by step, render still frames so I can review them, and then write a script that renders the shots into a short video with ffmpeg.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "3d art",
+    "animation",
+    "generative art",
+    "video"
+  ],
+  "source": {
+    "url": "https://github.com/Leonxlnx/golden-temple",
+    "name": "GitHub",
+    "author": "Leonxlnx",
+    "published": "2026-10-15"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An impressive, fully reproducible code-only animated film; the repo is tagged Claude Code but does not explain what the agent did, so the agent's role is thin."
+  }
+}

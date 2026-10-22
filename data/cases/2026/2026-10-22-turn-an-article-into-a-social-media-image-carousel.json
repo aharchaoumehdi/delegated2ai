@@ -1,0 +1,42 @@
+{
+  "id": "turn-an-article-into-a-social-media-image-carousel",
+  "title": "Turn an article into a social media image carousel",
+  "summary": "Designer Ian built a Claude Code add-on that turns articles or notes into a set of 3:4 Xiaohongshu carousel images, pausing for approval of a slide plan first.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Playwright",
+    "Pillow",
+    "HTML templates"
+  ],
+  "agent_role": "The agent reads the content, drafts a page-by-page plan, waits for the user to confirm, picks from 20 layouts, renders PNGs and checks for overflowing text. The user supplies screenshots and writes the post caption.",
+  "outcome": "The author says it delivers one 1080×1440 image per page, an overview image and editable source files, in light or dark style.",
+  "what_they_did": "A product designer, Ian, packaged a skill for Claude Code that makes carousel posts for the Chinese app Xiaohongshu. You paste an article. The agent proposes a plan of about five pages and stops for your approval. Then it lays out each page from 20 templates, renders images and checks them for layout problems.",
+  "how_it_went": "The author says the output is ready-to-post images, an overview of all pages, and editable source files. Light and dark versions share the same layouts.",
+  "worth_knowing": "The author says results depend heavily on your images: use sharp, cropped screenshots and official logos. The caption, post text and hashtags still have to be written by you.",
+  "prompt": "Turn the article below into a carousel of [number, around 5] portrait images (1080×1440) for [social platform]. First, show me a page-by-page plan: what each page says, its layout and its headline. Wait for my approval before designing. Use my screenshots in [folder path], and list any images you still need instead of using blurry ones. Keep text on each page short. After rendering, check for overflowing text and poor contrast, fix issues, and give me each page as a PNG plus one overview image. [paste article]",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "social media",
+    "carousel design",
+    "content repurposing",
+    "xiaohongshu"
+  ],
+  "source": {
+    "url": "https://github.com/helloianneo/ian-xhs-carousel",
+    "name": "GitHub",
+    "author": "helloianneo",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A Claude Code add-on with a clear workflow: plan the slides, wait for approval, lay out, render and self-check. It is a tool readme without reported user results, but the steps are concrete and easy to reproduce."
+  }
+}

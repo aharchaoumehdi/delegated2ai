@@ -1,0 +1,42 @@
+{
+  "id": "add-a-side-agent-that-flags-what-your-coding-agent-missed",
+  "title": "Add a side agent that flags what your coding agent missed",
+  "summary": "Dan McAteer reports a watcher add-on in Claude Code warned him that 45 files held unsaved earlier work before he discarded demo edits.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code plugins",
+    "ModSmith",
+    "screenshots"
+  ],
+  "agent_role": "The main agent edited app text, built it and took before-and-after screenshots; a side agent watched and flagged risks. The human decided what to do next.",
+  "outcome": "Author reports the side agent saved him from accidentally throwing away unfinished work.",
+  "what_they_did": "Dan McAteer used add-ons for Claude Code that change how it talks to him. He turned on a built-in side agent that watches the main agent's work. He also built an open-source add-on pack, ModSmith, that suggests a clickable next step after big turns.",
+  "how_it_went": "He says the side agent noticed the file being edited, and about 45 others, already had uncommitted work. It suggested saving that work first, which he says kept him from losing it.",
+  "worth_knowing": "The built-in watcher is off by default; you turn it on from the installed plugins list. Claude can also write new add-ons for you from a plain-language request.",
+  "prompt": "Turn on any built-in watcher that flags things I might miss. Then build me an add-on that runs after any turn that edits files or makes many tool calls. It should list the important things I should check, such as unsaved earlier work, and suggest one next step I can approve with a click. Show me the add-on's code and plan before installing it.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "coding agent",
+    "oversight",
+    "plugins",
+    "workflow"
+  ],
+  "source": {
+    "url": "https://www.latent.space/p/claude-mods",
+    "name": "Latent.Space",
+    "author": "Dan McAteer",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly an essay, but it gives a concrete case where a watching side agent caught a risk the main coding agent missed, plus an open-source plugin of custom add-ons."
+  }
+}

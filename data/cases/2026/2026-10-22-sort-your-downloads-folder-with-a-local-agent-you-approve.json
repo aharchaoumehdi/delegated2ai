@@ -1,0 +1,43 @@
+{
+  "id": "sort-your-downloads-folder-with-a-local-agent-you-approve",
+  "title": "Sort your Downloads folder with a local agent you approve",
+  "summary": "A developer built SlothDesk, where a local Qwen model proposes a category for each Downloads file and nothing moves until the user approves, with one-click undo.",
+  "domain": "Daily life",
+  "platform": "Custom agent",
+  "model": "Qwen2.5-7B-Instruct",
+  "tools": [
+    "smolagents",
+    "LM Studio",
+    "file metadata lookup",
+    "undo log"
+  ],
+  "agent_role": "The agent inspects file details with three read-only tools and proposes a category and destination for each file. The human reviews and approves the plan; ordinary code performs the moves.",
+  "outcome": "Author reports a working dashboard with 28 automatic tests; no usage numbers given.",
+  "what_they_did": "Anirudha Basu Thakur built SlothDesk with help from Google Antigravity. A small model running on a laptop looks at each file in Downloads and suggests a folder like Documents or Archives. The user approves the whole plan before anything moves.",
+  "how_it_went": "The author shows a working app that never overwrites files, re-checks each file before moving it, and keeps a log for one-click undo.",
+  "worth_knowing": "A commenter asked whether files changed after the scan are skipped silently, warning that silent skips can make users think the tool is broken.",
+  "prompt": "Look through my [Downloads folder path] and propose a folder for each loose file: Documents, Images, Videos, Audio, Archives, Code or Other. Show me a table with each file, the suggested folder and a short reason. Don't move, rename or delete anything until I approve. Never overwrite an existing file, and keep a list of moves so I can undo them.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "file organizing",
+    "local ai",
+    "downloads",
+    "approval"
+  ],
+  "source": {
+    "url": "https://dev.to/ani0811/slothdesk-local-first-ai-downloads-organizer-less-sorting-more-living-398",
+    "name": "DEV Community",
+    "author": "Anirudha Basu Thakur",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-22",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working local agent that proposes file moves with read-only tools and waits for approval, with code and tests; useful everyday task but no real-world results reported."
+  }
+}

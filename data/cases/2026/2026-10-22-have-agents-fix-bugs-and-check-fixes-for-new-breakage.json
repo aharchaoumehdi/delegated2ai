@@ -1,0 +1,44 @@
+{
+  "id": "have-agents-fix-bugs-and-check-fixes-for-new-breakage",
+  "title": "Have agents fix bugs and check fixes for new breakage",
+  "summary": "Trail of Bits had Codex agents review 130+ merged open-source fixes, confirming 21 that broke working features; their new checker reports 25% fewer false alarms than a plain prompt.",
+  "domain": "Software",
+  "platform": "OpenAI Codex",
+  "model": null,
+  "tools": [
+    "Codex",
+    "live test deployments",
+    "proof-of-concept runs",
+    "threat model documents"
+  ],
+  "agent_role": "Agents reproduce bugs, write fixes, trace changed code to find possible breakage, and prove each finding with a before-and-after test run; engineers direct the work and review results.",
+  "outcome": "Trail of Bits reports its regression checker produced 25% fewer false-positive findings than a baseline Codex agent, though some known problems were left as borderline.",
+  "what_they_did": "Trail of Bits, a security firm, co-wrote hundreds of open-source security fixes with OpenAI. They had an agent re-check every merged fix for things it broke, proving each with a test run before and after the change. They then turned the lessons from thousands of Codex sessions into two plugins: one that reproduces, fixes and tests a bug, and one that hunts for new breakage.",
+  "how_it_went": "The review found 21 confirmed breakages among 58 candidates from over 130 merged fixes; none broke a security protection. They report the new checker gave 25% fewer false alarms than a plain Codex prompt.",
+  "worth_knowing": "Strict proof rules cut false alarms but left some real problems marked borderline. Their fix plugin also requires that removing the fix brings the bug back, to show the fix actually worked.",
+  "prompt": "In [repo URL], reproduce the bug described in [issue link] on a running copy of the project. Show me the failing reproduction. Then write a fix that addresses the underlying cause, not just this one case. Prove it three ways: the original code fails, the fixed code passes, and reverting the fix fails again. Next, trace the changed code to every place users reach it and list anything that might now behave differently. Confirm each suspected breakage with a before-and-after run, and mark unproven ones as inconclusive. Show me the fix and findings and wait for my approval before opening a pull request.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "bug fixing",
+    "regression testing",
+    "security",
+    "open source",
+    "code review"
+  ],
+  "source": {
+    "url": "https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change/",
+    "name": "Hacker News",
+    "author": "Trail of Bits",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A security firm shows a concrete, measured agent workflow for writing bug fixes and checking them for new breakage, with real numbers from 130+ merged fixes and released plugins. It is specific and reusable, though aimed at engineers."
+  }
+}

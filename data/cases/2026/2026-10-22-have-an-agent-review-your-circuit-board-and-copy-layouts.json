@@ -1,0 +1,40 @@
+{
+  "id": "have-an-agent-review-your-circuit-board-and-copy-layouts",
+  "title": "Have an agent review your circuit board and copy layouts",
+  "summary": "An engineer had Claude Code review a power-switching circuit board design; its feedback forced added parts, and it then copied his hand-drawn layout to six ports, he says perfectly.",
+  "domain": "Science",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "circuit board design files"
+  ],
+  "agent_role": "Claude Code reviewed the design and replicated the wiring layout for ports 1 to 6. The human designed the circuit and hand-routed ports 7 and 8 as the template.",
+  "outcome": "Author reports Claude's review led him to add components and that it replicated the layout for six ports perfectly.",
+  "what_they_did": "The poster added a switch to turn 48-volt power on and off for each port of an 8-port network board. He asked Claude Code to review the design. He then laid out the wiring for two ports by hand and asked Claude to copy it to the other six.",
+  "how_it_went": "He calls the review feedback humbling; it required adding more parts. He says Claude copied the layout to ports 1 to 6 perfectly.",
+  "worth_knowing": "He routed two ports by hand first so Claude had a working pattern to copy, and to confirm everything would fit.",
+  "prompt": "Review my circuit board design in [project folder] for [purpose, e.g. switching power to each port]. List problems and missing components in plain words, with reasons. Then look at the layout I routed by hand for [reference section] and propose copying it to [other sections]. Show me the plan before changing any design files, and keep a backup of the originals.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "circuit board",
+    "hardware design",
+    "design review",
+    "electronics"
+  ],
+  "source": {
+    "url": "https://x.com/tlberglund/status/2112920382948679974",
+    "name": "X",
+    "author": "@tlberglund",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A less common hardware use: Claude Code reviewed a circuit board design and copied a hand-routed layout to six more ports. Short account with no files shared."
+  }
+}

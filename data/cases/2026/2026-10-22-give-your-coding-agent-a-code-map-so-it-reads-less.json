@@ -1,0 +1,44 @@
+{
+  "id": "give-your-coding-agent-a-code-map-so-it-reads-less",
+  "title": "Give your coding agent a code map so it reads less",
+  "summary": "A developer gave coding agents a small map of each project's files and functions; they report 68 to 97% fewer tokens read across four real projects.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "Cursor",
+    "opencode",
+    "Python script"
+  ],
+  "agent_role": "The human runs one script that builds a map of files, functions and who calls what; the coding agent then looks things up in the map instead of opening whole files.",
+  "outcome": "Author reports token reading dropped 97% on a 228-file Electron app and 68% on a 133-file web app, measured on 21 October 2026.",
+  "what_they_did": "A developer wrote a single Python file that scans a project and writes a short map: every file, every function with its line number, and which function calls which. It adds a note so coding agents like Claude Code, Codex, Cursor and opencode read the map first. They then ran the same lookup questions on four real projects with and without the map.",
+  "how_it_went": "The author reports 97% less reading on a 228-file app, 95% on a React app, 77% on a PHP site and 68% on a 133-file web app. One question about a 7,000-line file dropped from about 104,000 tokens to about 4,000.",
+  "worth_knowing": "It does not help with searching for exact text like error messages, and saves little on projects under about 30 files; one flat script saved only 28%.",
+  "prompt": "Before you answer questions about [project folder], build a short map of the code: list every file, every function with its line number, and which functions call which. Save it as a small file in the project and add a note telling yourself to check the map first. Then use the map to answer: [your question about the code]. Only open full files when the map is not enough, and tell me which files you opened and why.",
+  "evidence": "Code available",
+  "difficulty": "Beginner",
+  "tags": [
+    "coding agents",
+    "cost saving",
+    "code map",
+    "token usage"
+  ],
+  "source": {
+    "url": "https://x.com/biggab123/status/2113094521408147462",
+    "name": "X",
+    "author": "@biggab123",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly a tool pitch, but it reports measured savings for coding agents on four real projects with a clear method and stated limits; thin on a specific human workflow."
+  }
+}

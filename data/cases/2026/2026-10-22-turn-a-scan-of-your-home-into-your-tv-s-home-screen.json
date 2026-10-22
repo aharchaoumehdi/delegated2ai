@@ -1,0 +1,44 @@
+{
+  "id": "turn-a-scan-of-your-home-into-your-tv-s-home-screen",
+  "title": "Turn a scan of your home into your TV's home screen",
+  "summary": "A developer shared a playbook that guides a coding agent to scan your home into a 3D model with live lights as your TV's home screen; it runs daily on their TV.",
+  "domain": "Home",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "iPhone room scanner",
+    "Philips Hue",
+    "Home Assistant",
+    "Google TV",
+    "Mac menu bar widget"
+  ],
+  "agent_role": "The coding agent interviews you about your hardware, then works through phases from room scan to 3D model, device bridge and TV launcher, with done-checks. It is told to ask before each TV step and before switching real devices.",
+  "outcome": "Author reports it runs daily on one Philips Google TV with Hue and Home Assistant; other setups are untested.",
+  "what_they_did": "Rod292 built a 3D 'dollhouse' of their apartment that became their TV home screen, with lights you can switch from the remote. They packaged it as instructions for coding agents. The agent asks about your TV and lights, then walks through scanning rooms, building the model, linking devices and installing the launcher.",
+  "how_it_went": "The author says it runs every day on one Philips Google TV with Hue lights, Home Assistant and a HomePod mini, using a Mac as the always-on host.",
+  "worth_knowing": "Only Google TV and Android TV home screens can be replaced, and the scanner needs a LiDAR iPhone or iPad Pro. Some app screens are still in French.",
+  "prompt": "Read the AGENTS.md playbook in this repo and help me build a 3D home screen for my TV. My TV is a [TV model], my lights are [light brand or Home Assistant setup], and I have [iPhone with LiDAR / no scanner]. Start by interviewing me about my hardware and show me the plan. Ask me before every step that changes the TV and before switching any real device.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "smart home",
+    "3d model",
+    "tv",
+    "home automation"
+  ],
+  "source": {
+    "url": "https://github.com/Rod292/3d-home-tv-os",
+    "name": "GitHub",
+    "author": "Rod292",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-22",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A novel home project packaged as a step-by-step playbook a coding agent follows, with working code and a setup in daily use; a good non-coding-flavored home example."
+  }
+}

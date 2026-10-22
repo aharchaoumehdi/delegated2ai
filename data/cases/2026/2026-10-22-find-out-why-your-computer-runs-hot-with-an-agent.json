@@ -1,0 +1,42 @@
+{
+  "id": "find-out-why-your-computer-runs-hot-with-an-agent",
+  "title": "Find out why your computer runs hot with an agent",
+  "summary": "While building a temperature app, a Redditor's Claude Code reportedly traced high heat to a hidden cryptominer using about 1175% CPU and guided its removal.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "process monitor",
+    "startup items",
+    "Malwarebytes"
+  ],
+  "agent_role": "The agent linked odd temperature readings to a background process, found its startup item, and proposed a staged cleanup. The user approved each step and deleted one file by hand.",
+  "outcome": "Per a news report of the Reddit post, the miner was stopped and quarantined; one file needed manual deletion and a Malwarebytes scan followed.",
+  "what_they_did": "A Reddit user was building a Mac app to show sensor readings with Claude Code. Temperatures looked too high, so the agent looked at running programs. It found a mining program set to restart at every boot. It then proposed stopping the startup item, ending the process, and moving files to quarantine.",
+  "how_it_went": "The report says the miner used about 1175% CPU and pushed the chip to 112°C. Most cleanup went through the agent; one file had to be deleted manually. This is a news write-up of one unverified post.",
+  "worth_knowing": "The agent asked before stopping processes or moving files. The article notes an agent is no substitute for proper security software, and one scan does not prove a machine is clean.",
+  "prompt": "My [Mac/PC] runs hot and slow even when idle. Check which programs are using the most processor and memory, and list any I may not recognize. Look at startup items and background services for anything unusual. Explain what each suspicious item is and why. Then propose a step-by-step cleanup plan, such as stopping a startup item, ending a process, or moving files to a quarantine folder. Do not stop, move, or delete anything until I approve each step.",
+  "evidence": "Independent report",
+  "difficulty": "Beginner",
+  "tags": [
+    "malware",
+    "computer troubleshooting",
+    "security",
+    "mac"
+  ],
+  "source": {
+    "url": "https://www.gadgetreview.com/claude-code-spotted-a-cryptominer-on-mac-while-helping-to-build-a-temperature-app",
+    "name": "Hacker News",
+    "author": "UntilHEX",
+    "published": "2026-10-20"
+  },
+  "added": "2026-10-22",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine case of an agent tracing a symptom to hidden malware and guiding cleanup with approval, but it is secondhand news coverage of a single unverified Reddit post."
+  }
+}

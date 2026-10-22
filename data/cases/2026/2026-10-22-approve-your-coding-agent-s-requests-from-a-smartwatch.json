@@ -1,0 +1,44 @@
+{
+  "id": "approve-your-coding-agent-s-requests-from-a-smartwatch",
+  "title": "Approve your coding agent's requests from a smartwatch",
+  "summary": "A developer told to walk every 60 minutes built Beep, which sends Claude Code and Cursor approval requests and questions to his Wear OS watch so agents keep working.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Cursor",
+    "Wear OS watch",
+    "Cloudflare Workers",
+    "Firebase push"
+  ],
+  "agent_role": "Claude Code and Cursor keep coding on their own and pause for permission or questions; the human allows, denies or answers from the watch.",
+  "outcome": "Author reports his agents now keep working during his hourly walks instead of freezing on one click.",
+  "what_they_did": "A developer had to walk every hour, and his coding agents kept stopping to ask for permission. He built Beep, an open-source setup that forwards those requests to a smartwatch. Small scripts on his Mac watch Claude Code and Cursor, and a small online relay passes requests to the watch. He holds to allow or taps to deny.",
+  "how_it_went": "He says he now walks with his agents every 60 minutes while they keep working. Claude Code approvals, questions and plans work from the watch; Cursor only supports shell command approvals, and Codex is not wired up yet.",
+  "worth_knowing": "Nothing is approved without a tap; if you don't answer, the agent falls back to its normal prompt on the computer. Setup needs a Cloudflare account, a Firebase project, Android Studio and a Mac.",
+  "prompt": "Help me set up a way to approve your requests from my phone or watch while I'm away from my desk. Look at how you ask for permission to run commands or edit files, and propose a small setup that forwards those requests to [my device] and waits for my allow or deny. Requests should only go to the device when I switch on an away mode. If I don't answer, fall back to the normal prompt on my computer. Show me the plan and the files you'll change, and wait for my approval before installing anything or creating online accounts.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "approvals",
+    "smartwatch",
+    "remote control",
+    "developer workflow"
+  ],
+  "source": {
+    "url": "https://x.com/ahkamb0h/status/2112906759945736597",
+    "name": "X",
+    "author": "@ahkamb0h",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-22",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A practical, open-source fix for agents stalling on approvals while the developer walks away, with detailed setup and honest limits; still a developer tool rather than a broad use case."
+  }
+}

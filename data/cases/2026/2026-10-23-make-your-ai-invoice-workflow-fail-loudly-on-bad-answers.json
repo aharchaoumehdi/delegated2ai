@@ -1,0 +1,43 @@
+{
+  "id": "make-your-ai-invoice-workflow-fail-loudly-on-bad-answers",
+  "title": "Make your AI invoice workflow fail loudly on bad answers",
+  "summary": "A developer fed eight bad AI responses through their n8n invoice extractor; seven still showed as successful runs until they added a checking step and alerts.",
+  "domain": "Business",
+  "platform": "n8n",
+  "model": null,
+  "tools": [
+    "n8n",
+    "webhooks",
+    "OpenAI-compatible API",
+    "Code node"
+  ],
+  "agent_role": "The n8n workflow sends invoices to an AI model, reads the answer and returns invoice data. The developer designed the tests and wrote the checking step.",
+  "outcome": "Author reports seven of eight bad responses produced green runs before the fix, including a wrong total of 18,000 on an 11,800 bill.",
+  "what_they_did": "A developer took their own n8n workflow that reads invoices with an AI model. They used a fake model server that returned specific bad answers: empty text, cut-off output, refusals, wrong totals, missing invoice numbers and hidden errors. They then replaced the reading step with a checker that stops the run on bad data.",
+  "how_it_went": "They say seven of the eight bad answers showed as successful runs in the original workflow. The new checker throws an error on each, which triggers n8n's error alert. It also checks that subtotal plus tax equals the total.",
+  "worth_knowing": "Code that quietly swaps a bad answer for an empty result hides failures. The author also found the default one-second wait between retries used up all tries in about two seconds against rate limits.",
+  "prompt": "Review my n8n workflow [workflow name] that sends documents to an AI model and saves the extracted data to [destination]. List every way a bad AI answer could pass through as a successful run: empty text, cut-off output, refusals, missing required fields, numbers that don't add up, and errors hidden in a normal response. Then draft a checking step that stops the run on each case, plus an error workflow that alerts me at [email or chat]. Show me the changes before applying them.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "invoice extraction",
+    "error handling",
+    "workflow testing",
+    "n8n"
+  ],
+  "source": {
+    "url": "https://dev.to/crzy_undefinedundefined/7-silent-failures-in-n8n-ai-workflows-and-the-error-trigger-setup-that-catches-them-44hp",
+    "name": "DEV Community",
+    "author": "Crzy undefined",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real n8n invoice-reading workflow tested against eight bad AI responses, with code for the fix. It is useful and well evidenced, but more about reliability than a new agent use."
+  }
+}

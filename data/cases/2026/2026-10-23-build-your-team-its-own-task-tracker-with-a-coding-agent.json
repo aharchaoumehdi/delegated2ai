@@ -1,0 +1,39 @@
+{
+  "id": "build-your-team-its-own-task-tracker-with-a-coding-agent",
+  "title": "Build your team its own task tracker with a coding agent",
+  "summary": "A developer at Trust Image is building an internal issue tracker inspired by Linear, Todoist and Monday with Claude Code on Opus 5.5, shaped to their team's process.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "Opus 5.5",
+  "tools": [
+    "Claude Code"
+  ],
+  "agent_role": "Claude Code writes the tracker's views, workflows and rules; the developer decides how it should match the team's way of working.",
+  "outcome": "The author says the tracker is in use internally and built around their team's process.",
+  "what_they_did": "A developer at Trust Image is building an internal issue tracker for their team. It borrows ideas from Linear, Todoist and Monday. They built it with Claude Code on Opus 5.5, shaping views, workflows and rules around how the team works.",
+  "how_it_went": "The author says coding agents make it realistic to build tools that fit their process instead of bending to someone else's defaults. They are keeping it internal.",
+  "worth_knowing": "The author notes the bigger question with one-team software is who owns and maintains it once it is running.",
+  "prompt": "Help me build a simple internal task tracker for my team. Our workflow is: [describe stages, roles and rules]. We like these ideas from other tools: [features you like]. First, propose a plan with the views, task fields and rules, and wait for my approval. Then build it step by step, run it locally, and show me each part before moving on. Don't deploy anything until I say so.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "internal tools",
+    "task tracker",
+    "team workflow"
+  ],
+  "source": {
+    "url": "https://x.com/adeilsonrbrito/status/2113276077741125656",
+    "name": "X",
+    "author": "@adeilsonrbrito",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real in-house tool built with Claude Code, with a useful point about custom team software, but few details on steps or results."
+  }
+}

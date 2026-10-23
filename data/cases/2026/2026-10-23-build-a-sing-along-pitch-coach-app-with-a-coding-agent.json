@@ -1,0 +1,42 @@
+{
+  "id": "build-a-sing-along-pitch-coach-app-with-a-coding-agent",
+  "title": "Build a sing-along pitch coach app with a coding agent",
+  "summary": "A bad singer had Claude Code prototype pitch detection, then built OnKey, a free Mac app that learns a song and scores your pitch and timing.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Python",
+    "Spotify",
+    "LRCLIB"
+  ],
+  "agent_role": "Claude Code wrote Python to detect pitch from audio and display it in the terminal; the author then built the full macOS app around it.",
+  "outcome": "Author reports a working open-source Mac app that listens to a song once, learns its pitch track, and scores your singing, with a demo video on the site.",
+  "what_they_did": "The author, a self-described bad singer, asked Claude Code to write code that listens to Spotify and his voice and scores his pitch. It produced Python that showed pitch in the terminal. He then built OnKey, a free, open-source Mac app that learns a song's pitch track and scores your singing.",
+  "how_it_went": "The author says the prototype worked but could not detect the singer's pitch in real time, so he built a fuller app. He reports he improved from terrible to bad.",
+  "worth_knowing": "It struggles when the backing track is noisy, sometimes reads a note an octave off, and only runs on Apple Silicon Macs with macOS 14.2 or later.",
+  "prompt": "Help me build a tool that listens to a song playing on my computer and to my voice through the microphone, detects the pitch of each, and scores how close my pitch and timing are. Start with a simple Python prototype that shows my detected pitch live in the terminal. Show me your plan first, then write the code step by step so I can test as we go. Do not save any audio to disk.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "music",
+    "singing",
+    "pitch detection",
+    "mac app"
+  ],
+  "source": {
+    "url": "https://github.com/dsmurrell/onkey",
+    "name": "Hacker News",
+    "author": "dsmurrell",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine case of using Claude Code to prototype pitch detection and then build a real open-source app, with a working demo; the agent's role is clear but was a coding assist rather than a full autonomous workflow."
+  }
+}

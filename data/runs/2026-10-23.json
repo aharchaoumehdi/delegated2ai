@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-23",
+  "runs": [
+    {
+      "id": "gh-39948684067-1",
+      "started": "2026-10-23T11:48:50.460Z",
+      "trigger": "schedule",
+      "collect": {
+        "sources": {
+          "reddit": {
+            "status": "error",
+            "error": "r/ClaudeAI: HTTP 403 for https://www.reddit.com/r/ClaudeAI/top.json?t=day&limit=25&raw_json=1; r/ClaudeCode: HTTP 403 for https://www.reddit.com/r/ClaudeCode/top.json?t=day&limit=25&raw_json=1; r/ChatGPTCoding: HTTP 403 for https://www.reddit.com/r/ChatGPTCoding/top.json?t=day&limit=25&raw_json=1; r"
+          },
+          "x": {
+            "status": "ok",
+            "items": 80,
+            "ms": 687,
+            "fetched": 80,
+            "searches": [
+              {
+                "label": "coding agents in use",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "personal and business agents",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "agents at work",
+                "fetched": 20,
+                "kept": 20
+              }
+            ]
+          },
+          "submissions": {
+            "status": "ok",
+            "items": 0,
+            "ms": 824
+          },
+          "github": {
+            "status": "ok",
+            "items": 45,
+            "ms": 2064
+          },
+          "hackernews": {
+            "status": "ok",
+            "items": 73,
+            "ms": 2234
+          },
+          "feeds": {
+            "status": "ok",
+            "items": 14,
+            "ms": 2488
+          },
+          "devto": {
+            "status": "ok",
+            "items": 35,
+            "ms": 7479
+          }
+        },
+        "raw": 247,
+        "unique_new": 140,
+        "candidates": 105
+      },
+      "curate": {
+        "status": "ok",
+        "model": "claude-opus-5-5",
+        "evaluated": 105,
+        "published": 25,
+        "from_backlog": 15,
+        "queued_for_review": 7,
+        "rejected": 88,
+        "failures": [],
+        "published_ids": [
+          "add-a-side-agent-that-flags-what-your-coding-agent-missed",
+          "answer-business-calls-and-book-jobs-with-a-voice-agent",
+          "build-an-animated-3d-film-entirely-in-code",
+          "check-whether-an-open-source-project-actually-runs",
+          "design-an-animated-control-room-for-your-ai-agents",
+          "find-out-why-your-computer-runs-hot-with-an-agent",
+          "gather-all-your-trip-research-into-one-plan-with-an-agent",
+          "give-your-coding-agent-a-code-map-so-it-reads-less",
+          "have-an-agent-shop-in-a-phone-app-and-stop-before-paying",
+          "have-your-coding-agent-prove-its-code-does-what-you-meant",
+          "rebuild-a-game-you-own-from-scratch-with-a-coding-agent",
+          "restore-your-work-files-after-a-crash-by-texting-an-agent",
+          "search-brain-cell-data-for-research-leads-with-many-agents",
+          "split-your-coding-agent-into-a-builder-and-four-reviewers",
+          "turn-an-article-into-a-social-media-image-carousel",
+          "turn-client-voice-notes-into-automation-drafts",
+          "check-claims-in-old-science-books-against-real-data",
+          "make-your-coding-agent-check-tickets-before-writing-code",
+          "fight-a-health-insurance-denial-with-an-appeal-agent",
+          "triage-emails-leads-and-comments-with-a-cautious-agent",
+          "put-two-friends-agents-in-one-group-chat-to-prep-outreach",
+          "run-an-authorized-web-pentest-with-a-claude-skill",
+          "build-a-sing-along-pitch-coach-app-with-a-coding-agent",
+          "search-gene-databases-for-unknown-enzyme-systems",
+          "make-your-ai-invoice-workflow-fail-loudly-on-bad-answers"
+        ]
+      },
+      "enrich": {
+        "needed": 0,
+        "written": 0,
+        "failures": [],
+        "summaries": {
+          "needed": 0,
+          "written": 0,
+          "failures": []
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "make-your-coding-agent-check-tickets-before-writing-code",
+  "title": "Make your coding agent check tickets before writing code",
+  "summary": "Randal Schwartz ran five production tickets through a workflow of checker and critic helper agents; he reports one stale ticket closed in 8 minutes with no code written.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": "Claude Sonnet 4.6, Gemini 4, GPT-OSS 120B",
+  "tools": [
+    "git",
+    "GitHub",
+    "Makefile",
+    "markdown state files",
+    "GitHub Actions"
+  ],
+  "agent_role": "The agent checked each ticket against the code history, planned, wrote code with a critic helper reviewing each change, sorted bot review comments and re-ran flaky tests. The developer approved commits and watched a status board.",
+  "outcome": "Author reports five tickets finished with zero nudges, a mid-run switch from Claude to Gemini at step 433 that still completed, and GPT-OSS 120B failing badly in the same setup.",
+  "what_they_did": "Developer Randal Schwartz built a coding workflow that keeps progress in numbered note files on disk. Before promising code, a read-only helper agent checks the ticket's claims against the project history. Every edit is paired with a critic helper. He ran five real backlog tickets, a run where he swapped models midway, and a test with an open model.",
+  "how_it_went": "He says one ticket was already solved and got closed in 8 minutes with no code, and others were cut in scope. The agent survived memory resets by rereading its note files. GPT-OSS 120B ignored the files and launched several conflicting commits at once.",
+  "worth_knowing": "Keeping the agent's progress in plain files on disk let a different model pick up mid-job. But the scaffolding has a floor: a weaker model fell straight through it.",
+  "prompt": "Before writing any code for ticket [ticket link], check each claim in it against the git history and current main branch. Tell me what is already done, what is out of date, and what is left. If the ticket is stale, propose closing it instead. Keep your plan and progress in numbered notes files in [folder], and reread them after any memory reset. After each code change, have a separate reviewer pass look for bugs. Show me the plan and wait for my OK before committing or pushing.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "code review",
+    "ticket triage",
+    "subagents",
+    "workflow"
+  ],
+  "source": {
+    "url": "https://dev.to/gde/926-steps-two-lobotomies-and-zero-nudges-flight-testing-the-commitment-machine-across-gemini-55ca",
+    "name": "DEV Community",
+    "author": "Randal L. Schwartz",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Detailed field test on five real production tickets with step counts, a mid-run model swap and an open model failure, plus a public workflow file; specific and useful, though coding-focused."
+  }
+}

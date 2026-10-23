@@ -1,0 +1,42 @@
+{
+  "id": "search-gene-databases-for-unknown-enzyme-systems",
+  "title": "Search gene databases for unknown enzyme systems",
+  "summary": "Anthropic's Claude agents scanned over 200,000 reverse transcriptase genes and flagged a new CRISPR-like system, but ten reruns of the same search did not find it again.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": "Claude Mythos 5",
+  "tools": [
+    "genetic sequence databases",
+    "literature search",
+    "file and code tools"
+  ],
+  "agent_role": "About 950 agent sessions surveyed enzymes, narrowed thousands of candidates to about 20 leads, and one agent spotted and analyzed a repeat pattern before writing a report. Anthropic scientists did the lab experiments.",
+  "outcome": "Anthropic reports the agents found a system later named ART, whose repeats were confirmed to produce distinct RNA; ten reruns did not rediscover it.",
+  "what_they_did": "Anthropic's life sciences group gave Claude agents a broad brief: study reverse transcriptases, enzymes that copy RNA into DNA, and look for unknown links to other genes. About 950 sessions explored over 200,000 such genes over about 21 hours. One agent noticed repeating DNA beside an enzyme gene and investigated it. Human scientists then tested it in the lab.",
+  "how_it_went": "Lab work showed the repeat region produces distinct RNA pieces, though the system's job is still unknown. Ten reruns with the same setup never examined the DNA stretch holding the pattern.",
+  "worth_knowing": "Models recognized the pattern at least 90% of the time when shown the sequence directly, but as low as 32% when they had to find it through files themselves. How the agent searches matters as much as what it can spot.",
+  "prompt": "Using the genome files in [folder or database], find every copy of [gene or enzyme family]. For each, read at least [number] bases of the surrounding DNA on both sides. Look for unusual neighbors: repeated sequences, gene clusters that recur together, or genes rarely seen nearby. Count and measure any repeats you find, compare them to known systems, and search the scientific literature. Write a ranked report of the top [number] leads, with the exact sequence locations so I can check each one myself.",
+  "evidence": "Independent report",
+  "difficulty": "Advanced",
+  "tags": [
+    "genomics",
+    "scientific discovery",
+    "literature search",
+    "reproducibility"
+  ],
+  "source": {
+    "url": "https://dev.to/bargan/claude-found-a-crispr-like-pattern-in-dna-ten-reruns-couldnt-find-it-again-1pkj",
+    "name": "DEV Community",
+    "author": "Bargan Constantin",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine, well-documented scientific agent campaign with numbers and a lab follow-up, but this is a third-party summary of Anthropic's announcement and preprint, so it is lowered for being a repost; science boost applied."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "clear-out-your-read-later-pile-with-a-local-agent",
+  "title": "Clear out your read-later pile with a local agent",
+  "summary": "Sarvar Nadaf built Unpile, a laptop-only agent that sorts saved articles into keep, skim or drop; on a 14-item demo it kept 5 and silenced 8.",
+  "domain": "Daily life",
+  "platform": "Custom agent",
+  "model": "TabPFN-v2 and Gemma 3",
+  "tools": [
+    "Ollama",
+    "TabPFN",
+    "FastAPI",
+    "GitHub Pages"
+  ],
+  "agent_role": "The agent reads an exported reading list and predicts which items the user will read. It decides keep, skim or drop with a plain reason for each, then writes a short morning digest. The user supplies their reading history and export.",
+  "outcome": "Author reports the demo pile of 14 items came down to 5 keepers, 1 maybe and 8 silenced, saving about 5.5 hours of reading. He says he cleared a 1,247-item backlog.",
+  "what_they_did": "A developer built Unpile, an agent that runs fully offline on a laptop. You point it at an export from Pocket, Instapaper, browser bookmarks or a spreadsheet. One local model learns from your history of what you actually read and rates each saved item. A second local model writes a two-line morning digest of the keepers.",
+  "how_it_went": "On the demo pile it kept 5 of 14 items, flagged 1 as maybe and silenced 8. The author says this saved 5.5 hours of reading. He reports letting it clear almost all of his 1,247 saved articles. A live demo and the code are public.",
+  "worth_knowing": "The project's dataset is synthetic, though documented, so results on your own pile may differ. The digest writer is told never to invent an item, and a simple backup writes the digest if the model is unavailable.",
+  "prompt": "I have a read-later backlog exported as [Pocket/Instapaper/bookmarks/CSV file]. Go through every item and sort it into keep, skim or drop. Base this on how likely I am to actually read it, using [my history of articles I did read, or my stated interests]. Give a one-line reason for each decision. Then write a calm two-line morning digest of only the keepers, and don't invent any items. Show me the full list of drops and wait for my approval before deleting or archiving anything.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "read later",
+    "reading list",
+    "local ai",
+    "digest",
+    "decluttering"
+  ],
+  "source": {
+    "url": "https://dev.to/sarvar_04/i-let-an-open-model-delete-1242-of-my-saved-articles-on-purpose-i-feel-lighter-l7f",
+    "name": "DEV Community",
+    "author": "Sarvar Nadaf",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-23",
+  "status": "review",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working, open-source local agent that triages a read-later pile and writes a digest, with a live demo and code. The training data is synthetic and the real-backlog result is lightly evidenced. Daily-life use earns a small boost."
+  }
+}

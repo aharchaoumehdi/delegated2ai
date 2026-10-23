@@ -1,0 +1,40 @@
+{
+  "id": "answer-salon-customer-messages-after-hours-with-agents",
+  "title": "Answer salon customer messages after hours with agents",
+  "summary": "A builder made an AI front desk for a sample salon using n8n and a team of AI agents to answer customers who message late at night.",
+  "domain": "Business",
+  "platform": "n8n",
+  "model": null,
+  "tools": [
+    "n8n"
+  ],
+  "agent_role": "A team of AI agents in n8n answers customer messages for the salon when no staff are around; the builder designed the workflow.",
+  "outcome": null,
+  "what_they_did": "The poster built an AI front desk for a sample salon. It uses n8n, a tool for linking apps into automatic workflows, plus a team of AI agents. The goal is to answer customers who message late, like at 11pm, before they book elsewhere.",
+  "how_it_went": null,
+  "worth_knowing": "This was built for a sample salon, not a live business, and the source shares no results.",
+  "prompt": "Help me build an after-hours front desk for my [type of business] in n8n. When a customer messages on [messaging channel], have an agent answer common questions from my [services and prices list], check open slots in [my booking calendar], and suggest times. Show me the workflow plan first. Draft every booking for my approval before confirming it with the customer, and flag anything unusual for me to handle in the morning.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "small business",
+    "customer messages",
+    "booking",
+    "salon"
+  ],
+  "source": {
+    "url": "https://x.com/Pollyautomates/status/2113449992144699484",
+    "name": "X",
+    "author": "@Pollyautomates",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-23",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine multi-agent n8n build answering salon messages after hours, but it is a sample salon and the thread details and results are not in the source text."
+  }
+}

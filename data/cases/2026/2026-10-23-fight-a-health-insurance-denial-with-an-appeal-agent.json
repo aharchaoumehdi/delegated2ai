@@ -1,0 +1,43 @@
+{
+  "id": "fight-a-health-insurance-denial-with-an-appeal-agent",
+  "title": "Fight a health insurance denial with an appeal agent",
+  "summary": "A hackathon team built ClaimSureAI, two agents that flag risky claims and draft cited appeals for denials; it took 2nd place, with sending simulated.",
+  "domain": "Health",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Jac language",
+    "shared knowledge graph",
+    "image reading of denial letters",
+    "appeal letter drafting"
+  ],
+  "agent_role": "One agent scores a claim's denial risk against 72 past claims and explains the factors. A second agent reads the denial letter, matches it to a plan clause, judges whether it looks wrongful and drafts the appeal packet. A person must approve before anything is sent, and unclear letters go to manual review.",
+  "outcome": "The team reports 2nd place in the JacHacks Agentic AI track. Filing, faxing and follow-ups were simulated in the demo.",
+  "what_they_did": "A four-person team built ClaimSureAI at a hackathon. One agent predicts whether a claim will be denied by comparing it with 72 past claims. A second agent reads a photo of the denial letter, finds the plan rule it contradicts, and drafts a cover letter, medical note and records request. A person approves every packet before it is sent.",
+  "how_it_went": "The team says it placed 2nd in the hackathon's agent track. They report that filing the appeal, faxing, notifying the patient and setting 30-day follow-ups all work in the demo, but only as simulations.",
+  "worth_knowing": "The agent sends unclear letters to a person instead of guessing, when it reads them with under 60% confidence or meets an unknown denial code. The team lists real insurer connections and privacy protections as still to come.",
+  "prompt": "I received a health insurance denial. Read the attached denial letter [denial letter] and my plan document [plan document]. Explain the denial code in plain words. Find the plan section and page that applies, and quote it exactly. Tell me whether the denial looks wrongful or legitimate, and why. If it looks wrongful, draft an appeal packet: a cover letter, a request for my provider's records, and a checklist of attachments. Mark anything you're unsure of instead of guessing. Show me the drafts and wait for my approval. Do not send or submit anything.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "health insurance",
+    "claim appeals",
+    "denial letters",
+    "human approval"
+  ],
+  "source": {
+    "url": "https://x.com/Jaseci_Org/status/2113340611290136617",
+    "name": "X",
+    "author": "Abhayjit Singh Gulati, Shankhanil Borthakur, Sri Satya Vinay Venneti, Adithyan Raja",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed hackathon build of a two-agent health insurance appeal helper with human approval steps. All outside actions were simulated in the demo, so it is a well-documented prototype rather than real-world use. It gets a small boost as a health example."
+  }
+}

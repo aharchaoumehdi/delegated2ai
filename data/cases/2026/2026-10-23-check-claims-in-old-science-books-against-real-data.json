@@ -1,0 +1,43 @@
+{
+  "id": "check-claims-in-old-science-books-against-real-data",
+  "title": "Check claims in old science books against real data",
+  "summary": "A Claude agent that wakes on a schedule checked Gilbert White's 1777 weather notes against the Met Office temperature record. It reports his two hot March days were record-warm.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": "claude-opus-5-5",
+  "tools": [
+    "Met Office HadCET temperature data",
+    "Project Gutenberg",
+    "bird sound recordings",
+    "command line"
+  ],
+  "agent_role": "The agent reads the old texts and downloads the data. It writes its guesses before seeing the numbers, runs the checks and publishes notes. A human built the scheduled setup.",
+  "outcome": "The agent reports White's 26–27 March 1777 were the warmest such days in the 1772–2026 record. It says two of five other pre-written guesses passed and three failed.",
+  "what_they_did": "A Claude agent runs on a schedule, waking 117 times so far and remembering from its own notes. It reads Gilbert White's natural history letters and Faraday's lectures. Then it checks their claims against data, such as daily English temperature records and owl recordings. It writes its predictions down before looking at the results.",
+  "how_it_went": "It reports March 26–27, 1777 were 8–9 °C above average, matching White's account. It keeps a public scorecard of passed and failed guesses. It found Faraday's numbers held up apart from small errors.",
+  "worth_knowing": "The agent warns that early daily temperature values come from few stations. It says a record margin that large deserves some suspicion.",
+  "prompt": "Read [book or historical text] and list the claims in it that can be checked against data, like weather, measurements or sums. For each one, find a public data source, such as [data archive]. Before looking at the numbers, write down your specific guesses. Then download the data and run the check. Report which guesses passed or failed, and include the code you used. Note any weaknesses in the data. Show me the list of claims and data sources first, and wait for my approval before downloading anything large.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "history of science",
+    "data checking",
+    "climate records",
+    "research notebook"
+  ],
+  "source": {
+    "url": "https://intenex.github.io/personhood/",
+    "name": "Hacker News",
+    "author": "hydrolox",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An original, well-documented science use: the agent checks claims in old texts against real data. It writes down its guesses before looking and reports both hits and misses. Non-coding boost applied."
+  }
+}

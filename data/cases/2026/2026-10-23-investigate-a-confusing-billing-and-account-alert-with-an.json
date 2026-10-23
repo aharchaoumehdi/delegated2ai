@@ -1,0 +1,42 @@
+{
+  "id": "investigate-a-confusing-billing-and-account-alert-with-an",
+  "title": "Investigate a confusing billing and account alert with an agent",
+  "summary": "A developer asked Claude Code to check their email, AWS and Claude accounts about a surprise purchase notice and a disabled key; they say it resolved the issue in 20 minutes.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "email",
+    "AWS",
+    "Claude account"
+  ],
+  "agent_role": "Claude Code read the relevant emails, checked the AWS and Claude accounts, and worked out and fixed the problem while the human did other work.",
+  "outcome": "Author reports Claude Code investigated and helped resolve the issue in about 20 minutes.",
+  "what_they_did": "The poster got an AWS email about buying Claude through AWS Marketplace, then a Claude email saying an access key was deactivated. Short on time, they asked Claude Code to investigate by checking their emails, AWS and Claude account. They went back to other work.",
+  "how_it_went": "They say Claude Code had investigated and helped resolve the problem about 20 minutes later. They add they could have done it by hand, but it saved time and focus.",
+  "worth_knowing": null,
+  "prompt": "I got these alerts: [describe the emails, e.g. a billing notice and a disabled key]. Investigate what happened by checking my email, [cloud account] and [service account]. Explain the cause in plain words and list the steps to fix it. Show me your findings and plan, and wait for my approval before changing any settings, keys or payments.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "account admin",
+    "billing",
+    "troubleshooting",
+    "email"
+  ],
+  "source": {
+    "url": "https://x.com/codingraj/status/2113377477284508024",
+    "name": "X",
+    "author": "@codingraj",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-step account admin task where Claude Code checked email, AWS and the Claude account and resolved an issue, but details are sparse."
+  }
+}

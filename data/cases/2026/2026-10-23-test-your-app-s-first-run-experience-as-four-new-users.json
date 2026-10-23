@@ -1,0 +1,42 @@
+{
+  "id": "test-your-app-s-first-run-experience-as-four-new-users",
+  "title": "Test your app's first-run experience as four new users",
+  "summary": "A developer built an open-source skill that has a coding agent try an app as four kinds of first-time users, logging where they get stuck.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "browser automation",
+    "skills CLI",
+    "GitHub"
+  ],
+  "agent_role": "The agent defines what first success means, browses the app as four personas, records blockers with evidence, proposes fixes and re-checks them in fresh sessions; humans approve sensitive changes.",
+  "outcome": null,
+  "what_they_did": "Bargan Constantin wrote a skill for coding agents like Claude Code or Codex. The agent explores an app as four new users: impatient, skeptical, mobile and a 'breaker' who tries bad inputs. It logs blockers with browser evidence, suggests fixes, does one fix pass, then reruns all four in fresh sessions.",
+  "how_it_went": "The author shares the skill and prompt but reports no results from a specific app yet.",
+  "worth_knowing": "Simulated personas don't replace real user testing. Problems found during re-checks are reported, not fixed automatically, so the agent can't loop endlessly.",
+  "prompt": "Act as four first-time users of my app at [local preview URL]: an impatient skimmer, a skeptic who checks pricing and privacy, a phone user on a small screen, and a breaker who tries bad inputs and double clicks. First tell me what 'first useful result' means for my app. Use fresh browser sessions for each persona. Record every blocker with screenshots and steps to reproduce. Then list issues by priority and propose fixes. Show me the fixes and wait for approval before changing code. Do not use real data or payments.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "usability testing",
+    "onboarding",
+    "browser testing",
+    "personas"
+  ],
+  "source": {
+    "url": "https://dev.to/bargan/i-built-an-agent-skill-that-tests-your-app-like-four-first-time-users-180d",
+    "name": "DEV Community",
+    "author": "Bargan Constantin",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An open-source agent skill with a clear, reproducible workflow and prompt, but no reported results from a real app."
+  }
+}

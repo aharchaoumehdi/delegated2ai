@@ -1,0 +1,42 @@
+{
+  "id": "put-two-friends-agents-in-one-group-chat-to-prep-outreach",
+  "title": "Put two friends' agents in one group chat to prep outreach",
+  "summary": "Two friends put their personal agents in one Telegram group; the agents researched LinkedIn leads and wrote video scripts into a dashboard, though they say early chats went off track.",
+  "domain": "Marketing",
+  "platform": "Hermes Agent",
+  "model": null,
+  "tools": [
+    "Telegram",
+    "Obsidian",
+    "dashboard"
+  ],
+  "agent_role": "The humans made the outreach plan; the two agents wrote the script, researched leads with a personal angle and filled a dashboard. The humans later had the agents review and fix their own failed conversation.",
+  "outcome": "The author says the friend can now prep each personal video in 30 to 60 seconds; real testing starts next week.",
+  "what_they_did": "The poster and a friend each run their own agent, Mero and Aiko. They first shared notes in an Obsidian vault, then put both agents in one Telegram group with rules. For the friend's LinkedIn outreach with personal videos, the humans made the plan. The agents wrote the script, researched leads with a personal angle each, and put it all in a dashboard.",
+  "how_it_went": "The author says the friend can see each lead and record a video after 30 to 60 seconds of prep. Early on the bots talked nonsense to each other and lost track, so both agents reviewed the session and fixed it.",
+  "worth_knowing": "Two agents chatting freely can drift into nonsense. Having them review the failed session together helped, and the author shares only learnings, not client or personal data.",
+  "prompt": "You will share a group chat with my colleague's agent. Follow these rules: share only work learnings, never client details or personal data. For my outreach campaign on [platform], research [number] leads in [target market]. For each, find one personal angle from their website or profile and write a short video script. Put the leads, links, angles and scripts in [a spreadsheet or dashboard]. Show me the first three before finishing the rest. Do not contact anyone.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "multi-agent",
+    "lead research",
+    "outreach",
+    "team chat"
+  ],
+  "source": {
+    "url": "https://x.com/niklas11891/status/2113442207655194710",
+    "name": "X",
+    "author": "@niklas11891",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-23",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine and somewhat novel setup where two friends' agents share a group chat and prepare outreach leads together, but the result is early and lightly evidenced."
+  }
+}

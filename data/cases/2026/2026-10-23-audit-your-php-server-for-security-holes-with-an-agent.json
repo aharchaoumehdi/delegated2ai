@@ -1,0 +1,45 @@
+{
+  "id": "audit-your-php-server-for-security-holes-with-an-agent",
+  "title": "Audit your PHP server for security holes with an agent",
+  "summary": "A developer released PHP Skeptic, a skill that has coding agents scan a PHP server's setup and logs, match each site to its real PHP version, and challenge their own findings.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "OpenAI Codex",
+    "Cursor",
+    "Gemini CLI",
+    "GitHub Copilot",
+    "OpenCode"
+  ],
+  "agent_role": "The agent inspects the server environment and logs, maps each project to the PHP version actually serving it, checks web server setups and vendor patches, and tries to disprove findings; the human installs the skill and gives authorized server access.",
+  "outcome": null,
+  "what_they_did": "The author wrote a reusable skill file that coding agents like Claude Code, Codex and Cursor can load. It tells the agent to start by reading the server setup and logs. Then it maps every website to the PHP version really running it and checks the web server and patches. The focus is two recent critical PHP flaws.",
+  "how_it_went": null,
+  "worth_knowing": "The skill is built to never call a server 'safe' just because evidence is missing. It also first checks it is on the right machine, not your laptop or a sandbox.",
+  "prompt": "Audit this PHP server, which I am authorized to test: [server or project path]. Work read-only first. Start by reading the environment and logs. Map every project to the PHP version and web server that actually serves it, and check whether vendor patches cover [known vulnerabilities]. For each finding, try to disprove it, and label it as observed, inferred, uncertain or proven. Do not treat missing evidence as safe. Show me your findings and any fix plan, and wait for my approval before changing anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "security audit",
+    "php",
+    "web servers",
+    "vulnerability check"
+  ],
+  "source": {
+    "url": "https://x.com/budimanadhi20/status/2113270015139225642",
+    "name": "X",
+    "author": "@budimanadhi20",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An open-source agent skill with a detailed, specific security-audit workflow that checks real server setups and tries to disprove its own findings; no real-world audit result is reported, so it stays thin."
+  }
+}

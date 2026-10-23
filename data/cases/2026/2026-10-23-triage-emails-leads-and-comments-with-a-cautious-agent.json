@@ -1,0 +1,44 @@
+{
+  "id": "triage-emails-leads-and-comments-with-a-cautious-agent",
+  "title": "Triage emails, leads and comments with a cautious agent",
+  "summary": "A builder rebuilt their agent as a five-step pipeline that labels and scores incoming items; they report it quarantined phishing, booked a call and held an unsure comment for review.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": "Opus 5.5",
+  "tools": [
+    "email",
+    "calendar",
+    "Slack",
+    "browser",
+    "YouTube comments"
+  ],
+  "agent_role": "The model only labels and scores each incoming item; plain code carries out actions above a 0.85 confidence line, and anything below waits for the human.",
+  "outcome": "Author reports about $0.38 per 10,000 decisions, a run costing $0.13 using 3 of 10 allowed actions, with a phishing email quarantined and a lead call booked.",
+  "what_they_did": "The poster replaced one big do-everything prompt with five steps. Each incoming email, comment, lead or page is packed into a small summary card. The model answers a few short questions with labels and scores. Items scoring 0.85 or higher get handled by plain code; lower ones wait for the poster.",
+  "how_it_went": "They report a phishing lookalike scored 0.97 and was quarantined, a lead scored 0.91 and got a call booked, and a comment at 0.71 was held for them. The run cost $0.13 against a $1 cap.",
+  "worth_knowing": "The agent can never post anything public by itself; that rule is written into the code, not just asked of the model. The poster says to count retries and cleanup when judging cost.",
+  "prompt": "Help me build a triage agent for my [email inbox / comments / sales leads]. For each new item, summarize it into a short card. Then answer small questions: which folder, worth replying yes or no, urgency from low to critical, each with a confidence score from 0 to 1. Only act when confidence is at least [0.85]; otherwise put it in a review list for me. Allowed actions: [move email, send calendar link, notify me]. Never post or send anything public without my approval. Cap each run at [10] actions and [$1] of spend. Show me the plan and a test run on [5] sample items before turning it on.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "email triage",
+    "lead handling",
+    "confidence gate",
+    "automation"
+  ],
+  "source": {
+    "url": "https://x.com/Takerovitch/status/2113357286634922155",
+    "name": "X",
+    "author": "@Takerovitch",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-23",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real triage agent with a clear design, a confidence cutoff that hands unsure cases to a human, and concrete cost numbers; evidence is a self-reported video run."
+  }
+}

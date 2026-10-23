@@ -1,0 +1,44 @@
+{
+  "id": "turn-client-voice-notes-into-automation-drafts",
+  "title": "Turn client voice notes into automation drafts",
+  "summary": "A freelancer in Mexico built a laptop tool that turns clients' rambling WhatsApp voice notes into importable n8n workflows plus a reply listing the questions clients forgot.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": "Gemma 4 E4B",
+  "tools": [
+    "Whisper",
+    "Ollama",
+    "n8n",
+    "WhatsApp"
+  ],
+  "agent_role": "Whisper transcribes the voice note. The model fills a fixed form with the trigger, steps, conditions and missing details, then drafts questions. A separate program, not the model, builds the workflow file. The freelancer reviews and imports it.",
+  "outcome": "Author reports branch logic was correct on 8 of 8 test requests from text and 6 of 8 from audio, on 12 fictional requests, and says to treat this as a direction rather than a benchmark.",
+  "what_they_did": "A freelancer builds automations for small businesses in Tabasco, Mexico. Clients describe what they want in messy Spanish voice notes. He built a tool that transcribes the note on his laptop and has a small local model fill a fixed form from a short list of steps. A separate program turns that form into an n8n workflow and drafts a WhatsApp reply with questions.",
+  "how_it_went": "He says he no longer replays notes several times; he gets a draft workflow and a list of questions. Running real workflows exposed bugs, like a condition that always took the 'no' branch. Unsupported requests, like posting to TikTok, now become questions instead of made-up steps.",
+  "worth_knowing": "The model once asked clients to send passwords and tokens in chat. He now strips anything that looks like a secret and tells clients they will connect accounts together instead.",
+  "prompt": "Here is a transcript of a client's voice note describing an automation they want: [paste transcript]. Pull out one trigger, the steps using only these options: [list of allowed steps], and any conditions with what happens if yes and if no. List missing details as short questions for the client. Never ask for passwords or keys. If something isn't on the list, turn it into a question instead of guessing. Show me the plan and a draft reply in [language] for my review before anything is sent.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "voice notes",
+    "workflow drafting",
+    "client requirements",
+    "small business",
+    "local ai"
+  ],
+  "source": {
+    "url": "https://dev.to/gartox/my-clients-explain-automations-in-rambling-whatsapp-voice-notes-now-my-laptop-answers-with-an-n8n-4dj0",
+    "name": "DEV Community",
+    "author": "Jesus Manuel Garcia Torres",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-23",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An original small-business workflow that turns client voice notes into automation drafts and follow-up questions, running fully on a laptop. It has open code, honest tests and lessons learned; small-business boost applied."
+  }
+}

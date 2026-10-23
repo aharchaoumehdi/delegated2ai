@@ -1,0 +1,40 @@
+{
+  "id": "draw-a-map-of-your-app-s-parts-with-your-coding-agent",
+  "title": "Draw a map of your app's parts with your coding agent",
+  "summary": "A solo builder ran the Archify add-on in Claude Code on their app; it drew the system, growing from 15 parts and 14 links to 17 and 19.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Archify skill"
+  ],
+  "agent_role": "The agent read the code and drew a diagram of the whole system, with each box linked to its source lines. The human uses the diagram to vet new features.",
+  "outcome": "Author reports the map grew from 15 parts and 14 links on Oct 9 to 17 parts and 19 links on Oct 21. They now check what a new feature touches before adding it.",
+  "what_they_did": "The poster had spent 12 days building their app, Airsc, one prompt at a time. By then it had payments, a daily quota, an X bot and admin pages. They ran Archify, an add-on for Claude Code, on the code to draw the whole system.",
+  "how_it_went": "They say the diagram linked each box to its source lines. It went from 15 parts and 14 links on Oct 9 to 17 parts and 19 links on Oct 21.",
+  "worth_knowing": "They now check what each new feature touches before letting it into the app. The add-on was built by another person, @t20000622yy.",
+  "prompt": "Read the code in [project folder] and draw a diagram of the whole system. Show its main parts, how they connect, and the files and lines behind each part. Save it as [diagram file]. Then, for the feature I'm planning, [feature description], list which parts and connections it would touch. Flag any new connections it would add.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "architecture diagram",
+    "code map",
+    "solo building",
+    "app planning"
+  ],
+  "source": {
+    "url": "https://x.com/thanhmam/status/2113530421883617493",
+    "name": "X",
+    "author": "@thanhmam",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-23",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real use of a Claude Code add-on to map a fast-growing app, with simple before/after numbers. It is brief and partly promotes the tool's maker."
+  }
+}

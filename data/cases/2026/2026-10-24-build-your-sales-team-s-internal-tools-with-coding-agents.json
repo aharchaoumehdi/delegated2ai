@@ -1,0 +1,41 @@
+{
+  "id": "build-your-sales-team-s-internal-tools-with-coding-agents",
+  "title": "Build your sales team's internal tools with coding agents",
+  "summary": "Zipchat's Luca Borreani says he built the company's internal tools with Lovable and Claude Code, from pitch decks to conference-return tracking, and the team now runs on them.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Lovable",
+    "Claude Code"
+  ],
+  "agent_role": "The coding agents wrote the internal apps; the founder decided what to build around how the company works.",
+  "outcome": "Author reports the tools need almost no maintenance, cost little and have given a huge return.",
+  "what_they_did": "Over a year, Zipchat's founder used Lovable and Claude Code to build the company's internal tools. They include a one-minute custom sales deck maker, prospect store research, competitor tracking and a dashboard showing demos and revenue from each conference. He also built spending categorization, a shareholder dashboard, a partner portal and an event check-in system.",
+  "how_it_went": "He says the team spends its day in these tools, with almost no maintenance and tiny cost. He can see in 10 seconds which events brought the most demos and revenue.",
+  "worth_knowing": "He would not rebuild everything; the tools fit how Zipchat works and would likely be worth nothing to another company.",
+  "prompt": "Help me build a simple internal tool for my team: [describe the task, e.g. track which conferences led to sales meetings]. Ask me what data we have ([spreadsheet / CRM export]) and how we work today. Then propose a short plan and screens, and wait for my approval before writing code. Build it step by step and show me each working piece.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "internal tools",
+    "sales",
+    "event tracking",
+    "small business"
+  ],
+  "source": {
+    "url": "https://x.com/LucaBorreani/status/2113632860473016529",
+    "name": "X",
+    "author": "@LucaBorreani",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete list of business tools a founder built with coding agents and his team uses daily, but there are no build details, numbers or demos."
+  }
+}

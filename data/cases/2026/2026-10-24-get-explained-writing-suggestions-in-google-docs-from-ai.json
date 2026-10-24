@@ -1,0 +1,43 @@
+{
+  "id": "get-explained-writing-suggestions-in-google-docs-from-ai",
+  "title": "Get explained writing suggestions in Google Docs from AI",
+  "summary": "A developer built an open-source Google Docs add-on where Gemini reviews text, tables and charts and leaves tracked suggestions with reasons to accept or reject.",
+  "domain": "Education",
+  "platform": "Custom agent",
+  "model": "gemini-4-argon, gemini-3.8-flash",
+  "tools": [
+    "Google Docs",
+    "Google Apps Script",
+    "Gemini API",
+    "Gemini file uploads"
+  ],
+  "agent_role": "The add-on pulls tables and figures from the document and sends them to Gemini. It inserts suggested edits with a reason and a learning point, and comments on tables and charts. The writer decides which suggestions to accept or reject. The author says Gemini 4 Argon also helped build the app.",
+  "outcome": null,
+  "what_they_did": "Tanaike built DocuMentor AI, a Google Docs add-on, with help from Gemini 4 Argon. It reads a whole document tab or a selection, including tables and charts. It uploads figures to Gemini for a short time, then deletes them. It places edits as Docs suggestions rather than rewriting your text. Each suggestion gets a comment explaining why and what to learn, plus an end summary from a 'writing coach'.",
+  "how_it_went": null,
+  "worth_knowing": "The point is to keep you thinking. You must accept or reject every change yourself instead of pasting in AI rewrites.",
+  "prompt": "Review my Google Doc [document link] as a writing coach. Read the text, tables and any charts. Do not change my text directly. Propose each edit as a suggestion, and explain in one line why you suggest it and what I can learn from it. Flag any numbers in the text that don't match the charts or tables. End with a short summary of my most common writing habits to work on.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "proofreading",
+    "writing feedback",
+    "google docs",
+    "learning"
+  ],
+  "source": {
+    "url": "https://dev.to/gde/building-a-multimodal-suggestion-based-ai-writing-coach-with-gemini-and-google-docs-ea4",
+    "name": "DEV Community",
+    "author": "Tanaike",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Open-source add-on where an AI reads text, tables and charts and places tracked suggestions with explanations in Google Docs. It was itself built with Gemini. Light on results, but code is available."
+  }
+}

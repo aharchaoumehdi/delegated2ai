@@ -1,0 +1,44 @@
+{
+  "id": "make-a-narrated-story-video-from-scratch-with-an-agent",
+  "title": "Make a narrated story video from scratch with an agent",
+  "summary": "A creator started Claude Code in an empty folder; it wrote its own image, voice, music and editing skills and made a 101-second narrated video for $0.62.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "OpenAI image generation",
+    "Gemini image generation",
+    "FFmpeg",
+    "macOS Keychain",
+    "voice and music generation services"
+  ],
+  "agent_role": "Claude Code read the documentation, wrote and fixed scripts, generated images, voices and music, and edited the video. It also saved each working method as a reusable skill and logged costs. The human gave 11 prompts, supplied keys and docs, and set house rules.",
+  "outcome": "Author reports a 101-second narrated story with 10 illustrations, music and camera moves, about an hour of work, and $0.62 spent.",
+  "what_they_did": "The author opened a fresh Claude Code session in an empty folder with three keys for AI services. They pasted in service docs and asked it to make test images, voices and music. After each success, they told it to save the working method as a skill. They set rules in a project notes file: log every paid call to a cost sheet and keep a work log. Finally it cut everything together with FFmpeg, a video editing tool.",
+  "how_it_went": "The author says it took about an hour and 11 prompts. The result was 8 self-written skills and a 101-second narrated slideshow story. The cost sheet showed $0.62 spent. One test image took 32 seconds and cost $0.04.",
+  "worth_knowing": "Keep keys out of the agent's sight: the author stored them in the Mac Keychain. Claude Code wrote a script that fetches the key so it never prints it. Start with slideshows before trying animation.",
+  "prompt": "I want to make AI videos in this folder, starting from zero. First, teach yourself to generate images with [image service] using the docs I paste: [docs]. My key is stored in [secure location]; never print it. Make one test image of [scene]. Once it works, save the working method as a reusable skill. Then do the same for voices with [voice service] and music with [music service]. Log every paid call to costs.csv. Finally, write a short story about [topic], narrate it, illustrate it with 10 images, and edit it into a video with FFmpeg. Show me the story and the cost so far before generating the final assets.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "video creation",
+    "image generation",
+    "narration",
+    "agent skills"
+  ],
+  "source": {
+    "url": "https://dev.to/hiper2d/ai-videos-with-claude-code-for-beginners-11-prompts-062-kn6",
+    "name": "DEV Community",
+    "author": "Aliaksei Zelianouski",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, reproducible walkthrough with every prompt, where Claude Code teaches itself media tools and produces a finished narrated video, with cost tracking."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "add-skeptic-logician-and-steward-reviewers-to-your-agent",
+  "title": "Add skeptic, logician and steward reviewers to your agent",
+  "summary": "A developer building a package registry added skeptic, logician and long-term-cost reviewer agents to Claude Code; they report these caught a monitoring gap and a re-approval bug.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code subagents",
+    "merge requests",
+    "automatic test runs"
+  ],
+  "agent_role": "Agents plan features, review the plan, build the change and submit it. Separate reviewer agents then check assumptions, logic and long-term costs. The human defines the features and keeps the overall process.",
+  "outcome": "Author reports the reviewers caught a hidden gap in alerting, a logic bug that could re-approve rejected packages, and a change that would have created millions of search-indexed links.",
+  "what_they_did": "The author builds Greenflagged with Claude Code. One agent plans each feature, several agents critique the plan, and another builds it and opens a change request. Special reviewers then check it. 'The Skeptic' tests claims, 'The Logician' checks reasoning, and 'The Steward' weighs long-term costs. Automatic tests run last.",
+  "how_it_went": "The author says these reviewers stopped several real problems before release. One fix was a single page attribute that kept search engines from holding millions of login links.",
+  "worth_knowing": "Agents still skip steps. One fixed a failing database setting but never restarted the service, so the fix didn't take effect. The author recommends having your agents write their own versions of these reviewer roles.",
+  "prompt": "Set up three reviewer helpers for this project [repo]. A Skeptic checks every claim in a plan or change against the actual code and pushes back on anything unproven. A Logician checks whether each conclusion really follows from its premises. A Steward flags long-term costs like storage growth or search-engine side effects. For each change, run all three and give me their findings. Then propose fixes and wait for my approval before merging.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "code review",
+    "subagents",
+    "workflow",
+    "bug prevention"
+  ],
+  "source": {
+    "url": "https://blog.greenflagged.dev/posts/agents-fail-like-engineers/",
+    "name": "Hacker News",
+    "author": "Azkar",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real Claude Code workflow with named reviewer agents and concrete bugs they caught. The builder-plus-reviewers idea has been covered before, but the specific roles and examples add value."
+  }
+}

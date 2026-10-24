@@ -1,0 +1,44 @@
+{
+  "id": "let-an-agent-run-your-bilibili-video-account",
+  "title": "Let an agent run your Bilibili video account",
+  "summary": "A developer built a command-line tool so their DeepSeek agent can browse Bilibili, reply to fans, post content and message them with interesting finds.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": "DeepSeek",
+  "tools": [
+    "Bilibili",
+    "command-line tool",
+    "speech-to-text",
+    "Claude Code",
+    "Codex"
+  ],
+  "agent_role": "The agent checks messages, replies to comments, picks and watches videos, posts updates and uploads, and messages the owner; the human scans a login code and sets limits.",
+  "outcome": "The README shows a sample session where the agent replied to 3 comments and messaged its owner about a video; the author says local transcription handled a 31-minute video in 2 minutes.",
+  "what_they_did": "The developer says their DeepSeek agent already browsed the Chinese video site Bilibili every day. They built a command-line tool with over 80 commands so any agent can read the inbox, reply to fans, watch videos through captions and frames, post updates and upload videos. The owner logs in by scanning a code.",
+  "how_it_went": "In the sample session, the agent replied to three comments, picked a tech video and messaged the owner about it. The author says local speech-to-text turned a 31-minute video into text in 2 minutes on a graphics card.",
+  "worth_knowing": "It uses your real account, so the tool limits posting rates, caps coin tips at 5 a day, logs every action and stops at captchas. The author still warns accounts can be banned.",
+  "prompt": "Using my Bilibili account, check my inbox for new replies, mentions and private messages. Draft a short, friendly reply to each fan comment and show me the drafts before sending anything. Then look through today's top videos in [topic area], skip ones I've already seen, and summarise the one you think I'd like most. Don't like, tip, post or message anyone without my approval, and stop and tell me if you hit a captcha or a warning.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "social media",
+    "video creator",
+    "fan replies",
+    "bilibili"
+  ],
+  "source": {
+    "url": "https://github.com/kukemc/bili-cli",
+    "name": "GitHub",
+    "author": "kukemc",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A tool README, but it shows a concrete daily workflow where an agent reads the inbox, replies to fans, watches a video and messages its owner, with built-in safety limits; evidence is mostly a sample session."
+  }
+}

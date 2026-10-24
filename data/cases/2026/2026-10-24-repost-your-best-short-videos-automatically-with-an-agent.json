@@ -1,0 +1,43 @@
+{
+  "id": "repost-your-best-short-videos-automatically-with-an-agent",
+  "title": "Repost your best short videos automatically with an agent",
+  "summary": "A creator had Codex pull their reel analytics in Chrome, ask Claude Code to review its build, and set up automatic reposting of top videos as trial reels.",
+  "domain": "Marketing",
+  "platform": "OpenAI Codex",
+  "model": null,
+  "tools": [
+    "Chrome",
+    "Claude Code",
+    "tmux",
+    "Koyomi scheduler"
+  ],
+  "agent_role": "Codex opened Chrome to fetch analytics, built the reposting system and launched Claude Code for review; the human directed it from their phone.",
+  "outcome": "Author says the system will push out his best-performing videos as trial reels automatically.",
+  "what_they_did": "A creator let Codex run freely on his computer while he steered from his phone. Codex opened Chrome and fetched full analytics for his reels. It built a system to repost top videos as trial reels, scheduled with his own tool. Then it launched Claude Code to review the build.",
+  "how_it_went": "The author says the system will now push out his best-performing videos as trial reels automatically. He shares no numbers yet.",
+  "worth_knowing": "He gives Codex free rein over his whole computer, including the browser, which carries real risk to accounts.",
+  "prompt": "Open my [video platform] analytics in the browser and list my top [10] short videos by views and engagement from the last [30 days]. Then draft a plan to repost the best ones as trial posts on a schedule using [my scheduling tool]. Ask a second agent to review the plan for problems. Show me the list, the schedule and the review, and wait for my approval before posting or scheduling anything.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "social media",
+    "video analytics",
+    "content scheduling",
+    "agent review"
+  ],
+  "source": {
+    "url": "https://x.com/ZazenCodes/status/2113779281008742749",
+    "name": "X",
+    "author": "@ZazenCodes",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine multi-step agent workflow (browser analytics, second-agent review, scheduled reposting), but lightly evidenced and ends in a course plug."
+  }
+}

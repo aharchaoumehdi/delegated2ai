@@ -1,0 +1,44 @@
+{
+  "id": "move-a-wordpress-site-to-a-fast-static-site-with-an-agent",
+  "title": "Move a WordPress site to a fast static site with an agent",
+  "summary": "A developer's skill set lets a coding agent rebuild WordPress sites as static sites; they report 45 conversions passing page-by-page visual checks, with demos of harvard.edu and sxsw.com.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Playwright browser",
+    "WordPress public API",
+    "GitHub",
+    "Vercel",
+    "Cloudflare Pages"
+  ],
+  "agent_role": "The agent asks one round of setup questions, crawls the live site, plans and builds the new site, runs checks for links, search tags and visuals, deploys a hidden test copy and opens a pull request. The human answers intake questions, reviews, merges and launches.",
+  "outcome": "The author reports 45 WordPress conversions, all passing the visual comparison at three screen widths, and shows demo rebuilds of sxsw.com, harvard.edu and angrybirds.com.",
+  "what_they_did": "Ethan built instruction packs for coding agents that turn a WordPress site into a plain static site. You paste one line with your site's address. The agent asks about hosting and forms once, then crawls the public site, rebuilds every page, and checks links, search tags, media and redirects. It compares screenshots of old and new pages before opening a pull request.",
+  "how_it_went": "The author reports 45 conversions where every run passed the visual check at phone, tablet and desktop widths. Public demos include harvard.edu with 457 pages and angrybirds.com with 388 pages.",
+  "worth_knowing": "Static sites can't do search, comments, carts or logins; the agent flags these at the start. It won't touch your domain settings or merge to the main branch, and it copies the old site's faults unless you approve fixes.",
+  "prompt": "Convert my website [your site URL] into a static Astro site using the skills at [repo URL]. Ask me once where the new repo goes, which host to use, and how forms should work. Crawl only public pages, read-only. Keep every URL, page title, description, image path and redirect the same. Compare screenshots of old and new pages on phone, tablet and desktop sizes until they match. List any problems you find as suggestions, but don't fix them unasked. Deploy only a hidden test copy and open a pull request. Don't touch my domain settings or merge anything; I'll review first.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "website migration",
+    "wordpress",
+    "static site",
+    "seo"
+  ],
+  "source": {
+    "url": "https://github.com/ethanplusai/astro-conversion-kit",
+    "name": "GitHub",
+    "author": "ethanplusai",
+    "published": "2026-10-22"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Concrete, well-evidenced agent workflow with 45 reported conversions and live demos of large public sites, plus clear safety rules. Useful to many site owners."
+  }
+}

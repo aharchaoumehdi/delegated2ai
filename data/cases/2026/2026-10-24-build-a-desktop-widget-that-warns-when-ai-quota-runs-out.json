@@ -1,0 +1,42 @@
+{
+  "id": "build-a-desktop-widget-that-warns-when-ai-quota-runs-out",
+  "title": "Build a desktop widget that warns when AI quota runs out",
+  "summary": "A developer worked with Gemini 4 Argon to build a 483 KB Mac widget and an Ubuntu bar that predict when each AI subscription's quota will run out.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": "Gemini 4 Argon",
+  "tools": [
+    "Swift",
+    "Python Tkinter",
+    "usage dashboard data feed"
+  ],
+  "agent_role": "The agent helped design and tune the pace math and the native Mac and Linux code over repeated rounds. The developer chose the architecture, including dropping a web-view approach.",
+  "outcome": "Author reports a 483 KB app for Intel and Apple Macs with idle processor use at 0.0%, plus a single-file Ubuntu version.",
+  "what_they_did": "A developer runs Gemini, Claude Code, Codex and Copilot side by side and kept hitting usage limits. Working back and forth with Gemini 4 Argon over two days, they built a small always-on widget. It compares how much quota is used against how much of the reset window has passed. It then shows the clock time the quota will run out.",
+  "how_it_went": "The author reports a 483 KB Mac app that uses no browser engine by default and sits at 0.0% idle processor use. There is also a one-file Ubuntu floating bar that rotates with a tablet screen.",
+  "worth_knowing": "Commenters noted the forecast can mislead when usage is bursty. After a long idle stretch, the average pace looks comfortable just as several agents start working.",
+  "prompt": "Help me build a small always-on desktop widget for [your operating system] that tracks my usage of [list of AI subscriptions]. For each one, read usage data from [where usage numbers come from]. Show how much quota is used and how much of the reset window has passed. Estimate the clock time I'll run out at my current pace. Keep it lightweight with no browser engine, and aim for near-zero idle processor use. Show me a plan and the files you'll create before writing code.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "usage tracking",
+    "desktop widget",
+    "ai quotas",
+    "productivity"
+  ],
+  "source": {
+    "url": "https://dev.to/gde/building-a-multi-agent-token-usage-widget-in-under-500-kb-1fih",
+    "name": "DEV Community",
+    "author": "JimmyLiao",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real two-day build of a quota-pace widget made with AI help, with clear numbers on size and idle use. The agent's exact share of the work is vague."
+  }
+}

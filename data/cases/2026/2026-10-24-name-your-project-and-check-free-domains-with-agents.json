@@ -1,0 +1,43 @@
+{
+  "id": "name-your-project-and-check-free-domains-with-agents",
+  "title": "Name your project and check free domains with agents",
+  "summary": "A student built six Gemma-powered agents that read a repo, suggest names and check domains; after seven chat rounds it renamed itself NameMatch with a free .tech domain.",
+  "domain": "Creative",
+  "platform": "Custom agent",
+  "model": "Gemma 4 (31B and 26B)",
+  "tools": [
+    "Mastra",
+    "domain registry lookup",
+    "GitHub",
+    "Sentry"
+  ],
+  "agent_role": "A supervisor agent reads the project and picks namers; three namer agents propose names; a checker suggests variants for taken domains; a feedback agent revises names from the user's chat.",
+  "outcome": "Author reports a naming round dropped from 8-10 minutes to 2-5 after turning off model thinking, and the app renamed itself in seven rounds.",
+  "what_they_did": "A developer who struggles with naming built a team of six AI agents. You paste a GitHub link or a text file and answer a few questions. The agents read the project, suggest names, check if .com, .dev, .app, .tech or .ai domains are free, and refine names as you chat.",
+  "how_it_went": "They say one naming round fell from 8-10 minutes to 2-5 after turning off the model's extra thinking on simpler steps. Run on its own code, it produced NameMatch after seven rounds.",
+  "worth_knowing": "Turning thinking off cut one namer call from 79 seconds to 5, but doing so on the final pick let weaker names through. Free model tiers also hit rate limits.",
+  "prompt": "Read the project at [repo URL or README]. Summarise what it does and who it's for, then suggest 10 names in three styles: professional, short, and playful. For each, check whether [preferred domain endings, e.g. .com, .dev] are available and list only names with a free domain. Ask me which direction I like and refine over several rounds. Don't register or buy anything.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "naming",
+    "domains",
+    "multi-agent",
+    "branding"
+  ],
+  "source": {
+    "url": "https://dev.to/daniel_ng/i-gave-up-naming-my-projects-my-agents-do-it-now-1275",
+    "name": "DEV Community",
+    "author": "daniel",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Working multi-agent tool with open code, concrete timing numbers, and a real use (renaming itself); a modest but fun application."
+  }
+}

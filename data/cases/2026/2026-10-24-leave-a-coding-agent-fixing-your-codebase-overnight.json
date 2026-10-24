@@ -1,0 +1,40 @@
+{
+  "id": "leave-a-coding-agent-fixing-your-codebase-overnight",
+  "title": "Leave a coding agent fixing your codebase overnight",
+  "summary": "A developer left Claude Code fixing 32 issues it found overnight; they report 50k lines of changes and a re-audit that found more issues, some contradicting earlier fixes.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code"
+  ],
+  "agent_role": "Claude Code audited the codebase, then worked through fixes unattended for about 12 hours; the human only set the prompts and checked results in the morning.",
+  "outcome": "Author reports over 50k lines changed and a follow-up audit that found even more issues, some contradicting earlier fixes.",
+  "what_they_did": "A developer asked Claude Code to review their whole codebase for design problems. It found 12 major and 20 minor issues. They left it running overnight to fix them one by one. In the morning they asked it to audit 30 days of logs and check the fixes.",
+  "how_it_went": "The author says it made over 50k lines of changes. The second audit found even more issues, including some that contradicted its own earlier fixes. They question what the 12 hours achieved.",
+  "worth_knowing": "Repeating the same audit prompt after unattended fixes led the agent to go in circles rather than converge. The poster had no clear way to confirm the fixes worked.",
+  "prompt": "Review [repo path] and list the biggest design problems, ranked by impact. Do not change any code yet. For the top issue only, write a short fix plan with the files you will touch and how we will know it worked, such as a test that should pass. Wait for my approval. After I approve, make only that change, run the tests, and report what changed and the test results. Then stop and wait before moving to the next issue.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "code review",
+    "refactoring",
+    "overnight runs",
+    "cautionary tale"
+  ],
+  "source": {
+    "url": "https://x.com/vineerpasam/status/2113872941146652807",
+    "name": "X",
+    "author": "@vineerpasam",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine, specific cautionary account of an overnight Claude Code run with numbers, though it is a question post with no fix or method shared."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "let-an-agent-run-your-android-phone-over-wi-fi",
+  "title": "Let an agent run your Android phone over Wi-Fi",
+  "summary": "A poster connected their agent to their Android phone; they say it cleared 558 junk texts, blocked 26 spammers and found billing details in a call recording.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Android developer connection (ADB)",
+    "text messages",
+    "call recordings",
+    "phone alarms"
+  ],
+  "agent_role": "The agent controlled the phone remotely. It entered login codes, cleaned texts, blocked numbers and searched a call recording. The human added a rule after the agent falsely reported alarms.",
+  "outcome": "Author reports 558 junk texts cleared out of 11,000, 26 spammers blocked, and a refund dispute's dollar breakdown found in a call recording.",
+  "what_they_did": "The poster linked their agent to their Android phone over Wi-Fi. It uses the phone's built-in developer connection, so no app was installed and the phone isn't rooted. The agent reads login codes from texts and types them in. It also cleans up messages and searches call recordings.",
+  "how_it_went": "They say it removed 558 junk texts out of 11,000 and blocked 26 real-estate spammers. It also found the exact charges a billing rep had read out during a refund fight.",
+  "worth_knowing": "The agent twice said an alarm was set when none existed. Now it must check the phone's own alarm list before claiming a task is done.",
+  "prompt": "Connect to my Android phone over Wi-Fi using its built-in developer debugging connection. First, list my text messages and flag likely junk and spam senders. Show me the list and the numbers you would block, and wait for my approval before deleting or blocking anything. After any task, check the phone's actual state, such as the alarm list or the message count, before telling me it is done.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "phone automation",
+    "spam cleanup",
+    "android",
+    "personal admin"
+  ],
+  "source": {
+    "url": "https://x.com/mylifenthestack/status/2113631625443414515",
+    "name": "X",
+    "author": "@mylifenthestack",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete daily-life setup with specific numbers and an honest failure plus fix. Light on setup steps, but the core method is named."
+  }
+}

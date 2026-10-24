@@ -1,0 +1,44 @@
+{
+  "id": "record-rough-cut-and-design-youtube-videos-with-agents",
+  "title": "Record, rough-cut and design YouTube videos with agents",
+  "summary": "A creator open-sourced the system they use for YouTube: a teleprompter, agents that transcribe takes and propose a cut, and animated graphics, with human review of every cut.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "teleprompter app",
+    "transcription",
+    "video editor app",
+    "Claude Design",
+    "HTML animation boards"
+  ],
+  "agent_role": "Agents transcribe takes, sync camera and audio, propose a candidate cut, flag possible errors, and help plan and build graphics. The human reviews and approves the cut and finishes in a normal video editor.",
+  "outcome": null,
+  "what_they_did": "Sirio Berati shared his YouTube workflow. You read a script on a teleprompter that records your takes. An agent transcribes them, lines up camera and audio, and suggests a cut. You review it in an editing app. Then you design animated graphics from the final transcript and hand files to Resolve or Premiere.",
+  "how_it_went": null,
+  "worth_knowing": "The author warns it is not a one-click editor. Speech recognition can spell a fumbled word correctly, and silence does not prove a word ended, so cuts need human review.",
+  "prompt": "Help me edit my YouTube video from raw takes. Here is my script [script file] and my recordings folder [folder path]. Transcribe every take, mark flubbed lines, and pick the best take for each part of the script. Write a proposed cut list with start and end times as a file, and list any spots where you are unsure. Don't overwrite my original files. Then, from the approved transcript, draft a short brief for on-screen graphics for each section. Wait for my review before exporting anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "video editing",
+    "youtube",
+    "motion graphics",
+    "transcription"
+  ],
+  "source": {
+    "url": "https://github.com/sirioberati/YouTube-AI-Video-Editing-System",
+    "name": "GitHub",
+    "author": "sirioberati",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real agent-assisted video editing workflow with code, but the README mostly describes parts and gives no concrete reported result from using it."
+  }
+}

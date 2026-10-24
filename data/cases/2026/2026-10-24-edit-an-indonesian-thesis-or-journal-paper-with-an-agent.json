@@ -1,0 +1,43 @@
+{
+  "id": "edit-an-indonesian-thesis-or-journal-paper-with-an-agent",
+  "title": "Edit an Indonesian thesis or journal paper with an agent",
+  "summary": "A developer built an agent skill that edits Indonesian academic papers to official spelling rules, looks up references, and flags missing data instead of inventing it.",
+  "domain": "Education",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "OpenAlex",
+    "Consensus",
+    "alphaXiv",
+    "PubMed"
+  ],
+  "agent_role": "The agent fixes spelling and sentences, drafts sections from the writer's material, searches for references and marks unsupported claims; the writer supplies data and decides.",
+  "outcome": "The author says the README itself was edited with the skill, which found five errors in an earlier version.",
+  "what_they_did": "A developer released a skill that coding agents like Claude Code, Codex or Cursor can load. It edits Indonesian theses, journal articles and grant proposals to the official spelling rules and dictionary. It can search a free research database for references and never changes numbers or citations.",
+  "how_it_went": "The author says the project's own README was edited with the skill, and documents five mistakes it caught in the earlier version.",
+  "worth_knowing": "When data or a verified source is missing, the agent writes a visible placeholder like [PERLU RUJUKAN] instead of inventing one. It refuses to ghost-write theses or hide AI use.",
+  "prompt": "Load the naskah-id skill. Review my Indonesian manuscript in [file path] for spelling and grammar under EYD V and KBBI. Do not change any numbers, results or citations. Show each suggested correction with the original sentence, and mark any claim lacking a reference with [PERLU RUJUKAN]. Wait for my approval before applying changes to the file.",
+  "evidence": "Code available",
+  "difficulty": "Beginner",
+  "tags": [
+    "academic writing",
+    "proofreading",
+    "indonesian",
+    "citations"
+  ],
+  "source": {
+    "url": "https://github.com/nothinx/naskah-id",
+    "name": "GitHub",
+    "author": "nothinx",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-24",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A useful agent skill for Indonesian academic writing that checks references and flags missing data, shown editing its own README; mostly a feature description though."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "have-your-agent-research-a-tech-decision-with-citations",
+  "title": "Have your agent research a tech decision with citations",
+  "summary": "A Valyu tutorial builds an agent that hands off a cited research job comparing PostgreSQL and Elasticsearch for support-ticket search, with spending fixed by the app.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Valyu DeepResearch",
+    "Vercel AI SDK",
+    "OpenAI API",
+    "TypeScript"
+  ],
+  "agent_role": "The agent starts an approved research task and later checks its status and reads the cited report. The app's code fixes the research brief and budget, and the engineering team reviews the evidence and makes the call.",
+  "outcome": null,
+  "what_they_did": "Prosper Otemuyiwa, writing on Valyu's blog, built a small TypeScript agent with two tools. One starts a pre-approved research task, and the other checks on it and fetches the cited report. The brief compares PostgreSQL and Elasticsearch for searching support tickets, and it only uses the two products' official websites. The model cannot change the brief, the budget or the task.",
+  "how_it_went": null,
+  "worth_knowing": "The tools take no input from the model, so the agent cannot quietly raise the research budget or start a second investigation. Limiting sources to official sites narrows the evidence but does not guarantee every claim is right.",
+  "prompt": "Research this technical decision for me: [option A] versus [option B] for [feature], given that we already run [current setup]. Use only official documentation from [allowed websites]. Separate built-in features from add-ons, note which versions each source covers, and do not invent performance numbers. Return a feature comparison, the upkeep each option would need, what information is missing, and a plan to test both on our own data. Show me your research plan and expected cost before starting.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "technical research",
+    "decision making",
+    "citations",
+    "database choice"
+  ],
+  "source": {
+    "url": "https://dev.to/valyuai/how-to-integrate-deep-research-into-your-ai-agent-2n82",
+    "name": "DEV Community",
+    "author": "Prosper Otemuyiwa",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working code tutorial in which an agent delegates a cited research job to weigh a real engineering choice, with good cost and approval controls. It comes from the vendor's own blog, and the excerpt shows no actual report or result."
+  }
+}

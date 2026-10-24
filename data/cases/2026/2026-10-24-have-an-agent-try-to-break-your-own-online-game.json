@@ -1,0 +1,41 @@
+{
+  "id": "have-an-agent-try-to-break-your-own-online-game",
+  "title": "Have an agent try to break your own online game",
+  "summary": "A game developer had Claude Code audit their city-builder's code like an attacker; it reported 13 issues in under six minutes, including a crash bug behind two outages.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "code repository",
+    "server logs"
+  ],
+  "agent_role": "Claude Code read the code without touching the live site and listed ranked ways to crash or cheat the game, with fixes. The developer checked server logs, then patched and deployed the fixes.",
+  "outcome": "Author reports 13 findings in 5 min 38 s, including 2 critical bugs that were patched and deployed the same day.",
+  "what_they_did": "A developer gave Claude Code the code for their online sky-island city-builder game. The one job was to find ways to break it. It could only read the code and was told not to hit the live site. The developer then compared the findings with the server logs and shipped fixes.",
+  "how_it_went": "They say it found 13 issues in 5 minutes 38 seconds, 2 of them critical. One bad web address could crash the whole server, which matched two real outages. The other let any score reach the leaderboard. Both were fixed the same day.",
+  "worth_knowing": "The author kept the audit read-only and away from the live site. That makes it safe to run on a game or service people are using.",
+  "prompt": "Audit this repository like an attacker. Stay read-only and run nothing against [your live site or production server]. List every way someone could crash it, cheat it or abuse it. Rank them by severity, and for each give the file and line plus a suggested fix. Show me the full list first and wait for my approval before changing any code.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "security audit",
+    "game development",
+    "bug finding",
+    "cheating prevention"
+  ],
+  "source": {
+    "url": "https://x.com/0xbobaaa/status/2113910639026401525",
+    "name": "X",
+    "author": "@0xbobaaa",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, reproducible read-only security audit with timings, ranked findings, a link to real outages and the exact prompt. Agent security audits have appeared before, but this one ties the findings to actual server crashes."
+  }
+}

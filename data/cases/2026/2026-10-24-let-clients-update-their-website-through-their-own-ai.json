@@ -1,0 +1,43 @@
+{
+  "id": "let-clients-update-their-website-through-their-own-ai",
+  "title": "Let clients update their website through their own AI",
+  "summary": "A web developer connects client sites to a content system that clients' own AI assistants can edit, so clients publish updates without a developer, he says.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Astro",
+    "EmDash CMS",
+    "ChatGPT",
+    "Claude"
+  ],
+  "agent_role": "The client's own AI assistant writes and publishes content updates through a connector; the developer builds the site and sets up the content structure.",
+  "outcome": "Author says clients need no developer and pay no ongoing content update fees.",
+  "what_they_did": "A developer builds client marketing sites with Astro and sets up a content system with fixed content templates. He then connects it to the client's own AI assistant, such as ChatGPT or Claude. The client asks their assistant to publish updates, and it does so through the connector.",
+  "how_it_went": "The author says clients can update their sites with no developer and no ongoing fees for content changes.",
+  "worth_knowing": "The client pays for their own AI use, so the developer carries no running AI costs.",
+  "prompt": "Using the connector to my website's content system, draft a new [blog post / page update] about [topic] that fits the existing content fields. Show me the full draft and which page it will go on, and wait for my approval before publishing anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "website updates",
+    "content management",
+    "client handoff",
+    "small business"
+  ],
+  "source": {
+    "url": "https://x.com/ayayronstack/status/2113664493582492049",
+    "name": "X",
+    "author": "@ayayronstack",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real and practical handoff pattern where clients' own AI agents publish site updates, but it is a brief description with no results or demo."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "turn-rambling-voice-notes-into-organized-reminders",
+  "title": "Turn rambling voice notes into organized reminders",
+  "summary": "A developer built Mimu, where a local Gemma model turns phone voice notes into titled, tagged notes with due dates, morning digests and answers about saved notes.",
+  "domain": "Daily life",
+  "platform": "Custom agent",
+  "model": "Gemma 4 (gemma4:e4b)",
+  "tools": [
+    "Ollama",
+    "Whisper speech-to-text",
+    "Cloudflare Workers",
+    "Turso database"
+  ],
+  "agent_role": "A background worker on the user's computer picks up new notes. It titles, formats, categorizes and tags them, reads due dates, writes daily digests and answers questions with links to the notes it used. The user speaks or types notes and can edit anything.",
+  "outcome": "Author reports the 4B Gemma model gave valid output on 10 of 10 test notes at about 3.4 seconds each, faster than a 12B model with no quality loss.",
+  "what_they_did": "Jessica Doering built a phone web app that transcribes speech on the device. A small Gemma model running on her own computer then organizes each note. It also sends due-time reminders, writes a morning summary and answers questions like 'Who do I need to call?'. She tested three model sizes on ten messy sample notes.",
+  "how_it_went": "She reports the mid-size model matched the larger one at a quarter of the wait. A clearer instruction, not a bigger model, fixed bad category choices. A hosted demo and code are available.",
+  "worth_knowing": "Mishearings can turn into polished but wrong notes. In one case the AI 'cleaned up' a misheard phrase into the opposite meaning, so the original transcript is always kept alongside.",
+  "prompt": "Each day, take my raw voice-note transcripts from [notes folder or app]. Turn each one into a note with a short title, tidy formatting, one category from [your list of categories] and a few tags. If a note mentions a date or time, record it as a due date. Keep the original transcript under each note, and never change its meaning; flag anything unclear instead of guessing. Each morning, give me a short summary of what's due today and what I saved yesterday.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "voice notes",
+    "note organizing",
+    "reminders",
+    "local ai"
+  ],
+  "source": {
+    "url": "https://dev.to/sizzlebop/i-built-mimu-because-even-taking-notes-is-too-much-work-2dg",
+    "name": "DEV Community",
+    "author": "Jessica Doering",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 5.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working open-source voice-notes app where a local AI organizes notes, sets due dates, writes digests and answers questions. More an AI pipeline than a fully autonomous agent, but with a demo and useful testing lessons."
+  }
+}

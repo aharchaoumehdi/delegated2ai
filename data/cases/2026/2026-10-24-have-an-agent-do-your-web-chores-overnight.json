@@ -1,0 +1,46 @@
+{
+  "id": "have-an-agent-do-your-web-chores-overnight",
+  "title": "Have an agent do your web chores overnight",
+  "summary": "A developer built Sloth Errands, which renews library books, books gym slots and checks parcels overnight, then holds a ₹50 fine payment until he approves it by phone.",
+  "domain": "Daily life",
+  "platform": "Custom agent",
+  "model": "gpt-oss-120b (with gpt-oss-20b for page actions), served by Groq",
+  "tools": [
+    "Browserbase",
+    "Stagehand",
+    "Temporal",
+    "Auth0 Guardian",
+    "Mastra",
+    "Next.js"
+  ],
+  "agent_role": "The agent opens sites in cloud browsers, reads pages, clicks and fills forms, and waits and retries when sites are down or bookings aren't open yet. Code blocks any payment or confirm click, so the human approves each risky step from a phone push in the morning.",
+  "outcome": "The author's uncut demo run shows five chores completing, a deliberately failing parcel check succeeding on retry, and the fine paid about 20 seconds after phone approval.",
+  "what_they_did": "Anish Kumar picks tonight's chores on a board styled like a train departure screen, then goes to sleep. An agent works through them in cloud browsers that are already logged in, so the model never sees passwords. A rule in the code refuses clicks with words like \"pay\" or \"confirm\". Instead the agent proposes that step, and the author approves it by a phone push in the morning.",
+  "how_it_went": "In the recorded run, safe chores finished on their own. A parcel check failed twice on purpose, then succeeded. The held fine survived the author killing and restarting the worker. He says it was paid 20 seconds after he tapped Approve.",
+  "worth_knowing": "One retry reported \"nothing to renew\" because the first try had already renewed the book. Now retries are told an earlier try may have partly done the job. The model also didn't know the date until it was added to its instructions.",
+  "prompt": "Every night at [time], work through my chore list: [renew library books due within 3 days at library site], [book the 7 AM slot at gym site when booking opens], [check parcel status at tracking site]. If a site is down or booking isn't open yet, wait and try again later. Never click anything that pays, confirms a purchase, cancels or deletes. Instead, stop and write down the exact step you want to take. Give me a morning summary of what you finished, what is still waiting, and any steps that need my approval.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "errands",
+    "web automation",
+    "approvals",
+    "overnight tasks",
+    "bookings"
+  ],
+  "source": {
+    "url": "https://dev.to/anishisbusy/sloth-errands-an-agent-that-does-my-web-chores-while-i-sleep-and-asks-before-it-pays-2n20",
+    "name": "DEV Community",
+    "author": "Anish Kumar",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 8,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A relatable daily-life agent that handles overnight web chores with retries and asks by phone before any payment. It has a demo video, open code, an evidence folder and candid lessons learned."
+  }
+}

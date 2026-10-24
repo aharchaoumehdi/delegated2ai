@@ -1,0 +1,40 @@
+{
+  "id": "turn-your-photos-into-quick-paintings-with-a-built-tool",
+  "title": "Turn your photos into quick paintings with a built tool",
+  "summary": "Simon Willison asked Claude Opus 5.5 High to build a web tool that paints any opened photo in seconds; the working result is live online.",
+  "domain": "Creative",
+  "platform": "Claude",
+  "model": "Claude Opus 5.5 High",
+  "tools": [
+    "Claude artifacts",
+    "HTML canvas"
+  ],
+  "agent_role": "Claude wrote the whole browser tool from one prompt; Simon supplied the idea and published it.",
+  "outcome": "Simon published the working tool, which paints photos like an oil painting.",
+  "what_they_did": "Simon Willison gave Claude one prompt: build a page that opens a photo and quickly paints it with a simulated brush. Claude wrote the tool. It finds outlines in the image and needs no extra libraries.",
+  "how_it_went": "Simon shared the finished tool online, along with a sample painting of a heron.",
+  "worth_knowing": "He builds on an earlier experiment where Claude imitated a watercolor style, so trying different paint styles is an easy next step.",
+  "prompt": "Build a small web page I can open in my browser. When I open a photo, it should paint a version of it in a few seconds on a drawing canvas, using simulated brush strokes in a [oil paint / watercolor / your chosen] style. Keep it to a single file with no outside libraries. Show me the finished page and explain how to adjust stroke size and speed.",
+  "evidence": "Demo",
+  "difficulty": "Beginner",
+  "tags": [
+    "digital painting",
+    "photo effects",
+    "creative tools"
+  ],
+  "source": {
+    "url": "https://simonwillison.net/2026/Oct/23/quick-study-painter/",
+    "name": "Simon Willison's Weblog",
+    "author": "Simon Willison",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A small but working creative tool built from one shared prompt, with a live demo; thin on process and close to a single-turn build."
+  }
+}

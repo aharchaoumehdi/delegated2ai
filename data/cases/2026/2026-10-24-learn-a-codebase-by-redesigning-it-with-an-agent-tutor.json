@@ -1,0 +1,42 @@
+{
+  "id": "learn-a-codebase-by-redesigning-it-with-an-agent-tutor",
+  "title": "Learn a codebase by redesigning it with an agent tutor",
+  "summary": "A developer made a Claude Code skill where an agent maps a project's key design choices from its code and history, then quizzes you to work them out yourself.",
+  "domain": "Education",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "git",
+    "code reading",
+    "local notes files"
+  ],
+  "agent_role": "A background agent reads the code, file links and commit history to build a list of 5 to 10 design problems. The tutor agent asks guiding questions, narrows choices when you are stuck, and logs where you struggled. The learner does the reasoning.",
+  "outcome": null,
+  "what_they_did": "Eric Zou built a skill called rederive. You type /rederive in your coding agent and point it at a project, like the Express web library. It asks why the project exists and how you'd solve the problem. Meanwhile a background agent maps 5 to 10 design problems in build order. It only asks questions and never just explains.",
+  "how_it_went": null,
+  "worth_knowing": "The map file holds the answers, so don't open it until you finish. The agent ignores commit messages, so it works even on projects built in a few big commits.",
+  "prompt": "Help me understand the codebase at [repo path or URL] by having me redesign it myself. First, quietly study the code, how files connect, and the commits where the design changed. Write 5 to 10 key design problems in the order they'd be built to a notes file I won't read. Then start by asking me what problem the project solves. Guide me through each design problem with questions only; don't explain the answer. If I'm stuck, narrow it to a few options. After two wrong answers, offer a sketch. At the end, summarize where I struggled.",
+  "evidence": "Code available",
+  "difficulty": "Beginner",
+  "tags": [
+    "learning",
+    "codebase",
+    "tutoring",
+    "system design"
+  ],
+  "source": {
+    "url": "https://github.com/EricJujianZou/rederive",
+    "name": "GitHub",
+    "author": "EricJujianZou",
+    "published": "2026-10-19"
+  },
+  "added": "2026-10-24",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An original learning use: a background agent maps a repo's design history while a tutor agent quizzes you. Code and a sample session exist, but no reported learning results."
+  }
+}

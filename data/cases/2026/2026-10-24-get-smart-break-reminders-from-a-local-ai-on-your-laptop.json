@@ -1,0 +1,42 @@
+{
+  "id": "get-smart-break-reminders-from-a-local-ai-on-your-laptop",
+  "title": "Get smart break reminders from a local AI on your laptop",
+  "summary": "A developer built a Windows app where a small local model turns one sentence into reminder settings, holds nudges during video calls, and writes fresh water and stretch reminders.",
+  "domain": "Health",
+  "platform": "Custom agent",
+  "model": "gemma4:e4b",
+  "tools": [
+    "Ollama",
+    "active window reader",
+    "system tray"
+  ],
+  "agent_role": "The model turns a typed request into settings, labels the current activity from the window title to delay reminders during meetings, and writes each reminder; the developer set the rules and safety patterns.",
+  "outcome": "The author reports the small model caught all 7 test meetings with no false alarms and followed message rules 100% of the time.",
+  "what_they_did": "A developer built Break Buddy, a Windows app running a small model on her own laptop. She typed one sentence like 'water every 45 min, eyes every 20, sarcastic tone'. The app reads which window is active, holds reminders during calls, and writes a new message each time.",
+  "how_it_went": "She reports the small model matched or beat larger ones in her tests, catching all 7 meetings with no false alarms, and that the varied messages actually got her to rest.",
+  "worth_knowing": "She added fixed rules for Zoom, Meet, Teams and Webex before the model, since a misread call is the worst failure. Zoom's home screen still wrongly blocks reminders.",
+  "prompt": "Help me set up a break reminder on my computer using a local model. From this sentence, create a settings file: [your reminder wishes, times and tone]. Check my active window every few minutes, hold reminders while I'm in a video call, and combine missed ones into one popup afterwards. Write each reminder fresh in my chosen tone. Show me the settings before saving.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "break reminders",
+    "wellbeing",
+    "local ai",
+    "hydration"
+  ],
+  "source": {
+    "url": "https://dev.to/kumuda/i-built-a-pixel-hero-that-nags-me-to-drink-water-and-runs-100-on-my-laptop-2ilb",
+    "name": "DEV Community",
+    "author": "Kumuda Sri P",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-24",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A local AI helper that sets itself up from one sentence, reads what you're doing and holds reminders during calls; light on agent autonomy but practical, well-documented and a health/daily-life use."
+  }
+}

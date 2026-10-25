@@ -35,6 +35,16 @@
   --grid-glow-peak: 0.11;     /* how bright a glowing cell gets at its peak */
   --logo-tile: #f4f6f8;       /* light tile behind agent logos, so colour and black logos both read */
   --logo-tile-edge: transparent;
+  /* cards: edge-lit at rest (a sheen and a 1px top highlight); on hover a cyan spotlight follows the pointer */
+  --card-top: var(--surface-raised);   /* top of the sheen; text stays AA on both stops */
+  --card-bottom: var(--surface);
+  --card-edge: var(--divider);
+  --card-edge-hover: #2f6f86;          /* the edge leaning toward the accent */
+  --card-bevel: rgba(255, 255, 255, 0.06);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 10px 26px -14px rgba(0, 0, 0, 0.9);
+  --card-glow: rgba(24, 183, 234, 0.22);
+  --card-spot: rgba(24, 183, 234, 0.12);
+  --card-spot-edge: rgba(24, 183, 234, 0.85);
   --font-sans: "Funnel Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display: "Funnel Display", "Funnel Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -69,6 +79,14 @@
   --grid-glow-peak: 0.16;
   --logo-tile: #ffffff;
   --logo-tile-edge: #dde2e8;
+  --card-top: #ffffff;
+  --card-bottom: #f7f9fa;
+  --card-edge-hover: #7fc3dc;
+  --card-bevel: rgba(255, 255, 255, 0.9);
+  --card-shadow: 0 1px 2px rgba(11, 13, 16, 0.06), 0 10px 24px -16px rgba(11, 13, 16, 0.25);
+  --card-glow: rgba(0, 106, 140, 0.16);
+  --card-spot: rgba(24, 183, 234, 0.1);
+  --card-spot-edge: rgba(0, 125, 165, 0.8);
   color-scheme: light;
 }
 
@@ -320,12 +338,7 @@ svg { flex: none; }
 
 /* top picks grid */
 .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-.tile {
-  display: flex; flex-direction: column; gap: 8px; padding: 14px 12px 12px;
-  background: var(--surface); border-radius: 10px;
-  transition: background 0.15s;
-}
-.tile:hover { background: var(--surface-raised); }
+.tile { display: flex; flex-direction: column; gap: 8px; padding: 14px 12px 12px; border-radius: 10px; }
 .tile-votes { display: flex; align-items: center; gap: 6px; font: 12px var(--font-mono); color: var(--text-muted); min-height: 16px; font-variant-numeric: tabular-nums; }
 .tile-votes svg { width: 11px; height: 11px; color: var(--text-muted); }
 .tile-votes svg path { fill: currentColor; }
@@ -341,12 +354,40 @@ svg { flex: none; }
 .signal-head p.mono-label { color: var(--text-muted); font-size: 12px; padding-top: 4px; flex: none; }
 
 /* list items */
-.items { display: flex; flex-direction: column; }
-.item {
-  position: relative; display: flex; align-items: flex-start; gap: 12px;
-  padding: 10px 8px; margin: 0 -8px; border-radius: 8px; transition: background 0.15s;
+.items { display: flex; flex-direction: column; gap: 8px; }
+.item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 14px 12px; border-radius: 10px; }
+
+/* Cards (tiles and list items): edge-lit surface; on hover a spotlight and a lit border follow
+   the pointer. app.js sets --mx / --my; touch screens and keyboards get the resting card plus
+   the cyan edge on focus. */
+.tile, .item {
+  position: relative; isolation: isolate;
+  background: linear-gradient(180deg, var(--card-top), var(--card-bottom));
+  border: 1px solid var(--card-edge);
+  box-shadow: inset 0 1px 0 var(--card-bevel), var(--card-shadow);
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.item:hover { background: var(--surface); }
+.tile::before, .item::before, .tile::after, .item::after {
+  content: ""; position: absolute; pointer-events: none; border-radius: inherit; opacity: 0; transition: opacity 0.25s;
+}
+.tile::before, .item::before {
+  inset: 0; z-index: -1;
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 0%), var(--card-spot), transparent 70%);
+}
+.tile::after, .item::after {
+  inset: -1px; padding: 1px;
+  background: radial-gradient(200px circle at var(--mx, 50%) var(--my, 0%), var(--card-spot-edge), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+.tile:focus-within, .item:focus-within { border-color: var(--card-edge-hover); }
+@media (hover: hover) {
+  .tile:hover, .item:hover {
+    border-color: var(--card-edge-hover);
+    box-shadow: inset 0 1px 0 var(--card-bevel), 0 0 0 1px var(--card-glow), 0 12px 32px -12px var(--card-glow);
+  }
+  .tile:hover::before, .item:hover::before, .tile:hover::after, .item:hover::after { opacity: 1; }
+}
 .item-body { min-width: 0; flex: 1; }
 .item-title { font-size: 15px; font-weight: 500; line-height: 1.375; }
 .item-title a:hover { text-decoration: underline; text-underline-offset: 3px; }

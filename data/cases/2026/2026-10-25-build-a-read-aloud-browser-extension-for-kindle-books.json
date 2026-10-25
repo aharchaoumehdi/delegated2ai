@@ -1,0 +1,43 @@
+{
+  "id": "build-a-read-aloud-browser-extension-for-kindle-books",
+  "title": "Build a read-aloud browser extension for Kindle books",
+  "summary": "A developer vibe coded Narro, an open-source Chrome extension that reads web pages and Kindle Cloud Reader books aloud with voices that run in the browser.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Chrome extension",
+    "Kokoro voice model",
+    "Piper voices",
+    "Tesseract text recognition"
+  ],
+  "agent_role": "An AI coding assistant wrote the extension from the developer's direction; the post does not say which tool or how the work was split.",
+  "outcome": "The author shipped a working extension to the Chrome Web Store that reads Kindle pages via on-device text recognition and turns pages automatically.",
+  "what_they_did": "A developer wanted a read-aloud tool for Kindle's online reader without signups or poor voices. They vibe coded a Chrome extension with AI. It highlights each sentence, runs voice models in the browser, and reads Kindle pages by recognizing text on screen.",
+  "how_it_went": "The author published it as open source and on the Chrome Web Store. The README lists memory use of about 500 to 1,050 MB for the in-browser voices, measured on one laptop.",
+  "worth_knowing": "Kindle text recognition is English only and struggles with decorative fonts. The author notes automated use of Kindle Cloud Reader may be restricted by Amazon's terms.",
+  "prompt": "Help me build a Chrome extension that reads the current web page aloud. Use a voice model that runs inside the browser so no text leaves my computer. Highlight each sentence as it is spoken, and add play, pause, skip and speed controls. Start by showing me your plan and the file layout, then build it step by step and tell me how to load it in Chrome to test. Optional: add support for [a reading site I use].",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "read aloud",
+    "browser extension",
+    "text to speech",
+    "ebooks"
+  ],
+  "source": {
+    "url": "https://github.com/swrdfish/narro",
+    "name": "Hacker News",
+    "author": "ghoshbinayak",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A finished, open-source read-aloud extension built by vibe coding with detailed results, but the AI's role in building it is barely described."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "let-your-agent-search-years-of-your-notes-with-sources",
+  "title": "Let your agent search years of your notes with sources",
+  "summary": "Enzyme's creator shares a tool and setup prompt that let Claude Code or Codex index a notes folder and answer questions citing the notes behind them.",
+  "domain": "Data",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Enzyme",
+    "Obsidian",
+    "Apple Notes",
+    "terminal"
+  ],
+  "agent_role": "The agent installs the tool and proposes which folders and tags to read. It builds the index and answers questions with links. The human reviews and corrects the settings first.",
+  "outcome": "The author says the reading profiles were refined over two years of personal use.",
+  "what_they_did": "The creator built Enzyme, which builds a local search index over a folder of notes. You paste a setup prompt into Claude Code or Codex. The agent installs it and proposes what to include. You correct the settings, then it answers a question with links to sources.",
+  "how_it_went": "The README shows example output: generated questions about past decisions and ranked note passages. It reports no measured results.",
+  "worth_knowing": "Its generated questions are hints, not evidence. Judge it by the notes the agent brings back. For exact names or phrases, plain search is faster.",
+  "prompt": "Set up a local search index for the Markdown notes folder at [path to notes]. Show me which folders, tags and links you plan to include or exclude. Wait for my corrections before building anything. Then answer this question using my notes, with links to each source note: [your question]. Suggest a follow-up question. Do not move, edit or delete any existing notes. Ask separately before any cleanup, downloads or recurring tasks.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "note search",
+    "knowledge base",
+    "personal notes",
+    "citations"
+  ],
+  "source": {
+    "url": "https://github.com/byenzyme/enzyme",
+    "name": "Hacker News",
+    "author": "earllee",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A repo whose README walks through a specific agent workflow: set up an index of your notes, then answer questions with cited sources. Results are only shown as example output."
+  }
+}

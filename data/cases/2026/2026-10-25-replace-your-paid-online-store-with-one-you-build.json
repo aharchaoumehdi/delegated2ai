@@ -1,0 +1,43 @@
+{
+  "id": "replace-your-paid-online-store-with-one-you-build",
+  "title": "Replace your paid online store with one you build",
+  "summary": "A shop owner had Claude Code build a store website, admin dashboard and Telegram order alerts, saying it replaced Shopify and saves $35 a month.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Shopify",
+    "Telegram bot",
+    "email"
+  ],
+  "agent_role": "Claude Code built the website, the admin dashboard, the checkout and the Telegram and email order alerts. The owner moved the domain and decided what features were needed.",
+  "outcome": "The author reports saving $35 a month and being very happy with the result.",
+  "what_they_did": "A shop owner used Claude Code to build a store website from scratch, plus an admin page that works as a dashboard. They moved their existing domain to it. Checkout uses cash on delivery, which most local customers prefer. A Telegram bot and an email alert notify them of each new order.",
+  "how_it_went": "The author says it saves $35 a month compared with Shopify and covers everything they need.",
+  "worth_knowing": "Skipping card payments made it much simpler. Cash on delivery was enough for their local market, which may not hold for other shops.",
+  "prompt": "Help me build a simple online store to replace my [current store platform]. I sell [what you sell] and want: product pages, a checkout using [payment method, e.g. cash on delivery], an admin dashboard showing orders and stock, and a [Telegram / email] alert for every new order. First propose a plan and the tools you'll use, and wait for my approval. Build and test it locally. Don't move my domain, deploy, or connect real payments until I review and approve.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "online store",
+    "small business",
+    "dashboard",
+    "order alerts"
+  ],
+  "source": {
+    "url": "https://x.com/masterjan_/status/2114052014665605133",
+    "name": "X",
+    "author": "@masterjan_",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real small-business result: a custom store, admin dashboard and order alerts built with Claude Code to replace a paid platform. Light on detail and evidence."
+  }
+}

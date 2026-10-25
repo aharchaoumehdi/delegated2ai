@@ -1,0 +1,42 @@
+{
+  "id": "audit-which-agent-skills-you-actually-use",
+  "title": "Audit which agent skills you actually use",
+  "summary": "A developer built one page listing every skill across Claude Code, Codex and Hermes with usage counts, then kept only the used ones loading automatically.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "Hermes"
+  ],
+  "agent_role": "The agents call skills while working and leave records of it. The developer built a page that gathers this and decided which skills stay on.",
+  "outcome": "The author reports that much of what sat in the agent's working memory was never used, and now only used skills load by default.",
+  "what_they_did": "A developer uses three coding agents that call add-on skills on the fly. He built one page listing every skill across all three. It shows where each skill lives, what it does, how often it ran, and whether it loads on its own.",
+  "how_it_went": "He says many skills filled the agent's working memory but never got used. Now his used skills load in every tool, and the rest stay off until asked for.",
+  "worth_knowing": "Unused skills still take up the agent's limited working memory, so trimming them can leave more room for the actual task.",
+  "prompt": "Find every skill or custom instruction file installed for my coding agents ([list your agents]). For each one, list where it lives, what it does, and whether it loads automatically or only by name. Check my session logs from the last [number] days and count how often each skill actually ran. Put this in one table, sorted by use. Then suggest which skills to keep loading automatically and which to switch to load only on request. Show me the plan and wait for my approval before changing any settings.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "agent skills",
+    "context management",
+    "audit",
+    "developer tools"
+  ],
+  "source": {
+    "url": "https://x.com/Dandiggastech/status/2114118673027797444",
+    "name": "X",
+    "author": "@Dandiggastech",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A useful, specific idea: audit which agent skills actually get used and turn off the rest. It is thin, with no numbers and no clear account of how it was built."
+  }
+}

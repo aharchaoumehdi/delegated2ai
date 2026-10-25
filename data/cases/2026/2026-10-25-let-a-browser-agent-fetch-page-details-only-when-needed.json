@@ -1,0 +1,42 @@
+{
+  "id": "let-a-browser-agent-fetch-page-details-only-when-needed",
+  "title": "Let a browser agent fetch page details only when needed",
+  "summary": "Skyvern rebuilt its web-browsing agent to pull page details on demand. It reports 2.3x faster runs and 22.5% lower cost across about 100,000 customer runs.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "web browser",
+    "Rustwright",
+    "screenshots"
+  ],
+  "agent_role": "The agent completes browser tasks like fetching invoices or filling forms. It decides when to scan the page, take screenshots or act. Customers supply the task prompts.",
+  "outcome": "Skyvern reports average run time fell from 593 to 262 seconds and cost per run from $0.039 to $0.0302.",
+  "what_they_did": "Skyvern's team used to pre-process every web page into a list of clickable parts before each agent step. They rebuilt the agent with a few simple tools: scan the page, click or type, screenshot, and finish. It now looks things up only when needed.",
+  "how_it_went": "They report runs got 2.3x faster and 22.5% cheaper across about 100,000 runs. Screenshot use dropped 90%. They also report a 90.5% score on a public browser-agent test.",
+  "worth_knowing": "The agent used 52% more text overall. Cost still fell because repeated text was cached and billed at a discount.",
+  "prompt": "Go to [website or portal URL] and [task, e.g. download last month's invoice]. Look up page details only when you need them, rather than capturing the whole page each step. Describe each step as you go. Stop and ask me before logging in with my credentials, submitting any form, or making a payment. When finished, report success or explain why it failed.",
+  "evidence": "Independent report",
+  "difficulty": "Advanced",
+  "tags": [
+    "browser automation",
+    "web forms",
+    "invoices",
+    "agent design"
+  ],
+  "source": {
+    "url": "https://www.skyvern.com/blog/deleting-rag-from-our-web-agent-made-it-2-3x-faster/",
+    "name": "Hacker News",
+    "author": "suchintan",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A vendor engineering post, but it reports a real comparison across about 100,000 customer browser-automation runs with concrete speed and cost numbers. It is partly promotional and offers little a reader can reproduce."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "find-and-book-a-family-outing-on-a-day-off",
+  "title": "Find and book a family outing on a day off",
+  "summary": "A parent asked Muse to check availability and prices for a family of 5; it found a 2 PM slot, noted weekday savings and booked after approval.",
+  "domain": "Daily life",
+  "platform": "Muse",
+  "model": null,
+  "tools": [
+    "web search",
+    "ticket booking"
+  ],
+  "agent_role": "The agent researched availability and pricing, found an opening and noted savings, then booked tickets once the parent approved.",
+  "outcome": "Author reports the agent found a 2 PM opening with weekday pricing savings and booked the tickets after approval.",
+  "what_they_did": "A parent's kids had Friday off. They asked the Muse agent to check availability and prices at a local attraction for a family of five. The agent booked only after the parent approved.",
+  "how_it_went": "The author says it found a 2 PM opening, pointed out weekday savings, and booked the tickets once approved.",
+  "worth_knowing": "The booking happened only after the parent gave approval, which keeps spending in human hands.",
+  "prompt": "My kids have [day] off. Find availability and prices at [attraction or activity] near [your city] for [number of people]. Compare time slots and point out any cheaper weekday or off-peak pricing. Show me the best options with total cost. Wait for my approval before booking or paying for anything.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "family outing",
+    "booking",
+    "price comparison",
+    "errands"
+  ],
+  "source": {
+    "url": "https://x.com/BradyHannaKC/status/2114028796223599023",
+    "name": "X",
+    "author": "@BradyHannaKC",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-step family errand with an approval step before booking, but very brief and framed as a product tip; small boost for daily life."
+  }
+}

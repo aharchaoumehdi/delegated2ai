@@ -1,0 +1,41 @@
+{
+  "id": "build-a-community-blog-with-sign-in-and-post-submissions",
+  "title": "Build a community blog with sign-in and post submissions",
+  "summary": "A poster says Codex built his AI news blog in about 30 minutes, with Google sign-in, reader submissions and an editor review step, hosted on Netlify.",
+  "domain": "Software",
+  "platform": "OpenAI Codex",
+  "model": null,
+  "tools": [
+    "Netlify",
+    "Google sign-in"
+  ],
+  "agent_role": "Codex wrote the site and made changes as the author kept asking; the author chose the idea and published it on Netlify.",
+  "outcome": "Author reports a live site in about 30 minutes.",
+  "what_they_did": "The poster started with an idea for an AI news blog and kept asking Codex for changes. The result has Google sign-in and a form for others to submit drafts. Submissions are reviewed before they go public. He hosted it on Netlify.",
+  "how_it_went": "He says it took about 30 minutes and the site is live. At the time it listed four drafts and no published posts.",
+  "worth_knowing": null,
+  "prompt": "Build me a simple blog called [blog name] about [topic]. Include a homepage listing posts with search by topic, a sign-in with Google, and a form where signed-in visitors can submit a draft. Submissions must stay hidden until I approve them in an admin view. Show me the plan and the files first, then help me publish it on [hosting service]. Ask before creating any accounts or deploying.",
+  "evidence": "Demo",
+  "difficulty": "Beginner",
+  "tags": [
+    "website",
+    "blog",
+    "web hosting",
+    "user submissions"
+  ],
+  "source": {
+    "url": "https://x.com/gabrieltorreswm/status/2114178963387932752",
+    "name": "X",
+    "author": "@gabrieltorreswm",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine but common build: a live blog with sign-in and reviewed submissions made through conversation with Codex, with a live link as evidence but few build details."
+  }
+}

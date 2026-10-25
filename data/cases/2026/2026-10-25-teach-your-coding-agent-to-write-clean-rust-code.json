@@ -1,0 +1,43 @@
+{
+  "id": "teach-your-coding-agent-to-write-clean-rust-code",
+  "title": "Teach your coding agent to write clean Rust code",
+  "summary": "Morgan Linton built a Rust style skill for Claude Code and other agents; he reports it passed 29 of 30 checks versus 24 without it, using about a third more tokens.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Agent Skills",
+    "cargo",
+    "clippy",
+    "claude plugin eval"
+  ],
+  "agent_role": "The agent writes Rust code, loading the style guidance automatically when a task involves Rust. The author wrote the guidance and designed the test tasks.",
+  "outcome": "Author reports 29 of 30 checks passed with the skill versus 24 of 30 without, at roughly a third more tokens per task.",
+  "what_they_did": "A developer condensed five well-known Rust style guides into one instruction file that coding agents load whenever a task involves Rust. He then had an agent build a small library, a command-line tool and a cleanup of messy code, both with and without the file. Automatic checks graded each run.",
+  "how_it_went": "He reports the skill passed 29 of 30 checks against 24 of 30 without it. In one example, the agent kept data private and documented errors properly only when using the skill.",
+  "worth_knowing": "The test runs are real model calls and are billed. The skill used roughly a third more tokens per task.",
+  "prompt": "Before writing any Rust in [project folder], read the Rust best-practices guidance I installed. Then [describe the task, e.g. build a small library that parses version strings]. Keep internal data private, document every way a function can fail, and avoid shortcuts that crash on errors in examples. Before you finish, run the formatter, the code checker with warnings treated as errors, and all tests. Show me a summary of what you changed and any checks that failed.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "rust",
+    "coding style",
+    "agent skills",
+    "code quality"
+  ],
+  "source": {
+    "url": "https://github.com/morganlinton/BeautifulRust",
+    "name": "GitHub",
+    "author": "morganlinton",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A skill pack for coding agents, but the README shows concrete before-and-after runs and a small test comparison (29/30 vs 24/30). Useful and reproducible, though narrow and developer-focused."
+  }
+}

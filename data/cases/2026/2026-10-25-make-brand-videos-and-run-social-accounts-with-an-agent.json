@@ -1,0 +1,45 @@
+{
+  "id": "make-brand-videos-and-run-social-accounts-with-an-agent",
+  "title": "Make brand videos and run social accounts with an agent",
+  "summary": "Shaitrish's open-source 37Studio has Claude Code build on-brand videos from a brief, post them to nine social platforms, and draft replies to messages and comments.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "HyperFrames",
+    "ffmpeg",
+    "faster-whisper",
+    "ElevenLabs",
+    "Gemini",
+    "social platform publishing"
+  ],
+  "agent_role": "The agent builds a brand library from a website, makes and renders each video, checks its own frames, writes captions per platform and drafts replies. Humans brief videos, approve posts and replies, and set spending limits.",
+  "outcome": null,
+  "what_they_did": "Shaitrish, a software team in Dhaka, built 37Studio, a free app that runs on your own computer. You paste a brand's website and it collects logos, colours and facts. You brief a video and Claude Code builds it, checks its frames and renders it. It can then post to nine platforms on a schedule and draft replies in one inbox.",
+  "how_it_went": null,
+  "worth_knowing": "The agent can read the AI keys and files inside its container, so the safety allowlist is not a true security wall. You also need 16 GB of memory and your own app set up for each social platform.",
+  "prompt": "Using 37Studio, add my brand from [website URL] and build its brand library. Then make a [length]-second [type of video, e.g. hook reel] about [topic] in the brand's style, using my footage in [folder]. Check your own frames before rendering. Write a caption for each of [platforms]. Show me the finished video and captions and wait for my approval before posting anything. Ask me before spending more than [budget] on generated images, video or voice.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "social media",
+    "video editing",
+    "content scheduling",
+    "customer replies"
+  ],
+  "source": {
+    "url": "https://github.com/Shaitrish/37studio",
+    "name": "GitHub",
+    "author": "Shaitrish",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An open-source app where Claude Code builds on-brand videos, checks its own frames, posts to nine platforms and drafts inbox replies. The README mostly lists features rather than reporting real use, but it describes a concrete multi-step agent workflow with code available."
+  }
+}

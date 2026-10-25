@@ -1,0 +1,40 @@
+{
+  "id": "add-a-four-player-map-to-your-game-with-a-coding-agent",
+  "title": "Add a four-player map to your game with a coding agent",
+  "summary": "Simon Willison asked Claude Opus 5.5 for a four-player map in his Battledrones game; it built the \"Compass Rose\" map and extended online multiplayer to four players.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "WebSockets multiplayer code",
+    "GitHub"
+  ],
+  "agent_role": "The model designed the new map, added purple and green teams and rewrote the networking code for four players. Simon wrote the prompt and published the release.",
+  "outcome": "Simon reports the new map shipped as v14 with four-player online play via share links or QR codes, and AI filling empty slots.",
+  "what_they_did": "Simon Willison gave Claude Opus 5.5 one prompt for his browser strategy game Battledrones. He asked for a four-player map with four-way symmetry. Spare slots should go to AI players, and up to four humans should be able to join online.",
+  "how_it_went": "He says it added a map called \"Compass Rose\" and changed the multiplayer code to support four players joining by link or QR code. New purple and green robot teams joined the existing blue and red ones.",
+  "worth_knowing": null,
+  "prompt": "In my game at [repo or folder], add a new map for a [number]-player battle with [symmetry style] symmetry. Support up to [number] AI players. Make it work with the existing online multiplayer mode so up to [number] humans can join, with AI filling any spare slots. First show me your plan for the map and the networking changes, then build it and tell me how to test it with several browser windows.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "game development",
+    "multiplayer",
+    "level design"
+  ],
+  "source": {
+    "url": "https://simonwillison.net/2026/Oct/24/battledrones/",
+    "name": "Simon Willison's Weblog",
+    "author": "Simon Willison",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A specific one-prompt feature addition with the exact prompt, code release and replay link, though coding-agent game work is a familiar category."
+  }
+}

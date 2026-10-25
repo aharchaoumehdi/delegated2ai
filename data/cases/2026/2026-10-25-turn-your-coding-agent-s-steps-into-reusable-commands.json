@@ -1,0 +1,43 @@
+{
+  "id": "turn-your-coding-agent-s-steps-into-reusable-commands",
+  "title": "Turn your coding agent's steps into reusable commands",
+  "summary": "A developer turned his Claude coding routine into eight reusable commands that interview him, write specs and tickets, build test-first, review and open pull requests.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "agent skills repo",
+    "GitHub",
+    "test runner",
+    "secret scanner"
+  ],
+  "agent_role": "The agent interviews the developer, writes specs and tickets, builds each ticket test-first, reviews and opens pull requests; the developer answers questions and approves risky changes.",
+  "outcome": null,
+  "what_they_did": "The developer packed his coding routine into reusable commands. One interviews him about a feature until no questions remain. Others turn that into a spec and small tickets, build each ticket with tests first, and review the changes. Hard checks block commits if tests fail or secrets show up.",
+  "how_it_went": "The author says the debug rule, reproducing a bug before guessing causes, stopped the agent fixing the first likely cause. He reports no other numbers.",
+  "worth_knowing": "His key idea: turn every 'please remember to' into a check that fails. Written reminders get skipped under pressure; failing checks do not.",
+  "prompt": "Before building [feature], interview me in rounds until the plan has no open questions, suggesting an answer for each. Then write a short spec in [specs folder] and split it into small tickets with clear order. Build the first unblocked ticket test-first, run the project's lint, type checks and tests, and stop if any fail. Show me the diff and wait for my approval before committing, pushing or opening a pull request.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "coding workflow",
+    "specs",
+    "agent skills",
+    "code review"
+  ],
+  "source": {
+    "url": "https://dev.to/helderberto/my-ai-coding-workflow-v3-3c4c",
+    "name": "DEV Community",
+    "author": "Helder Burato Berto",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real, shared coding-agent workflow with code, but it is one more spec-and-tickets flow with no measured results."
+  }
+}

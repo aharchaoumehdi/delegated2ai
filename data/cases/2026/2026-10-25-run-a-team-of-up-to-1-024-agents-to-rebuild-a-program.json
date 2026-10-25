@@ -1,0 +1,43 @@
+{
+  "id": "run-a-team-of-up-to-1-024-agents-to-rebuild-a-program",
+  "title": "Run a team of up to 1,024 agents to rebuild a program",
+  "summary": "Microsoft researchers had up to 1,024 coding agents rebuild programs like Pandoc with no boss agent; they report Pandoc's test pass rate rose from 34% to 55%.",
+  "domain": "Software",
+  "platform": "GitHub Copilot",
+  "model": "GPT-5.6-sol",
+  "tools": [
+    "Gitea",
+    "Mattermost",
+    "Docker Compose",
+    "Copilot harness"
+  ],
+  "agent_role": "Agents claimed sub-tasks, shared findings, checked results and merged work on their own over six hours; humans set the goal and budget.",
+  "outcome": "Researchers report the mean test pass rate across five hard tasks rose from 19.31% with 1 agent to 28.78% with 128 agents.",
+  "what_they_did": "A Microsoft research team built a setup where many coding agents work as a team without a central boss. They share a code workspace and a chat channel. Each agent picks a piece of work, tries it, checks it and merges it. They asked teams to rebuild programs like Pandoc from their behavior and documentation, with six hours and no internet.",
+  "how_it_went": "The authors report Pandoc's test pass rate rose from 33.89% with one agent to 55.06% with 1,024 agents. With a newer model, 32 agents reached 79.59% versus 56.19% for one.",
+  "worth_knowing": "The team says roles like integrators and reviewers emerged on their own as teams grew. The public release is a single-machine setup for reproducing the experiments.",
+  "prompt": "Help me set up a small team of coding agents to rebuild [program name] from its documentation and observed behavior. Plan how agents will claim sub-tasks, share progress in [shared repository] and a chat channel, and verify work against [test suite]. Start with [number] agents and a [time budget]. Show me the plan and the launch commands, and wait for my approval before starting any runs.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "multi-agent",
+    "software rebuild",
+    "research",
+    "scaling"
+  ],
+  "source": {
+    "url": "https://github.com/microsoft/Agensh",
+    "name": "Hacker News",
+    "author": "Zhihao Zhan et al. (Microsoft), posted by brunoborges",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A research release with code and numbers showing up to 1,024 coding agents rebuilding programs together; well evidenced but hard for most readers to reproduce."
+  }
+}

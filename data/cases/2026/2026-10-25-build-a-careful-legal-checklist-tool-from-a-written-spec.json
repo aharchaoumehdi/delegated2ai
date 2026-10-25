@@ -1,0 +1,42 @@
+{
+  "id": "build-a-careful-legal-checklist-tool-from-a-written-spec",
+  "title": "Build a careful legal checklist tool from a written spec",
+  "summary": "Andy Wood handed Claude Code a long spec to build a free EU AI Act triage site; he reports 112 automatic tests, including one that blocks overclaiming legal wording.",
+  "domain": "Legal",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "rules file",
+    "automatic tests",
+    "PDF generation"
+  ],
+  "agent_role": "Claude Code built the site from the author's long written spec, including the automatic tests. The author wrote the spec and the legal wording, which lives in one rules file he edits himself.",
+  "outcome": "Author reports a working free site with 112 automatic tests, no server back end, and answers that stay in the user's browser.",
+  "what_they_did": "Andy Wood wrote a long spec for a tool that helps people who build on AI models check which parts of the EU AI Act might apply to them. He handed it to Claude Code to build. The tool asks six or seven questions, links each relevant part to the legal text, and writes questions to take to an adviser. All legal wording sits in one rules file he can edit.",
+  "how_it_went": "He reports the site has 112 automatic tests. One scans the whole site and fails the build if phrases like \"you are compliant\" or \"you are exempt\" appear. It runs with no server, and answers never leave the browser.",
+  "worth_knowing": "The tool deliberately avoids giving a verdict or risk level. It only tells you what to ask a professional, and the code enforces that it never overclaims.",
+  "prompt": "Read my spec in [spec file] and build a small website that asks [number] questions about [topic or regulation] and shows which rules each answer touches, with links to the source text. Keep all legal or policy wording in one editable rules file. Store nothing on a server; keep answers in the browser. Write automatic tests, including one that scans every page and fails the build if phrases like [banned phrases, e.g. \"you are compliant\"] appear. Show me your plan first, then run the tests and report results before suggesting any deployment.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "legal compliance",
+    "web app",
+    "spec-driven build",
+    "automatic tests"
+  ],
+  "source": {
+    "url": "https://x.com/andyhq/status/2114008405656440969",
+    "name": "X",
+    "author": "@andyhq (Andy Wood)",
+    "published": "2026-10-16"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real build with Claude Code from a written spec, with a useful idea: an automatic test that blocks the site from ever claiming 'you are compliant'. It is lightly evidenced, partly promotional, and the agent's exact steps are thin."
+  }
+}

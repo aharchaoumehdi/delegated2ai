@@ -1,0 +1,43 @@
+{
+  "id": "let-an-agent-decide-which-emails-you-can-ignore",
+  "title": "Let an agent decide which emails you can ignore",
+  "summary": "A developer built an agent that sorts email and parks the least urgent fifth on a 7-day timer; on test mail, she reports about 85% of parked emails truly got no reply.",
+  "domain": "Daily life",
+  "platform": "Custom agent",
+  "model": "gemma3:4b",
+  "tools": [
+    "TabPFN",
+    "Ollama",
+    "Temporal",
+    "Sentry"
+  ],
+  "agent_role": "The agent scores each email, writes summaries for urgent ones, and waits on parked ones, escalating if the sender writes again or archiving after seven days; the human reads the morning digest.",
+  "outcome": "Author reports about 1 in 10 emails can be parked with 92-93% accuracy, missing about 2.5% of mail that got a reply.",
+  "what_they_did": "The developer built an agent that scores each email by how costly ignoring it would be. The top fifth get a short summary from a local model for a morning digest. The bottom fifth are parked. If the sender follows up within a week, the email comes back. If not, it is archived. She tested it on a public mailbox of old company emails.",
+  "how_it_went": "She reports that on 1,981 test emails, 398 were parked and about 85% truly got no reply. In a small demo, 7 of 8 parked emails were archived correctly and 1 came back after a follow-up.",
+  "worth_knowing": "The local model first summarized the oldest forwarded message instead of the new reply. Cutting each email at the forwarding marker fixed it.",
+  "prompt": "Help me build a lazy email assistant for [my email account]. Look at my past emails and replies to learn which messages I usually answer. Sort new mail into three groups: needs me, low priority, and probably ignorable. For 'needs me', write a two-line summary and a suggested action in a morning digest. For ignorable mail, wait [7] days; bring it back if the sender writes again. Show me the sorting for the first week, and do not archive or delete anything until I approve.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "email triage",
+    "local ai",
+    "prioritization",
+    "inbox"
+  ],
+  "source": {
+    "url": "https://dev.to/khushighosh/let-it-die-the-lazy-email-agent-on-tabpfn-gemma-and-temporal-10o0",
+    "name": "DEV Community",
+    "author": "Khushighosh",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A carefully tested email agent that decides which mail can be ignored, with code, real numbers and honest limits; a fresh angle on email triage."
+  }
+}

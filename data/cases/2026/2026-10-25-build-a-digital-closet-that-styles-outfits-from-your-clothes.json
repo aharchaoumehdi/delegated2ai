@@ -1,0 +1,43 @@
+{
+  "id": "build-a-digital-closet-that-styles-outfits-from-your-clothes",
+  "title": "Build a digital closet that styles outfits from your clothes",
+  "summary": "A PR agency owner used Claude Code and Codex to build a 280-piece digital closet that imports thrift buys and suggests outfits from clothes she owns.",
+  "domain": "Daily life",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Codex",
+    "Chrome extension",
+    "background removal",
+    "Mac mini"
+  ],
+  "agent_role": "Claude Code and Codex wrote the app one feature at a time; the author designed the features and tested them. The finished app uses AI to build outfits.",
+  "outcome": "Author reports a working closet of 280 pieces running at home, after fixing a bias where one pair of boots appeared in 18 of 28 outfits.",
+  "what_they_did": "The poster, not an engineer, built a home-run app of her closet with Claude Code and Codex. A browser add-on pulls Depop and Vinted buys in with photos, and AI removes backgrounds. She types a request like 'business casual, boho vibe' and gets an outfit from her own clothes, with like and dislike feedback.",
+  "how_it_went": "She says it works and was worth the long build. Early on it repeated the same boots and bag in 18 of its first 28 outfits, so she made it rotate pieces.",
+  "worth_knowing": "The outfit AI played favorites with certain items until she forced it to rotate, so check results for repetition.",
+  "prompt": "Help me build a personal digital closet app that runs on my computer. Step one: let me upload photos of my clothes and remove each background. Step two: tag each item by type, color and style. Step three: when I type a request like [occasion and vibe], suggest an outfit only from items I own, and learn from my likes and dislikes. Make sure suggestions rotate so no item appears too often. Build one feature at a time and show me each before moving on.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "wardrobe",
+    "outfit planning",
+    "thrifting",
+    "personal app"
+  ],
+  "source": {
+    "url": "https://x.com/PRcarly/status/2114048305755767195",
+    "name": "X",
+    "author": "@PRcarly",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An original daily-life build with concrete features and an honest bug story, made by a non-engineer using coding agents; details are a personal account without code."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "run-two-coding-agents-side-by-side-and-set-firm-rules",
+  "title": "Run two coding agents side by side and set firm rules",
+  "summary": "A developer ran Codex and Claude Code on two projects for weeks; he reports Claude Code delivered 9 usable features in a day while Codex stalled on permission requests.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "Opus 5.5",
+  "tools": [
+    "OpenAI Codex",
+    "helper agents"
+  ],
+  "agent_role": "Both agents ran groups of helper agents to build features, some overnight; the author wrote rule sheets, reviewed results and pushed stalled work forward.",
+  "outcome": "Author reports Claude Code shipped 9 times in a day while Codex stopped 3 times and built for about 18 minutes.",
+  "what_they_did": "The poster ran Codex and Claude Code side by side for weeks on two real projects. He gave each a one-page rule sheet and left Claude Code running two teams overnight. He then wrote nine rules for running any agent.",
+  "how_it_went": "He says Claude Code produced three usable things overnight and nine by mid-afternoon. Codex stalled, even asking permission to remove its own self-written rules.",
+  "worth_knowing": "He says both agents waste effort on status reports and self-reviews, and that rules matter more than which tool you pick.",
+  "prompt": "You are working on [project]. Follow these rules: done means I can open it and see it working. Only I write rules; if you invent one, delete it. When you explain a problem, fix it right away. Make one round of changes, then stop for my review. Keep reports to ten lines. Do not wait on me overnight; keep building on [task list]. Never make final decisions, deploy or delete anything without asking me first.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "agent comparison",
+    "overnight work",
+    "agent rules",
+    "productivity"
+  ],
+  "source": {
+    "url": "https://x.com/bstuartTI/status/2114120237834723407",
+    "name": "X",
+    "author": "@bstuartTI",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-25",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real side-by-side account of running two coding agents on projects, with specific counts and practical rules, though the projects themselves are vague."
+  }
+}

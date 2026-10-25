@@ -45,6 +45,10 @@
   --card-glow: rgba(24, 183, 234, 0.22);
   --card-spot: rgba(24, 183, 234, 0.12);
   --card-spot-edge: rgba(24, 183, 234, 0.85);
+  /* write-up section labels on a use case: what they did / how it went (the result) / worth knowing (the caveat) */
+  --sec-did: var(--accent-text);
+  --sec-went: #4ade80;                 /* ≥9:1 on every dark surface */
+  --sec-know: #fbbf24;                 /* ≥9:1 on every dark surface */
   --font-sans: "Funnel Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display: "Funnel Display", "Funnel Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -87,6 +91,8 @@
   --card-glow: rgba(0, 106, 140, 0.16);
   --card-spot: rgba(24, 183, 234, 0.1);
   --card-spot-edge: rgba(0, 125, 165, 0.8);
+  --sec-went: #166534;                 /* ≥6:1 on every light surface */
+  --sec-know: #92400e;                 /* ≥6:1 on every light surface */
   color-scheme: light;
 }
 
@@ -473,6 +479,13 @@ svg { flex: none; }
 .writeup { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--divider); }
 .writeup h3 { margin: 18px 0 6px; }
 .writeup h3:first-child { margin-top: 0; }
+/* Each write-up section has its own colour; the marker and the label text carry it too, not colour alone. */
+.writeup .sec { display: flex; align-items: center; gap: 8px; }
+.writeup .sec::before { content: ""; width: 7px; height: 7px; border-radius: 2px; background: currentColor; flex: none; }
+.sec-did { color: var(--sec-did); }
+.sec-went { color: var(--sec-went); }
+.sec-know { color: var(--sec-know); }
+.detail .eyebrow a { color: var(--accent-text); }
 .writeup p { font-size: 16px; line-height: 1.7; color: var(--text); }
 .try { margin-top: 28px; background: var(--surface); border-radius: 12px; padding: 18px; }
 .try-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; font-size: 15px; color: var(--text-muted); }

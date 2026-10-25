@@ -174,9 +174,9 @@ export function detailHTML(c, { heading = "h2" } = {}) {
     c.model ? `<span class="model-note">${esc(c.model)}</span>` : ""
   }</p>
   <div class="writeup">
-    ${did ? `<h3 class="mono-label sec sec-did">What they did</h3>${para(did)}` : ""}
-    ${went ? `<h3 class="mono-label sec sec-went">How it went</h3>${para(went)}` : ""}
-    ${c.worth_knowing ? `<h3 class="mono-label sec sec-know">Worth knowing</h3>${para(c.worth_knowing)}` : ""}
+    ${did ? `<h3 class="mono-label sec">What they did</h3>${para(did)}` : ""}
+    ${went ? `<h3 class="mono-label sec">How it went</h3>${para(went)}` : ""}
+    ${c.worth_knowing ? `<h3 class="mono-label sec">Worth knowing</h3>${para(c.worth_knowing)}` : ""}
   </div>
   ${
     c.prompt

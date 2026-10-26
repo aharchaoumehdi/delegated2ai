@@ -1,0 +1,42 @@
+{
+  "id": "build-a-paid-web-app-by-only-reviewing-an-agent-s-code",
+  "title": "Build a paid web app by only reviewing an agent's code",
+  "summary": "A developer had Claude Code write all application code for 30 days; they say a small paid web app shipped to production, with nine times they had to step in.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Stripe",
+    "Postgres",
+    "Next.js"
+  ],
+  "agent_role": "Claude Code wrote all application code, including sign-in, billing, a dashboard and a public API. The human described tasks, reviewed and approved code, handled settings and secrets, and wrote code by hand in nine logged cases.",
+  "outcome": "Author reports shipping a working small web app with billing to production, with nine 'breaks' where they had to write code themselves.",
+  "what_they_did": "A developer set a 30-day rule: Claude Code writes all the app code, and they only describe, review and approve. They built a small paid web app with sign-in, card payments, a dashboard and a public API. If stuck over an hour, they logged a 'break' and coded by hand.",
+  "how_it_went": "They say setup and routine code went fast and was nearly flawless. Problems came from duplicated helpers, a payment handler that could lose records, fixes that reintroduced bugs, and extra features nobody asked for. The last 10% took three of the four weeks.",
+  "worth_knowing": "The author's fix: never let the agent that writes code also review it. Use a separate reviewer told to find faults, and a human who approves every merge.",
+  "prompt": "Help me build [describe your app] using [your preferred tech stack]. I will not edit code myself; you write it and I review. Before each task, show a short plan and list any existing helpers or types you will reuse, so you don't duplicate them. After writing code, switch roles and review your own change as a skeptic: look for failure cases, lost data, and code that works only on the happy path. Keep features minimal unless I ask for more. Never deploy, change payment settings, or merge to the main branch without my explicit approval.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "web app",
+    "code review",
+    "solo founder",
+    "payments"
+  ],
+  "source": {
+    "url": "https://dev.to/infoinlet1/i-coded-for-30-days-using-only-claude-code-heres-what-i-learned-3cln",
+    "name": "DEV Community",
+    "author": "Info Inlet",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Honest, detailed field report of building a production app with Claude Code, with nine specific failure points; agent-built web apps are common and the post ends with a product plug."
+  }
+}

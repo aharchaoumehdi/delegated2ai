@@ -1,0 +1,44 @@
+{
+  "id": "find-a-meal-that-fits-your-budget-and-diet-goals",
+  "title": "Find a meal that fits your budget and diet goals",
+  "summary": "A developer built CraveCode, a workflow that searches Swiggy delivery menus from a meal brief, filters out unsuitable dishes and returns up to 15 ranked options.",
+  "domain": "Daily life",
+  "platform": "Custom agent",
+  "model": "Gemma",
+  "tools": [
+    "Mastra",
+    "Swiggy menu connector",
+    "SerpApi web search",
+    "MongoDB Atlas",
+    "Render"
+  ],
+  "agent_role": "The workflow plans searches, queries menus in parallel, filters by diet, budget and exclusions, then ranks and varies the results. A local model only suggests extra dish search terms; the user writes the meal brief and picks the dish.",
+  "outcome": "Author reports the system returns up to 15 ranked dish options with price and evidence labels; no usage results are given.",
+  "what_they_did": "A developer built CraveCode for a hackathon. You write a meal brief with diet, protein target, calorie limit, budget and cuisine. The workflow searches food delivery menus, drops dishes that break your rules, and ranks the rest. A small local AI model suggests extra dishes to search for when you want more ideas.",
+  "how_it_went": "The author shares a live preview, a video demo and the code. They say it can return up to 15 ranked options, depending on what it finds.",
+  "worth_knowing": "The public preview uses ordinary web search, so its results are leads, not confirmed menu items. Prices and availability may be out of date. Live menu search needs a signed-in local setup.",
+  "prompt": "I'm hungry and want to order food in [your city]. My limits: [diet type], at least [protein target] grams of protein, under [calorie limit] calories, and under [budget]. I'm craving [cuisine or dish type]. Search delivery menus near [your area] for matching dishes. Drop anything that breaks my limits or that you can't confirm. Rank the rest by fit and price, and avoid several picks from the same restaurant. Show me your top 10 with price, restaurant and how sure you are about each detail. Don't place any order.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "food ordering",
+    "meal planning",
+    "nutrition",
+    "restaurant search"
+  ],
+  "source": {
+    "url": "https://dev.to/sarvesh_3bcf0f427a27e1849/i-built-an-ai-food-scout-because-what-should-i-eat-is-a-surprisingly-hard-question-30of",
+    "name": "DEV Community",
+    "author": "Sarvesh",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working, open-source meal-finding workflow that searches real delivery menus, filters by diet and budget, and ranks results. It is a hackathon project that mostly describes features, with no user results, but there is a demo and code."
+  }
+}

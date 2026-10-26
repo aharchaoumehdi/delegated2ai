@@ -1,0 +1,42 @@
+{
+  "id": "find-the-cheapest-way-to-order-the-same-fast-food-meal",
+  "title": "Find the cheapest way to order the same fast-food meal",
+  "summary": "A developer built a skill letting Claude Code or Codex price-check McDonald's China orders; for three people's meals it reports ¥104.5 instead of ¥142 ordered separately.",
+  "domain": "Daily life",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "McDonald's China ordering connector",
+    "Node.js script",
+    "coupon lookup"
+  ],
+  "agent_role": "The agent clarifies what you want to eat and where, runs the script that asks McDonald's for official prices on each way to buy it, and explains the best option. It never places orders; claiming coupons needs the user to type 'y'.",
+  "outcome": "Author reports examples such as a three-person order at ¥104.5 versus ¥142.0 separately, and a burger, fries and cola combo at ¥33.5 versus ¥46.0.",
+  "what_they_did": "A developer made an agent skill that connects to McDonald's China's official ordering system. You say what you want to eat and near which landmark. The agent compares buying items separately, meal sets, 2-for-1 deals and coupons, keeping the exact same food. It returns one suggestion with an itemized bill from the store's official price quote.",
+  "how_it_went": "The author reports 249 combinations priced at a real Shanghai store, and examples like a chicken sandwich and cola for ¥13.9 instead of ¥27.0. When no cheaper way exists, it says to keep the original order.",
+  "worth_knowing": "The cheap ¥28 menu deal actually required buying a membership card; without it the order came to ¥57. The tool explains such member prices but never recommends buying the card.",
+  "prompt": "I want to order [items, sizes and quantities] from [fast-food chain] near [city and landmark] for pickup. Using the official ordering connector, look up the nearest store and get official price quotes for every way to buy exactly these items: separately, as meal sets, with combo deals, and with coupons I can claim. Don't add or swap any food. Show me the cheapest option, how much it saves, and an itemized bill. Explain any deal that needs a membership. Do not place an order or claim coupons without asking me first.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "food ordering",
+    "price comparison",
+    "coupons",
+    "saving money"
+  ],
+  "source": {
+    "url": "https://github.com/wenboxia/mcd-advisor",
+    "name": "GitHub",
+    "author": "wenboxia",
+    "published": "2026-10-21"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A novel daily-life use where an agent checks real McDonald's prices through the official ordering connector and finds the cheapest way to buy the same meal, with real examples, tests and recorded data. Small non-coding boost."
+  }
+}

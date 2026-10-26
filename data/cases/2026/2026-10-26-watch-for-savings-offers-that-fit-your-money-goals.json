@@ -1,0 +1,44 @@
+{
+  "id": "watch-for-savings-offers-that-fit-your-money-goals",
+  "title": "Watch for savings offers that fit your money goals",
+  "summary": "Julien Avezou built Slowth Money, a local agent that checks Canadian bank offers on a schedule. It notifies them only when a deal beats their goals by a set amount.",
+  "domain": "Finance",
+  "platform": "Custom agent",
+  "model": "Gemma 3 12B",
+  "tools": [
+    "Ollama",
+    "SerpApi",
+    "Electron",
+    "SQLite"
+  ],
+  "agent_role": "The agent searches public sites for new rates and rules, ranks sources by trust and compares offers to the user's private goals. It sends a notification when a benefit is worth it. The user sets goals and the alert threshold.",
+  "outcome": "Author reports using it for a week and no longer thinking often about where their money should sit.",
+  "what_they_did": "The author built a desktop app that keeps salary, savings, debts and goals encrypted on their Mac. It searches the web for bank offers and rule changes weekly or monthly, giving government sources more weight than forums. Regular code does the interest math, and a local Gemma model reasons over the results.",
+  "how_it_went": "The author used it for a week to set goals and track offers in their area. They say it let them stop worrying about where their money should sit.",
+  "worth_knowing": "It is a proof of concept that only covers Canada. The author warns it may have bugs and is not financial advice.",
+  "prompt": "Every week, search for current savings account rates, promotions and government savings program rules in [your country or region]. Prefer official sources like government and bank sites over forums. Compare what you find with my goals: [savings goal, timeline, current accounts]. Calculate the yearly benefit with exact math. Only alert me when an option beats my current setup by at least [amount]. Show your sources and calculations. Never open accounts or move money.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "personal finance",
+    "savings",
+    "privacy",
+    "local ai",
+    "alerts"
+  ],
+  "source": {
+    "url": "https://dev.to/javz/slowth-money-a-local-ai-agent-for-your-financial-goals-2ki2",
+    "name": "DEV Community",
+    "author": "Julien Avezou",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An original personal-finance agent that checks public offers on a schedule and weighs them against private goals kept on the device. Code is available and the author used it for a week, but results are light; a small boost for a non-coding domain."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "get-plain-summaries-of-new-projects-you-want-to-understand",
+  "title": "Get plain summaries of new projects you want to understand",
+  "summary": "A student built ReadYou, which checks for Hacktoberfest winner posts every 3 hours, summarizes each project with a local model, reads it aloud and emails new digests.",
+  "domain": "Education",
+  "platform": "Custom agent",
+  "model": "gemma4:e2b",
+  "tools": [
+    "Ollama",
+    "ElevenLabs voice",
+    "GitHub",
+    "email",
+    "scheduler",
+    "OpenAI Codex"
+  ],
+  "agent_role": "The system scans for new announcements, judges which linked project pages truly match each submission, writes summaries, answers questions with checked quotes and sends emails. The student built it with Codex and ChatGPT and fixed bad summaries by hand.",
+  "outcome": "Author reports 45 passing backend tests but says they have not measured the model's real accuracy.",
+  "what_they_did": "A student found hackathon winner projects hard to understand. They built ReadYou, which checks for new winner posts every 3 hours and gathers the linked project pages. A local AI model drops pages that don't match the project, writes a plain summary and answers questions. Summaries can be played as audio, and an email goes out when new winners appear.",
+  "how_it_went": "The author says early summaries described features projects didn't have, because some links pointed to unrelated code. Adding a strict relevance check fixed that, and they regenerated the bad summaries.",
+  "worth_knowing": "Feeding the model every linked page caused confident wrong summaries. The fix was limiting what the model could see, not rewriting the prompt.",
+  "prompt": "Every [few hours], check [page or feed URL] for new posts announcing [projects, winners or releases]. For each new project, open its main post and any linked project pages. Skip linked pages that don't clearly belong to that project. Write a plain-language summary a beginner could follow: what it does, who it's for, and how it works in three or four sentences. Quote the source for key claims. Collect the summaries into one digest and show it to me before emailing it to [your email].",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "learning",
+    "summaries",
+    "audio",
+    "news monitoring"
+  ],
+  "source": {
+    "url": "https://dev.to/bluestars/i-struggled-to-understand-hacktoberfest-winners-projects-so-i-built-readyou-to-summarize-them-and-497a",
+    "name": "DEV Community",
+    "author": "Utkarsh Mishra",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A student-built pipeline that checks for new hackathon winners every 3 hours, filters linked project pages for relevance, writes plain summaries, reads them aloud and emails updates, with code and honest testing notes. It is a niche personal tool with no reported accuracy numbers."
+  }
+}

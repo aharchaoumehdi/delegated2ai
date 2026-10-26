@@ -1,0 +1,42 @@
+{
+  "id": "get-a-first-pass-analysis-of-any-spreadsheet-locally",
+  "title": "Get a first-pass analysis of any spreadsheet locally",
+  "summary": "Three developers built Purrrfessorrr Slothhh, which profiles uploaded data files, flags problems, draws charts and writes code. A local Gemma model explains the findings.",
+  "domain": "Data",
+  "platform": "Custom agent",
+  "model": "Gemma 3",
+  "tools": [
+    "Ollama",
+    "Python",
+    "FastAPI"
+  ],
+  "agent_role": "The app finds outliers and duplicates, draws charts, writes analysis code and suggests cleanup. The model only explains computed results. The user uploads files and asks follow-up questions.",
+  "outcome": "Authors say they have not measured time saved and make no claim about it.",
+  "what_they_did": "The team built a local app where you upload a spreadsheet or data file. Five themed helpers find errors, draw charts, write explanations, write Python and R code and suggest cleanup. A local Gemma model writes plain-English summaries, and you can export everything as a notebook.",
+  "how_it_went": "The authors say the repetitive first look at a dataset happens in one guided flow. They did not measure time saved.",
+  "worth_knowing": "All numbers come from regular code. A filter removes any model sentence that contains a number not found in the data, which guards against made-up figures.",
+  "prompt": "Analyze the data file [file path]. First profile it: column types, missing values, duplicates and outliers. Then make a few starter charts, suggest cleanup steps, and write Python code that reproduces every number. Compute all figures with code, not by estimating. Then explain the findings in plain English, using only numbers you actually calculated. Don't modify the original file.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "data analysis",
+    "data cleaning",
+    "local ai",
+    "charts"
+  ],
+  "source": {
+    "url": "https://dev.to/fionakhl/we-built-a-pixel-art-office-where-five-cats-do-your-data-analysis-while-a-sloth-naps-1in8",
+    "name": "DEV Community",
+    "author": "Fiona Khoo",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working multi-step data-checking workflow with code, in which a local model explains results computed by code. The 'agents' are mostly fixed pipeline stages and there are no reported results."
+  }
+}

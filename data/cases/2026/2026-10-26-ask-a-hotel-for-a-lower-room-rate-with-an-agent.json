@@ -1,0 +1,40 @@
+{
+  "id": "ask-a-hotel-for-a-lower-room-rate-with-an-agent",
+  "title": "Ask a hotel for a lower room rate with an agent",
+  "summary": "A poster says a Grok-based bot emailed their hotel and got the nightly rate cut from $330 to $240, saving $90 a night.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": "Grok",
+  "tools": [
+    "email"
+  ],
+  "agent_role": "The bot wrote to the hotel and negotiated the rate; the human's setup and approvals are not described.",
+  "outcome": "The author reports the rate dropped from $330 to $240 a night.",
+  "what_they_did": "The poster had a bot built on Grok email their hotel to ask for a lower rate. They say the same bot earlier lined up their meetings at a trade conference.",
+  "how_it_went": "They report the hotel cut the rate from $330 to $240 a night, saving $90 a night.",
+  "worth_knowing": null,
+  "prompt": "I have a hotel booking at [hotel name] in [city] for [dates] at [current nightly rate]. Draft a polite email to the hotel asking whether they can lower the rate. Mention [reason, e.g. a longer stay, a loyalty membership, or a lower price you found elsewhere]. Show me the draft and wait for my approval before sending anything. If they reply, summarize their offer and suggest a response, but don't accept or change the booking without my say-so.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "negotiation",
+    "hotel",
+    "travel",
+    "email"
+  ],
+  "source": {
+    "url": "https://x.com/mrjmetz/status/2114428439826747724",
+    "name": "X",
+    "author": "@mrjmetz",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine, relatable daily-life action (the agent emailed a hotel and negotiated a lower rate) with a concrete number, but very thin on how it was set up."
+  }
+}

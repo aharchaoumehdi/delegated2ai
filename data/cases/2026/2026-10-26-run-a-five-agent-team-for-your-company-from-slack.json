@@ -1,0 +1,40 @@
+{
+  "id": "run-a-five-agent-team-for-your-company-from-slack",
+  "title": "Run a five-agent team for your company from Slack",
+  "summary": "Miles Deutscher shows a video of the five-agent team he manages in Slack to help run his company, AI Edge, set up like a real business team.",
+  "domain": "Business",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Slack"
+  ],
+  "agent_role": "Five agents handle parts of running the company, coordinated through Slack. The founder sets up and manages the workflow there.",
+  "outcome": null,
+  "what_they_did": "Miles Deutscher built a team of five AI agents to help run his company, AI Edge. He uses Slack to set up and manage the whole workflow, the same way he runs his human team. He posted a video breaking down how it works.",
+  "how_it_went": null,
+  "worth_knowing": null,
+  "prompt": "Help me design a team of five AI agents to support my business [describe your business]. Suggest a role for each agent, such as research, content drafting, scheduling or reporting, and explain how they would hand work to each other. Set them up to post updates and requests in separate Slack channels [your workspace]. Show me the full plan first and wait for my approval before connecting to Slack or posting anything.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "multi-agent",
+    "business operations",
+    "slack",
+    "small business"
+  ],
+  "source": {
+    "url": "https://x.com/milesdeutscher/status/2114582800204743106",
+    "name": "X",
+    "author": "@milesdeutscher",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A founder shows a five-agent team run through Slack to help run his company, backed by a video. The text gives almost no detail on what the agents do or the results."
+  }
+}

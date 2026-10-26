@@ -1,0 +1,42 @@
+{
+  "id": "design-a-test-drone-plane-with-ai-agents",
+  "title": "Design a test drone plane with AI agents",
+  "summary": "ETH Zürich students in Project Daedalus say they designed their first test plane, Appenzell, with AI agents, then built and flew it.",
+  "domain": "Science",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "design generation software",
+    "flight simulation",
+    "design optimization"
+  ],
+  "agent_role": "The agents helped generate, simulate and evaluate plane designs. The students built the aircraft by hand and flew it.",
+  "outcome": "The team reports its first test plane was designed with AI agents, built and flown; its site lists 3 planes built, 2 flights and 3 crashes.",
+  "what_they_did": "A team of eight engineering students at ETH Zürich is building a drone plane for a student design competition. They connected design generation, simulation, tuning and evaluation into one workflow with AI agents. The students then built the chosen design and flew it.",
+  "how_it_went": "The poster says their first test plane, Appenzell, was designed with AI agents, built and flown. The project site lists 3 planes built, 2 flights and 3 crashes so far.",
+  "worth_knowing": "The project is backed by an ETH lab focused on AI in engineering design, so the setup is not off-the-shelf. Expect crashes; the team counts three already.",
+  "prompt": "Help me design a small remote-control plane for [purpose, e.g. carrying a 500 g payload]. Propose several design options with wing size, shape and weight. Estimate how each would fly using simple calculations or free simulation tools you can run. Compare the options in a table and recommend one, explaining the trade-offs. Then list the parts and build steps. Show me your reasoning before I buy any parts.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "aircraft design",
+    "drones",
+    "engineering",
+    "simulation"
+  ],
+  "source": {
+    "url": "https://x.com/SebastienHrmn/status/2114447730080878917",
+    "name": "X",
+    "author": "@SebastienHrmn",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real engineering result, a student test plane designed with AI agents and flown, but the agents' exact role is only sketched. The non-coding science angle adds value despite thin detail."
+  }
+}

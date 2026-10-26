@@ -1,0 +1,42 @@
+{
+  "id": "find-wasted-cloud-spending-with-a-lean-agent-toolset",
+  "title": "Find wasted cloud spending with a lean agent toolset",
+  "summary": "Sarvar Nadaf had an agent in Kiro hunt for wasted AWS spending; after he trimmed its toolset from 15 tools to 4, he reports it needed 2 steps instead of 7.",
+  "domain": "Software",
+  "platform": "Kiro",
+  "model": null,
+  "tools": [
+    "AWS account (read-only)",
+    "custom tool connector",
+    "Kiro"
+  ],
+  "agent_role": "The agent decided which cost checks to run and assembled the findings on wasted spending. The author built and redesigned the read-only tools it could call.",
+  "outcome": "Author reports the same question went from 7 tool calls to 2, with tool descriptions 88% smaller.",
+  "what_they_did": "Sarvar Nadaf built a small read-only connector that lets an agent inspect an AWS account. He wired it into the Kiro coding agent and asked, \"where am I wasting money in this account?\" First he gave it 15 narrow tools, one per AWS lookup. Then he rebuilt it as 4 tools, including one that runs every waste check at once and returns only key fields.",
+  "how_it_went": "He says the first version took seven separate lookups before answering. The rebuilt version answered the same question in two calls, and its tool descriptions shrank by 88%. Both versions are shared in one code repository.",
+  "worth_knowing": "Every tool description an agent can see takes up its working memory on every turn. Many look-alike tools also make it pick the wrong one and retry, which costs more.",
+  "prompt": "Using read-only access to my AWS account [account or profile name], find where I am wasting money. Check for unattached storage volumes, unused public IP addresses, old snapshots, idle servers, unused gateways and idle load balancers in [region]. For each finding, list the item, why it looks wasted and a rough monthly cost. Do not change, stop or delete anything. Show me the full list and wait for my approval before suggesting any cleanup steps.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "cloud costs",
+    "cost audit",
+    "tool design",
+    "aws"
+  ],
+  "source": {
+    "url": "https://dev.to/aws-builders/mcp-token-cost-i-cut-my-mcp-server-from-15-tools-to-4-cek",
+    "name": "DEV Community",
+    "author": "Sarvar Nadaf",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real agent workflow that finds wasted cloud spending, with code for both versions and measured numbers. It leans toward a tool-design tutorial, which limits its appeal to non-engineers."
+  }
+}

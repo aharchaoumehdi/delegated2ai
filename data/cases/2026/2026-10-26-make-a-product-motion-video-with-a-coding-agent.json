@@ -1,0 +1,43 @@
+{
+  "id": "make-a-product-motion-video-with-a-coding-agent",
+  "title": "Make a product motion video with a coding agent",
+  "summary": "A non-designer had Claude Code on Opus 5.5 build a 3D product film for Slabwatch as code, rendering each frame on a laptop at about 0.3 seconds per frame.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "Playwright",
+    "ffmpeg",
+    "three.js",
+    "librosa"
+  ],
+  "agent_role": "The agent wrote the animation as a web page, wrote the render script, and reviewed its own still frames to fix problems. The author directed with numeric prompts and reviewed stills before full renders.",
+  "outcome": "Author reports finishing a 3D product film with lighting, depth of field and a made-up soundtrack, rendered on a laptop RTX 2050 at about 0.3 seconds a frame.",
+  "what_they_did": "Arqam Waheed, who had never used motion design software, set up Claude Code with Opus 5.5 to make a product film. The agent writes one web page where each frame depends only on time. A headless browser screenshots every frame and ffmpeg joins them into a video. The author kept a rules file, reviewed stills, and gave fixes like 'frame 84 is late'.",
+  "how_it_went": "The first flat 2D version disappointed the author. A 3D rebuild with a modelled electricity meter, mirror floor and soundtrack worked, rendering at about 0.3 seconds a frame on a laptop.",
+  "worth_knowing": "Replace adjectives in prompts with exact numbers and ban unwanted defaults by name. Random numbers or timers in the page make frames differ between runs, so they cannot be fixed reliably.",
+  "prompt": "Make a [length]-second product video for [product] as one self-contained HTML file. Every frame must depend only on time t; expose window.renderAt(t). No timers, no Math.random (use seeded noise), wait for fonts before frame 0. Use [three.js or plain HTML]. Use these exact values: [durations, easing, colors]. Do not use [defaults you dislike]. Write a script that uses Playwright to screenshot each frame at [fps] and ffmpeg to join them into an MP4. First render 6 still frames and show them to me for review before rendering the full video.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "motion video",
+    "product film",
+    "animation",
+    "video rendering"
+  ],
+  "source": {
+    "url": "https://dev.to/arqamwd/how-i-make-motion-videos-with-claude-opus-55-the-full-setup-prompts-and-numbers-2g09",
+    "name": "DEV Community",
+    "author": "Arqam Waheed",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, reproducible walkthrough of using Claude Code to write, render and review a 3D product film, with setup scripts, rules and a review loop. Coding-adjacent but a creative result."
+  }
+}

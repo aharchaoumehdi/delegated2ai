@@ -1,0 +1,41 @@
+{
+  "id": "find-potential-customers-from-their-public-complaints",
+  "title": "Find potential customers from their public complaints",
+  "summary": "A founder had Claude Code search 40 posts complaining about coding tools and pull 5 matching profiles with contact details, reporting a total cost of $0.02.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "treg_ai"
+  ],
+  "agent_role": "Claude Code, using a social search service, found complaint posts, picked relevant profiles and gathered their public contact details. The human set the goal.",
+  "outcome": "The author reports the whole search cost $0.02 and replaced manual digging and a paid lead tool.",
+  "what_they_did": "The poster connected Claude Code to a social search service called treg_ai. They asked it to find posts from people complaining about Cursor, Claude Code and Codex. The agent searched 40 posts, then picked 5 relevant profiles and collected their available contact details.",
+  "how_it_went": "The author says the whole search cost $0.02, with no lead-finding subscription and no hours of manual profile browsing.",
+  "worth_knowing": null,
+  "prompt": "Search public social posts from the last [time period] where people complain about [problem or competitor products]. Collect about [number] posts. From those, pick the [number] authors most likely to need [your product], explain why for each, and list any contact details they have made public. Put the results in a table with post link, summary of the complaint, and contact info. Do not message anyone; show me the list first so I can decide who to contact.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "lead generation",
+    "social listening",
+    "customer research",
+    "outreach"
+  ],
+  "source": {
+    "url": "https://x.com/adxtyahq/status/2114676754992533548",
+    "name": "X",
+    "author": "@adxtyahq",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-step lead-finding run with a concrete cost figure, but thin on steps and it doubles as a nod to a specific search service."
+  }
+}

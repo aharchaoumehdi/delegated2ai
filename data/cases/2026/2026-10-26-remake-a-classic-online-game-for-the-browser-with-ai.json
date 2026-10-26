@@ -1,0 +1,43 @@
+{
+  "id": "remake-a-classic-online-game-for-the-browser-with-ai",
+  "title": "Remake a classic online game for the browser with AI",
+  "summary": "A longtime fan says he remade the 1997 space battle game SubSpace as an open-source, multiplayer browser game, built entirely with AI.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Rust",
+    "WebAssembly",
+    "WebGL",
+    "WebRTC"
+  ],
+  "agent_role": "The project site says the game was built entirely with AI. The developer chose the game, the technologies and the networking approach. Which agent did which steps is not described.",
+  "outcome": "Author reports a live, playable browser remake with multiplayer and open-source code.",
+  "what_they_did": "A developer who loved SubSpace as a kid set out to rebuild it for the browser. The site says the game was built entirely with AI. It is written in Rust and runs in the browser. Players connect directly to each other for fast online play. He invites others to point their own agent at the code and extend it.",
+  "how_it_went": "The game is live at its website and the code is public. It supports classic and modern keyboard layouts, many weapons and an in-game chat.",
+  "worth_knowing": "The game currently only works on desktop with a keyboard. Phone visitors are asked to come back on a computer.",
+  "prompt": "Help me rebuild [old game name] as a game that runs in a web browser. First, list its core features: controls, ships or characters, weapons, maps and multiplayer rules. Propose a technical plan and a list of milestones, starting with a single-player version I can test. Show me the plan and wait for my approval before writing code. After each milestone, run the game, describe what works and what doesn't, and ask before moving on. Do not publish or deploy anything without my go-ahead.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "game remake",
+    "browser game",
+    "multiplayer",
+    "retro gaming"
+  ],
+  "source": {
+    "url": "https://zubspace.gg/",
+    "name": "Hacker News",
+    "author": "elux101",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A playable, open-source browser remake of a 1997 online space game that the site says was built entirely with AI. The source gives almost no detail on which agent was used or how the work was split."
+  }
+}

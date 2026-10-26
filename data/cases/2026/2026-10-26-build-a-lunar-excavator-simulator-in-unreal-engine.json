@@ -1,0 +1,40 @@
+{
+  "id": "build-a-lunar-excavator-simulator-in-unreal-engine",
+  "title": "Build a lunar excavator simulator in Unreal Engine",
+  "summary": "A hobbyist asked Claude Code to design a Moon excavator inside an Unreal Engine folder and says it produced a working simulator with full controls.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Unreal Engine"
+  ],
+  "agent_role": "Claude Code designed the excavator and built the simulator and its controls inside the existing Unreal Engine project; the human only gave the one-line request.",
+  "outcome": "Author reports ending up with a fully functional lunar excavator simulator with all controls, shown in a video.",
+  "what_they_did": "The poster asked Claude Code, just for fun, to design an excavator that could work on the Moon. They had forgotten it was opened in their Unreal Engine experiments folder, a game engine project. The agent built the design right into the game engine.",
+  "how_it_went": "They say they now have a fully working lunar excavator simulator with all the controls, and shared a video of it.",
+  "worth_knowing": "The folder you open the agent in shapes what it builds; here a game engine project turned a design question into a playable simulator.",
+  "prompt": "Inside my Unreal Engine project at [project folder], design a [machine, e.g. excavator] that would work on [setting, e.g. the Moon, with low gravity]. Build it as a drivable simulation with keyboard controls for each moving part. First show me your plan: the parts, the controls and the files you'll create or change. Wait for my approval before editing the project.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "simulation",
+    "game engine",
+    "3d design",
+    "hobby"
+  ],
+  "source": {
+    "url": "https://x.com/MoreFireballs/status/2114468781619573038",
+    "name": "X",
+    "author": "@MoreFireballs",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A fun, surprising build with a video demo, but the post gives almost no detail on steps or effort."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "keep-your-research-notes-organized-with-a-personal-agent",
+  "title": "Keep your research notes organized with a personal agent",
+  "summary": "A researcher built a personal agent that organizes experiment data, papers and ideas across OneNote and Notion, finds old notes and links related projects, so they stop repeating work.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "OneNote",
+    "Notion",
+    "ChatGPT",
+    "Claude",
+    "Microsoft Teams"
+  ],
+  "agent_role": "The agent sorts new information, finds old notes, connects related projects and keeps long-term memory. The researcher reads and edits the notes in Notion and OneNote.",
+  "outcome": "The author calls it one of the best things they did in the past year, but gives no figures.",
+  "what_they_did": "A researcher had experiment data, test procedures, papers and ideas scattered across Microsoft Teams and OneNote. They built their own agent with long-term memory that works with OneNote and Notion. It organizes new information, finds old notes and links related projects. They also connected the notes to ChatGPT and Claude to summarize meetings and write up notes.",
+  "how_it_went": "The author says it helps them find things they used to lose and avoid repeating past work. They are now teaching it to remember why they made decisions and what didn't work.",
+  "worth_knowing": "The author keeps the notes in apps they can read and edit themselves, while the agent holds its own memory separately.",
+  "prompt": "Help me organize my research notes. Go through my notes in [Notion / OneNote workspace] and group them by project, experiment and topic. For each project, write a short summary of what was tried, what worked, what didn't, and open next steps. Point out notes that seem related across projects and any work that looks duplicated. Keep a running memory file of the reasons behind my decisions. Show me the proposed structure and changes first, and wait for my approval before moving, renaming or editing any notes.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "research notes",
+    "knowledge management",
+    "lab work",
+    "memory"
+  ],
+  "source": {
+    "url": "https://x.com/shiyunliu_/status/2114409333882515521",
+    "name": "X",
+    "author": "@shiyunliu_",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A researcher built a personal agent with long-term memory that organizes and links lab notes across OneNote and Notion. It is a genuine science workflow, but no measured results; includes the non-coding boost."
+  }
+}

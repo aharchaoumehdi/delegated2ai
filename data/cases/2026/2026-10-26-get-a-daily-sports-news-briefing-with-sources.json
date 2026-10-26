@@ -1,0 +1,43 @@
+{
+  "id": "get-a-daily-sports-news-briefing-with-sources",
+  "title": "Get a daily sports news briefing with sources",
+  "summary": "An F1 fan built Your Paddock, which collects reporting from five outlets, groups related stories and lets a local model answer questions using cited articles.",
+  "domain": "Daily life",
+  "platform": "Custom agent",
+  "model": "gemma3:4b",
+  "tools": [
+    "Ollama",
+    "news feeds",
+    "web search of permitted news sites",
+    "PostgreSQL"
+  ],
+  "agent_role": "Code fetches race data and news, groups related articles and picks the evidence. The model writes a briefing and answers questions from that evidence, and can search allowed news sites when stored articles are thin. The fan asks the questions.",
+  "outcome": "Author shares a live dashboard and demo video; the AI briefing and question features were run locally, not on the hosted site.",
+  "what_they_did": "An F1 fan was tired of reading five news sites to keep up. They built Your Paddock, which pulls race results, standings and news from outlets like BBC Sport and Motorsport.com. It groups articles about the same story. A local AI model writes a saved briefing and answers questions, citing only articles it actually read.",
+  "how_it_went": "The author shares a live dashboard, a video demo and the code. They say the briefing separates what was reported from why it might matter and lists open questions.",
+  "worth_knowing": "The author keeps the model on a short leash: code picks the sources and checks citations, so the model cannot invent a link. The AI features ran on the author's laptop, not on the hosted demo.",
+  "prompt": "Every morning, check the latest news about [sport or team] from [list of news sites]. Group articles that cover the same story. For each story, write two or three sentences on what was reported, noting which outlet said what. Then add why it might matter and what is still unclear. Only use articles you actually opened, and link each one. Keep confirmed facts separate from guesses. Show me the briefing as a short list.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "news briefing",
+    "sports",
+    "research",
+    "citations"
+  ],
+  "source": {
+    "url": "https://dev.to/edgiaxel/i-got-tired-of-five-f1-tabs-so-i-built-a-briefing-that-can-argue-from-the-articles-23dg",
+    "name": "DEV Community",
+    "author": "Edgi Axel",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "review",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A hobby news briefing that gathers F1 coverage from several outlets, groups related stories and answers questions with checked sources, with code and a demo. It is mostly a fixed pipeline rather than an agent, so it sits at the low end."
+  }
+}

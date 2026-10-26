@@ -1,0 +1,44 @@
+{
+  "id": "get-a-short-status-note-at-the-end-of-every-agent-turn",
+  "title": "Get a short status note at the end of every agent turn",
+  "summary": "A developer wrote a free skill that makes Claude and Codex end each turn with a few plain lines and a next step; he says he now juggles about fifteen sessions.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "Cursor",
+    "Gemini CLI",
+    "GitHub"
+  ],
+  "agent_role": "The agent finishes its normal answer, then adds up to ten lines on where things stand and the obvious next task. The human reads it and replies 'Do it' or digs deeper.",
+  "outcome": "Author reports going from struggling past five or six parallel sessions to running around fifteen with much less mental fatigue.",
+  "what_they_did": "The poster runs many Claude and Codex sessions in parallel on different projects. He wrote a small skill, a set of plain instructions, that tells the agent to end each turn with a short summary and a suggested next step. You install it by giving the GitHub link to your agent, which asks whether you want it always on or on demand.",
+  "how_it_went": "He says he used to drown beyond a handful of sessions and now runs around fifteen before hitting usage limits. He calls the drop in mental fatigue large but says he can't measure the gain.",
+  "worth_knowing": "In Claude Code it uses the built-in prompt suggestion feature to avoid repeating itself. The author recommends 'always on', since it stays quiet when the answer is already short.",
+  "prompt": "For the rest of this session, after every answer you give, add a short section at the end of no more than ten lines. In plain words, say where the work stands, remind me of my original goal, and suggest the single most obvious next task. If I reply 'Do it', carry out that next task. Before anything irreversible, such as deleting files, pushing code or deploying, stop and ask me first. Keep the summary shorter when your answer is already short.",
+  "evidence": "Code available",
+  "difficulty": "Beginner",
+  "tags": [
+    "parallel sessions",
+    "status summary",
+    "agent skill",
+    "productivity"
+  ],
+  "source": {
+    "url": "https://x.com/pocarles/status/2114412336156913836",
+    "name": "X",
+    "author": "@pocarles",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real workflow fix for people running many coding agent sessions at once, with free code and a clear before/after claim. Gains are self-reported and unmeasured."
+  }
+}

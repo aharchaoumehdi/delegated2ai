@@ -1,0 +1,41 @@
+{
+  "id": "test-cheaper-models-on-tasks-your-agent-once-failed",
+  "title": "Test cheaper models on tasks your agent once failed",
+  "summary": "Helena Tan turned 23 failures from building a web app with Claude Code into a test set; she reports cheaper models solved many tasks at a fraction of the cost.",
+  "domain": "Software",
+  "platform": "Claude Agent SDK",
+  "model": "Claude Fable 5, Claude Opus 5, Claude Sonnet 5, Claude Opus 4.8, Claude Sonnet 4.6, Claude Haiku 4.5",
+  "tools": [
+    "Claude Agent SDK",
+    "Claude Code"
+  ],
+  "agent_role": "Coding agents ran each of the 23 tasks three times in the same setup; programmatic checks and an AI judge scored the results. The author designed the tasks, answer keys and checked the judge against human labels.",
+  "outcome": "Her leaderboard shows Haiku 4.5 passing about 55% at roughly $0.32 per solved task versus about 90% at roughly $1.9 for the top models, with overlapping error margins.",
+  "what_they_did": "The author built a full web app with Claude Code on the priciest model and kept running out of credits. She turned each failure she hit into a test task, 23 in total, covering vague requests, long multi-step rules, full builds and data with hidden traps. Then she ran six Claude models on all of them, three times each.",
+  "how_it_went": "Her published results show the newer top models solving 21 of 23 tasks on the first try, mid-tier ones close behind, and the budget model 13. She says the margins are too small to call a clear winner.",
+  "worth_knowing": "Every model struggled when asked something vague: most built without asking questions. She also says 12 of 23 tasks came out the same on all models, so only 11 actually separate them.",
+  "prompt": "Help me build a small personal test set for choosing a cheaper model. Here are [number] problems my coding agent got wrong while building [project]: [list]. For each, write a short task, the starting files or data, and a clear answer key for what counts as correct. Then propose how to run each task three times on [models to compare] and record pass rate and cost. Show me the task list and plan before running anything that spends credits.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "model comparison",
+    "cost saving",
+    "testing",
+    "coding agents"
+  ],
+  "source": {
+    "url": "https://x.com/_HelenaT/status/2114480627026395333",
+    "name": "X",
+    "author": "@_HelenaT",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A benchmark, but grounded in a concrete personal need: turning real failures from building an app into tasks to see if cheaper models can do the job. Detailed public results; the workflow is more evaluation than delegation."
+  }
+}

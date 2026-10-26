@@ -1,0 +1,44 @@
+{
+  "id": "approve-all-your-coding-agents-changes-from-one-web-page",
+  "title": "Approve all your coding agents' changes from one web page",
+  "summary": "Three HackersHostel developers built AgentWebUI to run several coding agents from one browser page. The author says approvals no longer sit waiting in forgotten terminal windows.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": "Llama 3.2 3B",
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "Gemini CLI",
+    "Ollama",
+    "Docker"
+  ],
+  "agent_role": "Coding agents plan, call tools and edit files in a chosen folder. The human reads each change and presses Allow or Deny.",
+  "outcome": "Author reports handing tasks to an agent on a home server and checking or approving them later from any device.",
+  "what_they_did": "The poster and two friends built a small self-hosted web page. It talks to coding agents like Claude Code, Codex and Gemini CLI, plus local models. You pick an agent, a model and a folder. The page shows the agent's plan and proposed edits and asks before each file change.",
+  "how_it_went": "The author says they stopped opening terminals to check if an agent was stuck. Quick questions go to a free local model instead of paid ones.",
+  "worth_knowing": "Agents must support a shared connection standard, directly or through an adapter. Cloud agents like Claude Code still need internet; only the local model side works offline.",
+  "prompt": "Work on [task] in the folder [project folder]. Before changing any file, show me your plan and the exact edits you intend to make, then wait for my approval. After each approved change, summarize what you did and what is left. If you get stuck or need a decision, stop and ask me rather than guessing.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "coding agents",
+    "approvals",
+    "self-hosted",
+    "remote work"
+  ],
+  "source": {
+    "url": "https://dev.to/mahedi/my-agents-do-the-work-i-just-press-allow-gm6",
+    "name": "DEV Community",
+    "author": "Mahedi Hasan Emon",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mainly a tool write-up, but the authors describe using it daily to hand tasks to coding agents on a home server and approve file changes from any browser. Code is available."
+  }
+}

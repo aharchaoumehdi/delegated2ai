@@ -1,0 +1,42 @@
+{
+  "id": "shop-for-cheaper-home-and-car-insurance-with-an-agent",
+  "title": "Shop for cheaper home and car insurance with an agent",
+  "summary": "A user had Claude pull their policy from email, compare rates and phone insurers with a calling tool they built; they report saving about $2,500 a year.",
+  "domain": "Finance",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "email",
+    "phone calling tool",
+    "web search"
+  ],
+  "agent_role": "Read the current policy from email, checked competing rates and placed calls to insurance agencies; the human built the calling tool and chose the bundle.",
+  "outcome": "Author reports saving about $2,500 per year on a home and auto bundle.",
+  "what_they_did": "The poster asked Claude to find their insurance policy in email and check competing rates. Claude could not call insurers, so they built a phone calling tool for it. The agent then contacted agencies for quotes.",
+  "how_it_went": "The author says the agent found a home and auto bundle saving about $2,500 a year. They have open-sourced the calling tool.",
+  "worth_knowing": "The main barrier was that insurers wanted phone calls; without a calling tool the agent could only compare rates online.",
+  "prompt": "Find my current home and car insurance policies in my email and summarize the coverage, limits, deductibles and yearly cost. Then look up competing quotes from insurers in [your state or city] for the same coverage, including bundles. Put the options in a table with price and any coverage differences. If you can make calls, write a short call script first and show it to me before calling anyone. Do not switch, cancel or buy any policy; give me your recommendation and wait for my decision.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "insurance",
+    "saving money",
+    "phone calls",
+    "price comparison"
+  ],
+  "source": {
+    "url": "https://x.com/akshot/status/2114522453036662811",
+    "name": "X",
+    "author": "@akshot",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A useful everyday finance task where the agent read a policy from email, compared rates and phoned insurers, with a concrete savings claim; details are thin and partly promote the author's own tool."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "book-a-massage-appointment-by-texting-your-agent",
+  "title": "Book a massage appointment by texting your agent",
+  "summary": "A man texted his AI agent a vague request; he says it found a massage therapist, booked and paid, and emailed his wife the confirmation in 60 seconds.",
+  "domain": "Daily life",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "text messaging",
+    "web booking",
+    "credit card",
+    "email"
+  ],
+  "agent_role": "The agent interpreted a vague text, found a location, checked availability, booked and paid, then emailed the confirmation. The human only sent the request.",
+  "outcome": "Author reports the booking took about 60 seconds of his time.",
+  "what_they_did": "The poster texted his AI agent a very rough request to book a massage for his wife. The agent worked out what he meant and found the right location. It checked openings, booked, paid with his saved credit card, and emailed the confirmation to his wife.",
+  "how_it_went": "He says the whole thing took about 60 seconds and almost no effort on his part.",
+  "worth_knowing": "He let the agent pay with his credit card without a check-in step, saying he now trusts it. Most readers will want an approval step first.",
+  "prompt": "Book a massage appointment for [person] near [your city or area] on [date range], with a budget of [budget]. Search for well-reviewed places, check availability, and show me the top three options with times and prices. Wait for my approval before booking or paying. After I confirm, book it and send the confirmation to [email address].",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "appointment booking",
+    "personal errands",
+    "gift",
+    "scheduling"
+  ],
+  "source": {
+    "url": "https://x.com/Matt_Graham_/status/2114703643324616938",
+    "name": "X",
+    "author": "@Matt_Graham_",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-step daily-life task (find, check availability, book, pay, email confirmation), but thinly described with no agent named or setup details; small boost for non-coding."
+  }
+}

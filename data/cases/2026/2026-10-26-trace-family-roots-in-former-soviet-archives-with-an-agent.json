@@ -1,0 +1,44 @@
+{
+  "id": "trace-family-roots-in-former-soviet-archives-with-an-agent",
+  "title": "Trace family roots in former Soviet archives with an agent",
+  "summary": "A developer built a skill that turns Codex or Claude Code into a careful family-history researcher for the former USSR, logging every source and labeling what is proven.",
+  "domain": "Daily life",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "web browser",
+    "FamilySearch",
+    "email",
+    "Python scripts",
+    "PDF report builder"
+  ],
+  "agent_role": "The agent takes in the family question, searches church, civil, military and repression records, keeps registers of people and claims, and drafts archive requests. The user handles sign-ins and approves any sending.",
+  "outcome": null,
+  "what_they_did": "A developer wrote a research guide that Codex or Claude Code can follow for family history across all 15 former Soviet republics. The agent reads church books, civil and military records and archive scans. It logs every search and find in spreadsheets, checks old place names and name spellings, and can draft letters to archives. A checking script flags weak proof before the final report.",
+  "how_it_went": "The repository includes practical lessons from a real case, but the source gives no specific results from using it.",
+  "worth_knowing": "Claims get plain labels like 'single-source' or 'corroborated', and copies of one record never count as separate proof. The skill refuses to look up living people's addresses or accounts.",
+  "prompt": "Help me research my family history. My question: [e.g. who were my great-grandmother's parents]. Known facts: [names, dates, places, scans I have]. Living relatives to keep private: [names]. Work out which archive held records for each place at the time of the event, list name spelling variants, and search original records first, then catalogs and indexes, using trees and forums only as leads. Keep a log of every search and a table of claims labeled as hypothesis, single-source or corroborated. Draft any letters to archives and show them to me before sending. Finish with a report showing what is proven, what conflicts, and next steps.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "genealogy",
+    "family history",
+    "archives",
+    "record search"
+  ],
+  "source": {
+    "url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
+    "name": "GitHub",
+    "author": "DenisSergeevitch",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, careful genealogy workflow for agents that searches archives, tracks evidence and drafts archive requests, with lessons from a real case, but the README shows no specific research outcome. Non-coding boost applied."
+  }
+}

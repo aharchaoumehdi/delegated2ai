@@ -1,0 +1,42 @@
+{
+  "id": "compare-three-coding-agents-building-a-budget-app",
+  "title": "Compare three coding agents building a budget app",
+  "summary": "XDA writer Parth Shah gave Claude Code, Codex and Antigravity one prompt for a personal finance app; he says Claude Code's version was the most polished.",
+  "domain": "Finance",
+  "platform": "Claude Code",
+  "model": "Opus 5.5, Gemini 3.8, GPT-6 Astra",
+  "tools": [
+    "Claude Code",
+    "OpenAI Codex",
+    "Google Antigravity"
+  ],
+  "agent_role": "Each agent built a full multi-page finance app from one detailed prompt with no extra instructions. The writer only wrote the prompt and judged the results.",
+  "outcome": "The author reports Claude Code delivered the most polished app; Codex's had small text and Antigravity's had a duplicate button.",
+  "what_they_did": "Tech writer Parth Shah wrote one detailed prompt for a personal finance app. It asked for expense tracking, budgets, savings goals and interactive charts. He gave the same prompt to Claude Code, OpenAI Codex and Google Antigravity, using each tool's default model. He added no further instructions.",
+  "how_it_went": "He says Codex covered everything but had small text and plain icons. Antigravity looked better but added two identical buttons. Claude Code's app was the most polished, with charts on many pages and colorful icons.",
+  "worth_knowing": "The comparison judges looks and layout from a single run. It does not report testing whether the money math or data saving worked correctly.",
+  "prompt": "Build a personal finance web app for me. Include a dashboard, expense tracking, budgets by category, savings goals, account balances, and interactive charts for spending insights. Use clear, readable text and consistent icons. Store data locally on my computer. Show me your plan and page list first and wait for my approval before building. When done, tell me how to run it and what you tested.",
+  "evidence": "Independent report",
+  "difficulty": "Beginner",
+  "tags": [
+    "personal finance",
+    "app building",
+    "agent comparison",
+    "budgeting"
+  ],
+  "source": {
+    "url": "https://x.com/randylewiskemp/status/2114640871790391663",
+    "name": "X",
+    "author": "Parth Shah (XDA Developers)",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real side-by-side test where three coding agents each built a personal finance app from one prompt, reported by XDA's Parth Shah; the X post is just a share of that article. Findings are mostly about looks, with no code or prompt shared."
+  }
+}

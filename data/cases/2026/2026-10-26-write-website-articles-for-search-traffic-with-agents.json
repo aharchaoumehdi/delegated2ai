@@ -1,0 +1,42 @@
+{
+  "id": "write-website-articles-for-search-traffic-with-agents",
+  "title": "Write website articles for search traffic with agents",
+  "summary": "An SEO agency founder built Claude writing agents for a game site; the team reports 750 indexed pages, and the tool now writes for 40+ businesses.",
+  "domain": "Marketing",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "Claude",
+    "25-check review list",
+    "client brand notes"
+  ],
+  "agent_role": "One agent researches keywords and another writes designed pages. Humans read every article and fed hundreds of edits back into a 25-check review process.",
+  "outcome": "The author reports keyword-to-page in 10 to 15 minutes, 2,500 users in one day on the test site, and use by 40+ businesses.",
+  "what_they_did": "An SEO agency founder, Steven, started building a writing agent in Claude for his video game site. His partner read every article and complained about flaws. Those hundreds of edits became a 25-check review list. They split the work into a research agent built on agency know-how and a writing agent that uses each client's voice and proof.",
+  "how_it_went": "The author says the test site got 750 pages indexed and 2,500 users in a single day. They report a keyword becomes a designed page in 10 to 15 minutes, and the tool now writes for 40+ businesses.",
+  "worth_knowing": "The author credits the quality to a picky human reviewer, not the tool. The feedback loop of hundreds of edits is what made the output usable.",
+  "prompt": "Act as a writer for my website [site URL] about [topic]. For the keyword [keyword], research what top pages cover and what readers ask. Draft an article in my brand voice, using these real examples and facts: [your proof points]. Then check the draft against my quality list: [your checks, e.g. no filler, specific examples, clear headings]. Show me the draft and the checklist results, and wait for my edits before I publish anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "seo",
+    "content writing",
+    "marketing",
+    "editing"
+  ],
+  "source": {
+    "url": "https://x.com/ConnorGillivan/status/2114447128911081901",
+    "name": "X",
+    "author": "@ConnorGillivan",
+    "published": "2026-10-25"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real agent story with numbers (750 pages, 2,500 users a day, 40+ clients), but it is partly a product pitch and gives few reproducible details."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "make-a-farewell-video-from-your-team-s-chat-history",
+  "title": "Make a farewell video from your team's chat history",
+  "summary": "A developer leaving eMan had an AI agent build a 60fps team farewell video from their real GitLab and Google Chat history, with no video editor, and open-sourced the skill.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "GitLab",
+    "Google Chat"
+  ],
+  "agent_role": "The agent pulled the team's GitLab and Google Chat history and built the video in code. The developer directed it and shared the result.",
+  "outcome": "The author reports a finished 60fps farewell video made without a video editor.",
+  "what_they_did": "A developer leaving his company after more than two years wanted a farewell video for his team. He had an AI agent build it from the team's real work history in GitLab and Google Chat. No video editing app was used. He then open-sourced the skill so others can do the same.",
+  "how_it_went": "The author says the agent produced a 60fps video, with 'way too many strawberries', drawn from real team moments.",
+  "worth_knowing": null,
+  "prompt": "I'm leaving my team and want a farewell video. Look through [exported chat history] and [project history, such as commits or issues] to find memorable moments, inside jokes, milestones and the people involved. Draft a short storyboard of 8 to 12 scenes with captions first and wait for my approval. Then build the video in code as an animation, without a video editor, and export it as an MP4. Leave out anything private or embarrassing, and show me the final video before I share it.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "video",
+    "farewell",
+    "team culture",
+    "animation"
+  ],
+  "source": {
+    "url": "https://x.com/ondakx/status/2114648149817950520",
+    "name": "X",
+    "author": "@ondakx",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A charming, original use: an agent turned real team chat and code history into a farewell video with no video editor, and the skill is open-sourced. Light on detail in the post itself."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "review-your-insurance-and-subscriptions-with-an-agent",
+  "title": "Review your insurance and subscriptions with an agent",
+  "summary": "An X user says their 'CFO' bot reviewed home and auto insurance, emailed and negotiated with their insurance agent, and flagged unused subscriptions, saving $2,822 a year.",
+  "domain": "Finance",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "email"
+  ],
+  "agent_role": "The bot reviewed home and auto insurance and monthly subscriptions, then emailed the user's insurance agent and negotiated. The post does not say how much the user supervised.",
+  "outcome": "The author reports saving $2,822 per year.",
+  "what_they_did": "The poster set up a bot they call their CFO. It did a full review of their home and auto insurance. It emailed their insurance agent and negotiated a better deal. It also went through their monthly subscriptions to find ones they weren't using.",
+  "how_it_went": "The poster says the bot saved them $2,822 a year.",
+  "worth_knowing": null,
+  "prompt": "Act as my personal finance assistant. Review my current home and auto insurance policies [attach policy documents] and my monthly subscriptions [attach bank or card statements]. List each subscription with its cost and when I last used it, and flag ones I seem not to use. For insurance, summarize my coverage and price, and draft a polite email to my insurance agent [agent's email] asking for a lower rate or better options. Show me the draft and the list of subscriptions to cancel, and wait for my approval before sending anything or cancelling any service.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "insurance",
+    "subscriptions",
+    "negotiation",
+    "personal finance"
+  ],
+  "source": {
+    "url": "https://x.com/JayMills704/status/2114510281431036368",
+    "name": "X",
+    "author": "@JayMills704",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real multi-step finance task: reviewing insurance, emailing the insurance agent and checking subscriptions, with a dollar figure. Very thin on details and framed as a reply asking for attention, so only just publishable."
+  }
+}

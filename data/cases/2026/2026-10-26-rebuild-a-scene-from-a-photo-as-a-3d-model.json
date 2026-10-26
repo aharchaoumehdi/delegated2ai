@@ -1,0 +1,41 @@
+{
+  "id": "rebuild-a-scene-from-a-photo-as-a-3d-model",
+  "title": "Rebuild a scene from a photo as a 3D model",
+  "summary": "A developer shared a run where Gemini rebuilt a Copenhagen canal scene from a photo in a browser 3D playground. It fixed a script error and then refined the shapes using preview pictures.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": "Gemini",
+  "tools": [
+    "three.js",
+    "manifold-3d",
+    "render preview screenshots"
+  ],
+  "agent_role": "The agent wrote code to build 3D shapes and fixed an error on the first pass. It took screenshots from several angles and adjusted the geometry over several rounds. The human supplied the photo and the playground.",
+  "outcome": "The author shares a trace of Gemini reconstructing the canal scene after several rounds of self-checking.",
+  "what_they_did": "A developer built a browser playground where a coding agent can build 3D models with code, with no desktop software to install. The agent gets a tool that takes screenshots from front, side, top and angled views. The shared run gave Gemini a photo of a Copenhagen canal to rebuild.",
+  "how_it_went": "The author says Gemini hit a script error first, fixed it, then went through several rounds of checking four-view and close-up screenshots to tweak the shapes.",
+  "worth_knowing": "Letting the agent look at pictures of what it built is the key idea. It works the same way an agent checks a web page it built.",
+  "prompt": "Using the 3D playground connected to you, rebuild the scene in [photo of your scene] as a 3D model. Start with the big shapes, then add details. After each pass, take screenshots from the front, side, top and an angled view, plus close-ups. Compare them to the photo and fix anything that looks wrong. If the code throws an error, fix it before continuing. Show me the screenshots after each round, and stop when the model matches the photo's main layout.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "3d modeling",
+    "photo to 3d",
+    "visual self-check"
+  ],
+  "source": {
+    "url": "https://sketchagent.dev/s/yfYU6LhT",
+    "name": "Hacker News",
+    "author": "wsxiaoys",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-26",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A shared trace shows an agent rebuilding a 3D scene from a photo. The agent fixes its own error and checks its work with rendered views. The evidence is a single demo with no numbers."
+  }
+}

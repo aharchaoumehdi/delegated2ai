@@ -1,0 +1,43 @@
+{
+  "id": "let-agents-pick-up-routine-tickets-and-fix-failing-checks",
+  "title": "Let agents pick up routine tickets and fix failing checks",
+  "summary": "The SuperPlane team says 52% of the code changes they merged last month came from their tool, which picks tickets, runs coding agents and fixes failing checks.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "SuperPlane",
+    "coding agents",
+    "automated build checks",
+    "ticket backlog"
+  ],
+  "agent_role": "The system scans the backlog, picks suitable tickets, runs a coding agent, verifies the result and handles failed checks and review comments. Humans review the evidence and decide what ships.",
+  "outcome": "The team reports that 52% of the pull requests they merged last month were automated through SuperPlane.",
+  "what_they_did": "The team behind Semaphore built SuperPlane, an open-source tool that coordinates coding agents. It scans the team's backlog for tickets suited to automation and runs a coding agent on them. It checks the result and works through failed automatic tests and review feedback. Engineers then review the evidence and decide what ships.",
+  "how_it_went": "They say 52% of the code changes their team merged last month came through this system.",
+  "worth_knowing": "This is the makers' own launch post, so the 52% figure is their claim about their own team.",
+  "prompt": "Look through the open tickets in [project tracker] for [repo URL]. Pick up to [number] small, well-defined tickets suited to automation and explain why you chose each. For each one, make the change on a separate branch, run the automatic tests and fix any failures. Then open a draft change request with a summary of what you did and the test results. Do not merge anything; wait for my review.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "ticket automation",
+    "code review",
+    "software factory",
+    "build checks"
+  ],
+  "source": {
+    "url": "https://x.com/darkofabijan/status/2115037955480048100",
+    "name": "X",
+    "author": "@darkofabijan",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly a product launch, but it reports a concrete in-house result (52% of merged changes automated) from an open-source tool. Evidence is the company's own claim."
+  }
+}

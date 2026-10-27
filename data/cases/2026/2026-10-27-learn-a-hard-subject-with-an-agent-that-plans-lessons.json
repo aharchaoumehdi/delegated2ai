@@ -1,0 +1,44 @@
+{
+  "id": "learn-a-hard-subject-with-an-agent-that-plans-lessons",
+  "title": "Learn a hard subject with an agent that plans lessons",
+  "summary": "LearnHarness is a free desktop app whose agents test what you already understand, map a lesson plan to your goal, teach step by step and track progress.",
+  "domain": "Education",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "web search",
+    "dictation",
+    "knowledge graph",
+    "OpenAI",
+    "Anthropic"
+  ],
+  "agent_role": "The agent tests your starting point, plans the lessons, teaches and runs practice, and can research questions in the background. The learner answers questions and explains their thinking in their own words.",
+  "outcome": null,
+  "what_they_did": "The creators built a desktop app for learning difficult things. It first quizzes you to find where your understanding stops, then builds a map from there to your goal. It teaches one step at a time, asking you to predict and explain. It saves what you learned in a linked map of ideas that later sessions can reuse.",
+  "how_it_went": null,
+  "worth_knowing": "You bring your own model account, so you pay the provider per use; the app shows a live cost meter. Your notes stay on your computer, but questions still go out to the model provider.",
+  "prompt": "I want to understand [topic] well enough to [goal]. First, ask me a few questions to find where my understanding ends, and have me explain my reasoning and how confident I am. Then show me a step-by-step plan from my current level to the goal, and wait for my approval. Teach one step at a time: ask me to predict before you explain, then check my understanding. Fix any confusion before moving on. Keep a running list of the ideas I've learned and how they connect, so we can pick up next session.",
+  "evidence": "Code available",
+  "difficulty": "Beginner",
+  "tags": [
+    "tutoring",
+    "self-study",
+    "lesson planning",
+    "learning"
+  ],
+  "source": {
+    "url": "https://github.com/amosblomqvist/learnharness",
+    "name": "Hacker News",
+    "author": "amosblomqvist",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An open-source agent that tests what you know, plans a path to your goal and teaches step by step. It is a solid education application with code available, but the page reports no user results. The education boost lifts it to publishable."
+  }
+}

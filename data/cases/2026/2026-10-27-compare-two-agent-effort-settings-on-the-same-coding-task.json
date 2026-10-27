@@ -1,0 +1,44 @@
+{
+  "id": "compare-two-agent-effort-settings-on-the-same-coding-task",
+  "title": "Compare two agent effort settings on the same coding task",
+  "summary": "A developer had Codex build the same text-adventure exercise at high and extra-high effort; he reports high finished in 14.5 minutes versus 39.6, both passing all checks.",
+  "domain": "Software",
+  "platform": "OpenAI Codex",
+  "model": "GPT-6-Luna",
+  "tools": [
+    "Git worktrees",
+    "Codex hooks",
+    "mutation testing",
+    "npm test scripts",
+    "design review by a separate model"
+  ],
+  "agent_role": "The agent wrote the code and tests for a small text-adventure game in separate copies of the project, responding to automatic checks after edits and at the end of each turn. The author set up the checks, ran the two sessions and compared the results.",
+  "outcome": "Author reports the high setting took 14 min 30 sec versus 39 min 38 sec for extra-high, a 63% cut, with both passing the full check suite and a design review.",
+  "what_they_did": "Renan Franca gave Codex the same small coding exercise twice: the first slice of a text-adventure game where players move between five rooms. One run used the model's high effort setting, the other extra-high. Each run worked in its own clean copy of the project. Automatic checks fired after edits and at the end of each turn, covering code structure, tests, deliberately broken code, and a separate design review.",
+  "how_it_went": "He reports both runs met all the game requirements and passed every check. The high run took about 14.5 minutes, versus about 39.6 for extra-high. Each design review found one issue, which the agent then fixed.",
+  "worth_knowing": "This was one run per setting, so the author treats it as a pilot, not proof. Neither run fully followed the requested write-one-test-at-a-time method; tests were sometimes added in batches.",
+  "prompt": "I want to compare two effort settings for my coding agent. In [repo URL], create two separate working copies from the same starting point. In each, implement this small task: [describe task and acceptance criteria]. Write a failing test before each behavior, then make it pass. Run [your check command] at the end and record the total time, number of tests and any failures. Do not commit or push anything. When both runs finish, show me a side-by-side table of time taken, test results and design differences, and note anything that went against my instructions.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "model comparison",
+    "coding agent",
+    "automated checks",
+    "test-driven development"
+  ],
+  "source": {
+    "url": "https://dev.to/renanfranca/what-the-katacombs-pilot-taught-me-about-luna-high-and-xhigh-5509",
+    "name": "DEV Community",
+    "author": "Renan Franca",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real, carefully documented comparison of one coding agent at two thinking settings, with times, test counts and an automatic check setup. It is a single run per setting and aimed at developers, so its reach is limited."
+  }
+}

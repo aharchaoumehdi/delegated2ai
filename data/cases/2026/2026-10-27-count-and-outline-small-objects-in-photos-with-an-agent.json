@@ -1,0 +1,44 @@
+{
+  "id": "count-and-outline-small-objects-in-photos-with-an-agent",
+  "title": "Count and outline small objects in photos with an agent",
+  "summary": "A researcher gave coding agents a photo-outlining skill; six agents each found about 1,240 to 1,350 corn kernels in one photo, which the author notes nobody hand-checked.",
+  "domain": "Science",
+  "platform": "Claude Code",
+  "model": "Opus 5.5",
+  "tools": [
+    "Meta SAM 3 image model",
+    "NVIDIA GPU",
+    "review sheets",
+    "mask export",
+    "zoomable viewer"
+  ],
+  "agent_role": "The agent runs the image model on overlapping close-up crops, saves every candidate, checks scores, reviews and removes bad outlines, and exports results. The human installs the model, logs in themselves and approves large downloads.",
+  "outcome": "Author reports six different agents each produced 1,244 to 1,350 kernel outlines from one corn photo, agreeing 92 to 99% with a first run, while agents without the tool returned shapes that did not follow the kernels.",
+  "what_they_did": "A researcher built an agent skill, mostly written by Claude Opus, that lets coding agents use Meta's SAM 3 image model on a home graphics card. You ask in plain words, like \"outline every kernel in corn.jpg\". The agent cuts the photo into overlapping close-ups, saves every outline, reviews doubtful ones and exports files plus a viewer.",
+  "how_it_went": "The author reports six agents each found about 1,240 to 1,350 kernels in 8 to 42 minutes, mostly matching an earlier run. Without the skill, agents returned 0 to 1,084 shapes that missed the kernels. Trials on dogs, jars and insects worked but had background mistakes.",
+  "worth_knowing": "It needs an NVIDIA graphics card with about 12 to 24 GB memory and an 11 GB download. Results are proposals, not checked truth; the author notes no person verified the outlines.",
+  "prompt": "Using the image segmentation skill, outline every visible [object, e.g. seed or insect] in [photo file], and count them. Work in overlapping close-up crops so small objects are not missed. Keep every raw candidate, check each region, and list which outlines are uncertain. Ask me before any large download or install, and never ask for my login token. At the end, export the masks and open a viewer so I can review them.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "image analysis",
+    "object counting",
+    "lab research",
+    "segmentation"
+  ],
+  "source": {
+    "url": "https://github.com/lillyguisnet/sam3-segmentation",
+    "name": "GitHub",
+    "author": "lillyguisnet",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A careful, well-evidenced skill for counting and outlining objects in photos, with a six-agent corn kernel test, honest limits and failures reported; a useful non-coding science application."
+  }
+}

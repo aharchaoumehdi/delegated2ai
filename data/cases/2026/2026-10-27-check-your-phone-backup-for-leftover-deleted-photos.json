@@ -1,0 +1,41 @@
+{
+  "id": "check-your-phone-backup-for-leftover-deleted-photos",
+  "title": "Check your phone backup for leftover deleted photos",
+  "summary": "A user had Claude Code inspect a local iPhone backup. They say it flagged thumbnail and cache folders holding remnants that appeared to match photos they had deleted long ago.",
+  "domain": "Daily life",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "local iPhone backup",
+    "file system"
+  ],
+  "agent_role": "The human made a local backup of the iPhone on a Mac. Claude Code searched it for leftover image data and helped review app permissions.",
+  "outcome": "Author reports finding image remnants in thumbnail and cache folders that appeared to match long-deleted photos.",
+  "what_they_did": "The poster connected their iPhone to a MacBook and made a local backup. They asked Claude Code to inspect the backup for leftover image data without changing the original files. They also checked which apps had access to their photos.",
+  "how_it_went": "They say Claude Code flagged thumbnail and cache folders they would never have checked. Inside were old screenshots and pictures that appeared to match photos they had deleted.",
+  "worth_knowing": "The author notes that phones and apps keep caches for normal reasons, and that leftover data does not mean anyone can access every deleted photo. Work on a copy of the backup, not the phone itself.",
+  "prompt": "I made a local backup of my iPhone at [backup folder path]. Without changing any original files, inspect it for leftover image data such as thumbnails, cached copies and temporary files. List the folders you find, what they seem to contain and roughly how old the files are. Also summarize which apps appear to have photo or other data access. Explain your findings in plain language. Do not delete or move anything; show me a report first.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "privacy",
+    "phone backup",
+    "deleted photos",
+    "security audit"
+  ],
+  "source": {
+    "url": "https://x.com/Beliy_95/status/2115040121170891044",
+    "name": "X",
+    "author": "@Beliy_95",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine everyday privacy check where Claude Code inspected a local iPhone backup for leftover image data. It is hyped, the promised prompt is not included, and the findings are loosely described."
+  }
+}

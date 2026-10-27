@@ -1,0 +1,44 @@
+{
+  "id": "rebuild-an-app-you-like-as-your-own-mac-app",
+  "title": "Rebuild an app you like as your own Mac app",
+  "summary": "A developer packaged skills that let coding agents screenshot an app, write a plan, and build a native Mac version step by step with checks.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "computer use",
+    "browser",
+    "Swift build tools",
+    "git",
+    "screenshot snapshots"
+  ],
+  "agent_role": "The agent screenshots every screen of the target app, writes user stories in milestones, then builds one story per saved change while checking light and dark screenshots and running tests. The human picks the app and reviews progress.",
+  "outcome": "The author says the 12 included build plans were taken apart from his own menu bar app, Onyx; no other results are reported.",
+  "what_they_did": "A developer published a set of agent skills for Claude Code, Codex and others. You point the agent at an app you like. It screenshots every screen, writes a list of features with checks, and builds the Mac app one feature at a time. It snapshots every page and runs tests before saving each change.",
+  "how_it_went": null,
+  "worth_knowing": "It needs macOS 26 and Xcode 26 installed, and cloning a native app's screens needs Claude's computer-use feature on a Pro or Max plan.",
+  "prompt": "Clone [app you like] as a native Mac app for my own use. First screenshot every screen and write a short index of them. Then turn the screens into user stories with checkable acceptance criteria, grouped into milestones. Show me the plan and wait for my approval. Then build milestone 1, one story per commit, taking light and dark screenshots of each page and running the tests before each commit. Report what passed and what is still uncertain.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "mac apps",
+    "app cloning",
+    "app building",
+    "agent skills"
+  ],
+  "source": {
+    "url": "https://github.com/daveebbelaar/bama",
+    "name": "GitHub",
+    "author": "daveebbelaar",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, reproducible workflow for having a coding agent screenshot an app, plan it and rebuild it as a Mac app, but the README shows no worked result beyond specs taken from the author's own app."
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-27",
+  "runs": [
+    {
+      "id": "gh-40503460646-1",
+      "started": "2026-10-27T12:24:28.452Z",
+      "trigger": "schedule",
+      "collect": {
+        "sources": {
+          "submissions": {
+            "status": "ok",
+            "items": 0,
+            "ms": 558
+          },
+          "x": {
+            "status": "ok",
+            "items": 80,
+            "ms": 694,
+            "fetched": 80,
+            "searches": [
+              {
+                "label": "coding agents in use",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "personal and business agents",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "agents at work",
+                "fetched": 20,
+                "kept": 20
+              }
+            ]
+          },
+          "reddit": {
+            "status": "error",
+            "error": "r/ClaudeAI: HTTP 403 for https://www.reddit.com/r/ClaudeAI/top.json?t=day&limit=25&raw_json=1; r/ClaudeCode: HTTP 403 for https://www.reddit.com/r/ClaudeCode/top.json?t=day&limit=25&raw_json=1; r/ChatGPTCoding: HTTP 403 for https://www.reddit.com/r/ChatGPTCoding/top.json?t=day&limit=25&raw_json=1; r"
+          },
+          "feeds": {
+            "status": "ok",
+            "items": 10,
+            "ms": 1909
+          },
+          "hackernews": {
+            "status": "ok",
+            "items": 57,
+            "ms": 2363
+          },
+          "github": {
+            "status": "ok",
+            "items": 51,
+            "ms": 3486
+          },
+          "devto": {
+            "status": "ok",
+            "items": 30,
+            "ms": 7345
+          }
+        },
+        "raw": 228,
+        "unique_new": 131,
+        "candidates": 104
+      },
+      "curate": {
+        "status": "ok",
+        "model": "claude-opus-5-5",
+        "evaluated": 104,
+        "published": 22,
+        "from_backlog": 3,
+        "queued_for_review": 0,
+        "rejected": 85,
+        "failures": [],
+        "published_ids": [
+          "get-a-daily-sports-news-briefing-with-sources",
+          "get-plain-summaries-of-new-projects-you-want-to-understand",
+          "remake-a-classic-online-game-for-the-browser-with-ai",
+          "render-a-coastal-drone-flight-entirely-in-code-with-agents",
+          "count-and-outline-small-objects-in-photos-with-an-agent",
+          "make-a-3d-city-map-video-from-public-data-with-an-agent",
+          "find-secret-keys-hiding-in-your-cloud-synced-folders",
+          "have-your-coding-agent-screenshot-its-work-for-every-review",
+          "get-live-prompts-on-screen-during-calls-from-your-notes",
+          "have-an-agent-test-a-new-tool-and-write-a-report",
+          "have-your-agent-keep-a-ticket-updated-as-it-works",
+          "compare-two-agent-effort-settings-on-the-same-coding-task",
+          "study-how-a-website-works-before-building-your-own",
+          "check-your-phone-backup-for-leftover-deleted-photos",
+          "build-a-full-social-app-without-writing-code",
+          "replace-your-note-apps-with-a-text-folder-your-agent-files",
+          "let-agents-pick-up-routine-tickets-and-fix-failing-checks",
+          "rebuild-your-company-s-website-with-a-coding-agent",
+          "turn-social-media-market-chatter-into-paper-trade-ideas",
+          "rebuild-an-app-you-like-as-your-own-mac-app",
+          "review-months-of-coding-agent-logs-to-see-how-you-work",
+          "learn-a-hard-subject-with-an-agent-that-plans-lessons"
+        ]
+      },
+      "enrich": {
+        "needed": 0,
+        "written": 0,
+        "failures": [],
+        "summaries": {
+          "needed": 0,
+          "written": 0,
+          "failures": []
+        }
+      }
+    }
+  ]
+}

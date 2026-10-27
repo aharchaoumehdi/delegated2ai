@@ -1,0 +1,43 @@
+{
+  "id": "have-your-coding-agent-screenshot-its-work-for-every-review",
+  "title": "Have your coding agent screenshot its work for every review",
+  "summary": "A developer had Claude Code open a browser 1,929 times in a month, mostly to check its own interface changes. It attached named screenshots to 53 pull requests.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Playwright browser connector",
+    "GitHub CLI",
+    "Docker Compose",
+    "local web server"
+  ],
+  "agent_role": "The agent built features and opened them in a real browser. It clicked through, took light and dark mode screenshots, and wrote pull request descriptions with the images attached. The author asked for checks and reviewed the results.",
+  "outcome": "Author reports 1,929 browser actions over 62 sessions. That covered visual bug fixes, release testing for version 2.3.0, and screenshots in 53 of 904 pull requests.",
+  "what_they_did": "Chirag Aggarwal gave Claude Code a connector that lets it control a web browser. He used it to check new interface work rather than run his normal test suite. The agent opened local pages, clicked through them, took named screenshots, and attached them to pull requests with GitHub's command-line tool. It also walked through release notes after a test upgrade.",
+  "how_it_went": "He reports the agent caught an invisible logo across five sign-in screens. It also reproduced a user's port bug and showed it fixed with screenshots. During release testing it found two upgrade gaps before shipping, though a failed command, not the browser, caught the first.",
+  "worth_knowing": "Screenshots stored on a branch you later delete vanish from the review. Attaching them through GitHub's upload keeps them. The browser connector also blocks local file links, so serve pages over a local web address.",
+  "prompt": "After you finish any change to the user interface, open it in a browser at [local URL]. Click through every new state and take screenshots in both light and dark mode. Name each file by what it shows, like feature-before.png and feature-after.png. Draft a pull request description with the images linked and show it to me. Wait for my approval before creating the pull request. Then delete the leftover screenshot files so none get committed.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "visual checks",
+    "browser automation",
+    "code review",
+    "screenshots"
+  ],
+  "source": {
+    "url": "https://dev.to/chiragagg5k/my-agent-has-two-playwrights-5e6g",
+    "name": "DEV Community",
+    "author": "Chirag Aggarwal",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, well-evidenced workflow in which an agent drives a real browser to check its own interface changes and attach before-and-after screenshots to pull requests. It includes numbers, concrete cases and clear steps."
+  }
+}

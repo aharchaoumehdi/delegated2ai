@@ -1,0 +1,40 @@
+{
+  "id": "rebuild-your-company-s-website-with-a-coding-agent",
+  "title": "Rebuild your company's website with a coding agent",
+  "summary": "A crowdfunding founder who only knew HTML and basic PHP used Claude Code to rebuild the LOOR TV site; he says it went live without breaking.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code"
+  ],
+  "agent_role": "Claude Code wrote the code for several redesigns of the site. The founder prompted it, a teammate handled testing and error reports, and a developer friend stood by to fix breakages.",
+  "outcome": "The author reports pushing the new design to production with nothing broken and only a few basic bugs left.",
+  "what_they_did": "A founder of a creator crowdfunding site could not afford developers. He knew only HTML and basic PHP. Over a summer he learned to steer Claude Code and rebuilt the LOOR TV site several times until the team settled on a design. Teammates handled testing, legal, business planning and artist outreach.",
+  "how_it_went": "He says the new design went to production and nothing broke, with only a few basic bugs remaining. The new site lets artists, indie game makers and AI filmmakers pitch for funding.",
+  "worth_knowing": "He leaned on a developer friend who promised to fix anything he broke, and says he learned to save money because he could not afford higher-tier AI plans.",
+  "prompt": "Help me rebuild [website name], which runs on [tech stack]. I am not an expert in this stack. First, read the codebase and explain its structure in plain words. Then propose a plan for the new design: [describe the design and features]. Work in small steps on a separate branch, run the existing tests after each change, and explain what you changed. Do not touch the live site or the production database. Show me the finished changes and wait for my approval before anything is deployed.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "website rebuild",
+    "non-coder",
+    "crowdfunding",
+    "small business"
+  ],
+  "source": {
+    "url": "https://x.com/ImKingGinger/status/2114912115534549247",
+    "name": "X",
+    "author": "@ImKingGinger",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real case of a non-specialist founder using Claude Code to rebuild and ship a production crowdfunding site, but details on what the agent did are thin and the post reads partly as a launch announcement."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "study-how-a-website-works-before-building-your-own",
+  "title": "Study how a website works before building your own",
+  "summary": "A builder had Claude Code use the REA reverse-engineering add-on to study how Marc Lou's HYROX sponsor site works before building their own site, RoxSkin.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "REA reverse-engineering toolkit"
+  ],
+  "agent_role": "Claude Code used the REA tools to inspect the existing site and explain how it works. The human then built their own product, RoxSkin.",
+  "outcome": "Author says they used it before building RoxSkin; no other result is stated.",
+  "what_they_did": "The poster installed REA, a free toolkit that lets coding agents inspect apps and websites without their source code. They asked Claude Code to use it to study how Marc Lou's HYROX sponsor site works. They then built their own site, RoxSkin.",
+  "how_it_went": "The author calls it a niche tool they actually used. They give no details on what the agent found.",
+  "worth_knowing": "REA's own page warns that only its official sources are genuine. Lookalike copies of the repository or its README may not be safe to download.",
+  "prompt": "Using the reverse-engineering tools you have installed, study how [website or app] handles [feature you want to understand]. Show me the evidence behind each conclusion and list what you could not confirm. Then propose a plan to build a similar feature for my project at [project folder]. Wait for my approval before writing any code.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "reverse engineering",
+    "website analysis",
+    "product research"
+  ],
+  "source": {
+    "url": "https://x.com/timgrassin/status/2114945192667341039",
+    "name": "X",
+    "author": "@timgrassin",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real use of Claude Code with a reverse-engineering add-on to study an existing website before building a similar product. It is very thin: no steps, findings or results beyond the mention."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "have-your-agent-keep-a-ticket-updated-as-it-works",
+  "title": "Have your agent keep a ticket updated as it works",
+  "summary": "Chirag Aggarwal has his coding agent log findings, decisions and next steps in issue tickets as it works; he cites a monorepo move and a bug the agent filed itself.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "issue tracker",
+    "GitHub"
+  ],
+  "agent_role": "The agent updates the ticket after each step, files new issues for side findings and writes handoff notes; the author scopes tickets and reads them to stay in control.",
+  "outcome": "Author reports the agent kept a multi-wave migration ticket current, filed a database bug that was later fixed, and left a handoff any session could resume.",
+  "what_they_did": "Chirag Aggarwal gives every feature or fix its own ticket in an issue tracker. His coding agent updates it whenever it finds, decides or finishes something, not just at the end. Side discoveries become sub-issues. Tickets are written so a human can read them in a minute.",
+  "how_it_went": "He says one migration ticket was rewritten after each wave so status was always clear. The agent filed a separate bug about endpoints failing on long values, which went to the database team and was closed.",
+  "worth_knowing": "Before adopting this, a bug the agent mentioned once in passing was never followed up and was still unfixed a month later.",
+  "prompt": "For this task, keep a ticket in [issue tracker] as the single source of truth. Update it every time you find something, make a decision or finish a step, not only at the end. Keep it short enough for me to read in a minute: goal, decisions, open questions, done, remaining. If you notice an unrelated problem, draft a separate sub-issue for it. Show me any new issue before you create it.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "issue tracking",
+    "context management",
+    "handoff",
+    "coding agents"
+  ],
+  "source": {
+    "url": "https://dev.to/chiragagg5k/keeping-track-of-your-agents-work-1g28",
+    "name": "DEV Community",
+    "author": "Chirag Aggarwal",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A practical, reusable workflow where the agent files and maintains issue tickets, backed by real issue examples, though it is more a practice write-up than a single project."
+  }
+}

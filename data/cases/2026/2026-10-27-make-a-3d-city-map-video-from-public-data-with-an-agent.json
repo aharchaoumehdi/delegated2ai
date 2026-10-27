@@ -1,0 +1,44 @@
+{
+  "id": "make-a-3d-city-map-video-from-public-data-with-an-agent",
+  "title": "Make a 3D city map video from public data with an agent",
+  "summary": "A creator had Claude Code turn New York City building and street data into a 27-second 3D video of 7,942 Bushwick buildings, with on-screen text checked against approved copy.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Remotion",
+    "NYC building footprints data",
+    "NYC street map data",
+    "ffmpeg",
+    "Chrome"
+  ],
+  "agent_role": "Claude Code pulled the city datasets, built the 3D scene and the borough map, and rendered the video. It also checked the text and confirmed repeat renders matched. The human supplied the approved on-screen words.",
+  "outcome": "Author reports a 27-second video of about 800 frames that renders identically each time.",
+  "what_they_did": "The creator had Claude Code pull 7,942 buildings around a Bushwick block from New York City's public building data. It raised each outline to its listed roof height and added real streets. It also mapped the five boroughs and highlighted 17 districts. Remotion, a tool that turns code into video, rendered each frame, and ffmpeg joined them.",
+  "how_it_went": "The author reports a 27-second video built from about 800 frames. A script checked every on-screen word letter by letter against their approved text. Two renders matched frame for frame.",
+  "worth_knowing": "Windows, stoops and water tanks were made up by code, so the building fronts are not real. Only the shapes, heights and streets come from city data.",
+  "prompt": "Using Remotion, build a short 3D video of the area around [address or block] in [city]. Pull building outlines and heights from [city's public building data] and add real streets from [city street map data]. Use only the on-screen text in [copy file]. Write a script that checks every frame's text against that file. Show me a storyboard and a test frame before rendering the full video.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "data visualization",
+    "video",
+    "maps",
+    "open data"
+  ],
+  "source": {
+    "url": "https://x.com/jts_14/status/2114771775997304855",
+    "name": "X",
+    "author": "@jts_14",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, original walkthrough of Claude Code building a 3D map video from New York City open data. It includes text checks against approved copy and repeat-render checks, so it is clear and reproducible."
+  }
+}

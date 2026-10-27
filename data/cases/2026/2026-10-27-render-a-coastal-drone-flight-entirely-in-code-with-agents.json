@@ -1,0 +1,43 @@
+{
+  "id": "render-a-coastal-drone-flight-entirely-in-code-with-agents",
+  "title": "Render a coastal drone flight entirely in code with agents",
+  "summary": "Leon Lin had Claude Code build a drone flight over Kauai's Na Pali coast in a single web page, using 13 rounds of specialist agents and a photo-comparing judge.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "WebGL2 shaders",
+    "headless Chrome",
+    "ffmpeg",
+    "Node.js"
+  ],
+  "agent_role": "Parallel agents worked on water, sky, terrain and vegetation, a merge step combined them, and a judge agent scored each round against reference photos; Leon directed the rounds and rendered the published video.",
+  "outcome": "The author published an open-source, self-contained page and a 1080p video of the flight with no textures, images or 3D models.",
+  "what_they_did": "Leon Lin used Claude Code to generate a drone flight over the Na Pali coast purely in code. Over 13 rounds, separate agents handled water, sky, terrain and plants, then their work was merged. A judge agent compared each round with reference photos of the real coast. Helper scripts render stills and video through a hidden Chrome browser.",
+  "how_it_went": "The result is one index.html file that draws terrain, ocean surf, reefs, palms, clouds and lighting live. The published video was rendered at 1080p and 30 frames per second, 1,584 frames in total.",
+  "worth_knowing": "It needs a decent graphics chip. Running several renders at once crashed the driver on a laptop, so the scripts lock to one render at a time and rest between runs.",
+  "prompt": "Build a single self-contained web page that renders a camera flight over [landscape or place] entirely in code, with no images, textures or 3D models. Split the work among parallel helpers for water, sky, terrain and vegetation, then merge their work each round. After each round, compare a still frame with these reference photos: [folder of photos], list the biggest differences, and fix them in the next round. Show me a still and your plan after each round before continuing.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "generative art",
+    "3d rendering",
+    "video",
+    "multi-agent"
+  ],
+  "source": {
+    "url": "https://github.com/Leonxlnx/napali",
+    "name": "GitHub",
+    "author": "Leon Lin (@LexnLin)",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 8,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Novel creative use with open code: 13 rounds of parallel specialist agents plus a judge comparing renders to reference photos, with detailed build and render notes."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "replace-your-note-apps-with-a-text-folder-your-agent-files",
+  "title": "Replace your note apps with a text folder your agent files",
+  "summary": "A poster moved tasks, meeting notes and client details from six apps into one text-file folder; Claude Code reads a map file daily and files new notes on approval.",
+  "domain": "Daily life",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Obsidian",
+    "Git",
+    "Markdown files"
+  ],
+  "agent_role": "Claude Code reads a map file at the start of each session. After a conversation, the user types /save and Claude proposes which files to update; the user approves before it writes.",
+  "outcome": "Author reports replacing 6 apps and 3 subscriptions at no cost beyond the Claude plan, with full history kept in Git.",
+  "what_they_did": "The poster moved all their notes into one folder of plain text files on their computer. It has subfolders for notes, people, projects, an inbox and an archive. A file called CLAUDE.md acts as a map that Claude Code reads every session. After a useful chat they type /save, Claude shows which files it wants to change, and they approve. Obsidian opens the same folder as a nicer viewer.",
+  "how_it_went": "They say it replaced six apps, three subscriptions and an unused Notion workspace. They also say it costs nothing beyond their Claude plan and keeps full history through Git.",
+  "worth_knowing": "The trade-off is real: there is no slick mobile widget and no shared workspace with comments.",
+  "prompt": "Help me set up a notes folder at [folder path] with subfolders for notes, people, projects, inbox and archive. Write a CLAUDE.md map file that explains where each kind of information lives. At the start of each session, read the map. When I type /save after a conversation, list the files you want to create or update and what you will write. Wait for my OK before changing anything.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "personal notes",
+    "knowledge management",
+    "note filing",
+    "productivity"
+  ],
+  "source": {
+    "url": "https://x.com/ellfyy_/status/2114712603284955237",
+    "name": "X",
+    "author": "@ellfyy_",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real setup in which Claude Code files notes into a plain-text folder after the user approves. It is a fairly common pattern, and the full details sit in a linked article that was not provided."
+  }
+}

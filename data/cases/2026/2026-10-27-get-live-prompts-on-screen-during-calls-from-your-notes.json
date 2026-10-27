@@ -1,0 +1,42 @@
+{
+  "id": "get-live-prompts-on-screen-during-calls-from-your-notes",
+  "title": "Get live prompts on screen during calls from your notes",
+  "summary": "A marketer built a Mac app with Claude Code that listens to calls, shows question and number cards from his wiki, then writes summaries and draft follow-ups.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "personal wiki",
+    "Mac audio capture"
+  ],
+  "agent_role": "Claude Code built the app. The app listens to calls, surfaces relevant cards from the author's wiki, and drafts summaries, action items and follow-up emails for the author to use.",
+  "outcome": "Author says it feels like a co-pilot on every call, but he is still working out how to keep it from being distracting.",
+  "what_they_did": "The author used Claude Code to build a Mac app that listens to his calls. No bot joins the meeting. The app is linked to his personal wiki of brands, clients and playbooks. When someone raises a topic, it shows cards with questions to ask or numbers to quote. After the call it writes a summary, a list of actions and a draft follow-up.",
+  "how_it_went": "He says it is like having a co-pilot on every call.",
+  "worth_knowing": "He is still figuring out how to use the on-screen cards without being distracted by them.",
+  "prompt": "Help me build a small Mac app that listens to my computer's audio during calls. Connect it to my notes folder at [notes folder path], which covers [my clients and playbooks]. While I talk, show short cards on screen with key questions or numbers when a matching topic comes up. After the call, write a summary, a list of actions and a draft follow-up email for me to review. Do not send anything automatically. Show me your plan before writing code.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "meeting assistant",
+    "call notes",
+    "follow-up emails",
+    "knowledge base"
+  ],
+  "source": {
+    "url": "https://x.com/andrew_jennings/status/2114767523220750650",
+    "name": "X",
+    "author": "@andrew_jennings",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-27",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An original call assistant built with Claude Code that pulls from a personal wiki and drafts follow-ups. It is only a short author's account with no demo or numbers."
+  }
+}

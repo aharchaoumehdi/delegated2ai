@@ -44,6 +44,11 @@
     "score": 3,
     "verdict": "rejected"
   },
+  "https://argusone.online": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://arxiv.org/abs/2610.18813": {
     "date": "2026-10-16",
     "score": 2,
@@ -51,6 +56,11 @@
   },
   "https://arxiv.org/abs/2610.18861": {
     "date": "2026-10-19",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://arxiv.org/abs/2610.29869": {
+    "date": "2026-10-27",
     "score": 2,
     "verdict": "rejected"
   },
@@ -107,6 +117,11 @@
   "https://corgi.computer": {
     "date": "2026-10-24",
     "score": 3,
+    "verdict": "rejected"
+  },
+  "https://covenant-common.github.io/covenant-docs": {
+    "date": "2026-10-27",
+    "score": 2,
     "verdict": "rejected"
   },
   "https://crystl.dev/guides/tmux-for-ai-agents": {
@@ -314,6 +329,31 @@
     "score": 5,
     "verdict": "kept"
   },
+  "https://dev.to/chiragagg5k/keeping-track-of-your-agents-work-1g28": {
+    "date": "2026-10-27",
+    "score": 6,
+    "verdict": "kept"
+  },
+  "https://dev.to/chiragagg5k/mcp-20-the-release-that-deleted-the-handshake-18o6": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://dev.to/chiragagg5k/my-agent-has-two-playwrights-5e6g": {
+    "date": "2026-10-27",
+    "score": 7,
+    "verdict": "kept"
+  },
+  "https://dev.to/chiragagg5k/seven-months-of-coding-agents-what-28335-actually-bought-1ka3": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "kept"
+  },
+  "https://dev.to/chiragagg5k/will-mcp-replace-the-cli-4pe5": {
+    "date": "2026-10-27",
+    "score": 2,
+    "verdict": "rejected"
+  },
   "https://dev.to/codacy/the-all-new-agentic-code-review-tools-for-loop-engineering-5h3d": {
     "date": "2026-10-16",
     "score": 2,
@@ -397,6 +437,11 @@
   "https://dev.to/dawncoral/your-skill-file-is-too-big-the-6kb-line-measured-69o": {
     "date": "2026-10-19",
     "score": 4,
+    "verdict": "rejected"
+  },
+  "https://dev.to/debashish_ghosal/92-green-field-tests-meant-nothing-until-i-counted-which-could-lie-2kic": {
+    "date": "2026-10-27",
+    "score": 3,
     "verdict": "rejected"
   },
   "https://dev.to/debashish_ghosal/context-engineering-over-prompt-engineering-architecting-codebases-for-ai-agents-5a56": {
@@ -629,6 +674,16 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://dev.to/jackymencz/windows-or-macos-where-should-we-focus-mcp-development-4155": {
+    "date": "2026-10-27",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://dev.to/jamilxt/stop-coding-agents-from-trusting-downloads-build-a-workspace-preflight-1nff": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://dev.to/javz/slowth-money-a-local-ai-agent-for-your-financial-goals-2ki2": {
     "date": "2026-10-26",
     "score": 6.5,
@@ -662,6 +717,16 @@
   "https://dev.to/jsmanifest/claude-code-context-window-management-in-2026-what-gets-included-what-gets-dropped-and-how-to-26kh": {
     "date": "2026-10-18",
     "score": 2,
+    "verdict": "rejected"
+  },
+  "https://dev.to/kartik-nvjk/a-flaky-mcp-tool-broke-my-agent-i-went-looking-for-the-retry-setting-in-the-protocol-3hl2": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://dev.to/kenielzep97/i-tried-to-own-my-agents-brain-3ngp": {
+    "date": "2026-10-27",
+    "score": 3,
     "verdict": "rejected"
   },
   "https://dev.to/kenielzep97/my-agent-turned-i-havent-decided-into-not-yet-now-the-model-isnt-allowed-to-write-its-own-23ma": {
@@ -707,6 +772,11 @@
   "https://dev.to/mbuthi/treat-your-llm-agent-like-a-new-bank-teller-fpd": {
     "date": "2026-10-22",
     "score": 3,
+    "verdict": "rejected"
+  },
+  "https://dev.to/mfussell/mcp-is-the-wsdl-moment-for-agents-157d": {
+    "date": "2026-10-27",
+    "score": 1,
     "verdict": "rejected"
   },
   "https://dev.to/moca_fd0227eb23c29ea2d065/why-your-local-llm-gives-different-answers-at-temperature-0-32jn": {
@@ -809,6 +879,11 @@
     "score": 4,
     "verdict": "rejected"
   },
+  "https://dev.to/reidmarlow/why-in-context-corrections-do-not-stick-in-agent-loops-k0i": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://dev.to/remojansen/mutation-testing-with-typescript-how-to-verify-your-tests-in-the-age-of-ai-coding-agents-neh": {
     "date": "2026-10-16",
     "score": 2,
@@ -818,6 +893,11 @@
     "date": "2026-10-17",
     "score": 1,
     "verdict": "rejected"
+  },
+  "https://dev.to/renanfranca/what-the-katacombs-pilot-taught-me-about-luna-high-and-xhigh-5509": {
+    "date": "2026-10-27",
+    "score": 6,
+    "verdict": "kept"
   },
   "https://dev.to/reporails/state-of-ai-instruction-quality-files-with-persona-lines-score-lower-3dff": {
     "date": "2026-10-20",
@@ -926,6 +1006,11 @@
   },
   "https://dev.to/slabb/i-put-a-logging-proxy-in-front-of-an-llm-client-heres-what-it-emitted-5dii": {
     "date": "2026-10-20",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://dev.to/slabb/jetbrains-open-sourced-an-agentic-ide-where-agents-never-touch-your-checkout-22hc": {
+    "date": "2026-10-27",
     "score": 2,
     "verdict": "rejected"
   },
@@ -1094,6 +1179,11 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://entire.com/blog/the-git-forge-for-agent-human-collaboration": {
+    "date": "2026-10-27",
+    "score": 2,
+    "verdict": "rejected"
+  },
   "https://eve.security/blog/what-security-teams-need-to-know-about-agents-using-abliterated-models": {
     "date": "2026-10-26",
     "score": 1,
@@ -1113,6 +1203,11 @@
     "date": "2026-10-22",
     "score": 5,
     "verdict": "kept"
+  },
+  "https://getrostr.sh": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
   },
   "https://github.blog/engineering/architecture-optimization/the-bridge-to-agent-scale-git-infrastructure": {
     "date": "2026-10-22",
@@ -1197,6 +1292,16 @@
   "https://github.com/Amio242/mcp-memory-server": {
     "date": "2026-10-26",
     "score": 1,
+    "verdict": "rejected"
+  },
+  "https://github.com/amosblomqvist/learnharness": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "kept"
+  },
+  "https://github.com/Andreas698/glm-5.3-uncensored": {
+    "date": "2026-10-27",
+    "score": 0,
     "verdict": "rejected"
   },
   "https://github.com/anujasid/blender-ai-mcp-addon": {
@@ -1314,6 +1419,11 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://github.com/daveebbelaar/bama": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "kept"
+  },
   "https://github.com/DBvdHeijden/okaeri": {
     "date": "2026-10-21",
     "score": 2,
@@ -1347,6 +1457,11 @@
   "https://github.com/electric-dragon-80000v/pi-cowboy": {
     "date": "2026-10-19",
     "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/emanuele-em/kanzo": {
+    "date": "2026-10-27",
+    "score": 4,
     "verdict": "rejected"
   },
   "https://github.com/emersonjds/santi": {
@@ -1409,9 +1524,19 @@
     "score": 6,
     "verdict": "kept"
   },
+  "https://github.com/fixture-inc/swarmatory": {
+    "date": "2026-10-27",
+    "score": 4,
+    "verdict": "rejected"
+  },
   "https://github.com/franzenzenhofer/big-arrow-on-the-screen": {
     "date": "2026-10-15",
     "score": 4,
+    "verdict": "rejected"
+  },
+  "https://github.com/FrigadeHQ/hob": {
+    "date": "2026-10-27",
+    "score": 3,
     "verdict": "rejected"
   },
   "https://github.com/G36maid/moodle-mcp": {
@@ -1549,6 +1674,11 @@
     "score": 1,
     "verdict": "rejected"
   },
+  "https://github.com/jazzenchen/agent-hud-open": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://github.com/johnny37/mcd-experience-atlas": {
     "date": "2026-10-16",
     "score": 6,
@@ -1644,6 +1774,11 @@
     "score": 5,
     "verdict": "kept"
   },
+  "https://github.com/lemonadesaltbagel/teardown": {
+    "date": "2026-10-27",
+    "score": 7,
+    "verdict": "duplicate"
+  },
   "https://github.com/Leonxlnx/earshot": {
     "date": "2026-10-16",
     "score": 7,
@@ -1654,10 +1789,20 @@
     "score": 5,
     "verdict": "kept"
   },
+  "https://github.com/Leonxlnx/napali": {
+    "date": "2026-10-27",
+    "score": 8,
+    "verdict": "kept"
+  },
   "https://github.com/LiCinCan/blender-ai-mcp-addon": {
     "date": "2026-10-18",
     "score": 4,
     "verdict": "rejected"
+  },
+  "https://github.com/lillyguisnet/sam3-segmentation": {
+    "date": "2026-10-27",
+    "score": 7.5,
+    "verdict": "kept"
   },
   "https://github.com/liuda30201/AI-Coding": {
     "date": "2026-10-21",
@@ -1697,6 +1842,11 @@
   "https://github.com/marclou/mailcheap": {
     "date": "2026-10-15",
     "score": 2,
+    "verdict": "rejected"
+  },
+  "https://github.com/martina9516/uncensored-ai-models": {
+    "date": "2026-10-27",
+    "score": 0,
     "verdict": "rejected"
   },
   "https://github.com/MemTensor/MemT-1.0": {
@@ -1811,6 +1961,11 @@
   },
   "https://github.com/pycodebr/heditor": {
     "date": "2026-10-18",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://github.com/qybaihe/bla": {
+    "date": "2026-10-27",
     "score": 4,
     "verdict": "rejected"
   },
@@ -1931,6 +2086,11 @@
   },
   "https://github.com/socrates6969/jukebox-os": {
     "date": "2026-10-26",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://github.com/SonicloudTech/mouse-mcp": {
+    "date": "2026-10-27",
     "score": 3,
     "verdict": "rejected"
   },
@@ -2137,6 +2297,11 @@
   "https://inillucent.com": {
     "date": "2026-10-23",
     "score": 1,
+    "verdict": "rejected"
+  },
+  "https://initlabs.si": {
+    "date": "2026-10-27",
+    "score": 4,
     "verdict": "rejected"
   },
   "https://intenex.github.io/personhood": {
@@ -2394,6 +2559,26 @@
     "score": 1,
     "verdict": "rejected"
   },
+  "https://news.ycombinator.com/item?id=50238759": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://news.ycombinator.com/item?id=50248168": {
+    "date": "2026-10-27",
+    "score": 0,
+    "verdict": "rejected"
+  },
+  "https://news.ycombinator.com/item?id=50254751": {
+    "date": "2026-10-27",
+    "score": 0,
+    "verdict": "rejected"
+  },
+  "https://news.ycombinator.com/item?id=50254873": {
+    "date": "2026-10-27",
+    "score": 0,
+    "verdict": "rejected"
+  },
   "https://noma.security/noma-labs/sneakpeek-how-the-preview-pane-in-claude-code-desktop-can-exfiltrate-your-data": {
     "date": "2026-10-15",
     "score": 2,
@@ -2429,8 +2614,23 @@
     "score": 0,
     "verdict": "rejected"
   },
+  "https://openai.com/index/chatgpt-expanding-world-of-work": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
   "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities": {
     "date": "2026-10-22",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security": {
+    "date": "2026-10-27",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://openai.com/index/greptile-code-review-codex-astra": {
+    "date": "2026-10-27",
     "score": 3,
     "verdict": "rejected"
   },
@@ -2442,6 +2642,11 @@
   "https://openai.com/index/low-resource-programming-languages": {
     "date": "2026-10-20",
     "score": 2,
+    "verdict": "rejected"
+  },
+  "https://openai.com/index/openai-cut-incident-investigation": {
+    "date": "2026-10-27",
+    "score": 3,
     "verdict": "rejected"
   },
   "https://openai.com/index/openai-models-google-cloud": {
@@ -2554,6 +2759,11 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://sazabi.com/blog/introducing-cve-now": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://signoz.io/blog/opentelemetry-ai-agent-observability": {
     "date": "2026-10-22",
     "score": 2,
@@ -2649,6 +2859,21 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://simonwillison.net/2026/Oct/26/gpt-61-terra": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://simonwillison.net/2026/Oct/26/jason-koebler": {
+    "date": "2026-10-27",
+    "score": 0,
+    "verdict": "rejected"
+  },
+  "https://simonwillison.net/2026/Oct/26/webframe-evaluation": {
+    "date": "2026-10-27",
+    "score": 6,
+    "verdict": "kept"
+  },
   "https://sketchagent.dev/s/yfYU6LhT": {
     "date": "2026-10-26",
     "score": 6,
@@ -2714,6 +2939,16 @@
     "score": 5,
     "verdict": "kept"
   },
+  "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache": {
+    "date": "2026-10-27",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://theguardian.com/technology/2026/oct/26/anthropics-claude-ai-model-accessed-georgia-voter-data-in-us": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
   "https://thenewstack.io/torvalds-claude-code-kernel": {
     "date": "2026-10-16",
     "score": 5,
@@ -2722,6 +2957,11 @@
   "https://theregister.com/ai-and-ml/2026/10/21/openclaw-creator-says-he-spent-10-million-in-tokens-last-month/5304573": {
     "date": "2026-10-23",
     "score": 1,
+    "verdict": "rejected"
+  },
+  "https://theregister.com/devops/2026/10/23/michigan-prof-creates-python-like-jac-language-for-ai-agents/5305110": {
+    "date": "2026-10-27",
+    "score": 3,
     "verdict": "rejected"
   },
   "https://theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web": {
@@ -2776,6 +3016,11 @@
   },
   "https://videre.sh": {
     "date": "2026-10-17",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://virpo.io/levels": {
+    "date": "2026-10-27",
     "score": 3,
     "verdict": "rejected"
   },
@@ -3019,6 +3264,11 @@
     "score": 5,
     "verdict": "kept"
   },
+  "https://x.com/agussinclair1/status/2114952827449782496": {
+    "date": "2026-10-27",
+    "score": 0,
+    "verdict": "rejected"
+  },
   "https://x.com/Ahar167/status/2114360167899046336": {
     "date": "2026-10-26",
     "score": 1,
@@ -3049,6 +3299,11 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://x.com/Aiwithkumail/status/2114973536016339416": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "duplicate"
+  },
   "https://x.com/aiwithphil/status/2113642084062368147": {
     "date": "2026-10-24",
     "score": 0,
@@ -3061,6 +3316,11 @@
   },
   "https://x.com/AjayTurbo/status/2114307450006302968": {
     "date": "2026-10-25",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://x.com/Ajomen212/status/2114959233603281165": {
+    "date": "2026-10-27",
     "score": 2,
     "verdict": "rejected"
   },
@@ -3114,6 +3374,11 @@
     "score": 5,
     "verdict": "kept"
   },
+  "https://x.com/andrew_jennings/status/2114767523220750650": {
+    "date": "2026-10-27",
+    "score": 6,
+    "verdict": "kept"
+  },
   "https://x.com/andrew_upai/status/2114300643523592697": {
     "date": "2026-10-25",
     "score": 1,
@@ -3128,6 +3393,11 @@
     "date": "2026-10-25",
     "score": 6,
     "verdict": "kept"
+  },
+  "https://x.com/Anhdii72/status/2114963312375210147": {
+    "date": "2026-10-27",
+    "score": 2,
+    "verdict": "rejected"
   },
   "https://x.com/AniBadam/status/2112401615382782381": {
     "date": "2026-10-20",
@@ -3144,6 +3414,11 @@
     "score": 3,
     "verdict": "rejected"
   },
+  "https://x.com/ankeshshiv/status/2114896365675532549": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://x.com/AnujFulari/status/2111891299460936075": {
     "date": "2026-10-19",
     "score": 0,
@@ -3156,6 +3431,11 @@
   },
   "https://x.com/arclens_app/status/2112078704394293648": {
     "date": "2026-10-20",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://x.com/ArdaOcculta/status/2115042381590298715": {
+    "date": "2026-10-27",
     "score": 1,
     "verdict": "rejected"
   },
@@ -3192,6 +3472,11 @@
   "https://x.com/AshleynCas46131/status/2112605951303757975": {
     "date": "2026-10-21",
     "score": 1,
+    "verdict": "rejected"
+  },
+  "https://x.com/AshleynCas46131/status/2114843024786165977": {
+    "date": "2026-10-27",
+    "score": 2,
     "verdict": "rejected"
   },
   "https://x.com/ashnichrist/status/2112669769077789026": {
@@ -3249,6 +3534,11 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://x.com/AyoWi_2/status/2115023894033666460": {
+    "date": "2026-10-27",
+    "score": 0,
+    "verdict": "rejected"
+  },
   "https://x.com/BartoszFerenc/status/2111470094551339265": {
     "date": "2026-10-18",
     "score": 2,
@@ -3257,6 +3547,11 @@
   "https://x.com/BartoszFerenc/status/2112216305336021115": {
     "date": "2026-10-20",
     "score": 7,
+    "verdict": "kept"
+  },
+  "https://x.com/Beliy_95/status/2115040121170891044": {
+    "date": "2026-10-27",
+    "score": 5,
     "verdict": "kept"
   },
   "https://x.com/Benjamurga_/status/2113065462649016500": {
@@ -3369,6 +3664,11 @@
     "score": 3,
     "verdict": "rejected"
   },
+  "https://x.com/Brodster236_2/status/2115050897160196425": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://x.com/brothers_monroe/status/2114415141957554481": {
     "date": "2026-10-26",
     "score": 1,
@@ -3388,6 +3688,11 @@
     "date": "2026-10-23",
     "score": 5,
     "verdict": "kept"
+  },
+  "https://x.com/calcsam/status/2114773734079025569": {
+    "date": "2026-10-27",
+    "score": 2,
+    "verdict": "rejected"
   },
   "https://x.com/camilitanuttall/status/2111920331598545038": {
     "date": "2026-10-19",
@@ -3429,6 +3734,11 @@
     "score": 3,
     "verdict": "rejected"
   },
+  "https://x.com/Chilka_/status/2114911465798783464": {
+    "date": "2026-10-27",
+    "score": 2,
+    "verdict": "rejected"
+  },
   "https://x.com/chrislakin/status/2113358733548081528": {
     "date": "2026-10-25",
     "score": 1,
@@ -3438,6 +3748,11 @@
     "date": "2026-10-20",
     "score": 5,
     "verdict": "kept"
+  },
+  "https://x.com/ciripa22/status/2114768345555955984": {
+    "date": "2026-10-27",
+    "score": 2,
+    "verdict": "rejected"
   },
   "https://x.com/cisterciansis/status/2111155481905631575": {
     "date": "2026-10-17",
@@ -3458,6 +3773,11 @@
     "date": "2026-10-19",
     "score": 5,
     "verdict": "kept"
+  },
+  "https://x.com/Cmxiaoyang/status/2114960637059269033": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
   },
   "https://x.com/cococool13/status/2112365356773789897": {
     "date": "2026-10-20",
@@ -3579,6 +3899,11 @@
     "score": 5,
     "verdict": "kept"
   },
+  "https://x.com/d4videconte/status/2114907437178278127": {
+    "date": "2026-10-27",
+    "score": 4,
+    "verdict": "rejected"
+  },
   "https://x.com/Dadon__Md/status/2110365881406566598": {
     "date": "2026-10-16",
     "score": 2,
@@ -3603,6 +3928,11 @@
     "date": "2026-10-19",
     "score": 0,
     "verdict": "rejected"
+  },
+  "https://x.com/darkofabijan/status/2115037955480048100": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "kept"
   },
   "https://x.com/DarshanScripts/status/2112371223216943358": {
     "date": "2026-10-20",
@@ -3637,6 +3967,11 @@
   "https://x.com/deepaaiyer/status/2114489362721460234": {
     "date": "2026-10-26",
     "score": 0,
+    "verdict": "rejected"
+  },
+  "https://x.com/DegenShiro/status/2114948373036028396": {
+    "date": "2026-10-27",
+    "score": 2,
     "verdict": "rejected"
   },
   "https://x.com/Denis_skripnik/status/2112922385607200986": {
@@ -3694,6 +4029,11 @@
     "score": 1,
     "verdict": "rejected"
   },
+  "https://x.com/dhruvdang/status/2114764000625922428": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
   "https://x.com/DimssGPT/status/2112155223774855526": {
     "date": "2026-10-19",
     "score": 2,
@@ -3724,6 +4064,11 @@
     "score": 1,
     "verdict": "rejected"
   },
+  "https://x.com/DuckyDoesIt/status/2114720484021477687": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "kept"
+  },
   "https://x.com/DutchyAI/status/2113304680172507196": {
     "date": "2026-10-23",
     "score": 3,
@@ -3742,6 +4087,11 @@
   "https://x.com/dwkim601/status/2110936405576679876": {
     "date": "2026-10-16",
     "score": 3,
+    "verdict": "rejected"
+  },
+  "https://x.com/ecoay/status/2114803010962661880": {
+    "date": "2026-10-27",
+    "score": 2,
     "verdict": "rejected"
   },
   "https://x.com/edinsoncode/status/2110420142509150247": {
@@ -3768,6 +4118,11 @@
     "date": "2026-10-16",
     "score": 0,
     "verdict": "rejected"
+  },
+  "https://x.com/ellfyy_/status/2114712603284955237": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "kept"
   },
   "https://x.com/elrexame/status/2112164833202221276": {
     "date": "2026-10-19",
@@ -3798,6 +4153,11 @@
     "date": "2026-10-17",
     "score": 5,
     "verdict": "kept"
+  },
+  "https://x.com/EntelligenceAI/status/2114993489029329188": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
   },
   "https://x.com/EpiphanyDynamic/status/2113081460642988217": {
     "date": "2026-10-22",
@@ -3904,6 +4264,11 @@
     "score": 1,
     "verdict": "rejected"
   },
+  "https://x.com/Flavynt/status/2114995564249219124": {
+    "date": "2026-10-27",
+    "score": 0,
+    "verdict": "rejected"
+  },
   "https://x.com/FLINTKYA/status/2112645766313627694": {
     "date": "2026-10-21",
     "score": 1,
@@ -3913,6 +4278,11 @@
     "date": "2026-10-21",
     "score": 1,
     "verdict": "duplicate"
+  },
+  "https://x.com/fmkarom_/status/2115036801647931400": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
   },
   "https://x.com/freddiexpott/status/2113347390107521280": {
     "date": "2026-10-23",
@@ -3953,6 +4323,11 @@
     "date": "2026-10-26",
     "score": 3,
     "verdict": "rejected"
+  },
+  "https://x.com/Fynvra/status/2114888812488700367": {
+    "date": "2026-10-27",
+    "score": 7,
+    "verdict": "kept"
   },
   "https://x.com/g_star_richards/status/2110774524123697571": {
     "date": "2026-10-16",
@@ -4179,6 +4554,11 @@
     "score": 3,
     "verdict": "rejected"
   },
+  "https://x.com/iamevgenius1424/status/2114791604338688327": {
+    "date": "2026-10-27",
+    "score": 2,
+    "verdict": "rejected"
+  },
   "https://x.com/igor_fedorko/status/2110799794922770527": {
     "date": "2026-10-16",
     "score": 6,
@@ -4188,6 +4568,16 @@
     "date": "2026-10-26",
     "score": 1,
     "verdict": "rejected"
+  },
+  "https://x.com/iljanevolin/status/2115036090260238527": {
+    "date": "2026-10-27",
+    "score": 4,
+    "verdict": "rejected"
+  },
+  "https://x.com/ImKingGinger/status/2114912115534549247": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "kept"
   },
   "https://x.com/immaginoteca/status/2111467161445072941": {
     "date": "2026-10-18",
@@ -4218,6 +4608,11 @@
     "date": "2026-10-19",
     "score": 7,
     "verdict": "kept"
+  },
+  "https://x.com/ishola_wale20/status/2115014272476414015": {
+    "date": "2026-10-27",
+    "score": 0,
+    "verdict": "rejected"
   },
   "https://x.com/itsjohnapolinar/status/2111104284976652548": {
     "date": "2026-10-17",
@@ -4299,6 +4694,11 @@
     "score": 1,
     "verdict": "rejected"
   },
+  "https://x.com/JenyaNemo/status/2114762095279689868": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://x.com/JJEnglert/status/2112274506253541628": {
     "date": "2026-10-20",
     "score": 6,
@@ -4358,6 +4758,11 @@
     "date": "2026-10-20",
     "score": 2,
     "verdict": "rejected"
+  },
+  "https://x.com/jts_14/status/2114771775997304855": {
+    "date": "2026-10-27",
+    "score": 7,
+    "verdict": "kept"
   },
   "https://x.com/juanse_VA/status/2111534456020599122": {
     "date": "2026-10-18",
@@ -4429,6 +4834,16 @@
     "score": 1,
     "verdict": "rejected"
   },
+  "https://x.com/KKajol15662/status/2114954883686379749": {
+    "date": "2026-10-27",
+    "score": 0,
+    "verdict": "rejected"
+  },
+  "https://x.com/Klay354/status/2114994396361851307": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
   "https://x.com/KNash56325/status/2111886601521410258": {
     "date": "2026-10-19",
     "score": 1,
@@ -4449,6 +4864,11 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://x.com/krs1k/status/2114787495409766522": {
+    "date": "2026-10-27",
+    "score": 3,
+    "verdict": "rejected"
+  },
   "https://x.com/kukulobo/status/2111924170577920239": {
     "date": "2026-10-19",
     "score": 5,
@@ -4456,6 +4876,11 @@
   },
   "https://x.com/kxnakr/status/2110863222773522802": {
     "date": "2026-10-16",
+    "score": 3,
+    "verdict": "rejected"
+  },
+  "https://x.com/lambdascript/status/2114931861642514877": {
+    "date": "2026-10-27",
     "score": 3,
     "verdict": "rejected"
   },
@@ -4534,6 +4959,11 @@
     "score": 3,
     "verdict": "rejected"
   },
+  "https://x.com/liorpesoa/status/2114769160047600050": {
+    "date": "2026-10-27",
+    "score": 2,
+    "verdict": "rejected"
+  },
   "https://x.com/long/status/2113287235026182538": {
     "date": "2026-10-23",
     "score": 0,
@@ -4604,6 +5034,11 @@
     "score": 0,
     "verdict": "rejected"
   },
+  "https://x.com/MaanasSathaye/status/2114720498105954689": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
   "https://x.com/MadronaVentures/status/2113639173701710251": {
     "date": "2026-10-24",
     "score": 1,
@@ -4622,6 +5057,11 @@
   "https://x.com/makosamunyaa/status/2113243148876951978": {
     "date": "2026-10-23",
     "score": 2,
+    "verdict": "rejected"
+  },
+  "https://x.com/mansa_22/status/2114967078700822901": {
+    "date": "2026-10-27",
+    "score": 1,
     "verdict": "rejected"
   },
   "https://x.com/MarediaShehzan/status/2112247877519241314": {
@@ -4764,6 +5204,11 @@
     "score": 5.5,
     "verdict": "kept"
   },
+  "https://x.com/miltonheyan/status/2115024193960251780": {
+    "date": "2026-10-27",
+    "score": 4,
+    "verdict": "rejected"
+  },
   "https://x.com/MindScaleAI/status/2111317428416446758": {
     "date": "2026-10-17",
     "score": 0,
@@ -4787,6 +5232,11 @@
   "https://x.com/mnotpedo/status/2113845904063201309": {
     "date": "2026-10-24",
     "score": 3,
+    "verdict": "rejected"
+  },
+  "https://x.com/momo_onchain/status/2114972185341338023": {
+    "date": "2026-10-27",
+    "score": 1,
     "verdict": "rejected"
   },
   "https://x.com/MoreFireballs/status/2114465946362663304": {
@@ -4826,6 +5276,16 @@
   },
   "https://x.com/msfbeast007/status/2111352245099061368": {
     "date": "2026-10-17",
+    "score": 2,
+    "verdict": "rejected"
+  },
+  "https://x.com/murifwifa30/status/2114969368128090500": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://x.com/murrtlen/status/2114758845817815310": {
+    "date": "2026-10-27",
     "score": 2,
     "verdict": "rejected"
   },
@@ -4887,6 +5347,11 @@
   "https://x.com/newonpolsia/status/2111019543976194376": {
     "date": "2026-10-16",
     "score": 2,
+    "verdict": "rejected"
+  },
+  "https://x.com/niarum10/status/2114760715978596497": {
+    "date": "2026-10-27",
+    "score": 0,
     "verdict": "rejected"
   },
   "https://x.com/niklas11891/status/2112107952807252435": {
@@ -4994,6 +5459,11 @@
     "score": 3,
     "verdict": "rejected"
   },
+  "https://x.com/Okh1744672/status/2114915842744046043": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
   "https://x.com/OlegFlowcraft/status/2113199258652299623": {
     "date": "2026-10-22",
     "score": 1,
@@ -5022,6 +5492,11 @@
   "https://x.com/Otterly_J/status/2111427017669300316": {
     "date": "2026-10-18",
     "score": 2,
+    "verdict": "rejected"
+  },
+  "https://x.com/OXFI0/status/2114971325081292932": {
+    "date": "2026-10-27",
+    "score": 1,
     "verdict": "rejected"
   },
   "https://x.com/Oyiza_xx/status/2111911045090758962": {
@@ -5289,10 +5764,20 @@
     "score": 1,
     "verdict": "rejected"
   },
+  "https://x.com/rosewestern205/status/2114948466007052509": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
+  },
   "https://x.com/RosuGrigore/status/2113009285709889551": {
     "date": "2026-10-22",
     "score": 5,
     "verdict": "kept"
+  },
+  "https://x.com/routray_pradosh/status/2115027755276685708": {
+    "date": "2026-10-27",
+    "score": 1,
+    "verdict": "rejected"
   },
   "https://x.com/rpsantos80/status/2114527393868124301": {
     "date": "2026-10-26",
@@ -5432,6 +5917,11 @@
   "https://x.com/sedrikstels/status/2111927977466347931": {
     "date": "2026-10-19",
     "score": 2,
+    "verdict": "rejected"
+  },
+  "https://x.com/seeviet7/status/2114946007112818760": {
+    "date": "2026-10-27",
+    "score": 1,
     "verdict": "rejected"
   },
   "https://x.com/SemsTurgut/status/2113628142481150273": {
@@ -5584,6 +6074,11 @@
     "score": 1,
     "verdict": "rejected"
   },
+  "https://x.com/sohail_beates/status/2115005583019389140": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "kept"
+  },
   "https://x.com/soorajchandran_/status/2113468815426433037": {
     "date": "2026-10-24",
     "score": 0,
@@ -5598,6 +6093,11 @@
     "date": "2026-10-18",
     "score": 3,
     "verdict": "rejected"
+  },
+  "https://x.com/speedsharma_ai/status/2114748995947917668": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "duplicate"
   },
   "https://x.com/SpikeCalls/status/2112305979098362213": {
     "date": "2026-10-20",
@@ -5692,6 +6192,11 @@
   "https://x.com/stretchcloud/status/2114596133922086945": {
     "date": "2026-10-26",
     "score": 3,
+    "verdict": "rejected"
+  },
+  "https://x.com/stretchcloud/status/2114918005029085223": {
+    "date": "2026-10-27",
+    "score": 2,
     "verdict": "rejected"
   },
   "https://x.com/suecostello/status/2113969016809136500": {
@@ -5874,6 +6379,11 @@
     "score": 2,
     "verdict": "rejected"
   },
+  "https://x.com/thenikacode/status/2114726308735533464": {
+    "date": "2026-10-27",
+    "score": 4,
+    "verdict": "rejected"
+  },
   "https://x.com/theonlyhaitham/status/2110377623540949077": {
     "date": "2026-10-16",
     "score": 6,
@@ -5918,6 +6428,11 @@
     "date": "2026-10-16",
     "score": 1,
     "verdict": "rejected"
+  },
+  "https://x.com/timgrassin/status/2114945192667341039": {
+    "date": "2026-10-27",
+    "score": 5,
+    "verdict": "kept"
   },
   "https://x.com/tlberglund/status/2112920382948679974": {
     "date": "2026-10-22",
@@ -6181,6 +6696,11 @@
   },
   "https://x.com/XinXu120039/status/2110943656039588117": {
     "date": "2026-10-16",
+    "score": 1,
+    "verdict": "rejected"
+  },
+  "https://x.com/xleeking/status/2114974879443259471": {
+    "date": "2026-10-27",
     "score": 1,
     "verdict": "rejected"
   },

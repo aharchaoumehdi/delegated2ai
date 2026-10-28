@@ -1,0 +1,43 @@
+{
+  "id": "test-how-an-agent-s-hidden-choices-sway-a-business-memo",
+  "title": "Test how an agent's hidden choices sway a business memo",
+  "summary": "Kim Olsen had Claude Code build a test where an agent analyzed 805 sales deals and wrote 80 memos; the 16 possible readings ranged from -0.1 to +7.1 points.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": "Claude Sonnet 5.5",
+  "tools": [
+    "Claude Code",
+    "GitHub Actions",
+    "Python scripts",
+    "Claude API"
+  ],
+  "agent_role": "Claude Code built the data generator and test scripts; a Claude agent then used three tools to look at the data, compute results and submit a memo stating which analysis choices it made. The author designed the experiment and conditions.",
+  "outcome": "The author reports the 16 possible readings of the same sales pilot ranged from -0.1 to +7.1 points, with 10 clearing leadership's bar and 6 not.",
+  "what_they_did": "Kim Olsen invented a Danish software company with a sales pilot and 805 closed deals. Claude Code built the data and scripts. An agent was asked, as if by the sales director, whether the pilot worked. It had tools to view the data, compute exact results and submit a structured memo. Runs varied: no assigned lean, a coin-flipped lean, or a lean plus a short skill.",
+  "how_it_went": "The author says four honest analysis choices produced 16 readings, from -0.1 to +7.1 points. The reading Claude picked most often gave +6.9 points, while counting every closed deal gave +0.2.",
+  "worth_knowing": "The person reading the memo only sees the reading the agent chose. Forcing the memo to declare its choices as fixed fields made scoring cheap and showed which choices decided the verdict.",
+  "prompt": "Look at [your data file] and answer this question: [your decision question, with the threshold that counts as success]. Before writing anything, list every reasonable analysis choice between the raw data and the answer, with the options for each. Compute the result for every combination of choices and show me a table of all of them, noting which clear the threshold. Then draft a short memo of at most 250 words that states which choices it relies on and why, and flags any choice that flips the verdict. Wait for my feedback before finalizing.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "data analysis",
+    "decision memos",
+    "agent testing",
+    "sales"
+  ],
+  "source": {
+    "url": "https://dev.to/kimolsen/building-a-coin-flip-test-for-ai-agents-16-readings-3-conditions-80-claude-memos-2f7a",
+    "name": "DEV Community",
+    "author": "Kim Olsen",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, reproducible experiment where Claude Code built a test and a tool-using agent wrote decision memos from sales data, showing how hidden analysis choices swing the verdict. The source excerpt cuts off before the full memo results, so evidence is partial."
+  }
+}

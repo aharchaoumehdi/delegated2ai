@@ -1,0 +1,43 @@
+{
+  "id": "schedule-your-repeated-marketing-data-checks-for-an-agent",
+  "title": "Schedule your repeated marketing data checks for an agent",
+  "summary": "Trackingplan's CEO says users asked its AI debugger to handle over 80% of tracking alerts, and scheduled agent checks ended up doing an analyst's routine work.",
+  "domain": "Marketing",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "nao analytics agent",
+    "web browser",
+    "Google Analytics 4",
+    "tag manager"
+  ],
+  "agent_role": "The agent investigated tracking alerts, reproduced broken pages in a browser and ran scheduled checks like release audits. People set priorities, reviewed findings and decided fixes.",
+  "outcome": "The CEO reports users asked the AI debugger to handle more than 80% of alerts and said it saved them several hours a week.",
+  "what_they_did": "Trackingplan's team built a copilot for marketing analysts on nao, an open-source analytics agent, linked to their tracking data. Everyone in the company used it daily. They noticed they kept typing the same checks, so they put those prompts on a schedule or triggered them when a new release appeared.",
+  "how_it_went": "The CEO says the debugger found a changed currency code that broke one market's revenue in Google Analytics, and the customer fixed it within hours. Scheduled checks ended up doing much of an analyst's routine job.",
+  "worth_knowing": "The same question could get two different answers. They say a precise description of each table and metric, plain code for fixed rules, and tests fixed it, not a better model.",
+  "prompt": "Every weekday morning, check [your analytics tool] for problems from yesterday's site release: missing events, broken checkout tracking, or revenue that doesn't match [your backend sales report]. Use these definitions: [conversion definition], [date range rules], [which accounts may be summed]. For each issue, say what broke, where, the likely cause and a suggested fix. Show me a short report and don't change any settings without my approval.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "marketing analytics",
+    "data quality",
+    "scheduled checks",
+    "tracking audit"
+  ],
+  "source": {
+    "url": "https://www.trackingplan.com/blog/from-saas-to-agents",
+    "name": "Hacker News",
+    "author": "Josele Pérez",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A founder's account of scheduling repeated analytics checks for an agent and using it to debug tracking alerts; real use with one concrete example, but largely a company product story."
+  }
+}

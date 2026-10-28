@@ -1,0 +1,40 @@
+{
+  "id": "build-your-own-phone-app-instead-of-paying-a-subscription",
+  "title": "Build your own phone app instead of paying a subscription",
+  "summary": "A developer had Claude Code build his own iPhone app to replace one charging about 10 euros a month, reusing skills and past apps in his work folder.",
+  "domain": "Daily life",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code skills",
+    "past app projects"
+  ],
+  "agent_role": "Claude Code built the app, drawing on saved skills and earlier iPhone apps in the developer's work folder. The developer chose the app to replace and set up that folder.",
+  "outcome": "Author shows the resulting app in a video.",
+  "what_they_did": "A developer didn't want to pay about 10 euros a month for a simple phone app. He had Claude Code build his own version. His work folder already held saved skills and many iPhone apps he had built before. He says Claude Code knew where to look, so it didn't start from zero.",
+  "how_it_went": "He shares a video of the finished app but gives no other results.",
+  "worth_knowing": "His tip is to keep past projects and saved instructions in one work folder. That way the agent can reuse them for the next app.",
+  "prompt": "I want to replace [app name], which costs [price] a month, with my own iPhone app. List the features I actually use: [features]. Look through [my projects folder] for earlier apps and code we can reuse. Propose a plan and a simple screen layout first, and wait for my approval. Then build it and tell me how to run it on my phone.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "iphone app",
+    "subscription savings",
+    "personal software"
+  ],
+  "source": {
+    "url": "https://x.com/Pep_Secanell/status/2115338249086394714",
+    "name": "X",
+    "author": "@Pep_Secanell",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine case of replacing a paid app with one Claude Code built, reusing earlier projects and saved skills. It is thin on detail, with only a video as evidence."
+  }
+}

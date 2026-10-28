@@ -1,0 +1,41 @@
+{
+  "id": "pick-your-next-skill-from-what-local-job-ads-ask-for",
+  "title": "Pick your next skill from what local job ads ask for",
+  "summary": "Kevin Hall had Claude Code count 1,730 LinkedIn backend job ads across five countries; a session then told a Berlin Java developer what to learn next in 11 minutes.",
+  "domain": "Education",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Apify connector",
+    "LinkedIn Jobs Database API"
+  ],
+  "agent_role": "Claude Code ran free preview searches over LinkedIn job ads, counted employers naming each technology, and recommended one skill. The author wrote the prompt and chose the search settings.",
+  "outcome": "Author reports AWS and Kubernetes appear far more often than Go or Rust, and Claude Code answered the what-to-learn question in eleven minutes.",
+  "what_they_did": "Kevin Hall connected Claude Code to Apify's job-ad search tool. He searched open LinkedIn backend job ads in five countries for about three dozen technologies, using free count-only previews. He then gave a fresh session a word-for-word request from a Java developer in Berlin to pick one skill to learn in three months.",
+  "how_it_went": "He reports cloud skills lead: AWS is named by 53% of employers in the UK and India, and Kubernetes by 32–37% everywhere. Go and Rust sit far lower. The Berlin session finished with its own counts in eleven minutes.",
+  "worth_knowing": "Count employers, not job ads. One travel company posted 100 of 419 US ads, which made Scala look like 27% instead of 5%. A mention in an ad is also not a hard requirement.",
+  "prompt": "I'm a [your role] in [your city] with experience in [your current skills]. I can learn one thing properly in the next [time frame]. Using a job-ad search tool, count active [job title] postings in [country] from the last 30 days, leaving out agencies and job boards. Count how many mention each of my current skills, then pick six to eight candidate skills and count those too. For the two strongest, count ads mentioning my main skill and the candidate together. Count employers, not ads. Use only free previews; ask me before anything that costs money. Recommend one skill with the numbers behind it.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "job market",
+    "career planning",
+    "skill research",
+    "data analysis"
+  ],
+  "source": {
+    "url": "https://dev.to/kevinhall/backend-skills-employers-ask-for-aws-and-kubernetes-beat-go-and-rust-4gk9",
+    "name": "DEV Community",
+    "author": "Kevin Hall",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Claude Code with a job-data connector counted real backend job ads in five countries and picked a next skill for one developer in 11 minutes. Specific setup, exact prompt and numbers; a useful non-coding career use."
+  }
+}

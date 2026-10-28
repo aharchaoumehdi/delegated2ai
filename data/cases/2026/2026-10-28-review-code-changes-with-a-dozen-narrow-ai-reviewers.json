@@ -1,0 +1,41 @@
+{
+  "id": "review-code-changes-with-a-dozen-narrow-ai-reviewers",
+  "title": "Review code changes with a dozen narrow AI reviewers",
+  "summary": "QuickReview's makers say splitting each code change across many narrow reviewer agents caught 97% of serious defects on 185 real changes, at about $2 per review.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": "GPT-6.1 Sol",
+  "tools": [
+    "GitHub",
+    "GitHub App webhooks"
+  ],
+  "agent_role": "Many read-only reviewer agents each look for one kind of problem, a checker agent re-verifies findings, and one review is posted. Plain code decides which reviewers run; humans act on the review.",
+  "outcome": "Authors report 97% of high-severity, 93% of medium and 84% of low-severity defects found on 185 real changes, versus 90%, 82% and 52% for the best other reviewer.",
+  "what_they_did": "The QuickReview team built a self-hosted reviewer for GitHub code changes. Each change goes to about a dozen narrow reviewer agents that cannot see each other. Duplicates are merged and a skeptical checker re-reads the code before one review is posted. It has run on a busy commercial project since mid-August.",
+  "how_it_went": "On 185 real changes with 520 verified defects, they report it found more than six other reviewers, including Claude Code's and Codex's own reviewers on the same models.",
+  "worth_knowing": "It costs about $2 and 17.5 minutes per review versus $0.07–0.53 for others, and posts about 6.9 comments per change, 42% true but minor. It ships in dry-run mode so it posts nothing at first.",
+  "prompt": "Review the changes in [pull request link] as several separate passes, each looking for only one kind of problem: bugs in normal use, security, data safety, backward compatibility, concurrency, missing tests and mismatch with the description. Merge findings with the same root cause, then re-check each finding against the code and drop any you can't confirm. Rate each as high, medium or low. Show me the draft review and wait for my approval before posting anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "code review",
+    "defect finding",
+    "multi-agent",
+    "benchmarks"
+  ],
+  "source": {
+    "url": "https://github.com/quickchatai/quickreview",
+    "name": "Hacker News",
+    "author": "piotrgrudzien",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Open-source code reviewer that splits each change across a dozen narrow review agents; run on a busy commercial repo since August with detailed benchmarks. Solid evidence, but mostly a tool description."
+  }
+}

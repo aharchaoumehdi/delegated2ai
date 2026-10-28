@@ -1,0 +1,45 @@
+{
+  "id": "keep-your-company-docs-current-for-your-coding-agent",
+  "title": "Keep your company docs current for your coding agent",
+  "summary": "Dan Rosenthal's team keeps company knowledge in one repo Claude Code reads; scheduled syncs, human corrections and Claude agents proposing fixes keep it current, with 20+ contributors.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "GitHub",
+    "n8n",
+    "Pinecone",
+    "Supabase",
+    "Slack",
+    "Instantly.ai"
+  ],
+  "agent_role": "Claude agents periodically check the repos for inaccuracies against the team's standard procedures and propose changes; n8n syncs data in on a schedule. A teammate reviews every change before it merges.",
+  "outcome": "Author reports 20+ non-engineer team members have contributed and says skills improve 3-5x over a few months.",
+  "what_they_did": "Dan Rosenthal's team keeps everything it knows in one GitHub repo that Claude Code reads each session. n8n pulls in campaign metrics, Slack data and call transcripts on a schedule. Past posts and campaign results are stored in searchable databases. Human corrections become notes, and Claude agents propose fixes that a teammate reviews.",
+  "how_it_went": "The author says over 20 team members, none traditional engineers, have contributed by writing text files and proposing changes. They report skills get 3-5x better than their first version over a few months.",
+  "worth_knowing": "The author calls the review step crucial: every change goes through a teammate's review before it applies across the whole company.",
+  "prompt": "Look through the company knowledge folder in [repo URL] and compare it against our standard procedures in [procedures folder]. Also read the latest synced data in [data folder], such as call notes and campaign results. List any facts that look outdated, contradictory or missing. For each, propose an exact edit and explain why. Put the edits on a new branch and draft a change request for a teammate to review, but do not merge anything.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "knowledge base",
+    "documentation",
+    "workflow automation",
+    "team process"
+  ],
+  "source": {
+    "url": "https://x.com/dan__rosenthal/status/2115081176247370167",
+    "name": "X",
+    "author": "@dan__rosenthal",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Concrete, reusable setup for keeping a company knowledge repo current with scheduled syncs, agent monitoring and reviewed changes; author's account only, but specific tools and steps."
+  }
+}

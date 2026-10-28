@@ -1,0 +1,41 @@
+{
+  "id": "put-a-game-console-emulator-on-your-conference-badge",
+  "title": "Put a game console emulator on your conference badge",
+  "summary": "Steve Francia worked with Gemini to run NES, Game Boy and Game Boy Color emulators on a GitHub Universe badge; Simon Willison shows Zelda running on it.",
+  "domain": "Software",
+  "platform": "Gemini",
+  "model": null,
+  "tools": [
+    "conference badge hardware",
+    "game emulators"
+  ],
+  "agent_role": "Gemini helped Steve Francia get a full NES emulator working on the badge, then Game Boy and Game Boy Color emulators. The source gives no detail on how the work was split between him and the AI.",
+  "outcome": "Simon Willison reports and photographs The Legend of Zelda: Link's Awakening running in full color on the badge.",
+  "what_they_did": "Steve Francia worked with Gemini to get a full NES emulator running on the GitHub Universe conference badge, a small computer with a color screen. He then added emulators for the Game Boy and Game Boy Color. Simon Willison wrote up the result after meeting him at the conference.",
+  "how_it_went": "Simon Willison says you can run Zelda: Link's Awakening on the badge if you have the game file. He shared a photo of it working in color.",
+  "worth_knowing": "You need to supply your own game file. Turning the badge upside down lets you use touch buttons on the badge body as game controls.",
+  "prompt": "Help me get a [console] emulator running on my [device, e.g. conference badge or small board]. First look up the device's specs, screen and input options. Propose a plan: which open-source emulator to adapt, what to change for this screen and buttons, and how to load it onto the device. Show me the plan and wait for my approval before flashing or overwriting anything on the device. Then write the code step by step, explain how to test each step, and help me fix errors as they come up.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "hardware hacking",
+    "emulator",
+    "retro games",
+    "conference badge"
+  ],
+  "source": {
+    "url": "https://simonwillison.net/2026/Oct/27/game-boy-color-on-my-conference-badge/",
+    "name": "Simon Willison's Weblog",
+    "author": "Steve Francia",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A fun hardware result with a photo, but it's a short secondhand note by Simon Willison about Steve Francia's work, and the AI's role is only described as 'worked with Gemini'. Thin, so it is scored at the low end."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "let-claude-code-use-your-mac-s-mouse-and-keyboard",
+  "title": "Let Claude Code use your Mac's mouse and keyboard",
+  "summary": "A developer built desk, a tool that lets Claude Code click and type on a Mac. He reports it tidied 20 windows and filled in an internship application, stopping before Submit.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "Jev (TypeSafe)",
+  "tools": [
+    "desk command-line tool",
+    "macOS accessibility",
+    "screenshots",
+    "pyautogui"
+  ],
+  "agent_role": "Claude Code writes a step-by-step plan, and a small fast model looks at the screen and does the clicking and typing. It stops before sending, submitting, deleting or paying, and leaves those steps to a person.",
+  "outcome": "Author reports 47 of 48 buttons found correctly from screenshots, about 1.2 seconds per click, and an internship application filled in up to the Submit button.",
+  "what_they_did": "A developer built desk, an open-source tool that gives Claude Code eyes and hands on a Mac. Claude writes a plan in plain English. A small, fast model then reads the screen and moves the real mouse. He used it to tidy 20 Safari windows into a grid. He also used it to fill in a real internship application, including a job search and three file uploads.",
+  "how_it_went": "He reports it found 47 of 48 test buttons from screenshots and took about 1.2 seconds per click. He says it stopped before Submit on the application, as designed.",
+  "worth_knowing": "It works only on Macs and is set up for the author's own machine, so expect to adjust it. The small model loses track of step order, so Claude has to supply the plan.",
+  "prompt": "Help me tidy my Mac desktop using a tool that controls the mouse and keyboard. First, list every open window in [app name]. Propose a grid layout for them on my screen and show me the plan. After I approve, move each window into place one at a time. Stop right away if I move the mouse. Never click anything that sends, submits, deletes or pays for something without asking me first.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "computer use",
+    "desktop automation",
+    "form filling",
+    "mac"
+  ],
+  "source": {
+    "url": "https://x.com/zacfinkelstein/status/2115218562256376312",
+    "name": "X",
+    "author": "@zacfinkelstein",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Open-source code with measured accuracy and two concrete runs: tidying 20 windows and filling in a real internship application. It builds in safety stops before risky clicks."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "run-a-smarter-job-search-with-your-coding-agent",
+  "title": "Run a smarter job search with your coding agent",
+  "summary": "Kevin Hall used Claude Code with a LinkedIn jobs database to size the backend job market; he reports about half of US postings were duplicates of the same role.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Apify",
+    "LinkedIn jobs database",
+    "Claude Code"
+  ],
+  "agent_role": "Claude Code ran searches over the job postings database from plain-English requests and read posting texts to judge fit. The author typed some searches himself and chose the persona and filters.",
+  "outcome": "Author reports 2,244 US backend postings collapsed to 1,126 distinct roles after removing copies, and 34 UK roles matched a Python stack.",
+  "what_they_did": "Kevin Hall connected Claude Code to a LinkedIn job postings database through a data service called Apify. Using a sample London backend developer, he counted postings by country and removed duplicate listings. He then filtered by the tech stack named in the posting text and looked for fresh posts with few applicants. Claude Code ran some steps itself from plain requests.",
+  "how_it_went": "He reports half of US backend postings were repeats of the same role in different cities. In the UK, 99 of 295 postings had under 25 applicants, and most of the newest ones did.",
+  "worth_knowing": "The author appears to build the data tools he uses, so treat it partly as a showcase. He also warns that some 'employers' are still recruiting firms, so read the titles.",
+  "prompt": "Help me run a focused job search for a [job title] role in [country], using my job postings data source. First count postings from the last 30 days. Then remove duplicates by keeping one posting per employer and title. Filter for postings whose text mentions [my main skills], exclude recruiting agencies, and prefer posts from the last few days with fewer than 25 applicants. Show me a shortlist of up to 20 roles with why each fits. Draft a short note for the top five, but do not send anything until I approve.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "job search",
+    "career",
+    "data analysis",
+    "duplicate removal"
+  ],
+  "source": {
+    "url": "https://dev.to/kevinhall/job-search-in-claude-code-half-of-us-backend-postings-were-copies-1f9j",
+    "name": "DEV Community",
+    "author": "Kevin Hall",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, numbers-backed job search run from Claude Code over a job postings database, with a useful non-coding angle. It leans on the author's own data tools, so it is partly promotional."
+  }
+}

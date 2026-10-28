@@ -1,0 +1,44 @@
+{
+  "id": "have-your-coding-agent-work-from-reviewed-written-specs",
+  "title": "Have your coding agent work from reviewed written specs",
+  "summary": "A developer built his open-source Agent Smith project with a spec-first agent workflow; he reports over 1,300 specs done and about 500,000 lines of code.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "git worktrees",
+    "commit check gate",
+    "pull requests",
+    "Codex",
+    "Cursor"
+  ],
+  "agent_role": "Agents write a spec, a fresh agent reviews it against the code, then agents build, test and open a pull request. The human approves specs and merges.",
+  "outcome": "Author reports 1,300+ specs completed, 1,190+ decision files and 650+ specs passed through the commit gate on Agent Smith.",
+  "what_they_did": "A developer wrote a plugin where every change starts as a written plan, or spec. A fresh agent checks each plan against the real code. Then the agent builds it on its own branch, runs checks before committing, and opens a pull request. He built his Agent Smith project this way.",
+  "how_it_went": "He reports over 1,300 specs done and about 500,000 lines of code since early 2026. Each spec leaves a file explaining choices made.",
+  "worth_knowing": "A commit is blocked if any check fails, and the failure output goes back to the agent to fix.",
+  "prompt": "Before writing any code for [feature], write a short plan file: the goal, the steps, facts from the code with file and line, and what done means. Then review the plan as a fresh reader and list anything wrong or missing. Show me the plan and review and wait for my approval. After I approve, build it on its own branch, run [test command], log non-obvious choices and why, and show me the result before opening a pull request.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "specs",
+    "code review",
+    "workflow",
+    "parallel agents"
+  ],
+  "source": {
+    "url": "https://spec-first.dev/",
+    "name": "Hacker News",
+    "author": "hleichsenring",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Open plugin with a clear workflow and counts from a real project built with it, though the post is largely a feature tour of the author's own tool."
+  }
+}

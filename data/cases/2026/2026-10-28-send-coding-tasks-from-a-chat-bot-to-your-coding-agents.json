@@ -1,0 +1,42 @@
+{
+  "id": "send-coding-tasks-from-a-chat-bot-to-your-coding-agents",
+  "title": "Send coding tasks from a chat bot to your coding agents",
+  "summary": "A developer says he routes coding tasks from a Grok bot to Claude Code and Codex through Conductor, saving thousands of Grok credits over several weeks.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Grok bot",
+    "Conductor",
+    "Claude Code",
+    "Codex"
+  ],
+  "agent_role": "A chat bot receives coding requests and hands them to Claude Code and Codex running in Conductor's cloud. The human set up the connection and delegates the tasks.",
+  "outcome": "Author reports it saved him thousands of credits on Grok.",
+  "what_they_did": "The poster got a Conductor cloud plan and turned off Grok's built-in coding feature in settings. He made a bot connected to Conductor through a connector. He now sends all coding tasks to that bot, which runs them on his own Claude Code and Codex subscriptions.",
+  "how_it_went": "He says he has used it for weeks and it saved him thousands of credits on Grok.",
+  "worth_knowing": "It relies on paid plans for Conductor, Claude Code and Codex, so the savings depend on what you already pay for.",
+  "prompt": "Set up a workflow where coding requests I send you are passed to my coding agents at [coding service] instead of being done here. Connect to [coding service] using my account, then for each request: write a clear task, send it to the right agent, and report back with a summary of changes. Show me each task before sending it, and never merge or deploy without my approval.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "task delegation",
+    "coding agents",
+    "cost saving"
+  ],
+  "source": {
+    "url": "https://x.com/_StanGirard/status/2115402984054026659",
+    "name": "X",
+    "author": "@_StanGirard",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, step-by-step setup for handing coding work from a chat bot to existing coding agent subscriptions. It is thin, with only a vague savings claim."
+  }
+}

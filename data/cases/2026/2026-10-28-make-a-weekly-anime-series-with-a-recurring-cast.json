@@ -1,0 +1,43 @@
+{
+  "id": "make-a-weekly-anime-series-with-a-recurring-cast",
+  "title": "Make a weekly anime series with a recurring cast",
+  "summary": "Mayzmei packed their workflow into an agent skill that scripts, generates, checks and edits anime episodes; they say it made 40 episodes in two weeks, topping 651K views.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Renoise video generation",
+    "ffmpeg",
+    "Python scripts",
+    "Instagram"
+  ],
+  "agent_role": "The agent pitches story ideas, writes shot-by-shot scripts, checks prompts, quotes credit costs, generates and reviews clips, edits the episode, and makes a cover and caption. The human supplies character sheets and a story line, approves spending, and checks the first clip.",
+  "outcome": "Author reports making 40 anime episodes in two weeks with one cast; top episodes got 651K, 546K and 346K views.",
+  "what_they_did": "Mayzmei built a skill for Claude Code or Codex that turns two character sheets and one story line into a finished anime episode. A series file keeps the cast, style and voices consistent. The agent pitches three ideas, scripts short clips shot by shot, and quotes the cost. It waits for a yes, then generates clips through the Renoise video service. It checks each clip, joins them with ffmpeg, and makes an Instagram cover and caption.",
+  "how_it_went": "The author says they made 40 episodes for Instagram in two weeks with one fixed cast. Their top episodes reached 651K, 546K and 346K views.",
+  "worth_knowing": "Generation uses your own paid Renoise credits, so the skill always quotes the cost first. The author advises using original characters you have rights to and labeling AI content.",
+  "prompt": "Make an anime series using these two character sheets: [character sheet 1] and [character sheet 2]. [Character 1] is [personality]; [character 2] is [personality]. Use [language] voices and a [art style] style. First save the cast, style and voices so every episode stays consistent. Then pitch three episode ideas and recommend one. Write a shot-by-shot script in clips of 15 seconds or less. Before generating anything, show me the script and the total credit cost, and wait for my yes. Generate the first clip for me to check before doing the rest. Then review every clip against the sheets, join them into one vertical video, and draft a cover and caption for [platform].",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "anime",
+    "video generation",
+    "social media",
+    "storytelling"
+  ],
+  "source": {
+    "url": "https://github.com/Mayzmei/anime-series-maker",
+    "name": "GitHub",
+    "author": "Mayzmei",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, reusable workflow with code where the agent pitches, scripts, checks costs, generates, reviews and edits anime episodes. The author reports real view numbers. A strong creative, non-coding use with clear human approval points."
+  }
+}

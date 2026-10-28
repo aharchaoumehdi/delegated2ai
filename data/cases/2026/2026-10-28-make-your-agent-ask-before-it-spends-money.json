@@ -1,0 +1,43 @@
+{
+  "id": "make-your-agent-ask-before-it-spends-money",
+  "title": "Make your agent ask before it spends money",
+  "summary": "Esra Kadah built a dispatch assistant for a made-up repair company that books technicians on its own but pauses for approval before ordering paid parts.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Genkit",
+    "Flutter app",
+    "Cloud Run",
+    "work order connector"
+  ],
+  "agent_role": "The agent answers dispatcher questions, looks up work orders and schedules technician visits by itself. When it wants to order a part, it stops and a person taps Approve or Decline.",
+  "outcome": "The author reports the approval flow works in the demo after she found and filed a fix for a bug in the Genkit Dart library.",
+  "what_they_did": "Esra Kadah built a dispatch assistant for an invented field service company, all in the Dart language. A dispatcher types requests like checking a work order or ordering a heating element. The agent can look up and book visits freely. Ordering a part costs money, so it waits for a person's approval in a phone or web app.",
+  "how_it_went": "She says lookups and bookings worked, but approving an order first failed with a 'tool not found' error. She traced it to a library bug, filed it upstream with a fix, and used a small workaround until it ships.",
+  "worth_knowing": "Pending approvals are kept in memory, which suits a one-server demo; a restart forgets them, so real use needs a database. Each approval can only be used once, so a double tap cannot order twice.",
+  "prompt": "Help me set up an assistant for [your business] that handles requests about [your work orders or bookings]. It may look things up and schedule appointments on its own. Before any action that costs money, such as ordering parts or paying a supplier, it must stop, show me exactly what it wants to do and the cost, and wait for me to approve or decline. If I decline, it should do nothing and tell me so. Show me your plan for the tools and approval step before building anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "human approval",
+    "field service",
+    "dispatch",
+    "spending controls"
+  ],
+  "source": {
+    "url": "https://dev.to/gde/human-in-the-loop-agents-in-pure-dart-genkit-mcp-and-an-approval-gate-on-cloud-run-4gmc",
+    "name": "DEV Community",
+    "author": "Esra Kadah",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working demo of a dispatch assistant that looks up work orders, books visits and asks a human before ordering parts, with code and a real upstream bug fix. It is a made-up company and mostly a developer tutorial, so it is thin as a real-world use."
+  }
+}

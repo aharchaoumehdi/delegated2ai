@@ -1,0 +1,40 @@
+{
+  "id": "set-up-and-check-an-airflow-simulation-with-an-agent",
+  "title": "Set up and check an airflow simulation with an agent",
+  "summary": "Navier's engineering agent set up, ran and checked a high-speed airflow simulation of a grid fin; the team reports the shock angle landed within 0.04° of theory.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "OpenFOAM"
+  ],
+  "agent_role": "The agent set up the simulation, ran it and validated the results; the team chose the test case.",
+  "outcome": "Navier reports the shock angle came within 0.04° of textbook oblique-shock theory.",
+  "what_they_did": "The Navier team gave its engineering agent, in their Prism product, a grid fin test case. Grid fins are lattice-shaped control surfaces used on rockets. The agent set up a high-speed airflow simulation in OpenFOAM, a free simulation tool, then ran and checked it.",
+  "how_it_went": "The team says the predicted shock angle landed within 0.04° of the value from standard theory. They say the agent keeps holding up as they test more kinds of physics.",
+  "worth_knowing": "This comes from the company that makes the agent, with no files or details shared.",
+  "prompt": "Set up an OpenFOAM simulation of [describe shape] in high-speed airflow at [speed or Mach number]. Show me your plan first: mesh, solver, boundary conditions and run time. After I approve, run it, then compare a key result such as [shock angle] against the textbook theory value and report the difference.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "fluid simulation",
+    "engineering",
+    "validation",
+    "aerospace"
+  ],
+  "source": {
+    "url": "https://x.com/NavierAI/status/2115259252059328996",
+    "name": "X",
+    "author": "@NavierAI",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Genuine engineering agent that set up, ran and checked a fluid simulation with a concrete accuracy number, but very thin and promotional for the company's own product."
+  }
+}

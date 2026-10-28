@@ -1,0 +1,43 @@
+{
+  "id": "resume-your-coding-agent-sessions-on-any-machine",
+  "title": "Resume your coding agent sessions on any machine",
+  "summary": "Atuin's creator syncs Claude Code and Codex sessions across machines; she says an agent found a past investigation and fixed an upload outage faster.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Atuin",
+    "Claude Code",
+    "Codex",
+    "Sentry"
+  ],
+  "agent_role": "Agents search earlier sessions, pick up past investigations and continue work on another machine; the author starts tasks and decides where to move them.",
+  "outcome": "The author reports an agent found a previous investigation into broken avatar uploads and built the fix faster than starting from scratch.",
+  "what_they_did": "The developer of the Atuin terminal tool built a way to save, search and sync coding agent sessions across machines. Her agents can also search past sessions themselves. She moved a slow-disk investigation from a server to her laptop mid-session.",
+  "how_it_went": "She says a daily error-checking agent spotted a broken storage key, and a second agent found that earlier work and built the fix quickly. The moved session continued where it left off and found more speedups.",
+  "worth_knowing": "Session capture is opt-in and synced history is encrypted end to end; you can also keep it all local.",
+  "prompt": "Before starting on [task], search my past agent sessions for earlier attempts at it. Summarize what was tried, why each attempt was dropped, and what you would do differently. Show me a plan and wait for my approval before changing any code.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "agent history",
+    "session sync",
+    "debugging",
+    "developer tools"
+  ],
+  "source": {
+    "url": "https://blog.atuin.sh/threads-agent-sessions/",
+    "name": "Hacker News",
+    "author": "ellieh",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mainly a product launch, but the author gives concrete examples of agents reusing past sessions to fix an outage and finishing a benchmark on another machine. Light evidence and self-promotional."
+  }
+}

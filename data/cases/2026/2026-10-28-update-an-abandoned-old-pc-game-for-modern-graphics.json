@@ -1,0 +1,40 @@
+{
+  "id": "update-an-abandoned-old-pc-game-for-modern-graphics",
+  "title": "Update an abandoned old PC game for modern graphics",
+  "summary": "A gamer had Claude Code with Opus 5.5 move The Movies (2005) to DirectX 11 and add visual upgrades without source code; they say it worked.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": "Opus 5.5",
+  "tools": [
+    "DirectX 11"
+  ],
+  "agent_role": "The agent did the technical work of moving the game to a newer graphics system and adding visual improvements. The human supplied a bought copy of the game and the request.",
+  "outcome": "The author reports the agent moved the game to DirectX 11 and added visual enhancements, and shares a video.",
+  "what_they_did": "The poster owned a bought copy of The Movies (2005), a game its publisher abandoned. There was no source code. They asked Claude Code, running Opus 5.5, to move the game to DirectX 11, a newer graphics system, and to add visual upgrades.",
+  "how_it_went": "The author says the agent did it and shares a video of the remastered game.",
+  "worth_knowing": "The agent worked from the finished game files alone, with no original source code to read.",
+  "prompt": "I own a legal copy of [game name], an old PC game installed at [install folder]. There is no source code. Study how the game draws its graphics and propose a plan to move it to [modern graphics system, e.g. DirectX 11] with visual improvements like [higher resolution, better lighting]. Work on a copy of the files, never the originals. Show me your plan before making changes, and test each step by launching the game.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "game remaster",
+    "old games",
+    "graphics upgrade",
+    "preservation"
+  ],
+  "source": {
+    "url": "https://x.com/yangaevx/status/2115154979140845776",
+    "name": "X",
+    "author": "@yangaevx",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An unusual use: reviving an abandoned 2005 game without its source code, backed by a video. The post gives very few details about the steps."
+  }
+}

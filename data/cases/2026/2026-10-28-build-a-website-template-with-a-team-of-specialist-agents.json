@@ -1,0 +1,43 @@
+{
+  "id": "build-a-website-template-with-a-team-of-specialist-agents",
+  "title": "Build a website template with a team of specialist agents",
+  "summary": "Developer Domenico Tenace had a five-agent OpenCode team build a gym website template; he says it is now listed among the official Astro templates.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "OpenCode",
+    "Astro",
+    "Bulma",
+    "Netlify"
+  ],
+  "agent_role": "A lead web-developer agent planned and built the site while four helper agents handled design, search optimization, code review and documentation. The author approved every proposal and made the design and content calls.",
+  "outcome": "Author reports the template was accepted among the official Astro templates and is live as an open-source demo.",
+  "what_they_did": "Domenico Tenace set up an agent team in OpenCode: one lead web-developer agent and four helpers for design, search optimization, code review and docs. They built a dark gym website template from an empty folder. Each agent proposed changes first, and he approved them before anything was written.",
+  "how_it_went": "He says the template was accepted into the official Astro templates list. He found separate specialist reviews made the result more complete than one long conversation would.",
+  "worth_knowing": "The approval step means a lot of reading and clicking, and it costs extra tokens and time. For small tasks he found it slower than doing it himself.",
+  "prompt": "Act as a lead web developer with four specialist reviewers: design, search optimization, code review and documentation. Build a [type of business] website template using [framework]. First explore the empty project and propose a page structure, components and data files. Wait for my approval before writing any file. After building, run each specialist review in turn and list its findings by severity with concrete fixes. Let me approve each fix one by one. Finish with a README that only documents what you can verify in the code.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "website template",
+    "multi-agent",
+    "web design",
+    "code review"
+  ],
+  "source": {
+    "url": "https://dev.to/playfulprogramming/astro-wellness-the-first-project-built-start-to-finish-by-my-agent-team-3kkn",
+    "name": "DEV Community",
+    "author": "Domenico Tenace",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real project built end to end by a five-agent team with human approval at each step, now open source and listed among official Astro templates. Clear roles, but a fairly familiar coding use case."
+  }
+}

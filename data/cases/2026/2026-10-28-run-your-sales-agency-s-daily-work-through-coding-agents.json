@@ -1,0 +1,45 @@
+{
+  "id": "run-your-sales-agency-s-daily-work-through-coding-agents",
+  "title": "Run your sales agency's daily work through coding agents",
+  "summary": "Workflows.io's co-founder says all 22 staff use Claude Code or Codex daily, wired into their sales tools and a shared notes repository, as revenue grew to $3.3M a year.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "HubSpot",
+    "Slack",
+    "Notion",
+    "GitHub",
+    "Supabase",
+    "n8n"
+  ],
+  "agent_role": "Agents run client updates, campaign creation, content ideas and campaign tuning across connected tools. Humans own strategy and final review for most workflows.",
+  "outcome": "Author reports workflows completing tasks up to 80%+ and the company growing from zero to $3.3M yearly revenue.",
+  "what_they_did": "A co-founder of Workflows.io connected Claude Code and Codex to their sales and outreach tools, like HubSpot, Apollo, Slack and Notion. They keep company knowledge as plain text files in a shared code repository, one per client, fed with call transcripts and chat threads. Written procedures became reusable agent skills, some triggered automatically and reporting back in Slack.",
+  "how_it_went": "The author says skills complete tasks like client updates and campaign creation up to 80%+. All 22 team members use the agents daily, and the company reports reaching $3.3M in yearly revenue.",
+  "worth_knowing": "Most of their agent workflows still keep a human in charge: the agent does the work, and a person sets strategy and gives final review.",
+  "prompt": "Help me set up an agent-run workflow for my business. First, read the procedures in [folder of process docs] and our client notes in [folder or repo]. Pick one recurring task, like [weekly client update], and turn it into a step-by-step skill you can repeat. Use my connected tools ([CRM], [email outreach tool], [chat app]) only to read data. Draft the output and show it to me for review. Do not send messages, change CRM records or launch campaigns until I approve.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "sales operations",
+    "company knowledge base",
+    "workflow automation",
+    "outreach"
+  ],
+  "source": {
+    "url": "https://x.com/dan__rosenthal/status/2115156692627251542",
+    "name": "X",
+    "author": "@dan__rosenthal",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real company's concrete setup for running sales operations with Claude Code and Codex connected to its tools, with named tools and structure; self-promotional and light on hard evidence or steps."
+  }
+}

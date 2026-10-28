@@ -1,0 +1,43 @@
+{
+  "id": "draft-social-posts-about-each-feature-you-ship",
+  "title": "Draft social posts about each feature you ship",
+  "summary": "A developer built a free Claude Code plugin that finds what they shipped and saves X and LinkedIn drafts in their voice to a post scheduler for approval.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Publer",
+    "Postiz",
+    "X",
+    "LinkedIn"
+  ],
+  "agent_role": "The agent checks recent work to find what was shipped, then writes post drafts in the author's voice and saves them to a scheduling tool. The human approves every post.",
+  "outcome": null,
+  "what_they_did": "A developer wanted to post about every feature they shipped but kept putting it off. They built a free Claude Code plugin for this. It finds what was shipped and writes X and LinkedIn drafts in their voice. The drafts are saved to a post scheduling tool, Publer or Postiz.",
+  "how_it_went": null,
+  "worth_knowing": "Nothing gets posted on its own. The author says you approve everything before it goes out.",
+  "prompt": "Look at the work I finished in [project folder] over the last [time period]. List the features I shipped in plain words. For each one, draft a short X post and a LinkedIn post in my voice. Use [links to a few of my past posts] as style examples. Save the drafts to [scheduling tool] as drafts only. Show me the list first and wait for my approval. Never publish anything yourself.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "social media",
+    "build in public",
+    "post drafting",
+    "content scheduling"
+  ],
+  "source": {
+    "url": "https://x.com/serena_prifti/status/2115430333210329207",
+    "name": "X",
+    "author": "@serena_prifti",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real workflow: Claude Code looks at what was shipped and drafts social posts for approval. The post is short, with no results or detail beyond the idea."
+  }
+}

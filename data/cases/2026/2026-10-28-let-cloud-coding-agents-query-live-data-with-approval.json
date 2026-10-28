@@ -1,0 +1,44 @@
+{
+  "id": "let-cloud-coding-agents-query-live-data-with-approval",
+  "title": "Let cloud coding agents query live data with approval",
+  "summary": "Formal gave its cloud coding agents short-lived, read-only, approved access to production data, so agents run product analytics queries instead of engineers pasting exports.",
+  "domain": "Data",
+  "platform": "Cursor",
+  "model": null,
+  "tools": [
+    "Cursor cloud agents",
+    "Devin",
+    "database proxy",
+    "approval requests",
+    "analytics database"
+  ],
+  "agent_role": "Agents write and run SQL against an analytics copy of production data and digest results. Humans approve each short-lived access request.",
+  "outcome": "Formal reports engineers no longer manually run queries, export CSVs and paste results back into the agent.",
+  "what_they_did": "Formal's engineers gave cloud coding agents like Cursor and Devin their own identity when connecting to company systems, instead of shared passwords. Each agent session asks its human owner for approval. Then it gets short-lived, read-only access to company data, logged by who started it.",
+  "how_it_went": "The team says agents now write and run analytics queries, such as checking customer adoption of new features, and read the results themselves.",
+  "worth_knowing": "The human identity is only claimed by the agent platform, not proven, so it relies on trusting that platform.",
+  "prompt": "Help me measure adoption of [feature] using our analytics database. First draft the SQL query and explain what it measures. Wait for me to approve read-only access before running it. Then run it, summarize which customers use the feature and how often, and flag anything surprising. Do not write or change any data.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "product analytics",
+    "data access",
+    "security",
+    "sql"
+  ],
+  "source": {
+    "url": "https://www.formal.ai/blog/cloud-agents-oidc-infrastructure/",
+    "name": "Hacker News",
+    "author": "Aditya Saligrama",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Real internal use of cloud coding agents querying production data safely for analytics, with clear setup; it is also a company product blog, and results are not quantified."
+  }
+}

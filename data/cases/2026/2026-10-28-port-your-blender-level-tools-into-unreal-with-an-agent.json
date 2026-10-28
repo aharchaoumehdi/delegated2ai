@@ -1,0 +1,42 @@
+{
+  "id": "port-your-blender-level-tools-into-unreal-with-an-agent",
+  "title": "Port your Blender level tools into Unreal with an agent",
+  "summary": "An indie developer had Claude Code translate their Blender level-building node setups into Unreal Engine scripts; they say rough layouts now become final levels in two clicks.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Blender",
+    "Unreal Engine"
+  ],
+  "agent_role": "Claude Code rewrote the developer's hand-made Blender node setups as Unreal Engine scripts, including baking and texture assignment; the developer designed the original setups and uses the result.",
+  "outcome": "Author reports converting rough level layouts into final geometry with two right-click menu clicks inside Unreal, with textures assigned automatically.",
+  "what_they_did": "An indie game developer had built level themes as node setups in Blender. They asked Claude Code to translate them into Unreal Engine's own geometry scripts. The new tool also bakes the shapes and assigns textures to each piece.",
+  "how_it_went": "They say they can now edit rough layouts in Unreal and turn them into final level pieces with two clicks. They no longer guess scale in Blender and can playtest every change right away.",
+  "worth_knowing": "Texture assignment used to be manual for every piece; folding that into the script was a big part of the time saved, according to the author.",
+  "prompt": "I have node-based level-building setups in Blender at [path to .blend file or exported node description]. Study how each setup turns a rough layout into final level pieces. Then write equivalent Unreal Engine geometry scripts for [Unreal version], plus a right-click menu action that converts a selected rough layout into final pieces, bakes them and assigns [texture set]. Show me your plan and a mapping of each Blender step to its Unreal equivalent before writing code, and test on one sample level first.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "game development",
+    "level design",
+    "blender",
+    "unreal engine",
+    "tool porting"
+  ],
+  "source": {
+    "url": "https://x.com/KitsuneFuzzy/status/2115087902791061574",
+    "name": "X",
+    "author": "@KitsuneFuzzy",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine, unusual game-dev use where the agent ported hand-built Blender node setups into Unreal tooling with a clear before/after, but it is a short post with no code or steps."
+  }
+}

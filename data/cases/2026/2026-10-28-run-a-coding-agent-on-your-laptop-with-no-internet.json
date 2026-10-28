@@ -1,0 +1,43 @@
+{
+  "id": "run-a-coding-agent-on-your-laptop-with-no-internet",
+  "title": "Run a coding agent on your laptop with no internet",
+  "summary": "Engineer Rittika Jindal, living in the Himalayan foothills, set up OpenCode with a local Qwen model to diagnose and fix a buggy expense calculator offline.",
+  "domain": "Software",
+  "platform": "OpenCode",
+  "model": "Qwen3.5 9B",
+  "tools": [
+    "OpenCode",
+    "Ollama",
+    "Python tests",
+    "terminal"
+  ],
+  "agent_role": "The agent reads project files, runs the tests and proposes edits, all through a model running on the laptop. The author approves every file edit and command before it runs.",
+  "outcome": null,
+  "what_they_did": "Rittika Jindal, a principal engineer, often loses internet and power where she lives. She downloaded a free model that runs on a laptop and connected it to the OpenCode agent, with web tools blocked. Then she disconnected and asked the agent to explain and fix a small expense calculator that failed three tests.",
+  "how_it_went": null,
+  "worth_knowing": "Download the model, project packages and test tools before going offline; anything needing a new package or web lookup still needs a connection. The 9B model is about 7 GB and needs roughly 12–16 GB of memory.",
+  "prompt": "I want to work offline with you on [project folder]. First, while I'm online, list everything I need downloaded so you can work without internet: the local model, project packages and test tools. Once I'm offline, read [file name] and run the existing tests. Explain the bug without editing any files. Then propose a fix and show me the changes before applying them, and rerun the tests after I approve.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "offline coding",
+    "local model",
+    "bug fixing",
+    "remote work"
+  ],
+  "source": {
+    "url": "https://latent.space/p/offline-coding/",
+    "name": "Latent Space",
+    "author": "Rittika Jindal",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-28",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A clear, reproducible walkthrough with a repo for running a coding agent fully offline on a laptop, a practical need for travelers and remote workers. The excerpt ends before the final result, so the outcome is not shown."
+  }
+}

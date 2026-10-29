@@ -1,0 +1,44 @@
+{
+  "id": "run-a-whole-client-software-project-with-agents-at-every",
+  "title": "Run a whole client software project with agents at every step",
+  "summary": "House of Angular used agents for tickets, coding, testing and spec checks to build a five-module CRM in three months with two half-time developers and a half-time manager.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Jira",
+    "meeting transcripts",
+    "code repository",
+    "web browser testing",
+    "automated tests"
+  ],
+  "agent_role": "Agents read Jira and code, turned meeting transcripts into ticket drafts, questioned unclear tickets, wrote code, tested continuously and flagged contradictions. Developers approved every merge, the manager decided scope and conflicts, and the client did acceptance.",
+  "outcome": "The team reports delivering a five-module CRM with a two-way ERP link in three months on a fixed-price contract, with a staffing level they say would not otherwise fit.",
+  "what_they_did": "House of Angular's team gave agents direct access to Jira, meeting transcripts, documents and code. Agents split transcripts into topics for the manager to turn into tickets. They also asked developers about gaps before coding, wrote code and docs, and tested the app continuously. A named person reviewed every result.",
+  "how_it_went": "They say the CRM shipped in three months with two half-time developers and a half-time manager. An audit agent caught two conflicting client answers given weeks apart. The testing agent passed four spec mismatches to the manager instead of guessing.",
+  "worth_knowing": "Agents sped up building but not deciding what to build. The schedule ended up depending on how fast the client made decisions.",
+  "prompt": "Read the ticket [ticket ID] in [Jira project], including its epic, subtasks and comments. Go through it point by point and list every question about anything missing or unclear. Wait for my answers. Then add each decision as a comment on the ticket, and show me the comment text first. Then propose an implementation plan for [repo] and wait for approval before writing code. Do not merge anything; I will review every change.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "project delivery",
+    "requirements",
+    "testing",
+    "crm"
+  ],
+  "source": {
+    "url": "https://x.com/HouseOfAngular/status/2115791112195444887",
+    "name": "X",
+    "author": "Mateusz Stefańczyk (House of Angular)",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed case study shows agents at every project stage, with clear human sign-off points and specific findings like a caught spec conflict. It is the agency's own marketing blog, and it has few hard numbers."
+  }
+}

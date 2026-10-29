@@ -1,0 +1,44 @@
+{
+  "id": "find-payment-bugs-by-having-an-agent-break-your-app-s",
+  "title": "Find payment bugs by having an agent break your app's services",
+  "summary": "Abhishek's tool Opslane had an agent inject failures into copies of open-source apps; he reports finding double-charging in Lago and a doubled payout in Dub.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "app copy per code change",
+    "simulated Stripe",
+    "Postgres",
+    "Redis",
+    "fault-injecting proxy"
+  ],
+  "agent_role": "The agent reads each code change, writes down rules that must always hold, and injects failures likely to break them. The team ran it on open-source apps and filed the issues.",
+  "outcome": "Author reports finding a double-charge bug in Lago, a lockout bug in Twenty that was fixed, and a payout bug in Dub that paid $240 for $120 owed.",
+  "what_they_did": "Abhishek, who worked on reliability at Robinhood, built Opslane. For each code change it starts a full copy of the app plus working stand-ins for services like Stripe. An agent reads the change, writes rules such as 'a customer is never charged twice', then makes services fail to test them.",
+  "how_it_went": "He reports it found a Lago bug where a retry charged customers twice. It also found a Twenty bug that locked users out while billing continued, which Twenty fixed.",
+  "worth_knowing": "The author says many reliability bugs are not visible in the code change itself. Normal tests usually fake outside services and only check the happy path.",
+  "prompt": "Read the latest changes in [repo URL]. List the rules that must always hold for this feature, such as 'a customer is never charged twice'. For each rule, describe how failures in outside services like [payment provider], the database or the network could break it. Then write tests that simulate those failures in a local copy of the app and run them. Report which rules broke, with steps to reproduce. Do not touch real accounts or production data, and show me the test plan before running anything.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "reliability testing",
+    "failure injection",
+    "payments",
+    "bug finding"
+  ],
+  "source": {
+    "url": "https://news.ycombinator.com/item?id=50280650",
+    "name": "Hacker News",
+    "author": "aray07",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A product launch, but it shows concrete bugs an agent found in real open-source apps, with linked issues and a demo. Readers cannot easily reproduce the full setup."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "check-your-agent-s-task-briefs-for-gaps-before-it-starts",
+  "title": "Check your agent's task briefs for gaps before it starts",
+  "summary": "A developer found 90% of 61 fix requests traced to his own vague work orders, then had Claude check each order first, catching about 60% of gaps per $0.07 run.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "Claude Sonnet, Xiaomi MiMo",
+  "tools": [
+    "git worktrees",
+    "automatic code reviewer",
+    "pre-tool hook"
+  ],
+  "agent_role": "Claude writes work orders and a cheaper model, MiMo, codes them in separate branches; an automatic reviewer sends work back. A new Claude 'falsifier' pass reads each order and lists ways it could go wrong; the human edits the order before handoff.",
+  "outcome": "Author reports 55 of 61 must-fix items came from silent or vague orders; one falsifier run caught 56–60% of those gaps, about 71% across two runs, at about $0.07 each.",
+  "what_they_did": "Zhuojun Li has Claude plan code changes as written work orders and a cheaper model, MiMo, write the code. After rework rose, he sorted 61 fix requests from 10 orders by cause. He then added a step where Claude reads each order, quotes weak lines, and gives a concrete input that breaks it, before the worker starts.",
+  "how_it_went": "He says 90% of rework items came from orders that were silent or unclear. Running the check twice caught 71% of those gaps. Three of four new orders then passed review first time, which he says is too small a sample to judge.",
+  "worth_knowing": "Two runs of the check disagreed a lot, so he runs it twice. He also moved a 'never print passwords' rule from the prompt into a tool block after it was broken four times.",
+  "prompt": "Before I hand this task brief to my coding agent, act as a critic. Read [work order file] and look at the code in [repo path], but don't write any code. Return up to seven ranked problems. For each, quote the line of the brief that causes it, or say 'not mentioned'. Give a concrete input or situation that would break the result. Name the section of the brief where the fix belongs. I'll update the brief myself.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "task briefs",
+    "code review",
+    "multi-agent",
+    "rework"
+  ],
+  "source": {
+    "url": "https://dev.to/lizhuojunx86/90-of-my-coding-agents-rework-came-from-my-own-work-orders-51n4",
+    "name": "DEV Community",
+    "author": "Zhuojun Li",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A data-driven follow-up that sorts real rework items, finds most came from vague briefs, and adds a cheap pre-handoff check with costs and hit rates. Small sample, but honest and practical."
+  }
+}

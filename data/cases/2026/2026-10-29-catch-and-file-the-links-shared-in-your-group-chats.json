@@ -1,0 +1,45 @@
+{
+  "id": "catch-and-file-the-links-shared-in-your-group-chats",
+  "title": "Catch and file the links shared in your group chats",
+  "summary": "KevinChu1110's driftnet takes links dropped in chats, finds the actual tool behind each post, summarises and files it; the author says five reels cost $0.00029 to judge.",
+  "domain": "Daily life",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Telegram",
+    "Slack",
+    "Discord",
+    "LINE",
+    "Chrome extension",
+    "GitHub search"
+  ],
+  "agent_role": "The AI reads each shared post, looks up the projects it names, writes a short summary and suggests a folder; the human approves filing and any tidy-up plan.",
+  "outcome": "Author reports a real run where a Facebook reel with no links was turned into two correct project cards, and five reels were judged for $0.00029 in total.",
+  "what_they_did": "The author built driftnet, which runs on your own computer. You drop links into a chat bot or click a browser button. It follows the post to the project it is really about, writes a short summary and files it in your folders. Suggested folders wait in an inbox for you to confirm.",
+  "how_it_went": "The author shows a Facebook reel with no links going in; driftnet read the caption, found both projects on GitHub by name and filed each as a card. They say five reels cost $0.00029 to process.",
+  "worth_knowing": "Links an AI model makes up are thrown away, and pages are cut to a short outline before any model sees them to keep costs tiny.",
+  "prompt": "Help me set up a personal link catcher. Whenever I paste a link or a post into [chat app or a text file], open it, work out which tool, project or article it is really about, and look it up by exact name if no link is given. Write a two-line summary of what it is and why it might matter to me. Suggest one of my folders: [list your folders]. Save each item to [a spreadsheet or notes folder]. Never invent links. Show me the suggested filing for each batch and wait for my approval before saving.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "bookmarks",
+    "link manager",
+    "summaries",
+    "knowledge base"
+  ],
+  "source": {
+    "url": "https://github.com/KevinChu1110/driftnet",
+    "name": "GitHub",
+    "author": "KevinChu1110",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working open-source pipeline with a real example of an AI reading a link-less video caption, finding the right projects and filing them; mostly a feature list, but concrete and reproducible."
+  }
+}

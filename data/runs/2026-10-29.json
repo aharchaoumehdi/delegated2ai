@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-29",
+  "runs": [
+    {
+      "id": "gh-40880464804-1",
+      "started": "2026-10-29T13:17:10.616Z",
+      "trigger": "schedule",
+      "collect": {
+        "sources": {
+          "submissions": {
+            "status": "ok",
+            "items": 0,
+            "ms": 635
+          },
+          "reddit": {
+            "status": "error",
+            "error": "r/ClaudeAI: HTTP 403 for https://www.reddit.com/r/ClaudeAI/top.json?t=day&limit=25&raw_json=1; r/ClaudeCode: HTTP 403 for https://www.reddit.com/r/ClaudeCode/top.json?t=day&limit=25&raw_json=1; r/ChatGPTCoding: HTTP 403 for https://www.reddit.com/r/ChatGPTCoding/top.json?t=day&limit=25&raw_json=1; r"
+          },
+          "x": {
+            "status": "ok",
+            "items": 79,
+            "ms": 782,
+            "fetched": 79,
+            "searches": [
+              {
+                "label": "coding agents in use",
+                "fetched": 30,
+                "kept": 30
+              },
+              {
+                "label": "personal and business agents",
+                "fetched": 29,
+                "kept": 29
+              },
+              {
+                "label": "agents at work",
+                "fetched": 20,
+                "kept": 20
+              }
+            ]
+          },
+          "feeds": {
+            "status": "ok",
+            "items": 13,
+            "ms": 1995
+          },
+          "hackernews": {
+            "status": "ok",
+            "items": 61,
+            "ms": 2280
+          },
+          "github": {
+            "status": "ok",
+            "items": 55,
+            "ms": 3667
+          },
+          "devto": {
+            "status": "ok",
+            "items": 28,
+            "ms": 7208
+          }
+        },
+        "raw": 236,
+        "unique_new": 133,
+        "candidates": 109
+      },
+      "curate": {
+        "status": "ok",
+        "model": "claude-opus-5-5",
+        "evaluated": 109,
+        "published": 24,
+        "from_backlog": 0,
+        "queued_for_review": 0,
+        "rejected": 85,
+        "failures": [],
+        "published_ids": [
+          "check-whether-your-coding-agents-bug-fixes-really-work",
+          "turn-tax-forms-into-checkable-rules-with-ai-agents",
+          "run-a-whole-client-software-project-with-agents-at-every",
+          "build-a-fun-browser-game-without-reading-the-code",
+          "turn-a-topic-into-a-narrated-explainer-video-with-sources",
+          "check-your-agent-s-task-briefs-for-gaps-before-it-starts",
+          "find-which-apps-keep-photos-of-your-face-on-android",
+          "have-your-coding-agent-phone-you-when-it-needs-a-decision",
+          "make-animated-charts-for-your-videos-synced-to-your-voice",
+          "let-your-agent-revise-animations-from-your-team-s-video",
+          "get-a-plain-english-map-of-how-your-app-fits-together",
+          "review-your-fpga-chip-design-for-hidden-bugs-with-an-agent",
+          "build-a-small-python-interpreter-in-c-with-coding-agents",
+          "interview-your-analysts-so-data-agents-answer-correctly",
+          "check-that-your-agent-written-tests-can-actually-fail",
+          "cut-how-much-text-your-agent-re-reads-on-every-step",
+          "find-payment-bugs-by-having-an-agent-break-your-app-s",
+          "build-a-3d-game-that-shows-your-ai-agents-at-work",
+          "split-a-coding-goal-across-agents-on-several-computers",
+          "find-and-bid-on-public-tenders-with-a-team-of-agents",
+          "have-your-coding-agent-map-the-security-risks-in-your-code",
+          "catch-and-file-the-links-shared-in-your-group-chats",
+          "give-your-coding-agent-a-short-map-instead-of-a-long-manual",
+          "build-a-docs-question-answering-agent-from-one-settings-file"
+        ]
+      },
+      "enrich": {
+        "needed": 0,
+        "written": 0,
+        "failures": [],
+        "summaries": {
+          "needed": 0,
+          "written": 0,
+          "failures": []
+        }
+      }
+    }
+  ]
+}

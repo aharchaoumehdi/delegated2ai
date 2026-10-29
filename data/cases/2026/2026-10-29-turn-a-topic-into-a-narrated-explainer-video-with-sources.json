@@ -1,0 +1,44 @@
+{
+  "id": "turn-a-topic-into-a-narrated-explainer-video-with-sources",
+  "title": "Turn a topic into a narrated explainer video with sources",
+  "summary": "A developer built a Claude Code skill that researches a topic, writes a sourced script, adds voiceover and renders a 1080p explainer video, with sample films published.",
+  "domain": "Education",
+  "platform": "Claude Code",
+  "model": "Claude Opus",
+  "tools": [
+    "Xiaomi MiMo voice",
+    "Renoise image and video generation",
+    "three.js",
+    "ffmpeg",
+    "Playwright"
+  ],
+  "agent_role": "The agent picks an angle, compiles a fact list with sources, writes and self-reviews narration, generates voice, codes and renders the video, and checks it. The human approves the topic, the script and storyboard, any paid image generation, and the final cut.",
+  "outcome": "The author shares several finished sample videos of 1 to 3 minutes; one enhanced episode used 246 credits of paid image and video generation.",
+  "what_they_did": "A developer packaged a Claude Code skill in Chinese with 44 visual styles. You give it a topic, and it builds a fact list with a source for every number and quote. It writes narration, has a helper agent critique it, records an AI voice, then draws and renders each frame in code. It stops three times for your approval.",
+  "how_it_went": "The repo shows sample videos on topics like ancient food storage and how rockets fly. The basic version costs no generation credits; the enhanced one used 246 credits for one episode, the author says.",
+  "worth_knowing": "The free tier draws everything in code; paid AI images are only used for a few key shots, priced up front, and labeled as AI illustrations in the video.",
+  "prompt": "Make a short explainer video about [your topic] in [language]. First propose an angle, a target length and a visual style, and wait for my approval. Then build a fact list where every number, name, date and quote has a source, noting where sources disagree. Write the narration and a shot list, and show them to me before producing anything. After I approve, record narration with [voice tool], build the animation in code, render at 1080p, and check the on-screen text against the fact list. Ask before using any paid image or video generation, and show the estimated cost.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "explainer video",
+    "fact checking",
+    "video production",
+    "education"
+  ],
+  "source": {
+    "url": "https://github.com/andyhuo520/vibe-knowledge",
+    "name": "GitHub",
+    "author": "andyhuo520 (@Berryxia)",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, open-source workflow where Claude Code researches, scripts, voices and renders sourced explainer videos, with sample videos and approval checkpoints; strong non-coding creative/education use."
+  }
+}

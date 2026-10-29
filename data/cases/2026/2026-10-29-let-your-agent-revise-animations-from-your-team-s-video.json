@@ -1,0 +1,42 @@
+{
+  "id": "let-your-agent-revise-animations-from-your-team-s-video",
+  "title": "Let your agent revise animations from your team's video notes",
+  "summary": "Enrico's team has Claude make animations, upload them to the Flask video review tool, read the team's spoken and drawn feedback, and upload revised versions.",
+  "domain": "Creative",
+  "platform": "Claude",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "Flask video review",
+    "custom animation skills",
+    "shaders"
+  ],
+  "agent_role": "Claude creates the animation, uploads it with its code, reads timestamped feedback and uploads a new version. Humans give feedback by talking, drawing and sharing screens.",
+  "outcome": null,
+  "what_they_did": "The poster's team uses Claude with custom animation skills and shaders. A connector lets Claude upload each finished animation, with its code and notes, to Flask, a video review tool. Team members leave feedback by talking over the video, drawing on frames and sharing references. Flask passes that feedback back to Claude with exact timestamps.",
+  "how_it_went": "The source shows Claude applying all feedback points in one pass and uploading a second version. Example points include adding 1.5 seconds, a warmer color grade and moving the key light.",
+  "worth_knowing": "The poster appears to be from the team behind Flask, so this doubles as a product showcase.",
+  "prompt": "Create a [length]-second animation of [subject] in the style of [reference]. Save the code and a short change log. Upload the video and its source to [review tool or shared folder]. When I share feedback, read every note with its timestamp. List the changes you plan and wait for my approval. Then apply them and upload it as the next version.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "animation",
+    "video review",
+    "creative feedback",
+    "motion design"
+  ],
+  "source": {
+    "url": "https://x.com/EnriTarta/status/2115736951567327707",
+    "name": "X",
+    "author": "@EnriTarta",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "The post lays out a clear loop: Claude makes an animation, uploads it, takes in recorded team feedback and uploads a new version. It comes from the review tool's own team and reads partly as promotion, with no measured results."
+  }
+}

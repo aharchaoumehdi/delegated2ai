@@ -1,0 +1,43 @@
+{
+  "id": "get-a-plain-english-map-of-how-your-app-fits-together",
+  "title": "Get a plain-English map of how your app fits together",
+  "summary": "Hayden Schmitt's Floorplan plugin has Claude Code or Codex read a codebase and draw an interactive map; in the demo it traced a gift order across two repos in 31 seconds.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "OpenAI Codex",
+    "Node scripts",
+    "web browser"
+  ],
+  "agent_role": "Scripts scan files and connections; the agent names each part, describes every file, answers questions and flags issues. The person asks for the map and picks fixes.",
+  "outcome": "Author reports the map's question feature traced a gift order across two repos in 31 seconds and spotted two bugs in a demo app.",
+  "what_they_did": "A developer built a plugin for Claude Code and Codex. You ask it to make a floorplan of your app. Scripts scan the code, then the agent names each part plainly and builds a clickable map in your browser.",
+  "how_it_went": "In the author's demo of a four-repo coffee subscription app, the agent answered a question in 31 seconds and found two bugs along the way. The health check flagged a password left in the code.",
+  "worth_knowing": "Everything runs on your own computer, and the map folder is kept out of version control by default.",
+  "prompt": "Read the codebase in [project folder], including any separate frontend and backend repos. Draw a map of the app's main parts, each with a plain-English name and a one-line description of what it does. Show which parts depend on which, and match each web request to the server code that answers it. Then walk me through what happens when [a user action, e.g. someone checks out]. List any risks you notice, like passwords in code or pages anyone can reach without signing in, with suggested fixes. Don't change any code until I approve.",
+  "evidence": "Demo",
+  "difficulty": "Beginner",
+  "tags": [
+    "code understanding",
+    "onboarding",
+    "architecture map",
+    "code health"
+  ],
+  "source": {
+    "url": "https://github.com/haydenschmitty/floorplan",
+    "name": "GitHub",
+    "author": "haydenschmitty",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A plugin with a live demo showing the agent reading a codebase, naming its parts in plain English and answering questions; mostly a feature description, but the demo shows a concrete workflow."
+  }
+}

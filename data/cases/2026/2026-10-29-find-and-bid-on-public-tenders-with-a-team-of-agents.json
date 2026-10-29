@@ -1,0 +1,42 @@
+{
+  "id": "find-and-bid-on-public-tenders-with-a-team-of-agents",
+  "title": "Find and bid on public tenders with a team of agents",
+  "summary": "A Chilean business owner says a team of Grok-based agents scans public tenders, analyzes bids, finds suppliers, drafts quote requests and tracks deadlines while he decides.",
+  "domain": "Business",
+  "platform": "Custom agent",
+  "model": "Grok",
+  "tools": [
+    "public tender listings",
+    "supplier search",
+    "deadline tracking"
+  ],
+  "agent_role": "Agents scan tenders, analyze bids, find suppliers, write quote requests and track deadlines. The owner makes the decisions.",
+  "outcome": "Author says his small business moves like a big one; no figures given.",
+  "what_they_did": "A business owner in Chile built a team of agents on Grok. They scan public tenders, analyze bids and look for suppliers. They also draft his quote requests and track every deadline, while he makes the final calls.",
+  "how_it_went": "The author says it lets his small business move like a big one. He gives no numbers.",
+  "worth_knowing": null,
+  "prompt": "Every morning, search [public tender portal] for new tenders matching [my products or services] in [region]. For each match, summarize the requirements, budget and deadline. Then list likely suppliers for the needed items. Draft quote request emails to them and show me the drafts. Wait for my approval before sending anything. Keep a spreadsheet of all open tenders and deadlines, and remind me three days before each one.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "public tenders",
+    "small business",
+    "supplier sourcing",
+    "bidding"
+  ],
+  "source": {
+    "url": "https://x.com/sebastian2999/status/2115276777467633930",
+    "name": "X",
+    "author": "@sebastian2999",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real small-business use with concrete tasks: scanning public tenders, sourcing suppliers and tracking deadlines. It has no evidence, numbers or setup details, so it scores 5 including the non-coding boost."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "id": "check-whether-your-coding-agents-bug-fixes-really-work",
+  "title": "Check whether your coding agents' bug fixes really work",
+  "summary": "A developer built bugbout to test coding agents on past bugs from his own projects; he reports 27 of 66 patches the agents called done were actually wrong.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "OpenAI Codex",
+    "Gemini CLI",
+    "mini-swe-agent",
+    "pytest",
+    "GitHub issues"
+  ],
+  "agent_role": "Agents fixed real past bugs in a sealed-off copy of the code and wrote their own tests. Some agents acted as examiners writing tests from the bug report only. Fixed rules, not AI, picked the best patch, and the author designed and froze those rules.",
+  "outcome": "Author reports 27 of 66 'done' patches were wrong; on 30 unseen bugs the best agent fixed 20, cross-checking picked 21, against a ceiling of 22.",
+  "what_they_did": "Keerthirajan Senthilkumar mined his projects' history for past bug fixes that came with tests. He handed each bug to several coding agents, like Claude Code and Codex, in a locked-down copy with no history, no web and no answer. He then checked each fix against the original tests and had agents test each other's patches.",
+  "how_it_went": "He says 27 of 66 patches agents called finished were wrong. Cross-checking helped a little: 21 of 30 bugs fixed versus 20 for the best single agent. On a fresh test, Claude Code fixed all three bugs; Codex fixed two.",
+  "worth_knowing": "The project's existing tests were nearly useless for spotting bad fixes, and tests written only from the bug report were close to a coin flip. Version 0.1 only works on Python projects tested with pytest and issues on GitHub.",
+  "prompt": "In my Python project at [repo path], look through the commit history for bug fixes that added tests in the same change. Pick [number] recent ones. For each, set up a copy of the code from just before the fix, with the fix and its tests removed. Try to fix the bug from the issue text only, then run the original tests to see if your fix really works. Report which fixes passed, which failed, and any fix that broke other tests. Show me your list of chosen bugs before you start.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "code review",
+    "agent testing",
+    "bug fixing",
+    "quality checks"
+  ],
+  "source": {
+    "url": "https://dev.to/keerthirajan_senthilkumar/27-of-66-fixed-bugs-werent-fixed-so-i-built-a-way-to-check-86g",
+    "name": "DEV Community",
+    "author": "Keerthirajan Senthilkumar",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A careful, well-measured study that runs several coding agents on bugs mined from a project's own history and checks their fixes against hidden tests. It reports clear numbers and ships open-source code anyone can run."
+  }
+}

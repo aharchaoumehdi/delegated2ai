@@ -1,0 +1,44 @@
+{
+  "id": "turn-tax-forms-into-checkable-rules-with-ai-agents",
+  "title": "Turn tax forms into checkable rules with AI agents",
+  "summary": "A developer had AI agents encode US federal tax forms as cited data; reports show 1,700 test returns matching three outside tax engines with every difference explained.",
+  "domain": "Finance",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "IRS forms and instructions",
+    "PolicyEngine-US",
+    "Tax-Calculator",
+    "OpenTaxSolver",
+    "Lean proof checker"
+  ],
+  "agent_role": "Language-model agents wrote most of the encoding and code, and separate isolated models re-read the IRS pages to cross-check it. The human set the design principles requiring every line to cite its source.",
+  "outcome": "The author's reports show 2,313 citation anchors, two evaluators agreeing on 1,648 cases, and 1,700 returns matching three tax engines with differences explained; the author warns not to use it for real.",
+  "what_they_did": "A developer built a public model of US federal income tax forms, written largely by AI agents. Every form line is stored as data with a citation to an archived IRS page. Isolated models with no repo access re-transcribed worksheets and checked the plain-English versions against the pages. Test returns were run through three outside tax engines.",
+  "how_it_went": "The repo's reports list 2,313 citation anchors and 0 differences across 1,648 cases between two separate calculators. The author reports 1,700 returns compared with three engines, with no unexplained differences. An outside engine caught a bug on Form 1040 line 9 that all internal checks missed.",
+  "worth_knowing": "The author calls it a back-burner proof of concept: do not use it for anything real. Agreement between its own checkers does not prove the data matches the IRS text.",
+  "prompt": "Help me encode [IRS form or worksheet name] for tax year [year] as structured data. Download the official instructions and save a copy. For each line, record the line number, label, the calculation, and a citation quoting the exact passage it comes from. Use only simple operations like add, subtract, smaller-of and multiply by rate. Then write a short checker that flags any line without a citation. Finally, create five sample cases and compare results with [an existing tax calculator]. List every mismatch and its likely cause. This is for learning only; do not file anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "tax forms",
+    "verification",
+    "citations",
+    "personal finance"
+  ],
+  "source": {
+    "url": "https://github.com/emmilco/us-tax-model",
+    "name": "Hacker News",
+    "author": "RGS1811",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Agents encoded IRS tax forms as cited, checkable data with heavy cross-checking and public code and reports; novel and well evidenced, though a non-production proof of concept."
+  }
+}

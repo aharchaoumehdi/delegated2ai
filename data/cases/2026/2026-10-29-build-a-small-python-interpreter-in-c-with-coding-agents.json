@@ -1,0 +1,41 @@
+{
+  "id": "build-a-small-python-interpreter-in-c-with-coding-agents",
+  "title": "Build a small Python interpreter in C with coding agents",
+  "summary": "A developer spent about $500 having Codex and then Claude Code build a 25,000-line C version of Python 3.15 over three days, covering almost all language features.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "Opus 5.5",
+  "tools": [
+    "OpenAI Codex",
+    "Claude Code"
+  ],
+  "agent_role": "Codex built the first proof of concept; Claude Code did all later development in one long session. The human directed the project.",
+  "outcome": "Author reports almost full Python 3.15 language features and built-in functions, without the standard library, for about $500.",
+  "what_they_did": "The poster wanted a small, embeddable Python written in plain C. They started a prototype with Codex, restarting it three times. They then moved all development to one Claude Code session that ran over three days.",
+  "how_it_went": "They say the result covers almost all Python 3.15 language features and built-ins in about 25,000 lines of C. It does not include Python's standard library.",
+  "worth_knowing": "The author says the whole project cost about $500 in agent usage.",
+  "prompt": "Build a small, embeddable interpreter for [language] in plain C, with no outside libraries. Start by writing a plan listing which language features and built-in functions you will cover, and show it to me before coding. Then work feature by feature, writing automatic tests for each one and running them as you go. Keep a progress file of what works and what is left. Stop and summarize after each major milestone so I can review.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "interpreter",
+    "python",
+    "c programming",
+    "long agent session"
+  ],
+  "source": {
+    "url": "https://news.ycombinator.com/item?id=50281226",
+    "name": "Hacker News",
+    "author": "soasme",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete agent-built project with code and cost figures, but the post is brief on method and testing."
+  }
+}

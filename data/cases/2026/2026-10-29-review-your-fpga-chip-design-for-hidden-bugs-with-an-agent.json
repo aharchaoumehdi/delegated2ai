@@ -1,0 +1,44 @@
+{
+  "id": "review-your-fpga-chip-design-for-hidden-bugs-with-an-agent",
+  "title": "Review your FPGA chip design for hidden bugs with an agent",
+  "summary": "Abdullah AlNafisah built, with Claude Code, an agent skill that diagrams FPGA projects and flags hidden faults; in his example it found why a build failed despite 'timing met'.",
+  "domain": "Science",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Vivado",
+    "PYNQ",
+    "Claude Code",
+    "OpenAI Codex",
+    "Cursor"
+  ],
+  "agent_role": "The agent reads the project files, builds a clickable diagram, runs checks for clock crossings, pins and resets, and explains failed builds; the engineer confirms findings against the source.",
+  "outcome": "Author reports that on an example project where Vivado said timing was met, the analyzer found an unconstrained pin that caused the build to fail plus two clock-crossing issues Vivado's own report agreed with.",
+  "what_they_did": "Abdullah AlNafisah built an add-on for coding agents that works on FPGA projects, which are designs for programmable chips. You open a project folder and ask the agent to explain it, review it for hardware bugs, or say why a build failed. It produces a clickable diagram and a list of findings.",
+  "how_it_went": "In his sample project the tool said Vivado reported timing met, yet it found a pin with no settings that made the final build fail, two risky clock crossings, and a file-name mismatch in a notebook.",
+  "worth_knowing": "Without Vivado installed, some signals may go untraced, so 'no findings' can mean 'not checked'. Treat findings as candidates to confirm.",
+  "prompt": "Open my FPGA project in [project folder]. First, explain how the design works: list the main blocks, how they connect, and which clock drives each. Then review it for hardware bugs: signals crossing between clock speeds without protection, pins missing location or voltage settings, reset polarity mistakes, address map overlaps, and file-name mismatches between the build output and any notebooks. For each finding, point to the exact file and line and suggest a fix. If [build log file] is provided, explain the root cause of the failure. Don't change any files until I approve the fixes.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "fpga",
+    "hardware design",
+    "code review",
+    "debugging"
+  ],
+  "source": {
+    "url": "https://github.com/al-nafisah/fpga-project-analyzer",
+    "name": "GitHub",
+    "author": "Abdullah AlNafisah",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Unusual hardware-design use: an agent skill that maps and reviews chip-design projects, with a concrete example of bugs it found that the vendor tool missed; open code and live demo."
+  }
+}

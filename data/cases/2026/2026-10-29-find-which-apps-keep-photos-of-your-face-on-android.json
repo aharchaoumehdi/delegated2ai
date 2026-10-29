@@ -1,0 +1,41 @@
+{
+  "id": "find-which-apps-keep-photos-of-your-face-on-android",
+  "title": "Find which apps keep photos of your face on Android",
+  "summary": "A poster had Claude Code scan their Android phone read-only. It found 9,412 face images outside the gallery, including 611 ID-check selfies from an unused crypto exchange.",
+  "domain": "Daily life",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Android USB debugging connection",
+    "phone file storage"
+  ],
+  "agent_role": "Claude Code searched the phone's storage over a read-only cable connection, found face images, and grouped them by the app that owns each folder. The person reviewed the results and changed permissions themselves.",
+  "outcome": "Author reports 9,412 face images, mostly from Telegram, a video editor and a beauty camera app, and none from Face Unlock.",
+  "what_they_did": "After seeing a viral scare post, the poster plugged their Android phone into a laptop. They gave Claude Code one read-only job: find every image of their face outside the gallery. It also had to name the app that owns each folder. The poster then acted on the results themselves.",
+  "how_it_went": "They say it found 9,412 images: 61% from Telegram video messages, 20% from a video editor and 12% from a beauty camera app. Another 611 were ID-check selfies from a crypto exchange they had stopped using. They revoked camera access from 14 apps and deleted two apps.",
+  "worth_knowing": "Grouping by app turned a scary number into a harmless explanation. The real risk was old ID selfies with a passport, left in an app the poster no longer used.",
+  "prompt": "My Android phone is connected to this computer with USB debugging turned on. Using read-only commands only, search the phone's storage for images that show my face, outside the normal gallery folders. Group what you find by the app that owns each folder, with counts and percentages. Flag anything sensitive, such as photos next to ID documents. Do not delete, move or change any files. Then suggest which app camera or storage permissions I should review. Wait for my approval before running anything that changes the phone.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "phone privacy",
+    "app permissions",
+    "android",
+    "photo audit"
+  ],
+  "source": {
+    "url": "https://x.com/0xSeinz/status/2115773897333207172",
+    "name": "X",
+    "author": "@0xSeinz",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A careful, read-only phone privacy audit with concrete numbers per app. It also corrects a viral scare and leads to clear follow-up actions; it is a non-coding daily-life use, though only the author's account."
+  }
+}

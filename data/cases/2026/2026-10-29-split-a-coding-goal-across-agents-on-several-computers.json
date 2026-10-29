@@ -1,0 +1,45 @@
+{
+  "id": "split-a-coding-goal-across-agents-on-several-computers",
+  "title": "Split a coding goal across agents on several computers",
+  "summary": "A developer built Agent Cooperation, where a lead AI hands tasks to Claude Code, Codex and Qoder on different machines and another agent checks each result.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "Qoder",
+    "Git",
+    "Tailscale",
+    "GitHub"
+  ],
+  "agent_role": "A lead AI turns the goal into a checklist and tasks, agents on each computer do the work on their own branches, and a different agent checks the evidence. Humans set the goal, approve permission requests and handle tasks that fail three times.",
+  "outcome": "The author reports that a Claude desktop session reworked the tool's own interface and Codex tested and approved it, with 1,482 automatic tests passing. Full testing across several real machines is not yet done.",
+  "what_they_did": "A developer was juggling Claude Code, Codex and Qoder on three computers by hand. So they built a self-hosted control page. A lead AI breaks your goal into tasks, and agents on linked computers pick them up. Each task runs on its own code branch. A different agent then checks the work against the requirements before it counts as done.",
+  "how_it_went": "The author says recent interface changes were made by a Claude desktop session and then tested and approved by Codex. They report 1,482 automatic tests passing. They also say the project is early and real multi-computer testing is incomplete.",
+  "worth_knowing": "Rejected work goes back for up to three automatic retries, then stops and waits for a person. The author suggests starting with one small task before adding more computers.",
+  "prompt": "I use [list your coding agents] on [number] computers. For [project goal], first write a checklist of requirements that can each be verified. Then split the work into tasks, giving each its dependencies, the files it may touch, and how it will be checked. Assign each task to one agent on its own branch. Have a different agent review each result against the checklist and send failures back. Show me the task plan and wait for my approval before any agent starts. Do not merge or push without my approval.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "multi-agent",
+    "task coordination",
+    "code review",
+    "coding agents"
+  ],
+  "source": {
+    "url": "https://x.com/AYJ1813835/status/2115445343253041526",
+    "name": "X",
+    "author": "@AYJ1813835",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An open-source tool where a lead AI splits a goal into tasks for coding agents on several computers, and a different agent checks the results. The README cites real runs, such as a Claude session redoing the UI with Codex reviewing it, but the author admits full multi-machine testing is unfinished."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "build-a-docs-question-answering-agent-from-one-settings-file",
+  "title": "Build a docs question-answering agent from one settings file",
+  "summary": "Khuyen Tran built an agent with Docker's docker-agent that searches 72 Polars guide pages and answers questions with cited source files, all set up in one file.",
+  "domain": "Software",
+  "platform": "docker-agent",
+  "model": "gpt-5-mini",
+  "tools": [
+    "document search",
+    "shell",
+    "file system",
+    "web fetch"
+  ],
+  "agent_role": "The agent searches a local folder of documentation, answers the question only from what it finds, and lists the files it used. The human writes the setup file, picks the model and asks the questions.",
+  "outcome": "The author reports the agent's answer was correct and each claim traced back to a file you can open.",
+  "what_they_did": "The author, Khuyen Tran, used Docker's open-source docker-agent tool to build a helper for the Polars data library. She described the model, instructions and a document-search tool in one settings file. She pointed it at 72 guide pages and asked questions from the command line. She also swapped in cheaper models and added audience-specific instruction files for pandas or SQL users.",
+  "how_it_went": "She reports the agent gave a correct answer on reading large files lazily and listed the guide pages it used. A cheaper model gave a shorter answer with one source.",
+  "worth_knowing": "The tool builds and updates the search index for you in a local file, so you skip setting up a separate database. You can try another model for one run without changing the shared settings file.",
+  "prompt": "Build me a question-answering helper for the documentation in [docs folder path]. Index the files so you can search them. For each question I ask, search the docs first and answer only from what you find. End every answer with a 'Sources:' list of the file paths you used. If the docs don't cover the question, say so instead of guessing. Tailor answers for a reader who already knows [pandas / SQL / another tool], and keep each answer under [number] lines. Start by answering: [your question].",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "documentation",
+    "question answering",
+    "document search",
+    "developer tools"
+  ],
+  "source": {
+    "url": "https://codecut.ai/build-ai-agents-yaml-docker-agent/",
+    "name": "Hacker News",
+    "author": "Khuyen Tran",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A hands-on tutorial that builds a working docs question-answering agent, with code and sample outputs. It is mostly a walkthrough of a framework's features, so it is thin as a real-world use case."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "give-your-coding-agent-a-short-map-instead-of-a-long-manual",
+  "title": "Give your coding agent a short map instead of a long manual",
+  "summary": "A team cut each service's main Claude Code instruction file from 238 to about 80 lines and let the agent pick which detail files to read; they noticed fewer tokens used.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "instruction files",
+    "project docs folder",
+    "skills"
+  ],
+  "agent_role": "The agent decides how complex each task is and reads only the matching detail files. Humans wrote the short map, the level rule and the detail docs.",
+  "outcome": "Authors report the agent started using fewer tokens, especially on work spanning several services.",
+  "what_they_did": "A team with dozens of services had a long instruction file in each one, loaded on every request. They cut it to a short map with a four-level rule: a typo needs only the map, while cross-service work also needs integration and architecture notes. The agent picks the level itself.",
+  "how_it_went": "They say each root file shrank from about 238 lines to about 80, roughly 900 fewer tokens per request. They noticed lower token use, especially in cross-service development.",
+  "worth_knowing": "The map only works if the detail files stay current; a stale integrations file will mislead the agent. The agent can also choose the wrong level.",
+  "prompt": "Read the main instruction file in [project folder] and the docs it covers. Propose a short version, under 80 lines, that works as a map: what lives where, plus a simple rule for which extra files to read by task size (small fix, one module, several modules, cross-service). Move the detail into separate files in [docs folder]. Show me the new map and file layout before changing anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "agent instructions",
+    "context management",
+    "coding agents",
+    "documentation"
+  ],
+  "source": {
+    "url": "https://dev.to/astronaut27/how-claude-code-loads-claudemd-and-skills-and-how-to-use-it-4ad8",
+    "name": "DEV Community",
+    "author": "astronaut",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete setup for steering a coding agent across many services with a short index file and four task levels, but results are only loosely described."
+  }
+}

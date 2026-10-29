@@ -1,0 +1,43 @@
+{
+  "id": "check-that-your-agent-written-tests-can-actually-fail",
+  "title": "Check that your agent-written tests can actually fail",
+  "summary": "Ken Alger built a wine cellar app mostly written by an AI agent; he found four ways its roughly 530 tests gave false confidence and fixed them.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Sanity",
+    "automatic tests",
+    "date picker",
+    "staging dataset"
+  ],
+  "agent_role": "The agent wrote most of the code and tests and ran experiments to build better test cases. The author designed the checks, audited them, and decided on the fixes.",
+  "outcome": "Author reports the app won Path Two of the Sanity DEV Challenge and that three of the four real bugs were missed by the checks meant to catch them.",
+  "what_they_did": "Ken Alger spent two weeks building a wine cellar app with one AI agent writing most of the code. The app can show the cellar at any past date. He then audited the test suite. He paired each 'this has no effect' test with one proving the effect exists, and deleted code to see if tests went red.",
+  "how_it_went": "He says he found tests that could never fail, a secret-key scan that always failed, a correct test of a wrong rule, and a test pointed at the wrong data copy. When he told the agent to settle for a weaker test, it found a better case on its own.",
+  "worth_knowing": "A test claiming something has no effect needs a partner test showing the effect appears when it should. Otherwise you may only be testing your sample data.",
+  "prompt": "Review the automatic tests in [repo path]. For each test that claims something has no effect, add a paired test proving the effect appears when it is turned on. For key tests, temporarily delete the code they claim to cover and confirm they fail, then restore it. Run any scanning checks against a known-clean build to make sure they stay quiet. Show me a list of weak or misleading tests and your proposed fixes before changing anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "software testing",
+    "ai coding",
+    "verification",
+    "web app"
+  ],
+  "source": {
+    "url": "https://dev.to/kenwalger/four-ways-a-test-can-lie-to-you-2ibf",
+    "name": "DEV Community",
+    "author": "Ken W Alger",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real two-week build with a coding agent and about 530 tests, with a detailed and original look at how the checks misled; the agent and its model are not named, which limits reproducibility."
+  }
+}

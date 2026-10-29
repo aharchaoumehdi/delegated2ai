@@ -1,0 +1,43 @@
+{
+  "id": "cut-how-much-text-your-agent-re-reads-on-every-step",
+  "title": "Cut how much text your agent re-reads on every step",
+  "summary": "Anis Meziani's team trimmed their data-reporting agent's repeated input by removing unused tools and shortening old results; they report up to 41% savings on one question.",
+  "domain": "Data",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "database queries",
+    "dashboard tools",
+    "usage logs",
+    "open-source benchmark"
+  ],
+  "agent_role": "The agent answers business questions by querying data and building dashboards. Humans measured its input, chose the cuts, and checked answer quality with a test bench.",
+  "outcome": "Author reports the first call dropped from about 14,500 to 11,800 tokens on real runs, older-result shortening saved 21 to 26%, and fewer round trips cut one question by 41%.",
+  "what_they_did": "Anis Meziani's team runs an agent that answers business data questions and builds dashboards. They built a replay bench with quality checks, then tried cuts one by one. They removed ten tools the agent never used, shortened old tool results from past turns, described big files instead of pasting them, and sorted table lists so the provider could reuse cached text.",
+  "how_it_went": "They report the first call shrank from about 17,000 to 13,600 tokens on the bench. Shortening old results saved 21 to 26% on conversations, and one question cost 41% less when the model asked once instead of five times.",
+  "worth_knowing": "Shortening the current turn broke answer quality on four scenarios. Their bench also overstated real savings by 9 to 16% and missed one failure entirely.",
+  "prompt": "Review how my agent in [project folder] builds each request to the model. List what gets re-sent on every call: instructions, tool descriptions, history and past tool results, with rough sizes. Find tools the agent never calls in [logs or test runs]. Propose cuts ranked by effort and expected savings, such as removing unused tools or shortening old tool results but never the current turn. Before changing anything, set up a small test that replays [3-5 typical tasks] and checks answers stay correct. Show me the plan and wait for my approval.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "cost reduction",
+    "agent tuning",
+    "business reporting",
+    "benchmarking"
+  ],
+  "source": {
+    "url": "https://dev.to/anis_meziani_52aab42304a8/how-to-cut-your-ai-agents-input-tokens-what-worked-what-failed-and-a-bench-to-measure-yours-f90",
+    "name": "DEV Community",
+    "author": "Anis Meziani",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed production report on cutting a business-reporting agent's input costs, with specific numbers and an open-source benchmark. It is about tuning an agent rather than a new use, but it is well evidenced and reusable."
+  }
+}

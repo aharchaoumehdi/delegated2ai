@@ -1,0 +1,38 @@
+{
+  "id": "build-a-3d-game-that-shows-your-ai-agents-at-work",
+  "title": "Build a 3D game that shows your AI agents at work",
+  "summary": "A developer says Claude Opus 5.5 built, in one attempt, a 3D animated game showing their AI agents at work, and that they open sourced it.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": "Claude Opus 5.5",
+  "tools": [],
+  "agent_role": "The agent generated the whole 3D animated game from a single request. The human chose the idea and published the result.",
+  "outcome": "Author reports the game was built in one shot and has been open sourced.",
+  "what_they_did": "A developer asked Claude Opus 5.5, inside a tool called Ultracode, to build a 3D animated game. The game shows the developer's own AI agents at work as characters: Claude Code, OpenClaw and Hermes. They shared a video of the result.",
+  "how_it_went": "The author says the game came out in one shot and that they open sourced it.",
+  "worth_knowing": null,
+  "prompt": "Build a small 3D animated browser game that shows my AI agents as characters working in a shared office. The agents are [list your agents]. Give each one a desk, a name label and a simple animation that plays while it is busy. First show me your plan and the files you will create, and wait for my approval. Then build it and tell me how to run it locally.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "game development",
+    "3d animation",
+    "agent visualization",
+    "one-shot build"
+  ],
+  "source": {
+    "url": "https://x.com/dodaios/status/2115747854639612278",
+    "name": "X",
+    "author": "@dodaios",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine agent build: the author says Claude Opus 5.5 produced a 3D animated game in one attempt and shared a video. Thin on detail, and no repo link appears in the post."
+  }
+}

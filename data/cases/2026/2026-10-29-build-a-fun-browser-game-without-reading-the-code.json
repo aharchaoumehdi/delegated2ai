@@ -1,0 +1,41 @@
+{
+  "id": "build-a-fun-browser-game-without-reading-the-code",
+  "title": "Build a fun browser game without reading the code",
+  "summary": "Simon Willison says he built four browser games he genuinely enjoys with Claude Opus 5.5, one using only the regular Claude chat, by asking it to make them more fun.",
+  "domain": "Creative",
+  "platform": "Claude",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "Claude chat",
+    "HTML and JavaScript"
+  ],
+  "agent_role": "Claude wrote the games, including design, 3D models and music. Willison supplied concepts and feedback such as \"Make it a LOT more fun\", without looking at the code.",
+  "outcome": "Author reports four games he genuinely enjoyed playing, built with very little guidance.",
+  "what_they_did": "Simon Willison built four browser games, including Tree Appreciator and Battle Drones. He did not look at the code. He gave Claude ideas and feedback, once just asking it to make a game a lot more fun.",
+  "how_it_went": "He says all four are genuinely fun, and that building games that play well is now shockingly easy. He found GPT-6 Astra could build games but had a weaker sense of fun.",
+  "worth_knowing": "He says the hard part is now coming up with novel, delightful game ideas, not getting a working game.",
+  "prompt": "Build a small game that runs entirely in the browser using HTML and JavaScript, in a single file. The idea: [your game concept]. Design a simple gameplay loop that gets harder at a satisfying pace. Add sound or music if you can. Give me the file so I can play it. After I play, I'll tell you what felt boring or frustrating; then revise it and make it a lot more fun.",
+  "evidence": "Demo",
+  "difficulty": "Beginner",
+  "tags": [
+    "game design",
+    "vibe coding",
+    "browser games",
+    "creative coding"
+  ],
+  "source": {
+    "url": "https://simonwillison.net/2026/Oct/28/vibe-game-development/",
+    "name": "Simon Willison's Weblog",
+    "author": "Simon Willison",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Four playable browser games built without reading the code, with links to play them and notes on what made them fun; a clear, reproducible creative use case."
+  }
+}

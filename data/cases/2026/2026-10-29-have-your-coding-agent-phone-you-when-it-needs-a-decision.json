@@ -1,0 +1,44 @@
+{
+  "id": "have-your-coding-agent-phone-you-when-it-needs-a-decision",
+  "title": "Have your coding agent phone you when it needs a decision",
+  "summary": "A developer built agentring so Claude Code can ring their phone; in a recorded demo a failed migration triggers a call, they decide by voice, and the agent continues.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "agentring",
+    "Gemini Live voice",
+    "LiveKit",
+    "Firebase push",
+    "Android app"
+  ],
+  "agent_role": "The agent runs long jobs, messages or calls the person when stuck, and resumes from the call transcript. The human answers the call and makes the decision.",
+  "outcome": "Author reports messages, calls on a locked phone, the voice AI and calling agents back all work, tested so far on one Pixel 6.",
+  "what_they_did": "The developer self-hosted a small server and an Android app that let agents call their phone over the internet. A voice AI explains why the agent is calling and passes the transcript back. In the demo, Claude Code ran a database migration, it failed, and the agent called the locked phone.",
+  "how_it_went": "The author says the phone rang like a real call, they chose what to do by voice, and Claude Code carried on. They describe it as pre-release and Android only.",
+  "worth_knowing": "The voice AI acts on what it hears, so only give it tools you would trust someone holding your phone with. On Google's free tier, call audio may be used by Google.",
+  "prompt": "Run [the long task, e.g. the migration in repo URL]. If anything fails or you need a decision, call me using agentring and explain the problem in plain words. Do not deploy, delete data or retry anything risky until I approve on the call or by reply.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "phone calls",
+    "notifications",
+    "voice",
+    "human approval"
+  ],
+  "source": {
+    "url": "https://github.com/mutonby/agentring",
+    "name": "GitHub",
+    "author": "mutonby",
+    "published": "2026-10-23"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Useful, open-source way for agents to phone you for decisions, with a real recorded run of Claude Code calling a locked phone when a migration failed; tested on one phone only."
+  }
+}

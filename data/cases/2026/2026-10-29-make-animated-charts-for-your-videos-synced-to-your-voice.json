@@ -1,0 +1,44 @@
+{
+  "id": "make-animated-charts-for-your-videos-synced-to-your-voice",
+  "title": "Make animated charts for your videos synced to your voice",
+  "summary": "TEIN AI used Claude Design and Claude Code to build 74 animated explainer boards that sync to a voiceover transcript and export to video, sharing every prompt.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Design",
+    "Whisper transcription",
+    "Chrome",
+    "FFmpeg",
+    "Playwright"
+  ],
+  "agent_role": "Claude builds and checks the animated boards against a rules file, plans which lines need a board from the transcript, and times each element to the spoken word. The creator supplies references, style choices and corrections.",
+  "outcome": "Author shares 74 finished boards, nine step-by-step prompts and three Claude skills.",
+  "what_they_did": "The creator gathered reference animations, found a style in Claude Design, and set canvas rules. Every correction went into a checks file Claude reads before each build. Whisper turned the voiceover into word-level timings, and Claude synced each board element to the word that names it.",
+  "how_it_went": "The author shares 74 animated boards and a tool that renders them frame by frame in Chrome and joins them with the voice into an MP4.",
+  "worth_knowing": "The boards ship in a plain starter theme on purpose, so restyle them to avoid looking like everyone else. The repo also pushes a product waitlist.",
+  "prompt": "Here is my voiceover transcript with word timings: [transcript file]. Pick the lines that need a visual, and propose an animated chart or diagram for each, in my style from [reference folder]. Show me the plan first. Then build each board as a web page, time each element to its word, check them against [checks file], and export a test MP4 of the first 60 seconds.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "motion graphics",
+    "youtube",
+    "explainer video",
+    "animation"
+  ],
+  "source": {
+    "url": "https://github.com/sirioberati/YouTube-AI-Motion-Graphics",
+    "name": "GitHub",
+    "author": "sirioberati",
+    "published": "2026-10-27"
+  },
+  "added": "2026-10-29",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Concrete creative workflow with 74 shared boards, all prompts and skills, and an export pipeline; a nice non-coding use, though results are the artifacts rather than measured outcomes."
+  }
+}

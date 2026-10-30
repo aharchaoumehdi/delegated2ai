@@ -1,0 +1,40 @@
+{
+  "id": "track-down-what-keeps-opening-your-browser-by-itself",
+  "title": "Track down what keeps opening your browser by itself",
+  "summary": "A user had Claude Code investigate Chrome windows opening on their own; it found an unknown 21 GB folder, and they say the windows stopped after deleting it.",
+  "domain": "Daily life",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "file system search"
+  ],
+  "agent_role": "Claude Code searched the laptop and found an unfamiliar 21 GB folder of unknown files. The person reviewed the finding and deleted the folder themselves.",
+  "outcome": "Author reports no more unknown Chrome windows since deleting the folder, though they don't know what caused it.",
+  "what_they_did": "The poster kept seeing Chrome windows open that they never opened. They asked Claude Code to dig into the cause on their laptop. It found a 21 GB folder they didn't recognize, holding files and photos they couldn't place. The poster then deleted the folder.",
+  "how_it_went": "The author says not one unknown window has appeared since. They admit they don't know if it was malicious software, a runaway app or something else.",
+  "worth_knowing": "The author advises checking what's in an unknown folder before deleting it, backing up what you care about, then scanning the machine and changing your passwords.",
+  "prompt": "Chrome keeps opening windows on my [Windows/Mac] laptop that I didn't open. Investigate what is launching it: check startup items, scheduled tasks, browser extensions and recently created large or unfamiliar folders. List anything suspicious with its location, size, creation date and what you think it is. Do not delete, move or change anything. Show me your findings and a suggested plan, including what to back up first, and wait for my approval before taking any action.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "computer troubleshooting",
+    "security",
+    "malware check",
+    "disk cleanup"
+  ],
+  "source": {
+    "url": "https://x.com/0xbalzzam/status/2116127749584638040",
+    "name": "X",
+    "author": "@0xbalzzam",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real case of Claude Code investigating a laptop problem and finding a large unknown folder. It is a useful everyday idea, but the account is thin, with no steps shown and an unclear cause."
+  }
+}

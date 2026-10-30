@@ -1,0 +1,44 @@
+{
+  "id": "let-your-coding-agent-edit-capcut-videos-for-you",
+  "title": "Let your coding agent edit CapCut videos for you",
+  "summary": "A developer released a free connector giving coding agents 59 tools to edit CapCut and OpenCut videos, with voiceover and dry-run-by-default safety.",
+  "domain": "Creative",
+  "platform": "Cursor",
+  "model": null,
+  "tools": [
+    "CapCut",
+    "OpenCut",
+    "OpenAI text-to-speech",
+    "ElevenLabs",
+    "Remotion render"
+  ],
+  "agent_role": "The agent calls tools to manage projects, edit the timeline, add text, effects and audio, generate voiceover and render, all preview-only unless you turn off dry-run.",
+  "outcome": null,
+  "what_they_did": "The author built a free connector that lets coding assistants edit videos in CapCut and OpenCut. It exposes 59 tools for timeline edits, text, transitions, effects, audio, voiceover and rendering. Every write tool runs in preview mode by default, and deletes need explicit confirmation.",
+  "how_it_went": null,
+  "worth_knowing": "Edits are dry-run by default and back up files before writes; Premiere and Filmora export is untested and experimental.",
+  "prompt": "Using the video-editing connector, open my CapCut project [project name]. Trim the opening clip to [length], add a title that says [text], and add a voiceover reading [script]. Keep every change in preview mode first, show me what you plan to edit, and only write the changes after I approve.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "video editing",
+    "capcut",
+    "mcp",
+    "voiceover"
+  ],
+  "source": {
+    "url": "https://github.com/AISEO-VirtualabDigital/mcp-video-editor",
+    "name": "GitHub",
+    "author": "AISEO-VirtualabDigital",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A connector that lets coding agents edit videos in CapCut/OpenCut with 59 tools and safety rails, but the post describes features rather than a specific documented project."
+  }
+}

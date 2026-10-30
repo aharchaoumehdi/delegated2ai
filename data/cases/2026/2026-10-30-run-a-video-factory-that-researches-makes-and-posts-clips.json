@@ -1,0 +1,45 @@
+{
+  "id": "run-a-video-factory-that-researches-makes-and-posts-clips",
+  "title": "Run a video factory that researches, makes and posts clips",
+  "summary": "A chess app founder uses agent teams to scout trends, script, render and schedule promo videos in English and Portuguese across 6 accounts, with performance tracking being added.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Playwright",
+    "ElevenLabs",
+    "Remotion",
+    "FFmpeg",
+    "Buffer",
+    "SQLite"
+  ],
+  "agent_role": "A Grok-based agent team scouts viral chess videos and drafts concepts; Claude Code and Codex build and run the production pipeline. The founder sets direction and approves ideas and finished videos.",
+  "outcome": "Author reports the research, production and scheduling pieces are built; the first full live publishing test is still to come.",
+  "what_they_did": "A founder built a video pipeline for his chess app. One agent scouts popular chess videos and hooks, another turns them into concepts in English and Portuguese. Claude Code and Codex run the production: screen captures from the app, voiceovers, captions, animations and automatic quality checks. He approves each video before it is scheduled to 6 social accounts.",
+  "how_it_went": "He says only the changed steps re-run when he edits something, which saves time and cost. Scheduling is built, and he is now linking post performance to a database to compare hooks.",
+  "worth_knowing": "His main point is that the AI coordinates ordinary video tools instead of generating every frame, which he says makes results more predictable and cheaper.",
+  "prompt": "Help me build a short-video pipeline for [my product]. First, research popular videos and hooks in [my niche] and propose 5 video concepts in [languages]. Wait for my approval. Then for each approved concept: capture real screens from [my app URL], write a script, create a voiceover and captions, and assemble an animated video. Check audio, caption timing and visuals before showing me the result. Save each step's output so small edits don't redo everything. Do not post anything until I approve; then draft a posting schedule for [my social accounts].",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "video production",
+    "social media",
+    "content marketing",
+    "automation"
+  ],
+  "source": {
+    "url": "https://x.com/l_magliari/status/2115984872091062420",
+    "name": "X",
+    "author": "@l_magliari",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, well-structured pipeline where agents research trends, write concepts, produce videos and schedule posts in two languages; final live publishing is still untested."
+  }
+}

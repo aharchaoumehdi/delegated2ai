@@ -1,0 +1,43 @@
+{
+  "id": "make-a-short-horror-film-in-blender-through-a-coding-agent",
+  "title": "Make a short horror film in Blender through a coding agent",
+  "summary": "Dontae Kerr directed a 34-second one-shot horror film; AI coding agents built the scene in Blender, animated the camera, rendered it and mixed the sound over several weeks.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Blender",
+    "Cycles renderer",
+    "motion capture library",
+    "sound libraries"
+  ],
+  "agent_role": "The agents built the hall and door and moved the camera using recorded human motion. They also rendered the film and placed and mixed the sound. The director came up with the idea and reviewed each version.",
+  "outcome": "The author reports a finished 34.2-second film made over several weeks, one reviewed version at a time.",
+  "what_they_did": "Dontae Kerr had AI coding agents, including Claude Code, drive Blender to make a short first-person film. The agents built a dark hall with one lamp and a red door. They animated the view with free motion-capture recordings of real people and placed licensed sounds where their sources sit in the hall. He reviewed and revised each version.",
+  "how_it_went": "He published Red Mask, Part One: one unbroken 34-second shot with no dialogue. It took several weeks of reviewed versions.",
+  "worth_knowing": "He used free motion-capture data so the camera moves like a body, and licensed or free sound and textures, all credited.",
+  "prompt": "Using Blender, build a short first-person scene: [describe the setting, lighting and action]. Script it step by step. Move the camera with [a motion-capture file] so it feels like a person walking. Render a low-quality preview first and show it to me. Wait for my notes before doing the final render, then add sounds from [my sound folder] timed to the action.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "short film",
+    "3d animation",
+    "blender",
+    "sound design"
+  ],
+  "source": {
+    "url": "https://x.com/byDastro/status/2115978237956243829",
+    "name": "X",
+    "author": "Dontae Kerr (@byDastro)",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An unusual creative use with a finished film and clear credits for human and agent roles. Specific prompts and steps are not shared."
+  }
+}

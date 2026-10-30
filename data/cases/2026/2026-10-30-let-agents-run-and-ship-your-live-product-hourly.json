@@ -1,0 +1,43 @@
+{
+  "id": "let-agents-run-and-ship-your-live-product-hourly",
+  "title": "Let agents run and ship your live product hourly",
+  "summary": "Spawn's Jacob Sansbury says a swarm of agents develops the game autonomously, shipping to production every hour and spending over $3M a month on AI tokens.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "production error logs",
+    "bug reports",
+    "metrics",
+    "continuous deployment"
+  ],
+  "agent_role": "Agents read errors, bug reports and metrics, decide whether to fix issues, change live code and ship to production hourly; humans set the overall system and treat gaps in shipping as top incidents.",
+  "outcome": "Author reports agents ship to production hourly, about 60% of work starts from a production error or bug report, and they spend over $3M a month on tokens (30x payroll).",
+  "what_they_did": "Jacob Sansbury describes building Spawn, a multiplayer game where players prompt an in-game agent to change the world. A swarm of frontier-model agents develops it autonomously. The agents read every error, bug report and metric, decide what to fix, change the live code and ship to production every hour. The in-game agent files its own bug reports straight to an agent that triages them.",
+  "how_it_went": "He reports shipping to production hourly, with an hour without a ship treated as the most severe incident. About 60% of work starts from a production error or bug report, and broken changes roll back in 30 seconds.",
+  "worth_knowing": "The setup costs over $3 million a month in model tokens (30x their payroll) and relies on fast rollback; Simon Willison doubts this style suits all software.",
+  "prompt": "Set up a loop where my coding agents own our live product. Have them read production errors, user bug reports, logs and metrics, then decide for each one whether it is a real bug, a won't-fix, or a design decision that needs me. For real bugs, draft the fix and show me the change and a rollback plan before shipping. Keep a short log of what shipped and why. Flag anything risky or irreversible and wait for my approval before deploying to production.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "continuous deployment",
+    "autonomous agents",
+    "game development",
+    "live operations"
+  ],
+  "source": {
+    "url": "https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/",
+    "name": "Simon Willison's Weblog",
+    "author": "Jacob Sansbury",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 8,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, striking real-world case of a swarm of agents autonomously developing and shipping a live product hourly, with specific numbers and workflow details."
+  }
+}

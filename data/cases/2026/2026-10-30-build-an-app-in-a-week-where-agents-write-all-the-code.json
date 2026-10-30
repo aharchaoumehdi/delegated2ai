@@ -1,0 +1,42 @@
+{
+  "id": "build-an-app-in-a-week-where-agents-write-all-the-code",
+  "title": "Build an app in a week where agents write all the code",
+  "summary": "Thoughtworks had a team build an airline app in a week with agents writing every line; CTO Rachel Laycock says it got about 80% done but builds were often failing.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "automatic tests",
+    "architecture checks",
+    "delivery pipeline"
+  ],
+  "agent_role": "Agents wrote all the code and kept working after hours. Humans planned the domain at a whiteboard and built the tests, contracts and checks that guided the agents.",
+  "outcome": "The author reports the app was about 80% done after a week and ran, but the build was frequently red.",
+  "what_they_did": "Thoughtworks' Giles Alexander gathered senior engineers, infrastructure consultants and product people for a week. Nobody wrote code; agents built everything. The humans spent about two thirds of their time at the whiteboard and a third improving the checks and instructions the agents worked within.",
+  "how_it_went": "Rachel Laycock says they got about 80% of the airline app done and it ran. But the build was often failing, and the product person committed more feature code than anyone else.",
+  "worth_knowing": "Constant failing builds made it hard to trust any check. Possible causes named include too many agents working in parallel and changes arriving faster than checks could finish.",
+  "prompt": "Help me run a one-week experiment where you write all the code for [app idea]. First, work with me to map the main parts of the app and the boundaries between them, and propose the automatic tests and checks you will run on every change. Show me that plan and wait for my approval. Then build one part at a time, keep the build passing before moving on, and report each day what is done, what fails, and what you need me to decide.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "agent-only development",
+    "team experiment",
+    "software delivery",
+    "testing"
+  ],
+  "source": {
+    "url": "https://martinfowler.com/rachels-ramblings/good-devs-wary.html",
+    "name": "Hacker News",
+    "author": "Rachel Laycock",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Mostly an opinion piece, but it reports a concrete Thoughtworks experiment where a team built an airline app in a week with agents writing all code, with honest results; details are thin and secondhand."
+  }
+}

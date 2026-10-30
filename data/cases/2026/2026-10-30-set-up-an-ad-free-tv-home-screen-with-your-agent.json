@@ -1,0 +1,43 @@
+{
+  "id": "set-up-an-ad-free-tv-home-screen-with-your-agent",
+  "title": "Set up an ad-free TV home screen with your agent",
+  "summary": "Seagey built couch-tv, an ad-free Google TV and Samsung home screen and phone remote that a coding agent installs, plus a Claude assistant that finds and plays shows.",
+  "domain": "Home",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Android TV debugging tools",
+    "Open-Meteo weather",
+    "Home Assistant",
+    "GitHub"
+  ],
+  "agent_role": "The reader's coding agent reads the repo's instructions, detects the TV type, configures and installs the home screen, and asks before turning on optional features. A Claude assistant then handles requests like finding and playing a described show.",
+  "outcome": "The author reports it working on Google TVs and a 2021 Samsung Frame, where asking for 'that show about the lawyer who never went to law school' found and played Suits; sixteen people have forked it.",
+  "what_they_did": "Seagey made couch-tv, a custom home screen and phone remote for Google TV, later Samsung and Fire TV. Setup is done by giving the repo link to your coding agent, which follows instruction files in the repo. An optional Claude assistant takes spoken-style requests and opens shows in Netflix, YouTube and other apps. On Samsung, a always-on computer at home acts as a bridge.",
+  "how_it_went": "The author says it runs on Google TVs and a Samsung Frame, gets past 'Who's watching?' screens, and plays Netflix shows by itself. Fixes and features from community forks, like Fire TV support and a smart home doorbell card, were merged in.",
+  "worth_knowing": "Samsung does not let apps replace its home, so couch-tv opens itself instead, and Play is pressed by timing; only Netflix timing is tested. Fire TV support has not yet been tried on a real device by the author.",
+  "prompt": "Set up couch-tv from [repo URL] on my [TV brand and model]. Read the repo's setup instructions first, then find my TV on the home Wi-Fi and tell me which setup path fits it. Show me your plan, including every setting you will change on the TV and how to undo it, and wait for my approval before installing anything or switching the home screen. Use [your city] for weather and add these people for the profile screen: [names]. Leave smart home features off unless I ask.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "smart tv",
+    "home screen",
+    "remote control",
+    "home automation"
+  ],
+  "source": {
+    "url": "https://github.com/Seagey/couch-tv",
+    "name": "GitHub",
+    "author": "Seagey",
+    "published": "2026-10-26"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An open-source TV home screen and phone remote that readers install by handing the repo to their coding agent, with a Claude assistant that finds and plays shows; detailed, tested on real TVs and improved by community forks. Non-coding home use earns a small boost."
+  }
+}

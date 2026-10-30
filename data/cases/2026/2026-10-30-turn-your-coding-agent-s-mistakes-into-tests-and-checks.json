@@ -1,0 +1,42 @@
+{
+  "id": "turn-your-coding-agent-s-mistakes-into-tests-and-checks",
+  "title": "Turn your coding agent's mistakes into tests and checks",
+  "summary": "A developer had Claude Code review a session that shipped a numbering bug with 42 green tests; its fixes became a test and commit check, and a fresh run passed 5/5.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Matt Pocock's retro skill",
+    "vitest",
+    "pre-commit hook"
+  ],
+  "agent_role": "Claude Code built the feature, then reviewed its own session log to propose fixes once told about the failure; the human approved which fixes to keep.",
+  "outcome": "Author reports the re-run in a fresh session passed the hidden finance check five out of five times.",
+  "what_they_did": "A developer asked Claude Code to add numbered credit notes to a small invoicing app. Tests passed, but a hidden check found a rejected request wasted a number. They ran a review skill on the session, told it what failed, and made it quote the moment behind each suggestion. Approved fixes became a test, a check that runs before every save to the code history, a coding rule and a code comment.",
+  "how_it_went": "The first review called the session smooth and missed the bug. After being told the failure, it found the cause and kept four of five suggestions. A fresh session read the new rule and test and passed the check 5/5.",
+  "worth_knowing": "The review cannot see failures the session never saw, so tell it what broke. Only the pre-commit check is enforced; written rules work only if the agent chooses to read them.",
+  "prompt": "Review this coding session's log. Here is what failed after you finished: [describe the bug]. Find the moment in the session that caused it and quote it. List what would have prevented it, ranked, and drop any idea you cannot tie to a specific moment. For each survivor, suggest the right place for it: a test, a check that runs before commits, a line in [coding standards file], or a code comment. Do not edit any files; show me the list and wait for my approval.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "code review",
+    "testing",
+    "retrospective",
+    "coding agents"
+  ],
+  "source": {
+    "url": "https://dev.to/aidiveyt/claude-code-shipped-a-bug-with-42-tests-green-the-retro-said-the-session-was-smooth-c8c",
+    "name": "DEV Community",
+    "author": "AI Dive",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Detailed, honest experiment showing how a coding agent's retrospective turned a hidden bug into a test, a pre-commit check and a coding rule, with a passing re-run; specific and reproducible."
+  }
+}

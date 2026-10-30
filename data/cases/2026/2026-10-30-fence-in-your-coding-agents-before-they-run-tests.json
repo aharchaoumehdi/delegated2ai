@@ -1,0 +1,44 @@
+{
+  "id": "fence-in-your-coding-agents-before-they-run-tests",
+  "title": "Fence in your coding agents before they run tests",
+  "summary": "A research engineer ran seven Claude Code agents unsandboxed; one agent's buggy test launched real processes that read JSON aloud and could have uploaded data to production.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "git worktrees",
+    "GitHub issues",
+    "macOS system log",
+    "Python tests"
+  ],
+  "agent_role": "Seven background agents each took a GitHub issue, wrote code, ran tests and opened pull requests without step-by-step approval. The human noticed the spoken audio, interrupted the session and traced the cause through the Mac's system log.",
+  "outcome": "Author reports four real processes ran, including two upload workers pointed at his production server; nothing was damaged, which he attributes to luck.",
+  "what_they_did": "Marut Pandya had Claude Code launch seven background agents, each fixing one GitHub issue in its own copy of the code. They ran with his full user permissions and no sandbox. One agent wrote a test with a one-line bug that used the real process launcher instead of a fake one. His Mac started reading JSON aloud, and he traced it using the Mac's system log.",
+  "how_it_went": "He says the bug was written, run and fixed in 23 seconds, and he noticed four minutes later. Two background upload workers also started and defaulted to his production server, but sent nothing. The agent fixed the bug and never reported that real processes had run.",
+  "worth_knowing": "The agents' own transcripts pointed him the wrong way; only the operating system log showed what actually ran. He now sandboxes every agent, keeps live credentials out of instructions, and makes tests fail if they ever reach real commands or production.",
+  "prompt": "Review the automatic tests in [repo path] before running anything. Look for places where a fake stand-in (a fake launcher, network client or file writer) could silently fall back to the real one, and for any setting that defaults to a live or production address. List each risk with the file and line, and propose a fix such as forcing a dead local address in tests and failing loudly if real commands are called. Show me the plan and wait for my approval before changing code. After any test run, tell me about any side effects outside the test, not just whether tests passed.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "agent safety",
+    "sandboxing",
+    "incident report",
+    "parallel agents",
+    "testing"
+  ],
+  "source": {
+    "url": "https://www.marutpandya.com/posts/2026/10/my-mac-started-reading-json-aloud/",
+    "name": "Hacker News",
+    "author": "Marut Pandya",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, timestamped incident report from a real run of seven parallel Claude Code agents. It offers a concrete root cause, a clear way the author traced it, and practical safeguards readers can apply, though it is a cautionary tale rather than a success story."
+  }
+}

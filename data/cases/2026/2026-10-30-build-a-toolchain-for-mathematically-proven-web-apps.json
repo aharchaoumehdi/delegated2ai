@@ -1,0 +1,43 @@
+{
+  "id": "build-a-toolchain-for-mathematically-proven-web-apps",
+  "title": "Build a toolchain for mathematically proven web apps",
+  "summary": "A developer says Claude Opus 5.5 built most of Lasm, a tool running proof-checked Lean code on the web; its sample app carries 117 proved theorems.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "Lean",
+    "WebAssembly",
+    "Node",
+    "npm"
+  ],
+  "agent_role": "The author says Claude wrote most of the code over 1,180 commits. The author gave high-level direction.",
+  "outcome": "The author reports a working toolchain covering about 18 hosting targets, with a sample app carrying 117 proved theorems.",
+  "what_they_did": "A developer wanted to write web apps in Lean, a language that lets you mathematically prove code is correct. They directed Claude to build a tool that turns Lean programs into code for servers, cloud functions and browsers. Most of the code came from the agent.",
+  "how_it_went": "The author reports the tool is published and tested on many hosting services. Its sample app, a Medium-style blog site, has 117 proved theorems about who can edit what.",
+  "worth_knowing": "The README says some parts are trusted, not proved, such as database statements and the runtime itself.",
+  "prompt": "I want to build [describe the tool or library] in [language]. Act as the main engineer while I give high-level direction. First write a short plan with milestones and the tests that will prove each one works, and wait for my approval. Then build it step by step. Run the tests after each step and keep a running notes file of decisions and limits. Ask before publishing anything.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "formal verification",
+    "compiler",
+    "web apps",
+    "long-running build"
+  ],
+  "source": {
+    "url": "https://github.com/Millillion/lasm",
+    "name": "Hacker News",
+    "author": "lastmjs",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A large, ambitious build with real code and numbers. However, the agent's exact role is described only as 'mostly built by Claude with my high-level direction.'"
+  }
+}

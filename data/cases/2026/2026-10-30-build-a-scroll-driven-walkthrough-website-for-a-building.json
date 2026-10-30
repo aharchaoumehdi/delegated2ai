@@ -1,0 +1,40 @@
+{
+  "id": "build-a-scroll-driven-walkthrough-website-for-a-building",
+  "title": "Build a scroll-driven walkthrough website for a building",
+  "summary": "An architect-minded builder had Claude Code make a website where scrolling moves an AI-generated camera from the sea, across a terrace and into a building.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "AI-generated video"
+  ],
+  "agent_role": "Claude Code wrote the website and tied the AI-generated walkthrough footage to the page scroll. The human supplied the concept and footage direction.",
+  "outcome": "Author shows a working site in a demo video where scrolling controls the camera.",
+  "what_they_did": "The poster used Claude Code to build a website for an architecture project. They had AI-generated walkthrough footage that moves from the sea, over a terrace and into the building. Claude Code linked that footage to the page so scrolling moves the camera.",
+  "how_it_went": "The author shares a video of the finished site, with the camera moving as the visitor scrolls.",
+  "worth_knowing": null,
+  "prompt": "Build a single-page website for [project or building name]. I have a walkthrough video at [video file path] that moves from [starting view] to [ending view]. Tie the video's playback to page scrolling, so scrolling down moves the camera forward and scrolling up moves it back. Add short text panels at [key moments]. Keep it smooth on phones and desktops. Show me the plan first, then build it and let me review it locally before anything is published.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "website",
+    "architecture",
+    "scroll animation",
+    "video"
+  ],
+  "source": {
+    "url": "https://x.com/SeoaneNs/status/2115807121216360527",
+    "name": "X",
+    "author": "@SeoaneNs",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine Claude Code build with a demo video and an unusual scroll-controlled walkthrough idea, but the post gives almost no detail on steps or tools."
+  }
+}

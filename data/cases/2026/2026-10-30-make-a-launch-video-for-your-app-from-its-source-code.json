@@ -1,0 +1,42 @@
+{
+  "id": "make-a-launch-video-for-your-app-from-its-source-code",
+  "title": "Make a launch video for your app from its source code",
+  "summary": "A developer gave Claude Code a short playbook and his ukulele tuner's source code; it produced a 36-second 1080p launch film with rebuilt app screens, synced music and a QR code.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Playwright",
+    "Pixabay",
+    "HTML/SVG animation"
+  ],
+  "agent_role": "Claude Code rebuilt the app's screens as animations, rendered 2,160 frames, matched the music drop to the logo reveal and made the QR code end card. The developer supplied the playbook and source code.",
+  "outcome": "Author reports Claude Code made a 36-second 1080p, 60 fps launch film.",
+  "what_they_did": "A developer built a free ukulele tuner for Android. For its launch film, he gave Claude Code a short playbook and the app's source code. Claude Code rebuilt the real screens as web animations in the app's dark theme and recorded every frame with a browser tool. It also picked a music track, lined the drop up with the logo, and made a QR code for the ending.",
+  "how_it_went": "He says the result was a 36-second 1080p film rendered from 2,160 frames at 60 frames per second.",
+  "worth_knowing": "Because every frame is drawn by code from the time alone, the video can be re-rendered exactly after any change.",
+  "prompt": "Make a 30–40 second launch video for my app [app name], whose code is at [repo path]. Rebuild the main screens as animations using the app's real colors and styling. Pick a royalty-free music track from [music source] and time the biggest beat to the logo reveal. End with a card showing a QR code linking to [store URL]. Render at 1080p. Show me a storyboard first and wait for my approval before rendering.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "launch video",
+    "app marketing",
+    "motion graphics",
+    "android app"
+  ],
+  "source": {
+    "url": "https://x.com/romankhrupa/status/2115916942443680002",
+    "name": "X",
+    "author": "@romankhrupa",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A specific, well-described launch video made by Claude Code from app source code, though code-built product videos are becoming familiar."
+  }
+}

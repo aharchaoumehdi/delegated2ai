@@ -1,0 +1,45 @@
+{
+  "id": "write-a-personalized-children-s-storybook-with-agents",
+  "title": "Write a personalized children's storybook with agents",
+  "summary": "A student built SparkStory, where six agents fact-check a parent's story idea, outline it, wait for parent approval, then write, illustrate and narrate the book.",
+  "domain": "Creative",
+  "platform": "LangGraph",
+  "model": null,
+  "tools": [
+    "LangGraph",
+    "FastMCP",
+    "Postgres with pgvector",
+    "Pydantic",
+    "Docker",
+    "GitHub Actions"
+  ],
+  "agent_role": "Agents research the premise for factual mistakes, draft and self-review an outline, then write and check the prose, with optional pictures and narration. The parent describes the child and must approve or revise the outline before any writing starts.",
+  "outcome": "The instructor reports the project is working and open source; no usage numbers are given.",
+  "what_they_did": "Maryam Tabatabaie built SparkStory as a course capstone. A parent describes their child's age, interests and a story idea. Six specialized agents check the idea for factual errors, draft an outline and improve it in a review loop. The parent approves the outline, then agents write and check the story.",
+  "how_it_went": "Her instructor shared it as an open-source project that can also create illustrations and narrate the finished story. No results from real families are reported.",
+  "worth_knowing": "The system refuses to write prose until a parent approves the outline, and it rejects outlines that drift from the original brief.",
+  "prompt": "Help me write a personalized children's story for my [age]-year-old who loves [interests]. Story idea: [your idea]. First, check the idea for any factual mistakes a child might learn wrongly and list them. Then draft a short outline, review it yourself against my brief, and improve it. Show me the outline and wait for my approval or changes before writing anything. Once I approve, write the story in simple language for that age, then check the prose for readability and consistency with the outline. Finally, suggest a short description for an illustration on each page.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "childrens books",
+    "storytelling",
+    "multi-agent",
+    "parenting"
+  ],
+  "source": {
+    "url": "https://x.com/pauliusztin_/status/2115798306974818754",
+    "name": "X",
+    "author": "Maryam Tabatabaie (shared by @pauliusztin_)",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "An open-source multi-agent system with a clear step-by-step workflow and parent approval built in, a fresh non-coding use; but it is a course capstone shared by the instructor with a course plug and no reported results from real families."
+  }
+}

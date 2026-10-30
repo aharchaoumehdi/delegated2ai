@@ -1,0 +1,45 @@
+{
+  "id": "study-how-a-team-of-ai-agents-survives-in-minecraft",
+  "title": "Study how a team of AI agents survives in Minecraft",
+  "summary": "YC Labs put 50 GPT-6.1 Sol agents in a survival Minecraft world for three hours; they report the agents formed a food-rationing government and sent about 5,900 messages.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": "GPT-6.1 Sol",
+  "tools": [
+    "Minecraft",
+    "Mineflayer",
+    "Pi agent loop",
+    "shared file sandbox",
+    "direct messages",
+    "agent directory"
+  ],
+  "agent_role": "Each agent observed the world, planned, messaged others, wrote shared plans and acted in the game. The humans set the goal and the environment, then watched.",
+  "outcome": "YC Labs reports 34 agent deaths, 22 on the first night. They say the agents became risk-averse and built a ration ledger, rules and permits under a de facto leader.",
+  "what_they_did": "YC Labs and Olam Labs built an open-source harness that lets AI agents play Minecraft. They gave 50 agents one goal: build a thriving civilization. Each agent could see the world, remember things, run scripts, send direct messages and write to a shared folder. The researchers then let them run for three hours.",
+  "how_it_went": "They report the first agent in the directory, Ada, became leader and wrote shared plans. After 22 deaths on the first night, the agents huddled in shelters. They then ran a food queue through one agent, Ines.",
+  "worth_knowing": "Dying cost the agents only their gear, yet they still became very cautious. Small setup details, like directory order, shaped who led.",
+  "prompt": "Using the open-source Minecraft agent harness from yc-software on GitHub, help me set up a small experiment. Run [number] AI agents in a survival Minecraft world for [duration] with the shared goal \"[goal]\". Give them a shared notes folder and direct messaging. First show me the setup plan and expected cost, and wait for my approval before starting. Afterward, summarize what roles formed, how many agents died and when, and quote key plans they wrote.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "multi-agent",
+    "minecraft",
+    "emergent behavior",
+    "ai research"
+  ],
+  "source": {
+    "url": "https://labs.ycombinator.com/projects/games/index.html",
+    "name": "Hacker News",
+    "author": "sandslash",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, original experiment with 50 agents acting in a shared world, with logs, numbers and an open-source harness. It is a strong non-coding science entry."
+  }
+}

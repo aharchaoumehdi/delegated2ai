@@ -1,0 +1,44 @@
+{
+  "id": "let-your-coding-agent-inspect-a-running-windows-app",
+  "title": "Let your coding agent inspect a running Windows app",
+  "summary": "A developer built a toolkit that lets coding agents inspect and instrument live Windows processes, with an example of reading Notepad's text and hooking its handlers.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Model Context Protocol server",
+    "Windows x64 process APIs",
+    "MinHook detours",
+    "TinyCC JIT",
+    "screenshot capture"
+  ],
+  "agent_role": "The agent lists processes, attaches to a target, reads memory, installs hooks, runs Win32 code, takes screenshots and detaches, driven by the user's plain-language request.",
+  "outcome": null,
+  "what_they_did": "The author built Exoproc, a toolkit and connector that links coding agents like Claude Code and Cursor to running Windows programs. It gives agents 22 tools to list processes, read and change memory, hook functions and run C code without injecting a DLL. The README shows asking an agent to find Notepad, read its text, hook a handler and take a screenshot.",
+  "how_it_went": null,
+  "worth_knowing": "Live instrumentation only runs on native Windows x64; it is a reverse-engineering tool with real risk, and includes a disclaimer file.",
+  "prompt": "Using the Windows process toolkit, find the running [app name] process, inspect its main window control, read its current text, and take a screenshot. Show me your plan first. Before installing any hook or changing memory, explain what you will do and wait for my approval, then cleanly detach when finished.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "reverse engineering",
+    "windows",
+    "process inspection",
+    "mcp"
+  ],
+  "source": {
+    "url": "https://github.com/w0ldan/exoproc",
+    "name": "GitHub",
+    "author": "w0ldan",
+    "published": "2026-10-28"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A toolkit that connects coding agents to live Windows process internals with a concrete example workflow, but it is mostly a feature catalog rather than a documented use."
+  }
+}

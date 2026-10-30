@@ -1,0 +1,40 @@
+{
+  "id": "answer-your-tenants-messages-first-with-a-chat-bot",
+  "title": "Answer your tenants' messages first with a chat bot",
+  "summary": "A Japanese shared-office owner had Claude Code build a Slack bot in two hours. It answers tenants first and passes issues like leaks to staff; rollout to 40 companies is planned.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Slack"
+  ],
+  "agent_role": "Claude Code built the Slack app and bot almost entirely. The owner wrote the reply rules and chose where problems get reported. The bot answers simple questions and hands others to a person.",
+  "outcome": "The owner expects staff to save one to four hours a day; the bot was being tested before rollout.",
+  "what_they_did": "A shared-office owner in Japan used Claude Code to build a Slack bot for tenant messages in about two hours. He wrote the rules: how to reply to each kind of message, and which channel to report problems to. Earlier he had added a feature to message all tenants at once.",
+  "how_it_went": "He says Claude Code did almost all the work. He is testing it before telling about 40 tenant companies. He expects it to save the staff member who runs three locations one to four hours a day.",
+  "worth_knowing": "He decided the reporting channel and report format before letting the bot reply. Issues it can't handle, like water leaks, go straight to a person.",
+  "prompt": "Help me build a Slack bot that gives the first reply to messages from [my customers or tenants]. Here are my rules: [message type → reply or which channel to report to]. Escalate anything urgent, like [examples], to [channel]. Each morning, post a summary of the day's inquiries. Show me the plan, then test it with sample messages. Wait for my approval before it messages real people.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "customer support",
+    "property management",
+    "slack bot",
+    "small business"
+  ],
+  "source": {
+    "url": "https://x.com/YUKICAPITALen/status/2115990880117014539",
+    "name": "X",
+    "author": "@YUKICAPITALen",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real small-business use: Claude Code built a Slack bot that answers tenants first and passes harder issues to staff. The evidence is the owner's account only, and the bot is still in testing."
+  }
+}

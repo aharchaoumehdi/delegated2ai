@@ -1,0 +1,44 @@
+{
+  "id": "ask-your-coding-agent-what-it-needs-to-test-its-code",
+  "title": "Ask your coding agent what it needs to test its code",
+  "summary": "Heal's engineers kept asking Claude Code what it needed to test its code; over five weeks it built replay and local test modes, and one new test caught a real bug.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Docker",
+    "testcontainers",
+    "LocalStack",
+    "Vercel sandbox",
+    "vitest"
+  ],
+  "agent_role": "Claude Code proposed and built test setups, including a mode that replays a recorded agent run and a local stand-in for the cloud sandbox. Engineers asked the questions, approved designs and merged the changes.",
+  "outcome": "The author reports that 23 of 29 bugs that reached staging or production in 90 days could have been caught locally, and that the first run of one new test caught a bug where re-test results were never sent.",
+  "what_they_did": "The team at Heal made one question a habit in most Claude Code sessions: what do you need to test your code? Claude Code then built pieces such as a local copy of the cloud sandbox and a way to replay a recorded agent run without calling the AI. Engineers reviewed and merged each piece, sometimes within an hour. Over five weeks these combined into a full setup the agent uses to check its own work.",
+  "how_it_went": "The author says 29 bugs slipped through to staging or production in 90 days, and 23 could have been caught by a local check. They report the first run of one new combined test caught a real bug.",
+  "worth_knowing": "Some parts could not be fully separated from the main code, such as calls to the AI service, which are hard to fake. They handled this by building a record-and-replay mechanism instead.",
+  "prompt": "I want you to be able to check your own work in [repo name]. First, tell me what you need to test your code properly: which tools, test data, stand-ins for outside services, and commands. Look at how the app starts, what outside services it calls, and which parts have no tests. Then propose a plan for a local test setup you can run yourself, with one test command and a failing test for each bug you fix. Show me the plan and wait for my approval before changing code. After building it, write short notes in [AGENTS.md or CLAUDE.md] on how to use it.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "software testing",
+    "test setup",
+    "bug prevention",
+    "coding agent"
+  ],
+  "source": {
+    "url": "https://www.heal.dev/verification-harness",
+    "name": "Hacker News",
+    "author": "Pierre Oucif (Heal)",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, dated account of engineers repeatedly asking Claude Code what it needed to test its code and letting it build test setups, with concrete bug counts. It is a company blog that also promotes Heal's product, and the idea of giving agents a way to check their work is fairly familiar."
+  }
+}

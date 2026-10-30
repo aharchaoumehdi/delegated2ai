@@ -1,0 +1,40 @@
+{
+  "id": "have-your-coding-agent-edit-and-schedule-your-reels",
+  "title": "Have your coding agent edit and schedule your reels",
+  "summary": "A small Facebook creator asked Claude Code to start editing his videos, then let it edit and schedule the very reel announcing that request.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Facebook"
+  ],
+  "agent_role": "Claude Code edited the recorded video and scheduled it for posting. The creator filmed the clip and gave the instruction.",
+  "outcome": null,
+  "what_they_did": "The poster had about 180 Facebook followers and around 200 views per reel. He filmed a quick clip of himself asking Claude Code to start editing his videos. He then let Claude Code edit that clip and schedule it.",
+  "how_it_went": null,
+  "worth_knowing": null,
+  "prompt": "Edit the video at [video file path] into a short reel for [platform]. Cut silences and filler words, add readable captions, and keep it under [length] seconds. Show me the edited version first. Once I approve, prepare it for posting at [date and time] on [my account], but confirm with me before actually scheduling it.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "video editing",
+    "social media",
+    "reels",
+    "scheduling"
+  ],
+  "source": {
+    "url": "https://x.com/AOdowski/status/2115853857066799184",
+    "name": "X",
+    "author": "@AOdowski",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real agent use (Claude Code editing and scheduling a video), but the post is a teaser with no result or method details."
+  }
+}

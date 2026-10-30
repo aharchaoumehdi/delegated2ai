@@ -1,0 +1,42 @@
+{
+  "id": "make-a-file-summary-agent-that-survives-being-shut-down",
+  "title": "Make a file-summary agent that survives being shut down",
+  "summary": "A developer built a local agent that summarizes text files with Gemma; when killed mid-run, a new process resumed at file 7 without redoing files 1 to 6.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": "Gemma 3 4B",
+  "tools": [
+    "Ollama",
+    "Temporal",
+    "Node.js"
+  ],
+  "agent_role": "The agent lists files, summarizes each with a local model, and writes a combined report; the human kills the process to test recovery.",
+  "outcome": "Author reports that after a forced kill, a new worker finished the remaining files and never redid the six already done.",
+  "what_they_did": "A developer built an agent that reads a folder of text files, summarizes each with Gemma running on their own computer, and combines them into a report. Each step is saved by a job-tracking tool, so progress survives a crash. A dashboard has a button to force-kill the agent and watch it restart.",
+  "how_it_went": "The author says a killed run resumed on a new worker within about 30 seconds and finished files 7 to 9. Files 1 to 6 were never redone.",
+  "worth_knowing": "A gentle stop (Ctrl+C) let the worker finish its step, so nothing was tested; only a hard kill proved recovery. Expect up to a 30-second pause while the stalled step times out.",
+  "prompt": "Build me a small agent that reads every .txt file in [folder path], summarizes each one with a local model through Ollama, and combines the summaries into one report. Save progress after each file so that if the process crashes or I stop it, a restart picks up at the first unfinished file instead of starting over. Show me your plan and the files you will create before writing code, then give me steps to test it by forcibly stopping it mid-run.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "file summaries",
+    "crash recovery",
+    "local models",
+    "durable workflows"
+  ],
+  "source": {
+    "url": "https://dev.to/khushighosh/undead-agent-my-ai-agent-dies-comes-back-and-tells-me-what-it-saw-33c9",
+    "name": "DEV Community",
+    "author": "Khushighosh",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working local agent that summarizes a folder of files and survives being killed mid-job, with code and a real event log; a toy task, but a useful pattern for long agent jobs."
+  }
+}

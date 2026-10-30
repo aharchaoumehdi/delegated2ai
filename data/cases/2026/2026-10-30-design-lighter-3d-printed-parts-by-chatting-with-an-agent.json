@@ -1,0 +1,43 @@
+{
+  "id": "design-lighter-3d-printed-parts-by-chatting-with-an-agent",
+  "title": "Design lighter 3D-printed parts by chatting with an agent",
+  "summary": "A team built a plug-in that lets agents like Claude design lighter 3D-printable parts; a recorded footbridge run took 39 minutes.",
+  "domain": "Creative",
+  "platform": "Claude",
+  "model": null,
+  "tools": [
+    "topopt add-on",
+    "Claude Desktop",
+    "Claude Code",
+    "3D model files"
+  ],
+  "agent_role": "The agent helps the person describe the part, mounts and loads, then checks the setup and runs the optimizer. The person reviews pictures and approves changes.",
+  "outcome": "The README reports a recorded footbridge run of 200 passes in 39 minutes on a built-in graphics chip.",
+  "what_they_did": "The team built an add-on that gives an agent a shape optimizer running on your own computer. You start from a 3D model file, a sketch or plain words, like 'a wall hook for a T-shirt, two screws, 2 kg'. The agent works out the shape with you, checks it in pictures, then finds a lighter form that still carries the load.",
+  "how_it_went": "The authors show a recorded footbridge run of 200 passes in 39 minutes. It ends with a smooth file ready to print.",
+  "worth_knowing": "It needs a Mac with Apple chips or a Linux computer with at least 16 GB of memory. The first setup downloads about 200 MB.",
+  "prompt": "Help me design a lighter 3D-printed part using the topopt tool. The part is [describe the part or attach your model file]. It mounts at [where it is fixed, e.g. two screw holes] and carries [load, e.g. 2 kg] at [where the load goes]. First show me a picture of the rough shape, mounts and loads, and wait for my approval. Then run the optimization, give me the progress page link, and save the printable file to [folder].",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "3d printing",
+    "generative design",
+    "engineering",
+    "part design"
+  ],
+  "source": {
+    "url": "https://github.com/chartergroup/topopt",
+    "name": "GitHub",
+    "author": "chartergroup",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A novel non-coding workflow where an agent turns words, sketches or files into a lighter printable part. It is mostly a tool README, with one recorded example run as evidence."
+  }
+}

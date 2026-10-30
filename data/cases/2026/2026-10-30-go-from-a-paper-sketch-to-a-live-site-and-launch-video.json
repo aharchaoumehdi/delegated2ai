@@ -1,0 +1,46 @@
+{
+  "id": "go-from-a-paper-sketch-to-a-live-site-and-launch-video",
+  "title": "Go from a paper sketch to a live site and launch video",
+  "summary": "A builder had Claude Code turn a hand-drawn map into a live website and edit his launch video; he says it took about 24 hours, plus $10.46 for the domain.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Cloudflare Pages",
+    "Claude Code browser",
+    "FFmpeg",
+    "Whisper",
+    "OBS",
+    "OpenAI Codex"
+  ],
+  "agent_role": "Claude Code wrote the site, connected the domain, clicked through the site before and after each deploy, researched tested hooks and edited the recorded video. The human sketched the idea, bought the domain and recorded the video.",
+  "outcome": "Author reports going from sketch to live site and edited launch video in about 24 hours, spending $10.46 on the domain.",
+  "what_they_did": "The poster photographed a hand-drawn map and gave it to Claude. Claude Code wrote a plain web page, hosted it free on Cloudflare and connected his domain. Before each deploy, it clicked through the site at phone and desktop sizes. It also gathered 15 tested headline hooks and edited his recorded launch video, cutting pauses and adding captions and zooms.",
+  "how_it_went": "He says it was the fastest he has ever taken an idea to production, and he never opened a video editing app. The only cost was $10.46 for the domain on top of his existing Claude plan.",
+  "worth_knowing": "He used the $100 Claude plan but says simple sites work on the $20 plan. Hosting on a free static service replaced paying for his own server.",
+  "prompt": "I have a sketch of a website idea at [image path]. Build it as a simple site using plain web pages, no framework. Test it in a browser at phone and desktop sizes and fix any layout problems. Show me the result and a plan for hosting it on [hosting service] with [my domain]; wait for my approval before deploying. Then suggest 15 launch hooks based on tested headline research. Finally, edit my recording at [video file path]: cut dead air and filler words, add captions and chapter labels, and even out the audio.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "website",
+    "launch video",
+    "video editing",
+    "web hosting",
+    "side project"
+  ],
+  "source": {
+    "url": "https://x.com/UpperClassArmz/status/2115975099115286551",
+    "name": "X",
+    "author": "@UpperClassArmz",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-30",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, reproducible walkthrough with tools, costs and clear agent steps covering site building, testing, deployment, hook research and full video editing."
+  }
+}

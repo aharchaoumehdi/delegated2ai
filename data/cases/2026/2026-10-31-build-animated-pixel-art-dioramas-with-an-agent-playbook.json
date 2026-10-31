@@ -1,0 +1,43 @@
+{
+  "id": "build-animated-pixel-art-dioramas-with-an-agent-playbook",
+  "title": "Build animated pixel-art dioramas with an agent playbook",
+  "summary": "A creator wrote a playbook that guides an agent to research, build and frame-check tiny animated pixel-art scenes; four scenes, including a pool afternoon and a bank job, were built with it.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Three.js",
+    "Playwright",
+    "git",
+    "Node"
+  ],
+  "agent_role": "The agent installs the playbook, researches the subject, fills a design sheet, builds the scene from code templates and runs checking scripts before showing frames. The human picks the subject and approves the install location.",
+  "outcome": "The author shows four finished scenes built with the playbook, each 26 to 48 seconds long.",
+  "what_they_did": "A creator wrote a single instruction file plus code templates for building tiny 3D scenes that look like pixel art. You paste an install prompt into an agent that can run commands. The agent downloads it, reads it and reports back. You give it a subject, and it researches real reference footage, builds the scene and checks frozen frames.",
+  "how_it_went": "The author shows four scenes made this way: a Pokemon battle, a car arena night, a pool afternoon and a bank robbery.",
+  "worth_knowing": "Every scene is a function of time, so any frame can be frozen and screenshotted as proof. The checking scripts need Node with three, esbuild and playwright-core.",
+  "prompt": "Install the Diorama playbook from https://github.com/sloemo01/diorama. Ask me where to put the folder first and wait for my answer. Read SKILL.md and the templates fully, then summarize the look rules, the build steps and the checking scripts. Then build a small pixel-art diorama of [your subject, e.g. a night market]. Research real references first, fill in the design sheet, block it out in grey, then add color, detail and animation. Run the checking scripts and show me the frames you kept and what each one proves.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "pixel art",
+    "3d scenes",
+    "animation",
+    "creative coding"
+  ],
+  "source": {
+    "url": "https://github.com/sloemo01/diorama",
+    "name": "GitHub",
+    "author": "sloemo01",
+    "published": "2026-10-24"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed agent playbook with research-first steps and frame-by-frame checks, plus four finished animated scenes; agent's exact role and platform are less clearly documented."
+  }
+}

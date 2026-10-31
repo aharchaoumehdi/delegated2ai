@@ -1,0 +1,43 @@
+{
+  "id": "draw-and-fact-check-a-sticker-for-every-bird-species",
+  "title": "Draw and fact-check a sticker for every bird species",
+  "summary": "Huashu used an AI pipeline to draw stickers for all 11,064 living bird species, reporting 7,676 passed an automated field-mark review after rounds of redraws.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": "GPT-image",
+  "tools": [
+    "GPT-image",
+    "Wikimedia Commons photos",
+    "IOC World Bird List"
+  ],
+  "agent_role": "The pipeline found reference photos, drew each sticker, upscaled and cut it out, then a separate AI reviewer scored it and triggered redraws; the human set the quality bar and invites birder corrections.",
+  "outcome": "Author reports 7,676 of 11,064 stickers meet the quality bar; 3,388 fall short and the best-scoring version was kept.",
+  "what_they_did": "Huashu, who makes a bird-watching app, built a sticker for every living bird species. For each, the pipeline picked a reference photo, drew the bird with GPT-image, upscaled it and cut it out. A separate AI reviewer scored each sticker on bill, eyes, legs and plumage against the photo. Low scorers were redrawn.",
+  "how_it_went": "The author reports 11,064 stickers in total, with names in up to 43 languages. 7,676 pass the bar; in the last round 211 of 852 borderline stickers failed a second blind review and were redrawn.",
+  "worth_knowing": "The author says these are friendly illustrations, not field-guide plates, and to check a field guide for fine details. Many reference photos carry non-commercial or unrecorded licenses.",
+  "prompt": "Help me make a matching set of illustrated stickers for [list of species or items]. For each one, find an openly licensed reference photo and record its source and license. Draw a sticker in [style] with a white outline, then compare it against the photo on [key features to check] and give it a score out of 100. Redraw anything below [score] up to [number] times and keep the best version. Show me the first five results and the scoring notes before running the full list.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "illustration",
+    "birds",
+    "image generation",
+    "quality review",
+    "open data"
+  ],
+  "source": {
+    "url": "https://github.com/alchaincyf/huashu-bird-sticker",
+    "name": "GitHub",
+    "author": "alchaincyf (Huashu)",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A large, well-documented AI pipeline that drew, scored and redrew stickers for all 11,064 bird species with open data and honest quality numbers; the exact agent tooling is only implied by repo tags."
+  }
+}

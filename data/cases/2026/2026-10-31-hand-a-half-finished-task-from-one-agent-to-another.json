@@ -1,0 +1,42 @@
+{
+  "id": "hand-a-half-finished-task-from-one-agent-to-another",
+  "title": "Hand a half-finished task from one agent to another",
+  "summary": "A developer added a one-word 'checkpoint' command to his agent tool; he says Claude Opus resumed a task a local Qwen model had stalled on and finished it.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": "Qwen (local, quantized); Claude Opus 5.5",
+  "tools": [
+    "Valet broker",
+    "local language model",
+    "Claude"
+  ],
+  "agent_role": "On 'checkpoint' the agent packages what is done, what is next and where files live; on 'resume' another agent loads it and continues. The human decides when to stop and switch.",
+  "outcome": "Author reports Claude picked up the stalled task and finished it without further prompting.",
+  "what_they_did": "A developer runs local AI models on his Dell. Long tasks slowed them down and filled their memory. He added a 'checkpoint' command to his own agent tool, Valet. The agent saves a summary of progress, next steps and file locations. Saying 'resume' in any new session or agent loads it.",
+  "how_it_went": "He says a local model struggled with a hard coding task, so he made a checkpoint. He then asked Claude Opus to resume, and he reports it finished the task without more prompting.",
+  "worth_knowing": "Old checkpoints archive themselves when resumed or replaced, so stale handoff notes do not pile up.",
+  "prompt": "When I say \"checkpoint\", write a handoff note to [file path, e.g. CHECKPOINT.md] covering: the goal, what is done, what is left, key decisions, and where the relevant files live. Move any older checkpoint to an archive folder. When I say \"resume\" in a new session, read the latest checkpoint, summarize your understanding and next step, and wait for my go-ahead before continuing on [project].",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "agent handoff",
+    "session memory",
+    "local models",
+    "coding"
+  ],
+  "source": {
+    "url": "https://x.com/DaigoTanaka/status/2116229001043976218",
+    "name": "X",
+    "author": "@DaigoTanaka",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real handoff between a local model and Claude that finished a task, but it is a single anecdote about the author's own tool with no code or numbers."
+  }
+}

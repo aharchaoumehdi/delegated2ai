@@ -1,0 +1,43 @@
+{
+  "id": "copy-a-website-you-like-and-swap-in-your-own-content",
+  "title": "Copy a website you like and swap in your own content",
+  "summary": "Ruben Hassid's Remake has Claude Code copy a website, compare every screen to the original, repair differences, and publish a private copy ready for your own content.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "web browser",
+    "GitHub",
+    "Vercel",
+    "Codex image generation"
+  ],
+  "agent_role": "Claude Code records the site, rebuilds it, reads difference images and fixes them until they pass, then publishes and fills in your content. The human gives the address and supplies their photos, logo and text.",
+  "outcome": "The author says it ends with a passcode-protected live copy that matches 98% of stable pixels per screen.",
+  "what_they_did": "Ruben Hassid made a Claude Code add-on that takes one web address. It records the page at desktop and phone size and rebuilds it as files you own. It then compares each screen with the original and repairs differences until they pass. It publishes the copy privately and lists every text, photo and logo to replace.",
+  "how_it_went": "The author says the copy is scored to the pixel, including scrolling motion, and the report ends with REMAKE COMPLETE when every check passes.",
+  "worth_knowing": "It keeps the original's photos, fonts and text until you swap them, so you must replace everything before treating the site as your own.",
+  "prompt": "Remake [website URL] using github.com/rubenhassid1/remake until its report says REMAKE COMPLETE, or stop after 100 turns. Keep the copy private behind a passcode. Then show me the list of texts, photos, fonts and logos I need to replace. Use my files in [folder] and wait for my approval before publishing changes.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "website copy",
+    "web design",
+    "deployment",
+    "visual testing"
+  ],
+  "source": {
+    "url": "https://github.com/rubenhassid1/remake",
+    "name": "GitHub",
+    "author": "rubenhassid1",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, reproducible workflow where Claude Code copies a site, checks it screen by screen, fixes differences and deploys it. Limited evidence of real runs and an obvious copyright risk."
+  }
+}

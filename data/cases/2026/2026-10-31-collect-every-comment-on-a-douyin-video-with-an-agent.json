@@ -1,0 +1,42 @@
+{
+  "id": "collect-every-comment-on-a-douyin-video-with-an-agent",
+  "title": "Collect every comment on a Douyin video with an agent",
+  "summary": "A developer built a Claude Code skill that gathers a Douyin video's full comment thread; they report 195 of 195 comments in 138 seconds, matching a manual check.",
+  "domain": "Marketing",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude in Chrome",
+    "Chrome",
+    "Python"
+  ],
+  "agent_role": "Claude Code, working in the user's logged-in Chrome, copies the page's own comment requests, pages through comments and replies, saves them and builds a report sorted by likes; the human pastes the link and solves any verification puzzle.",
+  "outcome": "Author reports capturing 195 of 195 comments in 138 seconds and 135 of 135 on another video, with no verification prompts; on a 1,067-comment video it got 823.",
+  "what_they_did": "Pluviobyte wrote a skill for Claude Code that uses the Chrome browser extension. You paste a Douyin video link and ask for its comments. The agent copies the page's real comment request, fetches all top comments and replies with pauses, then writes a single file sorted by likes.",
+  "how_it_went": "The author reports 195 comments in 138 seconds on one video and 135 in 252 seconds on another. The first matched a manual click-through that took about 6 minutes.",
+  "worth_knowing": "It stops if a verification puzzle appears and waits for you to solve it. On videos with over a thousand comments it misses some; the author says use it only for personal research.",
+  "prompt": "In my logged-in Chrome, open this Douyin video: [video link]. Collect all top-level comments and every reply under them, pausing a few seconds between requests. If a verification puzzle appears, stop and wait for me to solve it. Save the raw data to [folder], then write one file listing comments sorted by likes with replies indented under each. Tell me how many you got versus the count the video shows.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "comments",
+    "social media research",
+    "browser automation",
+    "douyin"
+  ],
+  "source": {
+    "url": "https://github.com/Pluviobyte/douyin-comments",
+    "name": "GitHub",
+    "author": "Pluviobyte",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Clear, tested Claude Code skill with real numbers (195 comments in 138 seconds, matching a manual check) and honest limits; useful for creators and researchers outside coding."
+  }
+}

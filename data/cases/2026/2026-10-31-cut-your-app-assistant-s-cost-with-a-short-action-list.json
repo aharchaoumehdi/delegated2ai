@@ -1,0 +1,43 @@
+{
+  "id": "cut-your-app-assistant-s-cost-with-a-short-action-list",
+  "title": "Cut your app assistant's cost with a short action list",
+  "summary": "A developer replaced the 187 tools sent to his app's AI assistant with a one-line-per-action list; he reports per-turn cost fell from $0.148 to $0.062, later $0.040.",
+  "domain": "Software",
+  "platform": "Custom agent",
+  "model": "Sonnet 5.5",
+  "tools": [
+    "app action list",
+    "action detail lookup",
+    "approval step for risky changes",
+    "token counter"
+  ],
+  "agent_role": "The in-app assistant performs user actions like creating campaigns or looking up contacts, now looking up each action's details before running it. The developer redesigned the setup, ran the tests and compared costs.",
+  "outcome": "Author reports all 11 tests passed in every mode, and cost per turn dropped 58% with the action list, then to $0.040 after trimming app descriptions.",
+  "what_they_did": "Marc builds apps where an AI assistant can do whatever the logged-in user can. In his marketing app, the assistant received 187 tools and a large app description on every turn. He swapped this for four fixed tools plus a short list of actions, one line each. The assistant asks for an action's details, then runs it through the same approval checks as before. He ran the same 11 end-to-end tests against three setups using real calls.",
+  "how_it_went": "He reports all three setups passed 11 of 11. The short list cut the starting prompt from 203k to 85k tokens and cost from $0.148 to $0.062 per turn, with slightly more model calls. After also trimming labels and descriptions, a turn cost $0.040.",
+  "worth_knowing": "He guessed the trimmed prompt would be about 8k tokens; it was 85k, because app descriptions and rules added up. Two test runs also used the wrong model, wasting about $5, so check the model name before a paid run.",
+  "prompt": "Look at how my app's AI assistant is set up in [repo or folder]. Measure how much text is sent to the model before the user types anything, broken down by tool definitions, app descriptions and system rules. Point out anything sent twice or not needed for [user role]. Propose a leaner design, such as a short one-line list of actions plus a tool to look up details on demand. Show me the plan and expected savings before changing any code, then run [test suite] on both versions and compare cost per turn.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "ai assistant",
+    "cost reduction",
+    "prompt size",
+    "testing"
+  ],
+  "source": {
+    "url": "https://dev.to/marc_kumiko/our-ai-assistant-saw-every-feature-as-a-tool-that-cost-0148-per-turn-4gh7",
+    "name": "DEV Community",
+    "author": "Marc",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real in-app assistant that takes actions for users, with a measured redesign across 11 end-to-end tests and clear cost numbers. It is a niche engineering optimization, but well evidenced and useful to anyone building action-taking assistants."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "have-an-agent-decide-which-charts-new-data-deserves",
+  "title": "Have an agent decide which charts new data deserves",
+  "summary": "A developer had Claude Code read past meeting notes to choose dashboard charts for new data, build them, recheck its work and record a narrated demo video.",
+  "domain": "Data",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Streamlit",
+    "data warehouse",
+    "internal CRM notes app",
+    "screen recording"
+  ],
+  "agent_role": "Claude Code read the notes, chose the chart ideas, built them, reviewed them in a fresh session and made the video. The human loaded the data and gave each instruction.",
+  "outcome": "Author says it wasn't perfect but worked; the charts were good and matched what the team cares about, and the video explained the features well.",
+  "what_they_did": "The poster had an internal dashboard app and loaded a new data set into the company warehouse. Instead of designing the charts, they asked Claude Code to read the team's meeting notes and decide how to use the data. Claude built the charts, checked its work in a fresh session, then made a narrated video clicking through the new features.",
+  "how_it_went": "The author says it isn't perfect but it worked. The charts were good and aligned with team priorities, and the video walked through the features well.",
+  "worth_knowing": "Asking the agent to recheck its work in a fresh session, with no memory of building it, was part of the process.",
+  "prompt": "I've added a new data set, [table name], to my data warehouse. My dashboard app lives in [repo path]. First, read our meeting notes in [notes app or folder] and propose which charts would be most useful with this data, and why. Wait for my approval. Then build the approved charts into the dashboard. After that, start a fresh review of the changes and report any problems. Finally, record a short narrated walkthrough video showing the new features.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "dashboard",
+    "data visualization",
+    "meeting notes",
+    "demo video"
+  ],
+  "source": {
+    "url": "https://x.com/mstockton/status/2116267370742222896",
+    "name": "X",
+    "author": "@mstockton",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A useful idea: let the agent read meeting notes to decide which charts matter, then build, self-check and record a narrated demo. Clearly described, though it offers only the author's word."
+  }
+}

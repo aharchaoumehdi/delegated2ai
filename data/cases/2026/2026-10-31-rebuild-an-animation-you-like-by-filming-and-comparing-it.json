@@ -1,0 +1,44 @@
+{
+  "id": "rebuild-an-animation-you-like-by-filming-and-comparing-it",
+  "title": "Rebuild an animation you like by filming and comparing it",
+  "summary": "A developer's Claude Code skill records a site's animation, rebuilds it, and compares frame by frame; they report clones of Stripe and Clerk cards within tens of milliseconds.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Playwright browser",
+    "ffmpeg",
+    "three.js",
+    "Framer Motion",
+    "GSAP"
+  ],
+  "agent_role": "The agent records the original, writes a timing spec, builds the animation in the user's code, films its copy and repeats fixes for 2 to 5 rounds. The human picks the animation and how closely it must match.",
+  "outcome": "The author reports clones from stripe.com, workos.com, clerk.com and others, most in 30 to 80 minutes, with timing within about 40 ms and under 1% of pixels differing.",
+  "what_they_did": "A developer made a skill for Claude Code. You point it at an animation on a website, a screen recording or a gif. It films the original in a hidden browser, writes down each moving part's timing, and rebuilds it in your project. Then it films its own copy the same way and compares.",
+  "how_it_went": "The author says each clone usually took 2 to 5 rounds of fixes. They list eight examples, such as a Stripe tilting card matched within 0.4 pixels of tilt.",
+  "worth_knowing": "It cannot record pages behind a login or YouTube, so hand it a screen recording. Fonts, images and code you copy still belong to their owners.",
+  "prompt": "Rebuild the [animation, e.g. hero entrance] from [website URL or recording file] into [file in my project]. First record the original at a fixed screen size and frame rate. Write a table of each moving element: start time, duration, start and end values, and easing. Build it using what my project already uses. Then record your copy the same way, compare timing and look side by side, and fix the biggest difference. Repeat up to 5 rounds. Finish with a report of anything that still doesn't match and why.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "animation",
+    "web design",
+    "frame comparison",
+    "cloning"
+  ],
+  "source": {
+    "url": "https://github.com/NiazMorshed2007/reanimate",
+    "name": "GitHub",
+    "author": "NiazMorshed2007",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 7.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Specific, well-evidenced workflow where the agent films an animation, rebuilds it, films its copy and keeps fixing until measurements match, with eight documented clones and numbers."
+  }
+}

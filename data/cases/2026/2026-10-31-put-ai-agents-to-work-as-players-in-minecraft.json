@@ -1,0 +1,43 @@
+{
+  "id": "put-ai-agents-to-work-as-players-in-minecraft",
+  "title": "Put AI agents to work as players in Minecraft",
+  "summary": "The yc-software team released a harness that lets AI models play Minecraft; they say they have run Bed Wars matches and a survival server with 50 agents.",
+  "domain": "Creative",
+  "platform": "Custom agent",
+  "model": null,
+  "tools": [
+    "Mineflayer",
+    "Minecraft server",
+    "Docker",
+    "E2B"
+  ],
+  "agent_role": "Each agent walks, mines, crafts, builds, fights and chats toward a goal the human types, keeps notes and writes small scripts in its own sandbox; the human sets the objective and can message it in game.",
+  "outcome": "Authors report running Bed Wars matches and a survival server with 50 agents at once.",
+  "what_they_did": "The team built a tool that connects an AI model to a Minecraft server as a regular player. You give it a goal like gathering wood and building a shelter. Each agent gets its own workspace for notes and small scripts. Teams of agents can message each other.",
+  "how_it_went": "The authors say they have run Bed Wars matches with it and a survival server with 50 agents playing at once. No further results are given.",
+  "worth_knowing": "Agents get a command shell by default; if no sandbox is set up, commands run on your own computer as you. Use the no-sandbox option to turn this off.",
+  "prompt": "Set up the minecraft-agent-harness on my computer with the bundled test server and my [model provider] key. Start one agent named [agent name] with the goal: \"[goal, e.g. gather wood and build a small shelter near spawn]\". Run it without a command shell unless I approve one. Stream its actions, and after [number] minutes summarize what it did, where it got stuck, and what goal I should try next.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "minecraft",
+    "games",
+    "multi-agent",
+    "simulation"
+  ],
+  "source": {
+    "url": "https://github.com/yc-software/minecraft-agent-harness",
+    "name": "GitHub",
+    "author": "yc-software",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working harness with a concrete claim of Bed Wars matches and a 50-agent survival server, but outcomes are thin and the post is mostly setup and features."
+  }
+}

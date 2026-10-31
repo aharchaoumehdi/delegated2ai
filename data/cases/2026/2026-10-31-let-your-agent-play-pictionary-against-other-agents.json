@@ -1,0 +1,42 @@
+{
+  "id": "let-your-agent-play-pictionary-against-other-agents",
+  "title": "Let your agent play Pictionary against other agents",
+  "summary": "A developer built Sketch Stadium, where connected AI agents take turns drawing and guessing; he says line-by-line drawing failed, but simple vector drawing worked even for cheap models.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "game connector",
+    "push notifications",
+    "vector drawing"
+  ],
+  "agent_role": "Agents get woken by game events, then draw a clue or guess others' drawings on their own. The human only connects the agent.",
+  "outcome": "The author reports drawing 10 lines at a time worked badly, while a simple vector drawing format worked much better, even for lower-cost models.",
+  "what_they_did": "A developer built an online Pictionary game for AI agents. You add a connector to your agent and authorize it, no account needed. The game sends events to wake agents when it's their turn to draw or guess. Clues are worth 1 to 3 points by difficulty.",
+  "how_it_went": "The author says some drawings are impressive and others very bad. Switching from line-by-line drawing to simple vector shapes made agents draw much better.",
+  "worth_knowing": "It is a demo of a push-notification kit for agents. Most agent tools need an extra hook installed to be woken properly.",
+  "prompt": "Connect to the Sketch Stadium game using its connector at [game connector address] and join a game. When it's your turn to draw, sketch the clue clearly using simple shapes. When others draw, study the picture and make your best guess. After the game, tell me the score and which drawings worked or failed.",
+  "evidence": "Demo",
+  "difficulty": "Beginner",
+  "tags": [
+    "games",
+    "drawing",
+    "multi-agent",
+    "notifications"
+  ],
+  "source": {
+    "url": "https://sketch.wakeshift.ai/games/q5ucru",
+    "name": "Hacker News",
+    "author": "ericlevine",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 5.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A playful working demo where agents take turns drawing and guessing in a live game, with a useful finding about drawing methods; mainly a tech demo for a notification product."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "make-a-styled-code-animation-with-a-picked-prompt",
+  "title": "Make a styled code animation with a picked prompt",
+  "summary": "XiaoyeCodes packaged 341 animation style prompts as a Claude Code and Codex skill so the agent plans shots and renders a coded video to MP4.",
+  "domain": "Creative",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Codex",
+    "Playwright",
+    "Chromium",
+    "FFmpeg"
+  ],
+  "agent_role": "The agent reads a chosen style prompt, writes the animation as HTML, and renders it frame-by-frame to an MP4 video.",
+  "outcome": null,
+  "what_they_did": "The author collected 341 animation style prompts and 193 reference frames and wrapped them as an installable skill. You pick a style, then ask the coding agent to build a short animation as HTML and render it to video.",
+  "how_it_went": null,
+  "worth_knowing": "Rendering needs Playwright, Chromium and FFmpeg; the HTML must expose a time interface so frames can be exported, so arbitrary web pages won't work.",
+  "prompt": "Install https://github.com/XiaoyeCodes/code-animation-prompts as a skill for my coding agent, then use style [B3 particle formation] to make a 12-second [16:9] animation about [your theme]. Build an editable HTML file and a keyframe preview first, show me the result, then render an MP4 at [1920x1080, 30 fps] if the rendering tools are installed.",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "animation",
+    "video generation",
+    "agent skill",
+    "creative coding"
+  ],
+  "source": {
+    "url": "https://github.com/XiaoyeCodes/code-animation-prompts",
+    "name": "GitHub",
+    "author": "XiaoyeCodes",
+    "published": "2026-10-29"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A packaged skill with a concrete workflow: pick an animation style, have the agent build and render a coded video; includes working prompts and an example."
+  }
+}

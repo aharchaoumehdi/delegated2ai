@@ -1,0 +1,41 @@
+{
+  "id": "build-a-game-console-chip-inside-an-ai-model-just-for-fun",
+  "title": "Build a game console chip inside an AI model, just for fun",
+  "summary": "Drew Breunig asked Claude Opus to bake a Nintendo console processor into a small Qwen model; Super Mario Bros now runs, very slowly, inside it.",
+  "domain": "Software",
+  "platform": "Other",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "NES test ROMs",
+    "Qwen3.5-4B"
+  ],
+  "agent_role": "Opus researched the method, found 15-year-old processor tests, and built the model weights and a command-line player. Drew gave two short prompts.",
+  "outcome": "Simon Willison reports NES games like Super Mario Bros run, very slowly, inside the model.",
+  "what_they_did": "Drew Breunig pointed Opus at an article about running a computer inside a model's weights. He asked whether a Nintendo console chip could be emulated this way. Then he told it to build the weights and a command-line tool that runs a game file.",
+  "how_it_went": "According to Simon Willison's write-up, it works and plays Super Mario Bros very slowly. Opus found and used a public set of processor tests to check its work.",
+  "worth_knowing": "The agent leaned on an existing set of conformance tests, which gave it a clear way to check correctness.",
+  "prompt": "Read [article URL] and any related source code. Then explore whether this technique could emulate [old hardware]. Estimate what model size it would need. If it looks feasible, propose a build plan using existing test suites to check correctness, and wait for my go-ahead before building.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "emulation",
+    "retro games",
+    "model weights",
+    "experiment"
+  ],
+  "source": {
+    "url": "https://simonwillison.net/2026/Oct/30/nesformer/",
+    "name": "Simon Willison's Weblog",
+    "author": "Drew Breunig",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A novel build driven by two prompts, with the code public and conformance tests found by the agent. It reaches us through an aggregator post with few details."
+  }
+}

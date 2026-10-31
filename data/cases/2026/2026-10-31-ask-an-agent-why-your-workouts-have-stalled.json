@@ -1,0 +1,41 @@
+{
+  "id": "ask-an-agent-why-your-workouts-have-stalled",
+  "title": "Ask an agent why your workouts have stalled",
+  "summary": "A lifter connected three years of Caliber workout logs to an AI assistant and says it spotted patterns behind stalled lifts, producing a plan to test.",
+  "domain": "Health",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Caliber connector",
+    "ChatGPT or Claude"
+  ],
+  "agent_role": "The assistant pulled the user's logged workout history through Caliber's connector and analyzed it for patterns; the user asked the questions and will run the experiments.",
+  "outcome": "Author reports finding patterns he had missed and ending with a concrete plan to break plateaus.",
+  "what_they_did": "The poster has logged every workout for three years in the Caliber app, including sets and rest times. Caliber released a connector for ChatGPT and Claude. He used it to ask an AI about his training history, looking for patterns and reasons some lifts had stalled.",
+  "how_it_went": "He says the insights were impressive and pointed to things he had not noticed. He now has a concrete plan to experiment with.",
+  "worth_knowing": "The value comes from the data: he stresses that years of consistent logging is what made the analysis useful.",
+  "prompt": "Using my connected workout log from [your fitness app], review my training history for the last [time period]. Focus on [exercises where I've stalled]. Look for patterns in volume, frequency, rest times and exercise order that might explain the plateau. Summarize what you find with specific examples from my data, then suggest a [number]-week experiment plan to break through. Keep it within my schedule of [days per week] sessions.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "fitness",
+    "workout data",
+    "training plateau",
+    "personal analytics"
+  ],
+  "source": {
+    "url": "https://x.com/st0yanov/status/2116489449609601135",
+    "name": "X",
+    "author": "@st0yanov",
+    "published": "2026-10-31"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Genuine use of an AI assistant connected to three years of workout logs to diagnose plateaus; personal and health-related but light on specifics and results."
+  }
+}

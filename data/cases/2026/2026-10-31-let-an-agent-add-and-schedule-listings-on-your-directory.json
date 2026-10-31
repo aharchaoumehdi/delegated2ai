@@ -1,0 +1,42 @@
+{
+  "id": "let-an-agent-add-and-schedule-listings-on-your-directory",
+  "title": "Let an agent add and schedule listings on your directory site",
+  "summary": "Piotr Kulpinski connected Claude Code to his directory app; he reports it added, filled in and scheduled a listing in 7 steps and 54 seconds.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "custom app connector",
+    "web scraping",
+    "Next.js"
+  ],
+  "agent_role": "Claude Code checked for duplicates, read categories, created a draft, filled it from the website and scheduled it. The human gave one sentence and built the safety rules.",
+  "outcome": "Author reports 7 tool calls in 54 seconds, with only a screenshot missing because local storage wasn't set up.",
+  "what_they_did": "The developer exposed his directory app's existing admin actions to AI agents through a connector. He kept a read-only public side and a password-protected admin side. He gave Claude Code one sentence asking it to add a site. There is no delete action and new entries start as drafts.",
+  "how_it_went": "He says the agent checked for duplicates, picked categories and tags, filled the description and icon, and scheduled the listing in 54 seconds. Earlier runs were less clean.",
+  "worth_knowing": "Treat user-written text as data, not instructions, and turn off owner emails by default so bulk agent edits don't spam people.",
+  "prompt": "Using my directory site's admin connector, add [website URL] as a new listing. First check it isn't already listed. Read the available categories and tags, create a draft, and fill in the description from the website. Show me the draft and wait for approval before scheduling it for the next free publish day.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "directory site",
+    "content curation",
+    "scheduling",
+    "app connector"
+  ],
+  "source": {
+    "url": "https://dev.to/piotrkulpinski/how-i-built-a-custom-mcp-server-for-a-nextjs-app-real-example-3i29",
+    "name": "DEV Community",
+    "author": "Piotr Kulpinski",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real agent session with concrete numbers and code, though it promotes the author's paid product."
+  }
+}

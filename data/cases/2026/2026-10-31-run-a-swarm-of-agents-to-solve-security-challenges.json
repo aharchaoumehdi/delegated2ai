@@ -1,0 +1,43 @@
+{
+  "id": "run-a-swarm-of-agents-to-solve-security-challenges",
+  "title": "Run a swarm of agents to solve security challenges",
+  "summary": "N1nEmAn reports a Claude-driven commander-and-worker agent legion won a Tencent attack-defense contest, scoring 85 flags on 1B tokens versus the runner-up's 4.5B.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "GLM-5.3",
+  "tools": [
+    "tmux",
+    "Docker",
+    "DeepSeek V4.1 Flash",
+    "fact-intent graph"
+  ],
+  "agent_role": "An AI commander reads the board and dispatches tasks; general and soldier agents attack targets in parallel; a script watchdog keeps them alive. Humans built the foundation and steered iteration.",
+  "outcome": "Author reports first place in a 634-team qualifier, 85 flags scored, 25 seconds faster than the runner-up using 1B tokens versus 4.5B.",
+  "what_they_did": "The author built a multi-agent system for authorized security testing. An AI commander spawns worker agents in terminal panes, assigns targets, and stores lessons in a layered fact graph. Light models do mass work, strong models decide. It ran unattended for 8 hours in a Tencent contest.",
+  "how_it_went": "The author says the system won the online qualifier with 85 flags on 1 billion tokens, beating a runner-up that used 4.5 billion, and invented roles like a flag-collecting signalman on its own.",
+  "worth_knowing": "This is for authorized security testing only; the repo includes a disclaimer and a proposed marking scheme to limit abuse.",
+  "prompt": "Set up a team of AI agents for an authorized security testing exercise on [target scope you are permitted to test]. Use one commander agent to read the current state and dispatch worker agents, and keep a shared notes file where agents record what they learn. Have the commander show its plan and wait for my approval before any action against a system. Only act within the scope I confirm in writing.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "security testing",
+    "multi-agent",
+    "ctf",
+    "swarm"
+  ],
+  "source": {
+    "url": "https://github.com/N1nEmAn/sapper-v2",
+    "name": "GitHub",
+    "author": "N1nEmAn",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Detailed, documented multi-agent pentest system that won a competition with a specific token-efficiency result; novel but security-sensitive and partly manifesto."
+  }
+}

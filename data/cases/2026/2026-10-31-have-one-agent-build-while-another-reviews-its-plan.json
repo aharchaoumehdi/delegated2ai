@@ -1,0 +1,45 @@
+{
+  "id": "have-one-agent-build-while-another-reviews-its-plan",
+  "title": "Have one agent build while another reviews its plan",
+  "summary": "A student had Kiro write a five-agent customer support system while Claude reviewed each plan stage; they report a perfect 120/120 test score in under four hours.",
+  "domain": "Software",
+  "platform": "Kiro",
+  "model": "Claude Opus 5.5",
+  "tools": [
+    "Kiro",
+    "Claude",
+    "Amazon Bedrock AgentCore",
+    "Strands Agents SDK",
+    "Bedrock Guardrails",
+    "DynamoDB"
+  ],
+  "agent_role": "Claude wrote a single knowledge file from course pages and rubric, flagged 13 conflicts, and reviewed Kiro's spec; Kiro checked the starter files, wrote and ran the code. The human did console setup, screenshots and approved four key checkpoints.",
+  "outcome": "Author reports going from untouched starter files to a 120/120 test score in under four hours, though graders still asked for more proof.",
+  "what_they_did": "A student in an AWS course built a five-agent customer support bot for a fictional store. Claude first wrote one file holding every course page, the grading rubric and 13 places where sources disagreed. Kiro, a coding agent, checked those against the starter files, wrote a spec, and built the code. Claude reviewed each spec stage, and the student approved only four risky moments.",
+  "how_it_went": "The author says Claude's reviews caught four problems in Kiro's plan, such as a test scheduled before the deploy it needed. They report the build hit a perfect score in under four hours, but graders still sent it back for more proof.",
+  "worth_knowing": "The author first had the agent stop for approval after every task and found it too slow. Cutting stops to the moments that cost money or needed a human made the run much faster.",
+  "prompt": "I am building [project description] from the starter files in [repo folder]. First, gather the instructions, grading rules and starter files into one reference document, and list every place they disagree. Check each disagreement against the actual files and mark anything you cannot confirm as UNVERIFIED. Then write a step-by-step build plan and review it for gaps, such as tests scheduled before what they depend on. Run through the build without stopping, except pause and wait for my approval before: creating paid cloud resources, the first deploy, any git push, and any teardown.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "customer support",
+    "multi-agent",
+    "spec review",
+    "coursework"
+  ],
+  "source": {
+    "url": "https://dev.to/earlgreyhot1701d/from-one-chatbot-to-five-agents-my-aws-agent-engineer-nanodegree-69i",
+    "name": "DEV Community",
+    "author": "Earl Grey",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 6.5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A detailed, honest walkthrough of a coding agent building a five-agent support system, with Claude reviewing the plan and code published; useful lessons on fewer approval stops, though it is a course project in a familiar domain."
+  }
+}

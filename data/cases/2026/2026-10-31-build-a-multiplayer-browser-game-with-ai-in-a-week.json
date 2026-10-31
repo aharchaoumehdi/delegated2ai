@@ -1,0 +1,42 @@
+{
+  "id": "build-a-multiplayer-browser-game-with-ai-in-a-week",
+  "title": "Build a multiplayer browser game with AI in a week",
+  "summary": "A developer built Catcopter, a multiplayer flying-cat browser game, mostly using Opus 5.5 for objects, rigging and motion; they say iteration took about a week.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": "Opus 5.5",
+  "tools": [
+    "Tripo3d",
+    "Fable",
+    "Rapier"
+  ],
+  "agent_role": "The AI produced game objects, character rigging and motion, with other tools for hard 3D pieces and performance tuning. The developer reused game systems from an earlier project and steered the build.",
+  "outcome": "Author reports the game took around a week to iterate, helped by reusing parts of an earlier project.",
+  "what_they_did": "A developer built Catcopter, a web multiplayer game where players fly armed cats against each other and critters. They used Opus 5.5 mostly for 3D objects, rigging and motion. Tripo3d filled in elements they struggled with, and Fable helped tune processor and network performance.",
+  "how_it_went": "The developer says the game is live with several modes and the actual iteration took about a week. Much of the game logic came from an earlier project.",
+  "worth_knowing": "The fast build leaned on existing game systems the developer had already made; starting from zero would likely take longer.",
+  "prompt": "Help me build a small multiplayer browser game where [game idea]. Start by proposing a plan: the game modes, the 3D objects needed, how characters move, and how players connect. Then write the code step by step, creating simple 3D models, rigging and animations for [main character]. After each step, run it and tell me what to check in the browser. Ask before adding any paid services or deploying it online.",
+  "evidence": "Demo",
+  "difficulty": "Advanced",
+  "tags": [
+    "game development",
+    "3d",
+    "multiplayer",
+    "browser game"
+  ],
+  "source": {
+    "url": "https://catcopter.com",
+    "name": "Hacker News",
+    "author": "pawelwentpawel",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A playable multiplayer game built in about a week mostly with AI help, but the post gives little detail on what the AI actually did versus the developer."
+  }
+}

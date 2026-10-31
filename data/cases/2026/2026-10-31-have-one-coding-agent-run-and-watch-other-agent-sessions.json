@@ -1,0 +1,42 @@
+{
+  "id": "have-one-coding-agent-run-and-watch-other-agent-sessions",
+  "title": "Have one coding agent run and watch other agent sessions",
+  "summary": "Daniel Avila built a Claude Code skill that opens new terminal panes, starts separate Claude Code sessions, sends them tasks, and detects when each finishes or needs approval.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Rex terminal",
+    "shell scripts",
+    "git worktrees"
+  ],
+  "agent_role": "The main Claude Code session opens panes, launches child sessions, sends prompts, waits for them to finish, reads their report files and checks the results on disk. The human approves permission prompts when in doubt and decides how many sessions to start.",
+  "outcome": null,
+  "what_they_did": "Daniel Avila wrote a skill for Claude Code that works inside Rex, a terminal app that splits the screen into panes. The skill lets Claude open a new pane, start another Claude Code session there, and send it a task. It then waits for the child session to report it is done, stuck on a permission question, or failing. Claude reads a report file the child writes and checks the changes itself.",
+  "how_it_went": null,
+  "worth_knowing": "Each child session costs its own usage, so ask before starting several and use a cheaper model for simple work. Give parallel tasks separate folders, because two sessions editing the same files will collide.",
+  "prompt": "Inside my Rex terminal, use the rex-claude skill to delegate this task: [task description] in [project folder]. Create a separate git worktree for it, launch a child Claude Code session there with a cheaper model, and tell it to write REPORT.md when done. Wait for it in the background. If it asks for permission, show me the request and let me decide. When it finishes, read REPORT.md, review the diff yourself, and summarize what changed before anything is merged.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "agent orchestration",
+    "terminal",
+    "task delegation",
+    "parallel sessions"
+  ],
+  "source": {
+    "url": "https://x.com/dani_avila7/status/2116352019564777669",
+    "name": "X",
+    "author": "@dani_avila7",
+    "published": "2026-10-31"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A working, open skill that lets one Claude Code session launch, instruct, watch and check other sessions in terminal panes, with detailed workflows and safety rules. It is a tool announcement without a reported real project result, so it stays thin."
+  }
+}

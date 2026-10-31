@@ -1,0 +1,42 @@
+{
+  "id": "build-a-team-retro-board-that-groups-cards-with-ai",
+  "title": "Build a team retro board that groups cards with AI",
+  "summary": "A team lead had Claude Code build a free retrospective board in one session; AI groups similar cards by meaning, and the code is open source.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Claude artifacts",
+    "GitHub"
+  ],
+  "agent_role": "Claude Code built and publishes the board; inside it, Claude groups cards by meaning. The host fixes any wrong groupings and the human made the design decisions.",
+  "outcome": "Author reports building it in one session and releasing it open source.",
+  "what_they_did": "A team lead found grouping retro cards ate most of a 15-person meeting. No tool he found grouped cards by meaning. He had Claude Code build one as a single Claude artifact with its own shared storage. Cards are anonymous, the host clicks 'Group with AI', then the team votes.",
+  "how_it_went": "He says the build was quick and most time went into decisions. Cards store no author, each vote is separate, and the model returns only card ids so it cannot rewrite cards.",
+  "worth_knowing": "Letting the model return card ids rather than text means it can misgroup cards but never lose or alter them.",
+  "prompt": "Install the retro board from https://github.com/WorldInnovationsDepartment/retro-board by following its INSTALL.md. Then change it for my team: use [columns, e.g. Mad / Sad / Glad], give each person [number] votes, and add a [minutes]-minute timer. Show me the access settings before you publish, and give me the link to share with [team].",
+  "evidence": "Code available",
+  "difficulty": "Beginner",
+  "tags": [
+    "retrospective",
+    "team meetings",
+    "card grouping",
+    "internal tool"
+  ],
+  "source": {
+    "url": "https://x.com/DanyloVorvul/status/2116228232269717771",
+    "name": "X",
+    "author": "@DanyloVorvul",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete, open-source team tool built in one Claude Code session, with thoughtful design choices and an install prompt anyone can reuse."
+  }
+}

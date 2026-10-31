@@ -1,0 +1,40 @@
+{
+  "id": "build-an-ambient-fish-tank-screen-with-ai-help",
+  "title": "Build an ambient fish tank screen with AI help",
+  "summary": "A backend developer spent 50-70 hours building a pixel-art fish tank for a kitchen screen, using AI models for code, art direction and even fish-swimming research.",
+  "domain": "Creative",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Mini PC display"
+  ],
+  "agent_role": "The AI model helped design systems, write game code and find research papers on fish swimming patterns to base the movement on; the author directed the art and design.",
+  "outcome": "Author reports a finished fish tank simulation now running on a 24-inch kitchen screen, built in 50-70 hours with no prior game development experience.",
+  "what_they_did": "A backend developer with no game-making experience built a calm fish tank animation to run on a 24-inch screen in his kitchen, powered by a small used PC. He leaned on AI models throughout: writing code, shaping the look, and at one point finding research papers on how fish swim so the movement could be based on them. He also added a birthday surprise: three fish carrying codes that led his wife to real-world quests.",
+  "how_it_went": "He says the project took about 50 to 70 hours over several months, and the tank now replaces a photo slideshow on the kitchen screen.",
+  "worth_knowing": "He had to swap a small Raspberry Pi for a used mini PC with a better graphics chip to run the animation smoothly.",
+  "prompt": "Help me build an ambient animated scene I can leave running on a screen at home, themed around [your theme]. Work with me step by step: first propose a simple design and the technology to use, then write the code in small pieces I can run and check. Research how [the creatures or objects] really move and behave, cite your sources, and base the animation on that. Keep it lightweight enough to run on [your device]. Show me a plan before writing any code, and pause for my feedback after each stage.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "creative coding",
+    "home screen",
+    "animation",
+    "hobby project"
+  ],
+  "source": {
+    "url": "https://fishoid.net/",
+    "name": "Hacker News",
+    "author": "koskokos",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real personal project built over months with heavy help from AI models, including having the model find fish-swimming research and turn it into code, but the agent's exact role is only loosely described."
+  }
+}

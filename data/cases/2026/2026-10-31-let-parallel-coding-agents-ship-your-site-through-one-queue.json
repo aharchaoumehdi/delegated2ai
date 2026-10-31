@@ -1,0 +1,42 @@
+{
+  "id": "let-parallel-coding-agents-ship-your-site-through-one-queue",
+  "title": "Let parallel coding agents ship your site through one queue",
+  "summary": "Bret Kerr ran 8 Claude Code sessions on his website; when deploys jammed, Claude designed a pipeline where each agent opens a change and GitHub merges them one by one.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "GitHub",
+    "Cloudflare",
+    "Claude Code skills"
+  ],
+  "agent_role": "Claude Code sessions built features in parallel and then proposed and packaged the deploy process as a reusable skill. The author asked the question and chose the approach.",
+  "outcome": "Author says six lanes now feed one pipeline and 'the inbox empties itself.'",
+  "what_they_did": "Bret Kerr had 8 Claude Code sessions building parts of his website at once, like a search bar and a book chapter. They all deployed from his laptop and waited on each other. He asked Claude for a better way. Now each session works on its own copy, runs checks, opens a change request, and checks its own preview page.",
+  "how_it_went": "He reports GitHub now merges changes one at a time, and each merge goes live on Cloudflare. Claude turned the rules into a skill so future sessions follow them automatically.",
+  "worth_knowing": "The original snag was that every agent deployed from one laptop, so one sat idle waiting for another's build to finish.",
+  "prompt": "I run several coding agent sessions on [repo URL] at once, and they block each other when deploying. Design a workflow where each session works on its own branch in a separate folder, runs the checks locally, opens a pull request, and checks its own preview link. Merges to main should happen one at a time and go live on [hosting service]. Show me the plan and any settings changes before applying them. Then write the rules down as a reusable instruction file future sessions will follow.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "parallel agents",
+    "deployment",
+    "website",
+    "workflow"
+  ],
+  "source": {
+    "url": "https://x.com/BretKerr/status/2116270183685792250",
+    "name": "X",
+    "author": "@BretKerr",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real setup with 8 parallel Claude Code sessions and a concrete fix for deploy bottlenecks. The steps are listed but no numbers or code are shared."
+  }
+}

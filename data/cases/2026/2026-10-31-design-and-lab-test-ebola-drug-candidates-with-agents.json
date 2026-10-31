@@ -1,0 +1,44 @@
+{
+  "id": "design-and-lab-test-ebola-drug-candidates-with-agents",
+  "title": "Design and lab-test Ebola drug candidates with agents",
+  "summary": "At a one-day hackathon, scientists and AI agents designed 140 molecules against Bundibugyo ebolavirus; organizers report an 18.6% hit rate, including a repurposed anti-itch gel drug.",
+  "domain": "Science",
+  "platform": "Custom agent",
+  "model": "Grok 4.5",
+  "tools": [
+    "onepot CORE chemical space",
+    "Rowan docking",
+    "RDKit",
+    "Automated lab synthesis",
+    "Pseudovirus entry assay"
+  ],
+  "agent_role": "AI agents searched a large chemical library, ran computational docking tools and iterated on candidate molecules; human scientists set the target, ran the chemistry robots and performed the lab assays.",
+  "outcome": "Organizers report 140 molecules were synthesized in 11 lab days and 26 preliminary hits emerged, an 18.6% hit rate, with bamipine blocking virus entry by 92.2% at 10 micromolar.",
+  "what_they_did": "Research group muni and partner onepot ran a one-day hackathon in San Francisco where scientists and AI agents designed small molecules to block Bundibugyo ebolavirus from entering cells. The agents searched a 30-billion-molecule library, ran docking calculations and refined candidates. Humans then had the 140 designs made by automated chemistry and tested them in cells, with controls for toxicity and for blocking the wrong target.",
+  "how_it_went": "The organizers report an 18.6% hit rate. Compounds were made in 11 lab days instead of the usual three to six weeks. One agent-designed pick, bamipine, an over-the-counter anti-itch gel ingredient in Germany, blocked virus entry by 92.2% without harming the cells.",
+  "worth_knowing": "These are cell-level entry tests with a stand-in virus, not live virus or animal studies, so the hits are early leads rather than treatments.",
+  "prompt": "Act as a drug discovery assistant for [target protein or virus entry pocket]. Step 1: summarize known binders and published structures for that pocket, with citations. Step 2: propose 20 candidate small molecules, mixing new designs and already-marketed drugs that could be repurposed, and explain the reasoning for each. Step 3: for each candidate, list molecular weight, hydrogen bond donors and acceptors, and predicted binding, and flag any that look toxic or hard to synthesize. Step 4: rank them and recommend 10 for testing. Show me your shortlist and reasoning before I order or synthesize anything.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "drug discovery",
+    "virology",
+    "molecule design",
+    "lab automation"
+  ],
+  "source": {
+    "url": "https://muni.bio/research/hits-from-ebolathon",
+    "name": "Hacker News",
+    "author": "Kat Yenko, Derek Alia, Daniil Boiko, Andrei Tyrin",
+    "published": "2026-10-30"
+  },
+  "added": "2026-10-31",
+  "status": "published",
+  "score": 9,
+  "featured": true,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A rare, well-documented science application: AI agents designed molecules that were synthesized and lab-tested, with full assay details and a reported 18.6% hit rate."
+  }
+}

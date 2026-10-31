@@ -1,0 +1,207 @@
+[
+ {
+  "dimension": "topic",
+  "value": "Software",
+  "use_cases": 157
+ },
+ {
+  "dimension": "topic",
+  "value": "Creative",
+  "use_cases": 69
+ },
+ {
+  "dimension": "topic",
+  "value": "Business",
+  "use_cases": 55
+ },
+ {
+  "dimension": "topic",
+  "value": "Daily life",
+  "use_cases": 41
+ },
+ {
+  "dimension": "topic",
+  "value": "Marketing",
+  "use_cases": 29
+ },
+ {
+  "dimension": "topic",
+  "value": "Science",
+  "use_cases": 23
+ },
+ {
+  "dimension": "topic",
+  "value": "Finance",
+  "use_cases": 19
+ },
+ {
+  "dimension": "topic",
+  "value": "Education",
+  "use_cases": 16
+ },
+ {
+  "dimension": "topic",
+  "value": "Health",
+  "use_cases": 12
+ },
+ {
+  "dimension": "topic",
+  "value": "Data",
+  "use_cases": 9
+ },
+ {
+  "dimension": "topic",
+  "value": "Home",
+  "use_cases": 8
+ },
+ {
+  "dimension": "topic",
+  "value": "Legal",
+  "use_cases": 5
+ },
+ {
+  "dimension": "agent",
+  "value": "Claude Code",
+  "use_cases": 185
+ },
+ {
+  "dimension": "agent",
+  "value": "Other",
+  "use_cases": 105
+ },
+ {
+  "dimension": "agent",
+  "value": "Custom agent",
+  "use_cases": 80
+ },
+ {
+  "dimension": "agent",
+  "value": "Claude",
+  "use_cases": 18
+ },
+ {
+  "dimension": "agent",
+  "value": "OpenAI Codex",
+  "use_cases": 12
+ },
+ {
+  "dimension": "agent",
+  "value": "n8n",
+  "use_cases": 7
+ },
+ {
+  "dimension": "agent",
+  "value": "Cursor",
+  "use_cases": 4
+ },
+ {
+  "dimension": "agent",
+  "value": "Gemini",
+  "use_cases": 3
+ },
+ {
+  "dimension": "agent",
+  "value": "Kiro",
+  "use_cases": 3
+ },
+ {
+  "dimension": "agent",
+  "value": "Devin",
+  "use_cases": 2
+ },
+ {
+  "dimension": "agent",
+  "value": "ChatGPT Agent",
+  "use_cases": 2
+ },
+ {
+  "dimension": "agent",
+  "value": "LangGraph",
+  "use_cases": 2
+ },
+ {
+  "dimension": "agent",
+  "value": "OpenClaw",
+  "use_cases": 2
+ },
+ {
+  "dimension": "agent",
+  "value": "Grok Bot",
+  "use_cases": 2
+ },
+ {
+  "dimension": "agent",
+  "value": "OpenCode",
+  "use_cases": 2
+ },
+ {
+  "dimension": "agent",
+  "value": "WorkBuddy",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "Manus",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "CrewAI",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "Factory Droid",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "AWS DevOps Agent",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "ElevenLabs Agents",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "Amp",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "Google Antigravity",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "Hermes",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "Hermes Agent",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "Muse",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "GitHub Copilot",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "Claude Agent SDK",
+  "use_cases": 1
+ },
+ {
+  "dimension": "agent",
+  "value": "docker-agent",
+  "use_cases": 1
+ }
+]

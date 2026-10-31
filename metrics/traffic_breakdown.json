@@ -1,0 +1,158 @@
+[
+ {
+  "dimension": "page",
+  "value": "/",
+  "pageviews": 150,
+  "visits": 100
+ },
+ {
+  "dimension": "page",
+  "value": "/category/creative/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "page",
+  "value": "/issues/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "dimension": "page",
+  "value": "/use-case/audit-schedules-leads-and-sales-daily-with-agents/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "dimension": "page",
+  "value": "/issues/2026-10-25/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "page",
+  "value": "/use-case/turn-a-technical-question-into-an-animated-explainer-video/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "page",
+  "value": "/use-case/agent-skill-turns-a-one-line-brief-into-a-designed-browser/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "page",
+  "value": "/use-case/maintain-a-verified-resource-list-with-two-ai-agents/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "page",
+  "value": "/use-case/clean-up-duplicate-sections-in-an-ai-built-wiki/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "referrer",
+  "value": "Direct or unknown",
+  "pageviews": 200,
+  "visits": 130
+ },
+ {
+  "dimension": "referrer",
+  "value": "www.google.com",
+  "pageviews": 30,
+  "visits": 30
+ },
+ {
+  "dimension": "country",
+  "value": "US",
+  "pageviews": 130,
+  "visits": 70
+ },
+ {
+  "dimension": "country",
+  "value": "CN",
+  "pageviews": 30,
+  "visits": 30
+ },
+ {
+  "dimension": "country",
+  "value": "JP",
+  "pageviews": 20,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "CA",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "GB",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "FR",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "SG",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "DE",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "device",
+  "value": "desktop",
+  "pageviews": 160,
+  "visits": 110
+ },
+ {
+  "dimension": "device",
+  "value": "mobile",
+  "pageviews": 70,
+  "visits": 50
+ },
+ {
+  "dimension": "browser",
+  "value": "Chrome",
+  "pageviews": 110,
+  "visits": 90
+ },
+ {
+  "dimension": "browser",
+  "value": "ChromeMobile",
+  "pageviews": 50,
+  "visits": 40
+ },
+ {
+  "dimension": "browser",
+  "value": "Edge",
+  "pageviews": 40,
+  "visits": 10
+ },
+ {
+  "dimension": "browser",
+  "value": "Unknown",
+  "pageviews": 20,
+  "visits": 20
+ },
+ {
+  "dimension": "browser",
+  "value": "MobileSafari",
+  "pageviews": 10,
+  "visits": 0
+ }
+]

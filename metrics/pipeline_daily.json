@@ -1,0 +1,138 @@
+[
+ {
+  "day": "2026-10-15",
+  "collected": 396,
+  "evaluated": 74,
+  "published": 44,
+  "rejected": 54,
+  "source_errors": 3
+ },
+ {
+  "day": "2026-10-16",
+  "collected": 499,
+  "evaluated": 167,
+  "published": 47,
+  "rejected": 119,
+  "source_errors": 2
+ },
+ {
+  "day": "2026-10-17",
+  "collected": 210,
+  "evaluated": 78,
+  "published": 23,
+  "rejected": 55,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-18",
+  "collected": 189,
+  "evaluated": 91,
+  "published": 19,
+  "rejected": 72,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-19",
+  "collected": 221,
+  "evaluated": 118,
+  "published": 28,
+  "rejected": 90,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-20",
+  "collected": 232,
+  "evaluated": 105,
+  "published": 30,
+  "rejected": 75,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-21",
+  "collected": 253,
+  "evaluated": 115,
+  "published": 32,
+  "rejected": 83,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-22",
+  "collected": 237,
+  "evaluated": 115,
+  "published": 25,
+  "rejected": 90,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-23",
+  "collected": 247,
+  "evaluated": 105,
+  "published": 17,
+  "rejected": 88,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-24",
+  "collected": 195,
+  "evaluated": 99,
+  "published": 23,
+  "rejected": 76,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-25",
+  "collected": 167,
+  "evaluated": 70,
+  "published": 16,
+  "rejected": 54,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-26",
+  "collected": 207,
+  "evaluated": 122,
+  "published": 28,
+  "rejected": 94,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-27",
+  "collected": 228,
+  "evaluated": 104,
+  "published": 19,
+  "rejected": 85,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-28",
+  "collected": 232,
+  "evaluated": 96,
+  "published": 23,
+  "rejected": 73,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-29",
+  "collected": 236,
+  "evaluated": 109,
+  "published": 24,
+  "rejected": 85,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-30",
+  "collected": 245,
+  "evaluated": 104,
+  "published": 22,
+  "rejected": 82,
+  "source_errors": 1
+ },
+ {
+  "day": "2026-10-31",
+  "collected": 228,
+  "evaluated": 95,
+  "published": 23,
+  "rejected": 72,
+  "source_errors": 1
+ }
+]

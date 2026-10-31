@@ -1,0 +1,37 @@
+[
+ {
+  "source": "traffic",
+  "label": "Cloudflare Web Analytics",
+  "ok": true,
+  "detail": "updated (bots excluded)",
+  "at": "2026-10-31T13:03:38.011Z"
+ },
+ {
+  "source": "newsletter",
+  "label": "Kit",
+  "ok": true,
+  "detail": "updated",
+  "at": "2026-10-31T13:03:38.011Z"
+ },
+ {
+  "source": "engagement",
+  "label": "Votes and submissions",
+  "ok": true,
+  "detail": "updated",
+  "at": "2026-10-31T13:03:38.011Z"
+ },
+ {
+  "source": "search",
+  "label": "Google Search Console",
+  "ok": false,
+  "detail": "not set up: needs the GSC_SERVICE_ACCOUNT secret",
+  "at": "2026-10-31T13:03:38.011Z"
+ },
+ {
+  "source": "content",
+  "label": "Daily pipeline",
+  "ok": true,
+  "detail": "updated",
+  "at": "2026-10-31T13:03:38.011Z"
+ }
+]

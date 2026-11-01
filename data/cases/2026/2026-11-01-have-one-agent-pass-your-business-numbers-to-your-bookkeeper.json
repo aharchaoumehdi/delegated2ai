@@ -1,0 +1,41 @@
+{
+  "id": "have-one-agent-pass-your-business-numbers-to-your-bookkeeper",
+  "title": "Have one agent pass your business numbers to your bookkeeper agent",
+  "summary": "A business owner says his Grok-based ops agent now sends one company's finances to his ChatGPT agent, which keeps his personal and business books.",
+  "domain": "Finance",
+  "platform": "Other",
+  "model": null,
+  "tools": [
+    "Grok",
+    "ChatGPT"
+  ],
+  "agent_role": "An operations agent gathers and sends the business's financial figures; a second agent keeps the books. The owner approved the setup.",
+  "outcome": "Author says this replaced work he used to do himself in spreadsheets a few months earlier.",
+  "what_they_did": "The poster runs an operations agent called Carl, built on Grok, for his business Badass Breaks. Carl now sends that business's finances to Max, a ChatGPT agent. Max keeps his personal books and another business's books. He signed off on the handoff on October 14.",
+  "how_it_went": "He says a few months ago he did all this in spreadsheets himself, and he finds the agent-to-agent handoff a little wild.",
+  "worth_knowing": null,
+  "prompt": "Each week, collect the income and expense figures for [business name] from [your sales and expense sources]. Put them in a simple summary: date, item, category, amount. Then prepare that summary for my bookkeeping assistant in the format [it expects, e.g. a spreadsheet]. Show me the summary first and wait for my approval before sending or recording anything. Flag any numbers that look unusual or missing.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "bookkeeping",
+    "small business",
+    "agent handoff",
+    "finances"
+  ],
+  "source": {
+    "url": "https://x.com/rhanley/status/2116523310288900227",
+    "name": "X",
+    "author": "@rhanley",
+    "published": "2026-10-31"
+  },
+  "added": "2026-11-01",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine small-business bookkeeping handoff between two agents on different platforms, but very thin on detail and results; small non-coding boost applied."
+  }
+}

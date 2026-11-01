@@ -1,0 +1,43 @@
+{
+  "id": "route-agent-code-reviews-through-your-spare-credits-first",
+  "title": "Route agent code reviews through your spare credits first",
+  "summary": "A developer built a small router so Claude Code can ask a GPT model for a code review, using spare pay-per-use credits before spending subscription limits.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "OpenAI Codex",
+    "OpenAI pay-per-use credits",
+    "read-only file tools",
+    "code search"
+  ],
+  "agent_role": "Claude Code writes the feature and calls the router for an independent review. The router picks the model and payment path and gives the reviewing model read-only access to files and changes. The human designed the routing and budget rules.",
+  "outcome": "Author says the router stops pay-per-use credits from expiring unused while subscription limits run out. He found the cost tracking harder than expected.",
+  "what_they_did": "A developer uses both Claude Code and OpenAI Codex. He built a small router that keeps three choices separate: which agent coordinates the work, which model does a task, and how it is paid for. When Claude Code wants a second-opinion review from a GPT model, the router uses pay-per-use credits first. It switches to the subscription only when those credits run out. The reviewing model can only list, read and search files and look at changes. It has no open command line.",
+  "how_it_went": "The author says each coding tool keeps working as before, and only the payment path changes. He found the cost logic harder than expected: usage reports arrive late, cached and regular text are billed differently, and budget limits need fallbacks.",
+  "worth_knowing": "Models called through pay-per-use access can't see your project on their own. You have to give them a limited set of read-only tools to look at files and changes.",
+  "prompt": "After you finish implementing [feature], get an independent review from a second AI model. Give the reviewer read-only access only: let it list files, read files, search the code and see the changes. Do not let it run commands. Use [API provider] credits first. Fall back to [subscription tool] only if the credits are used up, and tell me which one you used. Show me the reviewer's findings and your proposed fixes, then wait for my approval before changing any code.",
+  "evidence": "Author's account",
+  "difficulty": "Advanced",
+  "tags": [
+    "code review",
+    "cost control",
+    "multi-agent",
+    "model routing"
+  ],
+  "source": {
+    "url": "https://x.com/IvoKohler9/status/2116679148496412695",
+    "name": "X",
+    "author": "@IvoKohler9",
+    "published": "2026-10-31"
+  },
+  "added": "2026-11-01",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A real setup where Claude Code and Codex hand reviews to each other through a cost-aware router with limited read-only file tools. However, there are no numbers, no code and no reported savings."
+  }
+}

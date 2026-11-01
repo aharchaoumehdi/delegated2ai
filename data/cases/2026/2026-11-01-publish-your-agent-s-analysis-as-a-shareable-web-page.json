@@ -1,0 +1,41 @@
+{
+  "id": "publish-your-agent-s-analysis-as-a-shareable-web-page",
+  "title": "Publish your agent's analysis as a shareable web page",
+  "summary": "A developer built a skill letting Claude Code or Codex turn analysis into interactive web pages, creating a GitHub repo and hosting automatically, shown in a demo video.",
+  "domain": "Data",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "GitHub",
+    "GitHub Pages"
+  ],
+  "agent_role": "The agent builds the page with diagrams and widgets, creates or reuses a GitHub repo and turns on hosting; the human asks for it and reviews.",
+  "outcome": "Author shows a demo of pages published with stable links and comments.",
+  "what_they_did": "A developer made an add-on skill for Claude Code and Codex. It turns an analysis into an interactive page with diagrams and widgets. The agent then creates or reuses a GitHub project and switches on free web hosting.",
+  "how_it_went": "The author shares a demo video and says pages get stable links, saved version history and room for comments.",
+  "worth_knowing": null,
+  "prompt": "Take the analysis we just did on [topic] and turn it into a single interactive web page with clear diagrams and simple widgets. Then publish it on GitHub Pages using my repo [repo name], or propose creating a new one. Show me the page draft and the exact repo and hosting changes you plan to make, and wait for my approval before pushing anything.",
+  "evidence": "Demo",
+  "difficulty": "Intermediate",
+  "tags": [
+    "publishing",
+    "reports",
+    "web pages",
+    "data sharing"
+  ],
+  "source": {
+    "url": "https://x.com/IshaanKamra/status/2116885111123964398",
+    "name": "X",
+    "author": "@IshaanKamra",
+    "published": "2026-11-01"
+  },
+  "added": "2026-11-01",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A thin but genuine workflow where the agent turns analysis into a web page and sets up the hosting itself, with a demo video; few details beyond that."
+  }
+}

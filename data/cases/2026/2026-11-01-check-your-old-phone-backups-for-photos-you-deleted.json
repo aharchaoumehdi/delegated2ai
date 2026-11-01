@@ -1,0 +1,42 @@
+{
+  "id": "check-your-old-phone-backups-for-photos-you-deleted",
+  "title": "Check your old phone backups for photos you deleted",
+  "summary": "While running a security check, Claude Code flagged thousands of photo thumbnails in the author's unencrypted old iPhone backups, including deleted pictures and banking screenshots. The author then cleaned up.",
+  "domain": "Daily life",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "file system",
+    "macOS privacy settings",
+    "iPhone backups"
+  ],
+  "agent_role": "Claude Code scanned the laptop during a security check and flagged the thumbnails folder inside the old iPhone backups. The author reviewed the files, checked which apps had full disk access, and made the changes himself.",
+  "outcome": "Author reports finding years of deleted photos and screenshots in unencrypted backups. He then deleted the backups, turned on backup encryption and removed full disk access from most apps.",
+  "what_they_did": "The poster plugged their iPhone into their Mac to back it up while Claude Code ran a security check. The agent flagged a thumbnails folder inside old iPhone backups. It held thousands of photos, videos and screenshots, many of them deleted from the phone. The poster then checked which Mac apps had full access to the disk.",
+  "how_it_went": "They say the backups went back years, none were encrypted, and they included screenshots of banking apps. More apps had full disk access than expected. They deleted the old backups, turned on encrypted local backups and removed access from most apps.",
+  "worth_knowing": "Every computer backup keeps copies of your photos, so deleting a photo on the phone later doesn't remove it from the computer. Any app with full disk access could open an unencrypted backup.",
+  "prompt": "Run a privacy check on my [Mac/PC]. Find any local iPhone or iPad backups, and tell me how old they are and whether they are encrypted. Check if they hold photo or thumbnail folders, and give me rough file counts. Don't open or display the photos themselves. Also list every app that has full disk access. Then suggest a cleanup plan: which backups to delete, how to turn on encrypted backups, and which apps to remove access from. Wait for my approval before deleting anything or changing any settings.",
+  "evidence": "Author's account",
+  "difficulty": "Beginner",
+  "tags": [
+    "privacy",
+    "phone backups",
+    "security check",
+    "photos"
+  ],
+  "source": {
+    "url": "https://x.com/reMugi3/status/2116587410540703826",
+    "name": "X",
+    "author": "@reMugi3",
+    "published": "2026-10-31"
+  },
+  "added": "2026-11-01",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete privacy check on everyday devices: the agent flagged deleted photos sitting in unencrypted phone backups, and the author took clear fixing steps. Useful to many readers and earns the non-coding boost, though the prompt the author mentions isn't included."
+  }
+}

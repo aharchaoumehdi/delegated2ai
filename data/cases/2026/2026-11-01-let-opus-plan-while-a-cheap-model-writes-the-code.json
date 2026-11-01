@@ -1,0 +1,44 @@
+{
+  "id": "let-opus-plan-while-a-cheap-model-writes-the-code",
+  "title": "Let Opus plan while a cheap model writes the code",
+  "summary": "A developer built Cheap Agent so Claude Code's Opus plans and a cheap model writes test-proven code; he reports 63% fewer Opus tokens on one feature.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": "Claude Opus 5.5, DeepSeek and other cheap models",
+  "tools": [
+    "Claude Code",
+    "OpenRouter",
+    "DeepSeek",
+    "OpenCode",
+    "git worktrees"
+  ],
+  "agent_role": "Opus plans and splits the work; a cheap model writes code and a test in a separate copy of the project; Sonnet takes over failed steps; the human reviews the uncommitted changes.",
+  "outcome": "Author reports 154k vs 57k Opus tokens on the same feature, and native Windows support built in 30 cheap-model jobs for $0.29 total.",
+  "what_they_did": "The developer added a connector to Claude Code. Opus writes a plan, then hands each step to a cheap model in a private copy of the project. The cheap model must write a test that fails before its fix and passes after. Only passing work lands, uncommitted, for the human to review.",
+  "how_it_went": "He reports his plan lasts 2.2 to 2.7 times longer. On the hardest test bugs it solved 6 of 9 versus 7 for plain Opus. Small jobs saw no savings.",
+  "worth_knowing": "Your code is sent to the cheap model's provider once you allow it per project. Savings show up mainly on mid-sized features, not tiny edits.",
+  "prompt": "For this task in [my project], act as the planner only. Write a step-by-step plan and, for each step, a test that should fail now and pass once done. Hand each step to [cheap model via my configured provider] to write the code. Run the tests yourself and only accept steps that pass. Leave all changes uncommitted, then show me a summary and the diff for review. Task: [describe the feature].",
+  "evidence": "Code available",
+  "difficulty": "Intermediate",
+  "tags": [
+    "cost saving",
+    "coding",
+    "model routing",
+    "testing"
+  ],
+  "source": {
+    "url": "https://github.com/muaaz9329/cheap-ag",
+    "name": "GitHub",
+    "author": "muaaz9329",
+    "published": "2026-10-28"
+  },
+  "added": "2026-11-01",
+  "status": "published",
+  "score": 7,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "Open-source tool whose README shows concrete measured workflows: a feature built with 63% fewer Opus tokens and Windows support built in 30 cheap jobs for $0.29, plus honest benchmark caveats."
+  }
+}

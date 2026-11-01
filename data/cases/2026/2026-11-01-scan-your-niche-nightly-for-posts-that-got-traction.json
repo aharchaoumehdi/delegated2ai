@@ -1,0 +1,40 @@
+{
+  "id": "scan-your-niche-nightly-for-posts-that-got-traction",
+  "title": "Scan your niche nightly for posts that got traction",
+  "summary": "A creator has a Grok-based research bot scan X every night for AI coding agent posts and pull out what earned reach, replies and bookmarks, with copyable templates.",
+  "domain": "Marketing",
+  "platform": "Other",
+  "model": "Grok",
+  "tools": [
+    "X"
+  ],
+  "agent_role": "The bot scans the niche on X each night and identifies posts that performed well and why; the author packages the patterns into templates.",
+  "outcome": "Author shares a write-up of performing post patterns with templates drawn from the bot's scans.",
+  "what_they_did": "The poster runs a research bot built on Grok that scans posts about AI coding agents on X every night. It looks at what got reach, replies and bookmarks. The poster turned the patterns into post templates and shared them in an article.",
+  "how_it_went": "The author says the result is a set of patterns, each with a template readers can copy for their own posts.",
+  "worth_knowing": null,
+  "prompt": "Every night, search X for posts from the last 24 hours about [your niche]. Pick the 20 with the most replies, reposts and bookmarks relative to the author's follower count. For each, note the hook, format, length and topic. Then write a short report: the 3–5 patterns that keep showing up, why you think they work, and a fill-in-the-blank template for each. Save the report to [a document or folder] and keep a running list of patterns across nights. Do not post anything yourself.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "social media research",
+    "content strategy",
+    "trend scanning",
+    "templates"
+  ],
+  "source": {
+    "url": "https://x.com/Joshua_WD/status/2116582206361465050",
+    "name": "X",
+    "author": "@Joshua_WD",
+    "published": "2026-10-31"
+  },
+  "added": "2026-11-01",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A genuine recurring research agent that scans posts nightly and extracts patterns, but the post is thin and the findings sit in a linked article not provided."
+  }
+}

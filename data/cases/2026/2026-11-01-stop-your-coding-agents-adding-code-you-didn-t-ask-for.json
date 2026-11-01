@@ -1,0 +1,41 @@
+{
+  "id": "stop-your-coding-agents-adding-code-you-didn-t-ask-for",
+  "title": "Stop your coding agents adding code you didn't ask for",
+  "summary": "A developer made coding, architecture and review agents share one plan file; they say the review agent then rejected an unrequested new package automatically.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Shared plan file"
+  ],
+  "agent_role": "Separate agents handle design, coding and review. All of them read one shared plan file, and the review agent rejects changes outside it. The human writes and maintains the plan.",
+  "outcome": "Author reports the review agent automatically rejected a change that added a new retry package when only a simple timeout was requested.",
+  "what_they_did": "A developer ran separate agents for design, coding and review. The review agent kept approving bloated code as long as the tests passed. So every agent now reads one shared plan file. The review agent must reject any change that touches files or adds layers not agreed in that plan.",
+  "how_it_went": "The author says the review agent rejected a change that added a whole new retry package when they had only asked for a simple timeout.",
+  "worth_knowing": "Agents still slip in extra helper functions and overly cautious error checks. Keeping the shared plan file up to date is extra work.",
+  "prompt": "Before coding, read [plan file] and treat it as the only agreed scope. For this task: [describe the change]. List the exact files you plan to touch and any new functions, types or packages, then wait for my approval. Afterwards, act as a strict reviewer of your own change. Reject it if it touches files outside the plan or adds layers or packages we didn't agree on. Explain what to remove.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "code review",
+    "scope control",
+    "multi-agent",
+    "coding rules"
+  ],
+  "source": {
+    "url": "https://x.com/Alex_Vainshtein/status/2116860991187100037",
+    "name": "X",
+    "author": "@Alex_Vainshtein",
+    "published": "2026-11-01"
+  },
+  "added": "2026-11-01",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A concrete multi-agent coding setup with a specific rule and a real example of a rejected change; practical, but lightly evidenced."
+  }
+}

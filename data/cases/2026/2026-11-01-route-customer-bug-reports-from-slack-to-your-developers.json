@@ -1,0 +1,40 @@
+{
+  "id": "route-customer-bug-reports-from-slack-to-your-developers",
+  "title": "Route customer bug reports from Slack to your developers",
+  "summary": "A founder at Kendo used Claude Code to build a Slack bot that scans enterprise customer channels several times a day and forwards likely bugs to a developer channel.",
+  "domain": "Business",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Slack"
+  ],
+  "agent_role": "Claude Code wrote the bot; the bot scans customer channels, spots likely bugs, reposts them to an escalations channel and tags the right developers. The founder directed the build.",
+  "outcome": "Author reports developers now check one channel instead of many, and the build took only a few minutes without pulling engineers off the product.",
+  "what_they_did": "A founder at Kendo noticed developers were being pulled into many shared customer Slack channels. He used Claude Code to build a Slack bot. It scans the customer channels several times a day for possible bugs or technical issues. It forwards them to one escalations channel and tags the relevant developers.",
+  "how_it_went": "The author says developers now have one place to see what needs attention. He says it took a few minutes and needed no engineer's time.",
+  "worth_knowing": null,
+  "prompt": "Help me build a Slack bot for my team. Several times a day it should read new messages in these customer channels: [list of channels]. Flag any message that looks like a bug report or technical problem. Repost each flagged message, with a link to the original, into [escalations channel] and tag the right person based on this list: [topic → developer]. First show me your plan, the permissions the bot needs, and a few sample flags from recent messages. Wait for my approval before installing it or posting anything.",
+  "evidence": "Author's account",
+  "difficulty": "Intermediate",
+  "tags": [
+    "customer support",
+    "bug triage",
+    "slack",
+    "escalation"
+  ],
+  "source": {
+    "url": "https://x.com/LukeWarrd/status/2116549694373380110",
+    "name": "X",
+    "author": "@LukeWarrd",
+    "published": "2026-10-31"
+  },
+  "added": "2026-11-01",
+  "status": "published",
+  "score": 6,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A practical small-team workflow: a bot built with Claude Code scans customer Slack channels for bugs and routes them to developers. Clear and useful, but light on details and results."
+  }
+}

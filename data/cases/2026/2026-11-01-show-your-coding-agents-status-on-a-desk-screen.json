@@ -1,0 +1,44 @@
+{
+  "id": "show-your-coding-agents-status-on-a-desk-screen",
+  "title": "Show your coding agents' status on a desk screen",
+  "summary": "A developer built an e-paper desk display that shows whether Claude Code, Codex and Grok are working, waiting for input, or finished.",
+  "domain": "Software",
+  "platform": "Claude Code",
+  "model": null,
+  "tools": [
+    "Claude Code",
+    "Codex",
+    "Grok",
+    "ESP32-S3 board",
+    "e-paper display"
+  ],
+  "agent_role": "The coding agents run tasks on their own; the display reports their state so the human knows when to step in.",
+  "outcome": "Author says the plans, circuit board files and device software are open source.",
+  "what_they_did": "The poster kept missing the moment their coding agents finished. So they built a small battery-powered desk screen using an e-paper panel and a tiny circuit board. It shows whether Claude Code, Codex and Grok are busy, waiting for them, or done.",
+  "how_it_went": "The author shared the device and says the wiring plans, board files and software are open source.",
+  "worth_knowing": null,
+  "prompt": "Help me build a small desk display that shows the status of my coding agents. Agents I use: [list of agents]. Hardware I have: [your board and screen]. First, work out how each agent can report when it starts, waits for me, or finishes. Then propose a simple way to send that status to the device. Show me the plan and the parts list before writing any code. Then write the device software and the hooks step by step, and tell me how to test each piece.",
+  "evidence": "Code available",
+  "difficulty": "Advanced",
+  "tags": [
+    "hardware",
+    "notifications",
+    "coding agents",
+    "desk display"
+  ],
+  "source": {
+    "url": "https://x.com/pigbitebutt/status/2116781376859234807",
+    "name": "X",
+    "author": "@pigbitebutt",
+    "published": "2026-11-01"
+  },
+  "added": "2026-11-01",
+  "status": "published",
+  "score": 5,
+  "featured": false,
+  "curation": {
+    "method": "auto",
+    "model": "claude-opus-5-5",
+    "rationale": "A small, open-source hardware build that shows whether coding agents are working, waiting or done; genuine but thin on detail and results."
+  }
+}

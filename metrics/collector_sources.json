@@ -1,0 +1,44 @@
+[
+ {
+  "day": "2026-11-01",
+  "source": "reddit",
+  "status": "error",
+  "items": 0
+ },
+ {
+  "day": "2026-11-01",
+  "source": "submissions",
+  "status": "ok",
+  "items": 0
+ },
+ {
+  "day": "2026-11-01",
+  "source": "x",
+  "status": "ok",
+  "items": 79
+ },
+ {
+  "day": "2026-11-01",
+  "source": "feeds",
+  "status": "ok",
+  "items": 5
+ },
+ {
+  "day": "2026-11-01",
+  "source": "github",
+  "status": "ok",
+  "items": 53
+ },
+ {
+  "day": "2026-11-01",
+  "source": "hackernews",
+  "status": "ok",
+  "items": 36
+ },
+ {
+  "day": "2026-11-01",
+  "source": "devto",
+  "status": "ok",
+  "items": 32
+ }
+]

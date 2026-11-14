@@ -1,0 +1,38 @@
+[
+ {
+  "check": "Home page",
+  "ok": true,
+  "detail": "274 ms",
+  "ms": 274
+ },
+ {
+  "check": "RSS feed",
+  "ok": true,
+  "detail": "68 ms",
+  "ms": 68
+ },
+ {
+  "check": "Sitemap",
+  "ok": true,
+  "detail": "110 ms",
+  "ms": 110
+ },
+ {
+  "check": "Votes and sign-ups service",
+  "ok": true,
+  "detail": "616 ms",
+  "ms": 616
+ },
+ {
+  "check": "Daily update (last run)",
+  "ok": false,
+  "detail": "failure · 2026-11-14 13:39 UTC",
+  "ms": null
+ },
+ {
+  "check": "Votes service deploy (last run)",
+  "ok": true,
+  "detail": "success · 2026-10-18 13:26 UTC",
+  "ms": null
+ }
+]

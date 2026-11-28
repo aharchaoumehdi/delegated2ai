@@ -1,0 +1,176 @@
+[
+ {
+  "dimension": "page",
+  "value": "/",
+  "pageviews": 70,
+  "visits": 50
+ },
+ {
+  "dimension": "page",
+  "value": "/category/daily-life/",
+  "pageviews": 40,
+  "visits": 30
+ },
+ {
+  "dimension": "page",
+  "value": "/topics/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "dimension": "page",
+  "value": "/agents/claude-code/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "dimension": "page",
+  "value": "/recent/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "page",
+  "value": "/use-case/make-a-short-horror-film-in-blender-through-a-coding-agent/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "page",
+  "value": "/use-case/six-n8n-ai-agents-replace-50-hours-of-manual-work-a-week/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "page",
+  "value": "/new/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "page",
+  "value": "/feed/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "referrer",
+  "value": "Direct or unknown",
+  "pageviews": 180,
+  "visits": 120
+ },
+ {
+  "dimension": "referrer",
+  "value": "wx.mail.qq.com",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "IN",
+  "pageviews": 50,
+  "visits": 20
+ },
+ {
+  "dimension": "country",
+  "value": "US",
+  "pageviews": 50,
+  "visits": 50
+ },
+ {
+  "dimension": "country",
+  "value": "FI",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "CN",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "BR",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "dimension": "country",
+  "value": "GB",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "EC",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "JP",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "dimension": "country",
+  "value": "ET",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "SG",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "dimension": "country",
+  "value": "MA",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "dimension": "device",
+  "value": "desktop",
+  "pageviews": 120,
+  "visits": 90
+ },
+ {
+  "dimension": "device",
+  "value": "mobile",
+  "pageviews": 70,
+  "visits": 40
+ },
+ {
+  "dimension": "browser",
+  "value": "Chrome",
+  "pageviews": 80,
+  "visits": 60
+ },
+ {
+  "dimension": "browser",
+  "value": "ChromeDerivative",
+  "pageviews": 50,
+  "visits": 20
+ },
+ {
+  "dimension": "browser",
+  "value": "Edge",
+  "pageviews": 30,
+  "visits": 20
+ },
+ {
+  "dimension": "browser",
+  "value": "MobileSafari",
+  "pageviews": 20,
+  "visits": 20
+ },
+ {
+  "dimension": "browser",
+  "value": "ChromeMobile",
+  "pageviews": 10,
+  "visits": 10
+ }
+]
